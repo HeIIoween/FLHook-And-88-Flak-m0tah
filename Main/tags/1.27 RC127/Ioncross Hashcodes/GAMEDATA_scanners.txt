@@ -1,7 +1,0 @@
-2186990469 = ge_s_scanner_00, Flying Permit (Piece of junk)
-2274766415 = rarescanner01, Rare Scanner 1
-2274772559 = rarescanner03, Rare Scanner 3
-2274803279 = rarescanner05, Rare Scanner 5
-2723858309 = ge_s_scanner_01, Scanner
-2811646543 = rarescanner02, Rare Scanner 2
-2811669071 = rarescanner04, Rare Scanner 4

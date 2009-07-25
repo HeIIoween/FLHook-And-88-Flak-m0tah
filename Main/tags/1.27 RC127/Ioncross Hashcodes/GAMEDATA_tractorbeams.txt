@@ -1,5 +1,0 @@
-2540844416 = raretractor04, Rare Tractor 4
-2540883328 = raretractor02, Rare Tractor 2
-2799531210 = ge_s_tractor_01, Tractor Beam
-3077747072 = raretractor01, Rare Tractor 1
-3077757312 = raretractor03, Rare Tractor 3

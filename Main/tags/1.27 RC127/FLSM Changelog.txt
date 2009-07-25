@@ -1,4 +1,0 @@
-v0.0.1: Initial release
-v0.0.2:
-  -Made code optimizations, file processing is now more than twice as fast
-  -Added a percentage done indicator in the log while processing files

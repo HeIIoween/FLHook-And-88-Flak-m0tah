@@ -1,0 +1,11 @@
+- Take a look at NPC collision damage issues, switch back to doing collision damage instead of gun damage
+- Add feature that makes the hull be damaged instead of equipment
+
+Old crap:
+- Fix mine jumping lag bug
+- have player kills log a "follow_trigger_ship" archetype_killed if possible
+- possibly have Hook .kill torpedoes launched at a velocity > 400m/s?
+- dockkill/apvptoken protection messages for when you shoot a player
+- Rep changes for station deaths (bug M0tah)
+- additional combat-only logout delay so I can make logging out in combat even longer
+- Constant impulse for spin protection instead of single call?
