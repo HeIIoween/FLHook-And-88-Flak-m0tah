@@ -1,0 +1,55 @@
+optimize_speed;
+
+target
+	FLHook.dll;
+
+library(WIN32) "winmm.lib psapi.lib wsock32.lib ws2_32.lib ./source/libs/server.lib ./source/libs/common.lib ./source/libs/remoteclient.lib ./source/libs/dalib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib ";
+
+file
+	.\source\CCmds.cpp,
+	.\source\CCmds.h,
+	.\source\CConsole.cpp,
+	.\source\CConsole.h,
+	.\source\CInGame.cpp,
+	.\source\CInGame.h,
+	.\source\common.h,
+	.\source\CSocket.cpp,
+	.\source\CSocket.h,
+	.\source\dalib.h,
+	.\source\flcodec.cpp,
+	.\source\flcodec.h,
+	.\source\FLHook.cpp,
+	.\source\global.h,
+	.\source\HkCbChat.cpp,
+	.\source\HkCbDamage.cpp,
+	.\source\HkCbDeath.cpp,
+	.\source\HkCbDisconnect.cpp,
+	.\source\HkCbIServerImpl.cpp,
+	.\source\HkCbOther.cpp,
+	.\source\HkDataBaseMarket.cpp,
+	.\source\HkDataBaseOther.cpp,
+	.\source\HkError.cpp,
+	.\source\HkFLIni.cpp,
+	.\source\HkFuncLog.cpp,
+	.\source\HkFuncMsg.cpp,
+	.\source\HkFuncOther.cpp,
+	.\source\HkFuncPlayers.cpp,
+	.\source\HkFuncTools.cpp,
+	.\source\HkInit.cpp,
+	.\source\HkTimers.cpp,
+	.\source\HkUserCmd.cpp,
+	.\source\Hook.h,
+	.\source\Log.cpp,
+	.\source\remoteclient.h,
+	.\source\server.h,
+	.\source\Settings.cpp,
+	.\source\Tools.cpp,
+	.\source\wildcards.cpp,
+	.\source\binarytree.h,
+	.\source\binarytree.cpp,
+	.\source\blowfish.h,
+	.\source\blowfish.cpp,
+
+mainconfig
+	"" = "DLL ";
+

@@ -1,0 +1,3136 @@
+<script>
+<header name="88 Flak Version 1.27 AI Companion RC127 07/25/09" savesafe="true" exclusive="false">
+<scriptversion>
+1.3
+</scriptversion>
+<author>
+foxBox (foxUnit01)
+</author>
+<modurl>
+http://www.memes.no/88flak/
+</modurl>
+<description>
+THIS IS AN OPTIONAL PATCH, AND DOES NOT NEED TO BE ACTIVATED UNLESS YOU WANT THE DESIRED EFFECT FROM THE PATCH.
+Activate this AFTER activating Flak. Ignore FLMM's "incompatible" error messages.
+
+This is the 88 Flak AI Companion Bot, a go-anywhere-with-you shoot-only-your-enemies bot companion. It is aimed at providing the lone Flak player a little compensation for any lack of a real comrade.
+
+While the bots will accompany you in-betwen systems, note that the bots will form on you in odd spots when you fly into another system. This can be worked around by simply using "Select New Character" under the F1 menu to log out and back in every time you jump systems. Or, just land on a base, and that fixes it too.
+
+Please refer to the AI Companion Bot FAQ in the 88 Flak Readme for more details. However, here's a short summation of the AI Companion Bot:
+
+Pros:
++ An AI companion (or squad of companions) that will accompany you where-ever your travels take you. You may also choose what your bots attack.
++ A selection of bots to choose from, ranging from fighters to battleships. Each bot has its own unique name and ship loadout.
++ The ability to create your own bots (view AI Companion Bot FAQ in the 88 Flak readme for more info)
++ Enhanced AI for the bots - a single bot can easily mow down several NPCs, much like how a player could.
++ Bots require no money to assist the player - simply fly around, the bots will 'find' you, and offer assistance / follow you, like wingmen.
++ They follow you through EVERY system.
++ The bots are designed to work for co-operative play with a friend (or friends), however players that are further than 20Km from another player will receive a bot squad of their own - so to keep things fair, it is advised that players stick close together.
+
+Cons:
+- Bots have a tendancy to take a little bit of time to 'find' the player after the player launches from a base, jumps systems, or logs in. There isn't a really reliable method to solve this; however, just fly around in the area you lauched / jumped / logged into, or just start travelling to your destination. Either way, the bots will eventually come to your position.
+- You can not hire wingmen while bots are with you. FL only allows one NPC wing at a time on a player, and the bots currently take up that position.
+
+The AI Companion is BETA. Although a lot of testing has gone into it, and it works pretty well, the AI Companion still has quite a few kinks to be worked out (as mentioned above).
+
+This will not work with normal Freelancer.
+</description>
+
+<options>
+
+<option name="1st Wingman? (below for L. Capitals / Stations, front-right for everything else)" savesafe="true">
+<item id="0" name="None">
+</item>
+<item id="1" name="KittBot (Defender: B)">
+</item>
+<item name="foxBot (Rheinland Gunboat: A-)">
+</item>
+<item name="HowdaDoodeWTF (H.D.WTF's Predator: A-)">
+</item>
+<item name="KillerJaguarBot (Osiris: A)">
+</item>
+<item name="Outsider's Followers (Liberator: B+)">
+</item>
+<item name="Trickbot (Wolfhound: B)">
+</item>
+<item name="SonaBot (Sleeper Ship: A)">
+</item>
+<item name="Grim's Green (Hammerhead: B+)">
+</item>
+<item name="Dread Pirate Lowsound (Serafina: B)">
+</item>
+<item name="ww2JacobBot (Liberty Dreadnought: A)">
+</item>
+<item name="Wo3dy (Rheinland Battleship: A)">
+</item>
+<item name="foxBot (fox's Diablo: B)">
+</item>
+<item name="foxBot (fox's Heretic: B)">
+</item>
+<item name="KittBot (Liberty Cruiser: A-)">
+</item>
+<item name="Dread Pirate Lowsound (Kusari Gunboat: A-)">
+</item>
+<item name="Dread Pirate Lowsound (Nomad Fighter: B+)">
+</item>
+<item name="foxBot (Nomad Gunboat: A-)">
+</item>
+<item name="ChipBot (CSV: B+)">
+</item>
+<item name="ChipBot (Depot: A)">
+</item>
+<item name="DarkMarauderBot (Dagger: B)">
+</item>
+<item name="Trickbot (Dromedary: B)">
+</item>
+<item name="Wo3dy (Valkyrie: B)">
+</item>
+<item name="ww2JacobBot (Pursuit Legionnaire: B)">
+</item>
+<item name="KittBot (Covenanter: B+)">
+</item>
+<item name="M0tahBot (Patriot: B)">
+</item>
+<item name="M0tahBot (Progenator: A-)">
+</item>
+<item id="101" name="Character-Generated Bot 1">
+</item>
+<item id="102" name="Character-Generated Bot 2">
+</item>
+<item id="103" name="Character-Generated Bot 3">
+</item>
+<item id="104" name="Character-Generated Bot 4">
+</item>
+<item id="105" name="Character-Generated Bot 1 (S. Capital / WP)">
+</item>
+<item id="106" name="Character-Generated Bot 2 (S. Capital / WP)">
+</item>
+<item id="107" name="Character-Generated Bot 3 (S. Capital / WP)">
+</item>
+<item id="108" name="Character-Generated Bot 4 (S. Capital / WP)">
+</item>
+<item id="109" name="Character-Generated Bot 1 (L. Capital / Station)">
+</item>
+<item id="110" name="Character-Generated Bot 2 (L. Capital / Station)">
+</item>
+<item id="111" name="Character-Generated Bot 3 (L. Capital / Station)">
+</item>
+<item id="112" name="Character-Generated Bot 4 (L. Capital / Station)">
+</item>
+</option>
+
+<option name="2nd Wingman? (above for L. Capitals / Stations, rear-left for everything else)" savesafe="true">
+<item id="0" name="None">
+</item>
+<item id="1" name="KittBot (Defender: B)">
+</item>
+<item name="foxBot (Rheinland Gunboat: A-)">
+</item>
+<item name="HowdaDoodeWTF (H.D.WTF's Predator: A-)">
+</item>
+<item name="KillerJaguarBot (Osiris: A)">
+</item>
+<item name="Outsider's Followers (Liberator: B+)">
+</item>
+<item name="Trickbot (Wolfhound: B)">
+</item>
+<item name="SonaBot (Sleeper Ship: A)">
+</item>
+<item name="Grim's Green (Hammerhead: B+)">
+</item>
+<item name="Dread Pirate Lowsound (Serafina: B)">
+</item>
+<item name="ww2JacobBot (Liberty Dreadnought: A)">
+</item>
+<item name="Wo3dy (Rheinland Battleship: A)">
+</item>
+<item name="foxBot (fox's Diablo: B)">
+</item>
+<item name="foxBot (fox's Heretic: B)">
+</item>
+<item name="KittBot (Liberty Cruiser: A-)">
+</item>
+<item name="Dread Pirate Lowsound (Kusari Gunboat: A-)">
+</item>
+<item name="Dread Pirate Lowsound (Nomad Fighter: B+)">
+</item>
+<item name="foxBot (Nomad Gunboat: A-)">
+</item>
+<item name="ChipBot (CSV: B+)">
+</item>
+<item name="ChipBot (Depot: A-)">
+</item>
+<item name="DarkMarauderBot (Dagger: B)">
+</item>
+<item name="Trickbot (Dromedary: B)">
+</item>
+<item name="Wo3dy (Valkyrie: B)">
+</item>
+<item name="ww2JacobBot (Pursuit Legionnaire: B)">
+</item>
+<item name="KittBot (Covenanter: B+)">
+</item>
+<item name="M0tahBot (Patriot: B)">
+</item>
+<item name="M0tahBot (Progenator: A-)">
+</item>
+<item id="101" name="Character-Generated Bot 1">
+</item>
+<item id="102" name="Character-Generated Bot 2">
+</item>
+<item id="103" name="Character-Generated Bot 3">
+</item>
+<item id="104" name="Character-Generated Bot 4">
+</item>
+<item id="105" name="Character-Generated Bot 1 (S. Capital / WP)">
+</item>
+<item id="106" name="Character-Generated Bot 2 (S. Capital / WP)">
+</item>
+<item id="107" name="Character-Generated Bot 3 (S. Capital / WP)">
+</item>
+<item id="108" name="Character-Generated Bot 4 (S. Capital / WP)">
+</item>
+<item id="109" name="Character-Generated Bot 1 (L. Capital / Station)">
+</item>
+<item id="110" name="Character-Generated Bot 2 (L. Capital / Station)">
+</item>
+<item id="111" name="Character-Generated Bot 3 (L. Capital / Station)">
+</item>
+<item id="112" name="Character-Generated Bot 4 (L. Capital / Station)">
+</item>
+</option>
+
+<option name="3rd Wingman? (left for L. Capitals / Stations, front-left for everything else)" savesafe="true">
+<item id="0" name="None">
+</item>
+<item id="1" name="KittBot (Defender: B)">
+</item>
+<item name="foxBot (Rheinland Gunboat: A-)">
+</item>
+<item name="HowdaDoodeWTF (H.D.WTF's Predator: A-)">
+</item>
+<item name="KillerJaguarBot (Osiris: A)">
+</item>
+<item name="Outsider's Followers (Liberator: B+)">
+</item>
+<item name="Trickbot (Wolfhound: B)">
+</item>
+<item name="SonaBot (Sleeper Ship: A)">
+</item>
+<item name="Grim's Green (Hammerhead: B+)">
+</item>
+<item name="Dread Pirate Lowsound (Serafina: B)">
+</item>
+<item name="ww2JacobBot (Liberty Dreadnought: A)">
+</item>
+<item name="Wo3dy (Rheinland Battleship: A)">
+</item>
+<item name="foxBot (fox's Diablo: B)">
+</item>
+<item name="foxBot (fox's Heretic: B)">
+</item>
+<item name="KittBot (Liberty Cruiser: A-)">
+</item>
+<item name="Dread Pirate Lowsound (Kusari Gunboat: A-)">
+</item>
+<item name="Dread Pirate Lowsound (Nomad Fighter: B+)">
+</item>
+<item name="foxBot (Nomad Gunboat: A-)">
+</item>
+<item name="ChipBot (CSV: B+)">
+</item>
+<item name="ChipBot (Depot: A-)">
+</item>
+<item name="DarkMarauderBot (Dagger: B)">
+</item>
+<item name="Trickbot (Dromedary: B)">
+</item>
+<item name="Wo3dy (Valkyrie: B)">
+</item>
+<item name="ww2JacobBot (Pursuit Legionnaire: B)">
+</item>
+<item name="KittBot (Covenanter: B+)">
+</item>
+<item name="M0tahBot (Patriot: B)">
+</item>
+<item name="M0tahBot (Progenator: A-)">
+</item>
+<item id="101" name="Character-Generated Bot 1">
+</item>
+<item id="102" name="Character-Generated Bot 2">
+</item>
+<item id="103" name="Character-Generated Bot 3">
+</item>
+<item id="104" name="Character-Generated Bot 4">
+</item>
+<item id="105" name="Character-Generated Bot 1 (S. Capital / WP)">
+</item>
+<item id="106" name="Character-Generated Bot 2 (S. Capital / WP)">
+</item>
+<item id="107" name="Character-Generated Bot 3 (S. Capital / WP)">
+</item>
+<item id="108" name="Character-Generated Bot 4 (S. Capital / WP)">
+</item>
+<item id="109" name="Character-Generated Bot 1 (L. Capital / Station)">
+</item>
+<item id="110" name="Character-Generated Bot 2 (L. Capital / Station)">
+</item>
+<item id="111" name="Character-Generated Bot 3 (L. Capital / Station)">
+</item>
+<item id="112" name="Character-Generated Bot 4 (L. Capital / Station)">
+</item>
+</option>
+
+<option name="4th Wingman? (right for L. Capitals / Stations, rear-right for everything else)" savesafe="true">
+<item id="0" name="None">
+</item>
+<item id="1" name="KittBot (Defender: B)">
+</item>
+<item name="foxBot (Rheinland Gunboat: A-)">
+</item>
+<item name="HowdaDoodeWTF (H.D.WTF's Predator: A-)">
+</item>
+<item name="KillerJaguarBot (Osiris: A)">
+</item>
+<item name="Outsider's Followers (Liberator: B+)">
+</item>
+<item name="Trickbot (Wolfhound: B)">
+</item>
+<item name="SonaBot (Sleeper Ship: A)">
+</item>
+<item name="Grim's Green (Hammerhead: B+)">
+</item>
+<item name="Dread Pirate Lowsound (Serafina: B)">
+</item>
+<item name="ww2JacobBot (Liberty Dreadnought: A)">
+</item>
+<item name="Wo3dy (Rheinland Battleship: A)">
+</item>
+<item name="foxBot (fox's Diablo: B)">
+</item>
+<item name="foxBot (fox's Heretic: B)">
+</item>
+<item name="KittBot (Liberty Cruiser: A-)">
+</item>
+<item name="Dread Pirate Lowsound (Kusari Gunboat: A-)">
+</item>
+<item name="Dread Pirate Lowsound (Nomad Fighter: B+)">
+</item>
+<item name="foxBot (Nomad Gunboat: A-)">
+</item>
+<item name="ChipBot (CSV: B+)">
+</item>
+<item name="ChipBot (Depot: A-)">
+</item>
+<item name="DarkMarauderBot (Dagger: B)">
+</item>
+<item name="Trickbot (Dromedary: B)">
+</item>
+<item name="Wo3dy (Valkyrie: B)">
+</item>
+<item name="ww2JacobBot (Pursuit Legionnaire: B)">
+</item>
+<item name="KittBot (Covenanter: B+)">
+</item>
+<item name="M0tahBot (Patriot: B)">
+</item>
+<item name="M0tahBot (Progenator: A-)">
+</item>
+<item id="101" name="Character-Generated Bot 1">
+</item>
+<item id="102" name="Character-Generated Bot 2">
+</item>
+<item id="103" name="Character-Generated Bot 3">
+</item>
+<item id="104" name="Character-Generated Bot 4">
+</item>
+<item id="105" name="Character-Generated Bot 1 (S. Capital / WP)">
+</item>
+<item id="106" name="Character-Generated Bot 2 (S. Capital / WP)">
+</item>
+<item id="107" name="Character-Generated Bot 3 (S. Capital / WP)">
+</item>
+<item id="108" name="Character-Generated Bot 4 (S. Capital / WP)">
+</item>
+<item id="109" name="Character-Generated Bot 1 (L. Capital / Station)">
+</item>
+<item id="110" name="Character-Generated Bot 2 (L. Capital / Station)">
+</item>
+<item id="111" name="Character-Generated Bot 3 (L. Capital / Station)">
+</item>
+<item id="112" name="Character-Generated Bot 4 (L. Capital / Station)">
+</item>
+</option>
+
+<option name="What should the bots attack?" savesafe="true">
+<item id="0" name="Only the player's enemies">
+</item>
+<item id="1" name="Un-lawful stuff (pirates etc.)">
+</item>
+<item name="Lawful stuff (military, shipping, etc.)">
+</item>
+<item name="Nothing..?">
+</item>
+<item name="Everything! YAR!">
+</item>
+</option>
+
+<option name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="You may need to drag the center divider to see all details." savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="For more information on Character-Generated Bots, please" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="view the AI Companion Bot FAQ in the 88 Flak Readme." savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="Ratings range from A+ to B. Ratings do not reflect a bot's" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="skill, but instead how destructive their ship/loadout is." savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="Bots with B or B+ rating are the most recommended." savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="Bot wingmen are set by the server, not the connecting client." savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="This means you can't use them on any server but your own." savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="88 Flak AI Companion (BETA)" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="Version 1.27, listed in server list as 88.27" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="Bugs, suggestions, etc: http://www.memes.no/88flak/" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+</options>
+</header>
+
+;Padding Start
+<data file="Data\Missions\faction_prop.ini" method="filereplace" numtimes="-1">
+<dest>
+scan_chance = 0.999999
+</dest>
+<source>
+scan_chance = 0.000000 ;Changed by AI Bot FLMM Script
+</source>
+</data>
+<data file="Data\Missions\faction_prop.ini" method="filereplace" numtimes="-1">
+<dest>
+;npc_ship = follow_ship ;Bot activation needed by FLMM, not by hand
+</dest>
+<source>
+npc_ship = follow_ship ;Bots activated
+</source>
+</data>
+;Padding End
+
+;SLOT 1
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot
+pilot_job = wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:2">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot
+pilot_job = capital_wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:3">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HowdaDoodeWTF
+pilot_job = wingman_job
+make_class = class_bot_HowdaDoodeWTF
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:4">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KillerJaguarBot
+pilot_job = capital_wingman_job
+make_class = class_bot_KillerJaguarBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:4">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:5">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_OutsidersFollowers
+pilot_job = wingman_job
+make_class = class_bot_OutsidersFollowers
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:6">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Trickbot
+pilot_job = wingman_job
+make_class = class_bot_Trickbot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:7">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SonaBot
+pilot_job = capital_wingman_job
+make_class = class_bot_SonaBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:7">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:8">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_GrimsGreen
+pilot_job = wingman_job
+make_class = class_bot_GrimsGreen
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:9">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound
+pilot_job = wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:10">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ww2JacobBot
+pilot_job = capital_wingman_job
+make_class = class_bot_ww2JacobBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:10">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:11">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Wo3dy
+pilot_job = capital_wingman_job
+make_class = class_bot_Wo3dy
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:11">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:12">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot2
+pilot_job = wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:13">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot3
+pilot_job = wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:14">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:15">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound2
+pilot_job = capital_wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:16">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound3
+pilot_job = wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:17">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot4
+pilot_job = capital_wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:18">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ChipBot
+pilot_job = wingman_job
+make_class = class_bot_ChipBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:19">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ChipBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_ChipBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:19">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:20">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkMarauderBot
+pilot_job = wingman_job
+make_class = class_bot_DarkMarauderBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:21">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Trickbot2
+pilot_job = wingman_job
+make_class = class_bot_Trickbot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:22">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Wo3dy2
+pilot_job = wingman_job
+make_class = class_bot_Wo3dy
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:23">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ww2JacobBot2
+pilot_job = wingman_job
+make_class = class_bot_ww2JacobBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:24">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot3
+pilot_job = wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:25">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_M0tahBot
+pilot_job = wingman_job
+make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:26">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_M0tahBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:101">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:102">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:103">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:104">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:105">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:106">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:107">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:108">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:109">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:109">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:110">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:110">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:111">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:111">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:112">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="1:112">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
+</source>
+</data>
+
+;SLOT 2
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:1">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot
+pilot_job = wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:2">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot
+pilot_job = capital_wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:3">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HowdaDoodeWTF
+pilot_job = wingman_job
+make_class = class_bot_HowdaDoodeWTF
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:4">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KillerJaguarBot
+pilot_job = capital_wingman_job
+make_class = class_bot_KillerJaguarBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:4">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:5">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_OutsidersFollowers
+pilot_job = wingman_job
+make_class = class_bot_OutsidersFollowers
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:6">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Trickbot
+pilot_job = wingman_job
+make_class = class_bot_Trickbot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:7">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SonaBot
+pilot_job = capital_wingman_job
+make_class = class_bot_SonaBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:7">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:8">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_GrimsGreen
+pilot_job = wingman_job
+make_class = class_bot_GrimsGreen
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:9">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound
+pilot_job = wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:10">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ww2JacobBot
+pilot_job = capital_wingman_job
+make_class = class_bot_ww2JacobBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:10">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:11">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Wo3dy
+pilot_job = capital_wingman_job
+make_class = class_bot_Wo3dy
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:11">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:12">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot2
+pilot_job = wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:13">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot3
+pilot_job = wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:14">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:15">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound2
+pilot_job = capital_wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:16">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound3
+pilot_job = wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:17">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot4
+pilot_job = capital_wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:18">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ChipBot
+pilot_job = wingman_job
+make_class = class_bot_ChipBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:19">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ChipBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_ChipBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:19">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:20">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkMarauderBot
+pilot_job = wingman_job
+make_class = class_bot_DarkMarauderBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:21">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Trickbot2
+pilot_job = wingman_job
+make_class = class_bot_Trickbot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:22">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Wo3dy2
+pilot_job = wingman_job
+make_class = class_bot_Wo3dy
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:23">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ww2JacobBot2
+pilot_job = wingman_job
+make_class = class_bot_ww2JacobBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:24">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot3
+pilot_job = wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:25">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_M0tahBot
+pilot_job = wingman_job
+make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:26">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_M0tahBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:101">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:102">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:103">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:104">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:105">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:106">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:107">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:108">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:109">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:109">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:110">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:110">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:111">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:111">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:112">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="2:112">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
+</source>
+</data>
+
+;SLOT 3
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:1">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot
+pilot_job = wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:2">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot
+pilot_job = capital_wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:3">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HowdaDoodeWTF
+pilot_job = wingman_job
+make_class = class_bot_HowdaDoodeWTF
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:4">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KillerJaguarBot
+pilot_job = capital_wingman_job
+make_class = class_bot_KillerJaguarBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:4">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:5">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_OutsidersFollowers
+pilot_job = wingman_job
+make_class = class_bot_OutsidersFollowers
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:6">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Trickbot
+pilot_job = wingman_job
+make_class = class_bot_Trickbot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:7">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SonaBot
+pilot_job = capital_wingman_job
+make_class = class_bot_SonaBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:7">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:8">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_GrimsGreen
+pilot_job = wingman_job
+make_class = class_bot_GrimsGreen
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:9">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound
+pilot_job = wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:10">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ww2JacobBot
+pilot_job = capital_wingman_job
+make_class = class_bot_ww2JacobBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:10">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:11">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Wo3dy
+pilot_job = capital_wingman_job
+make_class = class_bot_Wo3dy
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:11">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:12">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot2
+pilot_job = wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:13">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot3
+pilot_job = wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:14">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:15">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound2
+pilot_job = capital_wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:16">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound3
+pilot_job = wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:17">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot4
+pilot_job = capital_wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:18">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ChipBot
+pilot_job = wingman_job
+make_class = class_bot_ChipBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:19">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ChipBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_ChipBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:19">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:20">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkMarauderBot
+pilot_job = wingman_job
+make_class = class_bot_DarkMarauderBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:21">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Trickbot2
+pilot_job = wingman_job
+make_class = class_bot_Trickbot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:22">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Wo3dy2
+pilot_job = wingman_job
+make_class = class_bot_Wo3dy
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:23">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ww2JacobBot2
+pilot_job = wingman_job
+make_class = class_bot_ww2JacobBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:24">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot3
+pilot_job = wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:25">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_M0tahBot
+pilot_job = wingman_job
+make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:26">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_M0tahBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:101">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:102">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:103">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:104">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:105">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:106">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:107">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:108">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:109">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:109">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:110">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:110">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:111">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:111">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:112">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="3:112">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
+</source>
+</data>
+
+;SLOT 4
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:1">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot
+pilot_job = wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:2">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot
+pilot_job = capital_wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:3">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HowdaDoodeWTF
+pilot_job = wingman_job
+make_class = class_bot_HowdaDoodeWTF
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:4">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KillerJaguarBot
+pilot_job = capital_wingman_job
+make_class = class_bot_KillerJaguarBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:4">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:5">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_OutsidersFollowers
+pilot_job = wingman_job
+make_class = class_bot_OutsidersFollowers
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:6">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Trickbot
+pilot_job = wingman_job
+make_class = class_bot_Trickbot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:7">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SonaBot
+pilot_job = capital_wingman_job
+make_class = class_bot_SonaBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:7">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:8">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_GrimsGreen
+pilot_job = wingman_job
+make_class = class_bot_GrimsGreen
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:9">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound
+pilot_job = wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:10">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ww2JacobBot
+pilot_job = capital_wingman_job
+make_class = class_bot_ww2JacobBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:10">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:11">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Wo3dy
+pilot_job = capital_wingman_job
+make_class = class_bot_Wo3dy
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:11">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:12">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot2
+pilot_job = wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:13">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot3
+pilot_job = wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:14">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:15">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound2
+pilot_job = capital_wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:16">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DreadPirateLowsound3
+pilot_job = wingman_job
+make_class = class_bot_DreadPirateLowsound
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:17">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_foxBot4
+pilot_job = capital_wingman_job
+make_class = class_bot_foxBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:18">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ChipBot
+pilot_job = wingman_job
+make_class = class_bot_ChipBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:19">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ChipBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_ChipBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:19">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:20">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkMarauderBot
+pilot_job = wingman_job
+make_class = class_bot_DarkMarauderBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:21">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Trickbot2
+pilot_job = wingman_job
+make_class = class_bot_Trickbot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:22">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Wo3dy2
+pilot_job = wingman_job
+make_class = class_bot_Wo3dy
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:23">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_ww2JacobBot2
+pilot_job = wingman_job
+make_class = class_bot_ww2JacobBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:24">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KittBot3
+pilot_job = wingman_job
+make_class = class_bot_KittBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:25">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_M0tahBot
+pilot_job = wingman_job
+make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:26">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_M0tahBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:101">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:102">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:103">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:104">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:105">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:106">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:107">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:108">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:109">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot1
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot1
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:109">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:110">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot2
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot2
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:110">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:111">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot3
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot3
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:111">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:112">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_CustomSlot4
+pilot_job = capital_wingman_job
+make_class = class_bot_CustomSlot4
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="4:112">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
+</source>
+</data>
+
+;REST OF STUFF
+
+<data file="Data\initialworld.ini" method="sectionappend" numtimes="-1" options="5:1">
+<section>
+rep = 0.60, li_n_grp
+rep = 0.60, li_lsf_grp
+rep = 0.60, li_p_grp
+rep = 0.60, br_n_grp
+rep = 0.60, br_p_grp
+rep = 0.60, ku_n_grp
+rep = 0.60, ku_p_grp
+rep = 0.60, rh_n_grp
+rep = 0.60, rh_p_grp
+rep = 0.60, co_alg_grp
+rep = 0.60, co_be_grp
+rep = 0.60, br_m_grp
+rep = 0.60, co_nws_grp
+rep = 0.60, co_hsp_grp
+rep = 0.60, co_ic_grp
+rep = 0.60, co_khc_grp
+rep = 0.60, co_kt_grp
+rep = 0.60, rh_m_grp
+rep = 0.60, co_me_grp
+rep = 0.60, co_ni_grp
+rep = 0.60, co_os_grp
+rep = 0.60, co_rs_grp
+rep = 0.60, co_shi_grp
+rep = 0.60, co_ss_grp
+rep = 0.60, co_ti_grp
+rep = 0.60, co_vr_grp
+rep = 0.60, fc_bd_grp
+rep = 0.60, fc_b_grp
+rep = 0.60, fc_c_grp
+rep = 0.60, fc_fa_grp
+rep = 0.60, fc_g_grp
+rep = 0.60, fc_gc_grp
+rep = 0.60, fc_h_grp
+rep = 0.60, fc_j_grp
+rep = 0.60, fc_lh_grp
+rep = 0.60, fc_lr_grp
+rep = 0.60, fc_lwb_grp
+rep = 0.60, fc_m_grp
+rep = 0.60, fc_ou_grp
+rep = 0.60, fc_rh_grp
+rep = 0.60, fc_or_grp
+rep = 0.60, fc_u_grp
+rep = 0.60, fc_x_grp
+rep = 0.60, gd_gm_grp
+rep = 0.60, fc_n_grp
+rep = 0.60, fc_ln_grp
+rep = 0.60, fc_kn_grp
+rep = 0.60, fc_rn_grp
+rep = 0.60, fc_q_grp
+rep = 0.60, fc_f_grp
+rep = 0.60, gd_im_grp
+rep = 0.60, gd_z_grp
+rep = 0.60, gd_bh_grp
+rep = 0.60, gd_lfl_grp
+rep = 0.60, fc_pfl_grp
+rep = 0.60, li01_station_1_grp
+rep = 0.60, li01_station_2_grp
+rep = 0.60, li02_station_1_grp
+rep = 0.60, li04_station_1_grp
+rep = 0.60, br01_station_1_grp
+rep = 0.60, br03_station_1_grp
+rep = 0.60, br05_station_1_grp
+rep = 0.60, ku01_station_1_grp
+rep = 0.60, ku03_station_1_grp
+rep = 0.60, ku05_station_1_grp
+rep = 0.60, rh01_station_1_grp
+rep = 0.60, rh02_station_1_grp
+rep = 0.60, bw01_station_1_grp
+rep = 0.60, bw04_station_1_grp
+rep = 0.60, bw06_station_1_grp
+rep = 0.60, bw07_station_1_grp
+rep = 0.60, bw09_station_1_grp
+rep = 0.60, ew01_station_1_grp
+rep = 0.60, foxBot_grp
+rep = 0.60, KittBot_grp
+rep = 0.60, ww2JacobBot_grp
+rep = 0.60, GrimsGreen_grp
+rep = 0.60, Wo3dy_grp
+rep = 0.60, ChipBot_grp
+rep = 0.60, Trickbot_grp
+rep = 0.60, OutsidersFollowers_grp
+rep = 0.60, DarkMarauderBot_grp
+rep = 0.60, DreadPirateLowsound_grp
+rep = 0.60, HowdaDoodeWTF_grp
+</section>
+<source>
+rep = 0, li_n_grp
+rep = 0, li_lsf_grp
+rep = 0, li_p_grp
+rep = 0, br_n_grp
+rep = 0, br_p_grp
+rep = 0, ku_n_grp
+rep = 0, ku_p_grp
+rep = 0, rh_n_grp
+rep = 0, rh_p_grp
+rep = 0, co_alg_grp
+rep = 0, co_be_grp
+rep = 0, br_m_grp
+rep = 0, co_nws_grp
+rep = 0, co_hsp_grp
+rep = 0, co_ic_grp
+rep = 0, co_khc_grp
+rep = 0, co_kt_grp
+rep = 0, rh_m_grp
+rep = 0, co_me_grp
+rep = 0, co_ni_grp
+rep = 0, co_os_grp
+rep = 0, co_rs_grp
+rep = 0, co_shi_grp
+rep = 0, co_ss_grp
+rep = 0, co_ti_grp
+rep = 0, co_vr_grp
+rep = -0.99, fc_bd_grp
+rep = -0.99, fc_b_grp
+rep = -0.99, fc_c_grp
+rep = -0.99, fc_fa_grp
+rep = -0.99, fc_g_grp
+rep = -0.99, fc_gc_grp
+rep = 0, fc_h_grp
+rep = -0.99, fc_j_grp
+rep = -0.99, fc_lh_grp
+rep = -0.99, fc_lr_grp
+rep = -0.99, fc_lwb_grp
+rep = -0.99, fc_m_grp
+rep = -0.99, fc_ou_grp
+rep = -0.99, fc_rh_grp
+rep = 0, fc_or_grp
+rep = -0.99, fc_u_grp
+rep = -0.99, fc_x_grp
+rep = 0, gd_gm_grp
+rep = -0.99, fc_n_grp
+rep = 0, fc_ln_grp
+rep = 0, fc_kn_grp
+rep = 0, fc_rn_grp
+rep = 0, fc_q_grp
+rep = 0, fc_f_grp
+rep = 0, gd_im_grp
+rep = 0, gd_z_grp
+rep = 0, gd_bh_grp
+rep = 0, gd_lfl_grp
+rep = -0.99, fc_pfl_grp
+rep = 0.60, li01_station_1_grp
+rep = 0.60, li01_station_2_grp
+rep = 0.60, li02_station_1_grp
+rep = 0.60, li04_station_1_grp
+rep = 0.60, br01_station_1_grp
+rep = 0.60, br03_station_1_grp
+rep = 0.60, br05_station_1_grp
+rep = 0.60, ku01_station_1_grp
+rep = 0.60, ku03_station_1_grp
+rep = 0.60, ku05_station_1_grp
+rep = 0.60, rh01_station_1_grp
+rep = 0.60, rh02_station_1_grp
+rep = 0.60, bw01_station_1_grp
+rep = 0.60, bw04_station_1_grp
+rep = 0.60, bw06_station_1_grp
+rep = 0.60, bw07_station_1_grp
+rep = 0.60, bw09_station_1_grp
+rep = 0.60, ew01_station_1_grp
+rep = 0.60, foxBot_grp
+rep = 0.60, KittBot_grp
+rep = 0.60, ww2JacobBot_grp
+rep = 0.60, GrimsGreen_grp
+rep = 0.60, Wo3dy_grp
+rep = 0.60, ChipBot_grp
+rep = 0.60, Trickbot_grp
+rep = 0.60, OutsidersFollowers_grp
+rep = 0.60, DarkMarauderBot_grp
+rep = 0.60, DreadPirateLowsound_grp
+rep = 0.60, HowdaDoodeWTF_grp
+</source>
+</data>
+<data file="Data\initialworld.ini" method="sectionappend" numtimes="-1" options="5:2">
+<section>
+rep = 0.60, li_n_grp
+rep = 0.60, li_lsf_grp
+rep = 0.60, li_p_grp
+rep = 0.60, br_n_grp
+rep = 0.60, br_p_grp
+rep = 0.60, ku_n_grp
+rep = 0.60, ku_p_grp
+rep = 0.60, rh_n_grp
+rep = 0.60, rh_p_grp
+rep = 0.60, co_alg_grp
+rep = 0.60, co_be_grp
+rep = 0.60, br_m_grp
+rep = 0.60, co_nws_grp
+rep = 0.60, co_hsp_grp
+rep = 0.60, co_ic_grp
+rep = 0.60, co_khc_grp
+rep = 0.60, co_kt_grp
+rep = 0.60, rh_m_grp
+rep = 0.60, co_me_grp
+rep = 0.60, co_ni_grp
+rep = 0.60, co_os_grp
+rep = 0.60, co_rs_grp
+rep = 0.60, co_shi_grp
+rep = 0.60, co_ss_grp
+rep = 0.60, co_ti_grp
+rep = 0.60, co_vr_grp
+rep = 0.60, fc_bd_grp
+rep = 0.60, fc_b_grp
+rep = 0.60, fc_c_grp
+rep = 0.60, fc_fa_grp
+rep = 0.60, fc_g_grp
+rep = 0.60, fc_gc_grp
+rep = 0.60, fc_h_grp
+rep = 0.60, fc_j_grp
+rep = 0.60, fc_lh_grp
+rep = 0.60, fc_lr_grp
+rep = 0.60, fc_lwb_grp
+rep = 0.60, fc_m_grp
+rep = 0.60, fc_ou_grp
+rep = 0.60, fc_rh_grp
+rep = 0.60, fc_or_grp
+rep = 0.60, fc_u_grp
+rep = 0.60, fc_x_grp
+rep = 0.60, gd_gm_grp
+rep = 0.60, fc_n_grp
+rep = 0.60, fc_ln_grp
+rep = 0.60, fc_kn_grp
+rep = 0.60, fc_rn_grp
+rep = 0.60, fc_q_grp
+rep = 0.60, fc_f_grp
+rep = 0.60, gd_im_grp
+rep = 0.60, gd_z_grp
+rep = 0.60, gd_bh_grp
+rep = 0.60, gd_lfl_grp
+rep = 0.60, fc_pfl_grp
+rep = 0.60, li01_station_1_grp
+rep = 0.60, li01_station_2_grp
+rep = 0.60, li02_station_1_grp
+rep = 0.60, li04_station_1_grp
+rep = 0.60, br01_station_1_grp
+rep = 0.60, br03_station_1_grp
+rep = 0.60, br05_station_1_grp
+rep = 0.60, ku01_station_1_grp
+rep = 0.60, ku03_station_1_grp
+rep = 0.60, ku05_station_1_grp
+rep = 0.60, rh01_station_1_grp
+rep = 0.60, rh02_station_1_grp
+rep = 0.60, bw01_station_1_grp
+rep = 0.60, bw04_station_1_grp
+rep = 0.60, bw06_station_1_grp
+rep = 0.60, bw07_station_1_grp
+rep = 0.60, bw09_station_1_grp
+rep = 0.60, ew01_station_1_grp
+rep = 0.60, foxBot_grp
+rep = 0.60, KittBot_grp
+rep = 0.60, ww2JacobBot_grp
+rep = 0.60, GrimsGreen_grp
+rep = 0.60, Wo3dy_grp
+rep = 0.60, ChipBot_grp
+rep = 0.60, Trickbot_grp
+rep = 0.60, OutsidersFollowers_grp
+rep = 0.60, DarkMarauderBot_grp
+rep = 0.60, DreadPirateLowsound_grp
+rep = 0.60, HowdaDoodeWTF_grp
+</section>
+<source>
+rep = -0.99, li_n_grp
+rep = 0, li_lsf_grp
+rep = -0.99, li_p_grp
+rep = -0.99, br_n_grp
+rep = -0.99, br_p_grp
+rep = -0.99, ku_n_grp
+rep = -0.99, ku_p_grp
+rep = -0.99, rh_n_grp
+rep = -0.99, rh_p_grp
+rep = -0.99, co_alg_grp
+rep = -0.99, co_be_grp
+rep = -0.99, br_m_grp
+rep = -0.99, co_nws_grp
+rep = -0.99, co_hsp_grp
+rep = -0.99, co_ic_grp
+rep = -0.99, co_khc_grp
+rep = -0.99, co_kt_grp
+rep = -0.99, rh_m_grp
+rep = -0.99, co_me_grp
+rep = -0.99, co_ni_grp
+rep = -0.99, co_os_grp
+rep = -0.99, co_rs_grp
+rep = -0.99, co_shi_grp
+rep = -0.99, co_ss_grp
+rep = -0.99, co_ti_grp
+rep = -0.99, co_vr_grp
+rep = 0, fc_bd_grp
+rep = 0, fc_b_grp
+rep = 0, fc_c_grp
+rep = 0, fc_fa_grp
+rep = 0, fc_g_grp
+rep = 0, fc_gc_grp
+rep = -0.99, fc_h_grp
+rep = 0, fc_j_grp
+rep = 0, fc_lh_grp
+rep = 0, fc_lr_grp
+rep = 0, fc_lwb_grp
+rep = 0, fc_m_grp
+rep = 0, fc_ou_grp
+rep = 0, fc_rh_grp
+rep = 0, fc_or_grp
+rep = 0, fc_u_grp
+rep = 0, fc_x_grp
+rep = -0.99, gd_gm_grp
+rep = -0.99, fc_n_grp
+rep = -0.99, fc_ln_grp
+rep = -0.99, fc_kn_grp
+rep = -0.99, fc_rn_grp
+rep = 0, fc_q_grp
+rep = 0, fc_f_grp
+rep = 0, gd_im_grp
+rep = 0, gd_z_grp
+rep = -0.99, gd_bh_grp
+rep = -0.99, gd_lfl_grp
+rep = 0, fc_pfl_grp
+rep = 0.60, li01_station_1_grp
+rep = 0.60, li01_station_2_grp
+rep = 0.60, li02_station_1_grp
+rep = 0.60, li04_station_1_grp
+rep = 0.60, br01_station_1_grp
+rep = 0.60, br03_station_1_grp
+rep = 0.60, br05_station_1_grp
+rep = 0.60, ku01_station_1_grp
+rep = 0.60, ku03_station_1_grp
+rep = 0.60, ku05_station_1_grp
+rep = 0.60, rh01_station_1_grp
+rep = 0.60, rh02_station_1_grp
+rep = 0.60, bw01_station_1_grp
+rep = 0.60, bw04_station_1_grp
+rep = 0.60, bw06_station_1_grp
+rep = 0.60, bw07_station_1_grp
+rep = 0.60, bw09_station_1_grp
+rep = 0.60, ew01_station_1_grp
+rep = 0.60, foxBot_grp
+rep = 0.60, KittBot_grp
+rep = 0.60, ww2JacobBot_grp
+rep = 0.60, GrimsGreen_grp
+rep = 0.60, Wo3dy_grp
+rep = 0.60, ChipBot_grp
+rep = 0.60, Trickbot_grp
+rep = 0.60, OutsidersFollowers_grp
+rep = 0.60, DarkMarauderBot_grp
+rep = 0.60, DreadPirateLowsound_grp
+rep = 0.60, HowdaDoodeWTF_grp
+</source>
+</data>
+<data file="Data\initialworld.ini" method="sectionappend" numtimes="-1" options="5:3">
+<section>
+rep = 0.60, li_n_grp
+rep = 0.60, li_lsf_grp
+rep = 0.60, li_p_grp
+rep = 0.60, br_n_grp
+rep = 0.60, br_p_grp
+rep = 0.60, ku_n_grp
+rep = 0.60, ku_p_grp
+rep = 0.60, rh_n_grp
+rep = 0.60, rh_p_grp
+rep = 0.60, co_alg_grp
+rep = 0.60, co_be_grp
+rep = 0.60, br_m_grp
+rep = 0.60, co_nws_grp
+rep = 0.60, co_hsp_grp
+rep = 0.60, co_ic_grp
+rep = 0.60, co_khc_grp
+rep = 0.60, co_kt_grp
+rep = 0.60, rh_m_grp
+rep = 0.60, co_me_grp
+rep = 0.60, co_ni_grp
+rep = 0.60, co_os_grp
+rep = 0.60, co_rs_grp
+rep = 0.60, co_shi_grp
+rep = 0.60, co_ss_grp
+rep = 0.60, co_ti_grp
+rep = 0.60, co_vr_grp
+rep = 0.60, fc_bd_grp
+rep = 0.60, fc_b_grp
+rep = 0.60, fc_c_grp
+rep = 0.60, fc_fa_grp
+rep = 0.60, fc_g_grp
+rep = 0.60, fc_gc_grp
+rep = 0.60, fc_h_grp
+rep = 0.60, fc_j_grp
+rep = 0.60, fc_lh_grp
+rep = 0.60, fc_lr_grp
+rep = 0.60, fc_lwb_grp
+rep = 0.60, fc_m_grp
+rep = 0.60, fc_ou_grp
+rep = 0.60, fc_rh_grp
+rep = 0.60, fc_or_grp
+rep = 0.60, fc_u_grp
+rep = 0.60, fc_x_grp
+rep = 0.60, gd_gm_grp
+rep = 0.60, fc_n_grp
+rep = 0.60, fc_ln_grp
+rep = 0.60, fc_kn_grp
+rep = 0.60, fc_rn_grp
+rep = 0.60, fc_q_grp
+rep = 0.60, fc_f_grp
+rep = 0.60, gd_im_grp
+rep = 0.60, gd_z_grp
+rep = 0.60, gd_bh_grp
+rep = 0.60, gd_lfl_grp
+rep = 0.60, fc_pfl_grp
+rep = 0.60, li01_station_1_grp
+rep = 0.60, li01_station_2_grp
+rep = 0.60, li02_station_1_grp
+rep = 0.60, li04_station_1_grp
+rep = 0.60, br01_station_1_grp
+rep = 0.60, br03_station_1_grp
+rep = 0.60, br05_station_1_grp
+rep = 0.60, ku01_station_1_grp
+rep = 0.60, ku03_station_1_grp
+rep = 0.60, ku05_station_1_grp
+rep = 0.60, rh01_station_1_grp
+rep = 0.60, rh02_station_1_grp
+rep = 0.60, bw01_station_1_grp
+rep = 0.60, bw04_station_1_grp
+rep = 0.60, bw06_station_1_grp
+rep = 0.60, bw07_station_1_grp
+rep = 0.60, bw09_station_1_grp
+rep = 0.60, ew01_station_1_grp
+rep = 0.60, foxBot_grp
+rep = 0.60, KittBot_grp
+rep = 0.60, ww2JacobBot_grp
+rep = 0.60, GrimsGreen_grp
+rep = 0.60, Wo3dy_grp
+rep = 0.60, ChipBot_grp
+rep = 0.60, Trickbot_grp
+rep = 0.60, OutsidersFollowers_grp
+rep = 0.60, DarkMarauderBot_grp
+rep = 0.60, DreadPirateLowsound_grp
+rep = 0.60, HowdaDoodeWTF_grp
+</section>
+<source>
+rep = 0, li_n_grp
+rep = 0, li_lsf_grp
+rep = 0, li_p_grp
+rep = 0, br_n_grp
+rep = 0, br_p_grp
+rep = 0, ku_n_grp
+rep = 0, ku_p_grp
+rep = 0, rh_n_grp
+rep = 0, rh_p_grp
+rep = 0, co_alg_grp
+rep = 0, co_be_grp
+rep = 0, br_m_grp
+rep = 0, co_nws_grp
+rep = 0, co_hsp_grp
+rep = 0, co_ic_grp
+rep = 0, co_khc_grp
+rep = 0, co_kt_grp
+rep = 0, rh_m_grp
+rep = 0, co_me_grp
+rep = 0, co_ni_grp
+rep = 0, co_os_grp
+rep = 0, co_rs_grp
+rep = 0, co_shi_grp
+rep = 0, co_ss_grp
+rep = 0, co_ti_grp
+rep = 0, co_vr_grp
+rep = 0, fc_bd_grp
+rep = 0, fc_b_grp
+rep = 0, fc_c_grp
+rep = 0, fc_fa_grp
+rep = 0, fc_g_grp
+rep = 0, fc_gc_grp
+rep = 0, fc_h_grp
+rep = 0, fc_j_grp
+rep = 0, fc_lh_grp
+rep = 0, fc_lr_grp
+rep = 0, fc_lwb_grp
+rep = 0, fc_m_grp
+rep = 0, fc_ou_grp
+rep = 0, fc_rh_grp
+rep = 0, fc_or_grp
+rep = 0, fc_u_grp
+rep = 0, fc_x_grp
+rep = 0, gd_gm_grp
+rep = 0, fc_n_grp
+rep = 0, fc_ln_grp
+rep = 0, fc_kn_grp
+rep = 0, fc_rn_grp
+rep = 0, fc_q_grp
+rep = 0, fc_f_grp
+rep = 0, gd_im_grp
+rep = 0, gd_z_grp
+rep = 0, gd_bh_grp
+rep = 0, gd_lfl_grp
+rep = 0, fc_pfl_grp
+rep = 0, li01_station_1_grp
+rep = 0, li01_station_2_grp
+rep = 0, li02_station_1_grp
+rep = 0, li04_station_1_grp
+rep = 0, br01_station_1_grp
+rep = 0, br03_station_1_grp
+rep = 0, br05_station_1_grp
+rep = 0, ku01_station_1_grp
+rep = 0, ku03_station_1_grp
+rep = 0, ku05_station_1_grp
+rep = 0, rh01_station_1_grp
+rep = 0, rh02_station_1_grp
+rep = 0, bw01_station_1_grp
+rep = 0, bw04_station_1_grp
+rep = 0, bw06_station_1_grp
+rep = 0, bw07_station_1_grp
+rep = 0, bw09_station_1_grp
+rep = 0, ew01_station_1_grp
+rep = 0, foxBot_grp
+rep = 0, KittBot_grp
+rep = 0, ww2JacobBot_grp
+rep = 0, GrimsGreen_grp
+rep = 0, Wo3dy_grp
+rep = 0, ChipBot_grp
+rep = 0, Trickbot_grp
+rep = 0, OutsidersFollowers_grp
+rep = 0, DarkMarauderBot_grp
+rep = 0, DreadPirateLowsound_grp
+rep = 0, HowdaDoodeWTF_grp
+</source>
+</data>
+<data file="Data\initialworld.ini" method="sectionappend" numtimes="-1" options="5:4">
+<section>
+rep = 0.60, li_n_grp
+rep = 0.60, li_lsf_grp
+rep = 0.60, li_p_grp
+rep = 0.60, br_n_grp
+rep = 0.60, br_p_grp
+rep = 0.60, ku_n_grp
+rep = 0.60, ku_p_grp
+rep = 0.60, rh_n_grp
+rep = 0.60, rh_p_grp
+rep = 0.60, co_alg_grp
+rep = 0.60, co_be_grp
+rep = 0.60, br_m_grp
+rep = 0.60, co_nws_grp
+rep = 0.60, co_hsp_grp
+rep = 0.60, co_ic_grp
+rep = 0.60, co_khc_grp
+rep = 0.60, co_kt_grp
+rep = 0.60, rh_m_grp
+rep = 0.60, co_me_grp
+rep = 0.60, co_ni_grp
+rep = 0.60, co_os_grp
+rep = 0.60, co_rs_grp
+rep = 0.60, co_shi_grp
+rep = 0.60, co_ss_grp
+rep = 0.60, co_ti_grp
+rep = 0.60, co_vr_grp
+rep = 0.60, fc_bd_grp
+rep = 0.60, fc_b_grp
+rep = 0.60, fc_c_grp
+rep = 0.60, fc_fa_grp
+rep = 0.60, fc_g_grp
+rep = 0.60, fc_gc_grp
+rep = 0.60, fc_h_grp
+rep = 0.60, fc_j_grp
+rep = 0.60, fc_lh_grp
+rep = 0.60, fc_lr_grp
+rep = 0.60, fc_lwb_grp
+rep = 0.60, fc_m_grp
+rep = 0.60, fc_ou_grp
+rep = 0.60, fc_rh_grp
+rep = 0.60, fc_or_grp
+rep = 0.60, fc_u_grp
+rep = 0.60, fc_x_grp
+rep = 0.60, gd_gm_grp
+rep = 0.60, fc_n_grp
+rep = 0.60, fc_ln_grp
+rep = 0.60, fc_kn_grp
+rep = 0.60, fc_rn_grp
+rep = 0.60, fc_q_grp
+rep = 0.60, fc_f_grp
+rep = 0.60, gd_im_grp
+rep = 0.60, gd_z_grp
+rep = 0.60, gd_bh_grp
+rep = 0.60, gd_lfl_grp
+rep = 0.60, fc_pfl_grp
+rep = 0.60, li01_station_1_grp
+rep = 0.60, li01_station_2_grp
+rep = 0.60, li02_station_1_grp
+rep = 0.60, li04_station_1_grp
+rep = 0.60, br01_station_1_grp
+rep = 0.60, br03_station_1_grp
+rep = 0.60, br05_station_1_grp
+rep = 0.60, ku01_station_1_grp
+rep = 0.60, ku03_station_1_grp
+rep = 0.60, ku05_station_1_grp
+rep = 0.60, rh01_station_1_grp
+rep = 0.60, rh02_station_1_grp
+rep = 0.60, bw01_station_1_grp
+rep = 0.60, bw04_station_1_grp
+rep = 0.60, bw06_station_1_grp
+rep = 0.60, bw07_station_1_grp
+rep = 0.60, bw09_station_1_grp
+rep = 0.60, ew01_station_1_grp
+rep = 0.60, foxBot_grp
+rep = 0.60, KittBot_grp
+rep = 0.60, ww2JacobBot_grp
+rep = 0.60, GrimsGreen_grp
+rep = 0.60, Wo3dy_grp
+rep = 0.60, ChipBot_grp
+rep = 0.60, Trickbot_grp
+rep = 0.60, OutsidersFollowers_grp
+rep = 0.60, DarkMarauderBot_grp
+rep = 0.60, DreadPirateLowsound_grp
+rep = 0.60, HowdaDoodeWTF_grp
+</section>
+<source>
+rep = -0.99, li_n_grp
+rep = -0.99, li_lsf_grp
+rep = -0.99, li_p_grp
+rep = -0.99, br_n_grp
+rep = -0.99, br_p_grp
+rep = -0.99, ku_n_grp
+rep = -0.99, ku_p_grp
+rep = -0.99, rh_n_grp
+rep = -0.99, rh_p_grp
+rep = -0.99, co_alg_grp
+rep = -0.99, co_be_grp
+rep = -0.99, br_m_grp
+rep = -0.99, co_nws_grp
+rep = -0.99, co_hsp_grp
+rep = -0.99, co_ic_grp
+rep = -0.99, co_khc_grp
+rep = -0.99, co_kt_grp
+rep = -0.99, rh_m_grp
+rep = -0.99, co_me_grp
+rep = -0.99, co_ni_grp
+rep = -0.99, co_os_grp
+rep = -0.99, co_rs_grp
+rep = -0.99, co_shi_grp
+rep = -0.99, co_ss_grp
+rep = -0.99, co_ti_grp
+rep = -0.99, co_vr_grp
+rep = -0.99, fc_bd_grp
+rep = -0.99, fc_b_grp
+rep = -0.99, fc_c_grp
+rep = -0.99, fc_fa_grp
+rep = -0.99, fc_g_grp
+rep = -0.99, fc_gc_grp
+rep = -0.99, fc_h_grp
+rep = -0.99, fc_j_grp
+rep = -0.99, fc_lh_grp
+rep = -0.99, fc_lr_grp
+rep = -0.99, fc_lwb_grp
+rep = -0.99, fc_m_grp
+rep = -0.99, fc_ou_grp
+rep = -0.99, fc_rh_grp
+rep = -0.99, fc_or_grp
+rep = -0.99, fc_u_grp
+rep = -0.99, fc_x_grp
+rep = -0.99, gd_gm_grp
+rep = -0.99, fc_n_grp
+rep = -0.99, fc_ln_grp
+rep = -0.99, fc_kn_grp
+rep = -0.99, fc_rn_grp
+rep = -0.99, fc_q_grp
+rep = -0.99, fc_f_grp
+rep = -0.99, gd_im_grp
+rep = -0.99, gd_z_grp
+rep = -0.99, gd_bh_grp
+rep = -0.99, gd_lfl_grp
+rep = -0.99, fc_pfl_grp
+rep = -0.99, li01_station_1_grp
+rep = -0.99, li01_station_2_grp
+rep = -0.99, li02_station_1_grp
+rep = -0.99, li04_station_1_grp
+rep = -0.99, br01_station_1_grp
+rep = -0.99, br03_station_1_grp
+rep = -0.99, br05_station_1_grp
+rep = -0.99, ku01_station_1_grp
+rep = -0.99, ku03_station_1_grp
+rep = -0.99, ku05_station_1_grp
+rep = -0.99, rh01_station_1_grp
+rep = -0.99, rh02_station_1_grp
+rep = -0.99, bw01_station_1_grp
+rep = -0.99, bw04_station_1_grp
+rep = -0.99, bw06_station_1_grp
+rep = -0.99, bw07_station_1_grp
+rep = -0.99, bw09_station_1_grp
+rep = -0.99, ew01_station_1_grp
+rep = -0.99, foxBot_grp
+rep = -0.99, KittBot_grp
+rep = -0.99, ww2JacobBot_grp
+rep = -0.99, GrimsGreen_grp
+rep = -0.99, Wo3dy_grp
+rep = -0.99, ChipBot_grp
+rep = -0.99, Trickbot_grp
+rep = -0.99, OutsidersFollowers_grp
+rep = -0.99, DarkMarauderBot_grp
+rep = -0.99, DreadPirateLowsound_grp
+rep = -0.99, HowdaDoodeWTF_grp
+</source>
+</data>
+
+</script>

@@ -1,0 +1,1876 @@
+<script>
+<header name="88 Flak Version 1.27 Soundtrack 07/17/09" savesafe="true" exclusive="false">
+<scriptversion>
+1.3
+</scriptversion>
+<author>
+Please view Readme for credit
+</author>
+<modurl>
+http://www.memes.no/88flak/
+</modurl>
+<description>
+THIS IS AN OPTIONAL PATCH, AND DOES NOT NEED TO BE ACTIVATED UNLESS YOU WANT THE DESIRED EFFECT FROM THE PATCH.
+Activate this AFTER activating Flak. Ignore FLMM's "incompatible" error messages.
+
+Tired of Freelancer's default music? Want something a little more fitting to the combat of 88 Flak? Give this a spin.
+Please see the readme for more information on soundtrack selection.
+
+This will not work with normal Freelancer.
+</description>
+
+<options>
+
+<option name="MP Client: Soundtrack selection?" savesafe="true">
+<item id="0" name=" (Default) 88 Flak ST">
+</item>
+<item id="1" name="Alternate Heavy ST">
+</item>
+<item id="2" name="Vanilla ST (new title screen tracks only)">
+</item>
+</option>
+
+<option name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="88 Flak Soundtrack" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="Version 1.27, listed in server list as 88.27" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option name="Bugs, suggestions, etc: http://www.memes.no/88flak/" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+</options>
+</header>
+
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro1.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_tau_danger
+</dest>
+<source>
+music = LinkinPark-Session
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro2.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_ku_danger
+</dest>
+<source>
+music = LinkinPark-CureForTheItch
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro3.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_anticipation_more_forboding
+</dest>
+<source>
+music = FlyingLotus-GNGBNG
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro4.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_race_start
+</dest>
+<source>
+music = DJShadow-OrganDonor
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro5.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_discordant_psychosis
+</dest>
+<source>
+music = Conifer-IntoTheGauntlet
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro6.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_sigma_space
+</dest>
+<source>
+music = BioWare-MDK2Theme
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro7.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_omega_danger
+</dest>
+<source>
+music = DJShadow-Highnoon
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro8.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_reveal_contraband
+</dest>
+<source>
+music = Pelican-Untitled
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro9.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_awe_and_wonderment
+</dest>
+<source>
+music = NiN-LaMer
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro10.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_reveal_and_exposition
+</dest>
+<source>
+music = NiN-JustLikeYouImagined
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro11.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_no_dyson_battle
+</dest>
+<source>
+music = NiN-Complication
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro12.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_omicron_danger
+</dest>
+<source>
+music = ISIS-AlteredCourse
+</source>
+</data>
+<data file="Data\Universe\Systems\Intro\Bases\Rooms\intro13.ini" method="filereplace" numtimes="-1">
+<dest>
+music = music_reveal_special_mystery
+</dest>
+<source>
+music = CrystalMethod-BusyChild
+</source>
+</data>
+
+<data file="Data\Audio\interface_sounds.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+[Sound]
+nickname = ui_music_test
+type = music
+file = Audio\music\music_tau_danger.wav
+</dest>
+<source>
+[Sound]
+nickname = ui_music_test
+type = music
+file = Audio\music-1\music_tau_iw_danger_battle_88flak.wav
+</source>
+</data>
+<data file="Data\Universe\Systems\Li06\Li06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_iw_danger
+</dest>
+<source>
+music = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch03\Ch03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_iw_danger
+</dest>
+<source>
+music = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch06\Ch06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_no_ally_danger
+</dest>
+<source>
+music = music1_nomad_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li01\Li01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_li_space
+</dest>
+<source>
+music = music1_li_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew03\Ew03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_omega_space
+</dest>
+<source>
+music = music1_omega_omicron_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_tau_space
+</dest>
+<source>
+music = music1_tau_iw_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw08\Bw08.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_tau_space
+</dest>
+<source>
+music = music1_tau_iw_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_sigma_space
+</dest>
+<source>
+music = music1_sigma_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+music = music_sigma_space
+</dest>
+<source>
+music = music1_sigma_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar01\Ar01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar02\Ar02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar03\Ar03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music1_rh_space_88flak
+danger = music1_rh_danger_battle_88flak
+battle = music1_rh_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar04\Ar04.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music1_rh_space_88flak
+danger = music1_rh_danger_battle_88flak
+battle = music1_rh_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar05\Ar05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music1_nomad_space_88flak
+danger = music1_nomad_danger_battle_88flak
+battle = music1_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar06\Ar06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music1_nomad_space_88flak
+danger = music1_nomad_danger_battle_88flak
+battle = music1_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br01\Br01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music1_br_space_88flak
+danger = music1_br_danger_battle_88flak
+battle = music1_br_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br02\Br02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music1_br_space_88flak
+danger = music1_br_danger_battle_88flak
+battle = music1_br_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br03\Br03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music1_br_space_88flak
+danger = music1_br_danger_battle_88flak
+battle = music1_br_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br04\Br04.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music1_br_space_88flak
+danger = music1_br_danger_battle_88flak
+battle = music1_br_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br05\Br05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music1_br_space_88flak
+danger = music1_br_danger_battle_88flak
+battle = music1_br_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br06\Br06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music1_br_space_88flak
+danger = music1_br_danger_battle_88flak
+battle = music1_br_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw01\Bw01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw02\Bw02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw03\Bw03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw04\Bw04.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_sigma_space
+danger = music_sigma_danger
+battle = music_sigma_battle
+</dest>
+<source>
+space = music1_sigma_space_88flak
+danger = music1_sigma_danger_battle_88flak
+battle = music1_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw06\Bw06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_sigma_space
+danger = music_sigma_danger
+battle = music_sigma_battle
+</dest>
+<source>
+space = music1_sigma_space_88flak
+danger = music1_sigma_danger_battle_88flak
+battle = music1_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw07\Bw07.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_sigma_space
+danger = music_sigma_danger
+battle = music_sigma_battle
+</dest>
+<source>
+space = music1_sigma_space_88flak
+danger = music1_sigma_danger_battle_88flak
+battle = music1_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw08\Bw08.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_tau_space
+danger = music_tau_danger
+battle = music_tau_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw09\Bw09.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_tau_space
+danger = music_tau_danger
+battle = music_tau_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_tau_space
+danger = music_tau_danger
+battle = music_tau_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew01\Ew01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_tau_space
+danger = music_tau_danger
+battle = music_tau_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew02\Ew02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew03\Ew03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew04\Ew04.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew05\Ew05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_no_dyson_battle
+danger = music_no_dyson_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music1_li_danger_battle_88flak
+danger = music1_li_danger_battle_88flak
+battle = music1_li_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew06\Ew06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music1_nomad_space_88flak
+danger = music1_nomad_danger_battle_88flak
+battle = music1_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\FP7\FP7_system.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_danger
+battle = music_no_ally_danger
+</dest>
+<source>
+space = music1_nomad_space_88flak
+danger = music1_nomad_space_88flak
+battle = music1_nomad_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\FP7MP\FP7.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_danger
+battle = music_no_ally_danger
+</dest>
+<source>
+space = music1_nomad_space_88flak
+danger = music1_nomad_space_88flak
+battle = music1_nomad_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi01\Hi01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi02\Hi02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw01\Iw01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw02\Iw02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw03\Iw03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw04\Iw04.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw05\Iw05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw06\Iw06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku01\Ku01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music1_ku_space_88flak
+danger = music1_ku_danger_battle_88flak
+battle = music1_ku_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku02\Ku02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music1_ku_space_88flak
+danger = music1_ku_danger_battle_88flak
+battle = music1_ku_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku03\Ku03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music1_ku_space_88flak
+danger = music1_ku_danger_battle_88flak
+battle = music1_ku_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku04\Ku04.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music1_ku_space_88flak
+danger = music1_ku_danger_battle_88flak
+battle = music1_ku_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku05\Ku05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music1_ku_space_88flak
+danger = music1_ku_danger_battle_88flak
+battle = music1_ku_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku06\Ku06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music1_ku_space_88flak
+danger = music1_ku_danger_battle_88flak
+battle = music1_ku_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku07\Ku07.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music1_ku_space_88flak
+danger = music1_ku_danger_battle_88flak
+battle = music1_ku_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li01\Li01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_li_space
+danger = music_li_danger
+battle = music_li_battle
+</dest>
+<source>
+space = music1_li_space_88flak
+danger = music1_li_danger_battle_88flak
+battle = music1_li_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li02\Li02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_li_space
+danger = music_li_danger
+battle = music_li_battle
+</dest>
+<source>
+space = music1_li_space_88flak
+danger = music1_li_danger_battle_88flak
+battle = music1_li_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li03\Li03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_li_space
+danger = music_li_danger
+battle = music_li_battle
+</dest>
+<source>
+space = music1_li_space_88flak
+danger = music1_li_danger_battle_88flak
+battle = music1_li_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li04\Li04.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_li_space
+danger = music_li_danger
+battle = music_li_battle
+</dest>
+<source>
+space = music1_li_space_88flak
+danger = music1_li_danger_battle_88flak
+battle = music1_li_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li05\Li05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li06\Li06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li07\Li07.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_space
+battle = music_iw_space
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_space_88flak
+battle = music1_tau_iw_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch03\Ch03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music1_tau_iw_space_88flak
+danger = music1_tau_iw_danger_battle_88flak
+battle = music1_tau_iw_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch06\Ch06.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music1_nomad_space_88flak
+danger = music1_nomad_danger_battle_88flak
+battle = music1_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh01\Rh01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music1_rh_space_88flak
+danger = music1_rh_danger_battle_88flak
+battle = music1_rh_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh02\Rh02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music1_rh_space_88flak
+danger = music1_rh_danger_battle_88flak
+battle = music1_rh_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh03\Rh03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music1_rh_space_88flak
+danger = music1_rh_danger_battle_88flak
+battle = music1_rh_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh04\Rh04.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music1_rh_space_88flak
+danger = music1_rh_danger_battle_88flak
+battle = music1_rh_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh05\Rh05.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music1_rh_space_88flak
+danger = music1_rh_danger_battle_88flak
+battle = music1_rh_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St01\St01.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St02\St02.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St02c\St02c.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St03\St03.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St03b\St03b.ini" method="filereplace" numtimes="-1" options="1:0">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music1_omega_omicron_space_88flak
+danger = music1_omega_omicron_danger_battle_88flak
+battle = music1_omega_omicron_danger_battle_88flak
+</source>
+</data>
+
+<data file="Data\Audio\interface_sounds.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+[Sound]
+nickname = ui_music_test
+type = music
+file = Audio\music\music_tau_danger.wav
+</dest>
+<source>
+[Sound]
+nickname = ui_music_test
+type = music
+file = Audio\music-2\music_li_tau_danger_battle_88flak.wav
+</source>
+</data>
+<data file="Data\Universe\Systems\Li06\Li06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_iw_danger
+</dest>
+<source>
+music = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch03\Ch03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_iw_danger
+</dest>
+<source>
+music = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch06\Ch06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_no_ally_danger
+</dest>
+<source>
+music = music2_rh_nomad_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li01\Li01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_li_space
+</dest>
+<source>
+music = music2_li_tau_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew03\Ew03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_omega_space
+</dest>
+<source>
+music = music2_ku_omega_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_tau_space
+</dest>
+<source>
+music = music2_li_tau_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_tau_space
+</dest>
+<source>
+music = music2_li_tau_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw08\Bw08.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_tau_space
+</dest>
+<source>
+music = music2_li_tau_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_sigma_space
+</dest>
+<source>
+music = music2_br_sigma_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+music = music_sigma_space
+</dest>
+<source>
+music = music2_br_sigma_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar01\Ar01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar02\Ar02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar03\Ar03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar04\Ar04.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar05\Ar05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar06\Ar06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br01\Br01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br02\Br02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br03\Br03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br04\Br04.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br05\Br05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Br06\Br06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_br_space
+danger = music_br_danger
+battle = music_br_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw01\Bw01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw02\Bw02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw03\Bw03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw04\Bw04.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_sigma_space
+danger = music_sigma_danger
+battle = music_sigma_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw06\Bw06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_sigma_space
+danger = music_sigma_danger
+battle = music_sigma_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw07\Bw07.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_sigma_space
+danger = music_sigma_danger
+battle = music_sigma_battle
+</dest>
+<source>
+space = music2_br_sigma_space_88flak
+danger = music2_br_sigma_danger_battle_88flak
+battle = music2_br_sigma_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw08\Bw08.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_tau_space
+danger = music_tau_danger
+battle = music_tau_battle
+</dest>
+<source>
+space = music2_li_tau_space_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw09\Bw09.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_tau_space
+danger = music_tau_danger
+battle = music_tau_battle
+</dest>
+<source>
+space = music2_li_tau_space_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_tau_space
+danger = music_tau_danger
+battle = music_tau_battle
+</dest>
+<source>
+space = music2_li_tau_space_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew01\Ew01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_tau_space
+danger = music_tau_danger
+battle = music_tau_battle
+</dest>
+<source>
+space = music2_li_tau_space_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew02\Ew02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew03\Ew03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omega_space
+danger = music_omega_danger
+battle = music_omega_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew04\Ew04.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew05\Ew05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_no_dyson_battle
+danger = music_no_dyson_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music2_li_tau_danger_battle_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew06\Ew06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\FP7\FP7_system.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_danger
+battle = music_no_ally_danger
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_space_88flak
+battle = music2_rh_nomad_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\FP7MP\FP7.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_danger
+battle = music_no_ally_danger
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_space_88flak
+battle = music2_rh_nomad_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi01\Hi01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi02\Hi02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw01\Iw01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw02\Iw02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw03\Iw03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw04\Iw04.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw05\Iw05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw06\Iw06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku01\Ku01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku02\Ku02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku03\Ku03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku04\Ku04.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku05\Ku05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku06\Ku06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku07\Ku07.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_ku_space
+danger = music_ku_danger
+battle = music_ku_battle
+</dest>
+<source>
+space = music2_ku_omega_space_88flak
+danger = music2_ku_omega_danger_battle_88flak
+battle = music2_ku_omega_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li01\Li01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_li_space
+danger = music_li_danger
+battle = music_li_battle
+</dest>
+<source>
+space = music2_li_tau_space_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li02\Li02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_li_space
+danger = music_li_danger
+battle = music_li_battle
+</dest>
+<source>
+space = music2_li_tau_space_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li03\Li03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_li_space
+danger = music_li_danger
+battle = music_li_battle
+</dest>
+<source>
+space = music2_li_tau_space_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li04\Li04.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_li_space
+danger = music_li_danger
+battle = music_li_battle
+</dest>
+<source>
+space = music2_li_tau_space_88flak
+danger = music2_li_tau_danger_battle_88flak
+battle = music2_li_tau_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li05\Li05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li06\Li06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Li07\Li07.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_space
+battle = music_iw_space
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_space_88flak
+battle = music2_iw_omicron_space_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch03\Ch03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch06\Ch06.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_no_ally_danger
+danger = music_no_ally_battle
+battle = music_no_dyson_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh01\Rh01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh02\Rh02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh03\Rh03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh04\Rh04.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh05\Rh05.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_rh_space
+danger = music_rh_danger
+battle = music_rh_battle
+</dest>
+<source>
+space = music2_rh_nomad_space_88flak
+danger = music2_rh_nomad_danger_battle_88flak
+battle = music2_rh_nomad_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St01\St01.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St02\St02.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St02c\St02c.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St03\St03.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+<data file="Data\Universe\Systems\St03b\St03b.ini" method="filereplace" numtimes="-1" options="1:1">
+<dest>
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
+</dest>
+<source>
+space = music2_iw_omicron_space_88flak
+danger = music2_iw_omicron_danger_battle_88flak
+battle = music2_iw_omicron_danger_battle_88flak
+</source>
+</data>
+
+</script>

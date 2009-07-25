@@ -1,0 +1,45 @@
+[zone]
+nickname = Zone_(BASE HERE)_wingmen_spawn_1
+pos = (POS HERE)
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 4500, 5000 ;Wingmen
+sort = 99
+toughness = 1
+max_battle_size = 9999
+density = 8
+density_restriction = 1, class_patroller
+repop_time = 40
+pop_type = background
+relief_time = 30
+path_label = (BASE HERE)_wingmen_1, 1
+usage = patrol
+visit = 0
+mission_eligible = false
+encounter = patrolp_defend, 1, 0.400000 ;Wingmen
+faction = (FACTION HERE), 1.000000
+encounter = patrolp_follow, 1, 0.600000 ;Wingmen
+faction = (FACTION HERE), 1.000000
+
+[zone]
+nickname = Zone_(BASE HERE)_wingmen_spawn_2
+pos = (POS HERE)
+rotate = -90, 90, 0
+shape = CYLINDER
+size = 4500, 5000 ;Wingmen
+sort = 99
+toughness = 1
+max_battle_size = 9999
+density = 8
+density_restriction = 1, class_patroller
+repop_time = 40
+pop_type = background
+relief_time = 30
+path_label = (BASE HERE)_wingmen_1, 2
+usage = patrol
+visit = 0
+mission_eligible = false
+encounter = patrolp_defend, 1, 0.400000 ;Wingmen
+faction = (FACTION HERE), 1.000000
+encounter = patrolp_follow, 1, 0.600000 ;Wingmen
+faction = (FACTION HERE), 1.000000
