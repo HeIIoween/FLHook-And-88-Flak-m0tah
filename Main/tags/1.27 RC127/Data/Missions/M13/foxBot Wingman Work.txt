@@ -1,0 +1,700 @@
+;------------ WINGMEN STUFF ------------
+;------ Wingmen Shared ------
+[Trigger]
+nickname = Wingmen_FormUp_Init
+system = any
+Cnd_True = no_params
+Act_DeactTrig = Wingmen_FormUp_Init
+Act_DeactTrig = Wingmen_FormUp_Init_Push
+Act_DeactTrig = Wingmen_FormUp_01
+Act_DeactTrig = Wingmen_FormUp_01_Push
+Act_DeactTrig = Wingmen_Attack_01
+Act_DeactTrig = Wingmen_Attack_01_Push
+Act_DeactTrig = Wingmen_FormUp_02
+Act_DeactTrig = Wingmen_FormUp_02_Push
+Act_DeactTrig = Wingmen_Attack_02
+Act_DeactTrig = Wingmen_Attack_02_Push
+Act_DeactTrig = Wingmen_FormUp_03
+Act_DeactTrig = Wingmen_FormUp_03_Push
+Act_DeactTrig = Wingmen_Attack_03
+Act_DeactTrig = Wingmen_Attack_03_Push
+Act_DeactTrig = Wingmen_FormUp_04
+Act_DeactTrig = Wingmen_FormUp_04_Push
+Act_DeactTrig = Wingmen_Attack_04
+Act_DeactTrig = Wingmen_Attack_04_Push
+Act_DeactTrig = Wingmen_FormUp_05
+Act_DeactTrig = Wingmen_FormUp_05_Push
+Act_DeactTrig = Wingmen_Attack_05
+Act_DeactTrig = Wingmen_Attack_05_Push
+Act_DeactTrig = Wingmen_FormUp_06
+Act_DeactTrig = Wingmen_FormUp_06_Push
+Act_DeactTrig = Wingmen_Attack_06
+Act_DeactTrig = Wingmen_Attack_06_Push
+Act_ActTrig = foxBot_CleanForms
+Act_ActTrig = KittBot_CleanForms
+Act_ActTrig = Wingmen_FormUp_Init_Push
+Act_GiveObjList = Player, Default_FormUp
+
+[Trigger]
+nickname = Wingmen_FormUp_Init_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_Attack_01
+Act_ActTrig = KittBot_Attack_01
+
+[Trigger]
+nickname = Wingmen_FormUp_01
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_FormUp_01
+Act_DeactTrig = KittBot_FormUp_01
+Act_ActTrig = Wingmen_FormUp_01_Push
+
+[Trigger]
+nickname = Wingmen_FormUp_01_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_Attack_01
+Act_ActTrig = KittBot_Attack_01
+
+[Trigger]
+nickname = Wingmen_Attack_01
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_Attack_01
+Act_DeactTrig = KittBot_Attack_01
+Act_ActTrig = Wingmen_Attack_01_Push
+Act_ActTrig = Wingmen_BreakAll
+
+[Trigger]
+nickname = Wingmen_Attack_01_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_FormUp_02
+Act_ActTrig = KittBot_FormUp_02
+
+[Trigger]
+nickname = Wingmen_FormUp_02
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_FormUp_02
+Act_DeactTrig = KittBot_FormUp_02
+Act_ActTrig = Wingmen_FormUp_02_Push
+
+[Trigger]
+nickname = Wingmen_FormUp_02_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_Attack_02
+Act_ActTrig = KittBot_Attack_02
+
+[Trigger]
+nickname = Wingmen_Attack_02
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_Attack_02
+Act_DeactTrig = KittBot_Attack_02
+Act_ActTrig = Wingmen_Attack_02_Push
+Act_ActTrig = Wingmen_BreakAll
+
+[Trigger]
+nickname = Wingmen_Attack_02_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_FormUp_03
+Act_ActTrig = KittBot_FormUp_03
+
+[Trigger]
+nickname = Wingmen_FormUp_03
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_FormUp_03
+Act_DeactTrig = KittBot_FormUp_03
+Act_ActTrig = Wingmen_FormUp_03_Push
+
+[Trigger]
+nickname = Wingmen_FormUp_03_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_Attack_03
+Act_ActTrig = KittBot_Attack_03
+
+[Trigger]
+nickname = Wingmen_Attack_03
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_Attack_03
+Act_DeactTrig = KittBot_Attack_03
+Act_ActTrig = Wingmen_Attack_03_Push
+Act_ActTrig = Wingmen_BreakAll
+
+[Trigger]
+nickname = Wingmen_Attack_03_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_FormUp_04
+Act_ActTrig = KittBot_FormUp_04
+
+[Trigger]
+nickname = Wingmen_FormUp_04
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_FormUp_04
+Act_DeactTrig = KittBot_FormUp_04
+Act_ActTrig = Wingmen_FormUp_04_Push
+
+[Trigger]
+nickname = Wingmen_FormUp_04_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_Attack_04
+Act_ActTrig = KittBot_Attack_04
+
+[Trigger]
+nickname = Wingmen_Attack_04
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_Attack_04
+Act_DeactTrig = KittBot_Attack_04
+Act_ActTrig = Wingmen_Attack_04_Push
+Act_ActTrig = Wingmen_BreakAll
+
+[Trigger]
+nickname = Wingmen_Attack_04_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_FormUp_05
+Act_ActTrig = KittBot_FormUp_05
+
+[Trigger]
+nickname = Wingmen_FormUp_05
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_FormUp_05
+Act_DeactTrig = KittBot_FormUp_05
+Act_ActTrig = Wingmen_FormUp_05_Push
+
+[Trigger]
+nickname = Wingmen_FormUp_05_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_Attack_05
+Act_ActTrig = KittBot_Attack_05
+
+[Trigger]
+nickname = Wingmen_Attack_05
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_Attack_05
+Act_DeactTrig = KittBot_Attack_05
+Act_ActTrig = Wingmen_Attack_05_Push
+Act_ActTrig = Wingmen_BreakAll
+
+[Trigger]
+nickname = Wingmen_Attack_05_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_FormUp_06
+Act_ActTrig = KittBot_FormUp_06
+
+[Trigger]
+nickname = Wingmen_FormUp_06
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_FormUp_06
+Act_DeactTrig = KittBot_FormUp_06
+Act_ActTrig = Wingmen_FormUp_06_Push
+
+[Trigger]
+nickname = Wingmen_FormUp_06_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_Attack_06
+Act_ActTrig = KittBot_Attack_06
+
+[Trigger]
+nickname = Wingmen_Attack_06
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_Attack_06
+Act_DeactTrig = KittBot_Attack_06
+Act_ActTrig = Wingmen_Attack_06_Push
+Act_ActTrig = Wingmen_BreakAll
+
+[Trigger]
+nickname = Wingmen_Attack_06_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = foxBot_FormUp_01
+Act_ActTrig = KittBot_FormUp_01
+
+[Trigger]
+nickname = Wingmen_BreakAll
+system = any
+Cnd_True = no_params
+Act_GiveObjList = foxBot, Default_Attack
+Act_GiveObjList = KittBot, Default_Attack
+
+[ObjList]
+nickname = Default_Attack
+BreakFormation = no_params
+
+[ObjList]
+nickname = Default_FormUp
+FollowPlayer = form_wall_follow, foxBot, KittBot, Generic1, Generic2
+
+[ObjList]
+nickname = foxBot_FormUp
+FollowPlayer = form_wall_follow, foxBot, KittBot, Generic1, Generic2
+
+[ObjList]
+nickname = KittBot_FormUp
+FollowPlayer = form_wall_follow, KittBot, foxBot, Generic1, Generic2
+
+;------ foxBot Wingman ------
+[NPC]
+nickname = foxBot_NPC
+affiliation = foxBot_grp
+npc_ship_arch = Bot_foxBot2
+voice = pilot_f_mil_m02
+space_costume = benchmark_male_head, li_male_elite_body, comm_ge_generic1
+individual_name = 459010
+
+[MsnShip]
+nickname = foxBot
+NPC = foxBot_NPC
+rel_pos = -90, Player, 6000
+orientation = 0, 180, 0, 0
+jumper = true
+
+[Trigger]
+nickname = foxBot_Init
+system = any
+InitState = ACTIVE
+Cnd_LootAcquired = IWishMSNLootWorkedInMP, Player
+Act_ActTrig = foxBot_Init_Push
+
+[Trigger]
+nickname = foxBot_Init_Push
+system = any
+Cnd_True = no_params
+Act_ActTrig = foxBot_Setup
+Act_ActTrig = foxBot_CleanForms
+Act_ActTrig = foxBot_Spawn
+
+[Trigger]
+nickname = foxBot_Setup
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_Cmd
+Act_DeactTrig = foxBot_Cmd_Pull
+Act_DeactTrig = foxBot_Cmd_Wait
+Act_DeactTrig = foxBot_Cmd_Push
+Act_DeactTrig = foxBot_Death
+Act_DeactTrig = foxBot_Dock
+Act_DeactTrig = foxBot_Dock_Push
+Act_DeactTrig = foxBot_Jump
+Act_DeactTrig = foxBot_Jump_Push
+Act_Destroy = foxBot, SILENT
+
+[Trigger]
+nickname = foxBot_CleanForms
+system = any
+Cnd_True = no_params
+Act_DeactTrig = foxBot_FormUp_01
+Act_DeactTrig = foxBot_Attack_01
+Act_DeactTrig = foxBot_FormUp_02
+Act_DeactTrig = foxBot_Attack_02
+Act_DeactTrig = foxBot_FormUp_03
+Act_DeactTrig = foxBot_Attack_03
+Act_DeactTrig = foxBot_FormUp_04
+Act_DeactTrig = foxBot_Attack_04
+Act_DeactTrig = foxBot_FormUp_05
+Act_DeactTrig = foxBot_Attack_05
+Act_DeactTrig = foxBot_FormUp_06
+Act_DeactTrig = foxBot_Attack_06
+Act_DeactTrig = foxBot_FormUp_01
+Act_DeactTrig = foxBot_Attack_01
+
+[Trigger]
+nickname = foxBot_Spawn
+system = any
+Cnd_Timer = 4
+Act_SpawnShip = foxBot
+Act_MarkObj = foxBot, 1
+Act_ActTrig = foxBot_Cmd
+Act_ActTrig = foxBot_Death
+Act_ActTrig = foxBot_Dock
+Act_ActTrig = foxBot_Jump
+Act_ActTrig = Wingmen_FormUp_Init
+
+[Trigger]
+nickname = foxBot_Cmd
+system = any
+Cnd_CargoScanned = Player, foxBot
+Act_ActTrig = foxBot_Cmd_Pull
+Act_ActTrig = foxBot_Cmd_Wait
+
+[Trigger]
+nickname = foxBot_Cmd_Pull
+Cnd_Timer = 1
+Act_DeactTrig = foxBot_Cmd_Wait
+Act_ActTrig = foxBot_Cmd
+
+[Trigger]
+nickname = foxBot_Cmd_Wait
+Cnd_CargoScanned = Player, foxBot
+Act_ActTrig = foxBot_Cmd_Push
+
+[Trigger]
+nickname = foxBot_Cmd_Push
+Cnd_Timer = 1
+Act_ActTrig = foxBot_Cmd
+
+[Trigger]
+nickname = foxBot_FormUp_01
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_01
+Act_SendComm = foxBot, Player, gcs_combat_resume_patrol_04-
+Act_GiveObjList = Player, foxBot_FormUp
+
+[Trigger]
+nickname = foxBot_Attack_01
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_01
+Act_SendComm = foxBot, Player, gcs_combat_order_engage_01-
+
+[Trigger]
+nickname = foxBot_FormUp_02
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_02
+Act_SendComm = foxBot, Player, gcs_combat_rejoiningform_01-
+Act_GiveObjList = Player, foxBot_FormUp
+
+[Trigger]
+nickname = foxBot_Attack_02
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_02
+Act_SendComm = foxBot, Player, gcs_combat_order_engage_02-
+
+[Trigger]
+nickname = foxBot_FormUp_03
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_03
+Act_SendComm = foxBot, Player, gcs_combat_resume_patrol_01-
+Act_GiveObjList = Player, foxBot_FormUp
+
+[Trigger]
+nickname = foxBot_Attack_03
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_03
+Act_SendComm = foxBot, Player, gcs_combat_order_engage_03-
+
+[Trigger]
+nickname = foxBot_FormUp_04
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_04
+Act_SendComm = foxBot, Player, gcs_combat_resume_patrol_02-
+Act_GiveObjList = Player, foxBot_FormUp
+
+[Trigger]
+nickname = foxBot_Attack_04
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_04
+Act_SendComm = foxBot, Player, gcs_combat_order_engage_04-
+
+[Trigger]
+nickname = foxBot_FormUp_05
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_05
+Act_SendComm = foxBot, Player, gcs_combat_rejoiningform_02-
+Act_GiveObjList = Player, foxBot_FormUp
+
+[Trigger]
+nickname = foxBot_Attack_05
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_05
+Act_SendComm = foxBot, Player, gcs_combat_order_engage_05-
+
+[Trigger]
+nickname = foxBot_FormUp_06
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_06
+Act_SendComm = foxBot, Player, gcs_combat_resume_patrol_03-
+Act_GiveObjList = Player, foxBot_FormUp
+
+[Trigger]
+nickname = foxBot_Attack_06
+system = any
+Cnd_WatchTrigger = foxBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_06
+Act_SendComm = foxBot, Player, gcs_combat_order_engage_06-
+
+[Trigger]
+nickname = foxBot_Death
+system = any
+Cnd_Destroyed = foxBot, -1, ALL
+Act_NNIds = 459010, OBJECTIVE
+Act_ActTrig = foxBot_Init
+
+[Trigger]
+nickname = foxBot_Dock
+system = any
+Cnd_SpaceExit = no_params
+Act_DeactTrig = foxBot_Death
+Act_Destroy = foxBot, SILENT
+Act_ActTrig = foxBot_Dock_Push
+
+[Trigger]
+nickname = foxBot_Dock_Push
+system = any
+Cnd_LaunchComplete = Player
+Act_ActTrig = foxBot_Init_Push
+
+[Trigger]
+nickname = foxBot_Jump
+system = any
+repeatable = true
+Cnd_JumpInComplete = Player
+Act_ActTrig = foxBot_Jump_Push
+
+[Trigger]
+nickname = foxBot_Jump_Push
+system = any
+Cnd_Timer = 3
+Act_ActTrig = Wingmen_FormUp_Init
+
+;------ KittBot Wingman ------
+[NPC]
+nickname = KittBot_NPC
+affiliation = KittBot_grp
+npc_ship_arch = Bot_KittBot
+voice = pilot_f_leg_f01a
+space_costume = pl_female2_head, li_female_guard_body, comm_li_hatcher_female
+individual_name = 459013
+
+[MsnShip]
+nickname = KittBot
+NPC = KittBot_NPC
+rel_pos = -90, Player, 6000
+orientation = 0, 180, 0, 0
+jumper = true
+
+[Trigger]
+nickname = KittBot_Init
+system = any
+InitState = ACTIVE
+Cnd_LootAcquired = IWishMSNLootWorkedInMP, Player
+Act_ActTrig = KittBot_Init_Push
+
+[Trigger]
+nickname = KittBot_Init_Push
+system = any
+Cnd_True = no_params
+Act_ActTrig = KittBot_Setup
+Act_ActTrig = KittBot_CleanForms
+Act_ActTrig = KittBot_Spawn
+
+[Trigger]
+nickname = KittBot_Setup
+system = any
+Cnd_True = no_params
+Act_DeactTrig = KittBot_Cmd
+Act_DeactTrig = KittBot_Cmd_Pull
+Act_DeactTrig = KittBot_Cmd_Wait
+Act_DeactTrig = KittBot_Cmd_Push
+Act_DeactTrig = KittBot_Death
+Act_DeactTrig = KittBot_Dock
+Act_DeactTrig = KittBot_Dock_Push
+Act_DeactTrig = KittBot_Jump
+Act_DeactTrig = KittBot_Jump_Push
+Act_Destroy = KittBot, SILENT
+
+[Trigger]
+nickname = KittBot_CleanForms
+system = any
+Cnd_True = no_params
+Act_DeactTrig = KittBot_FormUp_01
+Act_DeactTrig = KittBot_Attack_01
+Act_DeactTrig = KittBot_FormUp_02
+Act_DeactTrig = KittBot_Attack_02
+Act_DeactTrig = KittBot_FormUp_03
+Act_DeactTrig = KittBot_Attack_03
+Act_DeactTrig = KittBot_FormUp_04
+Act_DeactTrig = KittBot_Attack_04
+Act_DeactTrig = KittBot_FormUp_05
+Act_DeactTrig = KittBot_Attack_05
+Act_DeactTrig = KittBot_FormUp_06
+Act_DeactTrig = KittBot_Attack_06
+Act_DeactTrig = KittBot_FormUp_01
+Act_DeactTrig = KittBot_Attack_01
+
+[Trigger]
+nickname = KittBot_Spawn
+system = any
+Cnd_Timer = 4
+Act_SpawnShip = KittBot
+Act_MarkObj = KittBot, 1
+Act_ActTrig = KittBot_Cmd
+Act_ActTrig = KittBot_Death
+Act_ActTrig = KittBot_Dock
+Act_ActTrig = KittBot_Jump
+Act_ActTrig = Wingmen_FormUp_Init
+
+[Trigger]
+nickname = KittBot_Cmd
+system = any
+Cnd_CargoScanned = Player, KittBot
+Act_ActTrig = KittBot_Cmd_Pull
+Act_ActTrig = KittBot_Cmd_Wait
+
+[Trigger]
+nickname = KittBot_Cmd_Pull
+Cnd_Timer = 1
+Act_DeactTrig = KittBot_Cmd_Wait
+Act_ActTrig = KittBot_Cmd
+
+[Trigger]
+nickname = KittBot_Cmd_Wait
+Cnd_CargoScanned = Player, KittBot
+Act_ActTrig = KittBot_Cmd_Push
+
+[Trigger]
+nickname = KittBot_Cmd_Push
+Cnd_Timer = 1
+Act_ActTrig = KittBot_Cmd
+
+[Trigger]
+nickname = KittBot_FormUp_01
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_01
+Act_SendComm = KittBot, Player, gcs_combat_resume_patrol_04-
+Act_GiveObjList = Player, KittBot_FormUp
+
+[Trigger]
+nickname = KittBot_Attack_01
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_01
+Act_SendComm = KittBot, Player, gcs_combat_order_engage_01-
+
+[Trigger]
+nickname = KittBot_FormUp_02
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_02
+Act_SendComm = KittBot, Player, gcs_combat_rejoiningform_01-
+Act_GiveObjList = Player, KittBot_FormUp
+
+[Trigger]
+nickname = KittBot_Attack_02
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_02
+Act_SendComm = KittBot, Player, gcs_combat_order_engage_02-
+
+[Trigger]
+nickname = KittBot_FormUp_03
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_03
+Act_SendComm = KittBot, Player, gcs_combat_resume_patrol_01-
+Act_GiveObjList = Player, KittBot_FormUp
+
+[Trigger]
+nickname = KittBot_Attack_03
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_03
+Act_SendComm = KittBot, Player, gcs_combat_order_engage_03-
+
+[Trigger]
+nickname = KittBot_FormUp_04
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_04
+Act_SendComm = KittBot, Player, gcs_combat_resume_patrol_02-
+Act_GiveObjList = Player, KittBot_FormUp
+
+[Trigger]
+nickname = KittBot_Attack_04
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_04
+Act_SendComm = KittBot, Player, gcs_combat_order_engage_04-
+
+[Trigger]
+nickname = KittBot_FormUp_05
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_05
+Act_SendComm = KittBot, Player, gcs_combat_rejoiningform_02-
+Act_GiveObjList = Player, KittBot_FormUp
+
+[Trigger]
+nickname = KittBot_Attack_05
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_05
+Act_SendComm = KittBot, Player, gcs_combat_order_engage_05-
+
+[Trigger]
+nickname = KittBot_FormUp_06
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_FormUp_06
+Act_SendComm = KittBot, Player, gcs_combat_resume_patrol_03-
+Act_GiveObjList = Player, KittBot_FormUp
+
+[Trigger]
+nickname = KittBot_Attack_06
+system = any
+Cnd_WatchTrigger = KittBot_Cmd_Push, ON
+Act_ActTrig = Wingmen_Attack_06
+Act_SendComm = KittBot, Player, gcs_combat_order_engage_06-
+
+[Trigger]
+nickname = KittBot_Death
+system = any
+Cnd_Destroyed = KittBot, -1, ALL
+Act_NNIds = 459013, OBJECTIVE
+Act_ActTrig = KittBot_Init
+
+[Trigger]
+nickname = KittBot_Dock
+system = any
+Cnd_SpaceExit = no_params
+Act_DeactTrig = KittBot_Death
+Act_Destroy = KittBot, SILENT
+Act_ActTrig = KittBot_Dock_Push
+
+[Trigger]
+nickname = KittBot_Dock_Push
+system = any
+Cnd_LaunchComplete = Player
+Act_ActTrig = KittBot_Init_Push
+
+[Trigger]
+nickname = KittBot_Jump
+system = any
+repeatable = true
+Cnd_JumpInComplete = Player
+Act_ActTrig = KittBot_Jump_Push
+
+[Trigger]
+nickname = KittBot_Jump_Push
+system = any
+Cnd_Timer = 3
+Act_ActTrig = Wingmen_FormUp_Init

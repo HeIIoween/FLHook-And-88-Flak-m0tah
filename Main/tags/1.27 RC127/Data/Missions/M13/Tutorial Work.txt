@@ -1,0 +1,87 @@
+;Li07 Tutorial START
+[MsnRandEnc]
+nickname = combat_basic_hostile
+encounter_type = SP_Attack
+attacker_rep_name = fc_n_grp
+activation_type = time, 5, 5
+formation = form_wall, 1, 1, 1, sc_training, 100
+num_forms = 1, 1
+label = basic_hostile
+pilot_id = pilot_default
+
+[MsnRandEnc]
+nickname = combat_advanced_hostile
+encounter_type = SP_Attack
+attacker_rep_name = fc_n_grp
+activation_type = time, 10, 10
+formation = form_wall, 1, 4, 4, sc_training, 100
+num_forms = 1, 1
+label = advanced_hostile
+pilot_id = pilot_default
+
+[MsnRandEnc]
+nickname = combat_advanced_ally
+encounter_type = SP_Attack
+attacker_rep_name = gd_lfl_grp
+activation_type = time, 1, 1
+formation = form_wall, 1, 4, 4, sc_fighterlead, 100
+num_forms = 1, 1
+label = advanced_ally
+pilot_id = pilot_default
+
+[Trigger]
+nickname = tutorial_dialog
+system = li07
+InitState = ACTIVE
+Cnd_LaunchComplete = Player
+Act_PopUpDialog = 458823, 458831, YES_NO
+Act_ActTrig = tutorial_start
+
+[Trigger]
+nickname = tutorial_start
+system = li07
+Cnd_PopUpDialog = YES
+Act_PlayerCanDock = false
+Act_PopUpDialog = 458823, 458831, CLOSE
+Act_ActTrig = combat_basic
+
+[Trigger]
+nickname = combat_basic
+system = li07
+Cnd_Timer = 10
+Act_EnableEnc = combat_basic_hostile
+Act_ActTrig = combat_basic_hostile_dies
+
+[Trigger]
+nickname = combat_basic_hostile_dies
+system = li07
+Cnd_Destroyed = basic_hostile, -1, ALL
+Act_PopUpDialog = 458823, 458831, CLOSE
+Act_ActTrig = combat_advanced
+
+[Trigger]
+nickname = combat_advanced
+system = li07
+Cnd_Timer = 10
+Act_EnableEnc = combat_advanced_hostile
+Act_EnableEnc = combat_advanced_ally
+Act_ActTrig = combat_advanced_hostile_dies
+
+[Trigger]
+nickname = combat_advanced_hostile_dies
+system = any
+Cnd_Destroyed = advanced_hostile, -1, ALL
+Act_PopUpDialog = 458823, 458831, CLOSE
+Act_ActTrig = tutorial_end
+
+[Trigger]
+nickname = tutorial_end
+system = li07
+Cnd_Timer = 5
+Act_DisableEnc = combat_basic_hostile
+Act_DisableEnc = combat_advanced_hostile
+Act_DisableEnc = combat_advanced_ally
+Act_PlayerCanDock = true
+Act_AdjAcct = 10000
+Act_NNIds = 458823, OBJECTIVE
+;Li07 Tutorial END

@@ -1,0 +1,92 @@
+I can't help but feel using AI Companions was lame, but the mini-factions are fun in-game.
+
+Usable voices
+voice = king
+voice = juni
+voice = hakkera
+voice = ozu
+voice = quintaine
+voice = walker
+voice = orillion
+voice = botzler
+voice = vonclaussn
+voice = sinclair
+voice = tobias
+
+1st Batch:
+(done, lawful) king - foxBot 459010 - Kusari Naval Forces
+(done, lawful) juni - KittBot 459013 - Liberty Navy
+(done, lawful) orillion - Grim's Green 459017 - Bounty Hunters Guild
+(done, lawful) vonclaussn - Wo3dy 459020 - Rheinland Military
+(done, lawful) tobias - ChipBot 459035 - Bretonia Armed Forces
+(done, unlawful) hakkera - Trickbot 459015 - Rogues
+(done, unlawful) ozu - Outsider's Followers 459014 - Outcasts
+(done, unlawful) quintaine - DarkMarauderBot 459037 - Blood Dragons
+(done, unlawful) walker - ww2JacobBot 459019 - Mollys
+(done, unlawful) botzler - Dread Pirate Lowsound 459018 - Xenos
+(done, hostile) sinclair - HowdaDoodeWTF 459011 - Nomads
+
+2nd Batch Requests:
+(lawful) king - SnakePlisskin 459077 - Lawful Freelancers (Order eventually?) - Anubis - Flashpoints, Civilian Engine
+(lawful) hakkera - SushiBot 459078 - Kusari State Police - Dragon - Blue / Purple Guns
+(lawful) ozu - Lonestar 459079 - Lawful Freelancers - Serafina - 2 High-class Stalker missiles, Justice mk III's Shield recharge rare, shield booster rare
+(lawful) orillion - M0tahBot 459080 - DSE - Patriot / Progenator - Loadout on file
+(lawful) sinclair - StilBot 459081 - Interspace Commerce - Falcon - Falcon 1: Pirate Engine, Hogosha Weaponry; Falcon 2: Bretonia Engine, Skyrail Weaponry
+(unlawful) quintaine - NairaX 459082 - Corsairs - Pursuit Dagger - Blue / Purple Guns
+(unlawful) walker - KillerJaguarBot 459012 - Unlawful Freelancers - Osiris / Red Dragon - Osiris: pirate turrets?; Red Dragon: bunch of Rogue lasers? Why not.
+(unlawful) botzler - StarAvenger 459083 - Xenos - Banshee - Hogosha guns with a BW Engine
+(unlawful) vonclaussn - He||oween 459084 - Outcast - Sabre / Mule - Sabre: 1xKraken Turret, 4xKraken Type 2, 2xAdv. Debilitator; Mule: 4xPyros Turret Type 2, 2xPyros Type 3, 2xDebilitator
+(unlawful) tobias - SSGTSolaBot 459085 - Bundschuh - Centurion / Transport - Some cool shit
+(neutral) juni - AshBot 459086 - Zoners - Lifeboat - doofus_the_destroyer's loadout
+
+3rd Batch Requests:
+() king
+() quintaine
+() sinclair
+() tobias
+(lawful) ozu - DofodBot 459087 - Universal - Cavalier / Prison Liner - Liner: a colorful array; Patriot - light power pod, regular thurster, razor mine, wasp CD, 2 Borrocos, 1 catapult and 1 moonstalker
+(lawful) orillion - PetBot 459088 - Bounty Hunters - Hydra - Firekiss MK IIs, Rheinland Engine
+(lawful) hakkera - Why484andNineTenths 459089 -
+(unlawful) juni - DarkWraith007 459090 - Blood Dragons - Drake / Eagle - Advanced Thruster, Advanced CM Dropper, 1x high-class missile, high-class mines; Drake: Hornet CD, 1x Tarantula, 1x Adv. Tarantula, 1x Hellflurry Mk II, 1x Stealthblade Mk I; Eagle: Rh. Engine, Starkiller Torpedo Launcher, 1x Skyblast Turret B, 2x SILVER FIRE, 2x Tizona del Cid, 2x Reaver Mk II
+(unlawful) vonclaussn - SojournBot 459091 - Junkers - Rheinland Cruiser / Stiletto - Rheinland Cruiser: 5x Missile Turret, 2x Def Turret, 1x FG; Stiletto: 2x IMG Guns, 4x Xeno Guns
+(unlawful) botzler - HonkBot 459092 - Red Hessians - Kusari Battleship / Piranha - Kusari Battleship: Flak A/B, Piranha: Pirate Engine, RocketTurd's loadout
+(neutral) walker - Son'aBot 459016 - Zoners - Sleeper Ship / Clydesdale - Sleepership: 8x pirate station turret, 2x rheinland flak A, 2x rheinland flak B, 4x SmOP missile turret; Clydesdale: Stunpulse MKII on the rear turret, rest are Javelins
+
+Special (Non-Arena Combatants)
+(hostile) none - Borg? 459093 - Boss Faction - Prison Station - All Rheinland Primaries
+
+New Batch Requests:
+() king
+() juni
+() orillion
+() vonclaussn
+() tobias
+() hakkera
+() ozu
+() quintaine
+() walker
+() botzler
+() sinclair
+
+Faction Template:
+[FactionProps]
+affiliation = (BotName)_grp
+legality = lawful
+nickname_plurality = plural
+msg_id_prefix = gcs_misc_number_0
+jump_preference = jumpgate
+mc_costume = mc_fc
+voice = orillion
+firstname_male = 458899, 458899
+firstname_female = 458899, 458899
+lastname = 458899, 458899
+rank_desig = (BotIDS), (BotIDS), (BotIDS), 10, 15
+formation_desig = 197808, 197808
+formation = any, form_wall
+large_ship_desig = 458899
+large_ship_names = 458899, 458899
+scan_for_cargo = admin_token, 0
+scan_for_cargo = commodity_npc_follow, 2
+scan_announce = false
+scan_chance = 0.999999
+npc_ship = follow_ship

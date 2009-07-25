@@ -1,0 +1,13 @@
+2242940108 = pursuit_lf_power, Pursuit LF Power Generator
+2251270538 = liner_power, Liner Power Generator
+2293433098 = capital_power, Battleship Power Generator
+2444922886 = transport_power, Transport Power Generator
+2553359424 = infinite_power, Admin Infinite Power Supply
+2658898624 = wp_power, Weapons Platform Power Generator
+2699118413 = solar_power, Station / Storage Depot Power Generator
+2895536064 = cruiser_power, Cruiser Power Generator
+2897532813 = nomad_fighter_power, Nomad Fighter Power Generator
+3029963717 = fr_power, FR Power Generator
+3046640075 = hf_power, HF Power Generator
+3046676943 = lf_power, LF Power Generator
+3141549579 = vhf_power, VHF Power Generator
