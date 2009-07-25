@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Readme für Freelancer-Server</title>
+<style>
+<!--
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body background="BackgroundPattern.bmp" style="color: #FFFFFF; font-family: Agency FB" bgcolor="#000000" link="#00FF00" vlink="#00FF00">
+
+<h1>Readme für den <I>Freelancer</I> Server-Patch</h1>
+<h2>Zusammenfassung der Änderungen</h2>
+<h3>Server-Änderungen</h3>
+<p>Es wurden Maßnahmen zur Verhinderung von Serverabstürzen hinzugefügt, einschließlich Abstürzen, die durch Client-Mods und einfache Cheats verursacht werden.</p>
+<p>Die Protokolldatei wurde bereinigt. Unwichtige Protokolleinträge wurden entfernt, und weitere Einträge für Spieleraktionen wurden hinzugefügt.</p>
+<p>Es wurden Maßnahmen zur Erkennung von Cheats hinzugefügt, einschließlich der automatischen Verbindungstrennung und Aufzeichnung mutmaßlicher Cheater.</p>
+<p>Die Spielerdaten werden nun auch bei der Landung gespeichert. Bisher wurden sie nur beim Start oder bei einer Unterbrechung des Spiels gespeichert.</p>
+<p>Der Server versucht nicht mehr, eine Verbindung zum globalen Server herzustellen, wenn die Option, den Server über das Internet verfügbar zu machen, deaktiviert ist.</p>
+<h3>Client-Änderungen</h3>
+<p>Fehlerbeseitigung bei der Erzeugung einer Multiplayer-Konto-ID, falls keine ID erzeugt wurde.</p>
+<p>Beseitigung von Abstürzen, wenn Client und Server auf demselben Computer ausgeführt werden.</p>
+<p>Beseitigung der falschen Verzögerungsanzeige, wenn Client und Server auf demselben Computer ausgeführt werden.</p>
+<h2>Änderungen bei der Protokollierung</h2>
+<p>Für das Erstellen und Löschen von Konten und Charakteren sowie für die Cheat-Erkennung wurde die Protokollierung erweitert.</p>
+<p>Die Einträge für die An- und Abmeldung beim System wurden entfernt.</p>
+<p>Protokolleinträge zu Informationszwecken (im Gegensatz zu  Warnmeldungen und Fehlerprotokollierung) beginnen mit „LOG:“, damit sie leichter erkennbar sind.</p>
+<h2>Informationen zur Cheat-Erkennung</h2>
+<p>Die Verbindung von Spielern, die Cheats verwenden, wird automatisch unterbrochen. Vom Server wird eine persönliche Nachricht mit dem Namen des Cheaters an alle Spieler gesendet. Es wird ein Protokolleintrag mit dem Kontonamen des Cheaters erzeugt. Die persönliche Nachricht an alle Spieler wird in der Datei CHEATMESSAGE.TXT im selben Verzeichnis wie das Programm FLSERVER.EXE gespeichert. Hierbei handelt es sich um eine Unicode-Textdatei, die vom Serveradministrator ggf. bearbeitet werden kann. Die maximale Länge der Cheat-Nachricht beträgt 80 Zeichen.</p>
+<p>Cheater werden ebenfalls in der Datei CHEATERS.LOG im Verzeichnis mit den Multiplayer-Konten verzeichnet. Jeder Eintrag enthält das Datum und die Uhrzeit der Erkennung, den Namen des Charakters, den Konto- und den Spielernamen.</p>
+<p>Cheater werden nicht automatisch gesperrt. Dies bleibt dem Serveradministrator überlassen.</p>
+
+<p>
+&nbsp;</p>
+
+<p>
+<font face="Times New Roman">© 2003 Microsoft Corporation. Alle Rechte vorbehalten. Microsoft, Digital Anvil, DirectX, <I>Freelancer</I>, das Microsoft Logo, das Microsoft Game Studios-Logo, das .Net-Logo, Windows und Windows NT sind in den USA oder auch anderen Ländern eingetragene Marken oder Marken der Microsoft Corporation.</font></p>
+
+</body>
+
+</html>

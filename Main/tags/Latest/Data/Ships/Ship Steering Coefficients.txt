@@ -1,0 +1,17 @@
+Class          Steering  Coefficient
+Base Steering  4.0       1.0
+LF             3.6       0.9
+HF             2.4       0.6 - 0.55
+VHF            1.4       0.35 - 0.2
+FR             1.2       0.30 - 0.15
+Transport (L)  0.4       0.1
+SC (L)         0.4       0.1
+LC/WP (L)      0.2       0.05
+Station (L)    0.1       0.025
+
+Drag / Inertia Constants
+Small: 50000, 50000, 50000 (anti-spin factor: 4)
+Large: 500000000000000, 500000000000000, 500000000000000 (anti-spin factor: 8)
+The drag constant is multiplied by the steering amount in the table above to work a value of steering_torque
+The drag constant is divided by the antispin factor to work a value of rotation_inertia
+Player-flown (te_ prefix) Large Capitals and Stations should have X-axis rotation_inertia use anti-spin of 100 and X-axis steering_torque divided by 2

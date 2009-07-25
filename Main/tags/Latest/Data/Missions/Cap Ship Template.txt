@@ -1,0 +1,46 @@
+;Template for inserting cap. ships to factions
+;_AF = Anti-Fighter Loadout
+
+;Liberty
+npc_ship = Liberty_Cruiser
+npc_ship = Liberty_Cruiser_AF
+npc_ship = Liberty_Battleship
+npc_ship = Liberty_Battleship_AF
+
+;Bretonia
+npc_ship = Bretonia_Gunboat
+npc_ship = Bretonia_Gunboat_AF
+npc_ship = Bretonia_Destroyer
+npc_ship = Bretonia_Destroyer_AF
+npc_ship = Bretonia_Battleship
+npc_ship = Bretonia_Battleship_AF
+
+;Kusari
+npc_ship = Kusari_Gunboat
+npc_ship = Kusari_Gunboat_AF
+npc_ship = Kusari_Destroyer
+npc_ship = Kusari_Destroyer_AF
+npc_ship = Kusari_Battleship
+npc_ship = Kusari_Battleship_AF
+
+;Rheinland
+npc_ship = Rheinland_Gunboat
+npc_ship = Rheinland_Gunboat_AF
+npc_ship = Rheinland_Cruiser
+npc_ship = Rheinland_Cruiser_AF
+npc_ship = Rheinland_Battleship
+npc_ship = Rheinland_Battleship_AF
+
+;Nomad
+npc_ship = Nomad_Gunboat
+npc_ship = Nomad_Battleship
+
+;Miner
+npc_ship = Asteroid_Miner
+
+;Prison / Luxury Liners
+npc_ship = Prison_Liner
+npc_ship = Prison_Liner_Br
+npc_ship = Prison_Liner_Ku
+npc_ship = Prison_Liner_Rh
+npc_ship = Luxury_Liner
