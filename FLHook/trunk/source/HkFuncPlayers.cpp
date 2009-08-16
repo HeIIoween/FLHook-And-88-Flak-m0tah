@@ -339,8 +339,7 @@ HK_ERROR HkKillBeam(wstring wscCharname, wstring wscBasename)
 	}
 
 	list<CARGO_INFO> lstBeforeCargo;
-	int iRemaining;
-	HkEnumCargo(ARG_CLIENTID(iClientID), lstBeforeCargo, iRemaining);
+	HkEnumCargo(ARG_CLIENTID(iClientID), lstBeforeCargo, 0);
 	vRestoreKBeamClientIDs.push_back(iClientID);
 	vRestoreKBeamCargo.push_back(lstBeforeCargo);
 
@@ -389,7 +388,7 @@ struct EQ_ITEM
 	bool bMission;
 };
 
-HK_ERROR HkEnumCargo(wstring wscCharname, list<CARGO_INFO> &lstCargo, int &iRemainingHoldSize)
+HK_ERROR HkEnumCargo(wstring wscCharname, list<CARGO_INFO> &lstCargo, int *iRemainingHoldSize)
 {
 	HK_GET_CLIENTID(iClientID, wscCharname);
 
@@ -414,9 +413,12 @@ HK_ERROR HkEnumCargo(wstring wscCharname, list<CARGO_INFO> &lstCargo, int &iRema
 		eq = eq->next;
 	}
 
-	float fRemHold;
-	pub::Player::GetRemainingHoldSize(iClientID, fRemHold);
-	iRemainingHoldSize = (int)fRemHold;
+	if(iRemainingHoldSize)
+	{
+		float fRemHold;
+		pub::Player::GetRemainingHoldSize(iClientID, fRemHold);
+		*iRemainingHoldSize = (int)fRemHold;
+	}
 	return HKE_OK;
 }
 
@@ -430,8 +432,7 @@ HK_ERROR HkRemoveCargo(wstring wscCharname, uint iID, int iCount)
 		return HKE_PLAYER_NOT_LOGGED_IN;
 
 	list <CARGO_INFO> lstCargo;
-	int iHold;
-	HkEnumCargo(wscCharname, lstCargo, iHold);
+	HkEnumCargo(wscCharname, lstCargo, 0);
 	foreach(lstCargo, CARGO_INFO, it)
 	{
 		if((*it).iID == iID && ((*it).iCount < iCount || iCount == -1))
@@ -498,11 +499,9 @@ HK_ERROR HkAddCargo(wstring wscCharname, uint iGoodID, int iCount, bool bMission
 		memcpy(&bMultiCount, (char*)gi + 0x70, 1);
 
 		if(bMultiCount) { // it's a good that can have multiple units(commodities, missile ammo, etc)
-			int iRet;
-
 			// we need to do this, else server or client may crash
 			list<CARGO_INFO> lstCargo;
-			HkEnumCargo(wscCharname, lstCargo, iRet);
+			HkEnumCargo(wscCharname, lstCargo, 0);
 			foreach(lstCargo, CARGO_INFO, it)
 			{
 				if(((*it).iArchID == iGoodID) && ((*it).bMission != bMission))
@@ -1344,7 +1343,7 @@ void HkPlayerAutoBuy(uint iClientID, uint iBaseID)
 	// player cargo
 	int iRemHoldSize;
 	list<CARGO_INFO> lstCargoTemp, lstCargo;
-	HkEnumCargo(ARG_CLIENTID(iClientID), lstCargoTemp, iRemHoldSize);
+	HkEnumCargo(ARG_CLIENTID(iClientID), lstCargoTemp, &iRemHoldSize);
 	//consolidate multiple items into one entry, skip mounted items
 	foreach(lstCargoTemp, CARGO_INFO, cargo)
 	{
@@ -1367,9 +1366,30 @@ void HkPlayerAutoBuy(uint iClientID, uint iBaseID)
 		}
 	}
 
+	uint iNanobotsID = 2911012559;
+	uint iShieldBatID = 2596081674;
+	Archetype::Ship *ship = Archetype::GetShip(Players[iClientID].iShipArchID);
 	list<AUTOBUY_CARTITEM> lstItems = ClientInfo[iClientID].lstAutoBuyItems;
 	foreach(lstItems, AUTOBUY_CARTITEM, item)
 	{
+		if(item->iArchID == iNanobotsID)
+		{
+			if((uint)item->iCount > ship->iMaxNanobots)
+			{
+				PrintUserCmdText(iClientID, L"Warning: the number of nanobots in your autobuy template is greater than allowed; skipping purchase.");
+				item->iCount = 0;
+				continue;
+			}
+		}
+		else if(item->iArchID == iShieldBatID)
+		{
+			if((uint)item->iCount > ship->iMaxShieldBats)
+			{
+				PrintUserCmdText(iClientID, L"Warning: the number of shield batteries in your autobuy template is greater than allowed; skipping purchase.");
+				item->iCount = 0;
+				continue;
+			}
+		}
 		foreach(lstCargo, CARGO_INFO, cargo)
 		{
 			if(cargo->iArchID == item->iArchID)
@@ -1999,8 +2019,7 @@ HK_ERROR HkInitCloakSettings(uint iClientID)
 	wstring wscCharname = Players.GetActiveCharacterName(iClientID);
 
     list<CARGO_INFO> lstEquipment;
-	int iRemaining;
-	if (HKHKSUCCESS(HkEnumCargo(wscCharname,lstEquipment,iRemaining)))
+	if (HKHKSUCCESS(HkEnumCargo(wscCharname,lstEquipment,0)))
 	{
 		foreach(lstEquipment, CARGO_INFO, it)
 		{
@@ -2168,6 +2187,7 @@ bool HkIsOkayToDock(uint iClientID, uint iTargetClientID)
 
 void HkNewShipBought(uint iClientID)
 {
+	//Erase autobuy settings
 	if(ClientInfo[iClientID].lstAutoBuyItems.size())
 	{
 		CAccount *acc = Players.FindAccountFromClientID(iClientID);
@@ -2182,9 +2202,9 @@ void HkNewShipBought(uint iClientID)
 		PrintUserCmdText(iClientID, L"Notice: your autobuy settings have been erased. Use the autobuy command again with your new ship.");
 	}
 
-	int iRemaining;
+	//Unmount items that aren't allowed to be mounted on the new ship
 	list<CARGO_INFO> lstCargo;
-	HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iRemaining);
+	HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 	foreach(lstCargo, CARGO_INFO, cargo)
 	{
 		if(cargo->bMounted)
@@ -2213,6 +2233,57 @@ void HkNewShipBought(uint iClientID)
 				pub::Player::RemoveCargo(iClientID, cargo->iID, cargo->iCount);
 				HkAddCargo(ARG_CLIENTID(iClientID), cargo->iArchID, "internal", false);
 			}
+		}
+	}
+
+	//Check if player has over the max number of nanobots or shield batteries, since FL doesn't
+	Archetype::Ship *ship = Archetype::GetShip(Players[iClientID].iShipArchID);
+	if(ship)
+	{
+		uint iNanobotsID = 2911012559;
+		uint iShieldBatID = 2596081674;
+		int iNumNanobots = 0, iNumShieldBat = 0;
+		ushort iNanobots, iShieldBat;
+		list<CARGO_INFO> lstCargo;
+		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
+		foreach(lstCargo, CARGO_INFO, cargo)
+		{
+			if(cargo->iArchID == iNanobotsID)
+			{
+				iNumNanobots = cargo->iCount;
+				iNanobots = cargo->iID;
+				if(iNumShieldBat)
+					break;
+			}
+			else if(cargo->iArchID == iShieldBatID)
+			{
+				iNumShieldBat = cargo->iCount;
+				iShieldBat = cargo->iID;
+				if(iNumNanobots)
+					break;
+			}
+		}
+		iNumNanobots -= ship->iMaxNanobots;
+		iNumShieldBat -= ship->iMaxShieldBats;
+		if(iNumNanobots > 0)
+		{
+			pub::Player::RemoveCargo(iClientID, iNanobots, iNumNanobots);
+			uint iBaseID;
+			pub::Player::GetBase(iClientID, iBaseID);
+			float fPrice = 0;
+			pub::Market::GetPrice(iBaseID, iNanobotsID, fPrice);
+			if(fPrice)
+				HkAddCash(ARG_CLIENTID(iClientID), (int)fPrice * iNumNanobots);
+		}
+		if(iNumShieldBat > 0)
+		{
+			pub::Player::RemoveCargo(iClientID, iShieldBat, iNumShieldBat);
+			uint iBaseID;
+			pub::Player::GetBase(iClientID, iBaseID);
+			float fPrice = 0;
+			pub::Market::GetPrice(iBaseID, iShieldBat, fPrice);
+			if(fPrice)
+				HkAddCash(ARG_CLIENTID(iClientID), (int)fPrice * iNumShieldBat);
 		}
 	}
 }

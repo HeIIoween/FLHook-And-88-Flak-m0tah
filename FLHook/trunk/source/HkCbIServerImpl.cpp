@@ -265,8 +265,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 
 		if(set_vNoPvpGoodIDs.size())
 		{
-			int iHold;
-			HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iHold);
+			HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 			ClientInfo[iClientID].bNoPvp = false;
 			foreach(lstCargo, CARGO_INFO, cargo)
 			{
@@ -453,8 +452,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 		{
 			if(!lstCargo.size())
 			{
-				int iHold;
-				HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iHold);
+				HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 			}
 			foreach(lstCargo, CARGO_INFO, cargo)
 			{
@@ -815,8 +813,7 @@ void __stdcall CharacterSelect(struct CHARACTER_ID const & cId, unsigned int iCl
 
 		// anti-cheat check
 		list <CARGO_INFO> lstCargo;
-		int iHold;
-		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iHold);
+		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 		foreach(lstCargo, CARGO_INFO, it)
 		{
 			if((*it).iCount < 0)
@@ -911,9 +908,8 @@ void __stdcall BaseEnter(unsigned int iBaseID, unsigned int iClientID)
 		//add items if KillBeam was used
 		if(vRestoreKBeamClientIDs.size())
 		{
-			int iRemaining;
 			list<CARGO_INFO> lstAfterCargo;
-			HkEnumCargo(ARG_CLIENTID(iClientID), lstAfterCargo, iRemaining);
+			HkEnumCargo(ARG_CLIENTID(iClientID), lstAfterCargo, 0);
 			for(uint i=0; i<vRestoreKBeamClientIDs.size(); i++)
 			{
 				if(iClientID==vRestoreKBeamClientIDs[i])
@@ -1394,8 +1390,7 @@ void __stdcall GFGoodSell(struct SGFGoodSellInfo const &gsi, unsigned int iClien
 
 		// anti-cheat check
 		list <CARGO_INFO> lstCargo;
-		int iHold;
-		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iHold);
+		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 		foreach(lstCargo, CARGO_INFO, it)
 		{
 			if(((*it).iArchID == gsi.iArchID) && (abs(gsi.iCount) > (*it).iCount))
@@ -2329,9 +2324,8 @@ void __stdcall ReqAddItem(unsigned int p1, char const *p2, int p3, float p4, boo
 		ITEM_RESTRICT *irFound = set_btItemRestrictions->Find(&irFind);
 		if(irFound)
 		{
-			int iRemaining;
 			list<CARGO_INFO> lstCargo;
-			HkEnumCargo(ARG_CLIENTID(p6), lstCargo, iRemaining);
+			HkEnumCargo(ARG_CLIENTID(p6), lstCargo, 0);
 			foreach(lstCargo, CARGO_INFO, cargo)
 			{
 				UINT_WRAP uw = UINT_WRAP(cargo->iArchID);
@@ -2689,9 +2683,8 @@ void __stdcall RequestEvent(int p1, unsigned int p2, unsigned int p3, unsigned i
 			if(jrFound)
 			{
 				list<CARGO_INFO> lstCargo;
-				int iSpaceRemaining;
 				bool bPresent = false;
-				HkEnumCargo(ARG_CLIENTID(p6), lstCargo, iSpaceRemaining);
+				HkEnumCargo(ARG_CLIENTID(p6), lstCargo, 0);
 				foreach(lstCargo, CARGO_INFO, cargo)
 				{
 					if(cargo->iArchID == jrFound->iArchID) //Item is present

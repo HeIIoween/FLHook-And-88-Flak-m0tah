@@ -287,10 +287,12 @@ void LoadUserCharSettings(uint iClientID)
 	HkGetAccountDirName(acc, wscDir);
 	string scUserFile = scAcctPath + wstos(wscDir) + "\\flhookuser.ini";
 
-	// read autobuy
 	wstring wscFilename;
 	HkGetCharFileName(ARG_CLIENTID(iClientID), wscFilename);
-	string scSection = "autobuy_" + wstos(wscFilename);
+	string scFilename = wstos(wscFilename);
+
+	// read autobuy
+	string scSection = "autobuy_" + scFilename;
 	list<INISECTIONVALUE> lstValues;
 	IniGetSection(scUserFile, scSection, lstValues);
 	ClientInfo[iClientID].lstAutoBuyItems.clear();
@@ -304,8 +306,9 @@ void LoadUserCharSettings(uint iClientID)
 		ClientInfo[iClientID].lstAutoBuyItems.push_back(item);
 	}
 
+	scSection = "general_" + scFilename;
+
 	// read automarking settings
-	scSection = "general_" + wstos(wscFilename);
 	ClientInfo[iClientID].bMarkEverything = IniGetB(scUserFile, scSection, "automarkenabled", false);
 	ClientInfo[iClientID].bIgnoreGroupMark = IniGetB(scUserFile, scSection, "ignoregroupmarkenabled", false);
 	ClientInfo[iClientID].fAutoMarkRadius = IniGetF(scUserFile, scSection, "automarkradius", set_fAutoMarkRadius);

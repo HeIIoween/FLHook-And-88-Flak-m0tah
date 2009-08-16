@@ -667,7 +667,7 @@ extern vector<uint> vRestoreKBeamClientIDs;
 extern bool bSupressDeathMsg;
 HK_ERROR HkKillBeam(wstring wscCharname, wstring wscBasename);
 HK_ERROR HkSaveChar(wstring wscCharname);
-HK_ERROR HkEnumCargo(wstring wscCharname, list<CARGO_INFO> &lstCargo, int &iRemainingHoldSize);
+HK_ERROR HkEnumCargo(wstring wscCharname, list<CARGO_INFO> &lstCargo, int *iRemainingHoldSize);
 HK_ERROR HkRemoveCargo(wstring wscCharname, uint iID, int iCount);
 HK_ERROR HkAddCargo(wstring wscCharname, uint iGoodID, int iCount, bool bMission);
 HK_ERROR HkAddCargo(wstring wscCharname, uint iGoodID, CacheString *hardpoint, bool bMission);

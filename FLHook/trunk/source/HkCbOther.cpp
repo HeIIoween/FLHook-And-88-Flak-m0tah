@@ -118,9 +118,8 @@ int __cdecl SpaceObjDock(unsigned int const &iShip, unsigned int const & iDockTa
 					if(jrFound)
 					{
 						list<CARGO_INFO> lstCargo;
-						int iSpaceRemaining;
 						bool bPresent = false;
-						HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iSpaceRemaining);
+						HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 						foreach(lstCargo, CARGO_INFO, cargo)
 						{
 							if(cargo->iArchID == jrFound->iArchID) //Item is present

@@ -453,9 +453,8 @@ void UserCmd_AutoBuy(uint iClientID, wstring wscParam)
 
 		ClientInfo[iClientID].lstAutoBuyItems.clear();
 		IniDelSection(scUserFile, scSection);
-		int iHoldRemaining;
 		list<CARGO_INFO> lstCargo;
-		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iHoldRemaining);
+		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 		list<AUTOBUY_CARTITEM> lstItems;
 		foreach(lstCargo, CARGO_INFO, cargo)
 		{
@@ -1361,9 +1360,8 @@ void UserCmd_Transfer(uint iClientID, wstring wscParam)
 
 		uint iTargetClientID = ToUint(wscTargetChar);
 		ushort iItemID = ToUint(wscItem);
-		int iRemaining;
 		list<CARGO_INFO> lstCargo;
-		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iRemaining);
+		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 		bool bFoundItem = false;
 		if(iItemID)
 		{
@@ -1505,9 +1503,8 @@ void UserCmd_TransferID(uint iClientID, wstring wscParam)
 
 		uint iTargetClientID = ToUint(wscTargetChar);
 		ushort iItemID = ToUint(wscItem);
-		int iRemaining;
 		list<CARGO_INFO> lstCargo;
-		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iRemaining);
+		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 		bool bFoundItem = false;
 		if(iItemID)
 		{
@@ -1618,8 +1615,7 @@ void UserCmd_TransferID(uint iClientID, wstring wscParam)
 void UserCmd_EnumCargo(uint iClientID, wstring wscParam)
 {
 	list<CARGO_INFO> lstCargo;
-	int iRemainingHoldSize;
-	HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, iRemainingHoldSize);
+	HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 	uint iNum = 0;
 	foreach(lstCargo, CARGO_INFO, it)
 	{

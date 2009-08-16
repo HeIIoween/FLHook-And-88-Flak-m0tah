@@ -615,7 +615,8 @@ downloaded from http://www.schneier.com/blowfish-download.html
 
 1.6.6 (unofficial)
 - Re-implemented the kill event (for the socket eventmode)
-
+- Autobuy checks if the number of nanobots and shield batteries in the template are greater than allowed for the ship
+- Excess nanobots and shield batteries are sold after buying a new ship
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)

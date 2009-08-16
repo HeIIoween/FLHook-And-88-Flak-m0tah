@@ -430,7 +430,7 @@ void CCmds::CmdEnumCargo(wstring wscCharname)
 
 	list<CARGO_INFO> lstCargo;
 	int iRemainingHoldSize = 0;
-	if(HKSUCCESS(HkEnumCargo(wscCharname, lstCargo, iRemainingHoldSize))) {
+	if(HKSUCCESS(HkEnumCargo(wscCharname, lstCargo, &iRemainingHoldSize))) {
 		Print(L"remainingholdsize=%d\n", iRemainingHoldSize);
 		foreach(lstCargo, CARGO_INFO, it)
 		{
