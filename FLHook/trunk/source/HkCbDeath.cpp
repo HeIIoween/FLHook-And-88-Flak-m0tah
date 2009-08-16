@@ -445,7 +445,13 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 					delete factionsIter;
 					delete btFactionsInflict;
 
-					wstring wscDeathMsg = L"Death: " + wstring(Players.GetActiveCharacterName(iClientID)) + L" was killed";
+					wstring wscDeathMsg;
+					wstring wscEvent, wscEventBy = L" by=", wscEventCause = L" cause=";
+					wscEvent.reserve(256);
+					wscDeathMsg.reserve(256);
+					wstring wscVictim = Players.GetActiveCharacterName(iClientID);
+					wscEvent = L"kill victim=" + wscVictim;
+					wscDeathMsg = L"Death: " + wscVictim + L" was killed";
 					if(!lstFactionsInflict.size())
 					{
 						uint iSystemID;
@@ -476,32 +482,51 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 							list<wstring> lstTypes;
 							uint iNumTypes = set_iMaxDeathEquipmentCauses ? (set_iMaxDeathEquipmentCauses>lstDamages.size() ? lstDamages.size() : set_iMaxDeathEquipmentCauses) : lstDamages.size();
 							uint k = 0;
-							while(k < iNumTypes)
+							while(lstDamages.size())
 							{
 								switch(lstDamages.back().iCause)
 								{
 								case DC_GUN:
-									lstTypes.push_back(L"guns");
+									if(k < iNumTypes)
+										lstTypes.push_back(L"guns");
+									wscEventCause += L"guns,";
 									break;
 								case DC_MISSILE:
 									if(set_bCombineMissileTorpMsgs)
-										lstTypes.push_back(L"missiles/torpedoes");
+									{
+										if(k < iNumTypes)
+											lstTypes.push_back(L"missiles/torpedoes");
+										wscEventCause += L"missiles/torpedoes,";
+									}
 									else
-										lstTypes.push_back(L"missiles");
+									{
+										if(k < iNumTypes)
+											lstTypes.push_back(L"missiles");
+										wscEventCause += L"missiles,";
+									}
 									break;
 								case DC_MINE:
-									lstTypes.push_back(L"mines");
+									if(k < iNumTypes)
+										lstTypes.push_back(L"mines");
+									wscEventCause += L"mines,";
 									break;
 								case DC_COLLISION:
-									lstTypes.push_back(L"collisions");
+									if(k < iNumTypes)
+										lstTypes.push_back(L"collisions");
+									wscEventCause += L"collisions,";
 									break;
 								case DC_TORPEDO:
-									lstTypes.push_back(L"torpedoes");
+									if(k < iNumTypes)
+										lstTypes.push_back(L"torpedoes");
+									wscEventCause += L"torpedoes,";
 									break;
 								}
 								lstDamages.pop_back();
 								k++;
 							}
+							wscEventCause = wscEventCause.substr(0, wscEventCause.length()-1);
+							if(j != 0)
+								wscEventCause += L";";
 							wstring wscDamages = L"";
 							if(lstTypes.size())
 							{
@@ -534,11 +559,15 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 								if(j == 0)
 								{
 									iKillerID = -lstFactionsInflict.back().iInflictor;
-									lstCauses.push_back(L"by " + wstring(Players.GetActiveCharacterName(iKillerID)) + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+									wstring wscKiller = Players.GetActiveCharacterName(iKillerID);
+									lstCauses.push_back(L"by " + wscKiller + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+									wscEventBy += wscKiller;
 								}
 								else
 								{
-									lstCauses.push_back(L"by " + wstring(Players.GetActiveCharacterName(-lstFactionsInflict.back().iInflictor)) + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+									wstring wscKiller = Players.GetActiveCharacterName(-lstFactionsInflict.back().iInflictor);
+									lstCauses.push_back(L"by " + wscKiller + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+									wscEventBy += L"," + wscKiller;
 								}
 							}
 							else //NPC
@@ -551,6 +580,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 									{
 										// Mines don't have affiliations
 										lstCauses.push_back(L"by mines");
+										wscEventBy += (j == 0 ? L"mines" : L",mines");
 									}
 									else
 									{
@@ -576,10 +606,13 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 										pub::Reputation::GetGroupName(lstFactionsInflict.back().iInflictor, iNameID);
 										wstring wscGroupName = HkGetWStringFromIDS(iNameID);
 										lstCauses.push_back(L"by " + wscGroupName + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+										wscGroupName = ReplaceStr(wscGroupName, L" ", L"_");
+										wscEventBy += (j == 0 ? wscGroupName : L"," + wscGroupName);
 									}
 									else
 									{
 										wstring wscGroupName = HkGetWStringFromIDS(iNameID);
+										wstring wscGroupNameEvent = ReplaceStr(wscGroupName, L" ", L"_");
 										if(lstFactionsInflict.back().iNumShips == 1)
 										{
 											if(wscGroupName[wscGroupName.length()-1] == L's')
@@ -591,6 +624,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 										}
 										else
 											lstCauses.push_back(L"by " + stows(itos(lstFactionsInflict.back().iNumShips)) + L" " + wscGroupName + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+										wscEventBy += (j == 0 ? wscGroupNameEvent : L"," + wscGroupNameEvent);
 									}
 								}
 							}
@@ -624,6 +658,11 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 						uint iSystemID;
 						pub::Player::GetSystem(iClientID, iSystemID);
 						SendDeathMsg(wscDeathMsg, iSystemID, iClientID, iKillerID);
+
+						// Event
+						wscEvent += wscEventBy;
+						wscEvent += wscEventCause;
+						ProcessEvent(wscEvent);
 
 						// Death penalty
 						ClientInfo[iClientID].bDeathPenaltyOnEnter = true;

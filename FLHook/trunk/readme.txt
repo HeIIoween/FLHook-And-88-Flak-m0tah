@@ -1,6 +1,6 @@
 F L   H O O K
 =============
-version: 1.6.5
+version: 1.6.6
 Based on FLHook v1.5.5 with w0dk4's cloak code
 
 NOTE: If you wish to use this version of FLHook in place of your standard 1.5.5,
@@ -325,10 +325,10 @@ chat from=<player> id=<client-id> type=<type> [to=<recipient> idto=<recipient-cl
   <recipient>/<recipient-client-id>: only sent when type=player
   <text>: guess ...
 
-kill victim=<player> type=<type> [by=<killer>]
-  <player>: charname of the victim
-  <type>: selfkill,player,npc,suicide
-  <killer>: charname of the killer
+kill victim=<player> by=<killer1>[,<killer2]... cause=<killer1's weapons>[;killer2's weapons]...
+  <player>: charname of the victim.
+  <killerx>: charname/faction(if NPC) of the killer; sorted from highest to lowest damage.
+  <killerx's weapons>: comma seperated list of weapons used to kill player.  Weapons can be guns, missiles (only if CombineMissilesTorps is set to no), mines, torpedoes (only if CombineMissilesTorps is set to no), missiles/torpedoes (only if CombineMissilesTorps is set to yes), or collisions.  Sorted from highest to lowest damage.
 
 login char=<player> accountdirname=<dirname> id=<client-id> ip=<ip>
   occurs when player selects a character in the character-select menu
@@ -612,6 +612,10 @@ downloaded from http://www.schneier.com/blowfish-download.html
 ================================================================================
 == CHANGELOG ===================================================================
 ================================================================================
+
+1.6.6 (unofficial)
+- Re-implemented the kill event (for the socket eventmode)
+
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)
