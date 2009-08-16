@@ -441,7 +441,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 				pub::Player::GetAssetValue(iClientID, fValue);
 				ClientInfo[iClientID].iDeathPenaltyCredits = (int)(fValue * set_fDeathPenalty);
 				if(ClientInfo[iClientID].bDisplayDPOnLaunch)
-					PrintUserCmdText(iClientID, L"Notice: the death penalty for your ship will be %i credits.  Type /dp for more information.", ClientInfo[iClientID].iDeathPenaltyCredits);
+					PrintUserCmdText(iClientID, L"Notice: the death penalty for your ship will be " + ToMoneyStr(ClientInfo[iClientID].iDeathPenaltyCredits) + L" credits.  Type /dp for more information.");
 			}
 			else
 				ClientInfo[iClientID].iDeathPenaltyCredits = 0;
@@ -953,7 +953,7 @@ void __stdcall BaseEnter(unsigned int iBaseID, unsigned int iClientID)
 		ClientInfo[iClientID].lstDmgRec.clear();
 
 		//Death penalty
-		HkPenalizeDeath(ARG_CLIENTID(iClientID), true);
+		HkPenalizeDeath(ARG_CLIENTID(iClientID), 0, true);
 
 		// event
 		ProcessEvent(L"baseenter char=%s id=%d base=%s system=%s", 
@@ -1278,7 +1278,7 @@ void __stdcall DisConnect(unsigned int iClientID, enum EFLConnection p2)
 
 		if(bDeathPenaltyOnEnter)
 		{
-			HkPenalizeDeath(wszCharname, true);
+			HkPenalizeDeath(wszCharname, 0, true);
 		}
 
 	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }

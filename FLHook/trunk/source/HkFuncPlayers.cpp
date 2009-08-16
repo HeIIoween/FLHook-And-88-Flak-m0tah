@@ -1159,7 +1159,7 @@ void HkRemoveDeathPenaltyItems(uint iClientID)
 	delete btRemovedItems;
 }
 
-void HkPenalizeDeath(wstring wscCharname, bool bSecondTime)
+void HkPenalizeDeath(wstring wscCharname, uint iKillerID, bool bSecondTime)
 {
 	if(!set_fDeathPenalty)
 		return;
@@ -1177,6 +1177,12 @@ void HkPenalizeDeath(wstring wscCharname, bool bSecondTime)
 				int iCash;
 				HkGetCash(wscCharname, iCash);
 				int iOwed = ClientInfo[iClientID].iDeathPenaltyCredits;
+				if(iKillerID && set_fDeathPenaltyKiller)
+				{
+					int iGive = (int)(iOwed * set_fDeathPenaltyKiller);
+					HkAddCash(ARG_CLIENTID(iKillerID), iGive);
+					PrintUserCmdText(iKillerID, L"Death penalty: given " + ToMoneyStr(iGive) + L" credits from %s's death penalty.", Players.GetActiveCharacterName(iClientID));
+				}
 				if(iOwed/2 > iCash) //remove items from player's cargo from penalty list
 				{
 					if(bSecondTime)
@@ -1187,7 +1193,7 @@ void HkPenalizeDeath(wstring wscCharname, bool bSecondTime)
 				}
 				else
 				{
-					PrintUserCmdText(iClientID, L"Death penalty: charged %i credits.", iOwed);
+					PrintUserCmdText(iClientID, L"Death penalty: charged " + ToMoneyStr(iOwed) + L" credits.");
 					HkAddCash(wscCharname, -iOwed);
 					ClientInfo[iClientID].bDeathPenaltyOnEnter = false;
 				}

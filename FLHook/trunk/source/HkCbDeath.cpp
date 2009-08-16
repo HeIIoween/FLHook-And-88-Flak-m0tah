@@ -666,7 +666,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 
 						// Death penalty
 						ClientInfo[iClientID].bDeathPenaltyOnEnter = true;
-						HkPenalizeDeath(ARG_CLIENTID(iClientID), false);
+						HkPenalizeDeath(ARG_CLIENTID(iClientID), iKillerID, false);
 
 						// MultiKillMessages
 						if((set_MKM_bActivated) && iKillerID && (iClientID != iKillerID))

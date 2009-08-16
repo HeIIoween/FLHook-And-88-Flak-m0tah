@@ -138,6 +138,7 @@ uint g_iServerLoad = 0;
 char *g_FLServerDataPtr;
 
 _GetShipInspect GetShipInspect;
+_GetIObjRW GetIObjRW;
 _AddCargoDocked AddCargoDocked;
 
 
@@ -335,6 +336,7 @@ bool InitHookExports()
 	hThreadResolver = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)HkThreadResolver, &dwParam, 0, &dwID);
  
 	GetShipInspect = (_GetShipInspect)SRV_ADDR(ADDR_SRV_GETINSPECT);
+	GetIObjRW = (_GetIObjRW)SRV_ADDR(ADDR_SRV_GETIOBJRW);
 	AddCargoDocked = (_AddCargoDocked)SRV_ADDR(ADDR_SRV_ADDCARGODOCKED);
 
 	// get export that failed with link-lib

@@ -184,6 +184,7 @@ extern FILE *fLog;
 extern FARPROC fpOldUpdate;
 
 // setting variables
+//TODO: clean this section up
 extern string set_scCfgFile;
 extern uint set_iAntiDockKill;
 extern list<uint> set_lstNoPVPSystems;
@@ -238,6 +239,7 @@ extern bool set_bSetAutoErrorMargin;
 extern float set_fAutoErrorMargin;
 extern bool set_bDamageNPCsCollision;
 extern bool set_bDropShieldsCloak;
+extern float set_fDeathPenaltyKiller;
 
 extern list<INISECTIONVALUE> set_lstCloakDevices;
 extern int set_iCloakExpireWarnTime;
@@ -351,10 +353,6 @@ struct NEW_CHAR_REP
 };
 extern list<NEW_CHAR_REP> set_lstNewCharRep;
 
-extern bool set_bChangeRepPvPDeath;
-extern float set_fMaxRepValue;
-extern float set_fMinRepValue;
-
 extern float set_fDeathPenalty;
 struct DEATH_ITEM
 {
@@ -399,7 +397,10 @@ struct REP_CHANGE_EFFECT
 	bool operator<(REP_CHANGE_EFFECT rce) { return rce.iGroupID<iGroupID; }
 };
 extern BinaryTree<REP_CHANGE_EFFECT> *set_btEmpathy;
+extern float set_fMaxRepValue;
+extern float set_fMinRepValue;
 extern float set_fRepChangePvP;
+extern bool set_bChangeRepPvPDeath;
 
 extern int set_iBeamCmd;
 extern BinaryTree<UINT_WRAP> *set_btNoTrade;

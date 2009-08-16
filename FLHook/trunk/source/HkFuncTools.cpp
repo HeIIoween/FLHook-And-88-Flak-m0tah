@@ -357,6 +357,7 @@ void HkGetItemsForSale(uint iBaseID, list<uint> &lstItems)
 	for(int i = 0; (i < iSize); i++)
 		lstItems.push_back(iArray[i]);
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 IObjInspectImpl* HkGetInspect(uint iClientID)
@@ -373,6 +374,20 @@ IObjInspectImpl* HkGetInspect(uint iClientID)
 		return inspect;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+CEquipManager* HkGetEquipMan(uint iShip)
+{
+	uint iDunno;
+	IObjInspectImpl *inspect;
+	if(!GetShipInspect(iShip, inspect, iDunno))
+		return 0;
+	char *szShip = (char*)inspect;
+	szShip += 0x10;
+	char *szEquip = *((char**)szShip);
+	szEquip += 0xE4;
+	return (CEquipManager*)szEquip;
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ENGINE_STATE HkGetEngineState(uint iClientID)

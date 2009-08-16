@@ -1689,12 +1689,10 @@ void UserCmd_DeathPenalty(uint iClientID, wstring wscParam)
 		UINT_WRAP uw = UINT_WRAP(Players[iClientID].iShipArchID);
 		if(!set_btNoDeathPenalty->Find(&uw))
 		{
-			int iCash;
-			HkGetCash(ARG_CLIENTID(iClientID), iCash);
 			float fValue;
 			pub::Player::GetAssetValue(iClientID, fValue);
 			int iOwed = (int)(fValue * set_fDeathPenalty);
-			PrintUserCmdText(iClientID, L"The death penalty for your ship will be %i credits.", iOwed);
+			PrintUserCmdText(iClientID, L"The death penalty for your ship will be " + ToMoneyStr(iOwed) + L" credits.");
 			list<wstring> lstItems = HkGetDeathPenaltyItems(iClientID);
 			if(lstItems.size())
 			{

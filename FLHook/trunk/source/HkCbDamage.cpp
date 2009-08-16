@@ -140,18 +140,12 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 				}
 				else //Equipment hit
 				{
-					/*uint iDunno;
-					IObjInspectImpl *inspect;
-					GetShipInspect(iDmgToSpaceID, inspect, iDunno);
-					EquipStatus eq;
-					inspect->get_equipment_status(eq, p1);*/
-
-					if(iDmgTo)
+					if(iDmgToSpaceID)
 					{
-						uint iGoodID;
-						HkGetGoodIDFromSID(iDmgTo, p1, iGoodID);
-						float fMaxHP = Archetype::GetEquipment(iGoodID)->fMaxHP;
-						p2 += g_fRepairDamage*2;
+						CEquipManager *equipment = HkGetEquipMan(iDmgToSpaceID);
+						CEquip *equip = equipment->FindByID(p1);
+						float fMaxHP = equip->EquipArch()->fMaxHP;//GetMaxHitPoints();
+						p2 = g_fRepairDamage * 2 + p2;// + equip->GetHitPoints();
 						if(p2 > fMaxHP)
 						{
 							p2 = fMaxHP;

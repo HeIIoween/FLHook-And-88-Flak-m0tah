@@ -81,6 +81,8 @@ bool			set_bCombineMissileTorpMsgs;
 float			set_fDeathPenalty;
 uint			set_iMaxDeathFactionCauses;
 uint			set_iMaxDeathEquipmentCauses;
+float			set_fRepChangePvP;
+float			set_fDeathPenaltyKiller;
 
 // NoPVP
 list<uint>		set_lstNoPVPSystems;
@@ -145,7 +147,6 @@ list<NEW_CHAR_REP> set_lstNewCharRep;
 BinaryTree<DEATH_ITEM> *set_btDeathItems = new BinaryTree<DEATH_ITEM>(); //Items to take for death penalty
 BinaryTree<UINT_WRAP> *set_btNoDeathPenalty = new BinaryTree<UINT_WRAP>(); //Ships to not apply the death penalty to
 BinaryTree<UINT_WRAP> *set_btNoDPSystems = new BinaryTree<UINT_WRAP>(); //Systems to not apply the death penalty in
-float			set_fRepChangePvP;
 
 //RepChangeEffects
 BinaryTree<REP_CHANGE_EFFECT> *set_btEmpathy = new BinaryTree<REP_CHANGE_EFFECT>();
@@ -263,7 +264,8 @@ void LoadSettings()
 	// Death
 		set_bChangeRepPvPDeath = IniGetB(set_scCfgFile, "Death", "ChangeRepPvPDeath", false);
 		set_bCombineMissileTorpMsgs = IniGetB(set_scCfgFile, "Death", "CombineMissilesTorps", false);
-		set_fDeathPenalty = IniGetF(set_scCfgFile, "Death", "DeathPenaltyFraction", 0.5f);
+		set_fDeathPenalty = IniGetF(set_scCfgFile, "Death", "DeathPenaltyFraction", 0.0f);
+		set_fDeathPenaltyKiller = IniGetF(set_scCfgFile, "Death", "DeathPenaltyKillerFraction", 0.0f);
 		set_iMaxDeathFactionCauses = IniGetI(set_scCfgFile, "Death", "NumDeathFactionReasons", 1);
 		set_iMaxDeathEquipmentCauses = IniGetI(set_scCfgFile, "Death", "NumDeathEquipmentReasons", 1);
 		set_fRepChangePvP = IniGetF(set_scCfgFile, "Death", "PvPRepChangeDeath", 0.0f);

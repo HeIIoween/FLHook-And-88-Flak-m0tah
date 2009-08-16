@@ -662,6 +662,79 @@ public:
 	unsigned char data[OBJECT_DATA_SIZE];
 };
 
+namespace Archetype
+{
+	struct IMPORT Ship
+	{
+		uint	iDunno1[2];
+		uint	iShipArchID;
+		uint	iDunno2;
+		uint	iType;
+		uint	iIDSName;
+		uint	iIDSInfo;
+		float	fHitPts;
+		float	fMass;
+		uint	iDunno3[2];
+		float	fRotationIntertia[3];
+		uint	iDunno4[45];
+		uint	iIDSInfo1;
+		uint	iIDSInfo2;
+		uint	iIDSInfo3;
+		uint	iShipClass;
+		uint	iNumExhaustNozzles;
+		float	fHoldSize;
+		float	fLinearDrag;
+		float	fAngularDrag[3];
+		float	fSteeringTorque[3];
+		float	fNudgeForce;
+		float	fStrafeForce;
+		uint	iDunno5[6];
+		uint	iMaxNanobots;
+		uint	iMaxShieldBats;
+	};
+
+	struct Equipment
+	{
+		uint iVFTable;
+		uint i2;
+		uint iEquipID;
+		char *szName;
+		uint i5;
+		uint iIDSName;
+		uint iIDSInfo;
+		float fMaxHP;
+		float fMass;
+		uint iDunno;
+		float fExplosionResistance;
+		uint iArray[12];
+		float fVolume;
+		uint iArray2[6];
+		float fChildImpulse;
+		float fParentImpulse;
+		float fHullDamage; //Only for ammo entries
+		uint iArray3[4];
+		float fMuzzleVelocity;
+		uint iAmmoArchID; // 39
+		uint iArray4[67];
+		uint iGunTypeFlags;
+		uint iDunno2;
+		uint iGunType;
+		uint iArray5[50];
+//		uint i[152];
+	};
+
+	struct Munition
+	{
+		uint iDunno;
+		//uint iDunno[513];
+	};
+
+	IMPORT struct Ship * __cdecl GetShip(unsigned int);
+	IMPORT struct Archetype::Equipment * __cdecl GetEquipment(unsigned int);
+
+	IMPORT int GetArchMaxHitPts(unsigned int);
+}
+
 struct EquipDesc
 {
 	public: 
@@ -764,7 +837,7 @@ public:
 	virtual void Destroy(void);
 	virtual bool DisableController(void);
 	virtual bool EnableController(void);
-	struct Equipment const * EquipArch(void)const ;
+	Archetype::Equipment const * EquipArch(void)const ;
 	virtual bool GetConnectionPosition(class Vector *,class Matrix *)const ;
 	virtual bool GetEquipDesc(struct EquipDesc &)const ;
 	virtual float GetHitPoints(void)const ;
@@ -862,90 +935,6 @@ public:
 
 enum HpAttachmentType;
 
-namespace Archetype
-{
-	struct IMPORT Ship
-	{
-		uint	iDunno1[2];
-		uint	iShipArchID;
-		uint	iDunno2;
-		uint	iType;
-		uint	iIDSName;
-		uint	iIDSInfo;
-		float	fHitPts;
-		float	fMass;
-		uint	iDunno3[2];
-		float	fRotationIntertia[3];
-		uint	iDunno4[45];
-		uint	iIDSInfo1;
-		uint	iIDSInfo2;
-		uint	iIDSInfo3;
-		uint	iShipClass;
-		uint	iNumExhaustNozzles;
-		float	fHoldSize;
-		float	fLinearDrag;
-		float	fAngularDrag[3];
-		float	fSteeringTorque[3];
-		float	fNudgeForce;
-		float	fStrafeForce;
-		uint	iDunno5[6];
-		uint	iMaxNanobots;
-		uint	iMaxShieldBats;
-	};
-
-	struct Equipment
-	{
-		uint iVFTable;
-		uint i2;
-		uint iEquipID;
-		char *szName;
-		uint i5;
-		uint iIDSName;
-		uint iIDSInfo;
-		float fMaxHP;
-		float fMass;
-		uint iDunno;
-		float fExplosionResistance;
-		uint iArray[12];
-		float fVolume;
-		uint iArray2[6];
-		float fChildImpulse;
-		float fParentImpulse;
-		float fHullDamage; //Only for ammo entries
-		uint iArray3[4];
-		float fMuzzleVelocity;
-		uint iAmmoArchID; // 39
-		uint iArray4[67];
-		uint iGunTypeFlags;
-		uint iDunno2;
-		uint iGunType;
-		uint iArray5[50];
-//		uint i[152];
-	};
-
-	struct Munition
-	{
-		uint iDunno;
-		//uint iDunno[513];
-	};
-
-	IMPORT struct Ship * __cdecl GetShip(unsigned int);
-	IMPORT struct Archetype::Equipment * __cdecl GetEquipment(unsigned int);
-
-	IMPORT int GetArchMaxHitPts(unsigned int);
-
-	class IMPORT Gun 
-	{
-	public: 
-//		virtual enum  HpAttachmentType get_hp_type(void)const;
-		int get_number_of_hp_types(void)const;
-		enum HpAttachmentType get_hp_type_by_index(int)const;
-	};
-
-	IMPORT unsigned short __cdecl LargeIDToSmallID(unsigned int);
-	IMPORT unsigned int __cdecl SmallIDToLargeID(unsigned short);
-}
-
 struct MarketGoodInfo
 {
 	u_long lArray[16];
@@ -970,6 +959,20 @@ class IMPORT CSimple
 public:
 	float get_hit_pts(void)const;
 };
+
+namespace Archetype
+{
+	class IMPORT Gun 
+	{
+	public: 
+//		virtual enum  HpAttachmentType get_hp_type(void)const;
+		int get_number_of_hp_types(void)const;
+		enum HpAttachmentType get_hp_type_by_index(int)const;
+	};
+
+	IMPORT unsigned short __cdecl LargeIDToSmallID(unsigned int);
+	IMPORT unsigned int __cdecl SmallIDToLargeID(unsigned short);
+}
 
 struct IMPORT CShip
 {
@@ -1207,11 +1210,50 @@ private:
 	char szBuf[1024];
 };
 
-struct IObjRW
+struct IObjRW : IObjInspectImpl
 {
-	//IObjInspectImpl *ship;
-	ulong iDunno1;
-	ulong iDunno2;
 };
+
+class IMPORT CEquipManager
+{
+public:
+	CEquipManager(class CEquipManager const &);
+	CEquipManager(void);
+	~CEquipManager(void);
+	class CEquipManager & operator=(class CEquipManager const &);
+	bool AddNewEquipment(class CEquip *);
+	int CleanUp(void);
+	void Clear(void);
+	class CExternalEquip * FindByHardpoint(struct CacheString const &);
+	class CExternalEquip const * FindByHardpoint(struct CacheString const &)const ;
+	class CEquip * FindByID(unsigned short);
+	class CEquip const * FindByID(unsigned short)const ;
+	class CEquip * FindFirst(unsigned int);
+	class CEquip const * FindFirst(unsigned int)const ;
+	bool HasDecayingCargo(void)const ;
+	bool Init(struct CEqObj *);
+	unsigned short InstToSubObjID(long)const ;
+	class CEquip * ReverseTraverse(class CEquipTraverser &);
+	class CEquip const * ReverseTraverse(class CEquipTraverser &)const ;
+	int Size(void)const ;
+	class CEquip * Traverse(class CEquipTraverser &);
+	class CEquip const * Traverse(class CEquipTraverser &)const ;
+	bool VerifyListSync(class EquipDescList const &)const ;
+
+private:
+	int CleanUp(class std::list<class CEquip *,class std::allocator<class CEquip *> > &);
+	static void  Clear(class std::list<class CEquip *,class std::allocator<class CEquip *> > &);
+};
+
+class IMPORT CEquipTraverser
+{
+public:
+	CEquipTraverser(int);
+	CEquipTraverser(int,bool);
+	CEquipTraverser(void);
+	class CEquipTraverser & operator=(class CEquipTraverser const &);
+	void Restart(void);
+};
+
 
 #endif

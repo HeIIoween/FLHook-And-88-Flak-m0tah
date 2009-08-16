@@ -45,6 +45,7 @@
 #define ADDR_SRV_GETCOMMODITIES 0x32EC2 // 06D12EC2
 #define ADDR_SRV_MAXGROUPSIZE 0x3A068 // 06D1A068
 #define ADDR_SRV_MAXGROUPSIZE2 0x3A46E // 06D1A46E
+#define ADDR_SRV_GETIOBJRW 0x20670 // 06D00670
 #define ADDR_SRV_GETINSPECT 0x206C0 // 06D006C0
 #define ADDR_SRV_ADDCARGODOCKED 0x6EFC0 // 06D4EFC0
 #define ADDR_SRV_SPAWN_ITEM 0x28A40
@@ -173,9 +174,11 @@ typedef void (__stdcall *_CRCAntiCheat)();
 typedef void (__stdcall *_CreateChar)(const wchar_t *wszName);
 typedef void (__cdecl *_GetFLName)(char *szBuf, const wchar_t *wszStr);
 typedef bool (__cdecl *_GetShipInspect)(uint &iShip, IObjInspectImpl* &inspect, uint &iDunno);
+typedef IObjRW * (__cdecl *_GetIObjRW)(uint iShip);
 typedef bool (__stdcall *_AddCargoDocked)(uint iGoodID, CacheString *&hardpoint, int iNumItems, float fHealth, int bMounted, int bMission, uint iOne);
 
 extern _GetShipInspect GetShipInspect;
+extern _GetIObjRW GetIObjRW;
 extern _AddCargoDocked AddCargoDocked;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -624,6 +627,7 @@ void HkLockAccountAccess(CAccount *acc, bool bKick);
 void HkUnlockAccountAccess(CAccount *acc);
 void HkGetItemsForSale(uint iBaseID, list<uint> &lstItems);
 IObjInspectImpl* HkGetInspect(uint iClientID);
+CEquipManager* HkGetEquipMan(uint iShip);
 ENGINE_STATE HkGetEngineState(uint iClientID);
 EQ_TYPE HkGetEqType(Archetype::Equipment *eq);
 HK_ERROR HkGetGoodIDFromSID(uint iClientID, ushort sGoodID, uint &iGoodID);
@@ -677,7 +681,7 @@ HK_ERROR HkAddCargo(wstring wscCharname, uint iGoodID, string scHardpoint, bool 
 HK_ERROR HkRename(wstring wscCharname, wstring wscNewCharname, bool bOnlyDelete);
 HK_ERROR HkMsgAndKick(uint iClientID, wstring wscReason, uint iIntervall);
 HK_ERROR HkKill(wstring wscCharname);
-void HkPenalizeDeath(wstring wscCharname, bool bSecondTime);
+void HkPenalizeDeath(wstring wscCharname, uint iKillerID, bool bSecondTime);
 list<wstring> HkGetDeathPenaltyItems(uint iClientID);
 HK_ERROR HkGetReservedSlot(wstring wscCharname, bool &bResult);
 HK_ERROR HkSetReservedSlot(wstring wscCharname, bool bReservedSlot);
