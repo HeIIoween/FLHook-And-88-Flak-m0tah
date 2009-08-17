@@ -305,25 +305,24 @@ __declspec(naked) void _SpawnItemOrig()
 	return iRet;
 }*/
 
-uint iSaveRet = 0;
-uint iSaveID = 0;
-uint iSaveClientID = 0;
 unsigned int __cdecl ControllerCreate(char const *szDLLPath, char const *szControllerType, struct pub::Controller::CreateParms const *create, enum pub::Controller::PRIORITY iDunno)
 {
-	if(iSaveID == create->iID && iSaveClientID == create->iClientID)
+	uint iControllerID;
+	if(!strcmp(szControllerType, "Mission_13"))
 	{
-		ConPrint(L"Create %s DROPPED!\n", stows(szControllerType).c_str());
-		return iSaveRet;
+		iControllerID = ClientInfo[create->iClientID].iControllerID;
+		if(!iControllerID)
+		{
+			iControllerID = pub::Controller::Create(szDLLPath, szControllerType, create, iDunno);
+			ClientInfo[create->iClientID].iControllerID = iControllerID;
+			ConPrint(L"Create %s %u | %u %u\n", stows(szControllerType).c_str(), iControllerID, create->iID, create->iClientID);
+		}
 	}
-
-	iSaveID = create->iID;
-	iSaveClientID = create->iClientID;
-	
-	iSaveRet = pub::Controller::Create(szDLLPath, szControllerType, create, iDunno);
-	
-	ConPrint(L"Create %s %i\n", stows(szControllerType).c_str(), iSaveRet);
-
-	return iSaveRet;
+	else
+	{
+		iControllerID = pub::Controller::Create(szDLLPath, szControllerType, create, iDunno);
+	}
+	return iControllerID;
 }
 
 int __cdecl ControllerSend(unsigned int const &iControllerID, int iMsgType, void const *msgData)
@@ -336,10 +335,6 @@ int __cdecl ControllerSend(unsigned int const &iControllerID, int iMsgType, void
 
 void __cdecl ControllerDestroy(unsigned int iControllerID)
 {
-	/*if(iControllerID == iSaveID)
-	{
-		iSaveID = 0;
-		iSaveClientID = 0*/
-
+	ConPrint(L"Destroy %u\n", iControllerID);
 	return pub::Controller::Destroy(iControllerID);
 }

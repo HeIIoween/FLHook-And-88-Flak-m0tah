@@ -486,6 +486,9 @@ struct CLIENT_INFO
 	bool bCheckedDock;
 	list<CARGO_REMOVE> lstRemCargo;
 
+//Mission scripting fix
+	uint iControllerID;
+
 // other
 	wstring		wscHostname;
 	uint		iShipID;

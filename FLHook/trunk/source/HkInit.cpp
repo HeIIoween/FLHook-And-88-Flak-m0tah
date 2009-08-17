@@ -48,9 +48,9 @@ PATCH_INFO piContentDLL =
 	{
 		{0x6FB350C,		&SpaceObjCreate,							4, 0,						false},
 		{0x6FB358C,		&SpaceObjDock,								4, 0,						false},
-		//{0x6FB3614,		&ControllerCreate,							4, 0,						false},
+		{0x6FB3614,		&ControllerCreate,							4, 0,						false},
 		//{0x6FB360C,		&ControllerSend,							4, 0,						false},
-		//{0x6FB3610,		&ControllerDestroy,							4, 0,						false},
+		{0x6FB3610,		&ControllerDestroy,							4, 0,						false},
 		//{0x6FB33C4,		&SpaceObjLightFuse,							4, 0,						false},
 		//{0x6FB33C8,		&SpaceObjDestroy,							4, 0,						false},
 		//{0x6FB34D4,		&SolarSpaceObjCreate,						4, 0,						false},
@@ -239,6 +239,7 @@ void ClearClientInfo(uint iClientID)
 	ClientInfo[iClientID].iDeathPenaltyCredits = 0;
 	ClientInfo[iClientID].bCheckedDock = false;
 	ClientInfo[iClientID].lstRemCargo.clear();
+	ClientInfo[iClientID].iControllerID = 0;
 }
 
 /**************************************************************************************************************

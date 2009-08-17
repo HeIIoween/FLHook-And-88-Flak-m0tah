@@ -620,6 +620,7 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - Added setting to give winners in PvP part of the loser's death penalty
 - Changed cash printouts in DP code to use ToMoneyStr for better formatting
 - Repair guns now work on external equipment on both NPCs and players
+- Multiplayer story scripts no longer run multiple times at once
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)

@@ -170,6 +170,9 @@ map<uint, uint> set_mapNoSpaceItems;
 //Items to automatically mark when spawned
 map<uint, uint> set_mapAutoMark;
 
+//Equipment to redirect damage to hull
+map<uint, uint> set_mapEquipReDam;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void LoadSettings()
@@ -542,6 +545,7 @@ void LoadSettings()
 			set_mapItemRepair[CreateID(Trim(it14->scKey).c_str())] = ToFloat(Trim(it14->scValue))/4;
 		}
 
+	//Items to automount upon ship purchase
 		IniGetSection(set_scCfgFile, "AutoMount", lstValues);
 		set_mapAutoMount.clear();
 		foreach(lstValues, INISECTIONVALUE, it15)
@@ -550,7 +554,7 @@ void LoadSettings()
 			set_mapAutoMount[iGoodID] = iGoodID;
 		}
 
-		
+	//Items to not let exist in space
 		IniGetSection(set_scCfgFile, "NoSpaceItems", lstValues);
 		set_mapNoSpaceItems.clear();
 		foreach(lstValues, INISECTIONVALUE, it16)
@@ -559,12 +563,22 @@ void LoadSettings()
 			set_mapNoSpaceItems[iGoodID] = iGoodID;
 		}
 
+	//Items to automatically mark when spawned
 		IniGetSection(set_scCfgFile, "AutoMarkItems", lstValues);
 		set_mapAutoMark.clear();
 		foreach(lstValues, INISECTIONVALUE, it17)
 		{
 			uint iGoodID = CreateID(Trim(it17->scKey).c_str());
 			set_mapAutoMark[iGoodID] = iGoodID;
+		}
+
+	//Equipment to redirect damage to hull
+		IniGetSection(set_scCfgFile, "EquipmentRedirectDamage", lstValues);
+		set_mapEquipReDam.clear();
+		foreach(lstValues, INISECTIONVALUE, it18)
+		{
+			uint iEquipID = CreateID(Trim(it18->scKey).c_str());
+			set_mapEquipReDam[iEquipID] = iEquipID;
 		}
 
 	} catch(...) { ConPrint(L"Exception in %s, settings likely not loaded\n", stows(__FUNCTION__).c_str()); AddLog("Exception in %s", __FUNCTION__); }

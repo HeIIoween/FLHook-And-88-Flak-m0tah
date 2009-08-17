@@ -1439,9 +1439,10 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 			uint iShip = 0;
 			pub::Player::GetShip(iClientID, iShip);
 
-			//mobile docking
 			if(!ClientInfo[iClientID].bCharInfoReqAfterDeath)
 			{
+				pub::Controller::Destroy(ClientInfo[iClientID].iControllerID);
+				//mobile docking
 				if(ClientInfo[iClientID].bMobileDocked)
 				{
 					if(!iShip) //Docked at carrier
@@ -1575,6 +1576,8 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 			{
 				ClientInfo[iClientID].bCharInfoReqAfterDeath = false;
 			}
+
+			ClientInfo[iClientID].iControllerID = 0;
 
 			if(iShip)
 			{ // in space

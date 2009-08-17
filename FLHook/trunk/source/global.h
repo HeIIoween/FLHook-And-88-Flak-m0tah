@@ -428,4 +428,6 @@ extern map<uint, uint> set_mapNoSpaceItems;
 
 extern map<uint, uint> set_mapAutoMark;
 
+extern map<uint, uint> set_mapEquipReDam;
+
 #endif
