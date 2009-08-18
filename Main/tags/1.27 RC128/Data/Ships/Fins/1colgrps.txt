@@ -1,0 +1,1783 @@
+[CollisionGroup]
+
+[CollisionGroup]
+obj = li_fighter_port_fin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpPortfin
+dmg_obj = li_fighter_dmg_portfin_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Port_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_fighter_star_fin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboardfin
+dmg_obj = li_fighter_dmg_starboardfin_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = li_elite_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboardwing
+dmg_obj = li_elite_dmg_star_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_elite_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPortwing
+dmg_obj = li_elite_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_elite_splr
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpSpoiler
+dmg_obj = li_elite_dmg_Spoiler_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Spoiler
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = li_elite2_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboardwing
+dmg_obj = li_elite_dmg_star_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_elite2_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPortwing
+dmg_obj = li_elite_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_elite2_splr
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpSpoiler
+dmg_obj = li_elite2_dmg_Spoiler_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Top_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = li_freighter_star_side_panel
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboardsidepanel
+dmg_obj = li_freighter_dmg_starboard_sidepanel_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Side_Panel
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_freighter_port_side_panel
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPortsidepanel
+dmg_obj = li_freighter_dmg_port_sidepanel_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Side_Panel
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = li_cruiser_tower
+separable = true
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+dmg_obj = l_cruiser_tower_cap
+dmg_hp = DpCntrltwr
+mass = 5.000000
+parent_impulse = 20
+child_impulse = 80
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = li_dreadnought_btm
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = li_dread_bottom_cap
+dmg_hp = DpBottom
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_dreadnought_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = li_dread_tower_cap
+dmg_hp = DpCntrltwr
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_dreadnought_rearsection
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = li_dread_rearsection_cap
+dmg_hp = DpRearsection
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_dreadnought_midsection
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = li_dread_midsection_cap
+dmg_hp = DpMidsection
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_dreadnought_port_skid
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = li_dread_port_skid_cap
+dmg_hp = DpPortskid
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = li_dreadnought_star_skid
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = li_dread_starboard_skid_cap
+dmg_hp = DpStarboardskid
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = br_fighter_tail
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpTail
+dmg_obj = br_fighter_dmg_tail_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Tail
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = br_elite_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPort_Wing
+dmg_obj = br_elite_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = br_elite_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboard_Wing
+dmg_obj = br_elite_dmg_star_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = br_elite_tail
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpTail
+dmg_obj = br_elite_dmg_tail_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Tail
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = br_freighter_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPort_Wing
+dmg_obj = br_freighter_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = br_freighter_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboard_Wing
+dmg_obj = br_freighter_dmg_star_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = b_gunship_tower
+separable = true
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+parent_impulse = 20
+child_impulse = 80
+mass = 5.000000
+dmg_obj = b_gunship_tower_cap
+dmg_hp = DpCntrltwr
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = b_gunship_tail
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = b_gunship_tail_cap
+dmg_hp = DpTail
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = b_destroyer_body
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = cap_ship_piece
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpFrnt_bdy_top
+dmg_obj = b_destroyer_body_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = b_destroyer_wplat
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = b_destroyer_wplat_cap
+dmg_hp = DpWpn_platform
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = b_destroyer_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_obj = b_destroyer_tower_cap
+dmg_hp = DpCntrltwr
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = b_battleship_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpCntrltwr
+dmg_obj = b_battleship_tower_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = b_battleship_neck
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpMain
+dmg_obj = b_battleship_neck_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = b_battleship_port_gen
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpPortgen
+dmg_obj = b_battleship_port_gen_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = b_battleship_star_gen
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpStarboardgen
+dmg_obj = b_battleship_starboard_gen_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = b_battleship_butt
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpTail
+dmg_obj = b_battleship_butt_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ku_fighter_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpWing_starboard
+dmg_obj = ku_fighter_dmg_wing_starboard_cap
+type = Starboard_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_fighter_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpWing_port
+dmg_obj = ku_fighter_dmg_wing_port_cap
+type = Port_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ku_elite_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboard_Wing
+dmg_obj = ku_elite_dmg_starboard_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_elite_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPort_Wing
+dmg_obj = ku_elite_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_elite_tail
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpTail
+dmg_obj = ku_elite_dmg_port_tail_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Tail
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ku_dragon_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboard_Wing
+dmg_obj = ku_dragon_dmg_starboard_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_dragon_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPort_Wing
+dmg_obj = ku_dragon_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_dragon_tail
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpTail
+dmg_obj = ku_dragon_dmg_port_tail_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Tail
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ku_freighter_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpStarboard_Wing
+dmg_obj = ku_freighter_dmg_starboard_wing_cap
+type = Starboard_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_freighter_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpPort_Wing
+dmg_obj = ku_freighter_dmg_port_wing_cap
+type = Port_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ku_gunboat_star_spike
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpSpkmnt_starboard
+dmg_obj = ku_gunboat_dmg_star_spike_cap
+debris_type = cap_ship_piece
+separation_explosion = explosion_li_elite
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_gunboat_port_spike
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpSpkMnt_Port
+dmg_obj = ku_gunboat_dmg_port_spike_cap
+debris_type = cap_ship_piece
+separation_explosion = explosion_li_elite
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_gunboat_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpWing_port
+dmg_obj = ku_gunboat_dmg_port_wing_cap
+debris_type = cap_ship_piece
+separation_explosion = explosion_li_elite
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_gunboat_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpWing_starboard
+dmg_obj = ku_gunboat_dmg_star_wing_cap
+debris_type = cap_ship_piece
+separation_explosion = explosion_li_elite
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_gunboat_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+dmg_hp = DpCntrltwr
+dmg_obj = ku_gunboat_dmg_tower_cap
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ku_destroyer_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpCntrltwr
+dmg_obj = ku_destroyer_dmg_tower_cap
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ku_battleship_tower
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+separable = true
+dmg_hp = DpCntrltwr
+dmg_obj = ku_battleship_dmg_tower_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_battleship_front
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+separable = true
+dmg_obj = ku_battleship_dmg_front_cap
+dmg_hp = DpFront
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ku_battleship_rear
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+separable = true
+dmg_obj = ku_battleship_dmg_rear_cap
+dmg_hp = DpRear
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = rh_fighter_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPort_Wing
+dmg_obj = rh_fighter_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_fighter_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboard_Wing
+dmg_obj = rh_fighter_dmg_starboard_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = rh_elite_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPort_Wing
+dmg_obj = rh_elite_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_elite_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboard_Wing
+dmg_obj = rh_elite_dmg_starboard_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_elite_tail
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpTail
+dmg_obj = rh_elite_dmg_tail_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Tail
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = rh_freighter_port_side_panel
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPort_side panel
+dmg_obj = rh_freighter_dmg_port_side_panel_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Side_Panel
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_freighter_star_side_panel
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboard_side panel
+dmg_obj = rh_freighter_dmg_starboard_side_panel_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Side_Panel
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = rh_gunship_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+dmg_hp = DpCntrltwr
+dmg_obj = rh_gunship_dmg_tower_cap
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = rh_cruiser_control_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+dmg_hp = DpCntrltwr
+dmg_obj = rh_cruiser_dmg_control_tower_cap
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_cruiser_star_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+dmg_hp = DpStarboard tower
+dmg_obj = rh_cruiser_dmg_starboard_tower_cap
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_cruiser_port_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+dmg_hp = DPPort tower
+dmg_obj = rh_cruiser_dmg_port_tower_cap
+mass = 5.000000
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = rh_battleship_control_tower
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpCntrltwr
+dmg_obj = rh_battleship_control_tower_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_battleship_star_shield
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpStarboard_shield
+dmg_obj = rh_battleship_starboard_shield_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_battleship_port_shield
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpPort_shield
+dmg_obj = rh_battleship_port_shield_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_battleship_butt
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpMain
+dmg_obj = rh_battleship_butt_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = rh_battleship_neck
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpMidfrnt
+dmg_obj = rh_battleship_neck_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = bh_fighter_topfin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+mass = 5.000000
+debris_type = debris_small_ship
+dmg_hp = Dptopfin
+dmg_obj = bh_fighter_dmg_topfin_cap
+separation_explosion = explosion_small_ship_breakoff
+type = Top_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = bh_fighter_btmfin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpBtmfin
+dmg_obj = bh_fighter_dmg_btmfin_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = bh_fighter_topfin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+mass = 5.000000
+debris_type = debris_small_ship
+dmg_hp = Dptopfin
+dmg_obj = bh_fighter_dmg_topfin_cap
+separation_explosion = explosion_small_ship_breakoff
+type = Top_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = bh_fighter_btmfin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpBtmfin
+dmg_obj = bh_fighter_dmg_btmfin_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = bh_fighter_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPortwing
+dmg_obj = bh_fighter_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = bh_fighter_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarwing
+dmg_obj = bh_fighter_dmg_star_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = bh_fighter_topfin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+mass = 5.000000
+debris_type = debris_small_ship
+dmg_hp = Dptopfin
+dmg_obj = bh_fighter_dmg_topfin_cap
+separation_explosion = explosion_small_ship_breakoff
+type = Top_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = bh_fighter_btmfin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpBtmfin
+dmg_obj = bh_fighter_dmg_btmfin_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = bh_fighter_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPortwing
+dmg_obj = bh_fighter_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = bh_fighter_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarwing
+dmg_obj = bh_fighter_dmg_star_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = corsair_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpWing_port
+dmg_obj = corsair_wing_port_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = corsair_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpWing_starboard
+dmg_obj = corsair_wing_star_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = corsair_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpWing_port
+dmg_obj = corsair_wing_port_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = corsair_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpWing_starboard
+dmg_obj = corsair_wing_star_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = corsair_top_fin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpFin_top
+dmg_obj = corsair_top_fin_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Top_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = corsair_btm_fin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DPFin_bottom
+dmg_obj = corsair_btm_fin_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = corsair_port_heavywing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpWing_port
+dmg_obj = corsair_dmg_port_heavywing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = corsair_star_heavywing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpWing_starboard
+dmg_obj = corsair_dmg_star_heavywing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = corsair_top_fin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpFin_top
+dmg_obj = corsair_top_fin_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Top_Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = corsair_btm_fin
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DPFin_bottom
+dmg_obj = corsair_btm_fin_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Fin
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = cv_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpPort_Wing
+dmg_obj = cv_dmg_port_wing01_cap
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpStarboard_Wing
+dmg_obj = cv_dmg_starboard_wing01_cap
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = cv_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpPort_Wing
+dmg_obj = cv_dmg_port_wing01_cap
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+dmg_hp = DpStarboard_Wing
+dmg_obj = cv_dmg_starboard_wing01_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_mid_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Middle_Wing
+dmg_hp = DpMid_wing
+dmg_obj = cv_dmg_mid_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = cv_fighter4_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+dmg_hp = DpDmg_portwing
+dmg_obj = cv_fighter4_port_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_fighter4_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+dmg_hp = DpDmg_starwing
+dmg_obj = cv_fighter4_star_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = cv_fighter4_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Middle_Wing
+dmg_hp = DpDmg_portwing
+dmg_obj = cv_fighter4_port_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_fighter4_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+dmg_hp = DpDmg_starwing
+dmg_obj = cv_fighter4_star_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_fighter5_top_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Top_Fin
+dmg_hp = DpDmg_topfin
+dmg_obj = cv_fighter5_top_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = cv_fighter4_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+dmg_hp = DpDmg_portwing
+dmg_obj = cv_fighter4_port_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_fighter4_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+dmg_hp = DpDmg_starwing
+dmg_obj = cv_fighter4_star_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_fighter5_top_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Top_Fin
+dmg_hp = DpDmg_topfin
+dmg_obj = cv_fighter5_top_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = cv_fighter5_btm_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Middle_Wing
+dmg_hp = DpDmg_btmwing
+dmg_obj = cv_fighter5_btm_wing_cap
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ew_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpport_wing01
+dmg_obj = ew_dmg_portwing01_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ew_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpstar_wing01
+dmg_obj = ew_dmg_starwing01_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ew_port_wing01
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpport_wing01
+dmg_obj = ew_dmg_portwing01_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ew_port_wing02
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpport_wing02
+dmg_obj = ew_dmg_portwing02_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ew_star_wing01
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpstar_wing01
+dmg_obj = ew_dmg_starwing01_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ew_star_wing02
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpstar_wing02
+dmg_obj = ew_dmg_starwing02_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ew_port_wing01
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpport_wing01
+dmg_obj = ew_dmg_portwing01_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ew_port_wing02
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpport_wing02
+dmg_obj = ew_dmg_portwing02_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ew_star_wing01
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpstar_wing01
+dmg_obj = ew_dmg_starwing01_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ew_star_wing02
+separable = true
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = dpstar_wing02
+dmg_obj = ew_dmg_starwing02_cap
+mass = 5.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ew_freighter_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPort_Wing
+dmg_obj = ew_freighter_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Side_Panel
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ew_freighter_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = dpstar_wing
+dmg_obj = ew_freighter_dmg_starboard_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Side_Panel
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = or_elite_star_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpStarboardwing
+dmg_obj = or_elite_dmg_star_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Starboard_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = or_elite_port_wing
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_small_ship
+dmg_hp = DpPortwing
+dmg_obj = or_elite_dmg_port_wing_cap
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Port_Wing
+hit_pts = 3750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = or_osiris_neck
+separable = true
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpFront
+dmg_obj = or_osiris_neck_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = or_osiris_butt
+separable = true
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpRear
+dmg_obj = or_osiris_butt_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = or_osiris_tower
+separable = true
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpCntrltwr
+dmg_obj = or_osiris_tower_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = or_osiris_shield_gen
+separable = true
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+parent_impulse = 20
+child_impulse = 80
+dmg_hp = DpShieldgen
+dmg_obj = or_osiris_shield_gen_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ge_luxury_mid
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpMid
+dmg_obj = ge_luxury_mid_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ge_luxury_rear
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpRear
+dmg_obj = ge_luxury_rear_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
+[CollisionGroup]
+obj = ge_prison_mid
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpMid
+dmg_obj = ge_prison_mid_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+obj = ge_prison_rear
+separable = true
+parent_impulse = 20
+child_impulse = 80
+debris_type = debris_vanish
+separation_explosion = explosion_li_elite
+mass = 5.000000
+dmg_hp = DpRear
+dmg_obj = ge_prison_rear_dmg_cap
+hit_pts = 18750
+root_health_proxy = true
+
+[CollisionGroup]
+
