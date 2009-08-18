@@ -1,39 +1,47 @@
 ;------------ WINGMEN STUFF ------------
 ;------ Wingmen Shared ------
 [Trigger]
+nickname = Wingmen_Init_All
+system = any
+InitState = ACTIVE
+Cnd_True = no_params
+;Cnd_BaseEnter = Li05_02_Base ;Test
+Act_NNIds = 458831, OBJECTIVE ;Test
+Act_ActTrig = Wingmen_Init_All_Push
+
+[Trigger]
+nickname = Wingmen_Init_All_Push
+system = any
+Cnd_LaunchComplete = Player
+Act_ActTrig = foxBot_Init
+Act_ActTrig = KittBot_Init
+Act_SpawnLoot = foxBot_Beacon
+Act_SpawnLoot = KittBot_Beacon
+
+[Trigger]
 nickname = Wingmen_FormUp_Init
 system = any
 Cnd_True = no_params
-Act_DeactTrig = Wingmen_FormUp_Init
 Act_DeactTrig = Wingmen_FormUp_Init_Push
-Act_DeactTrig = Wingmen_FormUp_01
 Act_DeactTrig = Wingmen_FormUp_01_Push
-Act_DeactTrig = Wingmen_Attack_01
 Act_DeactTrig = Wingmen_Attack_01_Push
-Act_DeactTrig = Wingmen_FormUp_02
 Act_DeactTrig = Wingmen_FormUp_02_Push
-Act_DeactTrig = Wingmen_Attack_02
 Act_DeactTrig = Wingmen_Attack_02_Push
-Act_DeactTrig = Wingmen_FormUp_03
 Act_DeactTrig = Wingmen_FormUp_03_Push
-Act_DeactTrig = Wingmen_Attack_03
 Act_DeactTrig = Wingmen_Attack_03_Push
-Act_DeactTrig = Wingmen_FormUp_04
 Act_DeactTrig = Wingmen_FormUp_04_Push
-Act_DeactTrig = Wingmen_Attack_04
 Act_DeactTrig = Wingmen_Attack_04_Push
-Act_DeactTrig = Wingmen_FormUp_05
 Act_DeactTrig = Wingmen_FormUp_05_Push
-Act_DeactTrig = Wingmen_Attack_05
 Act_DeactTrig = Wingmen_Attack_05_Push
-Act_DeactTrig = Wingmen_FormUp_06
 Act_DeactTrig = Wingmen_FormUp_06_Push
-Act_DeactTrig = Wingmen_Attack_06
 Act_DeactTrig = Wingmen_Attack_06_Push
+Act_DeactTrig = Wingmen_Jump
+Act_DeactTrig = Wingmen_Jump_Push
 Act_ActTrig = foxBot_CleanForms
 Act_ActTrig = KittBot_CleanForms
+Act_ActTrig = Wingmen_Jump
 Act_ActTrig = Wingmen_FormUp_Init_Push
-Act_GiveObjList = Player, Default_FormUp
+Act_ActTrig = Wingmen_BreakAll
 
 [Trigger]
 nickname = Wingmen_FormUp_Init_Push
@@ -41,6 +49,7 @@ system = any
 Cnd_Timer = 4
 Act_ActTrig = foxBot_Attack_01
 Act_ActTrig = KittBot_Attack_01
+Act_GiveObjList = Player, Default_FormUp
 
 [Trigger]
 nickname = Wingmen_FormUp_01
@@ -239,17 +248,29 @@ Act_GiveObjList = KittBot, Default_Attack
 nickname = Default_Attack
 BreakFormation = no_params
 
+[Trigger]
+nickname = Wingmen_Jump
+system = any
+Cnd_JumpInComplete = Player
+Act_ActTrig = Wingmen_Jump_Push
+
+[Trigger]
+nickname = Wingmen_Jump_Push
+system = any
+Cnd_Timer = 4
+Act_ActTrig = Wingmen_FormUp_Init
+
 [ObjList]
 nickname = Default_FormUp
-FollowPlayer = form_wall_follow, foxBot, KittBot, Generic1, Generic2
+FollowPlayer = form_wall_scripted, foxBot, KittBot, Generic1, Generic2
 
 [ObjList]
 nickname = foxBot_FormUp
-FollowPlayer = form_wall_follow, foxBot, KittBot, Generic1, Generic2
+FollowPlayer = form_wall_scripted, foxBot, KittBot, Generic1, Generic2
 
 [ObjList]
 nickname = KittBot_FormUp
-FollowPlayer = form_wall_follow, KittBot, foxBot, Generic1, Generic2
+FollowPlayer = form_wall_scripted, KittBot, foxBot, Generic1, Generic2
 
 ;------ foxBot Wingman ------
 [NPC]
@@ -265,13 +286,24 @@ nickname = foxBot
 NPC = foxBot_NPC
 rel_pos = -90, Player, 6000
 orientation = 0, 180, 0, 0
+lifetime = 10
 jumper = true
+
+[MsnLoot]
+nickname = foxBot_Beacon
+archetype = summon_token
+string_id = 459010
+rel_pos_obj = Player
+rel_pos_offset = 50, 0, 0
+velocity = 0, 0, 0
+equip_amount = 1
+health = 1.000000
+Can_Jettison = true
 
 [Trigger]
 nickname = foxBot_Init
 system = any
-InitState = ACTIVE
-Cnd_LootAcquired = IWishMSNLootWorkedInMP, Player
+Cnd_Destroyed = foxBot_Beacon, -1, EXPLODE
 Act_ActTrig = foxBot_Init_Push
 
 [Trigger]
@@ -293,8 +325,12 @@ Act_DeactTrig = foxBot_Cmd_Push
 Act_DeactTrig = foxBot_Death
 Act_DeactTrig = foxBot_Dock
 Act_DeactTrig = foxBot_Dock_Push
-Act_DeactTrig = foxBot_Jump
-Act_DeactTrig = foxBot_Jump_Push
+Act_DeactTrig = foxBot_JumpFix
+Act_DeactTrig = foxBot_JumpFix_Pull
+Act_DeactTrig = foxBot_JumpFix_Wait
+Act_DeactTrig = foxBot_JumpFix_Push
+Act_DeactTrig = foxBot_StayClose
+Act_DeactTrig = foxBot_StayClose_Push
 Act_Destroy = foxBot, SILENT
 
 [Trigger]
@@ -321,11 +357,12 @@ nickname = foxBot_Spawn
 system = any
 Cnd_Timer = 4
 Act_SpawnShip = foxBot
+Act_SetLifetime = foxBot, 5
 Act_MarkObj = foxBot, 1
 Act_ActTrig = foxBot_Cmd
 Act_ActTrig = foxBot_Death
 Act_ActTrig = foxBot_Dock
-Act_ActTrig = foxBot_Jump
+Act_ActTrig = foxBot_JumpFix
 Act_ActTrig = Wingmen_FormUp_Init
 
 [Trigger]
@@ -344,6 +381,7 @@ Act_ActTrig = foxBot_Cmd
 [Trigger]
 nickname = foxBot_Cmd_Wait
 Cnd_CargoScanned = Player, foxBot
+Act_DeactTrig = foxBot_Cmd_Pull
 Act_ActTrig = foxBot_Cmd_Push
 
 [Trigger]
@@ -463,17 +501,47 @@ Cnd_LaunchComplete = Player
 Act_ActTrig = foxBot_Init_Push
 
 [Trigger]
-nickname = foxBot_Jump
+nickname = foxBot_JumpFix
 system = any
-repeatable = true
-Cnd_JumpInComplete = Player
-Act_ActTrig = foxBot_Jump_Push
+Cnd_DistShip = outside, Player, foxBot, 25000
+Act_ActTrig = foxBot_JumpFix_Pull
+Act_ActTrig = foxBot_JumpFix_Wait
 
 [Trigger]
-nickname = foxBot_Jump_Push
+nickname = foxBot_JumpFix_Pull
 system = any
-Cnd_Timer = 3
+Cnd_Timer = 2
+Act_DeactTrig = foxBot_JumpFix_Wait
+Act_Destroy = foxBot, EXPLODE
+Act_ActTrig = foxBot_JumpFix
+
+[Trigger]
+nickname = foxBot_JumpFix_Wait
+system = any
+Cnd_DistShip = outside, Player, foxBot, 35000
+Act_DeactTrig = foxBot_JumpFix_Pull
+Act_SetLifetime = foxBot, 999999
+Act_ActTrig = foxBot_JumpFix_Push
+
+[Trigger]
+nickname = foxBot_JumpFix_Push
+system = any
+Cnd_JumpInComplete = Player
+Act_SetLifetime = foxBot, 5
+Act_ActTrig = foxBot_JumpFix
+
+[Trigger]
+nickname = foxBot_StayClose
+system = any
+Cnd_DistShip = outside, Player, foxBot, 15000
 Act_ActTrig = Wingmen_FormUp_Init
+Act_ActTrig = foxBot_StayClose_Push
+
+[Trigger]
+nickname = foxBot_StayClose_Push
+system = any
+Cnd_DistShip = inside, Player, foxBot, 14000
+Act_ActTrig = foxBot_StayClose
 
 ;------ KittBot Wingman ------
 [NPC]
@@ -489,13 +557,24 @@ nickname = KittBot
 NPC = KittBot_NPC
 rel_pos = -90, Player, 6000
 orientation = 0, 180, 0, 0
+lifetime = 10
 jumper = true
+
+[MsnLoot]
+nickname = KittBot_Beacon
+archetype = summon_token
+string_id = 459013
+rel_pos_obj = Player
+rel_pos_offset = 50, 0, 0
+velocity = 0, 0, 0
+equip_amount = 1
+health = 1.000000
+Can_Jettison = true
 
 [Trigger]
 nickname = KittBot_Init
 system = any
-InitState = ACTIVE
-Cnd_LootAcquired = IWishMSNLootWorkedInMP, Player
+Cnd_Destroyed = KittBot_Beacon, -1, EXPLODE
 Act_ActTrig = KittBot_Init_Push
 
 [Trigger]
@@ -517,8 +596,12 @@ Act_DeactTrig = KittBot_Cmd_Push
 Act_DeactTrig = KittBot_Death
 Act_DeactTrig = KittBot_Dock
 Act_DeactTrig = KittBot_Dock_Push
-Act_DeactTrig = KittBot_Jump
-Act_DeactTrig = KittBot_Jump_Push
+Act_DeactTrig = KittBot_JumpFix
+Act_DeactTrig = KittBot_JumpFix_Pull
+Act_DeactTrig = KittBot_JumpFix_Wait
+Act_DeactTrig = KittBot_JumpFix_Push
+Act_DeactTrig = KittBot_StayClose
+Act_DeactTrig = KittBot_StayClose_Push
 Act_Destroy = KittBot, SILENT
 
 [Trigger]
@@ -545,11 +628,12 @@ nickname = KittBot_Spawn
 system = any
 Cnd_Timer = 4
 Act_SpawnShip = KittBot
+Act_SetLifetime = KittBot, 5
 Act_MarkObj = KittBot, 1
 Act_ActTrig = KittBot_Cmd
 Act_ActTrig = KittBot_Death
 Act_ActTrig = KittBot_Dock
-Act_ActTrig = KittBot_Jump
+Act_ActTrig = KittBot_JumpFix
 Act_ActTrig = Wingmen_FormUp_Init
 
 [Trigger]
@@ -568,6 +652,7 @@ Act_ActTrig = KittBot_Cmd
 [Trigger]
 nickname = KittBot_Cmd_Wait
 Cnd_CargoScanned = Player, KittBot
+Act_DeactTrig = KittBot_Cmd_Pull
 Act_ActTrig = KittBot_Cmd_Push
 
 [Trigger]
@@ -687,14 +772,44 @@ Cnd_LaunchComplete = Player
 Act_ActTrig = KittBot_Init_Push
 
 [Trigger]
-nickname = KittBot_Jump
+nickname = KittBot_JumpFix
 system = any
-repeatable = true
-Cnd_JumpInComplete = Player
-Act_ActTrig = KittBot_Jump_Push
+Cnd_DistShip = outside, Player, KittBot, 25000
+Act_ActTrig = KittBot_JumpFix_Pull
+Act_ActTrig = KittBot_JumpFix_Wait
 
 [Trigger]
-nickname = KittBot_Jump_Push
+nickname = KittBot_JumpFix_Pull
 system = any
-Cnd_Timer = 3
+Cnd_Timer = 2
+Act_DeactTrig = KittBot_JumpFix_Wait
+Act_Destroy = KittBot, EXPLODE
+Act_ActTrig = KittBot_JumpFix
+
+[Trigger]
+nickname = KittBot_JumpFix_Wait
+system = any
+Cnd_DistShip = outside, Player, KittBot, 35000
+Act_DeactTrig = KittBot_JumpFix_Pull
+Act_SetLifetime = KittBot, 999999
+Act_ActTrig = KittBot_JumpFix_Push
+
+[Trigger]
+nickname = KittBot_JumpFix_Push
+system = any
+Cnd_JumpInComplete = Player
+Act_SetLifetime = KittBot, 5
+Act_ActTrig = KittBot_JumpFix
+
+[Trigger]
+nickname = KittBot_StayClose
+system = any
+Cnd_DistShip = outside, Player, KittBot, 15000
 Act_ActTrig = Wingmen_FormUp_Init
+Act_ActTrig = KittBot_StayClose_Push
+
+[Trigger]
+nickname = KittBot_StayClose_Push
+system = any
+Cnd_DistShip = inside, Player, KittBot, 14000
+Act_ActTrig = KittBot_StayClose

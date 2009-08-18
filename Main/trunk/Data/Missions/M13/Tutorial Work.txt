@@ -1,6 +1,6 @@
-;Li07 Tutorial START
+;------ Li07 Tutorial (WIP!) ------
 [MsnRandEnc]
-nickname = combat_basic_hostile
+nickname = Combat_Basic_Hostile
 encounter_type = SP_Attack
 attacker_rep_name = fc_n_grp
 activation_type = time, 5, 5
@@ -10,7 +10,7 @@ label = basic_hostile
 pilot_id = pilot_default
 
 [MsnRandEnc]
-nickname = combat_advanced_hostile
+nickname = Combat_Advanced_Hostile
 encounter_type = SP_Attack
 attacker_rep_name = fc_n_grp
 activation_type = time, 10, 10
@@ -20,7 +20,7 @@ label = advanced_hostile
 pilot_id = pilot_default
 
 [MsnRandEnc]
-nickname = combat_advanced_ally
+nickname = Combat_Advanced_Ally
 encounter_type = SP_Attack
 attacker_rep_name = gd_lfl_grp
 activation_type = time, 1, 1
@@ -30,58 +30,57 @@ label = advanced_ally
 pilot_id = pilot_default
 
 [Trigger]
-nickname = tutorial_dialog
-system = li07
+nickname = Tutorial_Init
+system = Li07
 InitState = ACTIVE
 Cnd_LaunchComplete = Player
-Act_PopUpDialog = 458823, 458831, YES_NO
-Act_ActTrig = tutorial_start
+Act_PopupDialog = 458823, 458831, YES_NO
+Act_ActTrig = Tutorial_Start
 
 [Trigger]
-nickname = tutorial_start
-system = li07
-Cnd_PopUpDialog = YES
+nickname = Tutorial_Start
+system = Li07
+Cnd_PopupDialog = YES
 Act_PlayerCanDock = false
-Act_PopUpDialog = 458823, 458831, CLOSE
-Act_ActTrig = combat_basic
+Act_PopupDialog = 458823, 458831, CLOSE
+Act_ActTrig = Combat_Basic
 
 [Trigger]
-nickname = combat_basic
-system = li07
+nickname = Combat_Basic
+system = Li07
 Cnd_Timer = 10
-Act_EnableEnc = combat_basic_hostile
-Act_ActTrig = combat_basic_hostile_dies
+Act_EnableEnc = Combat_Basic_Hostile
+Act_ActTrig = Combat_Basic_Hostile_Death
 
 [Trigger]
-nickname = combat_basic_hostile_dies
-system = li07
-Cnd_Destroyed = basic_hostile, -1, ALL
-Act_PopUpDialog = 458823, 458831, CLOSE
-Act_ActTrig = combat_advanced
+nickname = Combat_Basic_Hostile_Death
+system = Li07
+Cnd_Destroyed = basic_hostile, -1, EXPLODE
+Act_PopupDialog = 458823, 458831, CLOSE
+Act_ActTrig = Combat_Advanced
 
 [Trigger]
-nickname = combat_advanced
-system = li07
+nickname = Combat_Advanced
+system = Li07
 Cnd_Timer = 10
-Act_EnableEnc = combat_advanced_hostile
-Act_EnableEnc = combat_advanced_ally
-Act_ActTrig = combat_advanced_hostile_dies
+Act_EnableEnc = Combat_Advanced_Hostile
+Act_EnableEnc = Combat_Advanced_Ally
+Act_ActTrig = Combat_Advanced_Hostile_Dies
 
 [Trigger]
-nickname = combat_advanced_hostile_dies
+nickname = Combat_Advanced_Hostile_Dies
 system = any
-Cnd_Destroyed = advanced_hostile, -1, ALL
-Act_PopUpDialog = 458823, 458831, CLOSE
-Act_ActTrig = tutorial_end
+Cnd_Destroyed = advanced_hostile, -1, EXPLODE
+Act_PopupDialog = 458823, 458831, CLOSE
+Act_ActTrig = Tutorial_End
 
 [Trigger]
-nickname = tutorial_end
-system = li07
+nickname = Tutorial_End
+system = Li07
 Cnd_Timer = 5
-Act_DisableEnc = combat_basic_hostile
-Act_DisableEnc = combat_advanced_hostile
-Act_DisableEnc = combat_advanced_ally
+Act_DisableEnc = Combat_Basic_Hostile
+Act_DisableEnc = Combat_Advanced_Hostile
+Act_DisableEnc = Combat_Advanced_Ally
 Act_PlayerCanDock = true
 Act_AdjAcct = 10000
 Act_NNIds = 458823, OBJECTIVE
-;Li07 Tutorial END

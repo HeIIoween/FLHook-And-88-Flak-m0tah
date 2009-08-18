@@ -39,7 +39,7 @@ Gameplay:
 -- Huge emphasis on teamplay. Unlike normal Freelancer, friendly NPCs will come to your aid in the middle of a fight, assisting you when the going is tough. Got a lot of hostiles on your tail? Retreat to a friendly area and they will be dealt with.
 -- Enormous fights. Both friendly and hostile NPCs can join fights in progress, meaning a simple skirmish can escalate into a full-scale war if not ended abruptly - factions have both Capital Ships and Mobile Stations, and are not afraid to roll them out when they need to.
 -- A variable universe - factions are no longer contained to their simple spheres of influence, and will send ships across a system - even across the galaxy - to deal with issues. Yes, AI travel the entire galaxy, and yes, you can see them doing this. Gaians hate you? There's a decent chance a wing of Gaians could stalk you across the entire universe into Rheinland. Friendly with the Kusari Naval Forces? There's a decent chance of some KNF ships checking up on you in the Border Worlds.
--- NPCs can be seen until 5km out, and players can be seen until 15km out, allowing for more PvP opportunities. Group members can be seen until 300km out as well, allowing for easier organization with groups.
+-- NPCs can be seen until 25km out, and players can be seen until 25km out, allowing for more PvP opportunities. Group members can be seen until 300km out as well, allowing for easier organization with groups.
 -- Players can join, and attain special rank in, factions. Not only do you get a tag in your name when you join a faction, but you also obtain a reputation towards other players - for instance, if you joined the Liberty Rogues, and a player was hostile to the Rogues, you would appear hostile to that player. If you approached that player, danger music would even play, which can lead to some rather epic PvP engagements.
 -- Everything you could do in a mission (attacking a Station, etc.) is just played out real-time. This means you could see NPCs attack - and possibly destroy - a Station right in front of your eyes. Or you could destroy one yourself, and reap the Credit Chip reward.
 -- Full player, NPC, and even Station / Weapons Platform looting. ALL cargo (not just some cargo) will drop off players and NPCs - if a player or NPC is carrying 1207 H-Fuel, then that player or NPC will drop 1207 H-Fuel on death. This means a pirate can make a healthy living hunting player-traders down.
@@ -1197,8 +1197,8 @@ Since 1.26, in order of appearance (not an exhaustive/full list of changes):
 -- Change: Capital Ships now regenerate a little bit of power when in cruise.
 -- Change: Capital Ships now have twice the armor they did before, but cost twice as much, to make them more worth it in the end.
 -- Change: Cruise times changed. Capital Ships now take 6 seconds to charge up, down from 10. Liners and VHFs take 6 seconds to charge up as well, up from 5.
--- Change: Un-grouped players show up at 15km, and grouped players show up at 300km, thanks to the work of Dev on the forums.
--- Change: NPCs can now be seen at up to 15km; thank Dev again on this one. This makes things like Capital Ship fights much more immersive.
+-- Change: Un-grouped players show up at 25km, and grouped players show up at 300km, thanks to the work of Dev on the forums.
+-- Change: NPCs can now be seen at up to 25km; thank Dev again on this one. This makes things like Capital Ship fights much more immersive.
 -- Addition: Faction affiliation (<faction> - <player name> thing) system, thanks to the work of Dev on the forums. You can join a certain faction by either paying a member of a faction at their base, or just by getting friendly with them.
 -- Change: Power supply of Pursuit Craft cut by 1.5X, for balance reasons. REQUIRES ADMIN ATTENTION TO UPDATE OLD PURSUIT CRAFT CHARACTERS, AS FREELANCER SAVE CONVERTER CAN'T COVER THE CHANGE. See FLSC project file description for more details.
 -- Change: Cargo space re-conformed to 15 for the Pursuit Drake, Banshee, and Piranha due to above change (cargo space balance changes are no longer needed).
@@ -1450,3 +1450,91 @@ Since 1.26, in order of appearance (not an exhaustive/full list of changes):
 -- Change: Raised Nanobot and Shield Battery count of Freighters to 45, from 35.
 -- Misc: w0dk4's Global Server Workaround has been integrated into 88 Flak, to ease up the process of connecting to servers.
 -- Misc: Optimizations to the 88 Flak, 88 Flak AI Companion, and 88 Flak ST FLMM scripts; this should stop nearly all of the deactivation issues associated with 88 Flak. No more mutiliating your vanilla FL installation!
+-- Change: Re-added auto-strafe to all ships. This may help formation flight be a bit less stupid.
+-- Misc: Beta RC builds are now tracked internally by Freelancer. This means you will be unable to join a server not running your current Beta RC (it will be grayed out). For the client, this is displayed as "Version 88.27 Build (xx)" in the lower-right of the title screen; for the server, this is displayed as "Version 88.27 Build (xx)" in the title bar. I realize this will lead to confusion among new people joining with the wrong RC ("why can't I join the server?"), but it's better than them joining and crashing themselves (or the server) out.
+-- Bugfix: Wingmen squads no longer spawn right at your doorstep, unless you are launching from a base or have just logged into space.
+-- Change: Shot-attached muzzle flashes are a little smaller to make using cockpit view not as annoying.
+-- Added: New Kusari Capital Ship turret effect, because the vanilla one stinks.
+-- Changed: Downsized the Bretonia Destroyer and Kusari Destroyer turret models, which were too large when fitted on smaller capitals like the Kusari Gunboat and covered too much of the ship.
+-- Added: New Covenanter (previously Reaper), Hydra, and Harlequin models - http://the-starport.net/index.php?option=com_smf&Itemid=26&topic=1810.0 for more information.
+-- Changed: HF steering rates have been increased by ~10%.
+-- Changed: Freighter steering rates have been increased by 100%.
+-- Changed: Cruise charge-up times on Liners have been doubled (now that of a Capital Ship).
+-- Changed: Starflier (n00b LF) and Starblazer (n00b HF) now have a full armament of 4 and 6 guns, respectively - now, they only lack a Cruise Disruptor / Torpedo Launcher.
+-- Changed: Slightly reduced the global spawning rate of NPCs. Greatly reduced the spawning rate of random battlegroups.
+-- Misc: FLMM should no longer leave 88 Flak's universe/system files (or any other misc files) laying about once 88 Flak is deactivated.
+-- Changed: Difficulty of the AI has been slightly toned down; they are a little more converative with their firing. AI Wingmen are unchanged, and still furiously attempt to annihilate foes.
+-- Changed: AI Wingmen are a little better at repairing themselves.
+-- Added: Changing the AI difficulty level now changes missile and repair usage - AI are quicker with repairs and missiles on hard, and lax on repairs and missiles on easy.
+-- Changed: Bretonia "Reaper" VHF has been renamed to the "Covenanter", after the British A13 "Covenanter" Cruiser Tank. For reference, the "Crusader" was the A15 Cruiser Tank, so it made sense to name the VHF this given that the HF is named the Crusader.
+-- Changed: Signifigantly raised chance of random Nanobot / Shield Battery loot off NPCs killed by a player.
+-- Changed: All costs of all items have been doubled - as such, all sell values of all items have been doubled as well.
+-- Changed: Longblade renamed to Stealthblade Mk I; the former Mk I and Mk II are now Mk II and Mk III, respectively.
+-- Changed: Small tweaks done to Homing missiles. Their FOV has been increased from 70* to 90*.
+-- Changed: Small tweaks done to EMP missiles. Their in-flight turning rates and FOV are now in-between Power missiles and Homing missiles.
+-- Changed: In-flight turning rates for Capital Ship Missiles and Torpedoes halved.
+-- Changed: Capital Ship Missile Turrets now rotate twice as quickly.
+-- Changed: Suggested usage roles for a ship class are now displayed in the ship stats.
+-- Changed: VHFs have been re-built from the ground up. A hybrid of the old VHF design and the pending Stealth HF Bomber design, they now function as a Heavy Bomber with stealth capabilities. They now feature a Twin Torpedo, with 3 Turrets (one of which will have full 360* rotation) as support weapons, and the same twin shield setup that they had before - however, they only have 50 Nanobots, and can not carry any Shield Batteries. In addition, cruise charge-up time has been increased to 8 seconds (that of a Capital Ship), and when the cloak is engaged, your shields will be knocked out. They retain the same characteristic slow movement, however turn 75% faster.
+-- Changed: Sniper Turrets are no longer a VHF-exclusive item, and are now dropped as rare items.
+-- Changed: Sniper Turret power usage lowered from 5000 to 4500 per shot, to allow use on a LF at the expense of the LF's entire power supply.
+-- Bugfix: Fixed issues (again) with Repair Ship dropping items on death, and fixed issues with Kusari Hydra dropping items on death.
+-- Added: Houses now have a "security" rating that affects spawns, displayed when you enter the system or launch from a base. Core house systems - New York, New London, etc. are now "Maximum Security", and here you will see a lot of friendly help (provided you're not a pirate). This works all the way down to "Minimum Security," for certain systems like Chugoku, home of the Blood Dragons, or Omicron Alpha, home of the Outcasts, where you will find large pirate battlegroups. For reference, "Low Security" systems behave like systems from previous 88 Flak releases, where you'd get an equal chance for anything to spawn randomly. Fighting in a system with a security rating that is not in your favor will result in more rare item drops, since there won't be as much AI help (as you only get rares from un-assisted kills). All in all, this makes the starting systems (core house systems) much safer, so starting out should no longer be as brutal as before.
+-- Changed: Shields now only ramp up 1.1x per level, with 2500 capacity / 55 regen as a base for light shields and 3000 capacity / 60 regen as a base for heavy shields - this means lower-class shields are far more efficient, while higher-class shields are a little less efficient. Power usage still ramps up 1.4x per level.
+-- Added: Rare items are now automatically marked when dropped, to make them easier to see.
+-- Changed: Operative Tokens and Wingmen Licenses are no longer dropped on death, and can no longer be traded. Want to help your friend get easy wingmen? Give them cash for the faction bribe instead.
+-- Changed: Kill Tokens are no longer dropped on death, and can no longer be traded. If you die, you lose your kill streak.
+-- Changed: Arena Tokens are now properly mounted when purchasing a new ship in Alaska.
+-- Misc: Cleaned up "important information" displayed when installing the mod via FLMM. The afterburner notice in particular is a little more visible now.
+-- Added: Roll controls have finally been added, after sitting on the todo list for like a year (oops, sorry Son'a). =P
+-- Misc: Partial camera swing ("Half-Tilt") can now be selected for Capital Ships.
+-- Added: Capital Ships now properly dodge incoming ordinance, including Torpedoes.
+-- Changed: Counter-Measures are now slightly more effective (by 10% each).
+-- Changed: Pulse Gun energy damages have been increased by 1.5x.
+-- Changed: Cruise Disruptor cargo space usage halved.
+-- Changed: Missiles have been rebalanced. While their behavior hasn't changed much, the damage gap between missiles was greatly reduced, using the Catapult as a base - essentially, a Javelin will only do slightly less damage, while a Cannonball will only do slightly more - since the Catapult is the staple of PvP combat, I figured that'd be a good base. From there you can fork out some (lots) of cash for a slight damage increase. Refire rates have not been changed; a Cannonball will still be slower-firing than a Catapult. This change also applies to Homing/EMP missiles, and Normal/EMP mines.
+-- Changed: Missiles now range from Class 1-5, instead of Class 1-9 (a Catapult is now Class 3 instead of 5, Cannonball now Class 5 instead of 9), so that all missiles may be fitted on a LF.
+-- Bugfix: Fixed an issue where AI would randomly wander off to attack a far-away base during a fight (fine out of combat, but kill stuff near you first!).
+-- Changed: Added 0.1* to all inaccuracy cones. A Class 1 weapon now has a 0.2* (best possible) inaccuracy cone, a Class 3 has a 0.4*, etc.
+-- Added: New "Toggle Auto-Level Camera" control, which must be toggled to allow roll maneuvers in chase-cam. It's also for that more space-y feel when dogfighting (why does everything have to be right-side up all the time?).
+-- Added: Fighters now have a small window of time (about 4/10 of a second) to utilize Nanobots to recover from an instant-kill attack (such as twin torpedoes, chain-linked power missiles, etc.).
+-- Added: Better death effects for fighters (a bit more like oldschool Flak).
+-- Misc: Added contrails to the lower fins of the Starblazer and Starstinger HFs.
+-- Added: Weapon cooldowns (number of seconds until the weapon can be fired again) are now displayed in the Weapons List - http://img.photobucket.com/albums/v521/foxUnit01/88Flak/Other/CooldownTimers.jpg
+-- Changed: Capital / WP / Station weapons renamed to use military hull designations (BB, DD, CA, PG for Battleship, Destroyer, Cruiser, and Gunboat) to save space on the Weapons List due to the inclusion of weapon cooldown stats.
+-- Changed: AI Fighters are no longer untargeted and marked as dead when they enter their death fuses - it now waits for the ship to actually die. This was especially annoying as fighters can now pull themselves out of a death fuse via well-timed Nanobot usage.
+-- Changed: Major rebalances to prices of ammo for missiles/mines. There is much less penalty for using higher class missiles/mines (especially with the new missile/mine balance).
+-- Changed: Both types of torpedoes are a little cheaper. A Starkiller Torpedo is still substantially cheaper than a Sunslayer, however.
+-- Changed: New descriptions for EMP mines. Added IFF warning (or lack thereof) for all mines.
+-- Changed: Cruise Disruptor ammo is now a bit cheaper.
+-- Changed: Nanobots and Shield Batteries now drop at a slightly higher rate than before.
+-- Changed: Ammo drop rates tweaked.
+-- Added: Nomad ships (both AI and player-flown) now regenerate very small amounts of armor over time. It will take a Nomad Fighter approximately 4 minutes to regenerate its entire hull; it will take a Nomad Battleship approximately an hour. Mountable items that have more meaningful armor regneration (perhaps at a cost to total armor) will be introduced later.
+-- Added: Re-added in the OpenSP support option to allow piloting of ships with cloaks in SP.
+-- Changed: Starting reputations tweaked. You now start out with higher overall reputation. It should also be a little easier to become a pirate.
+-- Changed: Stationary Storage Depots (un-related to the player-flown Storage Depot) are now much weaker and correctly dump all cargo when destroyed. They also carry much more stuff.
+-- Changed: All factions now offer all of their equipment at each of their bases. If you stop by a Rogues base, they will offer you everything in their arsenal; this means that you can now get decent equipment in Liberty, whereas before you could only buy low-class equipment, and could not buy Torpedoes, CDs, etc. This works both ways as well, allowing you to purchase lower-class equipment (like Javelins) in previously high-class only areas, like the Omicrons (this is essential due to the new rebalances). All equipment market data was completely rewritten from the ground up for this change; the old equipment markets file had 28,922 lines of code (1.62MB) - the new equipment markets file has 37,206 lines of code (2.09MB).
+-- Changed: Armored Transport now only totes 6 Class 5 weapons, instead of 9.
+-- Changed: Armored Transport now only carries 300 cargo, instead of 350.
+-- Changed: Corrected some reputation issues with Xenos. On the whole, killing Xenos is now a little rougher on your reputation, with very little gain from it. Don't pick on them unless you're desperate for cash.
+-- Changed: Small tweaks to Bounty Hunters Guild operation. They now attack targets of interest to local police and corporations - basically, if you piss off a corporation, expect the Bounty Hunters to show up at your doorstep looking to collect on a bounty.
+-- Changed: You now get a little more Zoner rep for killing Nomads.
+-- Changed: Capital Ships and AI Bots now have twice the chance to drop a rare item.
+-- Misc: Upgraded asteroid fields. They no longer look as ugly when you shoot them, and the explosion color now matches the color of the asteroid. Also, the asteroid field in the bottom unknown Nomad system now features previously unused Nomad asteroids.
+-- Misc: Added a new title screen, and replaced one of the existing repetitive ones.
+-- Added: Full anti-spin protection implemented for Battleships and Stations. If enabled, Battleships and Stations will be protected against "spinning", which occurs when another ship collides with you in Multiplayer (Singleplayer does not suffer this bug). However, this solution causes Battleships and Stations to violently "wag" back and forth during autopilot; if this bothers you, there is an option to disable the anti-spin protection. Autopilot will be completely restored, and you will still be partially protected from spinning, however NPCs may still spin you once and a while (even though AI are designed to avoid ramming ships).
+-- Added: New Capital Ship explosion effects.
+-- Changed: Decreased the firing delay on the Trajectory Disruptor from 30 seconds to 10, to allow it to be actually viable as a disorientation weapon in PvP.
+-- Bugfix: Fixed an NPC loadout for the Anubis; one loadout carried a Sunslayer Torpedo Launcher, but Starkiller Torpedo ammo (and was thus unable to attack Capitals).
+-- Added: Repair Ship now features automatic self-repair (80 hull/sec).
+-- Bugfix: Fixed poor weapon placement on the Eagle. Its 360* mount could in reality only turn 120*.
+-- Changed: Nomad Fighter now only carries 10 Nanobots, instead of 40 - it can pull out of a single missile hit, but that's about it.
+-- Changed: Storage Depot now has 3,000,000 health instead of a mere 300,000 - doesn't matter for PvP (as they have an Anti-PvP Token mounted), but this should help stop a single Sunslayer from an NPC sinking your bank.
+-- Changed: Raised Torpedo explosion radius to fix certain exploits.
+-- Changed: Jump Gates and Jump Holes are now much weaker and more susceptible to being shut down. When trading, bringing along an auxiliary Repair Turret may not be the worst idea, in the event the Jump Gate / Jump Hole collapses while you're under attack.
+-- Misc: Any hull regeneration for a ship is listed under Added / Included Equipment.
+-- Changed: Added a small cone of fire to the Sniper Turrets - this should help them hit hull a bit more.
+-- Bugfix: Small tweaks and improvements to all death fuses. The timeframe to use a Nanobot as you're dieing (to save yourself) has been slightly lengthened to account for possible server lag.
+-- Changed: System security ratings now have more weight in determining what spawns.
+-- Bugfix: Fixed "Unlawful Freelance Operative" token not being sold at Player-Purchasable Bases.
+-- Bugfix: Fixed New York weirdness. If you clicked a commodity and clicked "Trade Routes", NY bases would not show in the list.

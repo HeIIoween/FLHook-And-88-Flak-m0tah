@@ -3031,12 +3031,12 @@ Var2 = te_bw_elite2
 
 [Operation]
 Type = RemoveHardpoint
-Var1 = HpWeapon05
+Var1 = HpWeapon01
 Var2 = te_br_elite2
 
 [Operation]
 Type = RemoveHardpoint
-Var1 = HpWeapon06
+Var1 = HpWeapon05
 Var2 = te_br_elite2
 
 [Operation]
@@ -3151,3 +3151,15 @@ Var2 = te_ge_armored
 Type = RemoveHardpoint
 Var1 = HpTurret09
 Var2 = te_ge_armored
+
+[Operation]
+Type = AddEquipmentToHp
+Var1 = te_darkfighter
+Var2 = HpThruster02
+Var3 = ge_s_thruster_00
+
+[Operation]
+Type = AddEquipmentToHp
+Var1 = te_darkfighter
+Var2 = HpThruster03
+Var3 = ge_s_thruster_00
