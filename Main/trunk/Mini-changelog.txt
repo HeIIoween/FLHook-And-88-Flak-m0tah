@@ -1,6 +1,6 @@
 -- Major improvements to functionality and stability of MP mission scripting, thanks to M0tah.
 
-Wingmen notes:
+Important Notes:
 -- In this beta build, Mission_13 features a small tutorial (with placeholder text strings) that throws basic hostiles at the player. This tutorial is planned to guide new players through 88 Flak's new features, and ease them into the new combat mechanics.
 -- If you edit a charfile (or mpnewcharacter.fl) to start on Mission_10 or Mission_09, you will be able to test the new AI Wingmen system.
    -- Setting it to Mission_10 will cause a foxBot and KittBot token to appear when you first launch. Shoot either one - or both - of these tokens to spawn your escort(s).
