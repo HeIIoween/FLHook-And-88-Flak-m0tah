@@ -1,29 +1,28 @@
 -- Major improvements to functionality and stability of MP mission scripting, thanks to M0tah.
-
-Important Notes:
--- In this beta build, Mission_13 features a small tutorial (with placeholder text strings) that throws basic hostiles at the player. This tutorial is planned to guide new players through 88 Flak's new features, and ease them into the new combat mechanics.
--- If you edit a charfile (or mpnewcharacter.fl) to start on Mission_10 or Mission_09, you will be able to test the new AI Wingmen system.
-   -- Setting it to Mission_10 will cause a foxBot and KittBot token to appear when you first launch. Shoot either one - or both - of these tokens to spawn your escort(s).
-   -- Setting it to Mission_09 will cause a Wo3dy and ChipBot token to appear when you first launch. Shoot either one - or both - of these tokens to spawn your escort(s).
-   -- If you are going to test the wingmen with multiple people, it works best if one person is on Mission_10, one person is on Mission_09, and everyone else is on the normal Mission_13. If everyone one is on Mission_10 or Mission_09, it won't crash, but if multiple players spawn a wingman squad there will start being order conflicts.
-   -- Once spawned, wingmen can be ordered by opening the Cargo Scan window twice (tap "Scan Cargo" key three times).
--- Finally, you may notice normal AI Wingmen (hirable by tokens etc.) don't follow very well. This is because I undid all my NPC Follow-related hacks for the purposes of mission scripting.
+-- Fixed the death_comm related bug. This will stop hostiles from randomly becoming untargetable when near-death.
+-- Removed the tips section from the death message text, as the tips text from the F5 tips screen is shown right below it.
+-- Currently active server options are now reported to the bottom of the F5 tips screen, so you don't have to make a new character to see which options are enabled.
+-- Torpedo splash damage radius has been halved from 360m to 180m.
+-- Shield / energy damage of the Hornet CD has been increased to give it a further advantage over the Wasp - while the Hornet is much less cost-effective than a Wasp for knocking ships out of cruise, its capability of disrupting an entire wing in a single shot and dealing insantaneous shield damage should make it fairly attractive versus the Wasp.
+-- The Player-Carrier stat displayed on ships now displays rather that ship can actually dock on player-carriers or not.
+-- Nomad Fighters now have a 20 Nanobot limit, raised from 10 (which was mistakenly 5 in the actual code, oops!). They also regenerate hull at 80hp/s, raised from 60hp/s.
+-- Repair Ship self-repair now repairs 100hp/s, raised from 80hp/s.
+-- Power Modulators now grant small (20hp/s) amounts of hull regneration, so that putting a single dent in your ship no longer requires you to use Nanobots or go repair.
+-- Nomad Fighter weaponry has been buffed. It now deals more damage, and carries a faster firing rate.
+-- Adjustments made to price of various trade ships. The Large Transport / Train & Heavy Lifter, as well as the two Liners, are all $1,000,000 more (adding $50,000 to their Death Penalties). This was done to make trading in a Small Transport / Train - even though they are inferior traders - more worthwhile and cost-effective to pilot as a low-risk trader.
+-- Player-Purchasable bases now correctly sell the Order Shield and Order Thruster (which is needed, as that's one of the few ways to obtain such items).
+-- The Faction Tag Removal guy has been turned into a "Mysterious Vendor" (sells all Player-Purchasable Bases).
+-- Player-Purchasable Base offers now list the system where the PBase you're about to purshase resides.
+-- Challenge systems are now based on a Credit Chip requirement, rather than Kill Tokens. Perhaps everybody's precious cash reserves will actually be useful again. ;)
+-- VHFs can now mount regular weaponry over the CD/Torpedo mount. The power supply, however, has not been increased, so overloading your VHF may not be wise.
+-- Ships are now automatically untargeted when they pass the death-revive threshold.
+-- Re-organization to the mission script structure. This fixes an issue with the F5 tips screen printing multiple times.
 
 What's sorta todo:
--- fix the death_comm thing
 -- fifth EMP missile for pi_empmissile effect
--- hull-regen on Power Modulators?
--- change "Freighter" and "ship" IDSs
--- Reduce Torpedo splash damage radius to original RC126/RC127 values.
--- Raise hull-regen to 100 on the Repair Ship.
--- Allow VHF to mount weapons over its CD / Torpedo mounts. Don't know if the powerplant will be changed yet.
--- Raise Nomad Fighter Nanobot limit to 20; raise hull-regen to 80.
--- Bring Nomad Fighter weaponry in-line with Class 5-7 weapons.
 -- Create missiles for the Nomad Fighter.
--- Create a "Nomad Repair Ship", essentially a copypasta of the current Repair Ship but with a Nomad Fighter model for RP purposes. In place of the RS's 360* Class 3 mounts and shield, the Nomad RS will simply have two normal Nomad Laser mounts, and no shield. The Repair Beam will function identically. In practice, the Nomad RS will be a more offensive version of the stock RS, but will be more easily killed.
--- Turn the Faction Tag Removal NPC into a dealer that sells all Player-Purchasable Bases. Bartenders will still sell nearby PPBs.
+-- Create a "Nomad Repair Ship", essentially a copypasta of the current Repair Ship but with a Nomad Fighter model for RP purposes. In place of the RS's 360* Class 3 mounts and shield, the Nomad RS will simply have a single Nomad Laser mount, and no shield. The Repair Beam will function identically. In practice, the Nomad RS will be a more offensive version of the stock RS, but will be more easily killed.
 -- Prevent commodities from being traded / dropped at all in Alaska, to correct trading exploits. (this will require some FLHook work)
--- Change challenge systems to use Credit Chips instead of Kill Tokens, allowing Kill Tokens to remain as a simple way to track your AI kill streak. This way, you can easily spot someone else the Credit Chips they'd need to enter the system, allowing one person to pay for a whole group's entry if he/she so desired.
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- cloaks need an IDS name for .enumcargo, I think
 -- test out EMP ship - may be able to wedge it in as a VHF varient

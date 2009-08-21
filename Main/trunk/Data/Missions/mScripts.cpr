@@ -7,7 +7,7 @@ RelativePath=1
 Root=
 
 [File1]
-Name=M11\m11.ini
+Name=m11\m11.ini
 Open=1
 Left=44
 Top=44
@@ -20,7 +20,7 @@ Highlighter=
 BookmarkCount=0
 
 [File2]
-Name=M12\m12.ini
+Name=m12\m12.ini
 Open=1
 Left=22
 Top=22
@@ -33,7 +33,7 @@ Highlighter=
 BookmarkCount=0
 
 [File3]
-Name=M13\m13.ini
+Name=m13\m13.ini
 Open=1
 Left=44
 Top=44

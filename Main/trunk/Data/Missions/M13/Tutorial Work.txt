@@ -32,8 +32,13 @@ pilot_id = pilot_default
 [Trigger]
 nickname = Tutorial_Init
 system = Li07
-InitState = ACTIVE
-Cnd_LaunchComplete = Player
+Cnd_BaseExit = n00b_base
+Act_ActTrig = Tutorial_Init_Push
+
+[Trigger]
+nickname = Tutorial_Init_Push
+system = Li07
+Cnd_Timer = 10
 Act_PopupDialog = 458823, 458831, YES_NO
 Act_ActTrig = Tutorial_Start
 
@@ -69,7 +74,7 @@ Act_ActTrig = Combat_Advanced_Hostile_Dies
 
 [Trigger]
 nickname = Combat_Advanced_Hostile_Dies
-system = any
+system = Li07
 Cnd_Destroyed = advanced_hostile, -1, EXPLODE
 Act_PopupDialog = 458823, 458831, CLOSE
 Act_ActTrig = Tutorial_End

@@ -1,5 +1,5 @@
 <script>
-<header name="88 Flak Version 1.27 RC128 08/17/09" savesafe="false" exclusive="false">
+<header name="88 Flak Version 1.27 RC129 08/21/09" savesafe="false" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -2608,6 +2608,30 @@ nickname = n00b_package_loadout
 cargo = easymodeoption_token, 1
 </source>
 </data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:1">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:1">
+<dest>
+;Act_NNIds = 459101, HISTORY
+</dest>
+<source>
+Act_NNIds = 459101, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:1">
+<dest>
+;Act_NNIds = 458893, HISTORY ;Easy Mode
+</dest>
+<source>
+Act_NNIds = 458893, HISTORY ;Easy Mode
+</source>
+</data>
 <data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="20:2">
 <dest>
 repair_id = repair_default
@@ -2655,6 +2679,30 @@ nickname = n00b_package_loadout
 </section>
 <source>
 cargo = veryeasymodeoption_token, 1
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:2">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:2">
+<dest>
+;Act_NNIds = 459101, HISTORY
+</dest>
+<source>
+Act_NNIds = 459101, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:2">
+<dest>
+;Act_NNIds = 458953, HISTORY ;Very Easy Mode
+</dest>
+<source>
+Act_NNIds = 458953, HISTORY ;Very Easy Mode
 </source>
 </data>
 <data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="20:3">
@@ -2714,6 +2762,30 @@ nickname = n00b_package_loadout
 cargo = hardmodeoption_token, 1
 </source>
 </data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:3">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:3">
+<dest>
+;Act_NNIds = 459101, HISTORY
+</dest>
+<source>
+Act_NNIds = 459101, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="20:3">
+<dest>
+;Act_NNIds = 458954, HISTORY ;Hard Mode
+</dest>
+<source>
+Act_NNIds = 458954, HISTORY ;Hard Mode
+</source>
+</data>
 
 <data file="Data\Missions\RandomEncounters\area_war.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\no_war.ini" options="21:1">
 </data>
@@ -2726,6 +2798,30 @@ nickname = n00b_package_loadout
 </section>
 <source>
 cargo = waroption_token, 1
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="21:1">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="21:1">
+<dest>
+;Act_NNIds = 459102, HISTORY
+</dest>
+<source>
+Act_NNIds = 459102, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="21:1">
+<dest>
+;Act_NNIds = 458891, HISTORY ;Random CS Fleets (all factions)
+</dest>
+<source>
+Act_NNIds = 458891, HISTORY ;Random CS Fleets (all factions)
 </source>
 </data>
 
@@ -2775,6 +2871,30 @@ nickname = n00b_package_loadout
 cargo = disablecapshipsoption_token, 1
 </source>
 </data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="22:1">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="22:1">
+<dest>
+;Act_NNIds = 459102, HISTORY
+</dest>
+<source>
+Act_NNIds = 459102, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="22:1">
+<dest>
+;Act_NNIds = 458892, HISTORY ;Random CS Patrols (all factions)
+</dest>
+<source>
+Act_NNIds = 458892, HISTORY ;Random CS Patrols (all factions)
+</source>
+</data>
 
 <data file="Data\Missions\RandomEncounters\area_nomadsambcap.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\no_war.ini" options="23:1">
 </data>
@@ -2785,6 +2905,30 @@ nickname = n00b_package_loadout
 </section>
 <source>
 cargo = nomadoption_token, 1
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="23:1">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="23:1">
+<dest>
+;Act_NNIds = 459102, HISTORY
+</dest>
+<source>
+Act_NNIds = 459102, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="23:1">
+<dest>
+;Act_NNIds = 458897, HISTORY ;Random CS Patrols (Nomads)
+</dest>
+<source>
+Act_NNIds = 458897, HISTORY ;Random CS Patrols (Nomads)
 </source>
 </data>
 
@@ -2799,6 +2943,30 @@ nickname = n00b_package_loadout
 </section>
 <source>
 cargo = freelancernpcoption_token, 1
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="24:1">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="24:1">
+<dest>
+;Act_NNIds = 459102, HISTORY
+</dest>
+<source>
+Act_NNIds = 459102, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="24:1">
+<dest>
+;Act_NNIds = 458920, HISTORY ;Random CS Patrols (FL NPCs)
+</dest>
+<source>
+Act_NNIds = 458920, HISTORY ;Random CS Patrols (FL NPCs)
 </source>
 </data>
 
@@ -3351,6 +3519,30 @@ nickname = n00b_package_loadout
 cargo = lownpcpatch_token, 1
 </source>
 </data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:1">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:1">
+<dest>
+;Act_NNIds = 459101, HISTORY
+</dest>
+<source>
+Act_NNIds = 459101, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:1">
+<dest>
+;Act_NNIds = 458896, HISTORY ;Low NPC Count
+</dest>
+<source>
+Act_NNIds = 458896, HISTORY ;Low NPC Count
+</source>
+</data>
 <data file="Data\Universe\Systems\Ar02\Ar02.ini" method="filereplace" numtimes="-1" options="25:2">
 <dest>
 density = 8
@@ -3898,6 +4090,30 @@ nickname = n00b_package_loadout
 </section>
 <source>
 cargo = highnpcpatch_token, 1
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:2">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:2">
+<dest>
+;Act_NNIds = 459101, HISTORY
+</dest>
+<source>
+Act_NNIds = 459101, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:2">
+<dest>
+;Act_NNIds = 458895, HISTORY ;High NPC Count
+</dest>
+<source>
+Act_NNIds = 458895, HISTORY ;High NPC Count
 </source>
 </data>
 <data file="Data\Universe\Systems\Ar02\Ar02.ini" method="filereplace" numtimes="-1" options="25:3">
@@ -4449,6 +4665,30 @@ nickname = n00b_package_loadout
 cargo = superhighnpcpatch_token, 1
 </source>
 </data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:3">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:3">
+<dest>
+;Act_NNIds = 459101, HISTORY
+</dest>
+<source>
+Act_NNIds = 459101, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="25:3">
+<dest>
+;Act_NNIds = 458999, HISTORY ;Super-High NPC Count
+</dest>
+<source>
+Act_NNIds = 458999, HISTORY ;Super-High NPC Count
+</source>
+</data>
 
 <data file="Data\Missions\shipclasses.ini" method="filereplace" numtimes="-1" options="26:1">
 <dest>
@@ -4493,6 +4733,30 @@ nickname = n00b_package_loadout
 </section>
 <source>
 cargo = npcfollowoption_token, 1
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="26:1">
+<dest>
+;Act_ActTrig = MP_setup
+</dest>
+<source>
+Act_ActTrig = MP_setup
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="26:1">
+<dest>
+;Act_NNIds = 459102, HISTORY
+</dest>
+<source>
+Act_NNIds = 459102, HISTORY
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="26:1">
+<dest>
+;Act_NNIds = 458894, HISTORY ;AI Wingmen
+</dest>
+<source>
+Act_NNIds = 458894, HISTORY ;AI Wingmen
 </source>
 </data>
 

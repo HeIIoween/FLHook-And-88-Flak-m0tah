@@ -16,9 +16,9 @@ space_costume = pl_female2_head, li_female_guard_body, comm_li_hatcher_female
 individual_name = 459013
 
 [NPC]
-nickname = wo3dy_NPC
-affiliation = wo3dy_grp
-npc_ship_arch = Bot_wo3dy2
+nickname = Wo3dy_NPC
+affiliation = Wo3dy_grp
+npc_ship_arch = Bot_Wo3dy2
 voice = pilot_f_mil_m01b
 space_costume = rh_wilham_head, rh_male_elite_body, comm_rh_wilham
 individual_name = 459020

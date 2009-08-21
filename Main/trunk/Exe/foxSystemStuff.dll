@@ -206,7 +206,7 @@ Faction IDs:
 281 - Harlequin (Rheinland VHF)
 282 - Nomad Bribe
 283 - [SmOp]ChipBot
-284 - Faction Tag Removal (and descrip.)
+284 - Mysterious Vendor - PBase Vendor (was "Faction Tag Removal", recycled)
 285 - DarkMarauderBot
 286 - Progenator Power Supply
 287 - Pursuit Dagger
@@ -271,6 +271,8 @@ Faction IDs:
 346 - ROLL LEFT
 347 - TOGGLE AUTO CAMERA
 348 - Invalid Summon Token
+349 - Server has currently enabled:
+350 - Server has currently disabled:
 
 400 through 412 - Blue Ball puzzle
 
