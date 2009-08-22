@@ -1,5 +1,5 @@
 <script>
-<header name="88 Flak Version 1.27 RC129 08/21/09" savesafe="false" exclusive="false">
+<header name="88 Flak Version 1.27 RC129 08/22/09" savesafe="false" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -151,6 +151,8 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 <item id="0" name=" (Default) No">
 </item>
 <item id="1" name="Yes">
+</item>
+<item name="Yes (higher effects distance only)">
 </item>
 </option>
 
@@ -2488,14 +2490,6 @@ effects = Fx\effect_types.ini			; needs to be before effects.ini
 effects = Fx\effect_typeshigh.ini			; needs to be before effects.ini
 </source>
 </data>
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="16:1">
-<dest>
-effects = Fx\weapons\weapons_ale.ini
-</dest>
-<source>
-effects = Fx\weapons\weapons_alehigh.ini
-</source>
-</data>
 <data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="16:1">
 <dest>
 FxBasicAppearance.poolSize    = 1000		; each particle can generate: 4 verts 6, indices
@@ -2520,6 +2514,14 @@ FLDustAppearance.poolSize     = 25000			; custom app from flalchemy.dll: each pa
 ;
 FxMeshAppearance.poolSize  = 50000			; generates meshes not particles; need enough of these for all tradelane rings in a system.
 FxParticleAppearance.poolSize = 10000			; generates effects not particles
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="16:1">
+<dest>
+effects = Fx\weapons\weapons_ale.ini
+</dest>
+<source>
+effects = Fx\weapons\weapons_alehigh.ini
 </source>
 </data>
 <data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="16:1">
@@ -2572,6 +2574,40 @@ snd_effect = const_missile_emp
 </dest>
 <source>
 snd_effect = const_torpedo
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="16:2">
+<dest>
+effects = Fx\effect_types.ini			; needs to be before effects.ini
+</dest>
+<source>
+effects = Fx\effect_typeshigh.ini			; needs to be before effects.ini
+</source>
+</data>
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="16:2">
+<dest>
+FxBasicAppearance.poolSize    = 1000		; each particle can generate: 4 verts 6, indices
+FxRectAppearance.poolSize     = 400			; each particle can generate: 4 verts 6, indices
+FxPerpAppearance.poolSize     = 250			; each particle can generate: 4 verts 6, indices
+FxOrientedAppearance.poolSize = 0			; each particle can generate: 4 verts 6, indices
+FLBeamAppearance.poolSize     = 680			; custom app from flalchemy.dll: each particle can generate: 5 verts 24 indices
+FLDustAppearance.poolSize     = 250			; custom app from flalchemy.dll: each particle can generate: 4 verts 6 indices
+;---------------------- total = 2600 -------;
+;
+FxMeshAppearance.poolSize  = 500			; generates meshes not particles; need enough of these for all tradelane rings in a system.
+FxParticleAppearance.poolSize = 100			; generates effects not particles
+</dest>
+<source>
+FxBasicAppearance.poolSize    = 100000		; each particle can generate: 4 verts 6, indices
+FxRectAppearance.poolSize     = 40000			; each particle can generate: 4 verts 6, indices
+FxPerpAppearance.poolSize     = 25000			; each particle can generate: 4 verts 6, indices
+FxOrientedAppearance.poolSize = 0			; each particle can generate: 4 verts 6, indices
+FLBeamAppearance.poolSize     = 68000			; custom app from flalchemy.dll: each particle can generate: 5 verts 24 indices
+FLDustAppearance.poolSize     = 25000			; custom app from flalchemy.dll: each particle can generate: 4 verts 6 indices
+;---------------------- total = 260000 -------;
+;
+FxMeshAppearance.poolSize  = 50000			; generates meshes not particles; need enough of these for all tradelane rings in a system.
+FxParticleAppearance.poolSize = 10000			; generates effects not particles
 </source>
 </data>
 
