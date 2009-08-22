@@ -17,9 +17,12 @@
 -- VHFs can now mount regular weaponry over the CD/Torpedo mount. The power supply, however, has not been increased, so overloading your VHF may not be wise.
 -- Ships are now automatically untargeted when they pass the death-revive threshold.
 -- Re-organization to the mission script structure. This fixes an issue with the F5 tips screen printing multiple times.
+-- A Class 5 EMP Missile, the Decimator Missile (Eraser -> Sweeper -> Neutralizer -> Paralyzer -> Decimator). Although the EMP missiles were previously classed as Class 2-5, they were in reality Class 1-4, so the Decimator rounds out the EMP line.
+-- Missile, CD, Mine, and Torpedo prices have been adjusted to be more reasonable. Previously, a single launcher was sometimes worth upwards of $250,000.
+
+Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- fifth EMP missile for pi_empmissile effect
 -- Create missiles for the Nomad Fighter.
 -- Create a "Nomad Repair Ship", essentially a copypasta of the current Repair Ship but with a Nomad Fighter model for RP purposes. In place of the RS's 360* Class 3 mounts and shield, the Nomad RS will simply have a single Nomad Laser mount, and no shield. The Repair Beam will function identically. In practice, the Nomad RS will be a more offensive version of the stock RS, but will be more easily killed.
 -- Prevent commodities from being traded / dropped at all in Alaska, to correct trading exploits. (this will require some FLHook work)

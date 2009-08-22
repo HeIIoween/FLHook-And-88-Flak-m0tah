@@ -671,7 +671,7 @@ Act_ActTrig = foxBot_JumpFix_Wait
 [Trigger]
 nickname = foxBot_JumpFix_Pull
 system = any
-Cnd_Timer = 2
+Cnd_Timer = 1
 Act_DeactTrig = foxBot_JumpFix_Wait
 Act_Destroy = foxBot, EXPLODE
 Act_ActTrig = foxBot_JumpFix
@@ -679,7 +679,7 @@ Act_ActTrig = foxBot_JumpFix
 [Trigger]
 nickname = foxBot_JumpFix_Wait
 system = any
-Cnd_DistShip = outside, Player, foxBot, 35000
+Cnd_DistShip = outside, Player, foxBot, 30000
 Act_DeactTrig = foxBot_JumpFix_Pull
 Act_SetLifetime = foxBot, 999999
 Act_ActTrig = foxBot_JumpFix_Push
@@ -687,7 +687,7 @@ Act_ActTrig = foxBot_JumpFix_Push
 [Trigger]
 nickname = foxBot_JumpFix_Push
 system = any
-Cnd_JumpInComplete = Player
+Cnd_SystemEnter = no_params
 Act_SetLifetime = foxBot, 2
 Act_ActTrig = foxBot_JumpFix
 
@@ -989,7 +989,7 @@ Act_ActTrig = KittBot_JumpFix_Wait
 [Trigger]
 nickname = KittBot_JumpFix_Pull
 system = any
-Cnd_Timer = 2
+Cnd_Timer = 1
 Act_DeactTrig = KittBot_JumpFix_Wait
 Act_Destroy = KittBot, EXPLODE
 Act_ActTrig = KittBot_JumpFix
@@ -997,7 +997,7 @@ Act_ActTrig = KittBot_JumpFix
 [Trigger]
 nickname = KittBot_JumpFix_Wait
 system = any
-Cnd_DistShip = outside, Player, KittBot, 35000
+Cnd_DistShip = outside, Player, KittBot, 30000
 Act_DeactTrig = KittBot_JumpFix_Pull
 Act_SetLifetime = KittBot, 999999
 Act_ActTrig = KittBot_JumpFix_Push
@@ -1005,7 +1005,7 @@ Act_ActTrig = KittBot_JumpFix_Push
 [Trigger]
 nickname = KittBot_JumpFix_Push
 system = any
-Cnd_JumpInComplete = Player
+Cnd_SystemEnter = no_params
 Act_SetLifetime = KittBot, 2
 Act_ActTrig = KittBot_JumpFix
 
@@ -1307,7 +1307,7 @@ Act_ActTrig = Wo3dy_JumpFix_Wait
 [Trigger]
 nickname = Wo3dy_JumpFix_Pull
 system = any
-Cnd_Timer = 2
+Cnd_Timer = 1
 Act_DeactTrig = Wo3dy_JumpFix_Wait
 Act_Destroy = Wo3dy, EXPLODE
 Act_ActTrig = Wo3dy_JumpFix
@@ -1315,7 +1315,7 @@ Act_ActTrig = Wo3dy_JumpFix
 [Trigger]
 nickname = Wo3dy_JumpFix_Wait
 system = any
-Cnd_DistShip = outside, Player, Wo3dy, 35000
+Cnd_DistShip = outside, Player, Wo3dy, 30000
 Act_DeactTrig = Wo3dy_JumpFix_Pull
 Act_SetLifetime = Wo3dy, 999999
 Act_ActTrig = Wo3dy_JumpFix_Push
@@ -1323,7 +1323,7 @@ Act_ActTrig = Wo3dy_JumpFix_Push
 [Trigger]
 nickname = Wo3dy_JumpFix_Push
 system = any
-Cnd_JumpInComplete = Player
+Cnd_SystemEnter = no_params
 Act_SetLifetime = Wo3dy, 2
 Act_ActTrig = Wo3dy_JumpFix
 
@@ -1625,7 +1625,7 @@ Act_ActTrig = ChipBot_JumpFix_Wait
 [Trigger]
 nickname = ChipBot_JumpFix_Pull
 system = any
-Cnd_Timer = 2
+Cnd_Timer = 1
 Act_DeactTrig = ChipBot_JumpFix_Wait
 Act_Destroy = ChipBot, EXPLODE
 Act_ActTrig = ChipBot_JumpFix
@@ -1633,7 +1633,7 @@ Act_ActTrig = ChipBot_JumpFix
 [Trigger]
 nickname = ChipBot_JumpFix_Wait
 system = any
-Cnd_DistShip = outside, Player, ChipBot, 35000
+Cnd_DistShip = outside, Player, ChipBot, 30000
 Act_DeactTrig = ChipBot_JumpFix_Pull
 Act_SetLifetime = ChipBot, 999999
 Act_ActTrig = ChipBot_JumpFix_Push
@@ -1641,7 +1641,7 @@ Act_ActTrig = ChipBot_JumpFix_Push
 [Trigger]
 nickname = ChipBot_JumpFix_Push
 system = any
-Cnd_JumpInComplete = Player
+Cnd_SystemEnter = no_params
 Act_SetLifetime = ChipBot, 2
 Act_ActTrig = ChipBot_JumpFix
 
