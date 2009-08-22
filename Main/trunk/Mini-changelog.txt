@@ -24,6 +24,7 @@
 -- Added option to enable higher effect view distances but not the new effects themselves when using High-End FX.
 -- Better Cruise Disruption effects (now colored by engine color).
 -- The high-end damage effect now correctly only plays when High-End FX is activated.
+-- High-resolution textures are no longer applied if High-End FX is not selected.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 

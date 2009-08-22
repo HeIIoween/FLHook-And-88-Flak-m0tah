@@ -2532,6 +2532,12 @@ effects = Fx\explosions\explosions_ale.ini
 effects = Fx\explosions\explosions_alehigh.ini
 </source>
 </data>
+<data file="Data\Fx\lightbeam.txm" method="copyfile" sourcefile="Data\Fx\lightbeam-high.txm" options="16:1">
+</data>
+<data file="Data\Fx\smoke.txm" method="copyfile" sourcefile="Data\Fx\smoke-high.txm" options="16:1">
+</data>
+<data file="Data\Fx\standardeffects.txm" method="copyfile" sourcefile="Data\Fx\standardeffects-high.txm" options="16:1">
+</data>
 <data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="16:1">
 <dest>
 effect_type = EFT_EXPLOSION_SHIP
