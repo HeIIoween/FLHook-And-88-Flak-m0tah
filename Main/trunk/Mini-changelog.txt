@@ -19,6 +19,7 @@
 -- Re-organization to the mission script structure. This fixes an issue with the F5 tips screen printing multiple times.
 -- A Class 5 EMP Missile, the Decimator Missile (Eraser -> Sweeper -> Neutralizer -> Paralyzer -> Decimator). Although the EMP missiles were previously classed as Class 2-5, they were in reality Class 1-4, so the Decimator rounds out the EMP line.
 -- Missile, CD, Mine, and Torpedo prices have been adjusted to be more reasonable. Previously, a single launcher was sometimes worth upwards of $250,000.
+-- Doubled damage of all guns, as guns were on the weaker side in general - missiles have not been changed. However, all power usages of guns have been doubled as well.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
