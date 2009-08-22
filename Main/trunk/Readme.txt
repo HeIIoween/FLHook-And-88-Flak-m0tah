@@ -162,7 +162,7 @@ This requires high-end special effects to be enabled; otherwise, the battledust 
 Also, please note that this disables the new hit effects system which allows hit effects to play when hitting your craft, due to a code conflict. If Battledust is activated, 88 Flak will simply revert to the vanilla hit effects method, where hit effects are hidden if hitting your craft.
 Default: No
 
-MP Client: Enable high-end special effects? - No / Yes
+MP Client: Enable high-end special effects? - No / Yes / Yes (higher effects distance only)
 If enabled, special effects will be drawn at a 20km distance, and also forces the engine to handle 10 times the amount of effects it normally can.
 This also enables usage of Why485's new Missile, Torpedo, and Flak Cannon effects, which require the high-end special effects tweak to function.
 Paired with the high-end sound system (below), this makes for an amazingly immersive experience as you see (and hear) battles unfold before you're even in range yourself.

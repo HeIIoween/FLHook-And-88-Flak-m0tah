@@ -2524,6 +2524,14 @@ effects = Fx\weapons\weapons_ale.ini
 effects = Fx\weapons\weapons_alehigh.ini
 </source>
 </data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="16:1">
+<dest>
+effects = Fx\explosions\explosions_ale.ini
+</dest>
+<source>
+effects = Fx\explosions\explosions_alehigh.ini
+</source>
+</data>
 <data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="16:1">
 <dest>
 effect_type = EFT_EXPLOSION_SHIP
