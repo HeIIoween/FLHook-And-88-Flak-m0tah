@@ -621,6 +621,8 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - Changed cash printouts in DP code to use ToMoneyStr for better formatting
 - Repair guns now work on external equipment on both NPCs and players
 - Scripting no longer stacks instances in multiplayer
+- Major reworking of config file organization into multiple files (still supports reading everything from FLHook.ini, however)
+  - If you're lazy and don't want to reorganize your config, simply merge the settings in [Death] into [General]
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)

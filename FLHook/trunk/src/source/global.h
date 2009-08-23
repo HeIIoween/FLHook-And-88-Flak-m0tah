@@ -186,6 +186,16 @@ extern FARPROC fpOldUpdate;
 // setting variables
 //TODO: clean this section up
 extern string set_scCfgFile;
+extern string set_scCfgGeneralFile;
+extern string set_scCfgCloakFile;
+extern string set_scCfgRepairFile;
+extern string set_scCfgDockingFile;
+extern string set_scCfgDeathFile;
+extern string set_scCfgPVPFile;
+extern string set_scCfgReputationFile;
+extern string set_scCfgItemsFile;
+extern string set_scCfgCommandsFile;
+
 extern uint set_iAntiDockKill;
 extern list<uint> set_lstNoPVPSystems;
 extern list<wstring> set_lstChatSuppress;

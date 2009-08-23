@@ -194,7 +194,7 @@ HK_ERROR HkBeam(wstring wscCharname, wstring wscBasename)
 
 	if(pub::GetBaseID(iBaseID, scBasename.c_str()) == -4)
 	{
-		string scBaseShortcut = IniGetS(set_scCfgFile, "names", wstos(wscBasename), "");
+		string scBaseShortcut = IniGetS(set_scCfgCommandsFile, "names", wstos(wscBasename), "");
 		if(!scBaseShortcut.length())
 			return HKE_INVALID_BASENAME;
 
@@ -328,7 +328,7 @@ HK_ERROR HkKillBeam(wstring wscCharname, wstring wscBasename)
 
 	if(pub::GetBaseID(iBaseID, scBasename.c_str()) == -4)
 	{
-		string scBaseShortcut = IniGetS(set_scCfgFile, "names", wstos(wscBasename), "");
+		string scBaseShortcut = IniGetS(set_scCfgCommandsFile, "names", wstos(wscBasename), "");
 		if(!scBaseShortcut.length())
 			return HKE_INVALID_BASENAME;
 
