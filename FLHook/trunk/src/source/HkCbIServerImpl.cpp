@@ -1223,6 +1223,9 @@ void __stdcall DisConnect(unsigned int iClientID, enum EFLConnection p2)
 
 		bDeathPenaltyOnEnter = ClientInfo[iClientID].bDeathPenaltyOnEnter;
 
+		if(ClientInfo[iClientID].iControllerID)
+			pub::Controller::Destroy(ClientInfo[iClientID].iControllerID);
+
 		if(!ClientInfo[iClientID].bDisconnected)
 		{
 			ClientInfo[iClientID].bDisconnected = true;
