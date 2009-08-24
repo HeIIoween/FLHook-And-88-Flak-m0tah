@@ -623,6 +623,7 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - Scripting no longer stacks instances in multiplayer
 - Major reworking of config file organization into multiple files (still supports reading everything from FLHook.ini, however)
   - If you're lazy and don't want to reorganize your config, simply merge the settings in [Death] into [General]
+- Added list of systems where items of a certain type cannot exist in space or be traded
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)

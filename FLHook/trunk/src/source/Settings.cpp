@@ -1,5 +1,7 @@
 #include "hook.h"
 
+Archetype::AClassType TypeStrToEnum(string scType);
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // setting variables
 
@@ -189,11 +191,14 @@ map<uint, uint> set_mapAutoMark;
 //Equipment to redirect damage to hull
 map<uint, uint> set_mapEquipReDam;
 
+//Systems to prevent dropping/trading items in
+map<uint, map<Archetype::AClassType, char> > set_mapSysItemRestrictions;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void LoadSettings()
 {
-	try {
+	//try {
 	// init cfg filename
 		char szCurDir[MAX_PATH];
 		GetCurrentDirectory(sizeof(szCurDir), szCurDir);
@@ -287,16 +292,12 @@ void LoadSettings()
 		// Set system chat to go to universe?
 		set_bSystemToUniverse = IniGetB(set_scCfgGeneralFile, "Chat", "SystemToUniverse", false);
 		void *chatCheckAddr = (void*)((char*)hModServer + ADDR_UNIVERSECHAT_CHECK);
-		if(set_bSystemToUniverse)
-		{ //Overwrite authorization check
-			char szOverwrite = '\xEB';
-			WriteProcMem(chatCheckAddr, (void*)&szOverwrite, 1);
-		}
+		char szOverwrite;
+		if(set_bSystemToUniverse) //Overwrite authorization check
+			szOverwrite = '\xEB';
 		else
-		{
-			char szOverwrite = '\x75';
-			WriteProcMem(chatCheckAddr, (void*)&szOverwrite, 1);
-		}
+			szOverwrite = '\x75';
+		WriteProcMem(chatCheckAddr, (void*)&szOverwrite, 1);
 		// bans
 		set_bBanAccountOnMatch = IniGetB(set_scCfgGeneralFile, "Bans", "BanAccountOnMatch", false);
 		set_lstBans.clear();
@@ -508,6 +509,23 @@ void LoadSettings()
 			uint iEquipID = CreateID(Trim(it18->scKey).c_str());
 			set_mapEquipReDam[iEquipID] = iEquipID;
 		}
+		//Systems to prevent dropping/trading items in
+		IniGetSection(set_scCfgItemsFile, "SystemItemRestrictions", lstValues);
+		set_mapSysItemRestrictions.clear();
+		foreach(lstValues, INISECTIONVALUE, it19)
+		{
+			uint iSystemID;
+			pub::GetSystemID(iSystemID, it19->scKey.c_str());
+			map<Archetype::AClassType, char> mapItemTypes;
+			uint iParamIndex = 0;
+			string scParam = Trim(GetParam(it19->scValue, ',', iParamIndex));
+			while(scParam.length())
+			{
+				mapItemTypes[TypeStrToEnum(scParam)] = 0;
+				scParam = Trim(GetParam(it19->scValue, ',', ++iParamIndex));
+			}
+			set_mapSysItemRestrictions[iSystemID] = mapItemTypes;
+		}		
 
 	//PVP
 		//No-PvP Tokens
@@ -603,6 +621,65 @@ void LoadSettings()
 			set_vAffilItems.push_back(iGoodID);
 		}
 
-	} catch(...) { ConPrint(L"Exception in %s, settings likely not loaded\n", stows(__FUNCTION__).c_str()); AddLog("Exception in %s", __FUNCTION__); }
+	//} catch(...) { ConPrint(L"Exception in %s, settings likely not loaded\n", stows(__FUNCTION__).c_str()); AddLog("Exception in %s", __FUNCTION__); }
 
+}
+
+Archetype::AClassType TypeStrToEnum(string scType)
+{
+	if(scType == "Commodity")
+	  return Archetype::COMMODITY;
+	if(scType == "Equipment")
+	  return Archetype::EQUIPMENT;
+	if(scType == "AttachedEquipment")
+	  return Archetype::ATTACHED_EQUIPMENT;
+	if(scType == "LootCrate")
+	  return Archetype::LOOT_CRATE;
+	if(scType == "CargoPod")
+	  return Archetype::CARGO_POD;
+	if(scType == "Power")
+	  return Archetype::POWER;
+	if(scType == "Engine")
+	  return Archetype::ENGINE;
+	if(scType == "Shield")
+	  return Archetype::SHIELD;
+	if(scType == "ShieldGenerator")
+	  return Archetype::SHIELD_GENERATOR;
+	if(scType == "Thruster")
+	  return Archetype::THRUSTER;
+	if(scType == "Launcher")
+	  return Archetype::LAUNCHER;
+	if(scType == "Gun")
+	  return Archetype::GUN;
+	if(scType == "MineDropper")
+	  return Archetype::MINE_DROPPER;
+	if(scType == "CounterMeasureDropper")
+	  return Archetype::COUNTER_MEASURE_DROPPER;
+	if(scType == "Scanner")
+	  return Archetype::SCANNER;
+	if(scType == "Light")
+	  return Archetype::LIGHT;
+	if(scType == "Tractor")
+	  return Archetype::TRACTOR;
+	if(scType == "RepairDroid")
+	  return Archetype::REPAIR_DROID;
+	if(scType == "RepairKit")
+	  return Archetype::REPAIR_KIT;
+	if(scType == "ShieldBattery")
+	  return Archetype::SHIELD_BATTERY;
+	if(scType == "CloakingDevice")
+	  return Archetype::CLOAKING_DEVICE;
+	if(scType == "TradeLaneEquip")
+	  return Archetype::TRADE_LANE_EQUIP;
+	if(scType == "Projectile")
+	  return Archetype::PROJECTILE;
+	if(scType == "Munition")
+	  return Archetype::MUNITION;
+	if(scType == "MineDropper")
+	  return Archetype::MINE;
+	if(scType == "CounterMeasure")
+	  return Archetype::COUNTER_MEASURE;
+	if(scType == "Armor")
+	  return Archetype::ARMOR;
+	return Archetype::ROOT;
 }

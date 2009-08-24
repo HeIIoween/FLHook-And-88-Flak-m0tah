@@ -924,4 +924,6 @@ extern bool g_bNPCDisabled;
 extern bool g_bNPCForceDisabled;
 extern char *g_FLServerDataPtr;
 
+extern map<uint, map<Archetype::AClassType, char> > set_mapSysItemRestrictions;
+
 #endif

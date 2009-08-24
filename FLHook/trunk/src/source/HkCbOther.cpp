@@ -195,6 +195,8 @@ struct ITEM_DROP
 bool __cdecl SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDunno2, ITEM_DROP *id, uint iDunno3)
 {
 	//PrintUniverseText(L"Spawned %u " + HkGetWStringFromIDS(id->eqEquip->iIDSName), id->iNum);
+	bool bGotClientID = false;
+	uint iClientID;
 	try{
 		map<uint,uint>::iterator item = set_mapNoSpaceItems.find(id->eqEquip->iEquipID);
 		if(item != set_mapNoSpaceItems.end())
@@ -203,7 +205,8 @@ bool __cdecl SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDunn
 			pub::SpaceObj::GetRelativeHealth(iShip, fHealth);
 			if(fHealth)
 			{
-				uint iClientID = HkGetClientIDByShip(iShip);
+				iClientID = HkGetClientIDByShip(iShip);
+				bGotClientID = true;
 				if(iClientID)
 				{
 					HkAddCargo(ARG_CLIENTID(iClientID), id->eqEquip->iEquipID, id->iNum, false);
@@ -211,6 +214,27 @@ bool __cdecl SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDunn
 				}
 			}
 			return false;
+		}
+		uint iSystemID;
+		pub::SpaceObj::GetSystem(iShip, iSystemID);
+		map<uint, map<Archetype::AClassType, char> >::iterator typeMap = set_mapSysItemRestrictions.find(iSystemID);
+		if(typeMap != set_mapSysItemRestrictions.end())
+		{
+			map<Archetype::AClassType, char>::iterator types = typeMap->second.find(id->eqEquip->get_class_type());
+			if(types != typeMap->second.end())
+			{
+				if(!bGotClientID)
+				{
+					iClientID = HkGetClientIDByShip(iShip);
+					//bGotClientID = true;
+				}
+				if(iClientID)
+				{
+					HkAddCargo(ARG_CLIENTID(iClientID), id->eqEquip->iEquipID, id->iNum, false);
+					pub::Player::SendNNMessage(iClientID, pub::GetNicknameId("objective_failed"));
+				}
+				return false;
+			}
 		}
 		item = set_mapAutoMark.find(id->eqEquip->iEquipID);
 		if(item != set_mapAutoMark.end())
@@ -315,7 +339,7 @@ unsigned int __cdecl ControllerCreate(char const *szDLLPath, char const *szContr
 		{
 			iControllerID = pub::Controller::Create(szDLLPath, szControllerType, create, iDunno);
 			ClientInfo[create->iClientID].iControllerID = iControllerID;
-			ConPrint(L"Create %s %u | %u %u\n", stows(szControllerType).c_str(), iControllerID, create->iID, create->iClientID);
+			//ConPrint(L"Create %s %u | %u %u\n", stows(szControllerType).c_str(), iControllerID, create->iID, create->iClientID);
 		}
 	}
 	else

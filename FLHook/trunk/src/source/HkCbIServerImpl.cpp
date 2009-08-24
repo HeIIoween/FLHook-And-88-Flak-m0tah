@@ -2018,6 +2018,21 @@ void __stdcall AddTradeEquip(unsigned int iClientID, struct EquipDesc const &ed)
 			pub::Player::SendNNMessage(iClientID, pub::GetNicknameId("none_available"));
 			Server.TerminateTrade(iClientID, 0); //cancel trade
 		}
+		else
+		{
+			map<uint, map<Archetype::AClassType, char> >::iterator typeMap = set_mapSysItemRestrictions.find(Players[iClientID].iSystemID);
+			if(typeMap != set_mapSysItemRestrictions.end())
+			{
+				Archetype::Equipment *equip = Archetype::GetEquipment(ed.archid);
+				map<Archetype::AClassType, char>::iterator types = typeMap->second.find(equip->get_class_type());
+				if(types != typeMap->second.end())
+				{
+					pub::Player::SendNNMessage(iClientID, pub::GetNicknameId("objective_failed"));
+					pub::Player::SendNNMessage(iClientID, pub::GetNicknameId("none_available"));
+					Server.TerminateTrade(iClientID, 0); //cancel trade
+				}
+			}
+		}
 	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
 
 }

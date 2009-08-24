@@ -664,6 +664,45 @@ public:
 
 namespace Archetype
 {
+ 	enum AClassType
+	{
+		ROOT = 0,
+		EQ_OBJ = 1,
+		SOLAR = 2,
+		SHIP = 3,
+		ASTEROID = 4,
+		DYNAMIC_ASTEROID = 5,
+		EQUIPMENT = 6,
+		ATTACHED_EQUIPMENT = 7,
+		LOOT_CRATE = 8,
+		CARGO_POD = 9,
+		COMMODITY = 10,
+		POWER = 11,
+		ENGINE = 12,
+		SHIELD = 13,
+		SHIELD_GENERATOR = 14,
+		THRUSTER = 15,
+		LAUNCHER = 16,
+		GUN = 17,
+		MINE_DROPPER = 18,
+		COUNTER_MEASURE_DROPPER = 19,
+		SCANNER = 20,
+		LIGHT = 21,
+		TRACTOR = 22,
+		ATTACHED_FX_EQUIP = 23,
+		INTERNAL_FX_EQUIP = 24,
+		REPAIR_DROID = 25,
+		REPAIR_KIT = 26,
+		SHIELD_BATTERY = 27,
+		CLOAKING_DEVICE = 28,
+		TRADE_LANE_EQUIP = 29, 
+		PROJECTILE = 30,
+		MUNITION = 31,
+		MINE = 32,
+		COUNTER_MEASURE = 33,
+		ARMOR = 34,
+	};
+	
 	struct IMPORT Ship
 	{
 		uint	iDunno1[2];
@@ -695,6 +734,8 @@ namespace Archetype
 
 	struct Equipment
 	{
+		virtual enum AClassType  get_class_type(void)const ;
+
 		uint iVFTable;
 		uint i2;
 		uint iEquipID;
