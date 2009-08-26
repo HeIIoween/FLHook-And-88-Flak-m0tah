@@ -134,7 +134,7 @@ extern "C" int __declspec(dllexport) RockOn(bool bStart, char *szCmdLine)
 				if(EnumProcessModules(hProcess, &hMod, sizeof(hMod), &cbNeeded))
 					dwNameLen = GetModuleBaseName(hProcess, hMod, szFile, sizeof(szFile));
 
-				strlwr(szFile);
+				_strlwr(szFile);
 				if(strstr(szFile, "flserver.exe"))
 				{
 					hProcFL = hProcess;

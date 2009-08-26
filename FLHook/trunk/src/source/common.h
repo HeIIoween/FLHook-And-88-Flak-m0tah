@@ -703,6 +703,8 @@ namespace Archetype
 		ARMOR = 34,
 	};
 	
+	struct IMPORT Root {};
+
 	struct IMPORT Ship
 	{
 		uint	iDunno1[2];
@@ -732,11 +734,22 @@ namespace Archetype
 		uint	iMaxShieldBats;
 	};
 
-	struct Equipment
+	struct IMPORT Equipment
 	{
+		Equipment(struct Equipment const &);
+		Equipment(struct ICliObj *);
+		virtual ~Equipment(void);
+		virtual bool read(class INI_Reader &);
+		virtual void redefine(Archetype::Root const &);
+		virtual bool load(void);
 		virtual enum AClassType  get_class_type(void)const ;
-
-		uint iVFTable;
+		virtual void free_resources(void);
+		virtual enum HpAttachmentType  get_hp_type(void)const ;
+		virtual struct Equipment * get_loot_appearance(void);
+		virtual struct CargoPod * get_pod_appearance(void);
+		virtual bool dunno(void);
+		
+//		uint iVFTable;
 		uint i2;
 		uint iEquipID;
 		char *szName;
@@ -1000,20 +1013,6 @@ class IMPORT CSimple
 public:
 	float get_hit_pts(void)const;
 };
-
-namespace Archetype
-{
-	class IMPORT Gun 
-	{
-	public: 
-//		virtual enum  HpAttachmentType get_hp_type(void)const;
-		int get_number_of_hp_types(void)const;
-		enum HpAttachmentType get_hp_type_by_index(int)const;
-	};
-
-	IMPORT unsigned short __cdecl LargeIDToSmallID(unsigned int);
-	IMPORT unsigned int __cdecl SmallIDToLargeID(unsigned short);
-}
 
 struct IMPORT CShip
 {

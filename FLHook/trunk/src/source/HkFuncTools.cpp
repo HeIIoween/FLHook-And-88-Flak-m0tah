@@ -406,35 +406,6 @@ ENGINE_STATE HkGetEngineState(uint iClientID)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-EQ_TYPE HkGetEqType(Archetype::Equipment *eq)
-{
-	uint iVFTableMine = (uint)hModCommon + ADDR_COMMON_VFTABLE_MINE;
-	uint iVFTableCM = (uint)hModCommon + ADDR_COMMON_VFTABLE_CM;
-	uint iVFTableGun = (uint)hModCommon + ADDR_COMMON_VFTABLE_GUN;
-	if(eq->iVFTable == iVFTableGun) {
-		Archetype::Gun *gun = (Archetype::Gun *)eq;
-		Archetype::Equipment *eqAmmo = Archetype::GetEquipment(eq->iAmmoArchID);
-		int iMissile;
-		memcpy(&iMissile, (char*)eqAmmo + 0x90, 4);
-		uint iGunType = gun->get_hp_type_by_index(0);
-		if(iGunType == 36)
-			return ET_TORPEDO;
-		else if(iGunType == 35)
-			return ET_CD;
-		else if(iMissile)
-			return ET_MISSILE;
-		else
-			return ET_GUN;
-	} else if(eq->iVFTable == iVFTableCM)
-		return ET_CM;
-	else if(eq->iVFTable == iVFTableMine)
-		return ET_MINE;
-	else
-		return ET_OTHER;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 struct EQ_ITEM
 {
 	EQ_ITEM *next;

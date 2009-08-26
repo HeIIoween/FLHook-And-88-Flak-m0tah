@@ -398,7 +398,7 @@ bool InitHookExports()
 	scAcctPath = string(szDataPath) + "\\Accts\\MultiPlayer\\";
 
 	// clear ClientInfo
-	for(i = 0; (i < sizeof(ClientInfo)/sizeof(CLIENT_INFO)); i++)
+	for(uint i = 0; (i < sizeof(ClientInfo)/sizeof(CLIENT_INFO)); i++)
 	{
 		ClientInfo[i].iConnects = 0; // only set to 0 on start
 		ClearClientInfo(i);

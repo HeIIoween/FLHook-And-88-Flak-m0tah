@@ -2139,7 +2139,7 @@ void HkUnMarkObject(uint iClientID, uint iObject)
 		}
 	}
 
-	for(uint k=0; i<ClientInfo[iClientID].vDelayedSystemMarkedObjs.size(); k++)
+	for(uint k=0; k<ClientInfo[iClientID].vDelayedSystemMarkedObjs.size(); k++)
 	{
 		if(ClientInfo[iClientID].vDelayedSystemMarkedObjs[k] == iObject)
 		{
@@ -2160,7 +2160,7 @@ void HkUnMarkAllObjects(uint iClientID)
 		pub::Player::MarkObj(iClientID, (ClientInfo[iClientID].vMarkedObjs[i]), 0);
 	}
 	ClientInfo[iClientID].vMarkedObjs.clear();
-	for(i=0; i<ClientInfo[iClientID].vAutoMarkedObjs.size(); i++)
+	for(uint i=0; i<ClientInfo[iClientID].vAutoMarkedObjs.size(); i++)
 	{
 		pub::Player::MarkObj(iClientID, (ClientInfo[iClientID].vAutoMarkedObjs[i]), 0);
 	}

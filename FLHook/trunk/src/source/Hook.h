@@ -632,7 +632,6 @@ void HkGetItemsForSale(uint iBaseID, list<uint> &lstItems);
 IObjInspectImpl* HkGetInspect(uint iClientID);
 CEquipManager* HkGetEquipMan(uint iShip);
 ENGINE_STATE HkGetEngineState(uint iClientID);
-EQ_TYPE HkGetEqType(Archetype::Equipment *eq);
 HK_ERROR HkGetGoodIDFromSID(uint iClientID, ushort sGoodID, uint &iGoodID);
 HK_ERROR HkGetSIDFromGoodID(uint iClientID, ushort &sGoodID, uint iGoodID);
 HK_ERROR HkRestartServer();

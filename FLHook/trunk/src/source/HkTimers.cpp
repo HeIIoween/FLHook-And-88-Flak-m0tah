@@ -466,7 +466,7 @@ void HkTimerSpaceObjMark()
 				}
 			}
 
-			for(i=0; i<ClientInfo[iClientID].vDelayedAutoMarkedObjs.size(); i++)
+			for(uint i=0; i<ClientInfo[iClientID].vDelayedAutoMarkedObjs.size(); i++)
 			{
 				if(pub::SpaceObj::ExistsAndAlive(ClientInfo[iClientID].vDelayedAutoMarkedObjs[i]))
 				{
@@ -494,7 +494,7 @@ void HkTimerSpaceObjMark()
 				}
 			}
 
-			for(i=0; i<vMarkSpaceObjProc.size(); i++)
+			for(uint i=0; i<vMarkSpaceObjProc.size(); i++)
 			{
 				uint iMarkSpaceObjProcShip = vMarkSpaceObjProc[i];
 				if(set_bFlakVersion)

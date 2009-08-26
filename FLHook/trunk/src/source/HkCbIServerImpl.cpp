@@ -1786,7 +1786,7 @@ void __stdcall JumpInComplete(unsigned int iSystemID, unsigned int iShip)
 				ClientInfo[iClientID].vDelayedSystemMarkedObjs.pop_back();
 			}
 		}
-		for(i=0; i<ClientInfo[iClientID].vMarkedObjs.size(); i++)
+		for(uint i=0; i<ClientInfo[iClientID].vMarkedObjs.size(); i++)
 		{
 			if(!pub::SpaceObj::ExistsAndAlive(ClientInfo[iClientID].vMarkedObjs[i]))
 				ClientInfo[iClientID].vDelayedSystemMarkedObjs.push_back(ClientInfo[iClientID].vMarkedObjs[i]);

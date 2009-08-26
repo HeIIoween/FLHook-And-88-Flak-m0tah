@@ -192,11 +192,9 @@ struct ITEM_DROP
 	float fDunno2;
 	uint iNum;
 };
-bool __cdecl SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDunno2, ITEM_DROP *id, uint iDunno3)
+bool __cdecl _SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDunno2, ITEM_DROP *id, uint iDunno3)
 {
 	//PrintUniverseText(L"Spawned %u " + HkGetWStringFromIDS(id->eqEquip->iIDSName), id->iNum);
-	bool bGotClientID = false;
-	uint iClientID;
 	try{
 		map<uint,uint>::iterator item = set_mapNoSpaceItems.find(id->eqEquip->iEquipID);
 		if(item != set_mapNoSpaceItems.end())
@@ -205,8 +203,7 @@ bool __cdecl SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDunn
 			pub::SpaceObj::GetRelativeHealth(iShip, fHealth);
 			if(fHealth)
 			{
-				iClientID = HkGetClientIDByShip(iShip);
-				bGotClientID = true;
+				uint iClientID = HkGetClientIDByShip(iShip);
 				if(iClientID)
 				{
 					HkAddCargo(ARG_CLIENTID(iClientID), id->eqEquip->iEquipID, id->iNum, false);
@@ -223,11 +220,7 @@ bool __cdecl SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDunn
 			map<Archetype::AClassType, char>::iterator types = typeMap->second.find(id->eqEquip->get_class_type());
 			if(types != typeMap->second.end())
 			{
-				if(!bGotClientID)
-				{
-					iClientID = HkGetClientIDByShip(iShip);
-					//bGotClientID = true;
-				}
+				uint iClientID = HkGetClientIDByShip(iShip);
 				if(iClientID)
 				{
 					HkAddCargo(ARG_CLIENTID(iClientID), id->eqEquip->iEquipID, id->iNum, false);
@@ -255,7 +248,7 @@ __declspec(naked) void _HkCb_SpawnItem()
 	__asm
 	{
 		push ecx
-		call SpawnItem
+		call _SpawnItem
 		pop ecx
 		test al, al
 		pop eax

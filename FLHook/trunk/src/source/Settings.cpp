@@ -198,7 +198,7 @@ map<uint, map<Archetype::AClassType, char> > set_mapSysItemRestrictions;
 
 void LoadSettings()
 {
-	//try {
+	try {
 	// init cfg filename
 		char szCurDir[MAX_PATH];
 		GetCurrentDirectory(sizeof(szCurDir), szCurDir);
@@ -292,12 +292,16 @@ void LoadSettings()
 		// Set system chat to go to universe?
 		set_bSystemToUniverse = IniGetB(set_scCfgGeneralFile, "Chat", "SystemToUniverse", false);
 		void *chatCheckAddr = (void*)((char*)hModServer + ADDR_UNIVERSECHAT_CHECK);
-		char szOverwrite;
-		if(set_bSystemToUniverse) //Overwrite authorization check
-			szOverwrite = '\xEB';
+		if(set_bSystemToUniverse)
+		{ //Overwrite authorization check
+			char szOverwrite = '\xEB';
+			WriteProcMem(chatCheckAddr, (void*)&szOverwrite, 1);
+		}
 		else
-			szOverwrite = '\x75';
-		WriteProcMem(chatCheckAddr, (void*)&szOverwrite, 1);
+		{
+			char szOverwrite = '\x75';
+			WriteProcMem(chatCheckAddr, (void*)&szOverwrite, 1);
+		}
 		// bans
 		set_bBanAccountOnMatch = IniGetB(set_scCfgGeneralFile, "Bans", "BanAccountOnMatch", false);
 		set_lstBans.clear();
@@ -621,7 +625,7 @@ void LoadSettings()
 			set_vAffilItems.push_back(iGoodID);
 		}
 
-	//} catch(...) { ConPrint(L"Exception in %s, settings likely not loaded\n", stows(__FUNCTION__).c_str()); AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { ConPrint(L"Exception in %s, settings likely not loaded\n", stows(__FUNCTION__).c_str()); AddLog("Exception in %s", __FUNCTION__); }
 
 }
 

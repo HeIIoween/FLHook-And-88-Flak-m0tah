@@ -40,22 +40,22 @@ bool flc_decode(const char *ifile, const char *ofile)
   int ifd, ofd, i, l, len, rc;
   char *mem, *buff, c, k, r;
 
-  ifd = open(ifile,O_RDONLY|_O_BINARY);
+  ifd = _open(ifile,O_RDONLY|_O_BINARY);
 
   if (ifd == -1)
 	return false;
 
-  len = lseek(ifd, 0, SEEK_END);
-  lseek(ifd, 0, SEEK_SET);
+  len = _lseek(ifd, 0, SEEK_END);
+  _lseek(ifd, 0, SEEK_SET);
 
   mem = (char*)malloc(len + 1);
   if(mem == NULL) 
   {
-	  close(ifd);
+	  _close(ifd);
 	  return false;
   }
 
-  rc = read(ifd, mem, len);
+  rc = _read(ifd, mem, len);
 /*  if(rc != len) 
   {
 	  free(mem);
@@ -63,7 +63,7 @@ bool flc_decode(const char *ifile, const char *ofile)
 	  return false;
   } */
 
-  close(ifd);
+  _close(ifd);
 
   if (strncmp(mem, "FLS1", 4) != 0) 
   {
@@ -71,7 +71,7 @@ bool flc_decode(const char *ifile, const char *ofile)
 	  return false;
   }
 
-  ofd = open(ofile, O_CREAT | O_TRUNC | O_WRONLY | _O_BINARY, 0640);
+  ofd = _open(ofile, O_CREAT | O_TRUNC | O_WRONLY | _O_BINARY, 0640);
   if (ofd == -1) 
   {
 	  free(mem);
@@ -90,11 +90,11 @@ bool flc_decode(const char *ifile, const char *ofile)
 
     r = c ^ (k | 0x80);
 
-    rc = write(ofd, &r, 1);
+    rc = _write(ofd, &r, 1);
     if (rc != 1) 
 	{
 		free(mem);
-		close(ofd);
+		_close(ofd);
 		return false;
 	}
 
@@ -102,7 +102,7 @@ bool flc_decode(const char *ifile, const char *ofile)
   }
 
   free(mem);
-  close(ofd);
+  _close(ofd);
   return true;
 }
 
@@ -111,23 +111,23 @@ bool flc_encode(const char *ifile, const char *ofile)
   int ifd, ofd, i, l, len, rc;
   char *mem, *buff, c, k, r;
 
-  ifd = open(ifile,O_RDONLY|_O_BINARY);
+  ifd = _open(ifile,O_RDONLY|_O_BINARY);
 
   if (ifd == -1) 
 	return false;
 
-  len = lseek(ifd, 0, SEEK_END);
-  lseek(ifd, 0, SEEK_SET);
+  len = _lseek(ifd, 0, SEEK_END);
+  _lseek(ifd, 0, SEEK_SET);
 
   mem = (char*)malloc(len + 1);
   memset(mem, 0, len + 1);
   if (mem == NULL) 
   {
-	close(ifd);
+	_close(ifd);
 	return false;
   }
 
-  rc = read(ifd, mem, len);
+  rc = _read(ifd, mem, len);
 /*  if (rc != len)
   {
 		free(mem);
@@ -135,9 +135,9 @@ bool flc_encode(const char *ifile, const char *ofile)
 		return false;
   } */
 
-  close(ifd);
+  _close(ifd);
 
-  ofd = open(ofile, O_CREAT | O_TRUNC | O_WRONLY | _O_BINARY, 0640);
+  ofd = _open(ofile, O_CREAT | O_TRUNC | O_WRONLY | _O_BINARY, 0640);
   if (ofd == -1)  
   {
 		free(mem);
@@ -149,11 +149,11 @@ bool flc_encode(const char *ifile, const char *ofile)
   l = len;
 
   /* write magic token */
-  rc = write(ofd, "FLS1", 4);
+  rc = _write(ofd, "FLS1", 4);
   if (rc != 4)
   {
 		free(mem);
-		close(ofd);
+		_close(ofd);
 		return false;
   }
 
@@ -165,17 +165,17 @@ bool flc_encode(const char *ifile, const char *ofile)
 
     r = c ^ (k | 0x80);
 
-    rc = write(ofd, &r, 1);
+    rc = _write(ofd, &r, 1);
 	if (rc != 1)
 	{
 			free(mem);
-			close(ofd);
+			_close(ofd);
 			return false;
 	}
 
     i++;
   }
   free(mem);
-  close(ofd);
+  _close(ofd);
   return true;
 }
