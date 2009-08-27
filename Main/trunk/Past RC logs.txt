@@ -21,7 +21,7 @@ RC128 (07/28/09):
 
 RC127 (07/25/09):
 -- Repaired the AI chase behaviors; AI now chase targets in cruise again.
--- NPC persistance range raised, to help fix issues with random disappearances due to wingmen teleportation etc.
+-- NPC persistence range raised, to help fix issues with random disappearances due to wingmen teleportation etc.
 -- Player view distance raised to 25km, from 15km.
 -- Global firing arcs reverted to RC125's 35*.
 -- Re-added auto-strafe to all ships. This may help formation flight be a bit less stupid.
@@ -29,7 +29,7 @@ RC127 (07/25/09):
 -- AI-piloted Transports, Trains, and Lifters now eject cargo in an effort to fend off pirates much earlier.
 -- Fixed an issue where Player-Purchasable Base defenders would bail out of a fight at 40% hull. They now fight until they die.
 -- Beta RC builds are now tracked internally by Freelancer. This means you will be unable to join a server not running your current Beta RC (it will be grayed out). For the client, this is displayed as "Version 88.27 Build (xx)" in the lower-right of the title screen; for the server, this is displayed as "Version 88.27 Build (xx)" in the title bar. I realize this will lead to confusion among new people joining with the wrong RC ("why can't I join the server?"), but it's better than them joining and crashing themselves (or the server) out.
--- Scanner ranges have been increased to utilize the new AI persistance ranges.
+-- Scanner ranges have been increased to utilize the new AI persistence ranges.
 -- Wingmen squads no longer spawn right at your doorstep, unless you are launching from a base or have just logged into space.
 -- Shot-attached muzzle flashes are a little smaller to make using cockpit view not as annoying.
 -- New Kusari Capital Ship turret effect, because the vanilla one stinks.
@@ -257,7 +257,7 @@ RC123 (12/28/08):
 -- Particle Splitter range slightly increased to make it a little more useful.
 -- AI now use the Particle Splitter properly, waiting until they are close enough to use it.
 -- Cruise Disruptor refire rates substantially lowered - the Wasp / Nomad CD now have an 8 second refire, and the Hornet a 12 second refire.
--- Fixed the stat displays, to an extent. "Fighter / Freighter / Transport Kills", "Capital Ship / Station Kills" are now shown seperately. Stats on old characters will be correct, for the record.
+-- Fixed the stat displays, to an extent. "Fighter / Freighter / Transport Kills", "Capital Ship / Station Kills" are now shown separately. Stats on old characters will be correct, for the record.
 -- Nomad ships no longer appear in the Freelancer NPC rosters. While the Freelancer NPCs were originally designed to pilot every ship in the game that a player could, I'll admit it was a bit strange to see talking Nomads floating about.
 -- System lighting - and the realistic backgrounds option - completely re-worked. When you have the default Freelancer background nebula on, the ambient lighting now more closely matches the background. For the realistic backgrounds option, ambient lighting is now turned off entirely. These changes make both versions much better looking.
 -- Re-wrote all Capital Ship explosions from the ground up. Not only do they use Why485's nice new effects, but I completely recoded the debris system to completely shower flaming bits everywhere. It looks very impressive when these things explode now.
@@ -570,7 +570,7 @@ RC113 (02/16/08):
 -- Dropped the Osiris' cargo hold from 250 to 150.
 
 RC112 (02/15/08):
--- Upgraded FLHook thanks to M0tah, who wrote custom /sendcash and /rename commands, and imported Leipzig City's open-source BountyHunt (thank them for that). This means the seperate BountyHunt module is no longer needed, and FLHook as a result is a lot more stable.
+-- Upgraded FLHook thanks to M0tah, who wrote custom /sendcash and /rename commands, and imported Leipzig City's open-source BountyHunt (thank them for that). This means the separate BountyHunt module is no longer needed, and FLHook as a result is a lot more stable.
 -- Added the third rare ship....
 -- Fixed issue with High-LOD not rendering some things (like small bases) at maximum distance. Thanks to FriendlyFire for this one as well.
 -- Fixed issue with custom bots assigned to slots 2, 3, and 4 appearing as the bot in slot 1.
@@ -634,7 +634,7 @@ RC106 (01/04/08):
 -- Liberty Cruiser Turret sizes have been corrected. The previously used model was actually the smallest of its type (that is, round bottom with long barrel), so I used the Defense Turret type model (that is, hexigon bottom and short barrel) instead, which had a much smaller varient.
 -- Issues with Cargo Pods have been corrected. Any ship that had Cargo Pods mounted will no longer be cheat-kicked, and any ships that should've been able to mount them but couldn't have been corrected as well.
 -- Corrected issue with Freighters not being able to mount Class 1 Shields.
--- Split the Soundtrack into a seperate mod, to ease up the burden downloading new RCs for people like Darklight. ;P
+-- Split the Soundtrack into a separate mod, to ease up the burden downloading new RCs for people like Darklight. ;P
 -- Large ships (Capital Ships, Stations, etc.) now shatter and leave debris when they explode.
 -- Upgraded the new character tokens with better descriptions. (the "Welcome to 88 Flak" token, and the tokens that tell you which options the server has enabled).
 -- Corrected some issues with Mine Mazathon mines.

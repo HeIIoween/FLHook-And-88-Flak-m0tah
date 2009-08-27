@@ -258,7 +258,7 @@ all commands return "OK" when successful or "ERR <errortext>" when error occured
 ================================================================================
 == RIGHTS ======================================================================
 ================================================================================
-rights may be seperated by a comma (e.g. setadmin playerxy cash,kickban,msg)
+rights may be separated by a comma (e.g. setadmin playerxy cash,kickban,msg)
 superadmin        -> everything
 cash              -> cash commands
 kickban           -> kick/ban/group commands
@@ -949,7 +949,7 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - diemsg bug fixed(player with <,> or & in their name had no die-msgs)
 - cmd: isloggedin now returns false when player is in charmenu
 - cmd: addcash/setcash now kick when player is logged in with a different char from same the account
-- socket: bugfix, more than 1 cmd in one tcp packet now allowed (seperated by \n or \r\n)
+- socket: bugfix, more than 1 cmd in one tcp packet now allowed (separated by \n or \r\n)
 - improved kill detection(now works with death-fuses?)
 
 1.2.4

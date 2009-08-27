@@ -45,5 +45,5 @@ ESCORT
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-On a side note, open common.dll with a hex editor, and do a search for "update_current_behavior_afterburner" - this, and the following, reference the state_graph.db (I'm pretty sure at least, but then again when I think about it there's no evidence there =P), each seperated by a " @IBehaviorManager@@QAEX_N@Z "
+On a side note, open common.dll with a hex editor, and do a search for "update_current_behavior_afterburner" - this, and the following, reference the state_graph.db (I'm pretty sure at least, but then again when I think about it there's no evidence there =P), each separated by a " @IBehaviorManager@@QAEX_N@Z "
 I have no clue as to the order of these, as the cruise one is fifth in common.dll's list yet I know for a fact that it's the fourth column here. Hmm.

@@ -1,5 +1,5 @@
 -- Major improvements to functionality and stability of MP mission scripting, thanks to M0tah.
--- Fixed the death_comm related bug. This will stop hostiles from randomly becoming untargetable when near-death.
+-- Fixed the death_comm related bug.
 -- Removed the tips section from the death message text, as the tips text from the F5 tips screen is shown right below it.
 -- Currently active server options are now reported to the bottom of the F5 tips screen, so you don't have to make a new character to see which options are enabled.
 -- Torpedo splash damage radius has been halved from 360m to 180m.
@@ -7,7 +7,7 @@
 -- The Player-Carrier stat displayed on ships now displays rather that ship can actually dock on player-carriers or not.
 -- Nomad Fighters now have a 20 Nanobot limit, raised from 10 (which was mistakenly 5 in the actual code, oops!). They also regenerate hull at 80hp/s, raised from 60hp/s.
 -- Repair Ship self-repair now repairs 100hp/s, raised from 80hp/s.
--- Power Modulators now grant small (20hp/s) amounts of hull regneration, so that putting a single dent in your ship no longer requires you to use Nanobots or go repair.
+-- Power Modulators now grant small amounts of hull regneration (5hp/s and 10hp/s respectively), so that putting a single dent in your ship no longer requires you to use Nanobots or go repair.
 -- Nomad Fighter weaponry has been buffed. It now deals more damage, and carries a faster firing rate.
 -- Adjustments made to price of various trade ships. The Large Transport / Train & Heavy Lifter, as well as the two Liners, are all $1,000,000 more (adding $50,000 to their Death Penalties). This was done to make trading in a Small Transport / Train - even though they are inferior traders - more worthwhile and cost-effective to pilot as a low-risk trader.
 -- Player-Purchasable bases now correctly sell the Order Shield and Order Thruster (which is needed, as that's one of the few ways to obtain such items).
@@ -23,32 +23,38 @@
 -- Less stupid positioning of added fins on the Covenanter and Hydra VHFs.
 -- Added option to enable higher effect view distances but not the new effects themselves when using High-End FX.
 -- Better Cruise Disruption effects (now colored by engine color).
--- The high-end damage effect now correctly only plays when High-End FX is activated.
--- High-resolution textures are no longer applied if High-End FX is not selected.
+-- The high-end damage effect now correctly only plays when High-End FX is activated. This should result in a large performance gain for those computers that don't use / can't quite handle High-End FX.
+-- High-resolution textures are no longer applied if High-End FX is not selected. This should result in a large performance gain for those computers that don't use / can't quite handle High-End FX.
+-- Base shield capacity and regeneration rates for Light Shields (PLFs / LFs) decreased from 2500 / 55 to 2250 / 45, respectively.
+-- Major shield power draw rebalances. Shields are now balanced to the rare item formula of 5 Shield Regen = 1 Power Regen, and 100 Shield Capacity = 1 Power Regen.
+-- Rare items have been slightly rebalanced. If you're looking to finely tune your shield capacity/regeneration : power draw ratio, it is now much more efficient to do so via use of rare items. Before, if trying to save power, it was always far more efficient to simply drop a shield class.
+-- The Light / Heavy Power Modulators now grant 200 / 400 added power regen, respectively, decreased from 300 / 600.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- Create missiles for the Nomad Fighter.
--- Create a "Nomad Repair Ship", essentially a copypasta of the current Repair Ship but with a Nomad Fighter model for RP purposes. In place of the RS's 360* Class 3 mounts and shield, the Nomad RS will simply have a single Nomad Laser mount, and no shield. The Repair Beam will function identically. In practice, the Nomad RS will be a more offensive version of the stock RS, but will be more easily killed.
+-- remove warnings from the rare ships
+-- VHFs need an infocard update for the additional gun mounts over CD/Torp
+-- Serafina needs contrails
+-- FLSM script the PBase thingies
 -- Prevent commodities from being traded / dropped at all in Alaska, to correct trading exploits. (this will require some FLHook work)
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
--- cloaks need an IDS name for .enumcargo, I think
--- test out EMP ship - may be able to wedge it in as a VHF varient
+-- moors for AI ships? - it works as expected, however I'm not totally sure I like it
+-- Implement the new AI Bots (will likely end up with 30+ AI Bots!)
+-- eventually update documentation on Alaska and Mine Mazathon changes
+-- eventually update readme about source material
+-- eventually to a bunch of other updates to the readme
 -- Internal rename of version!
 
 What's not really todo but should be done eventually:
+-- Create missiles for the Nomad Fighter.
+-- Create a "Nomad Repair Ship", essentially a copypasta of the current Repair Ship but with a Nomad Fighter model for RP purposes. In place of the RS's 360* Class 3 mounts and shield, the Nomad RS will simply have a single Nomad Laser mount, and no shield. The Repair Beam will function identically. In practice, the Nomad RS will be a more offensive version of the stock RS, but will be more easily killed.
+-- test out EMP ship - may be able to wedge it in as a VHF varient
 -- rebalance the security rating weight on spawns - eh maybe later good enough for now
 -- sniper turrets need balancing - I have a feeling they're overpowered
 -- create VHF varients of Anubis and Serafina, 'cause I can
 -- missile explode distances?
--- double damage / power usage for guns! (no really)
 --- look at something for LRMs, as they're short-range now (maybe, but they're powerful)
---- moors for AI ships? - it works as expected, however I'm not totally sure I like it
--- rework server options into mTrigger IDSs? Even worth it?
--- Implement the new AI Bots (will likely end up with 30+ AI Bots!)
--- eventually update documentation on Alaska and Mine Mazathon changes
--- eventually update readme about source material
 -- look into better solution for base drops
 -- pilot stuff
 -- fix up prisoners to pilot stuff standards (if implemented)

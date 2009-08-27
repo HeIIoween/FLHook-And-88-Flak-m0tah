@@ -359,7 +359,7 @@ A: Well, not really. Bots are still beta, and although they function very well, 
 Q: How many bots are there to choose from? How many can I have with me at a time?
 A: There are 26 different bots at the time of this writing. You can also build your own.
    You can have up to 4 with you at a time, however I would recommend you have less. Using a full squad of 4 bots is nearly unstoppable, especially if they're using Capital Ships.
-   Each bot wingman is picked seperately as well, so you can have a mix of whatever you want. The formation will adjust itself automatically to fit Capital Ships, too.
+   Each bot wingman is picked separately as well, so you can have a mix of whatever you want. The formation will adjust itself automatically to fit Capital Ships, too.
 
 Q: How come I see random bots flying around, even when I don't have the AI Companion on?
 A: When you haven't selected a bot using the AI Companion, it will fly around on its own and have its own reputation towards both players and factions.
@@ -533,7 +533,7 @@ The original Lancers Reactor staff - for, back in the day, starting a community 
 
 Everyone in the 88 Flak community - for being awesome. Seriously. Their never-ending effort and limitless imagination makes Flak one of the best projects I've ever worked on. I could not waste a better hour of gaming time (not just Freelancer) than with these folks; thanks guys. =D
 
-Man-of-War (or BountyHunter-1156D), Navck Newsclomer, Lochen - the original Flak testing crew. Although they have since gone their seperate ways, back in the day they provided countless hours of support to help get Flak on its feet, and they deserve a well earned round of applause - 88 Flak would not be here without them.
+Man-of-War (or BountyHunter-1156D), Navck Newsclomer, Lochen - the original Flak testing crew. Although they have since gone their separate ways, back in the day they provided countless hours of support to help get Flak on its feet, and they deserve a well earned round of applause - 88 Flak would not be here without them.
 
 M0tah - for his committed work to FLHook (and six billion other applets to help me out). His work has given me the inspiration to, once again, think outside the box with Freelancer modding. From the simple FLHook "mark" command to paint key targets for your group as mission-critical, to the AI Companion Bot Generator that allows you to convert any player into an AI Bot for use with 88 Flak's AI Companion system, to even an intuitive FLHook-operated mobile docking system that allows ships to dock with player-flown Battleships and Stations, it's a lot of fun looking forward to everything he cranks out.
 
@@ -1059,7 +1059,7 @@ Since 1.24, in order of appearance:
 -- Bugfix: Finally fixed the bug where friendly AI would not attack a Capital Ship if the Capital Ship was the only enemy present. This is due to the fact that, believe it or not, AI don't know how to attack any ships other than type FIGHTER or FREIGHTER. This means that, as a side-effect, there are now only two "Ship Type Killed" stats; Fighter/Freight Kills and Capital Kills.
 -- Bugfix: Utilized FLScan 1.3 to fix an error in a loadout, and to generate new shortest system paths. The pathing generation rules, thanks guys. =)
 -- Misc: Re-implanted SDK 1.5 to fix some tiny errors.
--- Misc: Removed the Jet Black mod (by Glitch) option, to try and un-clutter the list a little more. Besides, you can just activate the mod seperately anyhow if you really wanted it. Also, not having the skins present reduced mod size a tiny bit.
+-- Misc: Removed the Jet Black mod (by Glitch) option, to try and un-clutter the list a little more. Besides, you can just activate the mod separately anyhow if you really wanted it. Also, not having the skins present reduced mod size a tiny bit.
 -- Misc: Officially solidified NPC wingmen - 2 DLL hacks later and one hell of a lot of tweaking, they can finally get back on your wing after pulling a few loop-de-loops and a 180. ;)
 -- Change: Lights and Engine customization have been removed. I know, it's a bummer, however I found that the amount of cheating loopholes spawned from ship customization is just too great to be ignored.
 -- Addition: 1.1 patch now included with the mod. THIS WILL NOT OVER-WRITE ANY NORMAL FL FILES. When you de-activate the mod, the 1.1 patch will go with it. This was included for added stability and cheat-protection.
@@ -1300,7 +1300,7 @@ Since 1.26, in order of appearance (not an exhaustive/full list of changes):
 -- Addition: NPCs can now tractor any items from space, be it cargo or equipment. Also, if you drop Nanobots / Shield Batteries your wingmen take them, making it possible to keep them alive longer if you lead them effectively.
 -- Change: To help prevent certain abuse, the NPC Magnet and Faction Tokens can no longer be dropped into space.
 -- Misc: NPC Magnet re-named to Wingmen License, so it's not as silly. Also updated the description to cover more topics concerning wingmen.
--- Misc: Split the Soundtrack into a seperate mod, to ease up the burden downloading new RCs for people like Darklight. ;P
+-- Misc: Split the Soundtrack into a separate mod, to ease up the burden downloading new RCs for people like Darklight. ;P
 -- Change: Mines have been upgraded to be more useful. They now do 1/2 the hull damage they did before, but 4x the shield / power supply damage they used to. They also knock ships around with 1/2 the impulse of a torpedo.
 -- Change: Rebalanced tractors. The Standard Tractor now has a range of 2000m with a speed of 200m/s. Also re-balanced the Loot Grab Thing to not take as much space, but have less range / speed.
 -- Bugfix: Fixed issues with Liberty Police - the corrupt bastards didn't care if you killed Liberty Navy or Bounty Hunter ships. In an interesting fact, stock FL code declares that Liberty Police don't care if you kill anything, which with the exception of the Navy and Bounty Hunters was fixed a while back.
@@ -1428,7 +1428,7 @@ Since 1.26, in order of appearance (not an exhaustive/full list of changes):
 -- Change: NPC Capital Ships now use an Anti-Capital Loadout 75% of the time, instead of 50% of the time.
 -- Addition: New, more visible missile models, thanks to Why485.
 -- Addition: Increasing the AI difficulty to Hard will double the Credit Chips dropped per kill - both as a reward for fighting harder NPCs, and also to make up for the fact that friendly AI will tag more kills, leaving less CC drops for players. Easy and Very Easy modes are un-affected, and will drop the normal Credit Chip amounts.
--- Bugfix: Fixed the stat displays, to an extent. "Fighter / Freighter / Transport Kills", "Capital Ship / Station Kills" are now shown seperately. Stats on old characters will be correct, for the record.
+-- Bugfix: Fixed the stat displays, to an extent. "Fighter / Freighter / Transport Kills", "Capital Ship / Station Kills" are now shown separately. Stats on old characters will be correct, for the record.
 -- Addition: Nomad AI wingmen are now available to Nomad players, just like all other factions. More information is available on the Nomad Operative token.
 -- Addition: Sunslayer Torpedo Launchers are now sold at more bases.
 -- Bugfix: Fixed the bug where all the old random mission commodities, as well as all the option tokens, were listed under the "commodities buying / selling" section of base infocards.

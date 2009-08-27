@@ -1,4 +1,9 @@
+http://the-starport.net/modules/newbb/viewtopic.php?start=30&topic_id=887&viewmode=flat&order=ASC&status=&mode=0
+
 -------- Changelog --------
+08/22/09:
+-- added M0tah's vertical offset of player name in contact list (useful if you display player names with the same AgencyFB font as all other objects)
+
 07/06/09:
 -- Indexed seconds between updates of displays in weapons list, 'cause I could
 
@@ -86,9 +91,6 @@
 -- Indexed 1.0 offsets of Vital's randommission findings
 -- Re-organized the file slightly
 
--------- To-do --------
--- Index 1.0 offsets for some of the 1.1-only ones?
-
 -------- Tutorial / Download --------
 A picture-guided tutorial for this may be found at http://www.memes.no/88flak/downloads/beta/1.0-1.1_Offsets_Tutorial.htm
 
@@ -120,7 +122,7 @@ Offsets in server.dll, common.dll, and content.dll are changed, however.
 
 -------- System Editing --------
 -- 526500000000f in server.dll, 0x?????, 0x8B450 = square of distance from the center of the system over which your ship explodes in multiplayer (no 1.0 offset, this feature was added in 1.1) ~fox
--- 6250000f in server.dll, 0x84ADC, 0x86AEC = square of distance from the center of the system over which bases no longer wish you well when un-docking (note: this is the same number as NPC disappear distance - as long as you have a good NPC persistance range, and good loot_unseen_radius = (radius) & loot_unseen_life_time = (time outside radius) in constants.ini, increasing this is safe) ~fox
+-- 6250000f in server.dll, 0x84ADC, 0x86AEC = square of distance from the center of the system over which bases no longer wish you well when un-docking (note: this is the same number as NPC disappear distance - as long as you have a good NPC persistence range, and good loot_unseen_radius = (radius) & loot_unseen_life_time = (time outside radius) in constants.ini, increasing this is safe) ~fox
 -- 0x77->0xEB in freelancer.exe, 0x5B029, 0x5B029 = force "%s System." IDS (1373 in resources.dll) to be used for all system arrival text (no house is displayed) ~M0tah
 -- 0x83FFFFFCFF83F8->0xAB01000000EB2F in freelancer.exe, 0x5B021, 0x5B021 = make the house in the system arrival text the system's IDS +1 ~M0tah
 -- 0x83FFFFFCFF83F8->0x9B01000000EB2D in freelancer.exe, 0x5B021, 0x5B021 = make system arrival text the system's IDS +1 (be sure to also change IDS 1373 to just "%s") ~M0tah
@@ -178,6 +180,7 @@ Offsets in server.dll, common.dll, and content.dll are changed, however.
 -- 999i in freelancer.exe, 0xD597A, 0xD597A = speed over which "---" is displayed
 -- 0x0F85->0x90E9 in freelancer.exe, 0xD5936, 0xD5936 = remove cruise speed display limit of 300 (in other words, change 0x0F85 to 0x90E9) ~Unknown
 -- 0xE6->0x00 in freelancer.exe, 0xD3180, 0xD3180 = add faction name to players in contact list (in other words, change 0xE6 to 0x00) ~M0tah
+-- 0.004d in freelancer.exe, 0x1D7BF0, 0x1D7BF0 = vertical offset of player name in contact list ~M0tah
 -- 0.8d in freelancer.exe, 0x1D7E50, 0x1D7E50 = width of bars for energy, shield and hull gauges (for example, set to 1.0 to make the bars solid)
 -- 0.125d in freelancer.exe, 0x1D7E58, 0x1D7E58 = total width of bars for energy, shield and hull gauges (set to 1.0 to cover the entire bottom part of the screen from left to right) ~Cheese on Toast
 -- 0.0052d in freelancer.exe, 0x1D7E68, 0x1D7E68 = height of the energy bars ~Cheese on Toast
