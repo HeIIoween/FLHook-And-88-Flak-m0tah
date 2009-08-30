@@ -275,6 +275,8 @@ Faction IDs:
 350 - Server has currently disabled:
 351 - Decimator Missile
 352 - Decimator Missile (ammo)
+353 - 3D Sound Notice (popup title)
+354 - 3D Sound Notice (popup text)
 
 400 through 412 - Blue Ball puzzle
 

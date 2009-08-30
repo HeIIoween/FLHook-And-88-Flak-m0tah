@@ -44,9 +44,9 @@ voice = tobias
 () quintaine
 () sinclair
 () tobias
--- (lawful) ozu - DofodBot 459087 - Universal - Cavalier / Prison Liner - Cavalier - light power pod, regular thurster, razor mine, wasp CD, 2 Borrocos, 1 catapult and 1 moonstalker; Liner: a colorful array
-(lawful) orillion - PetBot 459088 - Bounty Hunters - Hydra - Firekiss MK IIs, Rheinland Engine
-(lawful) hakkera - Why484andNineTenths 459089 -
+-- (lawful) ozu - DofodBot 459087 - Universal - Cavalier / Prison Liner - Cavalier: light power pod, regular thurster, razor mine, wasp CD, 2 Borrocos, 1 catapult and 1 moonstalker; Liner: a colorful array
+-- (lawful) orillion - PetBot 459088 - Bounty Hunters - Hydra - Firekiss MK IIs, Rheinland Engine
+-- (lawful) hakkera - Why484andNineTenths 459089 - Lawful Freelancers - Starstinger / Hawk - Starstinger: Borocco, 3X Angelito, 2X Moonstalker, Pirate engine; Hawk: 2X Catapult, 2X of that 4.00 refire order gun
 (lawful) walker - Son'aBot 459016 - Republican Shipping - Sleeper Ship / Clydesdale - Sleepership: 8x pirate station turret, 2x rheinland flak A, 2x rheinland flak B, 4x SmOP missile turret; Clydesdale: Stunpulse MKII on the rear turret, rest are Javelins
 (unlawful) juni - DarkWraith007 459090 - Blood Dragons - Drake / Eagle - Advanced Thruster, Advanced CM Dropper, 1x high-class missile, high-class mines; Drake: Hornet CD, 1x Tarantula, 1x Adv. Tarantula, 1x Hellflurry Mk II, 1x Stealthblade Mk I; Eagle: Rh. Engine, Starkiller Torpedo Launcher, 1x Skyblast Turret B, 2x SILVER FIRE, 2x Tizona del Cid, 2x Reaver Mk II
 (unlawful) vonclaussn - SojournBot 459091 - Junkers - Rheinland Cruiser / Stiletto - Rheinland Cruiser: 5x Missile Turret, 2x Def Turret, 1x FG; Stiletto: 2x IMG Guns, 4x Xeno Guns

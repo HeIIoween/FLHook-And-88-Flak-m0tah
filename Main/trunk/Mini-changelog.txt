@@ -25,16 +25,16 @@
 -- Better Cruise Disruption effects (now colored by engine color).
 -- The high-end damage effect now correctly only plays when High-End FX is activated. This should result in a large performance gain for those computers that don't use / can't quite handle High-End FX.
 -- High-resolution textures are no longer applied if High-End FX is not selected. This should result in a large performance gain for those computers that don't use / can't quite handle High-End FX.
--- Base shield capacity and regeneration rates for Light Shields (PLFs / LFs) decreased from 2500 / 55 to 2250 / 45, respectively.
 -- Major shield power draw rebalances. Shields are now balanced to the rare item formula of 5 Shield Regen = 1 Power Regen, and 100 Shield Capacity = 1 Power Regen.
--- Rare items have been slightly rebalanced. If you're looking to finely tune your shield capacity/regeneration : power draw ratio, it is now much more efficient to do so via use of rare items. Before, if trying to save power, it was always far more efficient to simply drop a shield class.
+-- Shields have been majorly reworked, with low-class shields having a higher regen:capacity ratio and a low offline time, and high-class shields having a higher capacity:regen ratio and a long offline time - this makes low-class shields best against missile assaults, while high-class shields are best against sustained damage.
+-- Rare items have been slightly rebalanced. If you're looking to finely tune your shield capacity/regeneration : power draw ratio, it is now much more efficient to do so via use of rare items - to the point where it's worth combining a low-class shield and capacity/regen rares to "make" a high-class shield. Before, if trying to save power, it was always far more efficient to simply drop a shield class.
 -- The Light / Heavy Power Modulators now grant 200 / 400 added power regen, respectively, decreased from 300 / 600.
+-- Fixed an issue with AI Companion Bots ignoring your selected engagement settings (they were stuck on always engaging hostile targets, even if you picked "always engage unlawfuls" etc.)
+-- The 3D Sound Notice now displays when you launch from the n00b Base, since people seem to miss it in the menu.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- remove warnings from the rare ships
--- VHFs need an infocard update for the additional gun mounts over CD/Torp
 -- Serafina needs contrails
 -- FLSM script the PBase thingies
 -- Prevent commodities from being traded / dropped at all in Alaska, to correct trading exploits. (this will require some FLHook work)

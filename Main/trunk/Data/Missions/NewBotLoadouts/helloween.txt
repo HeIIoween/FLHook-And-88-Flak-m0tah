@@ -18,9 +18,6 @@ equip = mine02_mark05, HpMine01
 equip = mine01_mark05, HpCM01
 equip = shield03_mark10_hf, HpShield01
 equip = shield01_mark10_lf, HpThruster01
-cargo = mine01_mark05_ammo, 275
-cargo = mine02_mark05_ammo, 275
-cargo = ge_s_repair_01, 50
 equip = LargeWhiteSpecial, HpHeadlight
 equip = DockingLightRedSmall, HpDockLight01
 equip = DockingLightRedSmall, HpDockLight02
@@ -36,6 +33,9 @@ equip = contrail01, HpContrail01
 equip = contrail01, HpContrail02
 equip = contrail01, HpContrail03
 equip = contrail01, HpContrail04
+cargo = mine01_mark05_ammo, 275
+cargo = mine02_mark05_ammo, 275
+cargo = ge_s_repair_01, 50
 
 ;pi_freighter
 [Loadout]
@@ -58,8 +58,6 @@ equip = fc_ou_gun01_mark01, HpTurret01
 equip = ge_s_scanner_01_npc
 equip = ge_s_tractor_01
 equip = ge_rfr_engine_01
-cargo = ge_s_repair_01, 45
-cargo = ge_s_battery_01, 45
 equip = LargeWhiteSpecial, HpHeadlight
 equip = DockingLightRedSmall, HpDockLight01
 equip = DockingLightRedSmall, HpDockLight02
@@ -73,3 +71,5 @@ equip = contrail01, HpContrail01
 equip = contrail01, HpContrail02
 equip = contrail01, HpContrail03
 equip = contrail01, HpContrail04
+cargo = ge_s_repair_01, 45
+cargo = ge_s_battery_01, 45
