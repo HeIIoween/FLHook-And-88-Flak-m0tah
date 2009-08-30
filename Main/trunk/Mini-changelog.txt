@@ -3,7 +3,6 @@
 -- Removed the tips section from the death message text, as the tips text from the F5 tips screen is shown right below it.
 -- Currently active server options are now reported to the bottom of the F5 tips screen, so you don't have to make a new character to see which options are enabled.
 -- Torpedo splash damage radius has been halved from 360m to 180m.
--- Shield / energy damage of the Hornet CD has been increased to give it a further advantage over the Wasp - while the Hornet is much less cost-effective than a Wasp for knocking ships out of cruise, its capability of disrupting an entire wing in a single shot and dealing insantaneous shield damage should make it fairly attractive versus the Wasp.
 -- The Player-Carrier stat displayed on ships now displays rather that ship can actually dock on player-carriers or not.
 -- Nomad Fighters now have a 20 Nanobot limit, raised from 10 (which was mistakenly 5 in the actual code, oops!). They also regenerate hull at 80hp/s, raised from 60hp/s.
 -- Repair Ship self-repair now repairs 100hp/s, raised from 80hp/s.
@@ -31,6 +30,10 @@
 -- The Light / Heavy Power Modulators now grant 200 / 400 added power regen, respectively, decreased from 300 / 600.
 -- Fixed an issue with AI Companion Bots ignoring your selected engagement settings (they were stuck on always engaging hostile targets, even if you picked "always engage unlawfuls" etc.)
 -- The 3D Sound Notice now displays when you launch from the n00b Base, since people seem to miss it in the menu.
+-- Tweaked behavior of the Wasp / Nomad Cruise Disruptor and the Hornet. The Wasp / NCD is now a very agile, short-range CD missiles (4.5km range), while the Hornet is a slower, long-range CD missile (8.5km range) with a wide area of effect.
+-- The debris option is no longer marked as "slightly unstable", as it appears RC128's stability fix did the trick.
+-- Increased the amount of shielding given from a Shield Battery to 1000, from 750.
+-- Lowered the resolution of Why485's High-End FX smoke effect, which should result in a large FPS gain on mid-range computers using High-End FX.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 

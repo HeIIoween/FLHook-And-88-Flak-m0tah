@@ -121,11 +121,11 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 <option name="MP Client: Enable dynamic lighting / debris for explosions?" savesafe="true">
 <item id="0" name=" (Default) No">
 </item>
-<item id="1" name="Yes (debris is slightly unstable)">
+<item id="1" name="Yes">
 </item>
 <item name="Yes (dynamic lighting only)">
 </item>
-<item name="Yes (debris only, slightly unstable)">
+<item name="Yes (debris only)">
 </item>
 </option>
 
