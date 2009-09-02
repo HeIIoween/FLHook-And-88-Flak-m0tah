@@ -141,6 +141,7 @@ _GetShipInspect GetShipInspect;
 _GetIObjRW GetIObjRW;
 _AddCargoDocked AddCargoDocked;
 
+list<BASE_INFO> lstBases;
 
 /**************************************************************************************************************
 clear the clientinfo

@@ -1,6 +1,7 @@
 #include "hook.h"
 
 wstring wscAdminKiller = L"";
+map<uint, list<DAMAGE_INFO> > mapSpaceObjDmgRec;
 
 /**************************************************************************************************************
 **************************************************************************************************************/
@@ -108,9 +109,8 @@ void SendDeathMsg(wstring wscMsg, uint iSystemID, uint iClientIDVictim, uint iCl
 }
 
 /**************************************************************************************************************
-Called when ship was destroyed
+Process the damage info: consolidate into one entry per ship, add up damages
 **************************************************************************************************************/
-
 struct SHIP_INFLICTOR
 {
 	SHIP_INFLICTOR(uint i) {iInflictor = i; fTotalDamage = 0.0f; fCollisionDamage = 0.0f; fGunDamage = 0.0f; fTorpedoDamage = 0.0f; fMissileDamage = 0.0f; fMineDamage = 0.0f; fOtherDamage = 0.0f;}
@@ -182,7 +182,231 @@ struct DAMAGE_ENTRY
 	float fDamage;
 	uint iCause;
 };
+list<fFACTION_INFLICTOR> ProcessDamageInfo(list<DAMAGE_INFO> &lstDmgRec)
+{
+	try {
+		BinaryTree<SHIP_INFLICTOR> *btShipsInflict = new BinaryTree<SHIP_INFLICTOR>();
+		while(lstDmgRec.size())
+		{
+			SHIP_INFLICTOR siFind = SHIP_INFLICTOR(lstDmgRec.front().iInflictor);
+			SHIP_INFLICTOR *siFound = btShipsInflict->Find(&siFind);
+			if(siFound)
+			{
+				if(set_bCombineMissileTorpMsgs)
+				{
+					switch(lstDmgRec.front().iCause)
+					{
+					case DC_GUN:
+						siFound->fGunDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_MISSILE:
+						siFound->fMissileDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_MINE:
+						siFound->fMineDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_COLLISION:
+						siFound->fCollisionDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_TORPEDO:
+						siFound->fMissileDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					default:
+						siFound->fOtherDamage += lstDmgRec.front().fDamage;
+						break;
+					}
+				}
+				else
+				{
+					switch(lstDmgRec.front().iCause)
+					{
+					case DC_GUN:
+						siFound->fGunDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_MISSILE:
+						siFound->fMissileDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_MINE:
+						siFound->fMineDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_COLLISION:
+						siFound->fCollisionDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_TORPEDO:
+						siFound->fTorpedoDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					default:
+						siFound->fOtherDamage += lstDmgRec.front().fDamage;
+						break;
+					}
+				}
+			}
+			else
+			{
+				SHIP_INFLICTOR *siFound = new SHIP_INFLICTOR(lstDmgRec.front().iInflictor);
+				if(set_bCombineMissileTorpMsgs)
+				{
+					switch(lstDmgRec.front().iCause)
+					{
+					case DC_GUN:
+						siFound->fGunDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_MISSILE:
+						siFound->fMissileDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_MINE:
+						siFound->fMineDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_COLLISION:
+						siFound->fCollisionDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_TORPEDO:
+						siFound->fMissileDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					default:
+						siFound->fOtherDamage += lstDmgRec.front().fDamage;
+						break;
+					}
+				}
+				else
+				{
+					switch(lstDmgRec.front().iCause)
+					{
+					case DC_GUN:
+						siFound->fGunDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_MISSILE:
+						siFound->fMissileDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_MINE:
+						siFound->fMineDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_COLLISION:
+						siFound->fCollisionDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					case DC_TORPEDO:
+						siFound->fTorpedoDamage += lstDmgRec.front().fDamage;
+						siFound->fTotalDamage += lstDmgRec.front().fDamage;
+						break;
+					default:
+						siFound->fOtherDamage += lstDmgRec.front().fDamage;
+						break;
+					}
+				}
+				btShipsInflict->Add(siFound);
+			}
+			lstDmgRec.pop_front();
+		}
 
+		BinaryTree<FACTION_INFLICTOR> *btFactionsInflict = new BinaryTree<FACTION_INFLICTOR>();
+		BinaryTreeIterator<SHIP_INFLICTOR> *shipsIter = new BinaryTreeIterator<SHIP_INFLICTOR>(btShipsInflict);
+		shipsIter->First();
+		for(long i=0; i<btShipsInflict->Count(); i++)
+		{
+			uint iKillerIDTest = HkGetClientIDByShip(shipsIter->Curr()->iInflictor);
+			if(iKillerIDTest)
+			{
+				FACTION_INFLICTOR *fiPlayer = new FACTION_INFLICTOR(-(long)iKillerIDTest);
+				fiPlayer->fTotalDamage = shipsIter->Curr()->fTotalDamage;
+				fiPlayer->fGunDamage = shipsIter->Curr()->fGunDamage;
+				fiPlayer->fMissileDamage = shipsIter->Curr()->fMissileDamage;
+				fiPlayer->fMineDamage = shipsIter->Curr()->fMineDamage;
+				fiPlayer->fCollisionDamage = shipsIter->Curr()->fCollisionDamage;
+				fiPlayer->fTorpedoDamage = shipsIter->Curr()->fTorpedoDamage;
+				fiPlayer->fOtherDamage = shipsIter->Curr()->fOtherDamage;
+				btFactionsInflict->Add(fiPlayer);
+			}
+			else
+			{
+				int iRep;
+				pub::SpaceObj::GetRep(shipsIter->Curr()->iInflictor, iRep);
+				if(!iRep)
+				{
+					shipsIter->Next();
+					continue;
+				}
+				uint iAffil;
+				Reputation::Vibe::GetAffiliation(iRep, iAffil, false);
+				if(!iAffil)
+				{
+					shipsIter->Next();
+					continue;
+				}
+				FACTION_INFLICTOR fiFind = FACTION_INFLICTOR(iAffil);
+				FACTION_INFLICTOR *fiFound = btFactionsInflict->Find(&fiFind);
+				if(fiFound)
+				{
+					fiFound->iNumShips++;
+					fiFound->fTotalDamage += shipsIter->Curr()->fTotalDamage;
+					fiFound->fGunDamage += shipsIter->Curr()->fGunDamage;
+					fiFound->fMissileDamage += shipsIter->Curr()->fMissileDamage;
+					fiFound->fMineDamage += shipsIter->Curr()->fMineDamage;
+					fiFound->fCollisionDamage += shipsIter->Curr()->fCollisionDamage;
+					fiFound->fTorpedoDamage += shipsIter->Curr()->fTorpedoDamage;
+					fiFound->fOtherDamage += shipsIter->Curr()->fOtherDamage;
+				}
+				else
+				{
+					fiFound = new FACTION_INFLICTOR(iAffil);
+					fiFound->iNumShips++;
+					fiFound->fTotalDamage = shipsIter->Curr()->fTotalDamage;
+					fiFound->fGunDamage = shipsIter->Curr()->fGunDamage;
+					fiFound->fMissileDamage = shipsIter->Curr()->fMissileDamage;
+					fiFound->fMineDamage = shipsIter->Curr()->fMineDamage;
+					fiFound->fCollisionDamage = shipsIter->Curr()->fCollisionDamage;
+					fiFound->fTorpedoDamage = shipsIter->Curr()->fTorpedoDamage;
+					fiFound->fOtherDamage = shipsIter->Curr()->fOtherDamage;
+					btFactionsInflict->Add(fiFound);
+				}
+			}
+			shipsIter->Next();
+		}
+		delete shipsIter;
+		delete btShipsInflict;
+		list<fFACTION_INFLICTOR> lstFactionsInflict;
+		BinaryTreeIterator<FACTION_INFLICTOR> *factionsIter = new BinaryTreeIterator<FACTION_INFLICTOR>(btFactionsInflict);
+		factionsIter->First();
+		for(long i2=0; i2<btFactionsInflict->Count(); i2++)
+		{
+			lstFactionsInflict.push_back(*(factionsIter->Curr()));
+			factionsIter->Next();
+		}
+		delete factionsIter;
+		delete btFactionsInflict;
+
+		lstFactionsInflict.sort();
+		return lstFactionsInflict;
+
+	} catch(...)
+	{
+		AddLog("Exception in %s", __FUNCTION__);
+		lstDmgRec.clear();
+		return list<fFACTION_INFLICTOR>();
+	}
+}
+
+/**************************************************************************************************************
+Called when ship was destroyed
+**************************************************************************************************************/
 void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 {
 	try {
@@ -237,213 +461,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 			try{
 				if(!bSupressDeathMsg)
 				{
-					BinaryTree<SHIP_INFLICTOR> *btShipsInflict = new BinaryTree<SHIP_INFLICTOR>();
-					while(ClientInfo[iClientID].lstDmgRec.size())
-					{
-						SHIP_INFLICTOR siFind = SHIP_INFLICTOR(ClientInfo[iClientID].lstDmgRec.front().iInflictor);
-						SHIP_INFLICTOR *siFound = btShipsInflict->Find(&siFind);
-						if(siFound)
-						{
-							if(set_bCombineMissileTorpMsgs)
-							{
-								switch(ClientInfo[iClientID].lstDmgRec.front().iCause)
-								{
-								case DC_GUN:
-									siFound->fGunDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_MISSILE:
-									siFound->fMissileDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_MINE:
-									siFound->fMineDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_COLLISION:
-									siFound->fCollisionDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_TORPEDO:
-									siFound->fMissileDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								default:
-									siFound->fOtherDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								}
-							}
-							else
-							{
-								switch(ClientInfo[iClientID].lstDmgRec.front().iCause)
-								{
-								case DC_GUN:
-									siFound->fGunDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_MISSILE:
-									siFound->fMissileDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_MINE:
-									siFound->fMineDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_COLLISION:
-									siFound->fCollisionDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_TORPEDO:
-									siFound->fTorpedoDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								default:
-									siFound->fOtherDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								}
-							}
-						}
-						else
-						{
-							SHIP_INFLICTOR *siFound = new SHIP_INFLICTOR(ClientInfo[iClientID].lstDmgRec.front().iInflictor);
-							if(set_bCombineMissileTorpMsgs)
-							{
-								switch(ClientInfo[iClientID].lstDmgRec.front().iCause)
-								{
-								case DC_GUN:
-									siFound->fGunDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_MISSILE:
-									siFound->fMissileDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_MINE:
-									siFound->fMineDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_COLLISION:
-									siFound->fCollisionDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_TORPEDO:
-									siFound->fMissileDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								default:
-									siFound->fOtherDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								}
-							}
-							else
-							{
-								switch(ClientInfo[iClientID].lstDmgRec.front().iCause)
-								{
-								case DC_GUN:
-									siFound->fGunDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_MISSILE:
-									siFound->fMissileDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_MINE:
-									siFound->fMineDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_COLLISION:
-									siFound->fCollisionDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								case DC_TORPEDO:
-									siFound->fTorpedoDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									siFound->fTotalDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								default:
-									siFound->fOtherDamage += ClientInfo[iClientID].lstDmgRec.front().fDamage;
-									break;
-								}
-							}
-							btShipsInflict->Add(siFound);
-						}
-						ClientInfo[iClientID].lstDmgRec.pop_front();
-					}
-
-					BinaryTree<FACTION_INFLICTOR> *btFactionsInflict = new BinaryTree<FACTION_INFLICTOR>();
-					BinaryTreeIterator<SHIP_INFLICTOR> *shipsIter = new BinaryTreeIterator<SHIP_INFLICTOR>(btShipsInflict);
-					shipsIter->First();
-					for(long i=0; i<btShipsInflict->Count(); i++)
-					{
-						uint iKillerIDTest = HkGetClientIDByShip(shipsIter->Curr()->iInflictor);
-						if(iKillerIDTest)
-						{
-							FACTION_INFLICTOR *fiPlayer = new FACTION_INFLICTOR(-(long)iKillerIDTest);
-							fiPlayer->fTotalDamage = shipsIter->Curr()->fTotalDamage;
-							fiPlayer->fGunDamage = shipsIter->Curr()->fGunDamage;
-							fiPlayer->fMissileDamage = shipsIter->Curr()->fMissileDamage;
-							fiPlayer->fMineDamage = shipsIter->Curr()->fMineDamage;
-							fiPlayer->fCollisionDamage = shipsIter->Curr()->fCollisionDamage;
-							fiPlayer->fTorpedoDamage = shipsIter->Curr()->fTorpedoDamage;
-							fiPlayer->fOtherDamage = shipsIter->Curr()->fOtherDamage;
-							btFactionsInflict->Add(fiPlayer);
-						}
-						else
-						{
-							int iRep;
-							pub::SpaceObj::GetRep(shipsIter->Curr()->iInflictor, iRep);
-							if(!iRep)
-							{
-								shipsIter->Next();
-								continue;
-							}
-							uint iAffil;
-							Reputation::Vibe::GetAffiliation(iRep, iAffil, false);
-							if(!iAffil)
-							{
-								shipsIter->Next();
-								continue;
-							}
-							FACTION_INFLICTOR fiFind = FACTION_INFLICTOR(iAffil);
-							FACTION_INFLICTOR *fiFound = btFactionsInflict->Find(&fiFind);
-							if(fiFound)
-							{
-								fiFound->iNumShips++;
-								fiFound->fTotalDamage += shipsIter->Curr()->fTotalDamage;
-								fiFound->fGunDamage += shipsIter->Curr()->fGunDamage;
-								fiFound->fMissileDamage += shipsIter->Curr()->fMissileDamage;
-								fiFound->fMineDamage += shipsIter->Curr()->fMineDamage;
-								fiFound->fCollisionDamage += shipsIter->Curr()->fCollisionDamage;
-								fiFound->fTorpedoDamage += shipsIter->Curr()->fTorpedoDamage;
-								fiFound->fOtherDamage += shipsIter->Curr()->fOtherDamage;
-							}
-							else
-							{
-								fiFound = new FACTION_INFLICTOR(iAffil);
-								fiFound->iNumShips++;
-								fiFound->fTotalDamage = shipsIter->Curr()->fTotalDamage;
-								fiFound->fGunDamage = shipsIter->Curr()->fGunDamage;
-								fiFound->fMissileDamage = shipsIter->Curr()->fMissileDamage;
-								fiFound->fMineDamage = shipsIter->Curr()->fMineDamage;
-								fiFound->fCollisionDamage = shipsIter->Curr()->fCollisionDamage;
-								fiFound->fTorpedoDamage = shipsIter->Curr()->fTorpedoDamage;
-								fiFound->fOtherDamage = shipsIter->Curr()->fOtherDamage;
-								btFactionsInflict->Add(fiFound);
-							}
-						}
-						shipsIter->Next();
-					}
-					delete shipsIter;
-					delete btShipsInflict;
-					list<fFACTION_INFLICTOR> lstFactionsInflict;
-					BinaryTreeIterator<FACTION_INFLICTOR> *factionsIter = new BinaryTreeIterator<FACTION_INFLICTOR>(btFactionsInflict);
-					factionsIter->First();
-					for(long i2=0; i2<btFactionsInflict->Count(); i2++)
-					{
-						lstFactionsInflict.push_back(*(factionsIter->Curr()));
-						factionsIter->Next();
-					}
-					delete factionsIter;
-					delete btFactionsInflict;
+					list<fFACTION_INFLICTOR> lstFactionsInflict = ProcessDamageInfo(ClientInfo[iClientID].lstDmgRec);
 
 					wstring wscDeathMsg;
 					wstring wscEvent, wscEventBy = L" by=", wscEventCause = L" cause=";
@@ -460,7 +478,6 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 					}
 					else
 					{
-						lstFactionsInflict.sort();
 						uint iKillerID = 0;
 						list<wstring> lstCauses;
 						uint iNumCauses = set_iMaxDeathFactionCauses ? (set_iMaxDeathFactionCauses>lstFactionsInflict.size() ? lstFactionsInflict.size() : set_iMaxDeathFactionCauses) : lstFactionsInflict.size();
@@ -708,7 +725,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 							pub::Player::GetRep(iClientID, iDeadRep);
 							uint iDeadRepGroupID;
 							Reputation::Vibe::GetAffiliation(iDeadRep, iDeadRepGroupID, false);
-							HkSetRepRelative(ARG_CLIENTID(iKillerID), iDeadRepGroupID, set_fRepChangePvP, set_fRepChangePvP ? true : false);
+							HkSetRepRelative(ARG_CLIENTID(iKillerID), iDeadRepGroupID, set_fRepChangePvP, set_fRepChangePvP ? false : true);
 						}
 
 						// Increment kill count
@@ -772,22 +789,15 @@ __declspec(naked) void ShipDestroyedHook()
 		jmp eax
 	}
 }
+
 /**************************************************************************************************************
 Called when base was destroyed
 **************************************************************************************************************/
-
 void BaseDestroyed(uint iObject, uint iClientIDBy)
 {
 	uint iID;
-	pub::SpaceObj::GetSolarArchetypeID(iObject, iID);
-
-	Universe::IBase *base = Universe::GetFirstBase();
-	while(base)
-	{
-		if(base->iSpaceObjID == iObject)
-			break;
-		base = Universe::GetNextBase();
-	}
+	pub::SpaceObj::GetDockingTarget(iObject, iID);
+	Universe::IBase *base = Universe::get_base(iID);
 
 	char *szBaseName = "";
 	if(base)
@@ -803,11 +813,268 @@ void BaseDestroyed(uint iObject, uint iClientIDBy)
 			popad
 		}
 	}
-	
-	ProcessEvent(L"basedestroy basename=%s objecthash=%u solarhash=%u by=%s",
+
+	ProcessEvent(L"basedestroy basename=%s basehash=%u solarhash=%u by=%s",
 					stows(szBaseName).c_str(),
 					iObject,
 					iID,
-					Players.GetActiveCharacterName(iClientIDBy));
+					(wchar_t*)Players.GetActiveCharacterName(iClientIDBy));
 
+}
+
+/**************************************************************************************************************
+Called when space object destroyed
+**************************************************************************************************************/
+void SpaceObjDestroyed(uint iObject)
+{
+	try {
+		map<uint, list<DAMAGE_INFO> >::iterator lstDmgRec = mapSpaceObjDmgRec.find(iObject);
+		if(lstDmgRec == mapSpaceObjDmgRec.end())
+			return;
+
+		list<fFACTION_INFLICTOR> lstFactionsInflict = ProcessDamageInfo(lstDmgRec->second);
+		
+		uint iDeadRepGroupID;
+		int iDeadRep;
+		pub::SpaceObj::GetRep(iObject, iDeadRep);
+		Reputation::Vibe::GetAffiliation(iDeadRep, iDeadRepGroupID, false);
+		uint iType;
+		pub::SpaceObj::GetType(iObject, iType);
+
+		if(lstFactionsInflict.size())
+		{
+			float fHealth, fMaxHealth, fRepChange;
+			map<uint, float>::iterator repChange = set_mapNPCDeathRep.find(iType);
+			if(repChange != set_mapNPCDeathRep.end())
+			{
+				fRepChange = repChange->second;
+				pub::SpaceObj::GetHealth(iObject, fHealth, fMaxHealth);
+				foreach(lstFactionsInflict, fFACTION_INFLICTOR, inflictInfo)
+				{
+					if(!inflictInfo->iNumShips) //is player
+					{
+						uint iTempClientID = -lstFactionsInflict.back().iInflictor;
+						float fAdjustment = inflictInfo->fTotalDamage / fMaxHealth;
+						HkSetRepRelative(ARG_CLIENTID(iTempClientID), iDeadRepGroupID, fRepChange * fAdjustment, false);
+					}
+				}
+			}
+		}
+
+		if(iType & set_iNPCDeathMessages)
+		{
+			wstring wscDeathMsg;
+			uint iID;
+			pub::SpaceObj::GetDockingTarget(iObject, iID);
+			if(iID)
+			{
+				Universe::IBase *base = Universe::get_base(iID);
+				wscDeathMsg = HkGetWStringFromIDS(base->iBaseIDS) + L" was destroyed";
+			}
+			else
+			{
+				uint iIDS;
+				UINT_WRAP uw = UINT_WRAP(iDeadRepGroupID);
+				if(set_btOneFactionDeathRep->Find(&uw))
+				{
+					pub::Reputation::GetGroupName(iDeadRepGroupID, iIDS);
+					wscDeathMsg = HkGetWStringFromIDS(iIDS) + L" was killed";
+				}
+				else
+				{
+					uint iIDSName = 0;
+					uint iDunno;
+					IObjInspectImpl *inspect;
+					GetShipInspect(iObject, inspect, iDunno);
+					if(inspect)
+					{
+						const CObject *obj = inspect->cobject();
+						if(obj)
+						{
+							Archetype::Root *arch = obj->get_archetype();
+							if(arch)
+								iIDSName = arch->iIDSName;
+						}
+					}
+					pub::Reputation::GetShortGroupName(iDeadRepGroupID, iIDS);
+					wscDeathMsg = HkGetWStringFromIDS(iIDS);
+					wchar_t c1 = wscDeathMsg[0];
+					if(c1 == L'A' || c1 == L'E' || c1 == L'I' || c1 == L'O' || c1 == L'U')
+						wscDeathMsg = L"An " + wscDeathMsg;
+					else
+						wscDeathMsg = L"A " + wscDeathMsg;
+					if(iIDSName)
+						wscDeathMsg += L' ' + HkGetWStringFromIDS(iIDSName) + L" was destroyed";
+					else
+						wscDeathMsg +=L" ship was destroyed";
+				}
+			}
+			uint iSystemID;
+			pub::SpaceObj::GetSystem(iObject, iSystemID);
+			if(!lstFactionsInflict.size())
+			{
+				SendDeathMsg(wscDeathMsg + L".", iSystemID, 0, 0);
+			}
+			else
+			{
+				uint iKillerID = 0;
+				list<wstring> lstCauses;
+				uint iNumCauses = set_iMaxDeathFactionCauses ? (set_iMaxDeathFactionCauses>lstFactionsInflict.size() ? lstFactionsInflict.size() : set_iMaxDeathFactionCauses) : lstFactionsInflict.size();
+				uint j = 0;
+				while(j < iNumCauses)
+				{
+					list<DAMAGE_ENTRY> lstDamages;
+					if(lstFactionsInflict.back().fCollisionDamage)
+						lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fCollisionDamage, DC_COLLISION));
+					if(lstFactionsInflict.back().fGunDamage)
+						lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fGunDamage, DC_GUN));
+					if(lstFactionsInflict.back().fTorpedoDamage)
+						lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fTorpedoDamage, DC_TORPEDO));
+					if(lstFactionsInflict.back().fMissileDamage)
+						lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fMissileDamage, DC_MISSILE));
+					if(lstFactionsInflict.back().fMineDamage)
+						lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fMineDamage, DC_MINE));
+					lstDamages.sort();
+					list<wstring> lstTypes;
+					uint iNumTypes = set_iMaxDeathEquipmentCauses ? (set_iMaxDeathEquipmentCauses>lstDamages.size() ? lstDamages.size() : set_iMaxDeathEquipmentCauses) : lstDamages.size();
+					uint k = 0;
+					while(k < iNumTypes)
+					{
+						switch(lstDamages.back().iCause)
+						{
+						case DC_GUN:
+							lstTypes.push_back(L"guns");
+							break;
+						case DC_MISSILE:
+							if(set_bCombineMissileTorpMsgs)
+								lstTypes.push_back(L"missiles/torpedoes");
+							else
+								lstTypes.push_back(L"missiles");
+							break;
+						case DC_MINE:
+							lstTypes.push_back(L"mines");
+							break;
+						case DC_COLLISION:
+							lstTypes.push_back(L"collisions");
+							break;
+						case DC_TORPEDO:
+							lstTypes.push_back(L"torpedoes");
+							break;
+						}
+						lstDamages.pop_back();
+						k++;
+					}
+					wstring wscDamages = L"";
+					if(lstTypes.size())
+					{
+						if(lstTypes.size() == 1)
+						{
+							wscDamages = lstTypes.back();
+						}
+						else if(lstTypes.size() == 2)
+						{
+							wscDamages = lstTypes.front() + L" and " + lstTypes.back();
+						}
+						else
+						{
+							k = 0;
+							foreach(lstTypes, wstring, wscType)
+							{
+								if(k == lstTypes.size()-1)
+									wscDamages += L", and " + *wscType;
+								else if(k == 0)
+									wscDamages += *wscType;
+								else
+									wscDamages += L", " + *wscType;
+								k++;
+							}
+						}
+					}
+
+					if(!lstFactionsInflict.back().iNumShips) //is player
+					{
+						uint iTempClientID = -lstFactionsInflict.back().iInflictor;
+						if(j == 0)
+							iKillerID = iTempClientID;
+						lstCauses.push_back(L"by " + wstring(Players.GetActiveCharacterName(iTempClientID)) + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+					}
+					else //NPC
+					{
+						uint iNameID;
+						pub::Reputation::GetShortGroupName(lstFactionsInflict.back().iInflictor, iNameID);
+						if(!iNameID)
+						{
+							if(wscDamages == L"mines")
+							{
+								// Mines don't have affiliations
+								lstCauses.push_back(L"by mines");
+							}
+							else
+							{
+								// seems to be erroneous, drop from list
+								if(iNumCauses != lstFactionsInflict.size() + lstCauses.size())
+									iNumCauses++;
+								lstFactionsInflict.pop_back();
+								j++;
+								continue;
+							}
+						}
+						else
+						{
+							UINT_WRAP uw = UINT_WRAP(lstFactionsInflict.back().iInflictor);
+							if(set_btOneFactionDeathRep->Find(&uw))
+							{
+								pub::Reputation::GetGroupName(lstFactionsInflict.back().iInflictor, iNameID);
+								wstring wscGroupName = HkGetWStringFromIDS(iNameID);
+								lstCauses.push_back(L"by " + wscGroupName + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+							}
+							else
+							{
+								wstring wscGroupName = HkGetWStringFromIDS(iNameID);
+								if(lstFactionsInflict.back().iNumShips == 1)
+								{
+									if(wscGroupName[wscGroupName.length()-1] == L's')
+										wscGroupName = wscGroupName.substr(0, wscGroupName.length()-1);
+									if(wscGroupName[0]==L'A' || wscGroupName[0]==L'E' || wscGroupName[0]==L'I' || wscGroupName[0]==L'O' || wscGroupName[0]==L'U')
+										lstCauses.push_back(L"by an " + wscGroupName + L" ship" + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+									else
+										lstCauses.push_back(L"by a " + wscGroupName + L" ship" + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+								}
+								else
+									lstCauses.push_back(L"by " + stows(itos(lstFactionsInflict.back().iNumShips)) + L" " + wscGroupName + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+							}
+						}
+					}
+					j++;
+					lstFactionsInflict.pop_back();
+				}
+
+				if(lstCauses.size() == 1)
+				{
+					wscDeathMsg += L" " + lstCauses.back() + L".";
+				}
+				else if(lstCauses.size() == 2)
+				{
+					wscDeathMsg += L" " + lstCauses.front() + L" and " + lstCauses.back() + L".";
+				}
+				else
+				{
+					uint k = 0;
+					foreach(lstCauses, wstring, wscCause)
+					{
+						if(k == lstCauses.size()-1)
+							wscDeathMsg += L"; and " + *wscCause + L".";
+						else if(k == 0)
+							wscDeathMsg += L" " + *wscCause;
+						else
+							wscDeathMsg += L"; " + *wscCause;
+						k++;
+					}
+				}
+
+				SendDeathMsg(wscDeathMsg, iSystemID, 0, iKillerID);
+
+			}
+		}
+	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
 }

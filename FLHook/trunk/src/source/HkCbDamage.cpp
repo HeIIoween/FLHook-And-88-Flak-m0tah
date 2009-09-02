@@ -83,120 +83,164 @@ uint iTakeOverSpaceObj = 0;
 DamageCause dcTakeOver = DC_HOOK;
 void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2, enum DamageEntry::SubObjFate p3)
 {
-	if(bTakeOverDmgEntry)
-	{
-		p2 = fTakeOverHealth;
-		if(iTakeOverSubObj)
-			p1 = iTakeOverSubObj;
-		dmgList->set_inflictor_owner_player(iTakeOverClientID);
-		dmgList->set_inflictor_id(iTakeOverSpaceObj);
-		dmgList->set_cause(dcTakeOver);
-		dmgList->add_damage_entry(p1, p2, p3);
-		bTakeOverDmgEntry = false;
-		fTakeOverHealth = 0.0f;
-		iTakeOverSubObj = 0;
-		iTakeOverClientID = 0;
-		iTakeOverSpaceObj = 0;
-		dcTakeOver = DC_HOOK;
-		return;
-	}
-
 	bool bAddDmgEntry = true;
-	if(g_gNonGunHitsBase && (dmgList->get_cause() == 5))
-	{
-		float fDamage = g_LastHitPts - p2;
-		p2 = g_LastHitPts - fDamage * set_fTorpMissileBaseDamageMultiplier;
-		if(p2 < 0)
-			p2 = 0;
-	}
-	//if(dmgList->is_inflictor_a_player()) PrintUniverseText(L"p1=%u, p2=%f, iop=%u, id=%u",p1,p2,dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id());
-	//if(dmgList->is_inflictor_a_player()) {PrintUniverseText(L"%f", p2);}
 	
-	if(!dmgList->get_inflictor_owner_player() && !dmgList->get_inflictor_id())
-	{
-		FLOAT_WRAP fw = FLOAT_WRAP(p2);
-		if(set_btSupressHealth->Find(&fw))
+	try {
+		if(bTakeOverDmgEntry)
 		{
-			bAddDmgEntry = false;
+			p2 = fTakeOverHealth;
+			if(iTakeOverSubObj)
+				p1 = iTakeOverSubObj;
+			dmgList->set_inflictor_owner_player(iTakeOverClientID);
+			dmgList->set_inflictor_id(iTakeOverSpaceObj);
+			dmgList->set_cause(dcTakeOver);
+			dmgList->add_damage_entry(p1, p2, p3);
+			bTakeOverDmgEntry = false;
+			fTakeOverHealth = 0.0f;
+			iTakeOverSubObj = 0;
+			iTakeOverClientID = 0;
+			iTakeOverSpaceObj = 0;
+			dcTakeOver = DC_HOOK;
+			return;
 		}
-	}
 
-	//Repair Gun
-	if(g_bRepairPendHit)
-	{
-		if(dmgList->is_inflictor_a_player() && p2<=g_fRepairMaxHP)
+		if(g_gNonGunHitsBase && (dmgList->get_cause() == 5))
 		{
-			dmgList->set_inflictor_owner_player(0); //NPCs don't mind you shooting at them when these are set to 0
-			dmgList->set_inflictor_id(0);
-			if(p1 != 65521) //Hull/equipment hit
+			float fDamage = g_LastHitPts - p2;
+			p2 = g_LastHitPts - fDamage * set_fTorpMissileBaseDamageMultiplier;
+			if(p2 < 0)
+				p2 = 0;
+		}
+		//if(dmgList->is_inflictor_a_player()) 
+			//PrintUniverseText(L"p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id());
+		//if(dmgList->is_inflictor_a_player()) {PrintUniverseText(L"%f", p2);}
+		
+		if(!dmgList->get_inflictor_owner_player() && !dmgList->get_inflictor_id())
+		{
+			FLOAT_WRAP fw = FLOAT_WRAP(p2);
+			if(set_btSupressHealth->Find(&fw))
 			{
-				if(p1 == 1) //Hull hit
+				bAddDmgEntry = false;
+			}
+		}
+
+		//Repair Gun
+		if(g_bRepairPendHit)
+		{
+			if(dmgList->is_inflictor_a_player() && p2<=g_fRepairMaxHP)
+			{
+				dmgList->set_inflictor_owner_player(0); //NPCs don't mind you shooting at them when these are set to 0
+				dmgList->set_inflictor_id(0);
+				if(p1 != 65521) //Hull/equipment hit
 				{
-					p2 = g_fRepairDamage + g_fRepairBeforeHP;
-					if(p2 > g_fRepairMaxHP)
+					if(p1 == 1) //Hull hit
 					{
-						p2 = g_fRepairMaxHP;
-					}
-				}
-				else //Equipment hit
-				{
-					if(iDmgToSpaceID)
-					{
-						CEquipManager *equipment = HkGetEquipMan(iDmgToSpaceID);
-						CEquip *equip = equipment->FindByID(p1);
-						float fMaxHP = equip->EquipArch()->fMaxHP;//GetMaxHitPoints();
-						p2 = g_fRepairDamage * 2 + p2;// + equip->GetHitPoints();
-						if(p2 > fMaxHP)
-						{
-							p2 = fMaxHP;
-						}
-					}
-					else
-					{
-						p1 = 1;
 						p2 = g_fRepairDamage + g_fRepairBeforeHP;
 						if(p2 > g_fRepairMaxHP)
 						{
 							p2 = g_fRepairMaxHP;
 						}
 					}
+					else //Equipment hit
+					{
+						if(iDmgToSpaceID)
+						{
+							CEquipManager *equipment = HkGetEquipMan(iDmgToSpaceID);
+							CEquip *equip = equipment->FindByID(p1);
+							float fMaxHP = equip->GetMaxHitPoints();
+							p2 = g_fRepairDamage + equip->GetHitPoints();
+							if(p2 > fMaxHP)
+							{
+								p2 = fMaxHP;
+							}
+						}
+						else
+						{
+							p1 = 1;
+							p2 = g_fRepairDamage + g_fRepairBeforeHP;
+							if(p2 > g_fRepairMaxHP)
+							{
+								p2 = g_fRepairMaxHP;
+							}
+						}
+					}
+				}
+				else //Shield hit
+				{
+					p2 += g_fRepairDamage;
+					float hullHealth = (g_fRepairBeforeHP + g_fRepairDamage*0.5f)/g_fRepairMaxHP;
+					if(hullHealth > 1.0f)
+					{
+						hullHealth = 1.0f;
+					}
+					pub::SpaceObj::SetRelativeHealth(g_iRepairShip, hullHealth);
 				}
 			}
-			else //Shield hit
+			g_bRepairPendHit = false;
+		}
+
+		uint iInflictor = dmgList->get_inflictor_id();
+		if(bAddDmgEntry && iInflictor)
+		{
+			if(iDmgTo)
 			{
-				p2 += g_fRepairDamage;
-				float hullHealth = (g_fRepairBeforeHP + g_fRepairDamage*0.5f)/g_fRepairMaxHP;
-				if(hullHealth > 1.0f)
+				if(p1 == 1)
 				{
-					hullHealth = 1.0f;
+					float fPrevHealth, fMaxHealth;
+					if(!iDmgToSpaceID)
+						pub::Player::GetShip(iDmgTo, iDmgToSpaceID);
+					pub::SpaceObj::GetHealth(iDmgToSpaceID, fPrevHealth, fMaxHealth);
+					DAMAGE_INFO dmgInfo;
+					dmgInfo.iInflictor = iInflictor;
+					dmgInfo.iCause = dmgList->get_cause();
+					dmgInfo.fDamage = fPrevHealth - p2;
+					ClientInfo[iDmgTo].lstDmgRec.push_back(dmgInfo);
+					//PrintUniverseText(L"iCause %u", dmgList->get_cause());
 				}
-				pub::SpaceObj::SetRelativeHealth(g_iRepairShip, hullHealth);
+			}
+			else if(iDmgToSpaceID && p1 == 1)
+			{
+				uint iType;
+				pub::SpaceObj::GetType(iDmgToSpaceID, iType);
+
+				if(iType & set_iNPCDeathType)
+				{
+					float fPrevHealth, fMaxHealth;
+					pub::SpaceObj::GetHealth(iDmgToSpaceID, fPrevHealth, fMaxHealth);
+					DAMAGE_INFO dmgInfo;
+					dmgInfo.iInflictor = iInflictor;
+					dmgInfo.iCause = dmgList->get_cause();
+					dmgInfo.fDamage = fPrevHealth - p2;
+					map<uint, list<DAMAGE_INFO> >::iterator lstDmgRec = mapSpaceObjDmgRec.find(iDmgToSpaceID);
+					if(lstDmgRec != mapSpaceObjDmgRec.end())
+					{
+						lstDmgRec->second.push_back(dmgInfo);
+					}
+					else
+					{
+						list<DAMAGE_INFO> lstDmgInfo;
+						lstDmgInfo.push_back(dmgInfo);
+						mapSpaceObjDmgRec[iDmgToSpaceID] = lstDmgInfo;
+					}
+					if(p2 == 0)
+					{
+						SpaceObjDestroyed(iDmgToSpaceID);
+					}
+				}
+				if(p2 == 0)
+				{
+					if(iType & (OBJ_DOCKING_RING | OBJ_STATION))
+					{
+						uint iClientIDKiller = HkGetClientIDByShip(iInflictor);
+						BaseDestroyed(iDmgToSpaceID, iClientIDKiller);
+					}
+				}
 			}
 		}
-		g_bRepairPendHit = false;
-	}
+	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
 
 	if(bAddDmgEntry)
-	{
-		if(iDmgTo)
-		{
-			if(dmgList->get_inflictor_id() && p1 == 1)
-			{
-				uint iShip;
-				pub::Player::GetShip(iDmgTo, iShip);
-				float fPrevHealth, fMaxHealth;
-				pub::SpaceObj::GetHealth(iShip, fPrevHealth, fMaxHealth);
-				DAMAGE_INFO dmgInfo;
-				dmgInfo.iInflictor = dmgList->get_inflictor_id();
-				dmgInfo.iCause = dmgList->get_cause();
-				dmgInfo.fDamage = fPrevHealth - p2;
-				ClientInfo[iDmgTo].lstDmgRec.push_back(dmgInfo);
-				//PrintUniverseText(L"iCause %u", dmgList->get_cause());
-			}
-		}
-
 		dmgList->add_damage_entry(p1, p2, p3);
-	}
 
 	try {
 		LastDmgList = *dmgList; // save
@@ -205,6 +249,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			ClientInfo[iDmgTo].dmgLast = *dmgList;
 			iDmgTo = 0;
 		}
+		iDmgToSpaceID = 0;
 	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
 }
 
@@ -365,64 +410,3 @@ return_here:
 		jmp [lRetAddress]
 	}
 }
-
-
-/*			if(p1==1) //Hull hit
-			{
-				p2 = gunData.damage + gunData.beforeHP;
-				if(p2>gunData.maxHP)
-				{
-					p2=gunData.maxHP;
-				}
-				//PrintUniverseText(L"p2=%f", p2);
-			}
-			else if(p1!=65521) //equip hit
-			{
-				uint iDunno;
-				IObjInspectImpl *inspect;
-				GetShipInspect(gunData.ship, inspect, iDunno);
-				const CEquip *equip = inspect->get_cequip(p1);
-				//inspect->find_equipment(equip, p1);
-				gunData.beforeHP = equip->GetHitPoints();
-				gunData.maxHP = equip->GetMaxHitPoints();
-				PrintUniverseText(L"b=%f m=%f", gunData.beforeHP, gunData.maxHP);
-				p2 = gunData.damage + gunData.beforeHP;
-				if(p2>gunData.maxHP)
-				{
-					p2=gunData.maxHP;
-				}
-			}
-			else //Shield hit
-			{
-				p2 = p2 + gunData.damage;
-				float hullHealth = (gunData.beforeHP + gunData.damage*0.5f)/gunData.maxHP;
-				if(hullHealth>1.0f)
-				{
-					hullHealth = 1.0f;
-				}
-				pub::SpaceObj::SetRelativeHealth(gunData.ship, hullHealth);
-			}
-*/
-
-/*
-			if(p1!=65521) //Hull/equipment hit
-			{
-				p1 = 1; //Change into hull hit
-				p2 = gunData.damage + gunData.beforeHP;
-				if(p2>gunData.maxHP)
-				{
-					p2=gunData.maxHP;
-				}
-				//PrintUniverseText(L"p2=%f", p2);
-			}
-			else //Shield hit
-			{
-				p2 = p2 + gunData.damage;
-				float hullHealth = (gunData.beforeHP + gunData.damage*0.5f)/gunData.maxHP;
-				if(hullHealth>1.0f)
-				{
-					hullHealth = 1.0f;
-				}
-				pub::SpaceObj::SetRelativeHealth(gunData.ship, hullHealth);
-			}
-*/

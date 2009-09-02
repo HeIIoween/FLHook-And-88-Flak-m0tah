@@ -624,6 +624,11 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - Major reworking of config file organization into multiple files (still supports reading everything from FLHook.ini, however)
   - If you're lazy and don't want to reorganize your config, simply merge the settings in [Death] into [General]
 - Added list of systems where items of a certain type cannot exist in space or be traded
+- addcargom can now be used on players in space, since it actually seems to work fine on them
+- BaseDestroyed socket event code taken from the plugin version for better performance
+- PvPRepChangeDeath is used as it should instead of object_desctruction.
+- Added support for NPC death messages, see NPCDeathMessages in death.ini under [General].
+- Added support for reputation drops from NPC deaths, see [NPCDeathRep] in death.ini.
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)

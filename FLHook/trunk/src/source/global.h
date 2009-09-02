@@ -440,4 +440,8 @@ extern map<uint, uint> set_mapAutoMark;
 
 extern map<uint, uint> set_mapEquipReDam;
 
+extern map<uint, float> set_mapNPCDeathRep;
+extern uint set_iNPCDeathMessages;
+extern uint set_iNPCDeathType;
+
 #endif

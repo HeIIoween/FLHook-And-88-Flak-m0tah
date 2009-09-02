@@ -42,7 +42,6 @@ TIMER Timers[] =
 	{HkTimerUpdateLossData,			LOSS_INTERVALL,		0},
 	{HkTimerCheckKick,				1000,				0},
 	{HkTimerNPCAndF1Check,			50,					0},
-	{HkTimerCheckIfBaseDestroyed,	1000,				0},
 	{HkTimerSolarRepair,			1000,				0},
 	{HkTimerCheckResolveResults,	0,					0},
 	{HkTimerCloakHandler,			500,				0},

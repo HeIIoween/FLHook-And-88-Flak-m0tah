@@ -5,24 +5,6 @@
 
 #define OBJECT_DATA_SIZE 2048
 
-class Vector
-{
-public:
-	float x,y,z;
-};
-
-class Matrix
-{
-public:
-	float data[3][3];
-};
-
-class Transform
-{
-public:
-	int iDunno;
-};
-
 struct CHAT_ID
 {
 	int iID;

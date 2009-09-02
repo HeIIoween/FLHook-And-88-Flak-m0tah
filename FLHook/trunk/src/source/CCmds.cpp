@@ -1158,11 +1158,29 @@ void CCmds::CmdType(wstring wscCharname)
 	Print(L"command=nothing\nOK");
 }*/
 
-void CCmds::CmdTest(wstring wsc)
+void CCmds::CmdTest()
 {
+	uint iGoodID = 2851971011;
+	pub::GetGoodID(iGoodID, wstos(ArgStr(1)).c_str());
 	uint iTarget;
 	pub::SpaceObj::GetTarget(Players[admin.iClientID].iSpaceObjID, iTarget);
-	Print(L"target=%u %u", iTarget, Players[admin.iClientID].iDunno);
+	CEqObj *obj = HkGetEqObjFromObjRW(GetIObjRW(iTarget));
+	//CEquipManager *equipment = (CEquipManager*)(((char*)obj) + 0xE4);
+	//CEquipTraverser traverser;
+	//CEquip *last = equipment->ReverseTraverse(traverser);
+	EquipDesc ed = EquipDesc();
+	//memset(&ed, 0, sizeof(ed));
+	//ed.id = last->GetID() + 1;
+	//ed.count = 1;
+	//ed.archid = iGoodID;
+	//ed.hp = 1.0f;
+	//ed.set_hardpoint(EquipDesc::CARGO_BAY_HP_NAME);
+	ed.set_count(ArgInt(2));
+	ed.set_arch_id(iGoodID);
+	ed.set_status(1.0f);
+	obj->add_item(ed);
+	//obj->update(1.0f, iTarget);
+	Print(L"OK");
 }
 
 /*uint iSavedTarget = 0;
@@ -1517,7 +1535,7 @@ void CCmds::ExecuteCommandString(wstring wscCmdStr)
 		} else if(IS_CMD("help")) {
 			CmdHelp(ArgInt(1));
 		} else if(IS_CMD("test")) {
-			CmdTest(ArgStr(1));
+			CmdTest();
 		} else {
 			Print(L"ERR unknown command\n");
 		}

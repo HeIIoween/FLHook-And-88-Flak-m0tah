@@ -119,7 +119,7 @@ public:
 	void CmdSpawns(wstring wscToggle);
 
 	void CmdType(wstring wscCharname);
-	void CmdTest(wstring wsc);
+	void CmdTest();
 //
 	wstring ArgCharname(uint iArg);
 	int ArgInt(uint iArg);

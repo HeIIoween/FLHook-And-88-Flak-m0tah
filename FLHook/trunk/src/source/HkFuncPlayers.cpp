@@ -661,38 +661,38 @@ HK_ERROR HkAddCargo(wstring wscCharname, uint iGoodID, CacheString *hardpoint, b
 		return HKE_NO_CHAR_SELECTED;
 	else if((iClientID != -1) && !HkIsInCharSelectMenu(iClientID))
 	{ // player logged in
+		// anti-cheat related
+		char *szClassPtr;
+		memcpy(&szClassPtr, &Players, 4);
+		szClassPtr += 0x418 * (iClientID - 1);
+		EquipDescList *edlList = (EquipDescList*)szClassPtr + 0x328;
+
+		// add
+		const GoodInfo *gi;
+		if(!(gi = GoodList::find_by_id(iGoodID)))
+			return HKE_INVALID_GOOD;
+
+		int iOne = 1;
+		int iMission = bMission;
+		float fHealth = 1;
+		CacheString **pHP = &hardpoint;
+		__asm
+		{
+			push iOne
+			push iMission
+			push iOne
+			push fHealth
+			push iOne
+			push pHP
+			push iGoodID
+			mov ecx, szClassPtr
+			call AddCargoDocked
+		}
+
 		uint iBase = 0;
 		pub::Player::GetBase(iClientID, iBase);
 		if(iBase)
 		{ // player docked on base
-			// anti-cheat related
-			char *szClassPtr;
-			memcpy(&szClassPtr, &Players, 4);
-			szClassPtr += 0x418 * (iClientID - 1);
-			EquipDescList *edlList = (EquipDescList*)szClassPtr + 0x328;
-
-			// add
-			const GoodInfo *gi;
-			if(!(gi = GoodList::find_by_id(iGoodID)))
-				return HKE_INVALID_GOOD;
-
-			int iOne = 1;
-			int iMission = bMission;
-			float fHealth = 1;
-			CacheString **pHP = &hardpoint;
-			__asm
-			{
-				push iOne
-				push iMission
-				push iOne
-				push fHealth
-				push iOne
-				push pHP
-				push iGoodID
-				mov ecx, szClassPtr
-				call AddCargoDocked
-			}
-
 			///////////////////////////////////////////////////
 			// fix, else we get anti-cheat msg when undocking
 			// this DOES NOT disable anti-cheat-detection, we're
@@ -724,8 +724,6 @@ HK_ERROR HkAddCargo(wstring wscCharname, uint iGoodID, CacheString *hardpoint, b
 
 			return HKE_OK;
 		}
-		else
-			return HKE_PLAYER_NOT_DOCKED;
 	}
 	else
 	{ // player not logged in
@@ -1559,53 +1557,13 @@ HK_ERROR HkSetRep(wstring wscCharname, wstring wscRepGroup, float fValue)
 
 HK_ERROR HkSetRepRelative(wstring wscCharname, wstring wscRepGroup, float fValue, bool bUseDestruction)
 {
-	HK_GET_CLIENTID(iClientID, wscCharname);
-	// check if logged in
-	if(iClientID == -1)
-		return HKE_PLAYER_NOT_LOGGED_IN;
-
 	uint iRepGroupID;
 	pub::Reputation::GetReputationGroup(iRepGroupID, wstos(wscRepGroup).c_str());
 	if(iRepGroupID == -1)
 		return HKE_INVALID_REP_GROUP;
-	
-	int iPlayerRep;
-	pub::Player::GetRep(iClientID, iPlayerRep);
-	REP_CHANGE_EFFECT rceFind = REP_CHANGE_EFFECT(iRepGroupID);
-	REP_CHANGE_EFFECT *rceFound = set_btEmpathy->Find(&rceFind);
-	if(rceFound)
-	{
-		if(bUseDestruction)
-			fValue = rceFound->fObjectDestructionEvent;
-		BinaryTreeIterator<EMPATHY_RATE> *btiRates = new BinaryTreeIterator<EMPATHY_RATE>(rceFound->btEmpathyRates);
-		btiRates->First();
-		float fExistingRep, fNewRep;
-		for(long i=0; i<rceFound->btEmpathyRates->Count(); i++)
-		{
-			pub::Reputation::GetGroupFeelingsTowards(iPlayerRep, btiRates->Curr()->iGroupID, fExistingRep);
-			fNewRep = fExistingRep + fValue*btiRates->Curr()->fRate;
-			if(fNewRep > set_fMaxRepValue)
-				fNewRep = set_fMaxRepValue;
-			else if(fNewRep < set_fMinRepValue)
-				fNewRep = set_fMinRepValue;
-			pub::Reputation::SetReputation(iPlayerRep, btiRates->Curr()->iGroupID, fNewRep);
-			btiRates->Next();
-		}
-		delete btiRates;
-		pub::Reputation::GetGroupFeelingsTowards(iPlayerRep, iRepGroupID, fExistingRep);
-		fNewRep = fExistingRep + fValue;
-		if(fNewRep > set_fMaxRepValue)
-			fNewRep = set_fMaxRepValue;
-		else if(fNewRep < set_fMinRepValue)
-			fNewRep = set_fMinRepValue;
-		pub::Reputation::SetReputation(iPlayerRep, iRepGroupID, fNewRep);
-	}
-	else
-		return HKE_INVALID_REP_GROUP;
 
-	return HKE_OK;
+	return HkSetRepRelative(wscCharname, iRepGroupID, fValue, bUseDestruction);
 }
-
 HK_ERROR HkSetRepRelative(wstring wscCharname, uint iRepGroupID, float fValue, bool bUseDestruction)
 {
 	HK_GET_CLIENTID(iClientID, wscCharname);

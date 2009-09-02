@@ -1,6 +1,7 @@
 #include "hook.h"
 
 Archetype::AClassType TypeStrToEnum(string scType);
+uint TypeStrToObjUint(string scType);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // setting variables
@@ -194,6 +195,11 @@ map<uint, uint> set_mapEquipReDam;
 //Systems to prevent dropping/trading items in
 map<uint, map<Archetype::AClassType, char> > set_mapSysItemRestrictions;
 
+//Solar death reputation adjustment
+map<uint, float> set_mapNPCDeathRep;
+uint set_iNPCDeathMessages;
+uint set_iNPCDeathType;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void LoadSettings()
@@ -347,13 +353,26 @@ void LoadSettings()
 		set_bAutoBuy = IniGetB(set_scCfgCommandsFile, "UserCommands", "AutoBuy", false);
 
 	//Death
-		//General
+		//Style
 		set_wscDeathMsgStyle = stows(IniGetS(set_scCfgDeathFile, "Style", "DeathMsgStyle", "0x19198C01"));
 		set_wscDeathMsgStyleSys = stows(IniGetS(set_scCfgDeathFile, "Style", "DeathMsgStyleSys", "0x1919BD01"));
+		//General
 		set_bChangeRepPvPDeath = IniGetB(set_scCfgDeathFile, "General", "ChangeRepPvPDeath", false);
 		set_bCombineMissileTorpMsgs = IniGetB(set_scCfgDeathFile, "General", "CombineMissilesTorps", false);
 		set_fDeathPenalty = IniGetF(set_scCfgDeathFile, "General", "DeathPenaltyFraction", 0.0f);
 		set_fDeathPenaltyKiller = IniGetF(set_scCfgDeathFile, "General", "DeathPenaltyKillerFraction", 0.0f);
+		set_iNPCDeathMessages = 0;
+		string scTypeList = IniGetS(set_scCfgDeathFile, "General", "NPCDeathMessages", "");
+		if(scTypeList.length())
+		{
+			uint iParamIndex = 0;
+			string scParam = Trim(GetParam(scTypeList, ',', iParamIndex));
+			while(scParam.length())
+			{
+				set_iNPCDeathMessages |= TypeStrToObjUint(scParam);
+				scParam = Trim(GetParam(scTypeList, ',', ++iParamIndex));
+			}
+		}
 		set_iMaxDeathFactionCauses = IniGetI(set_scCfgDeathFile, "General", "NumDeathFactionReasons", 1);
 		set_iMaxDeathEquipmentCauses = IniGetI(set_scCfgDeathFile, "General", "NumDeathEquipmentReasons", 1);
 		set_fRepChangePvP = IniGetF(set_scCfgDeathFile, "General", "PvPRepChangeDeath", 0.0f);
@@ -394,6 +413,16 @@ void LoadSettings()
 			pub::GetSystemID(iSystemID, it13->scKey.c_str());
 			UINT_WRAP *uw = new UINT_WRAP(iSystemID);
 			set_btNoDPSystems->Add(uw);
+		}
+		//Solar death reputation adjustment
+		IniGetSection(set_scCfgDeathFile, "NPCDeathRep", lstValues);
+		set_mapNPCDeathRep.clear();
+		set_iNPCDeathType = set_iNPCDeathMessages;
+		foreach(lstValues, INISECTIONVALUE, it20)
+		{
+			uint iType = TypeStrToObjUint(Trim(it20->scKey));
+			set_iNPCDeathType |= iType;
+			set_mapNPCDeathRep[iType] = ToFloat(it20->scValue);
 		}
 		// MultiKillMessages
 		set_MKM_bActivated = IniGetB(set_scCfgDeathFile, "MultiKillMessages", "Activated", false);
@@ -686,4 +715,65 @@ Archetype::AClassType TypeStrToEnum(string scType)
 	if(scType == "Armor")
 	  return Archetype::ARMOR;
 	return Archetype::ROOT;
+}
+
+uint TypeStrToObjUint(string scType)
+{
+	if(scType == "MOON")
+	  return OBJ_MOON;
+	if(scType == "PLANET")
+	  return OBJ_PLANET;
+	if(scType == "SUN")
+	  return OBJ_SUN;
+	if(scType == "BLACKHOLE")
+	  return OBJ_BLACKHOLE;
+	if(scType == "SATELLITE")
+	  return OBJ_SATELLITE;
+	if(scType == "DOCKING_RING")
+	  return OBJ_DOCKING_RING;
+	if(scType == "JUMP_GATE")
+	  return OBJ_JUMP_GATE;
+	if(scType == "TRADELANE_RING")
+	  return OBJ_TRADELANE_RING;
+	if(scType == "STATION")
+	  return OBJ_STATION;
+	if(scType == "WAYPOINT")
+	  return OBJ_WAYPOINT;
+	if(scType == "AIRLOCK_GATE")
+	  return OBJ_AIRLOCK_GATE;
+	if(scType == "JUMP_HOLE")
+	  return OBJ_JUMP_HOLE;
+	if(scType == "WEAPONS_PLATFORM")
+	  return OBJ_WEAPONS_PLATFORM;
+	if(scType == "DESTROYABLE_DEPOT")
+	  return OBJ_DESTROYABLE_DEPOT;
+	if(scType == "NON_TARGETABLE")
+	  return OBJ_NON_TARGETABLE;
+	if(scType == "MISSION_SATELLITE")
+	  return OBJ_MISSION_SATELLITE;
+	if(scType == "FIGHTER")
+	  return OBJ_FIGHTER;
+	if(scType == "FREIGHTER")
+	  return OBJ_FREIGHTER;
+	if(scType == "GUNBOAT")
+	  return OBJ_GUNBOAT;
+	if(scType == "CRUISER")
+	  return OBJ_CRUISER;
+	if(scType == "TRANSPORT")
+	  return OBJ_TRANSPORT;
+	if(scType == "CAPITAL")
+	  return OBJ_CAPITAL;
+	if(scType == "MINING")
+	  return OBJ_MINING;
+	if(scType == "GUIDED")
+	  return OBJ_GUIDED;
+	if(scType == "BULLET")
+	  return OBJ_BULLET;
+	if(scType == "MINE")
+	  return OBJ_MINE;
+	if(scType == "LOOT")
+	  return OBJ_LOOT;
+	if(scType == "ASTEROID")
+	  return OBJ_ASTEROID;
+    return OBJ_NONE;
 }

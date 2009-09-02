@@ -167,6 +167,37 @@
 		} \
 	} \
 
+//Space object types
+#define OBJ_NONE				   0
+#define OBJ_MOON				(1 << 0)
+#define OBJ_PLANET				(1 << 1)
+#define OBJ_SUN					(1 << 2)
+#define OBJ_BLACKHOLE			(1 << 3)
+#define OBJ_SATELLITE			(1 << 4)
+#define OBJ_DOCKING_RING		(1 << 5)
+#define OBJ_JUMP_GATE			(1 << 6)
+#define OBJ_TRADELANE_RING		(1 << 7)
+#define OBJ_STATION				(1 << 8)
+#define OBJ_WAYPOINT			(1 << 9)
+#define OBJ_AIRLOCK_GATE		(1 << 10)
+#define OBJ_JUMP_HOLE			(1 << 11)
+#define OBJ_WEAPONS_PLATFORM	(1 << 12)
+#define OBJ_DESTROYABLE_DEPOT	(1 << 13)
+#define OBJ_NON_TARGETABLE		(1 << 14)
+#define OBJ_MISSION_SATELLITE	(1 << 15)
+#define OBJ_FIGHTER				(1 << 16)
+#define OBJ_FREIGHTER			(1 << 17)
+#define OBJ_GUNBOAT				(1 << 18)
+#define OBJ_CRUISER				(1 << 19)
+#define OBJ_TRANSPORT			(1 << 20)
+#define OBJ_CAPITAL				(1 << 21)
+#define OBJ_MINING				(1 << 22)
+#define OBJ_GUIDED				(1 << 24)
+#define OBJ_BULLET				(1 << 25)
+#define OBJ_MINE				(1 << 26)
+#define OBJ_LOOT				(1 << 28)
+#define OBJ_ASTEROID			(1 << 29)
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // typedefs
 typedef void (__stdcall *_RCSendChatMsg)(uint iId, uint iTo, uint iSize, void *pRDL);
@@ -792,7 +823,9 @@ void __cdecl ControllerDestroy(unsigned int iControllerID);
 // HkDeath
 void ShipDestroyedHook();
 void BaseDestroyed(uint iObject, uint iClientIDBy);
+void SpaceObjDestroyed(uint iObject);
 extern wstring wscAdminKiller;
+extern map<uint, list<DAMAGE_INFO> > mapSpaceObjDmgRec;
 
 // HkDamage
 void _HookMissileTorpHit();
@@ -849,7 +882,6 @@ void HkTimerUpdatePingData();
 void HkTimerUpdateLossData();
 void HkTimerCheckKick();
 void HkTimerNPCAndF1Check();
-void HkTimerCheckIfBaseDestroyed();
 void HkTimerSolarRepair();
 void HkThreadResolver();
 void HkTimerCheckResolveResults();

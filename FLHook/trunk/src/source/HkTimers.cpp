@@ -208,32 +208,6 @@ void HkTimerNPCAndF1Check()
 /**************************************************************************************************************
 **************************************************************************************************************/
 
-list<BASE_INFO> lstBases;
-
-void HkTimerCheckIfBaseDestroyed()
-{
-	try {
-		foreach(lstBases, BASE_INFO, it)
-		{
-			float fHealth;
-			float fMaxHealth;
-			pub::SpaceObj::GetHealth((*it).iObjectID, fHealth, fMaxHealth);
-			if(fHealth > 0)
-				(*it).bDestroyed = false;
-			else if(!fHealth && !(*it).bDestroyed && (fMaxHealth > 0)) {
-				(*it).bDestroyed = true;
-				// event
-				ProcessEvent(L"basedestroy basename=%s objecthash=%u",
-								stows((*it).scBasename).c_str(),
-								(*it).iObjectID);
-			}
-		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
-}
-
-/**************************************************************************************************************
-**************************************************************************************************************/
-
 void HkTimerSolarRepair()
 {
 	try {
@@ -501,7 +475,7 @@ void HkTimerSpaceObjMark()
 				{
 					uint iType;
 					pub::SpaceObj::GetType(iMarkSpaceObjProcShip, iType);
-					if(iType!=2097152 && ((ClientInfo[iClientID].bMarkEverything && iType==65536)/* || iType==131072*/)) //type is CAPITAL;FIGHTER;FREIGHTER
+					if(iType!=OBJ_CAPITAL && ((ClientInfo[iClientID].bMarkEverything && iType==OBJ_FIGHTER)/* || iType==OBJ_FREIGHTER*/))
 					{
 						uint iSpaceObjSystem;
 						pub::SpaceObj::GetSystem(iMarkSpaceObjProcShip, iSpaceObjSystem);
