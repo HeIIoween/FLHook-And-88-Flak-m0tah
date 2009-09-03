@@ -258,7 +258,7 @@ all commands return "OK" when successful or "ERR <errortext>" when error occured
 ================================================================================
 == RIGHTS ======================================================================
 ================================================================================
-rights may be seperated by a comma (e.g. setadmin playerxy cash,kickban,msg)
+rights may be separated by a comma (e.g. setadmin playerxy cash,kickban,msg)
 superadmin        -> everything
 cash              -> cash commands
 kickban           -> kick/ban/group commands
@@ -328,7 +328,7 @@ chat from=<player> id=<client-id> type=<type> [to=<recipient> idto=<recipient-cl
 kill victim=<player> by=<killer1>[,<killer2]... cause=<killer1's weapons>[;killer2's weapons]...
   <player>: charname of the victim.
   <killerx>: charname/faction(if NPC) of the killer; sorted from highest to lowest damage.
-  <killerx's weapons>: comma seperated list of weapons used to kill player.  Weapons can be guns, missiles (only if CombineMissilesTorps is set to no), mines, torpedoes (only if CombineMissilesTorps is set to no), missiles/torpedoes (only if CombineMissilesTorps is set to yes), or collisions.  Sorted from highest to lowest damage.
+  <killerx's weapons>: comma separated list of weapons used to kill player.  Weapons can be guns, missiles (only if CombineMissilesTorps is set to no), mines, torpedoes (only if CombineMissilesTorps is set to no), missiles/torpedoes (only if CombineMissilesTorps is set to yes), or collisions.  Sorted from highest to lowest damage.
 
 login char=<player> accountdirname=<dirname> id=<client-id> ip=<ip>
   occurs when player selects a character in the character-select menu

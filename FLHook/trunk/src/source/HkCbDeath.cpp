@@ -406,6 +406,8 @@ list<fFACTION_INFLICTOR> ProcessDamageInfo(list<DAMAGE_INFO> &lstDmgRec)
 
 /**************************************************************************************************************
 Called when ship was destroyed
+szECX = IObjRW
+iKill = 1 if kill, 0 if unload
 **************************************************************************************************************/
 void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 {
@@ -418,347 +420,353 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 		uint iClientID;
 		memcpy(&iClientID, szP + 0xB4, 4);
 
-		if(iClientID && iKill) { // a player was killed
-			//mobile docking - clear list of docked players, set them to die
-			if(ClientInfo[iClientID].lstPlayersDocked.size())
-			{
-				uint iBaseID = Players[iClientID].iPrevBaseID;
-				foreach(ClientInfo[iClientID].lstPlayersDocked, uint, dockedClientID)
+		if(iKill)
+		{
+			if(iClientID) { // a player was killed
+				//mobile docking - clear list of docked players, set them to die
+				if(ClientInfo[iClientID].lstPlayersDocked.size())
 				{
-					ClientInfo[*dockedClientID].bMobileDocked = false;
-					ClientInfo[*dockedClientID].iDockClientID = 0;
-					ClientInfo[*dockedClientID].lstJumpPath.clear();
-					uint iDockedShip;
-					pub::Player::GetShip(*dockedClientID, iDockedShip);
-					if(iDockedShip) //docked player is in space
+					uint iBaseID = Players[iClientID].iPrevBaseID;
+					foreach(ClientInfo[iClientID].lstPlayersDocked, uint, dockedClientID)
 					{
-						Players[*dockedClientID].iPrevBaseID = iBaseID;
-					}
-					else
-					{
-						MOB_UNDOCKBASEKILL dKill;
-						dKill.iClientID = *dockedClientID;
-						dKill.iBaseID = iBaseID;
-						dKill.bKill = true;
-						lstUndockKill.push_back(dKill);
-					}
-				}
-				ClientInfo[iClientID].lstPlayersDocked.clear();
-			}
-			//mobile docking - update docked base to one in current system
-			if(ClientInfo[iClientID].bMobileDocked)
-			{
-				if(ClientInfo[iClientID].iDockClientID)
-				{
-					uint iBaseID;
-					pub::GetBaseID(iBaseID, (HkGetPlayerSystemS(ClientInfo[iClientID].iDockClientID) + "_Mobile_Proxy_Base").c_str());
-					Players[iClientID].iPrevBaseID = iBaseID;
-				}
-			}
-			ClientInfo[iClientID].bCharInfoReqAfterDeath = true;
-
-			//Generate death message
-			try{
-				if(!bSupressDeathMsg)
-				{
-					list<fFACTION_INFLICTOR> lstFactionsInflict = ProcessDamageInfo(ClientInfo[iClientID].lstDmgRec);
-
-					wstring wscDeathMsg;
-					wstring wscEvent, wscEventBy = L" by=", wscEventCause = L" cause=";
-					wscEvent.reserve(256);
-					wscDeathMsg.reserve(256);
-					wstring wscVictim = Players.GetActiveCharacterName(iClientID);
-					wscEvent = L"kill victim=" + wscVictim;
-					wscDeathMsg = L"Death: " + wscVictim + L" was killed";
-					if(!lstFactionsInflict.size())
-					{
-						uint iSystemID;
-						pub::Player::GetSystem(iClientID, iSystemID);
-						SendDeathMsg(wscDeathMsg + L".", iSystemID, iClientID, 0);
-					}
-					else
-					{
-						uint iKillerID = 0;
-						list<wstring> lstCauses;
-						uint iNumCauses = set_iMaxDeathFactionCauses ? (set_iMaxDeathFactionCauses>lstFactionsInflict.size() ? lstFactionsInflict.size() : set_iMaxDeathFactionCauses) : lstFactionsInflict.size();
-						uint j = 0;
-						while(j < iNumCauses)
+						ClientInfo[*dockedClientID].bMobileDocked = false;
+						ClientInfo[*dockedClientID].iDockClientID = 0;
+						ClientInfo[*dockedClientID].lstJumpPath.clear();
+						uint iDockedShip;
+						pub::Player::GetShip(*dockedClientID, iDockedShip);
+						if(iDockedShip) //docked player is in space
 						{
-							list<DAMAGE_ENTRY> lstDamages;
-							if(lstFactionsInflict.back().fCollisionDamage)
-								lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fCollisionDamage, DC_COLLISION));
-							if(lstFactionsInflict.back().fGunDamage)
-								lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fGunDamage, DC_GUN));
-							if(lstFactionsInflict.back().fTorpedoDamage)
-								lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fTorpedoDamage, DC_TORPEDO));
-							if(lstFactionsInflict.back().fMissileDamage)
-								lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fMissileDamage, DC_MISSILE));
-							if(lstFactionsInflict.back().fMineDamage)
-								lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fMineDamage, DC_MINE));
-							lstDamages.sort();
-							list<wstring> lstTypes;
-							uint iNumTypes = set_iMaxDeathEquipmentCauses ? (set_iMaxDeathEquipmentCauses>lstDamages.size() ? lstDamages.size() : set_iMaxDeathEquipmentCauses) : lstDamages.size();
-							uint k = 0;
-							while(lstDamages.size())
-							{
-								switch(lstDamages.back().iCause)
-								{
-								case DC_GUN:
-									if(k < iNumTypes)
-										lstTypes.push_back(L"guns");
-									wscEventCause += L"guns,";
-									break;
-								case DC_MISSILE:
-									if(set_bCombineMissileTorpMsgs)
-									{
-										if(k < iNumTypes)
-											lstTypes.push_back(L"missiles/torpedoes");
-										wscEventCause += L"missiles/torpedoes,";
-									}
-									else
-									{
-										if(k < iNumTypes)
-											lstTypes.push_back(L"missiles");
-										wscEventCause += L"missiles,";
-									}
-									break;
-								case DC_MINE:
-									if(k < iNumTypes)
-										lstTypes.push_back(L"mines");
-									wscEventCause += L"mines,";
-									break;
-								case DC_COLLISION:
-									if(k < iNumTypes)
-										lstTypes.push_back(L"collisions");
-									wscEventCause += L"collisions,";
-									break;
-								case DC_TORPEDO:
-									if(k < iNumTypes)
-										lstTypes.push_back(L"torpedoes");
-									wscEventCause += L"torpedoes,";
-									break;
-								}
-								lstDamages.pop_back();
-								k++;
-							}
-							wscEventCause = wscEventCause.substr(0, wscEventCause.length()-1);
-							if(j != 0)
-								wscEventCause += L";";
-							wstring wscDamages = L"";
-							if(lstTypes.size())
-							{
-								if(lstTypes.size() == 1)
-								{
-									wscDamages = lstTypes.back();
-								}
-								else if(lstTypes.size() == 2)
-								{
-									wscDamages = lstTypes.front() + L" and " + lstTypes.back();
-								}
-								else
-								{
-									k = 0;
-									foreach(lstTypes, wstring, wscType)
-									{
-										if(k == lstTypes.size()-1)
-											wscDamages += L", and " + *wscType;
-										else if(k == 0)
-											wscDamages += *wscType;
-										else
-											wscDamages += L", " + *wscType;
-										k++;
-									}
-								}
-							}
-
-							if(!lstFactionsInflict.back().iNumShips) //is player
-							{
-								if(j == 0)
-								{
-									iKillerID = -lstFactionsInflict.back().iInflictor;
-									wstring wscKiller = Players.GetActiveCharacterName(iKillerID);
-									lstCauses.push_back(L"by " + wscKiller + (wscDamages.length() ? (L" with " + wscDamages) : L""));
-									wscEventBy += wscKiller;
-								}
-								else
-								{
-									wstring wscKiller = Players.GetActiveCharacterName(-lstFactionsInflict.back().iInflictor);
-									lstCauses.push_back(L"by " + wscKiller + (wscDamages.length() ? (L" with " + wscDamages) : L""));
-									wscEventBy += L"," + wscKiller;
-								}
-							}
-							else //NPC
-							{
-								uint iNameID;
-								pub::Reputation::GetShortGroupName(lstFactionsInflict.back().iInflictor, iNameID);
-								if(!iNameID)
-								{
-									if(wscDamages == L"mines")
-									{
-										// Mines don't have affiliations
-										lstCauses.push_back(L"by mines");
-										wscEventBy += (j == 0 ? L"mines" : L",mines");
-									}
-									else
-									{
-										// seems to be erroneous, drop from list
-										if(iNumCauses != lstFactionsInflict.size() + lstCauses.size())
-											iNumCauses++;
-										lstFactionsInflict.pop_back();
-										j++;
-										continue;
-										/*if(lstFactionsInflict.back().iNumShips == 1)
-										{
-											lstCauses.push_back(L"by a ship" + (wscDamages.length() ? (L" with " + wscDamages) : L""));
-										}
-										else
-											lstCauses.push_back(L"by " + stows(itos(lstFactionsInflict.back().iNumShips)) + L" ships" + (wscDamages.length() ? (L" with " + wscDamages) : L""));*/
-									}
-								}
-								else
-								{
-									UINT_WRAP uw = UINT_WRAP(lstFactionsInflict.back().iInflictor);
-									if(set_btOneFactionDeathRep->Find(&uw))
-									{
-										pub::Reputation::GetGroupName(lstFactionsInflict.back().iInflictor, iNameID);
-										wstring wscGroupName = HkGetWStringFromIDS(iNameID);
-										lstCauses.push_back(L"by " + wscGroupName + (wscDamages.length() ? (L" with " + wscDamages) : L""));
-										wscGroupName = ReplaceStr(wscGroupName, L" ", L"_");
-										wscEventBy += (j == 0 ? wscGroupName : L"," + wscGroupName);
-									}
-									else
-									{
-										wstring wscGroupName = HkGetWStringFromIDS(iNameID);
-										wstring wscGroupNameEvent = ReplaceStr(wscGroupName, L" ", L"_");
-										if(lstFactionsInflict.back().iNumShips == 1)
-										{
-											if(wscGroupName[wscGroupName.length()-1] == L's')
-												wscGroupName = wscGroupName.substr(0, wscGroupName.length()-1);
-											if(wscGroupName[0]==L'A' || wscGroupName[0]==L'E' || wscGroupName[0]==L'I' || wscGroupName[0]==L'O' || wscGroupName[0]==L'U')
-												lstCauses.push_back(L"by an " + wscGroupName + L" ship" + (wscDamages.length() ? (L" with " + wscDamages) : L""));
-											else
-												lstCauses.push_back(L"by a " + wscGroupName + L" ship" + (wscDamages.length() ? (L" with " + wscDamages) : L""));
-										}
-										else
-											lstCauses.push_back(L"by " + stows(itos(lstFactionsInflict.back().iNumShips)) + L" " + wscGroupName + (wscDamages.length() ? (L" with " + wscDamages) : L""));
-										wscEventBy += (j == 0 ? wscGroupNameEvent : L"," + wscGroupNameEvent);
-									}
-								}
-							}
-							j++;
-							lstFactionsInflict.pop_back();
-						}
-
-						if(lstCauses.size() == 1)
-						{
-							wscDeathMsg += L" " + lstCauses.back() + L".";
-						}
-						else if(lstCauses.size() == 2)
-						{
-							wscDeathMsg += L" " + lstCauses.front() + L" and " + lstCauses.back() + L".";
+							Players[*dockedClientID].iPrevBaseID = iBaseID;
 						}
 						else
 						{
-							uint k = 0;
-							foreach(lstCauses, wstring, wscCause)
-							{
-								if(k == lstCauses.size()-1)
-									wscDeathMsg += L"; and " + *wscCause + L".";
-								else if(k == 0)
-									wscDeathMsg += L" " + *wscCause;
-								else
-									wscDeathMsg += L"; " + *wscCause;
-								k++;
-							}
+							MOB_UNDOCKBASEKILL dKill;
+							dKill.iClientID = *dockedClientID;
+							dKill.iBaseID = iBaseID;
+							dKill.bKill = true;
+							lstUndockKill.push_back(dKill);
 						}
+					}
+					ClientInfo[iClientID].lstPlayersDocked.clear();
+				}
+				//mobile docking - update docked base to one in current system
+				if(ClientInfo[iClientID].bMobileDocked)
+				{
+					if(ClientInfo[iClientID].iDockClientID)
+					{
+						uint iBaseID;
+						pub::GetBaseID(iBaseID, (HkGetPlayerSystemS(ClientInfo[iClientID].iDockClientID) + "_Mobile_Proxy_Base").c_str());
+						Players[iClientID].iPrevBaseID = iBaseID;
+					}
+				}
+				ClientInfo[iClientID].bCharInfoReqAfterDeath = true;
 
-						uint iSystemID;
-						pub::Player::GetSystem(iClientID, iSystemID);
-						SendDeathMsg(wscDeathMsg, iSystemID, iClientID, iKillerID);
+				//Generate death message
+				try{
+					if(!bSupressDeathMsg)
+					{
+						list<fFACTION_INFLICTOR> lstFactionsInflict = ProcessDamageInfo(ClientInfo[iClientID].lstDmgRec);
 
-						// Event
-						wscEvent += wscEventBy;
-						wscEvent += wscEventCause;
-						ProcessEvent(wscEvent);
-
-						// Death penalty
-						ClientInfo[iClientID].bDeathPenaltyOnEnter = true;
-						HkPenalizeDeath(ARG_CLIENTID(iClientID), iKillerID, false);
-
-						// MultiKillMessages
-						if((set_MKM_bActivated) && iKillerID && (iClientID != iKillerID))
+						wstring wscDeathMsg;
+						wstring wscEvent, wscEventBy = L" by=", wscEventCause = L" cause=";
+						wscEvent.reserve(256);
+						wscDeathMsg.reserve(256);
+						wstring wscVictim = Players.GetActiveCharacterName(iClientID);
+						wscEvent = L"kill victim=" + wscVictim;
+						wscDeathMsg = L"Death: " + wscVictim + L" was destroyed";
+						if(!lstFactionsInflict.size())
 						{
-							wstring wscKiller = Players.GetActiveCharacterName(iKillerID);
-
-							ClientInfo[iKillerID].iKillsInARow++;
-							foreach(set_MKM_lstMessages, MULTIKILLMESSAGE, it)
+							uint iSystemID;
+							pub::Player::GetSystem(iClientID, iSystemID);
+							SendDeathMsg(wscDeathMsg + L".", iSystemID, iClientID, 0);
+						}
+						else
+						{
+							uint iKillerID = 0;
+							list<wstring> lstCauses;
+							uint iNumCauses = set_iMaxDeathFactionCauses ? (set_iMaxDeathFactionCauses>lstFactionsInflict.size() ? lstFactionsInflict.size() : set_iMaxDeathFactionCauses) : lstFactionsInflict.size();
+							uint j = 0;
+							while(j < iNumCauses)
 							{
-								if(it->iKillsInARow == ClientInfo[iKillerID].iKillsInARow)
+								list<DAMAGE_ENTRY> lstDamages;
+								if(lstFactionsInflict.back().fCollisionDamage)
+									lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fCollisionDamage, DC_COLLISION));
+								if(lstFactionsInflict.back().fGunDamage)
+									lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fGunDamage, DC_GUN));
+								if(lstFactionsInflict.back().fTorpedoDamage)
+									lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fTorpedoDamage, DC_TORPEDO));
+								if(lstFactionsInflict.back().fMissileDamage)
+									lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fMissileDamage, DC_MISSILE));
+								if(lstFactionsInflict.back().fMineDamage)
+									lstDamages.push_back(DAMAGE_ENTRY(lstFactionsInflict.back().fMineDamage, DC_MINE));
+								lstDamages.sort();
+								list<wstring> lstTypes;
+								uint iNumTypes = set_iMaxDeathEquipmentCauses ? (set_iMaxDeathEquipmentCauses>lstDamages.size() ? lstDamages.size() : set_iMaxDeathEquipmentCauses) : lstDamages.size();
+								uint k = 0;
+								while(lstDamages.size())
 								{
-									wstring wscXMLMsg = L"<TRA data=\"" + set_MKM_wscStyle + L"\" mask=\"-1\"/> <TEXT>";
-									wscXMLMsg += XMLText(ReplaceStr(it->wscMessage, L"%player", wscKiller));
-									wscXMLMsg += L"</TEXT>";
-									
-									char szBuf[0xFFFF];
-									uint iRet;
-									if(!HKHKSUCCESS(HkFMsgEncodeXML(wscXMLMsg, szBuf, sizeof(szBuf), iRet)))
-										break;
-
-									// for all players in system...
-									struct PlayerData *pPD = 0;
-									while(pPD = Players.traverse_active(pPD))
+									switch(lstDamages.back().iCause)
 									{
-										uint iClientID = HkGetClientIdFromPD(pPD);
-										uint iClientSystemID = 0;
-										pub::Player::GetSystem(iClientID, iClientSystemID);
-										if((iClientID == iKillerID) || ((iSystemID == iClientSystemID) && (((ClientInfo[iClientID].dieMsg == DIEMSG_ALL) || (ClientInfo[iClientID].dieMsg == DIEMSG_SYSTEM)) || !set_bUserCmdSetDieMsg)))
-											HkFMsgSendChat(iClientID, szBuf, iRet);
+									case DC_GUN:
+										if(k < iNumTypes)
+											lstTypes.push_back(L"guns");
+										wscEventCause += L"guns,";
+										break;
+									case DC_MISSILE:
+										if(set_bCombineMissileTorpMsgs)
+										{
+											if(k < iNumTypes)
+												lstTypes.push_back(L"missiles/torpedoes");
+											wscEventCause += L"missiles/torpedoes,";
+										}
+										else
+										{
+											if(k < iNumTypes)
+												lstTypes.push_back(L"missiles");
+											wscEventCause += L"missiles,";
+										}
+										break;
+									case DC_MINE:
+										if(k < iNumTypes)
+											lstTypes.push_back(L"mines");
+										wscEventCause += L"mines,";
+										break;
+									case DC_COLLISION:
+										if(k < iNumTypes)
+											lstTypes.push_back(L"collisions");
+										wscEventCause += L"collisions,";
+										break;
+									case DC_TORPEDO:
+										if(k < iNumTypes)
+											lstTypes.push_back(L"torpedoes");
+										wscEventCause += L"torpedoes,";
+										break;
+									}
+									lstDamages.pop_back();
+									k++;
+								}
+								wscEventCause = wscEventCause.substr(0, wscEventCause.length()-1);
+								if(j != 0)
+									wscEventCause += L";";
+								wstring wscDamages = L"";
+								if(lstTypes.size())
+								{
+									if(lstTypes.size() == 1)
+									{
+										wscDamages = lstTypes.back();
+									}
+									else if(lstTypes.size() == 2)
+									{
+										wscDamages = lstTypes.front() + L" and " + lstTypes.back();
+									}
+									else
+									{
+										k = 0;
+										foreach(lstTypes, wstring, wscType)
+										{
+											if(k == lstTypes.size()-1)
+												wscDamages += L", and " + *wscType;
+											else if(k == 0)
+												wscDamages += *wscType;
+											else
+												wscDamages += L", " + *wscType;
+											k++;
+										}
+									}
+								}
+
+								if(!lstFactionsInflict.back().iNumShips) //is player
+								{
+									if(j == 0)
+									{
+										iKillerID = -lstFactionsInflict.back().iInflictor;
+										wstring wscKiller = Players.GetActiveCharacterName(iKillerID);
+										lstCauses.push_back(L"by " + wscKiller + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+										wscEventBy += wscKiller;
+									}
+									else
+									{
+										wstring wscKiller = Players.GetActiveCharacterName(-lstFactionsInflict.back().iInflictor);
+										lstCauses.push_back(L"by " + wscKiller + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+										wscEventBy += L"," + wscKiller;
+									}
+								}
+								else //NPC
+								{
+									uint iNameID;
+									pub::Reputation::GetShortGroupName(lstFactionsInflict.back().iInflictor, iNameID);
+									if(!iNameID)
+									{
+										if(wscDamages == L"mines")
+										{
+											// Mines don't have affiliations
+											lstCauses.push_back(L"by mines");
+											wscEventBy += (j == 0 ? L"mines" : L",mines");
+										}
+										else
+										{
+											// seems to be erroneous, drop from list
+											if(iNumCauses != lstFactionsInflict.size() + lstCauses.size())
+												iNumCauses++;
+											lstFactionsInflict.pop_back();
+											j++;
+											continue;
+											/*if(lstFactionsInflict.back().iNumShips == 1)
+											{
+												lstCauses.push_back(L"by a ship" + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+											}
+											else
+												lstCauses.push_back(L"by " + stows(itos(lstFactionsInflict.back().iNumShips)) + L" ships" + (wscDamages.length() ? (L" with " + wscDamages) : L""));*/
+										}
+									}
+									else
+									{
+										UINT_WRAP uw = UINT_WRAP(lstFactionsInflict.back().iInflictor);
+										if(set_btOneFactionDeathRep->Find(&uw))
+										{
+											pub::Reputation::GetGroupName(lstFactionsInflict.back().iInflictor, iNameID);
+											wstring wscGroupName = HkGetWStringFromIDS(iNameID);
+											lstCauses.push_back(L"by " + wscGroupName + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+											wscGroupName = ReplaceStr(wscGroupName, L" ", L"_");
+											wscEventBy += (j == 0 ? wscGroupName : L"," + wscGroupName);
+										}
+										else
+										{
+											wstring wscGroupName = HkGetWStringFromIDS(iNameID);
+											wstring wscGroupNameEvent = ReplaceStr(wscGroupName, L" ", L"_");
+											if(lstFactionsInflict.back().iNumShips == 1)
+											{
+												if(wscGroupName[wscGroupName.length()-1] == L's')
+													wscGroupName = wscGroupName.substr(0, wscGroupName.length()-1);
+												if(wscGroupName[0]==L'A' || wscGroupName[0]==L'E' || wscGroupName[0]==L'I' || wscGroupName[0]==L'O' || wscGroupName[0]==L'U')
+													lstCauses.push_back(L"by an " + wscGroupName + L" ship" + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+												else
+													lstCauses.push_back(L"by a " + wscGroupName + L" ship" + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+											}
+											else
+												lstCauses.push_back(L"by " + stows(itos(lstFactionsInflict.back().iNumShips)) + L" " + wscGroupName + (wscDamages.length() ? (L" with " + wscDamages) : L""));
+											wscEventBy += (j == 0 ? wscGroupNameEvent : L"," + wscGroupNameEvent);
+										}
+									}
+								}
+								j++;
+								lstFactionsInflict.pop_back();
+							}
+
+							if(lstCauses.size() == 1)
+							{
+								wscDeathMsg += L" " + lstCauses.back() + L".";
+							}
+							else if(lstCauses.size() == 2)
+							{
+								wscDeathMsg += L" " + lstCauses.front() + L" and " + lstCauses.back() + L".";
+							}
+							else
+							{
+								uint k = 0;
+								foreach(lstCauses, wstring, wscCause)
+								{
+									if(k == lstCauses.size()-1)
+										wscDeathMsg += L"; and " + *wscCause + L".";
+									else if(k == 0)
+										wscDeathMsg += L" " + *wscCause;
+									else
+										wscDeathMsg += L"; " + *wscCause;
+									k++;
+								}
+							}
+
+							uint iSystemID;
+							pub::Player::GetSystem(iClientID, iSystemID);
+							SendDeathMsg(wscDeathMsg, iSystemID, iClientID, iKillerID);
+
+							// Event
+							wscEvent += wscEventBy;
+							wscEvent += wscEventCause;
+							ProcessEvent(wscEvent);
+
+							// Death penalty
+							ClientInfo[iClientID].bDeathPenaltyOnEnter = true;
+							HkPenalizeDeath(ARG_CLIENTID(iClientID), iKillerID, false);
+
+							// MultiKillMessages
+							if((set_MKM_bActivated) && iKillerID && (iClientID != iKillerID))
+							{
+								wstring wscKiller = Players.GetActiveCharacterName(iKillerID);
+
+								ClientInfo[iKillerID].iKillsInARow++;
+								foreach(set_MKM_lstMessages, MULTIKILLMESSAGE, it)
+								{
+									if(it->iKillsInARow == ClientInfo[iKillerID].iKillsInARow)
+									{
+										wstring wscXMLMsg = L"<TRA data=\"" + set_MKM_wscStyle + L"\" mask=\"-1\"/> <TEXT>";
+										wscXMLMsg += XMLText(ReplaceStr(it->wscMessage, L"%player", wscKiller));
+										wscXMLMsg += L"</TEXT>";
+										
+										char szBuf[0xFFFF];
+										uint iRet;
+										if(!HKHKSUCCESS(HkFMsgEncodeXML(wscXMLMsg, szBuf, sizeof(szBuf), iRet)))
+											break;
+
+										// for all players in system...
+										struct PlayerData *pPD = 0;
+										while(pPD = Players.traverse_active(pPD))
+										{
+											uint iClientID = HkGetClientIdFromPD(pPD);
+											uint iClientSystemID = 0;
+											pub::Player::GetSystem(iClientID, iClientSystemID);
+											if((iClientID == iKillerID) || ((iSystemID == iClientSystemID) && (((ClientInfo[iClientID].dieMsg == DIEMSG_ALL) || (ClientInfo[iClientID].dieMsg == DIEMSG_SYSTEM)) || !set_bUserCmdSetDieMsg)))
+												HkFMsgSendChat(iClientID, szBuf, iRet);
+										}
 									}
 								}
 							}
-						}
 
-						// Adjust rep from kill
-						if(iKillerID && (iClientID != iKillerID) && set_bChangeRepPvPDeath)
-						{
-							int iDeadRep;
-							pub::Player::GetRep(iClientID, iDeadRep);
-							uint iDeadRepGroupID;
-							Reputation::Vibe::GetAffiliation(iDeadRep, iDeadRepGroupID, false);
-							HkSetRepRelative(ARG_CLIENTID(iKillerID), iDeadRepGroupID, set_fRepChangePvP, set_fRepChangePvP ? false : true);
-						}
+							// Adjust rep from kill
+							if(iKillerID && (iClientID != iKillerID) && set_bChangeRepPvPDeath)
+							{
+								int iDeadRep;
+								pub::Player::GetRep(iClientID, iDeadRep);
+								uint iDeadRepGroupID;
+								Reputation::Vibe::GetAffiliation(iDeadRep, iDeadRepGroupID, false);
+								HkSetRepRelative(ARG_CLIENTID(iKillerID), iDeadRepGroupID, set_fRepChangePvP, set_fRepChangePvP ? false : true);
+							}
 
-						// Increment kill count
-						if(iKillerID && (iClientID != iKillerID))
-						{
-							int iNumKills;
-							pub::Player::GetNumKills(iKillerID, iNumKills);
-							iNumKills++;
-							pub::Player::SetNumKills(iKillerID, iNumKills);
+							// Increment kill count
+							if(iKillerID && (iClientID != iKillerID))
+							{
+								int iNumKills;
+								pub::Player::GetNumKills(iKillerID, iNumKills);
+								iNumKills++;
+								pub::Player::SetNumKills(iKillerID, iNumKills);
+							}
 						}
 					}
-				}
-				else //Admin killed player
-				{
-					if(wscAdminKiller.length())
+					else //Admin killed player
 					{
-						uint iSystemID;
-						pub::Player::GetSystem(iClientID, iSystemID);
-						SendDeathMsg(L"Death: " + wstring(Players.GetActiveCharacterName(iClientID)) + L" was vaporized by " + wscAdminKiller + L"'s .kill fury", iSystemID, iClientID, 0);
-						wscAdminKiller = L"";
+						if(wscAdminKiller.length())
+						{
+							uint iSystemID;
+							pub::Player::GetSystem(iClientID, iSystemID);
+							SendDeathMsg(L"Death: " + wstring(Players.GetActiveCharacterName(iClientID)) + L" was vaporized by " + wscAdminKiller + L"'s .kill fury", iSystemID, iClientID, 0);
+							wscAdminKiller = L"";
+						}
 					}
 				}
+				catch(...)
+				{
+					ClientInfo[iClientID].lstDmgRec.clear();
+
+					uint iSystemID;
+					pub::Player::GetSystem(iClientID, iSystemID);
+					SendDeathMsg(L"Death: " + wstring(Players.GetActiveCharacterName(iClientID)) + L" was killed", iSystemID, iClientID, 0);
+					AddLog("Exception while formulating death message");
+				}
 			}
-			catch(...)
+			else
 			{
-				ClientInfo[iClientID].lstDmgRec.clear();
-
-				uint iSystemID;
-				pub::Player::GetSystem(iClientID, iSystemID);
-				SendDeathMsg(L"Death: " + wstring(Players.GetActiveCharacterName(iClientID)) + L" was killed", iSystemID, iClientID, 0);
-				AddLog("Exception while formulating death message");
+				SpaceObjDestroyed(((IObjInspectImpl*)szECX)->get_id(), false);
 			}
-
 		}
 
 		if(iClientID)
@@ -825,7 +833,7 @@ void BaseDestroyed(uint iObject, uint iClientIDBy)
 /**************************************************************************************************************
 Called when space object destroyed
 **************************************************************************************************************/
-void SpaceObjDestroyed(uint iObject)
+void SpaceObjDestroyed(uint iObject, bool bSolar)
 {
 	try {
 		map<uint, list<DAMAGE_INFO> >::iterator lstDmgRec = mapSpaceObjDmgRec.find(iObject);
@@ -833,6 +841,7 @@ void SpaceObjDestroyed(uint iObject)
 			return;
 
 		list<fFACTION_INFLICTOR> lstFactionsInflict = ProcessDamageInfo(lstDmgRec->second);
+		mapSpaceObjDmgRec.erase(lstDmgRec);
 		
 		uint iDeadRepGroupID;
 		int iDeadRep;
@@ -848,14 +857,34 @@ void SpaceObjDestroyed(uint iObject)
 			if(repChange != set_mapNPCDeathRep.end())
 			{
 				fRepChange = repChange->second;
-				pub::SpaceObj::GetHealth(iObject, fHealth, fMaxHealth);
-				foreach(lstFactionsInflict, fFACTION_INFLICTOR, inflictInfo)
+				if(bSolar)
 				{
-					if(!inflictInfo->iNumShips) //is player
+					pub::SpaceObj::GetHealth(iObject, fHealth, fMaxHealth);
+					foreach(lstFactionsInflict, fFACTION_INFLICTOR, inflictInfo)
 					{
-						uint iTempClientID = -lstFactionsInflict.back().iInflictor;
-						float fAdjustment = inflictInfo->fTotalDamage / fMaxHealth;
-						HkSetRepRelative(ARG_CLIENTID(iTempClientID), iDeadRepGroupID, fRepChange * fAdjustment, false);
+						if(!inflictInfo->iNumShips) //is player
+						{
+							uint iTempClientID = -lstFactionsInflict.back().iInflictor;
+							float fAdjustment = inflictInfo->fTotalDamage / fMaxHealth;
+							HkSetRepRelative(ARG_CLIENTID(iTempClientID), iDeadRepGroupID, fRepChange * fAdjustment, false);
+						}
+					}
+				}
+				else
+				{
+					map<uint, float> mapClientIDs;
+					float fTotalDamage = 0.0f;
+					foreach(lstFactionsInflict, fFACTION_INFLICTOR, inflictInfo)
+					{
+						if(!inflictInfo->iNumShips) //is player
+						{
+							mapClientIDs[-lstFactionsInflict.back().iInflictor] = inflictInfo->fTotalDamage;
+						}
+						fTotalDamage += inflictInfo->fTotalDamage;
+					}
+					for(map<uint, float>::iterator iterClient = mapClientIDs.begin(); iterClient != mapClientIDs.end(); iterClient++)
+					{
+						HkSetRepRelative(ARG_CLIENTID(iterClient->first), iDeadRepGroupID, fRepChange * (iterClient->second / fTotalDamage), false);
 					}
 				}
 			}

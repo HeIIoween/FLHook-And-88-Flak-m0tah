@@ -222,9 +222,9 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 						lstDmgInfo.push_back(dmgInfo);
 						mapSpaceObjDmgRec[iDmgToSpaceID] = lstDmgInfo;
 					}
-					if(p2 == 0)
+					if(p2 == 0 && iDmgToSpaceID / 1000000000)
 					{
-						SpaceObjDestroyed(iDmgToSpaceID);
+						SpaceObjDestroyed(iDmgToSpaceID, true);
 					}
 				}
 				if(p2 == 0)

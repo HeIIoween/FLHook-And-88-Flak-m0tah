@@ -823,7 +823,7 @@ void __cdecl ControllerDestroy(unsigned int iControllerID);
 // HkDeath
 void ShipDestroyedHook();
 void BaseDestroyed(uint iObject, uint iClientIDBy);
-void SpaceObjDestroyed(uint iObject);
+void SpaceObjDestroyed(uint iObject, bool bSolar);
 extern wstring wscAdminKiller;
 extern map<uint, list<DAMAGE_INFO> > mapSpaceObjDmgRec;
 
