@@ -473,7 +473,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 						wscDeathMsg.reserve(256);
 						wstring wscVictim = Players.GetActiveCharacterName(iClientID);
 						wscEvent = L"kill victim=" + wscVictim;
-						wscDeathMsg = L"Death: " + wscVictim + L" was destroyed";
+						wscDeathMsg = L"Death: " + wscVictim + L" was killed";
 						if(!lstFactionsInflict.size())
 						{
 							uint iSystemID;
@@ -850,6 +850,7 @@ void SpaceObjDestroyed(uint iObject, bool bSolar)
 		uint iType;
 		pub::SpaceObj::GetType(iObject, iType);
 
+		//Adjust reputation from destruction
 		if(lstFactionsInflict.size())
 		{
 			float fHealth, fMaxHealth, fRepChange;
@@ -933,9 +934,14 @@ void SpaceObjDestroyed(uint iObject, bool bSolar)
 					else
 						wscDeathMsg = L"A " + wscDeathMsg;
 					if(iIDSName)
-						wscDeathMsg += L' ' + HkGetWStringFromIDS(iIDSName) + L" was destroyed";
+					{
+						wstring wscGroupName = HkGetWStringFromIDS(iIDSName);
+						if(wscGroupName[wscGroupName.length()-1] == L's')
+							wscGroupName = wscGroupName.substr(0, wscGroupName.length()-1);
+						wscDeathMsg += L' ' + wscGroupName + L" was killed";
+					}
 					else
-						wscDeathMsg +=L" ship was destroyed";
+						wscDeathMsg +=L" ship was killed";
 				}
 			}
 			uint iSystemID;
