@@ -16,4 +16,3 @@ Cnd_Timer = 2
 ;Act_NNIds = 458953, HISTORY ;Very Easy Mode
 ;Act_NNIds = 458893, HISTORY ;Easy Mode
 ;Act_NNIds = 459101, HISTORY
-

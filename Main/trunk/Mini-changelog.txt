@@ -33,14 +33,20 @@
 -- Tweaked behavior of the Wasp / Nomad Cruise Disruptor and the Hornet. The Wasp / NCD is now a very agile, short-range CD missiles (4.5km range), while the Hornet is a slower, long-range CD missile (8.5km range) with a wide area of effect.
 -- The debris option is no longer marked as "slightly unstable", as it appears RC128's stability fix did the trick.
 -- Increased the amount of shielding given from a Shield Battery to 1000, from 750.
--- Lowered the resolution of Why485's High-End FX smoke effect, which should result in a large FPS gain on mid-range computers using High-End FX.
+-- Lowered the resolution of Why485's High-End FX smoke effect, which should result in a large FPS gain with minimal quality loss when using High-End FX.
+-- AI weapon usage has been slightly scaled back to ease up the difficulty a little. AI Bots remain unchanged.
+-- Commodities can no longer be traded in Alaska and subsequently linked systems, to correct trading exploits (and if you eject Commodities in these systems, they will be placed back in your hold). All other item types (normal items, rares, etc.) can all still be traded normally.
+-- Added four contrails to the Serafina, since it was lacking 'em entirely.
+-- Stations, Weapons Platforms, etc. all affect your reputation when killed - the amount of reputation drop is multiplied by the severity of the attack and the importance of the target - killing common NPCs is worth a fair amount of reputation, killing Players / AI Bots is worth a large amount of reputation, and killing Stations / WPs is worth a huge amount of reputation. If you single-handedly slaugter a Station, you will go from full friendly to nearly hostile for that faction (with relevant reputation changes applied to allies etc. as well)
+-- Reputation drop is now roughly based off the formula "inflicted damage on target / total damage on target" - meaning, if you only inflict 20% of the damage to a ship, you will only receive 20% of the full rep drop - but if you single-handedly butcher a target, you will receive a full rep drop (roughly 22.5% of the rep bar depending on target).
+-- Death messages are now shown when Stations, AI Wingmen, and AI Bots are killed - "A Navy Patriot was killed by a 3 Rogue ships with guns and missiles / torpedoes.", "foxBot was killed by DeathFlier with guns.", etc.
+-- Bribes for Nomads are now only offered by the robot in Nomad Buoys - you can no longer take the bribe on the neutral easter-egg planets.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- Serafina needs contrails
+-- take bribes out of easter-egg thingies
 -- FLSM script the PBase thingies
--- Prevent commodities from being traded / dropped at all in Alaska, to correct trading exploits. (this will require some FLHook work)
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- moors for AI ships? - it works as expected, however I'm not totally sure I like it
 -- Implement the new AI Bots (will likely end up with 30+ AI Bots!)

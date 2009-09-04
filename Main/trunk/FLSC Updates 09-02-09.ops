@@ -3163,3 +3163,27 @@ Type = AddEquipmentToHp
 Var1 = te_darkfighter
 Var2 = HpThruster03
 Var3 = ge_s_thruster_00
+
+[Operation]
+Type = AddEquipmentToHp
+Var1 = re_serafina
+Var2 = HpContrail01
+Var3 = contrail01
+
+[Operation]
+Type = AddEquipmentToHp
+Var1 = re_serafina
+Var2 = HpContrail02
+Var3 = contrail01
+
+[Operation]
+Type = AddEquipmentToHp
+Var1 = re_serafina
+Var2 = HpContrail03
+Var3 = contrail01
+
+[Operation]
+Type = AddEquipmentToHp
+Var1 = re_serafina
+Var2 = HpContrail04
+Var3 = contrail01

@@ -1,6 +1,6 @@
 F L   H O O K
 =============
-version: 1.6.5
+version: 1.6.6
 Based on FLHook v1.5.5 with w0dk4's cloak code
 
 NOTE: If you wish to use this version of FLHook in place of your standard 1.5.5,
@@ -325,10 +325,10 @@ chat from=<player> id=<client-id> type=<type> [to=<recipient> idto=<recipient-cl
   <recipient>/<recipient-client-id>: only sent when type=player
   <text>: guess ...
 
-kill victim=<player> type=<type> [by=<killer>]
-  <player>: charname of the victim
-  <type>: selfkill,player,npc,suicide
-  <killer>: charname of the killer
+kill victim=<player> by=<killer1>[,<killer2]... cause=<killer1's weapons>[;killer2's weapons]...
+  <player>: charname of the victim.
+  <killerx>: charname/faction(if NPC) of the killer; sorted from highest to lowest damage.
+  <killerx's weapons>: comma separated list of weapons used to kill player.  Weapons can be guns, missiles (only if CombineMissilesTorps is set to no), mines, torpedoes (only if CombineMissilesTorps is set to no), missiles/torpedoes (only if CombineMissilesTorps is set to yes), or collisions.  Sorted from highest to lowest damage.
 
 login char=<player> accountdirname=<dirname> id=<client-id> ip=<ip>
   occurs when player selects a character in the character-select menu
@@ -612,6 +612,23 @@ downloaded from http://www.schneier.com/blowfish-download.html
 ================================================================================
 == CHANGELOG ===================================================================
 ================================================================================
+
+1.6.6 (unofficial)
+- Re-implemented the kill event (for the socket eventmode)
+- Autobuy checks if the number of nanobots and shield batteries in the template are greater than allowed for the ship
+- Excess nanobots and shield batteries are sold after buying a new ship
+- Added setting to give winners in PvP part of the loser's death penalty
+- Changed cash printouts in DP code to use ToMoneyStr for better formatting
+- Repair guns now work on external equipment on both NPCs and players
+- Scripting no longer stacks instances in multiplayer
+- Major reworking of config file organization into multiple files (still supports reading everything from FLHook.ini, however)
+  - If you're lazy and don't want to reorganize your config, simply merge the settings in [Death] into [General]
+- Added list of systems where items of a certain type cannot exist in space or be traded
+- addcargom can now be used on players in space, since it actually seems to work fine on them
+- BaseDestroyed socket event code taken from the plugin version for better performance
+- PvPRepChangeDeath is used as it should instead of object_desctruction.
+- Added support for NPC death messages, see NPCDeathMessages in death.ini under [General].
+- Added support for reputation drops from NPC deaths, see [NPCDeathRep] in death.ini.
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)
