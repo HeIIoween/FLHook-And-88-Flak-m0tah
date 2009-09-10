@@ -1,5 +1,5 @@
 <script>
-<header name="88 Flak Version 1.27 AI Companion RC129 09/03/09" savesafe="true" exclusive="false">
+<header name="88 Flak Version 1.27 AI Companion RC129 09/08/09" savesafe="true" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -94,6 +94,58 @@ This will not work with normal Freelancer.
 </item>
 <item name="M0tahBot (Progenator: A-)">
 </item>
+<item name="SnakePlisskin (Anubis: B)">
+</item>
+<item name="SushiBot (Dragon: B)">
+</item>
+<item name="Lonestar (Serafina: B)">
+</item>
+<item name="SSGTSolaBot (Centurion: B)">
+</item>
+<item name="SSGTSolaBot (Transport: B+)">
+</item>
+<item name="AshBot (Lifeboat: B+)">
+</item>
+<item name="NairaX (Pursuit Dagger: B)">
+</item>
+<item name="KillerJaguarBot (Red Dragon: B)">
+</item>
+<item name="StarAvenger (Banshee: B)">
+</item>
+<item name="He||oween (Sabre: B)">
+</item>
+<item name="He||oween (Mule: B+)">
+</item>
+<item name="StilBot (Falcon (Fire): B)">
+</item>
+<item name="StilBot (Falcon (Ice): B)">
+</item>
+<item name="DofodBot (Cavalier: B)">
+</item>
+<item name="DofodBot (Prison Liner: B)">
+</item>
+<item name="PetBot (Hydra: B+)">
+</item>
+<item name="Why484andNineTenths (Starstinger: B)">
+</item>
+<item name="Why484andNineTenths (Hawk: B)">
+</item>
+<item name="SonaBot (Clydesdale: B)">
+</item>
+<item name="DarkWraith007 (Drake: B)">
+</item>
+<item name="DarkWraith007 (Eagle: B+)">
+</item>
+<item name="SojournBot (Rheinland Cruiser: A-)">
+</item>
+<item name="SojournBot (Stiletto: B)">
+</item>
+<item name="HonkBot (Kusari Battleship: A)">
+</item>
+<item name="HonkBot (Piranha: B)">
+</item>
+<item name="Borg? (Prison Station: A)">
+</item>
 <item id="101" name="Character-Generated Bot 1">
 </item>
 <item id="102" name="Character-Generated Bot 2">
@@ -174,6 +226,58 @@ This will not work with normal Freelancer.
 <item name="M0tahBot (Patriot: B)">
 </item>
 <item name="M0tahBot (Progenator: A-)">
+</item>
+<item name="SnakePlisskin (Anubis: B)">
+</item>
+<item name="SushiBot (Dragon: B)">
+</item>
+<item name="Lonestar (Serafina: B)">
+</item>
+<item name="SSGTSolaBot (Centurion: B)">
+</item>
+<item name="SSGTSolaBot (Transport: B+)">
+</item>
+<item name="AshBot (Lifeboat: B+)">
+</item>
+<item name="NairaX (Pursuit Dagger: B)">
+</item>
+<item name="KillerJaguarBot (Red Dragon: B)">
+</item>
+<item name="StarAvenger (Banshee: B)">
+</item>
+<item name="He||oween (Sabre: B)">
+</item>
+<item name="He||oween (Mule: B+)">
+</item>
+<item name="StilBot (Falcon (Fire): B)">
+</item>
+<item name="StilBot (Falcon (Ice): B)">
+</item>
+<item name="DofodBot (Cavalier: B)">
+</item>
+<item name="DofodBot (Prison Liner: B)">
+</item>
+<item name="PetBot (Hydra: B+)">
+</item>
+<item name="Why484andNineTenths (Starstinger: B)">
+</item>
+<item name="Why484andNineTenths (Hawk: B)">
+</item>
+<item name="SonaBot (Clydesdale: B)">
+</item>
+<item name="DarkWraith007 (Drake: B)">
+</item>
+<item name="DarkWraith007 (Eagle: B+)">
+</item>
+<item name="SojournBot (Rheinland Cruiser: A-)">
+</item>
+<item name="SojournBot (Stiletto: B)">
+</item>
+<item name="HonkBot (Kusari Battleship: A)">
+</item>
+<item name="HonkBot (Piranha: B)">
+</item>
+<item name="Borg? (Prison Station: A)">
 </item>
 <item id="101" name="Character-Generated Bot 1">
 </item>
@@ -256,6 +360,58 @@ This will not work with normal Freelancer.
 </item>
 <item name="M0tahBot (Progenator: A-)">
 </item>
+<item name="SnakePlisskin (Anubis: B)">
+</item>
+<item name="SushiBot (Dragon: B)">
+</item>
+<item name="Lonestar (Serafina: B)">
+</item>
+<item name="SSGTSolaBot (Centurion: B)">
+</item>
+<item name="SSGTSolaBot (Transport: B+)">
+</item>
+<item name="AshBot (Lifeboat: B+)">
+</item>
+<item name="NairaX (Pursuit Dagger: B)">
+</item>
+<item name="KillerJaguarBot (Red Dragon: B)">
+</item>
+<item name="StarAvenger (Banshee: B)">
+</item>
+<item name="He||oween (Sabre: B)">
+</item>
+<item name="He||oween (Mule: B+)">
+</item>
+<item name="StilBot (Falcon (Fire): B)">
+</item>
+<item name="StilBot (Falcon (Ice): B)">
+</item>
+<item name="DofodBot (Cavalier: B)">
+</item>
+<item name="DofodBot (Prison Liner: B)">
+</item>
+<item name="PetBot (Hydra: B+)">
+</item>
+<item name="Why484andNineTenths (Starstinger: B)">
+</item>
+<item name="Why484andNineTenths (Hawk: B)">
+</item>
+<item name="SonaBot (Clydesdale: B)">
+</item>
+<item name="DarkWraith007 (Drake: B)">
+</item>
+<item name="DarkWraith007 (Eagle: B+)">
+</item>
+<item name="SojournBot (Rheinland Cruiser: A-)">
+</item>
+<item name="SojournBot (Stiletto: B)">
+</item>
+<item name="HonkBot (Kusari Battleship: A)">
+</item>
+<item name="HonkBot (Piranha: B)">
+</item>
+<item name="Borg? (Prison Station: A)">
+</item>
 <item id="101" name="Character-Generated Bot 1">
 </item>
 <item id="102" name="Character-Generated Bot 2">
@@ -336,6 +492,58 @@ This will not work with normal Freelancer.
 <item name="M0tahBot (Patriot: B)">
 </item>
 <item name="M0tahBot (Progenator: A-)">
+</item>
+<item name="SnakePlisskin (Anubis: B)">
+</item>
+<item name="SushiBot (Dragon: B)">
+</item>
+<item name="Lonestar (Serafina: B)">
+</item>
+<item name="SSGTSolaBot (Centurion: B)">
+</item>
+<item name="SSGTSolaBot (Transport: B+)">
+</item>
+<item name="AshBot (Lifeboat: B+)">
+</item>
+<item name="NairaX (Pursuit Dagger: B)">
+</item>
+<item name="KillerJaguarBot (Red Dragon: B)">
+</item>
+<item name="StarAvenger (Banshee: B)">
+</item>
+<item name="He||oween (Sabre: B)">
+</item>
+<item name="He||oween (Mule: B+)">
+</item>
+<item name="StilBot (Falcon (Fire): B)">
+</item>
+<item name="StilBot (Falcon (Ice): B)">
+</item>
+<item name="DofodBot (Cavalier: B)">
+</item>
+<item name="DofodBot (Prison Liner: B)">
+</item>
+<item name="PetBot (Hydra: B+)">
+</item>
+<item name="Why484andNineTenths (Starstinger: B)">
+</item>
+<item name="Why484andNineTenths (Hawk: B)">
+</item>
+<item name="SonaBot (Clydesdale: B)">
+</item>
+<item name="DarkWraith007 (Drake: B)">
+</item>
+<item name="DarkWraith007 (Eagle: B+)">
+</item>
+<item name="SojournBot (Rheinland Cruiser: A-)">
+</item>
+<item name="SojournBot (Stiletto: B)">
+</item>
+<item name="HonkBot (Kusari Battleship: A)">
+</item>
+<item name="HonkBot (Piranha: B)">
+</item>
+<item name="Borg? (Prison Station: A)">
 </item>
 <item id="101" name="Character-Generated Bot 1">
 </item>
@@ -791,6 +999,292 @@ make_class = class_bot_M0tahBot
 ship_by_class = 1, 1, sc_M0tahBot2
 pilot_job = capital_wingman_job
 make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:27">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SnakePlisskin
+pilot_job = wingman_job
+make_class = class_bot_SnakePlisskin
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:28">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SushiBot
+pilot_job = wingman_job
+make_class = class_bot_SushiBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:29">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Lonestar
+pilot_job = wingman_job
+make_class = class_bot_Lonestar
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:30">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SolaBot
+pilot_job = wingman_job
+make_class = class_bot_SolaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:31">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SolaBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_SolaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:32">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_AshBot
+pilot_job = wingman_job
+make_class = class_bot_AshBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:33">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_NairaX
+pilot_job = wingman_job
+make_class = class_bot_NairaX
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:34">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KillerJaguarBot2
+pilot_job = wingman_job
+make_class = class_bot_KillerJaguarBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:35">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StarAvenger
+pilot_job = wingman_job
+make_class = class_bot_StarAvenger
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:36">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Helloween
+pilot_job = wingman_job
+make_class = class_bot_Helloween
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:37">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Helloween2
+pilot_job = wingman_job
+make_class = class_bot_Helloween
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:38">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StilBot
+pilot_job = wingman_job
+make_class = class_bot_StilBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:39">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StilBot2
+pilot_job = wingman_job
+make_class = class_bot_StilBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:40">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DofodBot
+pilot_job = wingman_job
+make_class = class_bot_DofodBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:41">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DofodBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_DofodBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:42">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_PetBot
+pilot_job = wingman_job
+make_class = class_bot_PetBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:43">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Why485Bot
+pilot_job = wingman_job
+make_class = class_bot_Why485Bot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:44">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Why485Bot2
+pilot_job = wingman_job
+make_class = class_bot_Why485Bot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:45">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SonaBot2
+pilot_job = wingman_job
+make_class = class_bot_SonaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:46">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkWraith007
+pilot_job = wingman_job
+make_class = class_bot_DarkWraith007
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:47">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkWraith0072
+pilot_job = wingman_job
+make_class = class_bot_DarkWraith007
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:48">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SojournBot
+pilot_job = capital_wingman_job
+make_class = class_bot_SojournBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:49">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SojournBot2
+pilot_job = wingman_job
+make_class = class_bot_SojournBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:50">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HonkBot
+pilot_job = capital_wingman_job
+make_class = class_bot_HonkBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:51">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HonkBot2
+pilot_job = wingman_job
+make_class = class_bot_HonkBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="1:52">
+<dest>
+;BotSlot1
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Borg
+pilot_job = capital_wingman_job
+make_class = class_bot_Borg
 </source>
 </data>
 
@@ -1286,6 +1780,292 @@ make_class = class_bot_M0tahBot
 </source>
 </data>
 
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:27">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SnakePlisskin
+pilot_job = wingman_job
+make_class = class_bot_SnakePlisskin
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:28">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SushiBot
+pilot_job = wingman_job
+make_class = class_bot_SushiBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:29">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Lonestar
+pilot_job = wingman_job
+make_class = class_bot_Lonestar
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:30">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SolaBot
+pilot_job = wingman_job
+make_class = class_bot_SolaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:31">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SolaBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_SolaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:32">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_AshBot
+pilot_job = wingman_job
+make_class = class_bot_AshBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:33">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_NairaX
+pilot_job = wingman_job
+make_class = class_bot_NairaX
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:34">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KillerJaguarBot2
+pilot_job = wingman_job
+make_class = class_bot_KillerJaguarBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:35">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StarAvenger
+pilot_job = wingman_job
+make_class = class_bot_StarAvenger
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:36">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Helloween
+pilot_job = wingman_job
+make_class = class_bot_Helloween
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:37">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Helloween2
+pilot_job = wingman_job
+make_class = class_bot_Helloween
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:38">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StilBot
+pilot_job = wingman_job
+make_class = class_bot_StilBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:39">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StilBot2
+pilot_job = wingman_job
+make_class = class_bot_StilBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:40">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DofodBot
+pilot_job = wingman_job
+make_class = class_bot_DofodBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:41">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DofodBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_DofodBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:42">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_PetBot
+pilot_job = wingman_job
+make_class = class_bot_PetBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:43">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Why485Bot
+pilot_job = wingman_job
+make_class = class_bot_Why485Bot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:44">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Why485Bot2
+pilot_job = wingman_job
+make_class = class_bot_Why485Bot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:45">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SonaBot2
+pilot_job = wingman_job
+make_class = class_bot_SonaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:46">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkWraith007
+pilot_job = wingman_job
+make_class = class_bot_DarkWraith007
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:47">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkWraith0072
+pilot_job = wingman_job
+make_class = class_bot_DarkWraith007
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:48">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SojournBot
+pilot_job = capital_wingman_job
+make_class = class_bot_SojournBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:49">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SojournBot2
+pilot_job = wingman_job
+make_class = class_bot_SojournBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:50">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HonkBot
+pilot_job = capital_wingman_job
+make_class = class_bot_HonkBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:51">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HonkBot2
+pilot_job = wingman_job
+make_class = class_bot_HonkBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:52">
+<dest>
+;BotSlot2
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Borg
+pilot_job = capital_wingman_job
+make_class = class_bot_Borg
+</source>
+</data>
+
 <data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="2:101">
 <dest>
 ;BotSlot2
@@ -1778,6 +2558,292 @@ make_class = class_bot_M0tahBot
 </source>
 </data>
 
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:27">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SnakePlisskin
+pilot_job = wingman_job
+make_class = class_bot_SnakePlisskin
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:28">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SushiBot
+pilot_job = wingman_job
+make_class = class_bot_SushiBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:29">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Lonestar
+pilot_job = wingman_job
+make_class = class_bot_Lonestar
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:30">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SolaBot
+pilot_job = wingman_job
+make_class = class_bot_SolaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:31">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SolaBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_SolaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:32">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_AshBot
+pilot_job = wingman_job
+make_class = class_bot_AshBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:33">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_NairaX
+pilot_job = wingman_job
+make_class = class_bot_NairaX
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:34">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KillerJaguarBot2
+pilot_job = wingman_job
+make_class = class_bot_KillerJaguarBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:35">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StarAvenger
+pilot_job = wingman_job
+make_class = class_bot_StarAvenger
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:36">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Helloween
+pilot_job = wingman_job
+make_class = class_bot_Helloween
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:37">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Helloween2
+pilot_job = wingman_job
+make_class = class_bot_Helloween
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:38">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StilBot
+pilot_job = wingman_job
+make_class = class_bot_StilBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:39">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StilBot2
+pilot_job = wingman_job
+make_class = class_bot_StilBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:40">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DofodBot
+pilot_job = wingman_job
+make_class = class_bot_DofodBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:41">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DofodBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_DofodBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:42">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_PetBot
+pilot_job = wingman_job
+make_class = class_bot_PetBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:43">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Why485Bot
+pilot_job = wingman_job
+make_class = class_bot_Why485Bot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:44">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Why485Bot2
+pilot_job = wingman_job
+make_class = class_bot_Why485Bot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:45">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SonaBot2
+pilot_job = wingman_job
+make_class = class_bot_SonaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:46">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkWraith007
+pilot_job = wingman_job
+make_class = class_bot_DarkWraith007
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:47">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkWraith0072
+pilot_job = wingman_job
+make_class = class_bot_DarkWraith007
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:48">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SojournBot
+pilot_job = capital_wingman_job
+make_class = class_bot_SojournBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:49">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SojournBot2
+pilot_job = wingman_job
+make_class = class_bot_SojournBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:50">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HonkBot
+pilot_job = capital_wingman_job
+make_class = class_bot_HonkBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:51">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HonkBot2
+pilot_job = wingman_job
+make_class = class_bot_HonkBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:52">
+<dest>
+;BotSlot3
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Borg
+pilot_job = capital_wingman_job
+make_class = class_bot_Borg
+</source>
+</data>
+
 <data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="3:101">
 <dest>
 ;BotSlot3
@@ -2267,6 +3333,292 @@ make_class = class_bot_M0tahBot
 ship_by_class = 1, 1, sc_M0tahBot2
 pilot_job = capital_wingman_job
 make_class = class_bot_M0tahBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:27">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SnakePlisskin
+pilot_job = wingman_job
+make_class = class_bot_SnakePlisskin
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:28">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SushiBot
+pilot_job = wingman_job
+make_class = class_bot_SushiBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:29">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Lonestar
+pilot_job = wingman_job
+make_class = class_bot_Lonestar
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:30">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SolaBot
+pilot_job = wingman_job
+make_class = class_bot_SolaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:31">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SolaBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_SolaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:32">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_AshBot
+pilot_job = wingman_job
+make_class = class_bot_AshBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:33">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_NairaX
+pilot_job = wingman_job
+make_class = class_bot_NairaX
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:34">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_KillerJaguarBot2
+pilot_job = wingman_job
+make_class = class_bot_KillerJaguarBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:35">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StarAvenger
+pilot_job = wingman_job
+make_class = class_bot_StarAvenger
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:36">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Helloween
+pilot_job = wingman_job
+make_class = class_bot_Helloween
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:37">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Helloween2
+pilot_job = wingman_job
+make_class = class_bot_Helloween
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:38">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StilBot
+pilot_job = wingman_job
+make_class = class_bot_StilBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:39">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_StilBot2
+pilot_job = wingman_job
+make_class = class_bot_StilBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:40">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DofodBot
+pilot_job = wingman_job
+make_class = class_bot_DofodBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:41">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DofodBot2
+pilot_job = capital_wingman_job
+make_class = class_bot_DofodBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:42">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_PetBot
+pilot_job = wingman_job
+make_class = class_bot_PetBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:43">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Why485Bot
+pilot_job = wingman_job
+make_class = class_bot_Why485Bot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:44">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Why485Bot2
+pilot_job = wingman_job
+make_class = class_bot_Why485Bot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:45">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SonaBot2
+pilot_job = wingman_job
+make_class = class_bot_SonaBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:46">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkWraith007
+pilot_job = wingman_job
+make_class = class_bot_DarkWraith007
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:47">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_DarkWraith0072
+pilot_job = wingman_job
+make_class = class_bot_DarkWraith007
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:48">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SojournBot
+pilot_job = capital_wingman_job
+make_class = class_bot_SojournBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:49">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_SojournBot2
+pilot_job = wingman_job
+make_class = class_bot_SojournBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:50">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HonkBot
+pilot_job = capital_wingman_job
+make_class = class_bot_HonkBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:51">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_HonkBot2
+pilot_job = wingman_job
+make_class = class_bot_HonkBot
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="4:52">
+<dest>
+;BotSlot4
+</dest>
+<source>
+ship_by_class = 1, 1, sc_Borg
+pilot_job = capital_wingman_job
+make_class = class_bot_Borg
 </source>
 </data>
 

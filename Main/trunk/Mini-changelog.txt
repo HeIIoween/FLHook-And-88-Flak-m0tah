@@ -41,10 +41,13 @@
 -- Reputation drop is now roughly based off the formula "inflicted damage on target / total damage on target" - meaning, if you only inflict 20% of the damage to a ship, you will only receive 20% of the full rep drop - but if you single-handedly butcher a target, you will receive a full rep drop (roughly 22.5% of the rep bar depending on target).
 -- Death messages are now shown when Stations, AI Wingmen, and AI Bots are killed - "A Navy Patriot was killed by a 3 Rogue ships with guns and missiles / torpedoes.", "foxBot was killed by DeathFlier with guns.", etc.
 -- Bribes for Nomads are now only offered by the robot in Nomad Buoys - you can no longer take the bribe on the neutral easter-egg planets.
+-- Added 26 AI Bots to the AI Companion roster, increasing the number of selectable AI Companions to 52 different bots.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
+-- Give CDs 45* max rotation
+-- PBases have awful ship placement
 -- take bribes out of easter-egg thingies
 -- FLSM script the PBase thingies
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
