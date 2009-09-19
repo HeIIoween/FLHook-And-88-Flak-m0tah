@@ -181,16 +181,16 @@ map<uint, float> set_mapShipRepair;
 map<uint, float> set_mapItemRepair;
 
 //Items to automount upon ship purchase
-map<uint, uint> set_mapAutoMount;
+set<uint> set_setAutoMount;
 
 //Items to not let exist in space
-map<uint, uint> set_mapNoSpaceItems;
+set<uint> set_setNoSpaceItems;
 
 //Items to automatically mark when spawned
-map<uint, uint> set_mapAutoMark;
+set<uint> set_setAutoMark;
 
 //Equipment to redirect damage to hull
-map<uint, uint> set_mapEquipReDam;
+set<uint> set_setEquipReDam;
 
 //Systems to prevent dropping/trading items in
 map<uint, map<Archetype::AClassType, char> > set_mapSysItemRestrictions;
@@ -512,35 +512,35 @@ void LoadSettings()
 		}
 		//Items to automount upon ship purchase
 		IniGetSection(set_scCfgItemsFile, "AutoMount", lstValues);
-		set_mapAutoMount.clear();
+		set_setAutoMount.clear();
 		foreach(lstValues, INISECTIONVALUE, it15)
 		{
 			uint iGoodID = CreateID(Trim(it15->scKey).c_str());
-			set_mapAutoMount[iGoodID] = iGoodID;
+			set_setAutoMount.insert(iGoodID);
 		}
 		//Items to not let exist in space
 		IniGetSection(set_scCfgItemsFile, "NoSpaceItems", lstValues);
-		set_mapNoSpaceItems.clear();
+		set_setNoSpaceItems.clear();
 		foreach(lstValues, INISECTIONVALUE, it16)
 		{
 			uint iGoodID = CreateID(Trim(it16->scKey).c_str());
-			set_mapNoSpaceItems[iGoodID] = iGoodID;
+			set_setNoSpaceItems.insert(iGoodID);
 		}
 		//Items to automatically mark when spawned
 		IniGetSection(set_scCfgItemsFile, "AutoMarkItems", lstValues);
-		set_mapAutoMark.clear();
+		set_setAutoMark.clear();
 		foreach(lstValues, INISECTIONVALUE, it17)
 		{
 			uint iGoodID = CreateID(Trim(it17->scKey).c_str());
-			set_mapAutoMark[iGoodID] = iGoodID;
+			set_setAutoMark.insert(iGoodID);
 		}
 		//Equipment to redirect damage to hull
 		IniGetSection(set_scCfgItemsFile, "EquipmentRedirectDamage", lstValues);
-		set_mapEquipReDam.clear();
+		set_setEquipReDam.clear();
 		foreach(lstValues, INISECTIONVALUE, it18)
 		{
 			uint iEquipID = CreateID(Trim(it18->scKey).c_str());
-			set_mapEquipReDam[iEquipID] = iEquipID;
+			set_setEquipReDam.insert(iEquipID);
 		}
 		//Systems to prevent dropping/trading items in
 		IniGetSection(set_scCfgItemsFile, "SystemItemRestrictions", lstValues);

@@ -740,7 +740,7 @@ void ProcessPendingCommands()
 					SwapBytes(szData, lSize);
 				}
 				if(sc->csock.bUnicode)
-					wscData = (wchar_t*)szData;
+					wscData = wstring((wchar_t*)szData, lSize/2);
 				else
 					wscData = stows(szData);
 

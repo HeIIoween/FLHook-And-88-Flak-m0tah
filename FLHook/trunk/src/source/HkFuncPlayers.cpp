@@ -2191,8 +2191,8 @@ void HkNewShipBought(uint iClientID)
 		}
 		else
 		{
-			map<uint,uint>::iterator mount = set_mapAutoMount.find(cargo->iArchID);
-			if(mount != set_mapAutoMount.end())
+			set<uint>::iterator mount = set_setAutoMount.find(cargo->iArchID);
+			if(mount != set_setAutoMount.end())
 			{
 				pub::Player::RemoveCargo(iClientID, cargo->iID, cargo->iCount);
 				HkAddCargo(ARG_CLIENTID(iClientID), cargo->iArchID, "internal", false);

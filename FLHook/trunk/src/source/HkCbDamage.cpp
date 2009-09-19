@@ -114,13 +114,33 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 		//if(dmgList->is_inflictor_a_player()) 
 			//PrintUniverseText(L"p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id());
 		//if(dmgList->is_inflictor_a_player()) {PrintUniverseText(L"%f", p2);}
-		
+
+		if(!iDmgToSpaceID && iDmgTo)
+			pub::Player::GetShip(iDmgTo, iDmgToSpaceID);
+				
 		if(!dmgList->get_inflictor_owner_player() && !dmgList->get_inflictor_id())
 		{
 			FLOAT_WRAP fw = FLOAT_WRAP(p2);
 			if(set_btSupressHealth->Find(&fw))
 			{
 				bAddDmgEntry = false;
+			}
+		}
+
+		//Check if damage should be redirected to hull
+		CEquip *equip = 0;
+		if(iDmgToSpaceID && p1 != 1)
+		{
+			CEquipManager *equipment = HkGetEquipMan(iDmgToSpaceID);
+			equip = equipment->FindByID(p1);
+			set<uint>::iterator equipIter = set_setEquipReDam.find(equip->EquipArch()->iEquipID);
+			if(equipIter != set_setEquipReDam.end())
+			{
+				float fHealth, fHullHealth, fMaxHullHealth;
+				pub::SpaceObj::GetHealth(iDmgToSpaceID, fHullHealth, fMaxHullHealth);
+				fHealth = equip->GetHitPoints();
+				p2 = fHullHealth - (fHealth - p2);
+				p1 = 1;
 			}
 		}
 
@@ -145,8 +165,8 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 					{
 						if(iDmgToSpaceID)
 						{
-							CEquipManager *equipment = HkGetEquipMan(iDmgToSpaceID);
-							CEquip *equip = equipment->FindByID(p1);
+							if(!equip)
+								equip = HkGetEquipMan(iDmgToSpaceID)->FindByID(p1);
 							float fMaxHP = equip->GetMaxHitPoints();
 							p2 = g_fRepairDamage + equip->GetHitPoints();
 							if(p2 > fMaxHP)
@@ -187,8 +207,6 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 				if(p1 == 1)
 				{
 					float fPrevHealth, fMaxHealth;
-					if(!iDmgToSpaceID)
-						pub::Player::GetShip(iDmgTo, iDmgToSpaceID);
 					pub::SpaceObj::GetHealth(iDmgToSpaceID, fPrevHealth, fMaxHealth);
 					DAMAGE_INFO dmgInfo;
 					dmgInfo.iInflictor = iInflictor;
@@ -205,22 +223,17 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 
 				if(iType & set_iNPCDeathType)
 				{
-					float fPrevHealth, fMaxHealth;
-					pub::SpaceObj::GetHealth(iDmgToSpaceID, fPrevHealth, fMaxHealth);
-					DAMAGE_INFO dmgInfo;
-					dmgInfo.iInflictor = iInflictor;
-					dmgInfo.iCause = dmgList->get_cause();
-					dmgInfo.fDamage = fPrevHealth - p2;
-					map<uint, list<DAMAGE_INFO> >::iterator lstDmgRec = mapSpaceObjDmgRec.find(iDmgToSpaceID);
-					if(lstDmgRec != mapSpaceObjDmgRec.end())
+					DamageCause iCause = dmgList->get_cause();
+					if(iCause != DC_HOOK)
 					{
-						lstDmgRec->second.push_back(dmgInfo);
-					}
-					else
-					{
-						list<DAMAGE_INFO> lstDmgInfo;
-						lstDmgInfo.push_back(dmgInfo);
-						mapSpaceObjDmgRec[iDmgToSpaceID] = lstDmgInfo;
+						float fPrevHealth, fMaxHealth;
+						pub::SpaceObj::GetHealth(iDmgToSpaceID, fPrevHealth, fMaxHealth);
+						DAMAGE_INFO dmgInfo;
+						dmgInfo.iInflictor = iInflictor;
+						dmgInfo.iCause = iCause;
+						dmgInfo.fDamage = fPrevHealth - p2;
+						pair< map<uint, list<DAMAGE_INFO> >::iterator, bool> findSpaceObj = mapSpaceObjDmgRec.insert(make_pair(iDmgToSpaceID, list<DAMAGE_INFO>()));
+						findSpaceObj.first->second.push_back(dmgInfo);
 					}
 					if(p2 == 0 && iDmgToSpaceID / 1000000000)
 					{
@@ -273,6 +286,7 @@ Called when ship was damaged
 **************************************************************************************************************/
 
 FARPROC fpOldGeneralDmg;
+FARPROC fpOldOtherDmg;
 
 void __stdcall HkCb_GeneralDmg(char *szECX)
 {
@@ -300,6 +314,19 @@ __declspec(naked) void _HkCb_GeneralDmg()
 		jmp [fpOldGeneralDmg]
 	}
 }
+
+__declspec(naked) void _HkCb_OtherDmg()
+{
+	__asm
+	{
+		push ecx
+		push ecx
+		call HkCb_GeneralDmg
+		pop ecx
+		jmp [fpOldOtherDmg]
+	}
+}
+
 
 /**************************************************************************************************************
 Called when ship was damaged

@@ -521,17 +521,33 @@ void HkTimerSpaceObjMark()
 list<DELAY_MARK> g_lstDelayedMarks;
 void HkTimerMarkDelay()
 {
+	if(!g_lstDelayedMarks.size())
+		return;
+
+	float fMaxDistance = *(float*)SRV_ADDR(0x86AF0); //"square of player disappear distance in MP"
 	mstime tmTimeNow = timeInMS();
 	for(list<DELAY_MARK>::iterator mark = g_lstDelayedMarks.begin(); mark != g_lstDelayedMarks.end(); )
 	{
 		if(tmTimeNow-mark->time > 50)
 		{
+			Matrix mTemp;
+			Vector vItem, vPlayer;
+			pub::SpaceObj::GetLocation(mark->iObj, vItem, mTemp);
+			uint iItemSystem;
+			pub::SpaceObj::GetSystem(mark->iObj, iItemSystem);
 			// for all players
 			struct PlayerData *pPD = 0;
 			while(pPD = Players.traverse_active(pPD))
 			{
 				uint iClientID = HkGetClientIdFromPD(pPD);
-				HkMarkObject(iClientID, mark->iObj);
+				if(Players[iClientID].iSystemID == iItemSystem)
+				{
+					pub::SpaceObj::GetLocation(Players[iClientID].iSpaceObjID, vPlayer, mTemp);
+					if(HkDistance3D(vPlayer, vItem) <= fMaxDistance)
+					{
+						HkMarkObject(iClientID, mark->iObj);
+					}
+				}
 			}
 			mark = g_lstDelayedMarks.erase(mark);
 		}

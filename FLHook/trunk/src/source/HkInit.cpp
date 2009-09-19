@@ -15,6 +15,9 @@ PATCH_INFO piServerDLL =
 		{0x6D653F4,		&_HkCb_GeneralDmg,							4, &fpOldGeneralDmg,			false},
 		{0x6D672CC,		&_HkCb_GeneralDmg,							4, 0,							false},
 		{0x6D6761C,		&_HkCb_GeneralDmg,							4, 0,							false},
+		{0x6D65454,		&_HkCb_OtherDmg,							4, &fpOldOtherDmg,				false},
+		{0x6D6732C,		&_HkCb_OtherDmg,							4, 0,							false},
+		{0x6D6767C,		&_HkCb_OtherDmg,							4, 0,							false},
 		{0x6D67668,		&_HkCb_NonGunWeaponHitsBase,				4, &fpOldNonGunWeaponHitsBase,	false},
 		{0x6D6420C,     &_HkCb_LaunchPos,							4, &fpOldLaunchPos,				false},
 		

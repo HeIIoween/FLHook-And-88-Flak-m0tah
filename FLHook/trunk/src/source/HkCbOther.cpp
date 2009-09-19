@@ -196,8 +196,8 @@ bool __cdecl _SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDun
 {
 	//PrintUniverseText(L"Spawned %u " + HkGetWStringFromIDS(id->eqEquip->iIDSName), id->iNum);
 	try{
-		map<uint,uint>::iterator item = set_mapNoSpaceItems.find(id->eqEquip->iEquipID);
-		if(item != set_mapNoSpaceItems.end())
+		set<uint>::iterator item = set_setNoSpaceItems.find(id->eqEquip->iEquipID);
+		if(item != set_setNoSpaceItems.end())
 		{
 			float fHealth;
 			pub::SpaceObj::GetRelativeHealth(iShip, fHealth);
@@ -229,8 +229,8 @@ bool __cdecl _SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDun
 				return false;
 			}
 		}
-		item = set_mapAutoMark.find(id->eqEquip->iEquipID);
-		if(item != set_mapAutoMark.end())
+		item = set_setAutoMark.find(id->eqEquip->iEquipID);
+		if(item != set_setAutoMark.end())
 		{
 			mstime tmTimeNow = timeInMS();
 			DELAY_MARK dm;

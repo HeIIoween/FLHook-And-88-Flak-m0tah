@@ -11,6 +11,7 @@
 #include <list>
 #include <vector>
 #include <map>
+#include <set>
 using namespace std;
 
 // defines
@@ -18,8 +19,9 @@ using namespace std;
 
 #define TIME_UPDATE 50
 #define IMPORT __declspec(dllimport)
-#define foreach(lst, type, var) for(list<type>::iterator var = lst.begin(); (var != lst.end()); var++)
-#define foreachreverse(lst, type, var) for(list<type>::reverse_iterator var = lst.rbegin(); (var != lst.rend()); var++)
+#define COMMA , //So you can pass templated types in type
+#define foreach(lst, type, var) for(list< type >::iterator var = lst.begin(); (var != lst.end()); var++)
+#define foreachreverse(lst, type, var) for(list< type >::reverse_iterator var = lst.rbegin(); (var != lst.rend()); var++)
 #define LOG_ENTER() { if(set_iDebug >= 3) AddLog(__FUNCTION__ " stepin"); }
 #define LOG_RETURN(a) { if(set_iDebug >= 3) AddLog(__FUNCTION__ " return: " #a); return a; }
 #define LOG_RETURN_S(a) { \
@@ -432,13 +434,13 @@ extern BinaryTree<ITEM_RESTRICT> *set_btItemRestrictions;
 extern map<uint, float> set_mapShipRepair;
 extern map<uint, float> set_mapItemRepair;
 
-extern map<uint, uint> set_mapAutoMount;
+extern set<uint> set_setAutoMount;
 
-extern map<uint, uint> set_mapNoSpaceItems;
+extern set<uint> set_setNoSpaceItems;
 
-extern map<uint, uint> set_mapAutoMark;
+extern set<uint> set_setAutoMark;
 
-extern map<uint, uint> set_mapEquipReDam;
+extern set<uint> set_setEquipReDam;
 
 extern map<uint, float> set_mapNPCDeathRep;
 extern uint set_iNPCDeathMessages;

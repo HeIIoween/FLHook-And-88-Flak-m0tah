@@ -873,19 +873,19 @@ void SpaceObjDestroyed(uint iObject, bool bSolar)
 				}
 				else
 				{
-					map<uint, float> mapClientIDs;
+					list< pair<uint, float> > lstTotalDamage;
 					float fTotalDamage = 0.0f;
 					foreach(lstFactionsInflict, fFACTION_INFLICTOR, inflictInfo)
 					{
 						if(!inflictInfo->iNumShips) //is player
 						{
-							mapClientIDs[-lstFactionsInflict.back().iInflictor] = inflictInfo->fTotalDamage;
+							lstTotalDamage.push_back(make_pair(-lstFactionsInflict.back().iInflictor, inflictInfo->fTotalDamage));
 						}
 						fTotalDamage += inflictInfo->fTotalDamage;
 					}
-					for(map<uint, float>::iterator iterClient = mapClientIDs.begin(); iterClient != mapClientIDs.end(); iterClient++)
+					foreach(lstTotalDamage, pair<uint COMMA float>, itDmg)
 					{
-						HkSetRepRelative(ARG_CLIENTID(iterClient->first), iDeadRepGroupID, fRepChange * (iterClient->second / fTotalDamage), false);
+						HkSetRepRelative(ARG_CLIENTID(itDmg->first), iDeadRepGroupID, fRepChange * (itDmg->second / fTotalDamage), false);
 					}
 				}
 			}

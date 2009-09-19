@@ -831,6 +831,7 @@ extern map<uint, list<DAMAGE_INFO> > mapSpaceObjDmgRec;
 void _HookMissileTorpHit();
 void _HkCb_AddDmgEntry();
 void _HkCb_GeneralDmg();
+void _HkCb_OtherDmg();
 bool AllowPlayerDamage(uint iClientID, uint iClientIDTarget);
 void _HkCb_NonGunWeaponHitsBase();
 extern FARPROC fpOldNonGunWeaponHitsBase;
@@ -937,6 +938,7 @@ extern bool g_bMsgU;
 extern FARPROC fpOldShipDestroyed;
 extern FARPROC fpOldMissileTorpHit;
 extern FARPROC fpOldGeneralDmg;
+extern FARPROC fpOldOtherDmg;
 extern FARPROC fpOldLaunchPos;
 
 extern CDPClientProxy **g_cClientProxyArray;
