@@ -671,10 +671,9 @@ Act_ActTrig = foxBot_JumpFix_Wait
 [Trigger]
 nickname = foxBot_JumpFix_Pull
 system = any
-Cnd_Timer = 1
+Cnd_Timer = 2
 Act_DeactTrig = foxBot_JumpFix_Wait
 Act_Destroy = foxBot, EXPLODE
-Act_ActTrig = foxBot_JumpFix
 
 [Trigger]
 nickname = foxBot_JumpFix_Wait
@@ -989,10 +988,9 @@ Act_ActTrig = KittBot_JumpFix_Wait
 [Trigger]
 nickname = KittBot_JumpFix_Pull
 system = any
-Cnd_Timer = 1
+Cnd_Timer = 2
 Act_DeactTrig = KittBot_JumpFix_Wait
 Act_Destroy = KittBot, EXPLODE
-Act_ActTrig = KittBot_JumpFix
 
 [Trigger]
 nickname = KittBot_JumpFix_Wait
@@ -1307,10 +1305,9 @@ Act_ActTrig = Wo3dy_JumpFix_Wait
 [Trigger]
 nickname = Wo3dy_JumpFix_Pull
 system = any
-Cnd_Timer = 1
+Cnd_Timer = 2
 Act_DeactTrig = Wo3dy_JumpFix_Wait
 Act_Destroy = Wo3dy, EXPLODE
-Act_ActTrig = Wo3dy_JumpFix
 
 [Trigger]
 nickname = Wo3dy_JumpFix_Wait
@@ -1625,10 +1622,9 @@ Act_ActTrig = ChipBot_JumpFix_Wait
 [Trigger]
 nickname = ChipBot_JumpFix_Pull
 system = any
-Cnd_Timer = 1
+Cnd_Timer = 2
 Act_DeactTrig = ChipBot_JumpFix_Wait
 Act_Destroy = ChipBot, EXPLODE
-Act_ActTrig = ChipBot_JumpFix
 
 [Trigger]
 nickname = ChipBot_JumpFix_Wait

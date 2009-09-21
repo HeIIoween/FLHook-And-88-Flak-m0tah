@@ -44,10 +44,12 @@
 -- Added 26 AI Bots to the AI Companion roster, increasing the number of selectable AI Companions to 30 unique bots spannning a total of 52 different loadout selections to add to your AI Companion squad.
 -- 88 Flak ST music is now handled in a seperate music_st.ini activated by the ST, which will stop "Missing Sound File" errors when the ST is not activated.
 -- All 30 unique bots now have individual bot mini-factions and can be seen roaming the universe.
+-- Certain AI Bots now occupy their time trading various goods.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
+-- some change I knew I'd forget (I already nailed bot trading..)
 -- make sure kill_token still drops from NPCs due to NoSpaceItems
 -- PBases have awful ship placement
 -- FLSM script the PBase thingies
