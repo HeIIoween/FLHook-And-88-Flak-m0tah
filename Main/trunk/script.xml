@@ -1,5 +1,5 @@
 <script>
-<header name="88 Flak Version 1.27 RC129 09/08/09" savesafe="false" exclusive="false">
+<header name="88 Flak Version 1.27 RC129 09/20/09" savesafe="false" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -4962,12 +4962,31 @@ house = 0, KittBot_grp
 house = 0, GrimsGreen_grp
 house = 0, Wo3dy_grp
 house = 0, ChipBot_grp
+house = 0, SnakePlisskin_grp
+house = 0, SushiBot_grp
+house = 0, Lonestar_grp
+house = 0, M0tahBot_grp
+house = 0, SolaBot_grp
+house = 0, DofodBot_grp
+house = 0, PetBot_grp
+house = 0, Why485Bot_grp
+house = 0, SonaBot_grp
 house = 0, Trickbot_grp
 house = 0, OutsidersFollowers_grp
 house = 0, DarkMarauderBot_grp
 house = 0, ww2JacobBot_grp
 house = 0, DreadPirateLowsound_grp
+house = 0, AshBot_grp
+house = 0, NairaX_grp
+house = 0, KillerJaguarBot_grp
+house = 0, StarAvenger_grp
+house = 0, Helloween_grp
+house = 0, StilBot_grp
+house = 0, DarkWraith007_grp
+house = 0, SojournBot_grp
+house = 0, HonkBot_grp
 house = -0.9, HowdaDoodeWTF_grp
+house = -0.9, Borg_grp
 </dest>
 <source>
 house = 0, fc_bd_grp
@@ -5024,12 +5043,31 @@ house = 0, KittBot_grp
 house = 0, GrimsGreen_grp
 house = 0, Wo3dy_grp
 house = 0, ChipBot_grp
+house = 0, SnakePlisskin_grp
+house = 0, SushiBot_grp
+house = 0, Lonestar_grp
+house = 0, M0tahBot_grp
+house = 0, SolaBot_grp
+house = 0, DofodBot_grp
+house = 0, PetBot_grp
+house = 0, Why485Bot_grp
+house = 0, SonaBot_grp
 house = 0, Trickbot_grp
 house = 0, OutsidersFollowers_grp
 house = 0, DarkMarauderBot_grp
 house = 0, ww2JacobBot_grp
 house = 0, DreadPirateLowsound_grp
+house = 0, AshBot_grp
+house = 0, NairaX_grp
+house = 0, KillerJaguarBot_grp
+house = 0, StarAvenger_grp
+house = 0, Helloween_grp
+house = 0, StilBot_grp
+house = 0, DarkWraith007_grp
+house = 0, SojournBot_grp
+house = 0, HonkBot_grp
 house = 0, HowdaDoodeWTF_grp
+house = 0, Borg_grp
 </source>
 </data>
 <data file="Exe\newplayer.fl" method="filereplace" numtimes="-1" options="30:1">
@@ -5088,12 +5126,31 @@ house = 0, KittBot_grp
 house = 0, GrimsGreen_grp
 house = 0, Wo3dy_grp
 house = 0, ChipBot_grp
+house = 0, SnakePlisskin_grp
+house = 0, SushiBot_grp
+house = 0, Lonestar_grp
+house = 0, M0tahBot_grp
+house = 0, SolaBot_grp
+house = 0, DofodBot_grp
+house = 0, PetBot_grp
+house = 0, Why485Bot_grp
+house = 0, SonaBot_grp
 house = 0, Trickbot_grp
 house = 0, OutsidersFollowers_grp
 house = 0, DarkMarauderBot_grp
 house = 0, ww2JacobBot_grp
 house = 0, DreadPirateLowsound_grp
+house = 0, AshBot_grp
+house = 0, NairaX_grp
+house = 0, KillerJaguarBot_grp
+house = 0, StarAvenger_grp
+house = 0, Helloween_grp
+house = 0, StilBot_grp
+house = 0, DarkWraith007_grp
+house = 0, SojournBot_grp
+house = 0, HonkBot_grp
 house = -0.9, HowdaDoodeWTF_grp
+house = -0.9, Borg_grp
 </dest>
 <source>
 house = 0, fc_bd_grp
@@ -5150,12 +5207,31 @@ house = 0, KittBot_grp
 house = 0, GrimsGreen_grp
 house = 0, Wo3dy_grp
 house = 0, ChipBot_grp
+house = 0, SnakePlisskin_grp
+house = 0, SushiBot_grp
+house = 0, Lonestar_grp
+house = 0, M0tahBot_grp
+house = 0, SolaBot_grp
+house = 0, DofodBot_grp
+house = 0, PetBot_grp
+house = 0, Why485Bot_grp
+house = 0, SonaBot_grp
 house = 0, Trickbot_grp
 house = 0, OutsidersFollowers_grp
 house = 0, DarkMarauderBot_grp
 house = 0, ww2JacobBot_grp
 house = 0, DreadPirateLowsound_grp
+house = 0, AshBot_grp
+house = 0, NairaX_grp
+house = 0, KillerJaguarBot_grp
+house = 0, StarAvenger_grp
+house = 0, Helloween_grp
+house = 0, StilBot_grp
+house = 0, DarkWraith007_grp
+house = 0, SojournBot_grp
+house = 0, HonkBot_grp
 house = 0, HowdaDoodeWTF_grp
+house = 0, Borg_grp
 </source>
 </data>
 <data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="30:1">

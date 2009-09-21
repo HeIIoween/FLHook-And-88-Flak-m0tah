@@ -36,7 +36,7 @@ voice = tobias
 -- (unlawful) quintaine - NairaX 459082 - Corsairs - Pursuit Dagger - Blue / Purple Guns
 -- (unlawful) walker - KillerJaguarBot 459012 - Unlawful Freelancers - Osiris / Red Dragon - Osiris: pirate turrets?; Red Dragon: bunch of Rogue lasers? Why not.
 -- (unlawful) botzler - StarAvenger 459083 - Xenos - Banshee - Hogosha guns with a BW Engine
--- (unlawful) vonclaussn - He||oween 459084 - Outcast - Sabre / Mule - Sabre: 1xKraken Turret, 4xKraken Type 2, 2xAdv. Debilitator; Mule: 4xPyros Turret Type 2, 2xPyros Type 3, 2xDebilitator
+-- (unlawful) vonclaussn - He||oween 459084 - Outcasts - Sabre / Mule - Sabre: 1xKraken Turret, 4xKraken Type 2, 2xAdv. Debilitator; Mule: 4xPyros Turret Type 2, 2xPyros Type 3, 2xDebilitator
 -- (unlawful) sinclair - StilBot 459081 - Bundschuh - Falcon - Falcon 1: Pirate Engine, Hogosha Weaponry; Falcon 2: Bretonia Engine, Skyrail Weaponry
 
 3rd Batch Requests:
@@ -49,11 +49,11 @@ voice = tobias
 -- (lawful) hakkera - Why484andNineTenths 459089 - Lawful Freelancers - Starstinger / Hawk - Starstinger: Borocco, 3X Angelito, 2X Moonstalker, Pirate engine; Hawk: 2X Catapult, 2X of that 4.00 refire order gun
 -- (lawful) walker - Son'aBot 459016 - Republican Shipping - Sleeper Ship / Clydesdale - Sleepership: 8x pirate station turret, 2x rheinland flak A, 2x rheinland flak B, 4x SmOP missile turret; Clydesdale: Stunpulse MKII on the rear turret, rest are Javelins
 -- (unlawful) juni - DarkWraith007 459090 - Blood Dragons - Drake / Eagle - Advanced Thruster, Advanced CM Dropper, 1x high-class missile, high-class mines; Drake: Hornet CD, 1x Tarantula, 1x Adv. Tarantula, 1x Hellflurry Mk II, 1x Stealthblade Mk I; Eagle: Rh. Engine, Starkiller Torpedo Launcher, 1x Skyblast Turret B, 2x SILVER FIRE, 2x Tizona del Cid, 2x Reaver Mk II
-(unlawful) vonclaussn - SojournBot 459091 - Junkers - Rheinland Cruiser / Stiletto - Rheinland Cruiser: 5x Missile Turret, 2x Def Turret, 1x FG; Stiletto: 2x IMG Guns, 4x Xeno Guns
-(unlawful) botzler - HonkBot 459092 - Red Hessians - Kusari Battleship / Piranha - Kusari Battleship: Flak A/B, Piranha: Pirate Engine, RocketTurd's loadout
+-- (unlawful) vonclaussn - SojournBot 459091 - Junkers - Rheinland Cruiser / Stiletto - Rheinland Cruiser: 5x Missile Turret, 2x Def Turret, 1x FG; Stiletto: 2x IMG Guns, 4x Xeno Guns
+-- (unlawful) botzler - HonkBot 459092 - Red Hessians - Kusari Battleship / Piranha - Kusari Battleship: Flak A/B, Piranha: Pirate Engine, RocketTurd's loadout
 
 Special (Non-Arena Combatants)
-(hostile) none - Borg? 459093 - Boss Faction - Prison Station - All Rheinland Primaries
+-- (hostile) none - Borg? 459093 - Boss Faction - Prison Station - All Rheinland Primaries
 
 New Batch Requests:
 () king

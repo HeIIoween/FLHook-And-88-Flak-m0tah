@@ -1,0 +1,242 @@
+king - foxBot_grp 459010 - Kusari Naval Forces - ku_n_grp
+juni - KittBot_grp 459013 - Liberty Navy - li_n_grp
+orillion - GrimsGreen_grp 459017 - Bounty Hunters Guild - gd_bh_grp
+vonclaussn - Wo3dy_grp 459020 - Rheinland Military - rh_n_grp
+tobias - ChipBot_grp 459035 - Bretonia Armed Forces - br_n_grp
+king - SnakePlisskin_grp 459077 - Lawful Freelancers - gd_lfl_grp
+hakkera - SushiBot_grp 459078 - Kusari State Police - ku_p_grp
+ozu - Lonestar_grp 459079 - Lawful Freelancers - gd_lfl_grp
+orillion - M0tahBot_grp 459080 - DSE - co_me_grp
+tobias - SolaBot_grp 459085 - Interspace Commerce - co_ic_grp
+ozu - DofodBot_grp 459087 - Universal - co_ss_grp
+orillion - PetBot_grp 459088 - Bounty Hunters - gd_bh_grp
+hakkera - Why485Bot_grp 459089 - Lawful Freelancers - gd_lfl_grp
+walker - SonaBot_grp 459016 - Republican Shipping - co_rs_grp
+
+hakkera - Trickbot_grp 459015 - Rogues - fc_lr_grp
+ozu - OutsidersFollowers_grp 459014 - Outcasts - fc_ou_grp
+quintaine - DarkMarauderBot_grp 459037 - Blood Dragons - fc_bd_grp
+walker - ww2JacobBot_grp 459019 - Mollys - fc_m_grp
+botzler - DreadPirateLowsound_grp 459018 - Xenos - fc_x_grp
+juni - AshBot_grp 459086 - Rogues - fc_lr_grp
+quintaine - NairaX_grp 459082 - Corsairs - fc_c_grp
+walker - KillerJaguarBot_grp 459012 - Unlawful Freelancers - fc_pfl_grp
+botzler - StarAvenger_grp 459083 - Xenos - fc_x_grp
+vonclaussn - Helloween_grp 459084 - Outcasts - fc_ou_grp
+sinclair - StilBot_grp 459081 - Bundschuh - fc_b_grp
+juni - DarkWraith007_grp 459090 - Blood Dragons - fc_bd_grp
+vonclaussn - SojournBot_grp 459091 - Junkers - fc_j_grp
+botzler - HonkBot_grp 459092 - Red Hessians - fc_rh_grp
+
+sinclair - HowdaDoodeWTF_grp 459011 - Nomads - fc_n_grp
+none - Borg_grp 459093 - Boss Faction - fc_ouk_grp
+
+[Group]
+nickname = foxBot_grp
+ids_name = 459010
+ids_info = 66198
+ids_short_name = 459010
+rep = ku_n_grp
+
+[Group]
+nickname = KittBot_grp
+ids_name = 459013
+ids_info = 66198
+ids_short_name = 459013
+rep = li_n_grp
+
+[Group]
+nickname = GrimsGreen_grp
+ids_name = 459017
+ids_info = 66198
+ids_short_name = 459017
+rep = gd_bh_grp
+
+[Group]
+nickname = Wo3dy_grp
+ids_name = 459020
+ids_info = 66198
+ids_short_name = 459020
+rep = rh_n_grp
+
+[Group]
+nickname = ChipBot_grp
+ids_name = 459035
+ids_info = 66198
+ids_short_name = 459035
+rep = br_n_grp
+
+[Group]
+nickname = SnakePlisskin_grp
+ids_name = 459077
+ids_info = 66198
+ids_short_name = 459077
+rep = gd_lfl_grp
+
+[Group]
+nickname = SushiBot_grp
+ids_name = 459078
+ids_info = 66198
+ids_short_name = 459078
+rep = ku_p_grp
+
+[Group]
+nickname = Lonestar_grp
+ids_name = 459079
+ids_info = 66198
+ids_short_name = 459079
+rep = gd_lfl_grp
+
+[Group]
+nickname = M0tahBot_grp
+ids_name = 459080
+ids_info = 66198
+ids_short_name = 459080
+rep = co_me_grp
+
+[Group]
+nickname = SolaBot_grp
+ids_name = 459085
+ids_info = 66198
+ids_short_name = 459085
+rep = co_ic_grp
+
+[Group]
+nickname = DofodBot_grp
+ids_name = 459087
+ids_info = 66198
+ids_short_name = 459087
+rep = co_ss_grp
+
+[Group]
+nickname = PetBot_grp
+ids_name = 459088
+ids_info = 66198
+ids_short_name = 459088
+rep = gd_bh_grp
+
+[Group]
+nickname = Why485Bot_grp
+ids_name = 459089
+ids_info = 66198
+ids_short_name = 459089
+rep = gd_lfl_grp
+
+[Group]
+nickname = SonaBot_grp
+ids_name = 459016
+ids_info = 66198
+ids_short_name = 459016
+rep = co_rs_grp
+
+[Group]
+nickname = Trickbot_grp
+ids_name = 459015
+ids_info = 66198
+ids_short_name = 459015
+rep = fc_lr_grp
+
+[Group]
+nickname = OutsidersFollowers_grp
+ids_name = 459014
+ids_info = 66198
+ids_short_name = 459014
+rep = fc_ou_grp
+
+[Group]
+nickname = DarkMarauderBot_grp
+ids_name = 459037
+ids_info = 66198
+ids_short_name = 459037
+rep = fc_bd_grp
+
+[Group]
+nickname = ww2JacobBot_grp
+ids_name = 459019
+ids_info = 66198
+ids_short_name = 459019
+rep = fc_m_grp
+
+[Group]
+nickname = DreadPirateLowsound_grp
+ids_name = 459018
+ids_info = 66198
+ids_short_name = 459018
+rep = fc_x_grp
+
+[Group]
+nickname = AshBot_grp
+ids_name = 459086
+ids_info = 66198
+ids_short_name = 459086
+rep = fc_lr_grp
+
+[Group]
+nickname = NairaX_grp
+ids_name = 459082
+ids_info = 66198
+ids_short_name = 459082
+rep = fc_c_grp
+
+[Group]
+nickname = KillerJaguarBot_grp
+ids_name = 459012
+ids_info = 66198
+ids_short_name = 459012
+rep = fc_pfl_grp
+
+[Group]
+nickname = StarAvenger_grp
+ids_name = 459083
+ids_info = 66198
+ids_short_name = 459083
+rep = fc_x_grp
+
+[Group]
+nickname = Helloween_grp
+ids_name = 459084
+ids_info = 66198
+ids_short_name = 459084
+rep = fc_ou_grp
+
+[Group]
+nickname = StilBot_grp
+ids_name = 459081
+ids_info = 66198
+ids_short_name = 459081
+rep = fc_b_grp
+
+[Group]
+nickname = DarkWraith007_grp
+ids_name = 459090
+ids_info = 66198
+ids_short_name = 459090
+rep = fc_bd_grp
+
+[Group]
+nickname = SojournBot_grp
+ids_name = 459091
+ids_info = 66198
+ids_short_name = 459091
+rep = fc_j_grp
+
+[Group]
+nickname = HonkBot_grp
+ids_name = 459092
+ids_info = 66198
+ids_short_name = 459092
+rep = fc_rh_grp
+
+[Group]
+nickname = HowdaDoodeWTF_grp
+ids_name = 459011
+ids_info = 66198
+ids_short_name = 459011
+rep = fc_n_grp
+
+[Group]
+nickname = Borg_grp
+ids_name = 459093
+ids_info = 66198
+ids_short_name = 459093
+rep = fc_ouk_grp

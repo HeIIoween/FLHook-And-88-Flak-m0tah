@@ -10,7 +10,7 @@
 -- Nomad Fighter weaponry has been buffed. It now deals more damage, and carries a faster firing rate.
 -- Adjustments made to price of various trade ships. The Large Transport / Train & Heavy Lifter, as well as the two Liners, are all $1,000,000 more (adding $50,000 to their Death Penalties). This was done to make trading in a Small Transport / Train - even though they are inferior traders - more worthwhile and cost-effective to pilot as a low-risk trader.
 -- Player-Purchasable bases now correctly sell the Order Shield and Order Thruster (which is needed, as that's one of the few ways to obtain such items).
--- The Faction Tag Removal guy has been turned into a "Mysterious Vendor" (sells all Player-Purchasable Bases).
+-- The Faction Tag Removal guy has been turned into a "Mysterious Vendor" (sells all Player-Purchasable Bases, as well as some other goodies).
 -- Player-Purchasable Base offers now list the system where the PBase you're about to purshase resides.
 -- Challenge systems are now based on a Credit Chip requirement, rather than Kill Tokens. Perhaps everybody's precious cash reserves will actually be useful again. ;)
 -- VHFs can now mount regular weaponry over the CD/Torpedo mount. The power supply, however, has not been increased, so overloading your VHF may not be wise.
@@ -41,21 +41,21 @@
 -- Reputation drop is now roughly based off the formula "inflicted damage on target / total damage on target" - meaning, if you only inflict 20% of the damage to a ship, you will only receive 20% of the full rep drop - but if you single-handedly butcher a target, you will receive a full rep drop (roughly 22.5% of the rep bar depending on target).
 -- Death messages are now shown when Stations, AI Wingmen, and AI Bots are killed - "A Navy Patriot was killed by a 3 Rogue ships with guns and missiles / torpedoes.", "foxBot was killed by DeathFlier with guns.", etc.
 -- Bribes for Nomads are now only offered by the robot in Nomad Buoys - you can no longer take the bribe on the neutral easter-egg planets.
--- Added 26 AI Bots to the AI Companion roster, increasing the number of selectable AI Companions to 52 different bots.
+-- Added 26 AI Bots to the AI Companion roster, increasing the number of selectable AI Companions to 30 unique bots spannning a total of 52 different loadout selections to add to your AI Companion squad.
+-- 88 Flak ST music is now handled in a seperate music_st.ini activated by the ST, which will stop "Missing Sound File" errors when the ST is not activated.
+-- All 30 unique bots now have individual bot mini-factions and can be seen roaming the universe.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- Give CDs 45* max rotation
+-- make sure kill_token still drops from NPCs due to NoSpaceItems
 -- PBases have awful ship placement
--- take bribes out of easter-egg thingies
 -- FLSM script the PBase thingies
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- moors for AI ships? - it works as expected, however I'm not totally sure I like it
--- Implement the new AI Bots (will likely end up with 30+ AI Bots!)
 -- eventually update documentation on Alaska and Mine Mazathon changes
 -- eventually update readme about source material
--- eventually to a bunch of other updates to the readme
+-- eventually do a bunch of other updates to the readme
 -- Internal rename of version!
 
 What's not really todo but should be done eventually:

@@ -626,9 +626,12 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - Added list of systems where items of a certain type cannot exist in space or be traded
 - addcargom can now be used on players in space, since it actually seems to work fine on them
 - BaseDestroyed socket event code taken from the plugin version for better performance
-- PvPRepChangeDeath is used as it should instead of object_desctruction.
-- Added support for NPC death messages, see NPCDeathMessages in death.ini under [General].
-- Added support for reputation drops from NPC deaths, see [NPCDeathRep] in death.ini.
+- PvPRepChangeDeath is used as it should instead of object_desctruction
+- Added support for NPC death messages, see NPCDeathMessages in death.ini under [General]
+- Added support for reputation drops from NPC deaths, see [NPCDeathRep] in death.ini
+- Fixed unicode socket bug. The received bytes were not converted into a wstring correctly. (thanks to Cannon)
+- Items in the [AutoMarkItems] list will only be marked if they spawn within the "square of player disappear distance in MP" offset
+- Added equipment damage redirection, see [EquipmentRedirectDamage] in items.ini.
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)
@@ -966,7 +969,7 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - diemsg bug fixed(player with <,> or & in their name had no die-msgs)
 - cmd: isloggedin now returns false when player is in charmenu
 - cmd: addcash/setcash now kick when player is logged in with a different char from same the account
-- socket: bugfix, more than 1 cmd in one tcp packet now allowed (separated by \n or \r\n)
+- socket: bugfix, more than 1 cmd in one tcp packet now allowed (seperated by \n or \r\n)
 - improved kill detection(now works with death-fuses?)
 
 1.2.4
