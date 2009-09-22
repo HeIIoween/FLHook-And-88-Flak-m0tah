@@ -10,6 +10,7 @@ IMPORT bool __cdecl GetUserDataPath(char * const);
 IMPORT unsigned int __cdecl CreateID(char const *); //Makes hash of nickname
 IMPORT class GoodInfoList * __cdecl GoodList_get(void);
 IMPORT char *  StringAlloc(char const *,bool);
+IMPORT void __cdecl BaseDataList_load_market_data(char const *);
 IMPORT int MAX_PLAYER_AMMO;
 
 class Vector

@@ -248,6 +248,9 @@ void LoadSettings()
 		set_bSetAutoErrorMargin = IniGetB(set_scCfgGeneralFile, "General", "AutopilotErrorSet", false);
 		set_fAutoErrorMargin = IniGetF(set_scCfgGeneralFile, "General", "AutopilotError", -1.0f);
 		set_bDamageNPCsCollision = IniGetB(set_scCfgGeneralFile, "General", "CollisionDamageNPCs", false);
+		string scMarketData = IniGetS(set_scCfgGeneralFile, "General", "MarketData", "");
+		if(scMarketData.length())
+			BaseDataList_load_market_data(scMarketData.c_str());
 		// Kick
 		set_iAntiBaseIdle = IniGetI(set_scCfgGeneralFile, "Kick", "AntiBaseIdle", 0);
 		set_iAntiCharMenuIdle = IniGetI(set_scCfgGeneralFile, "Kick", "AntiCharMenuIdle", 0);
