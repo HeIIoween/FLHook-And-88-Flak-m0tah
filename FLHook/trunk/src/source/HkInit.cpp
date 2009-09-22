@@ -173,8 +173,6 @@ void ClearClientInfo(uint iClientID)
 	ClientInfo[iClientID].tmF1Time = 0;
 	ClientInfo[iClientID].tmF1TimeDisconnect = 0;
 
-	DamageList dmg;
-	ClientInfo[iClientID].dmgLast = dmg;
 	ClientInfo[iClientID].dieMsgSize = CS_DEFAULT;
 	ClientInfo[iClientID].chatSize = CS_DEFAULT;
 	ClientInfo[iClientID].chatStyle = CST_DEFAULT;

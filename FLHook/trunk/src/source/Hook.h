@@ -393,8 +393,6 @@ struct CLIENT_INFO
 	uint		iShipOld;
 	mstime		tmSpawnTime;
 
-	DamageList	dmgLast;
-
 // money cmd
 	list<MONEY_FIX> lstMoneyFix;
 
@@ -662,6 +660,7 @@ void HkUnlockAccountAccess(CAccount *acc);
 void HkGetItemsForSale(uint iBaseID, list<uint> &lstItems);
 IObjInspectImpl* HkGetInspect(uint iClientID);
 CEquipManager* HkGetEquipMan(uint iShip);
+CEquipManager* HkGetEquipMan(IObjInspectImpl *inspect);
 ENGINE_STATE HkGetEngineState(uint iClientID);
 HK_ERROR HkGetGoodIDFromSID(uint iClientID, ushort sGoodID, uint &iGoodID);
 HK_ERROR HkGetSIDFromGoodID(uint iClientID, ushort &sGoodID, uint iGoodID);
@@ -894,6 +893,8 @@ void HkTimerMarkDelay();
 void HkTimerNPCDockHandler();
 void HkTimerBeamDelayHandler();
 void HkTimerRepairShip();
+extern list< pair<IObjInspectImpl*, DAMAGE_INFO> > lstSolarDestroyDelay;
+void HkTimerSolarDestroyDelay();
 
 extern list<BASE_INFO> lstBases;
 extern CRITICAL_SECTION csIPResolve;

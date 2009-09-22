@@ -780,7 +780,6 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 }
 
 FARPROC fpOldShipDestroyed;
-
 __declspec(naked) void ShipDestroyedHook()
 {
 	__asm 

@@ -1249,8 +1249,8 @@ public:
 	virtual float get_mass(void)const ;
 	virtual bool is_targetable(void)const ;
 	virtual bool is_dying(void)const ;
+	virtual int get_status(float &)const ; //These are in a different order as well, it's weird
 	virtual int get_status(float &,float &)const ;
-	virtual int get_status(float &)const ;
 	virtual int get_shield_status(float &,float &,bool &)const ;
 	virtual int get_shield_status(float &,bool &)const ;
 	virtual int get_throttle(float &)const ;

@@ -49,6 +49,7 @@ TIMER Timers[] =
 	{HkTimerNPCDockHandler,			2500,				0},
 	{HkTimerRepairShip,				250,				0},
 	{HkTimerMarkDelay,				150,				0},
+	{HkTimerSolarDestroyDelay,		150,				0}
 };
 
 int __stdcall Update(void)

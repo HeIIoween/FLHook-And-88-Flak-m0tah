@@ -388,6 +388,17 @@ CEquipManager* HkGetEquipMan(uint iShip)
 	szEquip += 0xE4;
 	return (CEquipManager*)szEquip;
 }
+
+CEquipManager* HkGetEquipMan(IObjInspectImpl *inspect)
+{
+	char *szShip = (char*)inspect;
+	szShip += 0x10;
+	char *szEquip = *((char**)szShip);
+	szEquip += 0xE4;
+	return (CEquipManager*)szEquip;
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ENGINE_STATE HkGetEngineState(uint iClientID)

@@ -613,6 +613,28 @@ void HkTimerRepairShip()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+list< pair<IObjInspectImpl*, DAMAGE_INFO> > lstSolarDestroyDelay;
+void HkTimerSolarDestroyDelay()
+{
+	try {
+		foreach(lstSolarDestroyDelay, pair<IObjInspectImpl* COMMA DAMAGE_INFO>, damage)
+		{
+			float fHealth, fMaxHealth;
+			damage->first->get_status(fHealth, fMaxHealth);
+			if(!fHealth)
+			{
+				uint iSpaceObj = damage->first->get_id();
+				pair< map<uint, list<DAMAGE_INFO> >::iterator, bool> findSpaceObj = mapSpaceObjDmgRec.insert(make_pair(iSpaceObj, list<DAMAGE_INFO>()));
+				findSpaceObj.first->second.push_back(damage->second);
+				SpaceObjDestroyed(iSpaceObj, true);
+			}
+		}
+		lstSolarDestroyDelay.clear();
+	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /**************************************************************************************************************
 Called when _SendMessage is sent
 NOT USED ATM
