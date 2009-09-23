@@ -109,8 +109,13 @@ Enable this option to enable w0dk4's Global Server Workaround, instead of attemp
 The GLS Workaround is more reliable, however can sometimes ignore manual direct connects specified with the -s parameter when launching Freelancer.
 Default: No
 
+MP Client: Ship at Player-Purchasable Bases? - Many options
+This option will select which ship appears for sale at any Player-Purchasable Base. Please note that this ship only appears for you, and not necessarily anyone else using the base.
+If this is your first time playing Flak, don't worry about this option.
+Default: None
+
 MP Client: More realistic space backgrounds? - No / Yes
-If enabled, backgrounds are simple patterns of stars instead of the artsy backgrounds Freelancer carries by default, giving the space a more realistic feel.
+If enabled, backgrounds are simple patterns of stars, instead of the artsy backgrounds Freelancer carries by default. This gives the space presented a more realistic feel.
 Default: No
 
 MP Client: FOV options? - A few options

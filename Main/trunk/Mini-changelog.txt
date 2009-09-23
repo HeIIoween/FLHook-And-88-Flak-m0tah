@@ -45,22 +45,23 @@
 -- 88 Flak ST music is now handled in a seperate music_st.ini activated by the ST, which will stop "Missing Sound File" errors when the ST is not activated.
 -- All 30 unique bots now have individual bot mini-factions and can be seen roaming the universe.
 -- Certain AI Bots now occupy their time trading various goods.
+-- Player-Purchasable Bases now sell all fighters and transports - there is a new mod option that will allow you to select the ship sold for you at Player-Purchasable Bases.
+-- AI are now more likely to assist you / other friendlies in a distant fight (before, they'd always ignore fights in progress when far away).
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
 -- some change I knew I'd forget (I already nailed bot trading..)
 -- make sure kill_token still drops from NPCs due to NoSpaceItems
--- PBases have awful ship placement
--- FLSM script the PBase thingies
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
--- moors for AI ships? - it works as expected, however I'm not totally sure I like it
 -- eventually update documentation on Alaska and Mine Mazathon changes
 -- eventually update readme about source material
 -- eventually do a bunch of other updates to the readme
 -- Internal rename of version!
 
 What's not really todo but should be done eventually:
+-- moors for AI ships? - it works as expected, however I'm not totally sure I like it
+-- FLSM script the PBase thingies (a blind append wouldn't be very good though)
 -- Create missiles for the Nomad Fighter.
 -- Create a "Nomad Repair Ship", essentially a copypasta of the current Repair Ship but with a Nomad Fighter model for RP purposes. In place of the RS's 360* Class 3 mounts and shield, the Nomad RS will simply have a single Nomad Laser mount, and no shield. The Repair Beam will function identically. In practice, the Nomad RS will be a more offensive version of the stock RS, but will be more easily killed.
 -- test out EMP ship - may be able to wedge it in as a VHF varient

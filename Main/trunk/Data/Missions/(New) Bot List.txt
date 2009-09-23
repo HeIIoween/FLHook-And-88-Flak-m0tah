@@ -7,7 +7,7 @@ king - SnakePlisskin_grp 459077 - Lawful Freelancers - gd_lfl_grp
 hakkera - SushiBot_grp 459078 - Kusari State Police - ku_p_grp
 ozu - Lonestar_grp 459079 - Lawful Freelancers - gd_lfl_grp
 orillion - M0tahBot_grp 459080 - DSE - co_me_grp
-tobias - SolaBot_grp 459085 - Interspace Commerce - co_ic_grp
+tobias - SSGTSolaBot_grp 459085 - Interspace Commerce - co_ic_grp
 ozu - DofodBot_grp 459087 - Universal - co_ss_grp
 orillion - PetBot_grp 459088 - Bounty Hunters - gd_bh_grp
 hakkera - Why485Bot_grp 459089 - Lawful Freelancers - gd_lfl_grp
@@ -95,7 +95,7 @@ ids_short_name = 459080
 rep = co_me_grp
 
 [Group]
-nickname = SolaBot_grp
+nickname = SSGTSolaBot_grp
 ids_name = 459085
 ids_info = 66198
 ids_short_name = 459085

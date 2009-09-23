@@ -1,5 +1,5 @@
 <script>
-<header name="88 Flak Version 1.27 AI Companion RC129 09/21/09" savesafe="true" exclusive="false">
+<header name="88 Flak Version 1.27 AI Companion RC129 09/22/09" savesafe="true" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -1040,9 +1040,9 @@ make_class = class_bot_Lonestar
 ;BotSlot1
 </dest>
 <source>
-ship_by_class = 1, 1, sc_SolaBot
+ship_by_class = 1, 1, sc_SSGTSolaBot
 pilot_job = wingman_job
-make_class = class_bot_SolaBot
+make_class = class_bot_SSGTSolaBot
 </source>
 </data>
 
@@ -1051,9 +1051,9 @@ make_class = class_bot_SolaBot
 ;BotSlot1
 </dest>
 <source>
-ship_by_class = 1, 1, sc_SolaBot2
+ship_by_class = 1, 1, sc_SSGTSolaBot2
 pilot_job = capital_wingman_job
-make_class = class_bot_SolaBot
+make_class = class_bot_SSGTSolaBot
 </source>
 </data>
 
@@ -1818,9 +1818,9 @@ make_class = class_bot_Lonestar
 ;BotSlot2
 </dest>
 <source>
-ship_by_class = 1, 1, sc_SolaBot
+ship_by_class = 1, 1, sc_SSGTSolaBot
 pilot_job = wingman_job
-make_class = class_bot_SolaBot
+make_class = class_bot_SSGTSolaBot
 </source>
 </data>
 
@@ -1829,9 +1829,9 @@ make_class = class_bot_SolaBot
 ;BotSlot2
 </dest>
 <source>
-ship_by_class = 1, 1, sc_SolaBot2
+ship_by_class = 1, 1, sc_SSGTSolaBot2
 pilot_job = capital_wingman_job
-make_class = class_bot_SolaBot
+make_class = class_bot_SSGTSolaBot
 </source>
 </data>
 
@@ -2596,9 +2596,9 @@ make_class = class_bot_Lonestar
 ;BotSlot3
 </dest>
 <source>
-ship_by_class = 1, 1, sc_SolaBot
+ship_by_class = 1, 1, sc_SSGTSolaBot
 pilot_job = wingman_job
-make_class = class_bot_SolaBot
+make_class = class_bot_SSGTSolaBot
 </source>
 </data>
 
@@ -2607,9 +2607,9 @@ make_class = class_bot_SolaBot
 ;BotSlot3
 </dest>
 <source>
-ship_by_class = 1, 1, sc_SolaBot2
+ship_by_class = 1, 1, sc_SSGTSolaBot2
 pilot_job = capital_wingman_job
-make_class = class_bot_SolaBot
+make_class = class_bot_SSGTSolaBot
 </source>
 </data>
 
@@ -3374,9 +3374,9 @@ make_class = class_bot_Lonestar
 ;BotSlot4
 </dest>
 <source>
-ship_by_class = 1, 1, sc_SolaBot
+ship_by_class = 1, 1, sc_SSGTSolaBot
 pilot_job = wingman_job
-make_class = class_bot_SolaBot
+make_class = class_bot_SSGTSolaBot
 </source>
 </data>
 
@@ -3385,9 +3385,9 @@ make_class = class_bot_SolaBot
 ;BotSlot4
 </dest>
 <source>
-ship_by_class = 1, 1, sc_SolaBot2
+ship_by_class = 1, 1, sc_SSGTSolaBot2
 pilot_job = capital_wingman_job
-make_class = class_bot_SolaBot
+make_class = class_bot_SSGTSolaBot
 </source>
 </data>
 
