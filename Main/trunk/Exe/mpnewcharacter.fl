@@ -115,6 +115,7 @@ house = 0, SojournBot_grp
 house = 0, HonkBot_grp
 house = -0.9, HowdaDoodeWTF_grp
 house = -0.9, Borg_grp
+rep_group = gd_lfl_grp
 
 %%PACKAGE%%
 

@@ -158,7 +158,7 @@ Please note that even if enabled, there is no lighting for Flak Cannon explosion
 Default: No
 
 MP Client: Enable ENBSeries Post-Process shader? - No / Yes
-Enables use of the experimental ENBSeries Post-Process Shader by Boris Vorontsov (http://boris-vorontsov.narod.ru), included in 88 Flak under non-commercial distribution. No parts of the plugin have been changed, except for the plugin configuration to better suit Freelancer. For more info, please view the files in the "exe/ENBSeries(Bloom) Information/" directory.
+Enables use of the experimental ENBSeries Post-Process Shader by Boris Vorontsov (http://boris-vorontsov.narod.ru), included in 88 Flak under non-commercial distribution. No parts of the plugin have been changed, except for the plugin configuration to better suit Freelancer. For more info, please view the files in the "exe/ENBSeries Information/" directory.
 Default: No
 
 MP Client: Enable Battledust? - No / Yes / Yes (2x duration) / Yes (2x duration + thicker)

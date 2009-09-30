@@ -47,12 +47,20 @@
 -- Certain AI Bots now occupy their time trading various goods.
 -- Player-Purchasable Bases now sell all fighters and transports - there is a new mod option that will allow you to select the ship sold for you at Player-Purchasable Bases.
 -- AI are now more likely to assist you / other friendlies in a distant fight (before, they'd always ignore fights in progress when far away).
+-- Bot AI / Hard Mode AI now have slightly slower repair usage times, instead of slightly quicker repair usage times, as delaying before Nanobot or Shield Battery presses is actually more efficient for AI usage. Before, they were using them too quickly and weren't always getting the full benefit per-Nanobot/Battery.
+-- Better commodity market data for Ryuku Base and Heaven's Gate (real name of Tekagi's Base) in the Tohoku system. Before, they were treates as misc/rare bases in the commodity market, and all commodities sold for near-nothing.
+-- Better explosions for Nomad Fighter, Gunboat, and Battleship. The explosion creates nomad-y trails instead of fire/smoke trails, which suits the ship a little more. The nomad-y trails were given to all Nomad equipment as well.
+-- 8-Way Strafe plugin added courtesy of Adoxa. This allows vertical strafing to be used in tandem with horizantal strafing.
+-- Reorganized the SourceFiles folder; placed all files in folders by author.
+-- Player tags are now handled manually; you may set your tag with /tag (faction), for example "/tag Liberty Navy". Purchasing an operative tag with no other tag present will still change your tag as always.
+-- Added another title song / screen.
+-- Added a fully-featured, in-game tutorial that fires when you create a new character. It guides you through basic 1v1 and 4v4 combat with AI, and advanced features like faction tags, cloaks, mobile docking, the death penalty, and target marking.
 
 Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
+-- put in an fovy thing?
 -- some change I knew I'd forget (I already nailed bot trading..)
--- make sure kill_token still drops from NPCs due to NoSpaceItems
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- eventually update documentation on Alaska and Mine Mazathon changes
 -- eventually update readme about source material

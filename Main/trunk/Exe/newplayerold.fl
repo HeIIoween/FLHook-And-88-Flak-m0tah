@@ -43,6 +43,7 @@ equip = SlowLargeGreen, HpRunningLight10
 equip = LargeWhiteSpecial, HpHeadLight01
 
 house = 0.70, fc_n_grp
+rep_group = fc_n_grp
 
 [StoryInfo]
 ship_bought = false

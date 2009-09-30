@@ -1,5 +1,5 @@
 Soundtrack Selection:
-ID Software - Various music off Quake 4 and Quake 2
+ID Software - Various music off Quake 4 and Quake 2, D3 Theme
 Epic Games - Various music off UT2004
 BioWare - MDK 2 Theme
 Pelican - Untitled Track, off The Fire in our Throats Will Beckon the Thaw

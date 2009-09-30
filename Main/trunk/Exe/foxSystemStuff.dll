@@ -10,6 +10,7 @@ Faction IDs:
 +100 - "(faction)"
 +100 - "the (faction)"
 
+ID + 458752 - IDS
 1 - Battleship Shield
 2 - Cruiser Shield
 3 - Gunboat Shield
@@ -280,6 +281,24 @@ Faction IDs:
 355 - Random Bot Bribe
 
 400 through 412 - Blue Ball puzzle
+
+450s - Tutorial Text (starting on 459202)
+450 - TUTORIAL
+451 - Pre-Tutorial
+452 - Pre-Basic
+453 - Basic
+454 - Basic Obj
+455 - Post-Basic / Advanced
+456 - Advanced Obj
+457 - Post-Advanced / Pre-Tag
+458 - Tag
+459 - Tag Obj
+460 - Post-Tag / Cloak / Pre-Docking
+461 - Mobile Docking / Pre-Marking
+462 - Marking
+463 - Marking Obj
+464 - Post-Marking / Final
+465 - Final Obj
 
 600s and above - old foxSystemStuff.dll IDs - they started at 524290, these at 459352
 600 - Freeport 7 -> New York
