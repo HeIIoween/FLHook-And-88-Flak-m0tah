@@ -117,7 +117,7 @@ ship = Combat_Ally_3
 
 [Trigger]
 nickname = Tutorial_Init
-system = Li07
+system = any
 Cnd_LaunchComplete = Player
 Act_SpawnShip = Tutorial_RepCheck
 Act_SetLifetime = Tutorial_RepCheck, 2
@@ -126,7 +126,7 @@ Act_ActTrig = Tutorial_Init_Push
 
 [Trigger]
 nickname = Tutorial_Init_Pull
-system = Li07
+system = any
 Cnd_WatchVibe = Tutorial_RepCheck, Player, 0.100000, gt
 Act_Destroy = Tutorial_RepCheck, SILENT
 Act_DeactTrig = Tutorial_Init_Push
@@ -134,7 +134,7 @@ Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
 
 [Trigger]
 nickname = Tutorial_Init_Push
-system = Li07
+system = any
 Cnd_WatchVibe = Tutorial_RepCheck, Player, 0.100000, lt
 Act_Destroy = Tutorial_RepCheck, SILENT
 Act_DeactTrig = Tutorial_Init_Pull
@@ -143,7 +143,7 @@ Act_ActTrig = Tutorial_ReadyToRock
 
 [Trigger]
 nickname = Tutorial_ReadyToRock
-system = Li07
+system = any
 Cnd_Timer = 10
 Act_PopupDialog = 459202, 459203, YES_NO
 Act_ActTrig = Tutorial_Activate
@@ -151,7 +151,7 @@ Act_ActTrig = Tutorial_Deactivate
 
 [Trigger]
 nickname = Tutorial_Activate
-system = Li07
+system = any
 Cnd_PopupDialog = YES
 Act_PlayerCanDock = false
 Act_DeactTrig = Tutorial_Deactivate
@@ -159,13 +159,13 @@ Act_ActTrig = Tutorial_Start
 
 [Trigger]
 nickname = Tutorial_Deactivate
-system = Li07
+system = any
 Cnd_PopupDialog = NO
 Act_DeactTrig = Tutorial_Activate
 
 [Trigger]
 nickname = Tutorial_Start
-system = Li07
+system = any
 Cnd_True = no_params
 Act_PopupDialog = 459202, 459204, YES_NO
 Act_ActTrig = Tutorial_Start_Delay
@@ -173,20 +173,20 @@ Act_ActTrig = Combat_Basic
 
 [Trigger]
 nickname = Tutorial_Start_Delay
-system = Li07
+system = any
 Cnd_PopupDialog = NO
 Act_DeactTrig = Combat_Basic
 Act_ActTrig = Tutorial_Start_Delay_Push
 
 [Trigger]
 nickname = Tutorial_Start_Delay_Push
-system = Li07
+system = any
 Cnd_Timer = 60
 Act_ActTrig = Tutorial_Start
 
 [Trigger]
 nickname = Combat_Basic
-system = Li07
+system = any
 Cnd_PopupDialog = YES
 Act_DeactTrig = Tutorial_Start_Delay
 Act_PopupDialog = 459202, 459205, CLOSE
@@ -194,8 +194,14 @@ Act_ActTrig = Combat_Basic_Push
 
 [Trigger]
 nickname = Combat_Basic_Push
-system = Li07
+system = any
 Cnd_PopupDialog = NO
+Act_ActTrig = Combat_Basic_Spawn
+
+[Trigger]
+nickname = Combat_Basic_Spawn
+system = any
+Cnd_Timer = 2
 Act_SpawnShip = Combat_Basic_Hostile
 Act_SetLifetime = Combat_Basic_Hostile, 2
 Act_MarkObj = Combat_Basic_Hostile, 1
@@ -204,21 +210,27 @@ Act_ActTrig = Combat_Basic_Hostile_Death
 
 [Trigger]
 nickname = Combat_Basic_Hostile_Death
-system = Li07
+system = any
 Cnd_Destroyed = Combat_Basic_Hostile, -1, EXPLODE
 Act_ActTrig = Combat_Basic_Hostile_Death_Push
 
 [Trigger]
 nickname = Combat_Basic_Hostile_Death_Push
-system = Li07
+system = any
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459207, CLOSE
 Act_ActTrig = Combat_Advanced
 
 [Trigger]
 nickname = Combat_Advanced
-system = Li07
+system = any
 Cnd_PopupDialog = NO
+Act_ActTrig = Combat_Advanced_Spawn
+
+[Trigger]
+nickname = Combat_Advanced_Spawn
+system = any
+Cnd_Timer = 2
 Act_SpawnFormation = Combat_Advanced_Hostile_Wing
 Act_SetLifetime = Combat_Advanced_Hostile_1, 2
 Act_SetLifetime = Combat_Advanced_Hostile_2, 2
@@ -234,87 +246,87 @@ Act_ActTrig = Combat_Advanced_Hostile_Death
 
 [Trigger]
 nickname = Combat_Advanced_Hostile_Death
-system = Li07
+system = any
 Cnd_Destroyed = Combat_Advanced_Hostile, -1, EXPLODE
 Act_ActTrig = Combat_Advanced_Hostile_Death_Push
 
 [Trigger]
 nickname = Combat_Advanced_Hostile_Death_Push
-system = Li07
+system = any
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459209, CLOSE
 Act_ActTrig = Features_Tag
 
 [Trigger]
 nickname = Features_Tag
-system = Li07
+system = any
 Cnd_PopupDialog = NO
 Act_ActTrig = Features_Tag_Push
 
 [Trigger]
 nickname = Features_Tag_Push
-system = Li07
+system = any
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459210, CLOSE
 Act_ActTrig = Features_Tag_GoDoStuff
 
 [Trigger]
 nickname = Features_Tag_GoDoStuff
-system = Li07
+system = any
 Cnd_PopupDialog = NO
 Act_NNIds = 459211, OBJECTIVE
 Act_ActTrig = Features_Cloak
 
 [Trigger]
 nickname = Features_Cloak
-system = Li07
+system = any
 Cnd_Timer = 10
 Act_PopupDialog = 459202, 459212, CLOSE
 Act_ActTrig = Features_Docking
 
 [Trigger]
 nickname = Features_Docking
-system = Li07
+system = any
 Cnd_PopupDialog = NO
 Act_ActTrig = Features_Docking_Push
 
 [Trigger]
 nickname = Features_Docking_Push
-system = Li07
+system = any
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459213, CLOSE
 Act_ActTrig = Features_Marking
 
 [Trigger]
 nickname = Features_Marking
-system = Li07
+system = any
 Cnd_PopupDialog = NO
 Act_ActTrig = Features_Marking_Push
 
 [Trigger]
 nickname = Features_Marking_Push
-system = Li07
+system = any
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459214, CLOSE
 Act_ActTrig = Features_Marking_GoMarkStuff
 
 [Trigger]
 nickname = Features_Marking_GoMarkStuff
-system = Li07
+system = any
 Cnd_PopupDialog = NO
 Act_NNIds = 459215, OBJECTIVE
 Act_ActTrig = Features_Final
 
 [Trigger]
 nickname = Features_Final
-system = Li07
+system = any
 Cnd_Timer = 15
 Act_PopupDialog = 459202, 459216, CLOSE
 Act_ActTrig = Tutorial_End
 
 [Trigger]
 nickname = Tutorial_End
-system = Li07
+system = any
 Cnd_Timer = 10
 Act_PlayerCanDock = true
 Act_SetRep = Player, foxBot_grp, 0.900000
