@@ -1,5 +1,5 @@
 [Player]
-name = %%NAME%%
+name = Trent the Terrible
 rank = 0
 
 money = 1400000
@@ -7,8 +7,9 @@ voice = trent_voice
 costume = trent
 com_costume = trent
 
-system = Li07
-base = n00b_Base
+system = FP7_system
+pos = 3216,1314,-21775
+rotate = 175,-15,179.8
 
 house = 0.2, li_n_grp
 house = 0, li_lsf_grp
@@ -116,6 +117,19 @@ house = 0, HonkBot_grp
 house = -0.9, HowdaDoodeWTF_grp
 house = -0.9, Borg_grp
 rep_group = gd_lfl_grp
+
+ship_archetype = te_ge_fighter
+equip = ge_gf4_engine_01
+equip = lf_power
+equip = ge_s_scanner_01
+equip = LargeWhiteSpecial, HpHeadlight
+equip = SlowSmallOrange, HpRunningLight01
+equip = SlowSmallOrange, HpRunningLight02
+equip = SlowSmallOrange, HpRunningLight05
+equip = contrail01, HpContrail01
+equip = contrail01, HpContrail02
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
 
 [StoryInfo]
 ship_bought = false

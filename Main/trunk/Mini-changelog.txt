@@ -54,11 +54,11 @@
 -- Reorganized the SourceFiles folder; placed all files in folders by author.
 -- Player tags are now handled manually; you may set your tag with /tag (faction), for example "/tag Liberty Navy". Purchasing an operative tag with no other tag present will still change your tag as always.
 -- Added another title song / screen.
+-- Added a fully-featured, in-game scripted multiplayer tutorial that fires when you create a new character. It guides you through basic 1v1 and 4v4 combat with AI, as well as advanced features like faction tags, cloaks, mobile docking, the death penalty, and target marking. You can complete this tutorial with other players.
 
-Also, the test wingmen and tutorial scripts have been removed. If you really want to play with them, copy the contents of Scripted Wingmen Work.txt and Tutorial Work.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
+Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- put in an fovy thing?
 -- some change I knew I'd forget (I already nailed bot trading..)
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- eventually update documentation on Alaska and Mine Mazathon changes
@@ -88,7 +88,6 @@ Stuff I should do but don't really want to:
 
 What was done and might be done again:
 -- Being friendly to one house, while hostile to another, will now cause some interesting diplomacy to occur between military forces. Liberty pirate seeking shelter in Kusari space? They might help you out with an off-the-record engagement or two; just try not to start a war over it.
--- Added a fully-featured, in-game tutorial that fires when you create a new character. It guides you through basic 1v1 and 4v4 combat with AI, and advanced features like faction tags, cloaks, mobile docking, the death penalty, and target marking. You can complete this tutorial with other players.
 
 Hook wishlist:
 -- dockkill/apvptoken protection messages for when you shoot a player - "You can not damage this player because of (x reason)"

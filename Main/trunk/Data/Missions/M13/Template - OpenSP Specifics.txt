@@ -3,7 +3,7 @@
 nickname = OpenSP_setup
 system = any
 InitState = ACTIVE ;SP Only
-Cnd_LaunchComplete = Player
+Cnd_Timer = 2
 Act_LockDock = Player, Li05_to_Li01_hole, lock
 Act_LockDock = Player, Ch06_nomad_buoy, lock
 Act_LockDock = Player, Ch06_player_station_2, lock
@@ -30,4 +30,3 @@ Act_LockDock = Player, Ch06_to_Li05, lock
 Act_LockDock = Player, Ch06_to_Li04, lock
 Act_LockDock = Player, Ch06_to_Li03, lock
 Act_LockDock = Player, Ch06_to_Li02, lock
-Act_ActTrig = OpenSP_setup
