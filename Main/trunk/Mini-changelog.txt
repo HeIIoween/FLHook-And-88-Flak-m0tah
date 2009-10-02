@@ -59,6 +59,7 @@
 Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
+-- make the tutorial give a cool item
 -- some change I knew I'd forget (I already nailed bot trading..)
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- eventually update documentation on Alaska and Mine Mazathon changes
