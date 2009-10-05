@@ -9,6 +9,6 @@ Flying Lotus - GNG BNG, off Los Angeles
 Linkin Park - Cure for the Itch, off Hybrid Theory; Session, off Meteora
 ISIS - Altered Course off Panopticon
 The Crystal Method - Busy Child, off Vegas
-Conifer - Into the Gauntlet, off Crown Fire
+Tool - Triad, off Lateralus
 
-Check them all out!
+Be sure to check them all out!

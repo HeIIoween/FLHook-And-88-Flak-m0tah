@@ -95,7 +95,7 @@ music = DJShadow-OrganDonor
 music = music_discordant_psychosis
 </dest>
 <source>
-music = Conifer-IntoTheGauntlet
+music = Tool-Triad
 </source>
 </data>
 <data file="Data\Universe\Systems\Intro\Bases\Rooms\intro6.ini" method="filereplace" numtimes="-1">
