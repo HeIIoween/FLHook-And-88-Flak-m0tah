@@ -55,15 +55,15 @@
 -- Player tags are now handled manually; you may set your tag with /tag (faction), for example "/tag Liberty Navy". Purchasing an operative tag with no other tag present will still change your tag as always.
 -- Added another title song / screen.
 -- Added a fully-featured, in-game scripted multiplayer tutorial that fires when you create a new character. It guides you through basic 1v1 and 4v4 combat with AI, as well as advanced features like faction tags, cloaks, mobile docking, the death penalty, and target marking. You can complete this tutorial with other players.
+-- Large readme overhauls.
+-- Price of Trade Ships (Transports, Trains, Liners, etc.), Capital Ships, WPs, and Stations all tripled. Beware, as this also (almost) triples their Death Penalty as well. Clear tactical judgement is now required for use of these vessels, since death with them is a much bigger deal than it was before.
+-- Price of Nomad Fighter reduced from $6,000,000 to $1,400,000. Its Death Penalty should be much lower.
 
 Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
 -- some change I knew I'd forget (I already nailed bot trading..)
--- triple price of trade / capital ships
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
--- eventually update documentation on Alaska and Mine Mazathon changes
--- eventually update readme about source material
 -- eventually do a bunch of other updates to the readme
 -- Internal rename of version!
 

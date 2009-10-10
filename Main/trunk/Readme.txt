@@ -8,6 +8,7 @@ Version 1.27, listed on server list as 88.27
 "the screenshots just do not do this mod justice. the combat is like nothing before in freelancer and is something that needs to be experienced to be understood...it can easily rival the intensity of something like freespace." - Chip
 "...in my opinion the best Freelancer mod I have ever played, it has everything I ever wanted in a Freelancer mod. Balance (most important), Capitals, and Difficulty." - Why485
 "This mod is AWESOME. The AI is absolutely groundbreaking." - Matt001
+"...and it has to be the first mod where you can get into circle fights with the ai" - KillerJaguar
 "88 Flak. Goes Great With Whisky." - Dread Pirate Lowsound
 "I'm somewhat surprised FL didn't just go NO WAY! and just crash" - M0tah
 
@@ -24,26 +25,34 @@ Version 1.27, listed on server list as 88.27
           ##8 - Useful Information for Running a Server
           ##9 - MP Character Updates List
           ##10 - Other Notes / Known Bugs
-          ##11 - Contact Info
+          ##11 - Source Code / Use of INI Code
           ##12 - What's Coming
-          ##13 - Thanks To
-          ##14 - Changelog
+          ##13 - Contact Info
+          ##14 - Thanks To
+          ##15 - Changelog
 
 ------
 ##1 - List of Features
 ------
-If you're going to read something, please read these fully.
-
 Gameplay:
--- Turns Freelancer gameplay into class-based warfare with insanely fast-paced combat.
+-- Turns Freelancer gameplay into class-based warfare with insanely fast-paced combat. All ships, equipment, and other gear is balanced so that no player - even a brand new player - is left in the dust. In the end, combat boils down to skill and tactics, instead of best ships and equipment.
 -- Huge emphasis on teamplay. Unlike normal Freelancer, friendly NPCs will come to your aid in the middle of a fight, assisting you when the going is tough. Got a lot of hostiles on your tail? Retreat to a friendly area and they will be dealt with.
 -- Enormous fights. Both friendly and hostile NPCs can join fights in progress, meaning a simple skirmish can escalate into a full-scale war if not ended abruptly - factions have both Capital Ships and Mobile Stations, and are not afraid to roll them out when they need to.
--- A variable universe - factions are no longer contained to their simple spheres of influence, and will send ships across a system - even across the galaxy - to deal with issues. Yes, AI travel the entire galaxy, and yes, you can see them doing this. Gaians hate you? There's a decent chance a wing of Gaians could stalk you across the entire universe into Rheinland. Friendly with the Kusari Naval Forces? There's a decent chance of some KNF ships checking up on you in the Border Worlds.
+-- A variable universe - factions are no longer constrained to their simple spheres of influence, and will send ships across a system - even across the galaxy - to deal with issues. Yes, AI travel the entire galaxy, and yes, you can see them doing this. Gaians hate you? There's a small chance a wing of Gaians could sneak into Rheinland to make your life miserable. Friendly with the Kusari Naval Forces? Perhaps you'll run into some KNF ships checking up on you in the Border Worlds.
 -- NPCs can be seen until 25km out, and players can be seen until 25km out, allowing for more PvP opportunities. Group members can be seen until 300km out as well, allowing for easier organization with groups.
--- Players can join, and attain special rank in, factions. Not only do you get a tag in your name when you join a faction, but you also obtain a reputation towards other players - for instance, if you joined the Liberty Rogues, and a player was hostile to the Rogues, you would appear hostile to that player. If you approached that player, danger music would even play, which can lead to some rather epic PvP engagements.
--- Everything you could do in a mission (attacking a Station, etc.) is just played out real-time. This means you could see NPCs attack - and possibly destroy - a Station right in front of your eyes. Or you could destroy one yourself, and reap the Credit Chip reward.
+-- Players can join, and attain special rank in, factions. Not only do you get a tag in your name when you join a faction, but you also obtain a reputation towards other players - for instance, if you joined the Liberty Rogues, and a player was hostile to the Rogues, you would appear hostile to that player. If you approached that player, danger/battle music would even play, which can lead to some rather epic PvP engagements.
+-- Everything you could do in a mission (attacking a Station, etc.) is just played out real-time. This means you could see NPCs attack - and possibly destroy - a Station right in front of your eyes. Or you could destroy one yourself, and reap the loot reward.
 -- Full player, NPC, and even Station / Weapons Platform looting. ALL cargo (not just some cargo) will drop off players and NPCs - if a player or NPC is carrying 1207 H-Fuel, then that player or NPC will drop 1207 H-Fuel on death. This means a pirate can make a healthy living hunting player-traders down.
--- Death Penalties - approximately 4% of your total equipment and ship worth (NOT bank account) is subtracted from your account when you die - if you can't pay your fines, random amounts of equipment will be confiscated from your ship. To put it another way, this is equivilant to paying a full on-base repair bill when you die, in an effort to make retreating from battle more cost-effective than just dieing on the field.
+-- Death Penalties - approximately 5% of your total equipment and ship worth (NOT bank account) is subtracted from your account when you die - if you can't pay your fines, random amounts of equipment will be confiscated from your ship. To put it another way, this is equivalent to paying a full on-base repair bill when you die, in an effort to make retreating from battle more cost-effective than just dieing on the field.
+
+AI:
+-- AI Bots - 30 unique player-like AI NPCs (spanning 52 unique loadouts) that travel the universe in search of glory and fortune. AI Bots can be placed in to an AI Companion squad for solo or cooperative play. When in an AI Companion squad, they will accompany you wherever your travels take you, and attack any NPC with a hostile reputation to you. You are given four wingmen "slots" - you may assign a bot to each slot, allowing configurable squads of 1 to 4 bots. Additionally, you may create your own companion bot from an existing player!
+-- Hirable NPC wingmen squads, which stay with you until you die, log out, land, or jump systems. You can obtain wingmen by paying large amounts of cash or by using high faction reputations - which are not easy to obtain.
+-- Jaw-dropping AI - they don't just shoot well, they are smart. AI will chase fleeing targets with cruise, use Counter-Measures, strafe and afterburn effectively, and, of course, serve up a good beating in general. AI Bots (mentioned above) possess combat prowess that will best the average player in a 1v1 fight.
+-- AI has no combat bias, and will attack any target of opportunity - not just players. Factions hate each-other just as much as they may hate you.
+-- Friends don't let friends fly alone - gaining friendly status with a faction does more than just paint green targets on your HUD. Friendly NPCs will go out of their way to assist you in combat, excuse any accidental friendly fire, and even assign escorts to guard you for free (assuming you have faction's unique token, which requires very friendly rep).
+-- NPC loadouts and ships are the exact same as what players use. AI Bots in particular feature highly customized loadouts tailored to that bot's fighting style, many of which were built in-game before being exported to the AI Bot's loadout code.
+-- In addition to AI Bots, there are also regular Freelance NPCs that carry out simple day-to-day tasks in random selections of ships. They can be trading, hunting ships deep within enemy territory, or just flying on patrol.
 
 Graphics / Audio:
 -- (Optional) High-End Special Effects, where special effects will be drawn at a 20km distance, and also forces the engine to handle 10 times the amount of effects it normally can. Paired with the high-end sound system (below), this makes for an amazingly immersive experience as you see (and hear) battles unfold before you're even in range yourself.
@@ -51,18 +60,10 @@ Graphics / Audio:
 -- (Optional) Battledust, which generates fog and debris off fighting, creating dark clouds where heavy combat areas have occurred. Highly recommended, as this adds huge atmosphere to large fights, but may introduce large performance hits.
 -- (Optional) Subtle Bloom and other post-process effects, via use of the experimental ENBSeries Post-Process Shader by Boris Vorontsov (http://boris-vorontsov.narod.ru), included in 88 Flak under non-commercial distribution. Do not be mistaken; 88 Flak's Bloom integration does not over-saturate the image, reduce clarity, etc. - only does what a correctly configured Bloom should do, and that is brighten specular highlights.
 -- (Optional) Eye-adaption (Bloom) - sitting in a dark area while looking outside to a bright one will dynamically adjust the lighting values - looking straight at the sun will be blinding for a second, until the scene adjusts to a darker image.
--- (Optional) Dynamic Lighting on explosions. Capital Ship slugfests (during which there are many explosions) will literally light up the skies.
+-- (Optional) Dynamic Lighting on explosions. Capital Ship slugfests (during which there are many explosions) will literally light up the area.
 -- Loads of effects enhancements by Why485, ranging from Ace Combat-esque Missiles to the mighty Flak Cannon arrays that can easily put dozens of explosions in the air - all optimized to give as minimal an FPS hit as possible while still looking sexy.
 -- Cool death effects, of course - watch your ship catch fire and tumble before you die, or your Capital Ship go up in a blaze of explosive glory, etc.
-
-AI:
--- AI Bots (BETA) - 23 selectable AI companions (or create your own companion bot from an existing player!) that can be enabled for solo or co-operative play; they will accompany you where-ever your travels take you, and attack any NPC with a hostile reputation to you. You are given four wingmen "slots" - you may assign a bot to each slot, allowing configurable squads of 1 to 4 bots.
--- Hirable NPC wingmen squads. They will stay with you until you die, log out, land, or jump systems. You can obtain wingmen by paying large amounts of cash or by using high faction reputations, which are not easy to obtain.
--- Jaw-dropping AI - they don't just shoot well, they are smart. The only AI currently known to chase fleeing targets with cruise, use Counter-Measures, strafe and afterburn effectively, and, of course, serve up a good beating in general.
--- AI has no combat bias, and will attack any target of opportunity - not just players. Factions hate each-other just as much as they may hate you.
--- Friends don't let friends fly alone - gaining friendly status with a faction does more than just paint green targets on your HUD. Friendly NPCs will go out of their way to assist you in combat, excuse any accidental friendly fire, and even assign escorts to guard you for free.
--- NPC loadouts and ships are the exact same as what players use. Combined with advanced AI mentioned above, 88 Flak gives you the most lifelike combat experience in Freelancer you will probably ever see - NPCs even use "secondary" guns like Magma Hammers and Stunpulses, which were only used very rarely in normal Freelancer.
--- Freelance NPCs that carry out simple day-to-day tasks in random selections of ships, just like players. They can be trading, hunting ships deep within enemy territory, or just flying on patrol.
+-- All of these graphics enhancements are optional, and can be easily toggled. As such, 88 Flak's system requirements are no higher than vanilla Freelancer.
 
 Ships:
 -- 122 pilotable ships in total, almost all from the original Freelancer game - only the Serafina Freighter, by Asmo, was added. NPCs use all ships as well.
@@ -76,17 +77,18 @@ Systems:
 -- No Trade Lanes. Nope. None. Cruise travel speeds are faster, but travel requires one to manually truck it everywhere. If you're worried about finding new bases, Trade Lane Buoys now mark where Trade Lanes used to be, and all of them show up on your NavMap from the start.
 -- 18 dockable bases that are available for purchase in various systems. You can not move them from their spots, nor do anything else with them for that matter, however they're excellent re-supply / respawn points, carry every gun and shield in the game for sale, and they DO shoot at other players / NPCs. Very handy for clans, but be wary as you may be sharing the space with unwanted guests.
 -- Complete re-do of asteroid fields - asteroids can now be pushed around - and mined - by ships. No more jamming your Battleship on asteroids, they just bump out of the way. No un-used asteroid models or poor pop-in distance on the asteroids either - the fields will look just as good as they did before.
--- 5 all-new systems: The Mine Mazathon; a re-done Alaska; and finally 3 PvP Arenas, using the last few levels from the SP campaign - the Lair, and the outside / inside of the Dyson Sphere.
--- A Mine Maze (mentioned above) that stretches one and a half systems; roughly 500km of travel. For those who don't know, a Mine Maze is a mine field with a series of inter-connecting tunnels that eventually lead you to a very certain destination..
+-- 3 PvP Arenas, using the last few levels from the SP campaign - the Lair, and the outside / inside of the Dyson Sphere. Arenas can be used for Death Penalty-free combat against other players and AI Bots.
+-- A unique hub system that allows players from all corners of the universe to meet up, trade rare items, and engage eachother in the connecting PvP Arenas (mentioned above). However, players can only exit the hub from the sector they entered from, and can not trade or drop commodities, meaning normal trade and travel balance is not affected.
+-- Unique challenge systems (high-end dungeons, basically), where players are pushed to the limit against insane bosses with unique rewards. For example, one challenge system requires players to travel roughly 400km of "Mine Maze" tunnels, which will instantly kill the player upon contact - players must navigate the tunnels, with waves of hostiles attacking them, to eventually fight a superboss at the end.
 -- Locked systems such as Tohoku have been unlocked, and transformed into fully-functional, NPC-populated systems.
 
 Misc:
--- Multiplayer support of the singleplayer storyline event system, making it possible to write scripted storyline missions for multiplayer.
--- FLHook work (originally developed by mc_horst, with continued development by w0dk4 and M0tah) integrated directly into the mod (Flak utilizes many aspects of it). Seamless integration technique requires absolutely no setup.
+-- Multiplayer support of the singleplayer storyline event system, making it possible to write scripted storyline missions for multiplayer. (extremely beta, work-in-progress)
+-- Custom 88 Flak FLHook (or FlakHook), designed by M0tah, integrated directly into the mod. Seamless integration technique requires absolutely no setup. FLHook was originally developed by mc_horst, with continued development by w0dk4 and various other coders in the FLHook community - see Thanks To section for other FLHook contributors.
 -- 84 collectable rare items, which are gained at random off killing NPCs. These include things such as cool guns, shield modifiers (modify your shield capacity or shield regen), power modifiers, scanners, tractor beams, and even ships.
 -- Extended configuration, both client and server side. Options include whether you want so see objects across a system or not, what types of NPCs appear, NPC population limits, etc.
 -- Possibly the most in-depth playable Nomad system - small buoys in each system allow you to resupply while maintaining proper hostility towards all factions, with the added ability to take Nomad AI wingmen (as per all other factions) with you on raids.
--- Special "quests" that demand a bit of riddle solving and a bit of time on your hands, however the rewards for accomplishing these are worth it to say the least.
+-- Special "quests" that demand a bit of riddle solving, and a bit of time on your hands. However, the rewards for accomplishing these are worth it to say the least.
 
 Want more info? Well, the screenshot directories sum it up pretty well: http://www.memes.no/88flak/screenshots/gameplay1.htm and http://www.memes.no/88flak/screenshots/misc1.htm
 
@@ -290,12 +292,12 @@ Thanks to Louva-Deus for these steps.
 If you plan on buying a Capital Ship, Weapons Platform (WP), or Station, please read this BEFORE doing so.
 
 Q: Can we really fly every Capital Ship, Weapons Platform and Station?
-A: You sure can. There's 5 Gunboats, 6 Battleships, 3 Cruisers, 2 Destroyers, 9 Weapons Platforms, and 30 Stations to choose from, which is about every large object in the game.
+A: You sure can. There's 17 Capital Ships, 31 Stations, and 9 Weapons Platforms to choose from, which is about every large object in the game.
 
-Q: Why can't pirate players get Capital Ships / WPs / Stations? That's not fair.
-A: Yes, it is fair. Pirating is one of the best ways to make money in Flak, but is also the hardest and most risky. You CAN get Capital Ships as a pirate, but you pretty much have to be ex-Navy.
+Q: Why can't pirate players get Capital Ships? That's not fair.
+A: Yes, it is fair. Pirating can be one of the best ways to make money in Flak, but is also the hardest and most risky. You CAN get Capital Ships as a pirate, but you pretty much have to be ex-Navy.
 
-Q: Okay, so I bought a Capital Ship / WP / Station. It comes with no guns, and the guns are anywhere from $200,000 to $250,000 each! What the hell!?
+Q: Okay, so I bought a Capital Ship / WP / Station. It comes with no guns, and the guns are anywhere really expensive! What the hell!?
 A: Capital Ships are an entirely different tier of ships - buying one is like starting a character over, only with a Capital Ship and different equipment to work towards. You have two options - either suck it up and pay millions for the guns, or group with either players or NPCs to start looting equipment.
    This was done because Capital Ships / WPs / Stations are very clan-oriented craft, where you'll either need large pools of money or a lot of man-power (usually both) to arm a Capital Ship. But trust me, once you get a Capital Ship / WP / Station fully armed, it is pretty impressive.
 
@@ -304,6 +306,9 @@ A: Flak Cannons (Large Capital Anti-Fighter) and Defense Turrets (Small Capital 
 
 Q: Why do Flak Turrets suck? Small Capitals armed with Defense Turrets are so much better.
 A: They don't suck, they just have a much shorter killzone than Defense Turrets - Large Capitals are primarily anti-capital craft, whereas Small Capitals are primarily anti-fighter. It's just part of the balance.
+
+Q: Howcome Goto doesn't function properly? I wag violently back and forth!
+A: Normally, Battleships and Stations will be protected against "spinning", which occurs when another ship collides with you in Multiplayer (Singleplayer does not suffer this bug). However, this solution causes Battleships and Stations to violently "wag" back and forth during autopilot; if this bothers you, there is an option to disable the anti-spin protection. Autopilot will be completely restored, and you will still be partially protected from spinning, however NPCs may still spin you once and a while (even though AI are designed to avoid ramming ships).
 
 ------
 ##6 - Multiplayer Wingmen FAQ
@@ -343,11 +348,11 @@ Q: I'm fighting another player's wingmen, and after repeatedly Cruise Disrupting
 A: This is because the player fled without you taking notice, and the wingmen have teleported back to him/her, seeing as they couldn't cruise away in time.
 
 Q: Will these wingmen be ported to normal Freelancer?
-A: Yes, in fact as of this writing a beta of the Multiplayer Wingmen Project has been released - download it at http://www.memes.no/88flak/downloads/beta/88FlakAIWingmenProject098Beta.zip.flmod
+A: Yes, in fact as of this writing a beta of the Multiplayer Wingmen Project has been released - download it at http://the-starport.net/modules/newbb/viewtopic.php?topic_id=977&start=0 (forum topic) or http://www.memes.no/88flak/downloads/beta/88FlakAIWingmenProject099Beta.zip.flmod (direct link)
 
 Q: Will these wingmen work in other mods / can I use them in my own mod?
 A: On their own, no, the wingmen can not function in other mods without a bit of work. See the above question.
-   If you want to use wingmen in your own mod, go for it. I would appreciate it if you asked first (contact info below), but it isn't required - just proper credit at least.
+   If you want to use wingmen in your own mod, go for it. I would appreciate it if you asked first (contact info below), but it isn't required - just proper credit at least. See Use of INI Code section.
 
 ------
 ##7 - AI Companion Bot FAQ
@@ -432,7 +437,7 @@ A: No. I'm not trying to be stingy with Flak's code, it's just that there are se
    However, I _have_ already ported wingmen, and from there you could probably design your own bot solution. Please check the AI Wingmen FAQ for more information.
 
 Q: Can I use bots in my own mod?
-A: Sure. I would appreciate it if you asked first (contact info below), but it isn't required - just proper credit at least.
+A: Sure. I would appreciate it if you asked first (contact info below), but it isn't required - just proper credit at least. See Use of INI Code section.
 
 ------
 ##8 - Useful Information for Running a Server
@@ -447,7 +452,7 @@ I also believe that everything mountable has a hashcode, while items that should
 
 The NPC AI is very taxing on the server. NPCs strafe and thrust like or better than most FL players; so while this leads to beautifully orchestrated 4v4 fights, that means there's a 4v4 fight for every player on the server (unless they're grouped in one area). For this, I have included the option of lowering the amount of NPCs for larger servers. You can pick a low NPC count - 4 NPCs maximum instead of 8 NPCs. Or, if you're insane, you can raise the maximum NPC count in a given area to either 16 or 32, which will turn Sirius into a war zone. While it's neat to watch 32 capital ships / fighters blast the living crap out of each-other (great for LANs!), this is not recommended; your server will probably suffer a lag attack. ;P
 
-There is no admin ship, but there is an "ADMIN" faction which can be set on a player by dragging the rep slider for the "ADMIN" faction in Ioncross to anything above 0.9 - also, there is an "Admin Shield" and "Admin Infinite Power Supply" that can be given to players via Ioncross. The Admin Shield makes players invulnerable, and the Admin Infinite Power Supply grants stupid amounts of power. There's also a selection of "Admin / Dev Engines" in Light Fighter, Heavy Fighter, Very Heavy Fighter, and Freighter varients. These will make your engines look like Nomad engines, however make sure the right engine type is mounted on your ship (ex. do NOT put a HF engine on a LF, or you will run into issues).
+There is no admin ship, but there is an "ADMIN" faction which can be set on a player by dragging the rep slider for the "ADMIN" faction in Ioncross to anything above 0.9 - also, there is an "Admin Shield" and "Admin Infinite Power Supply" that can be given to players via Ioncross. The Admin Shield makes players invulnerable, and the Admin Infinite Power Supply grants stupid amounts of power. There's also a selection of "Admin / Dev Engines" in Light Fighter, Heavy Fighter, Very Heavy Fighter, and Freighter varients. These will make your engines look like Nomad engines, however make sure the right engine type is mounted on your ship (e.g. do NOT put a HF engine on a LF, or you will run into issues).
 
 Finally, although it is a pain, it heavily recommended that you defrag your hard disk after activation of 88 Flak if you're running a server. If you don't know how to do this, click Start > Run and type in the following - "defrag C:" (or whatever your drive letter is) - this will really help FLServer parse all the different INI files, which can mean the difference between a smooth server and really choppy one! However, this will take a really long time, so make sure you're not in a hurry and have lunch ready. ;)
 
@@ -458,7 +463,7 @@ If all your characters have started on or after 1.27, you're all set, ignore thi
 
 If you wish to use pre-1.27 characters, you must download and run two programs:
 -- Freelancer Save Manipulator by M0tah, included in 88 Flak - simply open up the "88 Flak v127" mod folder (open up Freelancer Mod Manager and go to Tools > Open Mods Folder) and run FLSM.exe - once this is open, click "Choose New Operation File" and load in the "FLSM Updates.flm" script.
--- Freelancer Save Converter by Accushot, downloaded at http://forums.seriouszone.com/showthread.php?t=51200, or http://the-starport.net/index.php?option=com_tempdl&l=F (search for "freelancersaveconverter.msi") - after downloading this, simply run it and load in the "FLSC Updates.ops" script.
+-- Freelancer Save Converter by Accushot, downloaded at http://forums.seriouszone.com/showthread.php?t=51200, or http://www.memes.no/88flak/downloads/FreelancerSaveConverter.zip - after downloading this, simply run it and load in the "FLSC Updates.ops" script.
 (I apologize for having to utilize two programs for character updates, and eventually these script operations will all be covered under Freelancer Save Manipulator by M0tah, allowing for easier charfile updates; just bear with us in the meantime, thanks)
 
 After these scripts are run, please ensure the following:
@@ -493,15 +498,12 @@ house = -0.99, ew01_station_1_grp
 ------
 Normally, Battleships and Stations will be protected against "spinning", which occurs when another ship collides with you in Multiplayer (Singleplayer does not suffer this bug). However, this solution causes Battleships and Stations to violently "wag" back and forth during autopilot; if this bothers you, there is an option to disable the anti-spin protection. Autopilot will be completely restored, and you will still be partially protected from spinning, however NPCs may still spin you once and a while (even though AI are designed to avoid ramming ships).
 
-You can not see the new fins on the Covenanter (Bretonia VHF), Hydra (Kusari VHF), or Harlequin (Rheinland VHF) while docked at a base, due to the way these ships are "modeled." However, they will always show properly in space - both to you and other players - so it's minor.
+You may not see the new fins on the Covenanter (Bretonia VHF), Hydra (Kusari VHF), or Harlequin (Rheinland VHF) while docked at a base, due to the way these ships are "modeled." However, they will always show properly in space - both to you and other players - so it's minor.
 
 The Serafina may not show up while docked at a base at all (similar issue as above). However, it will always show properly in space - both to you and other players - so it's minor.
 
-Purchasing a Player-Purchasable Base without a faction ID tag for your character will give you a "Player-Purchasable" ID tag.
-To correct this, simply either kill a Player-Purchasable Base ship, or use the Faction Tag Removal NPC. However, considering you will usually get your first ID tag within the first 20 minutes of gameplay on a new character, the only time you would ever be able to purchase a station without already having an ID tag was if you created a new character and transferred the required funds to it - thus, it is very easy to avoid this issue altogether.
-
-Credit Chip amounts in the 65,000-something range will cause issues - when you pick up this many from space, or land at a base, the amount appear to be lower than the actual amount.
-To correct this, log out and back in at the base you wish to sell the Credit Chips at - this will show the correct value.
+Credit Chip amounts in the 65,000-something range ($65,000,000) may cause issues - when you pick up this many from space, or land at a base, the amount may appear to be lower than the actual amount.
+To correct this, log out and back in at the base you wish to sell the Credit Chips at - this will show, and allow you to sell, the correct value.
 
 Any Character-Generated AI Bots using a Repair Turret will attempt to repair enemies, not friendlies. This is because AI consider the Repair Turrets as normal weapons.
 To correct this, open up "data/custom_bot_loadouts.ini" and remove any references to "repair_turret" or "repair_gun" in the file.
@@ -509,7 +511,19 @@ To correct this, open up "data/custom_bot_loadouts.ini" and remove any reference
 Certain weapon textual descriptions (but only weapon DESCRIPTIONS, stats are 100% fine!) may not be totally accurate - for example, Xeno weapon infocards state that the guns have a short range, when in fact their range is pretty comperable to similar weapons. Please excuse me on this; while I realize that certain descriptions could use a little clarification, weapons receive too many stat changes and rebalances to keep track of within the textual descriptions, and the automatically generated stats provide everything you need to know anyhow. Plus, to change the descriptions, I'd have to individually edit every single weapon's infocard every time weapons are rebalanced, something that would seriously be a project of its own. Considering it only affects certain textual descriptions but not stat listings (and even then, most descriptions are still spot on), I'm not too worried about it. However, all other infocards have been checked to be 100% accurate (ship infocards, etc.).
 
 ------
-##11 - Contact Info
+##11 - Source Code / Use of INI Code
+------
+There is a "SourceFiles" folder containing sourcecode for all modules written for 88 Flak, such as M0tah's FLHook, DelayDisplay, and MultiIntro work. Additionally, open source work used in 88 Flak such as Adoxa's 8-Way Strafe plugin can be found here as well - the SourceFiles folder is sorted by author. See each individual file for more information.
+
+As for 88 Flak's actual INI code, feel free to use any part of it for any purpose. I only ask that proper credit be given, and since 88 Flak is very much a product of community effort, it would be best to simply credit "88 Flak" as a whole.
+
+------
+##12 - What's Coming
+------
+-- Lots of stuff! This changes too often to keep updated, so visit the forums at http://www.memes.no/88flak/forum/
+
+------
+##13 - Contact Info
 ------
 My E-Mail is astrout89(at)gmail(dot)com. I go on AIM by the name of foxUnit01, and my MSN Messenger (preferred method) is foxUnit01@hotmail.com
 If you have any bug reports, comments, complaints, mindless rant, questions, or stuff you think I should change / add, then please, contact me! I love to hear feedback, it keeps Flak going! =)
@@ -519,14 +533,13 @@ Contact info for all others involved in the 88 Flak project effort can be found 
 Finally, fun fact, this mod used to be subtitled "88 Flak: Mythic Drive" because I have absolutely no idea what still inspires both me and others to continue working on this project. It's pretty spontaneous, really - someone will think of something, and someone else will go "hey, that'd be neat in Flak," and a day or so later someone's working on it. It's been several years now, and we're still tweaking a project which should have died long ago. It really is a mystery.
 
 ------
-##12 - What's Coming
-------
--- Lots of stuff! This changes too often to keep updated, so visit the forums!
-
-------
-##13 - Thanks To
+##14 - Thanks To
 ------
 This project wouldn't be here without the following, so I'd like to thank:
+
+The Homeworld Server Admins - for providing a webspace - free of charge - for all of the 88 Flak downloads and forums, as well as hosting a 24/7 for 88 Flak way back in the day. 88 Flak would not be here without them.
+
+TheShadow (or Jay) and TheDarkMarauder - for hosting the official 24/7 88 Flak server for a really long time - http://freelancer.servegame.org/flak.html
 
 Digital Anvil - for making Freelancer in the first place. They made Brute Force too, another excellent game nobody knows about.
 
@@ -534,7 +547,7 @@ Microsoft - hey, they funded Freelancer development. That counts for something.
 
 The Starport staff - for continuing a community that provides a fun place for discussing Freelancer and other space games with like-minded people.
 
-The original Lancers Reactor staff - for, back in the day, starting a community that has grown some of the most ambitious modding projects I have ever seen for games.
+The original Lancers Reactor staff - for, back in the day, starting a community that has grown some of the most ambitious modding projects I have ever seen for video games.
 
 Everyone in the 88 Flak community - for being awesome. Seriously. Their never-ending effort and limitless imagination makes Flak one of the best projects I've ever worked on. I could not waste a better hour of gaming time (not just Freelancer) than with these folks; thanks guys. =D
 
@@ -551,10 +564,6 @@ Why485 - Why485 is a pretty cool guy, eh fixes missiles and doesnt afraid of any
 KillerJaguar - for major contributions to the Capital Ship rebalancing project for 1.27 RC122. Currently dominates the majority of the Kill Count scoreboard - http://freelancer.servegame.org/flstat2-kills.html
 
 Son'a - also for major contributions to the Capital Ship rebalancing project. Currently dominates the majority of the Economic scoreboard - http://freelancer.servegame.org/flstat2.html
-
-The Homeworld Server Admins - for providing a webspace - free of charge - for all of the 88 Flak downloads and forums, as well as hosting a 24/7 for 88 Flak way back in the day. 88 Flak would not be here without them either.
-
-TheShadow (or Jay) and TheDarkMarauder - for hosting the official 24/7 88 Flak server for over a year. http://freelancer.servegame.org/flak.html
 
 The Phoenix Mod Team - for large amounts of support of the mod. Personal thanks to ww2jacob and Hahukum Konn, who hosted a 24/7 for 88 Flak for a while.
 
@@ -594,15 +603,15 @@ Forsaken - for sharing his findings related to stopping Battleship spinning; he 
 
 The many authors of tutorials at the Starport - back when I didn't understand Freelancer's files at all, they helped a lot. Thanks guys. =)
 
-All the other modders out there, rather you helped me or not - without you guys, Freelancer would be dead by now.
+Finally, all the other modders out there, rather you helped me or not - without you guys, Freelancer would be dead by now.
 
 Did I forget you? Curses! Send me a message and I'll get you on the list. =)
 
 ------
-##14 - Changelog
+##15 - Changelog
 ------
 Excuse the rather messy changelogs. However, they're quite long, so no double-spacing here.
-The logs go in descending order, with the newest changes last.
+The logs go in descending order, with the newest changes last. Sorry, but there's no way I'm resorting this beast.
 
 Since Beta 0.8, in order of appearance:
 
@@ -625,7 +634,7 @@ Since Beta 0.8, in order of appearance:
 -- Addition: NPCs now fly Osiris, Prison Liner, and Luxury Liner.
 -- Misc: Removed excess junk. =P
 -- Bugfix: Fixed up SP - You start off friendly and hostile to the same factions in MP, have the same money, start in the newbie base, etc.
--- Misc: Made low NPC, high NPC, and no NPC patches for servers who wish to lighten the load on their servers a little (load goes down a ton with no NPCs - the data sent back and fourth from each player is reduced at least by half I think), or completely lag it (I would NOT use the high NPC patch on a public server). =P
+-- Misc: Made low NPC, high NPC, and no NPC patches for servers who wish to lighten the load on their servers a little (load goes down a ton with no NPCs - the data sent back and forth from each player is reduced at least by half I think), or completely lag it (I would NOT use the high NPC patch on a public server). =P
 -- Misc: Made every base abandoned for the no NPC patches, since there's no way to affect your reputation that much.
 -- Change: Revised Cost-A-Lot-Block system for Cap. Ships to fix engine problems.
 -- Addition: Much "thicker" engine effects for Cap. Ships - It was a side-effect from the above fix but it looks cool none-the-less.
@@ -654,7 +663,7 @@ Since Beta 0.9, in order of appearance:
 Since Beta 0.95, in order of appearance:
 
 -- Change: Added a 50 meter range to the Flying Permit. Apparently, people didn't get that you had to go right up to what you wanted to target (I know, it WAS quite odd), so this should assist that should you need to buy one.
--- Bugfix: Fixed the bug with house navy factions. Before, they didn't care if you killed their allies (ex. you could kill Rheinland and stay friendly with Kusari, somewhat) - Now, your reputation will be affected a bit.
+-- Bugfix: Fixed the bug with house navy factions. Before, they didn't care if you killed their allies (e.g. you could kill Rheinland and stay friendly with Kusari, somewhat) - Now, your reputation will be affected a bit.
 -- Bugfix: Utilized the new FL Scan to fix about 21 errors, most of which an invalid shop model for rare armors. =P (this should help clean up the console a tad)
 -- Change: Upped the ammo count on NPCs. Whatever NPCs had before, tack a "1" on it. To take advantage of the increased ammo count (which has always been there).
 -- Misc: Massively updated this readme so it's readable now. I put some tips in there, might want to re-read it. =P
@@ -1221,7 +1230,7 @@ Since 1.26, in order of appearance (not an exhaustive/full list of changes):
 -- Change: Freelance NPC factions are no longer useless; if you are of high enough reputation with a Freelance faction, they will shoot ANY of your enemies, regardless of the legality.
 -- Change: If fighting NPCs near the landscape in NPC Arena 1, they will now try to steer clear of the landscape instead of just heading straight into it.
 -- Addition: 10 previously un-used voice variations for NPCs, boosting the amount of different voices in Freelancer to 17.
--- Addition: AI Bots (BETA) - 23 selectable AI companions (or create your own companion bot from an existing player!) that can be enabled for solo or co-operative play; they will accompany you where-ever your travels take you, and attack any NPC with a hostile reputation to you. You are given four wingmen "slots" - you may assign a bot to each slot, allowing configurable squads of 1 to 4 bots.
+-- Addition: AI Bots (BETA) - 23 selectable AI companions (or create your own companion bot from an existing player!) that can be enabled for solo or co-operative play; they will accompany you wherever your travels take you, and attack any NPC with a hostile reputation to you. You are given four wingmen "slots" - you may assign a bot to each slot, allowing configurable squads of 1 to 4 bots.
 -- Addition: Freelance NPCs now fly player-flown stations as well. The chance of one being encountered is rare, however expect to see a mobile station from time to time now.
 -- Bugfix: Fixed missing a missing Ioncross hashcode for the cool green spinning thingies on certain stations.
 -- Bugfix: The pilotable Willard Research Station had only 7 guns instead of 8, and its docking bay doors were in-operable. Fixed.
