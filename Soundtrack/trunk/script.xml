@@ -1,5 +1,5 @@
 <script>
-<header name="88 Flak Version 1.27 Soundtrack RC129+ 10/09/09" savesafe="true" exclusive="false">
+<header name="88 Flak Version 1.27 Soundtrack RC129+ 10/10/09" savesafe="true" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -20,8 +20,18 @@ This will not work with normal Freelancer.
 </description>
 
 <options>
+;Reserved Option ID Codes
+;0xy - x = category, starting at 0 (0 for essential, 1 for graphics, etc.)
+;      y = option num, starting at 1
+;10x - x = DBG Options, starting at 1
+;100 - Blank Line
 
-<option name="MP Client: Soundtrack selection?" savesafe="true">
+<option id="100" name="    -- Soundtrack Selection --" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option id="001" name="MP Client: Soundtrack selection?" savesafe="true">
 <item id="0" name=" (Default) 88 Flak ST">
 </item>
 <item id="1" name="Alternate Heavy ST">
@@ -30,19 +40,23 @@ This will not work with normal Freelancer.
 </item>
 </option>
 
-<option name="" savesafe="true">
+<option id="100" name="" savesafe="true">
 <item id="0" name="">
 </item>
 </option>
-<option name="88 Flak Soundtrack" savesafe="true">
+<option id="100" name="88 Flak Soundtrack" savesafe="true">
 <item id="0" name="">
 </item>
 </option>
-<option name="Version 1.27, listed in server list as 88.27" savesafe="true">
+<option id="100" name="Version 1.27, listed in server list as 88.27" savesafe="true">
 <item id="0" name="">
 </item>
 </option>
-<option name="Bugs, suggestions, etc: http://www.memes.no/88flak/" savesafe="true">
+<option id="100" name="Bugs, suggestions, etc: http://www.memes.no/88flak/" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option id="100" name="" savesafe="true">
 <item id="0" name="">
 </item>
 </option>

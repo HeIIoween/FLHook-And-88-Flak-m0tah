@@ -58,6 +58,8 @@
 -- Large readme overhauls.
 -- Price of Trade Ships (Transports, Trains, Liners, etc.), Capital Ships, WPs, and Stations all tripled. Beware, as this also (almost) triples their Death Penalty as well. Clear tactical judgement is now required for use of these vessels, since death with them is a much bigger deal than it was before.
 -- Price of Nomad Fighter reduced from $6,000,000 to $1,400,000. Its Death Penalty should be much lower.
+-- Resorted and easier-to-use options script.
+-- Added Honken's work-in-progress post process shader - select "version 2.0" in the post-process option to use it. "Version 1.0" uses the traditional post-process.
 
 Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 

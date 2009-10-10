@@ -59,7 +59,7 @@ Graphics / Audio:
 -- (Optional) High-End Sound, where all sound can be heard up to a 6km distance, and also forces the engine to handle more sound channels. Also, the high-end sound system features enhanced doppler effects.
 -- (Optional) Battledust, which generates fog and debris off fighting, creating dark clouds where heavy combat areas have occurred. Highly recommended, as this adds huge atmosphere to large fights, but may introduce large performance hits.
 -- (Optional) Subtle Bloom and other post-process effects, via use of the experimental ENBSeries Post-Process Shader by Boris Vorontsov (http://boris-vorontsov.narod.ru), included in 88 Flak under non-commercial distribution. Do not be mistaken; 88 Flak's Bloom integration does not over-saturate the image, reduce clarity, etc. - only does what a correctly configured Bloom should do, and that is brighten specular highlights.
--- (Optional) Eye-adaption (Bloom) - sitting in a dark area while looking outside to a bright one will dynamically adjust the lighting values - looking straight at the sun will be blinding for a second, until the scene adjusts to a darker image.
+-- (Optional) Eye-adaption (post-process) - sitting in a dark area while looking outside to a bright one will dynamically adjust the lighting values - looking straight at the sun will be blinding for a second, until the scene adjusts to a darker image.
 -- (Optional) Dynamic Lighting on explosions. Capital Ship slugfests (during which there are many explosions) will literally light up the area.
 -- Loads of effects enhancements by Why485, ranging from Ace Combat-esque Missiles to the mighty Flak Cannon arrays that can easily put dozens of explosions in the air - all optimized to give as minimal an FPS hit as possible while still looking sexy.
 -- Cool death effects, of course - watch your ship catch fire and tumble before you die, or your Capital Ship go up in a blaze of explosive glory, etc.
@@ -100,6 +100,7 @@ Options are grouped as follows:
 "MP Client" - These options affect only the person who selected them, and have no effect on any other players.
 "MP Server" - These options are for the server host to decide on. They take effect server-wide, even if the joining clients do not have the option selected. New characters are notified of which options the server has selected.
 
+-- Essential Options --
 SP Only: Enable full OpenSP support? - No / Yes
 Enables tweaks to the mod to help support OpenSP mode.
 Currently, this consists of removing cloaks from purchasable ships, as they can not be toggled in SP (they are permenantly on).
@@ -111,24 +112,58 @@ Enable this option to enable w0dk4's Global Server Workaround, instead of attemp
 The GLS Workaround is more reliable, however can sometimes ignore manual direct connects specified with the -s parameter when launching Freelancer.
 Default: No
 
-MP Client: Ship at Player-Purchasable Bases? - Many options
-This option will select which ship appears for sale at any Player-Purchasable Base. Please note that this ship only appears for you, and not necessarily anyone else using the base.
-If this is your first time playing Flak, don't worry about this option.
-Default: None
-
-MP Client: More realistic space backgrounds? - No / Yes
-If enabled, backgrounds are simple patterns of stars, instead of the artsy backgrounds Freelancer carries by default. This gives the space presented a more realistic feel.
-Default: No
-
-MP Client: FOV options? - A few options
-Gives the choice of a few FOV (Field of View) options, with various mixes of 70 degrees (Freelancer's default), 90 degrees (widescreen etc.), and 25 degrees (zoom).
-Default: 70/70 FOV
-
 MP Client: Enable Battleship / Station Anti-Spin? - Yes / No
 If enabled, Battleships and Stations will be protected against "spinning", which occurs when another ship collides with you in Multiplayer (Singleplayer does not suffer this bug).
 However, this solution causes Battleships and Stations to violently "wag" back and forth during autopilot; if this bothers you, switch this option off. Autopilot will be completely restored, and you will still be partially protected from spinning, however NPCs may still spin you once and a while (even though AI are designed to avoid ramming ships).
 This option is automatically disabled when full OpenSP support is enabled, as anti-spin protection is not needed in OpenSP.
 Default: Yes
+
+MP Client: Ship at Player-Purchasable Bases? - Many options
+This option will select which ship appears for sale at any Player-Purchasable Base. Please note that this ship only appears for you, and not necessarily anyone else using the base.
+If this is your first time playing Flak, don't worry about this option.
+Default: None
+
+-- High-End Graphics / Sound Options --
+MP Client: Enable ENBSeries Post-Process shader? - No / Yes (version 1) / Yes (version 2)
+Enables use of the experimental ENBSeries Post-Process Shader by Boris Vorontsov (http://boris-vorontsov.narod.ru), included in 88 Flak under non-commercial distribution. No parts of the plugin have been changed, except for the plugin configuration to better suit Freelancer. For more info, please view the files in the "exe/ENBSeries Information/" directory.
+Version 2 features a shader custom-written for 88 Flak by Honken. It is a work-in-progress - Version 1 and 2 look drastically different, so it's down to personal taste.
+Sicne Version 2 still needs some work, I'd recommend just using Version 1.
+Default: No
+
+MP Client: Enable higher view distances? - No / Yes (10x) / Yes (Unlimited)
+If enabled, this will tweak the in-game Level of Detail (LOD) manager to render objects at a higher distance.
+If the 10x option is picked, the distance in which an object is rendered is increased by 10x the normal Freelancer distance.
+If the Unlimited option is picked, there is no limit to how far away an object is drawn.
+Please note that unless you have a very high-end PC, this will probably introduce quite a bit of FPS lag. Try the high-end special effects and sound system first.
+Default: No
+
+MP Client: Enable high-end special effects? - No / Yes / Yes (higher effects distance only)
+If enabled, special effects will be drawn at a 20km distance, and also forces the engine to handle 10 times the amount of effects it normally can.
+This also enables usage of Why485's new Missile, Torpedo, and Flak Cannon effects, which require the high-end special effects tweak to function.
+Paired with the high-end sound system (below), this makes for an amazingly immersive experience as you see (and hear) battles unfold before you're even in range yourself.
+Default: No
+
+MP Client: Enable high-end sound system? - No / Yes
+If enabled, all sound can be heard up to a 6km distance, and also forces the engine to handle more sound channels. Also, the high-end sound system features enhanced doppler effects.
+3D Sound MUST BE ENABLED for this option to function correctly - however, 3D Sound has been known to cause stability issues, so use it at your own risk!
+Paired with the high-end special effects (above), this makes for an amazingly immersive experience as you hear (and see) battles unfold before you're even in range yourself.
+Default: No
+
+MP Client: Enable dynamic lighting / debris for explosions? - No / Yes / Yes (dynamic lighting only) / Yes (debris only)
+Enables dynamic lighting and debris for explosions. Neither of these are, in general, a very big performance hit, however both dymamic lighting and debris may cause instability on certain hardware configurations.
+Please note that even if enabled, there is no lighting for Flak Cannon explosions, due to the massive amount of explosions displayed at once.
+Default: No
+
+MP Client: Enable Battledust? - No / Yes / Yes (2x duration) / Yes (2x duration + thicker)
+Enables or disables the "Battledust" system, which generates fog and debris off fighting, creating dark clouds where heavy combat areas have occurred. Highly recommended, as this adds huge atmosphere to large fights, but may introduce large performance hits.
+This requires high-end special effects to be enabled; otherwise, the battledust effects will overload Freelancer's rendering capacity.
+Also, please note that this disables the new hit effects system which allows hit effects to play when hitting your craft, due to a code conflict. If Battledust is activated, 88 Flak will simply revert to the vanilla hit effects method, where hit effects are hidden if hitting your craft.
+Default: No
+
+-- Camera Options --
+MP Client: FOV options? - A few options
+Gives the choice of a few FOV (Field of View) options, with various mixes of 70 degrees (Freelancer's default), 90 degrees (Flak's default, widescreen etc.), and 25 degrees (zoom).
+Default: 90/90 FOV
 
 MP Client: Change "Rear View" to "Tactical View"? - A few options
 If enabled, "Rear View" (default V) will be changed to a "Tactical View" - this positions the camera 1.5km or 3km away from your ship, allowing you to shoot everything immediately surrounding you - rather it be in front of you, behind you, above you, etc.
@@ -139,6 +174,11 @@ MP Client: Wide camera turning with Capitals? - Full / Partial / None
 Wide camera turning allows the camera to pivot up to 180*, allowing you to shoot targets behind or to the side of you while turning towards them. It essentially eliminates the need for Turret View.
 Although this takes a while to get used to, it highly increases the efficiency of these ships, and as such is recommended.
 Default: Full
+
+-- Visual Options --
+MP Client: More realistic space backgrounds? - No / Yes
+If enabled, backgrounds are simple patterns of stars, instead of the artsy backgrounds Freelancer carries by default. This gives the space presented a more realistic feel.
+Default: No
 
 MP Client: Normal thruster effects? - No / Yes
 Forces use of Freelancer's normal "smoke" thruster effect; Flak normally uses an effect that draws a contrail, however some think the flame effect is too large and would just prefer the normal effect.
@@ -154,40 +194,7 @@ The white box option solves these issues by drawing white boxes around incoming 
 Please also note that when this option is enabled, automatic CM dropping (where you "turn on" the CM dropper in your weapons window) does not function.
 Default: No
 
-MP Client: Enable dynamic lighting / debris for explosions? - No / Yes / Yes (dynamic lighting only) / Yes (debris only)
-Enables dynamic lighting and debris for explosions. Neither of these are, in general, a very big performance hit, however both dymamic lighting and debris may cause instability on certain hardware configurations.
-Please note that even if enabled, there is no lighting for Flak Cannon explosions, due to the massive amount of explosions displayed at once.
-Default: No
-
-MP Client: Enable ENBSeries Post-Process shader? - No / Yes
-Enables use of the experimental ENBSeries Post-Process Shader by Boris Vorontsov (http://boris-vorontsov.narod.ru), included in 88 Flak under non-commercial distribution. No parts of the plugin have been changed, except for the plugin configuration to better suit Freelancer. For more info, please view the files in the "exe/ENBSeries Information/" directory.
-Default: No
-
-MP Client: Enable Battledust? - No / Yes / Yes (2x duration) / Yes (2x duration + thicker)
-Enables or disables the "Battledust" system, which generates fog and debris off fighting, creating dark clouds where heavy combat areas have occurred. Highly recommended, as this adds huge atmosphere to large fights, but may introduce large performance hits.
-This requires high-end special effects to be enabled; otherwise, the battledust effects will overload Freelancer's rendering capacity.
-Also, please note that this disables the new hit effects system which allows hit effects to play when hitting your craft, due to a code conflict. If Battledust is activated, 88 Flak will simply revert to the vanilla hit effects method, where hit effects are hidden if hitting your craft.
-Default: No
-
-MP Client: Enable high-end special effects? - No / Yes / Yes (higher effects distance only)
-If enabled, special effects will be drawn at a 20km distance, and also forces the engine to handle 10 times the amount of effects it normally can.
-This also enables usage of Why485's new Missile, Torpedo, and Flak Cannon effects, which require the high-end special effects tweak to function.
-Paired with the high-end sound system (below), this makes for an amazingly immersive experience as you see (and hear) battles unfold before you're even in range yourself.
-Default: No
-
-MP Client: Enable high-end sound system? - No / Yes
-If enabled, all sound can be heard up to a 6km distance, and also forces the engine to handle more sound channels. Also, the high-end sound system features enhanced doppler effects.
-3D Sound MUST BE ENABLED for this option to function correctly - however, 3D Sound has been known to cause stability issues, so use it at your own risk!
-Paired with the high-end special effects (above), this makes for an amazingly immersive experience as you hear (and see) battles unfold before you're even in range yourself.
-Default: No
-
-MP Client: Enable higher view distances? - No / Yes (10x) / Yes (Unlimited)
-If enabled, this will tweak the in-game Level of Detail (LOD) manager to render objects at a higher distance.
-If the 10x option is picked, the distance in which an object is rendered is increased by 10x the normal Freelancer distance.
-If the Unlimited option is picked, there is no limit to how far away an object is drawn.
-Please note that unless you have a very high-end PC, this will probably introduce quite a bit of FPS lag. Try the high-end special effects and sound system first.
-Default: No
-
+-- Server Options --
 MP Server: AI difficulty? - Normal / Easy / Very Easy / Hard
 Turning this to Easy limits Nanobot / Shield Battery usage, making them easier to kill.
 Turning this to Very Easy decreases accuracy, firing rate, missile usage, and thrusting skill, in addition to limiting NPC Nanobot / Shield Battery usage.
@@ -231,6 +238,7 @@ MP Server: Allow Wingmen License to attract wingmen? - Yes / No
 Allows players to lead AI NPC wingmen squads. I HEAVILY recommend to leave this enabled; most of 88 Flak's combat is balanced with the assumption that players have AI helping them at all times.
 Default: Yes
 
+-- Soundtrack Selection --
 (88 Flak Soundtrack addon, downloaded at http://www.memes.no/88flak/downloads/beta/88flakv127_st.zip.flmod)
 MP Client: Soundtrack selection? - 88 Flak ST / Alternate Heavy ST / Vanilla ST (new title screen tracks only)
 Toggle between the two different 88 Flak soundtracks. I'd recommend that you play with the 88 Flak Soundtrack, however I suppose it all lies in musical taste.
@@ -297,7 +305,7 @@ A: You sure can. There's 17 Capital Ships, 31 Stations, and 9 Weapons Platforms 
 Q: Why can't pirate players get Capital Ships? That's not fair.
 A: Yes, it is fair. Pirating can be one of the best ways to make money in Flak, but is also the hardest and most risky. You CAN get Capital Ships as a pirate, but you pretty much have to be ex-Navy.
 
-Q: Okay, so I bought a Capital Ship / WP / Station. It comes with no guns, and the guns are anywhere really expensive! What the hell!?
+Q: Okay, so I bought a Capital Ship / WP / Station. It comes with no guns, and purchasing guns is really expensive! What the hell!?
 A: Capital Ships are an entirely different tier of ships - buying one is like starting a character over, only with a Capital Ship and different equipment to work towards. You have two options - either suck it up and pay millions for the guns, or group with either players or NPCs to start looting equipment.
    This was done because Capital Ships / WPs / Stations are very clan-oriented craft, where you'll either need large pools of money or a lot of man-power (usually both) to arm a Capital Ship. But trust me, once you get a Capital Ship / WP / Station fully armed, it is pretty impressive.
 
@@ -564,6 +572,8 @@ Why485 - Why485 is a pretty cool guy, eh fixes missiles and doesnt afraid of any
 KillerJaguar - for major contributions to the Capital Ship rebalancing project for 1.27 RC122. Currently dominates the majority of the Kill Count scoreboard - http://freelancer.servegame.org/flstat2-kills.html
 
 Son'a - also for major contributions to the Capital Ship rebalancing project. Currently dominates the majority of the Economic scoreboard - http://freelancer.servegame.org/flstat2.html
+
+Honken - for writing the current work-in-progress post-process shader (v2) for 88 Flak.
 
 The Phoenix Mod Team - for large amounts of support of the mod. Personal thanks to ww2jacob and Hahukum Konn, who hosted a 24/7 for 88 Flak for a while.
 

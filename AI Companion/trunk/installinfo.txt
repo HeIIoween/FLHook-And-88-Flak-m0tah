@@ -5,7 +5,5 @@ Download it at:
 http://www.memes.no/88flak/downloads/beta/88flakv127_st.zip.flmod
 For more information, please view the credits section of the 88 Flak Readme.
 
-Finally, 88 Flak makes heavy use of the afterburner (default TAB). Since TAB is an awkward key to hold for extended periods of time, it is highly recommended you change your afterburner key to something more accessable. Ctrl+W and Middle Mouse are both excellent keys to use for afterburner.
-
 Now that you've read this semi-important information, click yes. Have fun! =)
 ~fox
