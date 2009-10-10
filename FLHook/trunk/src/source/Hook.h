@@ -623,6 +623,15 @@ struct CHARACTER_ID
 	char charfilename[15];
 };
 
+//Reputation callback struct
+struct RepCB
+{
+	uint iGroup;
+	uint iNameLen;
+	char szName[16];
+};
+typedef bool (__stdcall *_RepCallback)(RepCB *rep);
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // prototypes
 void PrintUniverseText(wstring wscText, ...);
@@ -673,6 +682,8 @@ uint HkGetSpaceObjFromBaseID(uint iBaseID);
 string HkGetStringFromIDS(uint iIDS);
 wstring HkGetWStringFromIDS(uint iIDS);
 CEqObj * __stdcall HkGetEqObjFromObjRW(struct IObjRW *objRW);
+list<RepCB> HkGetFactions();
+void HkEnumFactions(_RepCallback callback);
 
 // HkFuncMsg
 HK_ERROR HkMsg(int iClientID, wstring wscMessage);
@@ -959,5 +970,7 @@ extern bool g_bNPCForceDisabled;
 extern char *g_FLServerDataPtr;
 
 extern map<uint, map<Archetype::AClassType, char> > set_mapSysItemRestrictions;
+extern list<RepCB> lstTagFactions;
+
 
 #endif

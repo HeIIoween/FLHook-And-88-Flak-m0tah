@@ -976,7 +976,7 @@ void __stdcall BaseExit(unsigned int iBaseID, unsigned int iClientID)
 
 	try {
 		// autobuy
-		if(set_bAutoBuy)
+		if(set_bUserCmdAutoBuy)
 			HkPlayerAutoBuy(iClientID, iBaseID);
 
 		ClientInfo[iClientID].iBaseEnterTime = 0;

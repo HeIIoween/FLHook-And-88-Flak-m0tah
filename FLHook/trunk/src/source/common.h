@@ -140,7 +140,7 @@ namespace Reputation
 	IMPORT  void  Shutdown(void);
 	IMPORT  bool  Startup(char const *);
 	IMPORT  int  affect_relation(unsigned int const &,unsigned int const &,float);
-	IMPORT  void  enumerate(struct RepGroupCB *);
+	IMPORT  void enumerate(struct RepGroupCB *);
 	IMPORT  int  get_feelings_towards(unsigned int,unsigned int,float &);
 	IMPORT  unsigned int  get_id(struct TString<16> const &);
 	IMPORT  unsigned int  get_info_card(unsigned int);

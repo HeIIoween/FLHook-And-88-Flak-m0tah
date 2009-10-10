@@ -634,3 +634,42 @@ __declspec(naked) CEqObj * __stdcall HkGetEqObjFromObjRW(struct IObjRW *objRW)
 		ret 4
 	}
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+list<RepCB> *lstSaveFactions;
+_RepCallback saveCallback;
+
+bool __stdcall RepCallback(RepCB *rep)
+{
+	__asm push ecx
+	lstSaveFactions->push_back(*rep);	
+	__asm pop ecx
+	return true;
+}
+
+list<RepCB> HkGetFactions()
+{
+	list<RepCB> lstFactions;
+	lstSaveFactions = &lstFactions;
+	void *callback = (void*)RepCallback;
+	void **obj = &callback;
+	Reputation::enumerate((Reputation::RepGroupCB*)&obj);
+	return lstFactions;
+}
+
+bool __stdcall RepEnumCallback(RepCB *rep)
+{
+	__asm push ecx
+	bool bRet = saveCallback(rep);
+	__asm pop ecx
+	return bRet;
+}
+
+void HkEnumFactions(_RepCallback callback)
+{
+	saveCallback = callback;
+	void *enumCallback = (void*)RepEnumCallback;
+	void **obj = &enumCallback;
+	Reputation::enumerate((Reputation::RepGroupCB*)&obj);
+}

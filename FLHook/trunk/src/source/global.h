@@ -238,7 +238,7 @@ extern uint	set_iAntiF1;
 extern uint	set_iUserCmdMaxIgnoreList;
 extern uint	set_iReservedSlots;
 extern uint	set_iDisconnectDelay;
-extern bool	set_bAutoBuy;
+extern bool	set_bUserCmdAutoBuy;
 extern float set_fTorpMissileBaseDamageMultiplier;
 extern bool set_MKM_bActivated;
 extern wstring set_MKM_wscStyle;
@@ -445,5 +445,8 @@ extern set<uint> set_setEquipReDam;
 extern map<uint, float> set_mapNPCDeathRep;
 extern uint set_iNPCDeathMessages;
 extern uint set_iNPCDeathType;
+
+extern float set_fMinTagRep;
+extern bool set_bUserCmdTag;
 
 #endif

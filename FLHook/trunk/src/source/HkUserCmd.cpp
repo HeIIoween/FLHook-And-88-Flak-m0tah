@@ -420,7 +420,7 @@ void UserCmd_DelIgnore(uint iClientID, wstring wscParam)
 
 void UserCmd_AutoBuy(uint iClientID, wstring wscParam)
 {
-	if(!set_bAutoBuy)
+	if(!set_bUserCmdAutoBuy)
 	{
 		PRINT_DISABLED();
 		return;
@@ -1739,8 +1739,14 @@ void UserCmd_IgnoreUniverse(uint iClientID, wstring wscParam)
 	wstring wscError[] = 
 	{
 		L"Error: Invalid parameters",
-		L"Usage: /ignoreuniverse [on|off]",
+		L"Usage: /ignoreuniverse <on|off>",
 	};
+
+	if(!set_bUserCmdIgnore)
+	{
+		PRINT_DISABLED();
+		return;
+	}
 
 	if(ToLower(wscParam) == L"on")
 	{
@@ -1760,6 +1766,79 @@ void UserCmd_IgnoreUniverse(uint iClientID, wstring wscParam)
 		return;
 	}
 	PRINT_OK();
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void UserCmd_Tag(uint iClientID, wstring wscParam)
+{
+	wstring wscError[] = 
+	{
+		L"Error: Invalid parameters",
+		L"Usage: /tag <faction name>"
+	};
+
+	if(!set_bUserCmdTag)
+	{
+		PRINT_DISABLED();
+		return;
+	}
+
+	wscParam = Trim(wscParam);
+
+	if(wscParam.length())
+	{
+		wscParam = ToLower(wscParam);
+		uint iGroup = 0;
+		foreach(lstTagFactions, RepCB, rep)
+		{
+			uint iIDS = Reputation::get_short_name(rep->iGroup);
+			wstring wscFaction = HkGetWStringFromIDS(iIDS);
+			wscFaction = ToLower(wscFaction);
+			if(wscFaction == wscParam)
+			{
+				iGroup = rep->iGroup;
+				break;
+			}
+			else
+			{
+				iIDS = Reputation::get_name(rep->iGroup);
+				wscFaction = HkGetWStringFromIDS(iIDS);
+				wscFaction = ToLower(wscFaction);
+				if(wscFaction == wscParam)
+				{
+					iGroup = rep->iGroup;
+					break;
+				}
+			}
+		}
+		if(iGroup)
+		{
+			int iRep;
+			pub::Player::GetRep(iClientID, iRep);
+			uint iIDS = Reputation::get_name(iGroup);
+			wstring wscFaction = HkGetWStringFromIDS(iIDS);
+			float fRep;
+			pub::Reputation::GetGroupFeelingsTowards(iRep, iGroup, fRep);
+			if(fRep < set_fMinTagRep)
+			{
+				PrintUserCmdText(iClientID, L"Error: your reputation of %g to " + wscFaction + L" is less than the required %g.", fRep, set_fMinTagRep);
+			}
+			else
+			{
+				pub::Reputation::SetAffiliation(iRep, iGroup);
+				PrintUserCmdText(iClientID, L"Affiliation changed to " + wscFaction);
+			}
+		}
+		else
+		{
+			PrintUserCmdText(iClientID, L"Error: could not find faction");
+		}
+	}
+	else
+	{
+		PRINT_ERROR();
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1814,6 +1893,7 @@ CMDHELPINFO HelpInfo[] =
 	{ true, L"transfer",		L"Usage: /transfer <charname> <item>            \n/transfer$ <client-id> <item>\n  Transfers <item> to <charname>.  Valid items are those that are not grouped\n  (like commodities and ammo).  Enter the command to find how how much it costs."},
 	{ true, L"enumcargo",		L"Usage: /enumcargo\n  Prints out a number for each cargo item that can be used with the /transfer command."},
 	{ true, L"dp",				L"Usage: /dp [on|off]\n  Shows information about the death penalty.  Also sets whether a notice about how\n  much the death penalty costs is shown upon launch."},
+	{ true, L"tag",				L"/tag <faction>\n  Changes your affiliation to <faction>, making it appear beside your name ingame."},
 	{ true, L"help [command]",	L"Usage: /help [command]\n            /? [command]\n  Gets help on available commands"},
 	{ false,L"?",				HelpInfo[40].wscHelpTxt},
 };
@@ -1909,6 +1989,7 @@ USERCMD UserCmds[] =
 	{ L"/enumcargo",			UserCmd_EnumCargo},
 	{ L"/dp",					UserCmd_DeathPenalty},
 	{ L"/ignoreuniverse",		UserCmd_IgnoreUniverse},
+	{ L"/tag",					UserCmd_Tag},
 	{ L"/help",					UserCmd_Help},
 	{ L"/?",					UserCmd_Help},
 };

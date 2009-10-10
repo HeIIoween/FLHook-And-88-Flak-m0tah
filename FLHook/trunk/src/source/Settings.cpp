@@ -92,7 +92,8 @@ bool			set_bUserCmdSetDieMsgSize;
 bool			set_bUserCmdSetChatFont;
 bool			set_bUserCmdIgnore;
 uint			set_iUserCmdMaxIgnoreList;
-bool			set_bAutoBuy;
+bool			set_bUserCmdAutoBuy;
+bool			set_bUserCmdTag;
 
 // Death
 bool			set_bChangeRepPvPDeath;
@@ -140,7 +141,6 @@ BinaryTree<DOCK_RESTRICTION> *set_btJRestrict = new BinaryTree<DOCK_RESTRICTION>
 
 //Internal Equipment mount restriction by shiparch
 BinaryTree<MOUNT_RESTRICTION> *set_btMRestrict = new BinaryTree<MOUNT_RESTRICTION>();
-
 
 //No-PvP Tokens
 vector<uint>	set_vNoPvpGoodIDs;
@@ -199,6 +199,10 @@ map<uint, map<Archetype::AClassType, char> > set_mapSysItemRestrictions;
 map<uint, float> set_mapNPCDeathRep;
 uint set_iNPCDeathMessages;
 uint set_iNPCDeathType;
+
+//Minimum tag command rep
+float set_fMinTagRep;
+list<RepCB> lstTagFactions;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -347,13 +351,36 @@ void LoadSettings()
 		set_iSendCashTime = IniGetI(set_scCfgCommandsFile, "General", "SendcashTime", 0);
 		set_iShieldsUpTime = IniGetI(set_scCfgCommandsFile, "General", "ShieldsUpTime", 15);
 		set_iTransferCmdCharge = IniGetI(set_scCfgCommandsFile, "General", "TransferCmdCharge", 150000);
+		set_fMinTagRep = IniGetF(set_scCfgCommandsFile, "General", "MinTagReputation", 0.6f);
 		// UserCommands
 		set_bUserCmdSetDieMsg = IniGetB(set_scCfgCommandsFile, "UserCommands", "SetDieMsg", false);
 		set_bUserCmdSetDieMsgSize = IniGetB(set_scCfgCommandsFile, "UserCommands", "SetDieMsgSize", false);
 		set_bUserCmdSetChatFont = IniGetB(set_scCfgCommandsFile, "UserCommands", "SetChatFont", false);
 		set_bUserCmdIgnore = IniGetB(set_scCfgCommandsFile, "UserCommands", "Ignore", false);
 		set_iUserCmdMaxIgnoreList = IniGetI(set_scCfgCommandsFile, "UserCommands", "MaxIgnoreListEntries", 30);
-		set_bAutoBuy = IniGetB(set_scCfgCommandsFile, "UserCommands", "AutoBuy", false);
+		set_bUserCmdAutoBuy = IniGetB(set_scCfgCommandsFile, "UserCommands", "AutoBuy", false);
+		set_bUserCmdTag = IniGetB(set_scCfgCommandsFile, "UserCommands", "Tag", false);
+		//Tag exclusion list
+		IniGetSection(set_scCfgCommandsFile, "TagExclusion", lstValues);
+		foreach(lstValues, INISECTIONVALUE, itExFact)
+			itExFact->scKey = itExFact->scKey.substr(0, 15);
+		lstTagFactions = HkGetFactions();
+		for(list<RepCB>::iterator itFactions = lstTagFactions.begin(); (itFactions != lstTagFactions.end());)
+		{
+			bool bFoundFaction = false;
+			foreach(lstValues, INISECTIONVALUE, itExFact)
+			{
+				if(itExFact->scKey == itFactions->szName)
+				{
+					bFoundFaction = true;
+					break;
+				}
+			}
+			if(bFoundFaction)
+				itFactions = lstTagFactions.erase(itFactions);
+			else
+				itFactions++;
+		}
 
 	//Death
 		//Style

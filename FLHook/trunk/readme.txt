@@ -234,7 +234,7 @@ shutdownserver
   by default on XP Home).
 spawns [on|off]
   Turns NPC spawns on or off.
-help
+help [page number (if ingame)]
   get a list of all commands
   
 - MISC INFOS -
@@ -484,6 +484,9 @@ or disabled in the ini. enter them ingame to get a description.
   Shows information about the death penalty.  Also sets whether a notice about how
   much the death penalty costs is shown upon launch.
   
+/tag <faction>
+  Changes your affiliation to <faction>, making it appear beside your name ingame.
+  
 /help [command] and /? [command]
   If command is not specified, prints out list of commands.  If it is specified,
   prints out information on command.
@@ -632,6 +635,8 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - Fixed unicode socket bug. The received bytes were not converted into a wstring correctly. (thanks to Cannon)
 - Items in the [AutoMarkItems] list will only be marked if they spawn within the "square of player disappear distance in MP" offset
 - Added equipment damage redirection, see [EquipmentRedirectDamage] in items.ini.
+- Added /tag player command for changing affiliation.
+- /ignoreuniverse can now be controlled with the rest of the ignore commands using the [UserCommands]->Ignore setting.
 
 1.6.5 (unofficial)
 - Fixed getting account dir failing on some computers (http://the-starport.net/f/index.php?topic=853.0)

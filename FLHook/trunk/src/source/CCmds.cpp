@@ -1153,12 +1153,12 @@ void CCmds::CmdType(wstring wscCharname)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*void CCmds::CmdTest(wstring wsc)
+void CCmds::CmdTest()
 {
 	Print(L"command=nothing\nOK");
-}*/
+}
 
-void CCmds::CmdTest()
+/*void CCmds::CmdTest()
 {
 	uint iGoodID = 2851971011;
 	pub::GetGoodID(iGoodID, wstos(ArgStr(1)).c_str());
@@ -1181,7 +1181,7 @@ void CCmds::CmdTest()
 	obj->add_item(ed);
 	//obj->update(1.0f, iTarget);
 	Print(L"OK");
-}
+}*/
 
 /*uint iSavedTarget = 0;
 void CCmds::CmdTest(wstring wsc)
