@@ -473,7 +473,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 						wscDeathMsg.reserve(256);
 						wstring wscVictim = Players.GetActiveCharacterName(iClientID);
 						wscEvent = L"kill victim=" + wscVictim;
-						wscDeathMsg = L"Death: " + wscVictim + L" was killed";
+						wscDeathMsg = wscVictim + L" was killed";
 						if(!lstFactionsInflict.size())
 						{
 							uint iSystemID;

@@ -305,7 +305,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 						pub::Reputation::SetReputation(iRep, set_vNoPvpFactionIDs[i], 0.0f);
 						if(iAffil==set_vNoPvpFactionIDs[i])
 						{
-							pub::Reputation::SetAffiliation(iRep, 0);
+							pub::Reputation::SetAffiliation(iRep, -1);
 							break;
 						}
 					}
