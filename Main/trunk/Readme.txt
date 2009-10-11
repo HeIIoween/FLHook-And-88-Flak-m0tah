@@ -127,7 +127,7 @@ Default: None
 MP Client: Enable ENBSeries Post-Process shader? - No / Yes (version 1) / Yes (version 2)
 Enables use of the experimental ENBSeries Post-Process Shader by Boris Vorontsov (http://boris-vorontsov.narod.ru), included in 88 Flak under non-commercial distribution. No parts of the plugin have been changed, except for the plugin configuration to better suit Freelancer. For more info, please view the files in the "exe/ENBSeries Information/" directory.
 Version 2 features a shader custom-written for 88 Flak by Honken. It is a work-in-progress - Version 1 and 2 look drastically different, so it's down to personal taste.
-Sicne Version 2 still needs some work, I'd recommend just using Version 1.
+Since Version 2 still needs some work, I'd recommend just using Version 1.
 Default: No
 
 MP Client: Enable higher view distances? - No / Yes (10x) / Yes (Unlimited)

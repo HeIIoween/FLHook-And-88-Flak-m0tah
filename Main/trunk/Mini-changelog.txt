@@ -60,10 +60,14 @@
 -- Price of Nomad Fighter reduced from $6,000,000 to $1,400,000. Its Death Penalty should be much lower.
 -- Resorted and easier-to-use options script.
 -- Added Honken's work-in-progress post process shader - select "version 2.0" in the post-process option to use it. "Version 1.0" uses the traditional post-process.
+-- Explosion radius of Capital Ship Missiles doubled.
+-- The Nomad Buoy is now treated like any other base, and can be destroyed, with a normal repair cycle.
+-- Pursuit LFs now have less armor than regular LFs, with 10000 armor (decreased from 12500) and a 20 max Battery / Nanobot limit (decreased from 25).
 
 Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
+-- maybe make CDs 0* only?
 -- some change I knew I'd forget (I already nailed bot trading..)
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- eventually do a bunch of other updates to the readme
