@@ -1,0 +1,32 @@
+;rh_fighter
+[Loadout]
+nickname = Bot_CustomSlot1_Loadout
+archetype = Bot_CustomSlot1_Ship
+;equip = AI_DBG_TGT_gun, HpMount
+equip = infinite_power
+equip = ge_rf_engine_01
+equip = ge_s_scanner_01_npc
+equip = ge_s_tractor_01
+equip = contrail01, HpContrail01
+equip = contrail01, HpContrail02
+equip = fc_x_gun01_mark02, HpWeapon01
+equip = fc_x_gun01_mark02, HpWeapon02
+equip = fc_x_gun01_mark04, HpWeapon03
+equip = fc_x_gun01_mark04, HpWeapon04
+equip = missile01_mark01, HpTorpedo01
+equip = shield03_mark05_lf, HpShield01
+equip = ge_s_thruster_03, HpMine01
+equip = ge_s_thruster_03, HpCM01
+equip = mine01_mark05, HpThruster01
+equip = LargeWhiteSpecial, HpHeadlight
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = SlowSmallYellow, HpRunningLight01
+equip = SlowSmallYellow, HpRunningLight02
+equip = SlowSmallYellow, HpRunningLight03
+equip = SlowSmallYellow, HpRunningLight04
+equip = SlowSmallYellow, HpRunningLight05
+equip = SlowSmallYellow, HpRunningLight06
+cargo = ge_s_repair_01, 25
+cargo = ge_s_battery_01, 25
+cargo = mine01_mark05_ammo, 150

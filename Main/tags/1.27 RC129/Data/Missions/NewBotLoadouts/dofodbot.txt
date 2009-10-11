@@ -1,0 +1,56 @@
+;br_fighter
+[Loadout]
+nickname = Bot_CustomSlot1_Loadout
+archetype = Bot_CustomSlot1_Ship
+;equip = AI_DBG_TGT_gun, HpMount
+equip = infinite_power
+equip = ge_bf_engine_01
+equip = ge_s_scanner_01_npc
+equip = LargeWhiteSpecial, HpHeadlight
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = SlowSmallYellow, HpRunningLight01
+equip = SlowSmallYellow, HpRunningLight02
+equip = SlowSmallYellow, HpRunningLight03
+equip = ge_s_tractor_01
+equip = contrail01, HpContrail01
+equip = contrail01, HpContrail02
+equip = powermod01, HpShield01
+equip = ge_s_thruster_01, HpMine01
+equip = ge_s_thruster_01, HpCM01
+equip = fc_c_gun02_mark01, HpWeapon01
+equip = fc_c_gun02_mark01, HpWeapon02
+equip = cruise_disruptor01_mark01, HpTorpedo01
+equip = mine02_mark02, HpThruster01
+equip = missile01_mark04, HpWeapon03
+equip = missile02_mark04, HpWeapon04
+cargo = ge_s_repair_01, 25
+cargo = cruise_disruptor01_mark01_ammo, 4
+cargo = mine02_mark02_ammo, 30
+cargo = missile01_mark04_ammo, 50
+cargo = missile02_mark04_ammo, 50
+
+;ge_prison
+[Loadout]
+nickname = Bot_CustomSlot2_Loadout
+archetype = Bot_CustomSlot2_Ship
+;equip = AI_DBG_TGT_gun, HpMount
+equip = infinite_power
+equip = ge_psn_engine_01
+equip = ku_prison_turret01, HpTurret_Prison_07
+equip = ku_prison_turret01, HpTurret_Prison_06
+equip = rh_prison_turret01, HpTurret_Prison_02
+equip = rh_prison_turret01, HpTurret_Prison_03
+equip = rh_prison_turret01, HpTurret_Prison_05
+equip = li_prison_turret01, HpTurret_Prison_09
+equip = li_prison_turret01, HpTurret_Prison_08
+equip = br_prison_turret01, HpTurret_Prison_01
+equip = br_prison_turret01, HpTurret_Prison_04
+equip = ge_s_scanner_01_npc
+equip = SlowLargeWhite, HpRunningLight01
+equip = SlowLargeWhite, HpRunningLight02
+equip = SlowLargeWhite, HpRunningLight07
+equip = SlowLargeWhite, HpRunningLight15
+equip = SlowLargeWhite, HpRunningLight09
+equip = ge_s_tractor_01
+equip = sfx_rumble_ut_large

@@ -1,0 +1,21 @@
+;------ MP Specifics ------
+[Trigger]
+nickname = mp_scriptfix
+system = any
+Cnd_SystemExit = any
+Act_ActTrig = mp_scriptfix_pull
+Act_ActTrig = mp_scriptfix_push
+
+[Trigger]
+nickname = mp_scriptfix_pull
+system = any
+Cnd_SystemEnter = any
+Act_NNIds = 458831, OBJECTIVE ;Test message
+Act_DeactTrig = mp_scriptfix_push
+Act_ActTrig = mp_scriptfix
+
+[Trigger]
+nickname = mp_scriptfix_push
+system = any
+Cnd_Timer = 1
+Act_ChangeState = FAIL, 458831

@@ -1,0 +1,12 @@
+[Zone]
+nickname = Zone_(GATE HERE)_antinpcspawn
+pos = (POS HERE)
+shape = SPHERE
+size = 1500 ;AntiNPCSpawn
+visit = 128
+sort = 100 ;AntiNPCSpawn
+toughness = 1
+density = 0
+density_restriction = 1, class_patroller
+relief_time = 30
+population_additive = false

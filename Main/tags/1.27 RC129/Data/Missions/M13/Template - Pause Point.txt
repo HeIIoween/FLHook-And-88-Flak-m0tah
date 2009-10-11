@@ -1,0 +1,6 @@
+Act_ActTrig = pux_
+
+[Trigger]
+nickname = pux_
+system = Li07
+Cnd_Timer = 2
