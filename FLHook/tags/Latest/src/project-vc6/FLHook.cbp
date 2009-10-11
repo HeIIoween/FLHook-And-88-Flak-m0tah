@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="FLHook" />
+		<Option pch_mode="2" />
+		<Option compiler="msvctk" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="Z:\mnt\sda1\Documents and Settings\Kevin\My Documents\My Games\88 Flak\FLHook\FLHook 1.6.3\flhook1.6.3src\project-vc6\Release\FLHook" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="3" />
+				<Option compiler="msvctk" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="/MT" />
+					<Add option="/W3" />
+					<Add option="/GX" />
+					<Add option="/O2" />
+					<Add option="/DWIN32" />
+					<Add option="/DNDEBUG" />
+					<Add option="/D_WINDOWS" />
+					<Add option="/D_MBCS" />
+					<Add option="/D_USRDLL" />
+					<Add option="/DFLHOOK_EXPORTS" />
+					<Add option="/YX" />
+					<Add option="/FD" />
+				</Compiler>
+				<Linker>
+					<Add option="/dll" />
+					<Add option="/machine:I386" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="winmm" />
+					<Add library="psapi" />
+					<Add library="wsock32" />
+					<Add library="ws2_32" />
+					<Add library="../source/libs/server" />
+					<Add library="../source/libs/common" />
+					<Add library="../source/libs/remoteclient" />
+					<Add library="../source/libs/dalib" />
+				</Linker>
+			</Target>
+			<Target title="Win32 Debug">
+				<Option output="Z:\mnt\sda1\Documents and Settings\Kevin\My Documents\My Games\88 Flak\FLHook\FLHook 1.6.3\flhook1.6.3src\project-vc6\Debug\FLHook" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="3" />
+				<Option compiler="msvctk" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="/MTd" />
+					<Add option="/W3" />
+					<Add option="/GX" />
+					<Add option="/Od" />
+					<Add option="/DWIN32" />
+					<Add option="/D_DEBUG" />
+					<Add option="/D_WINDOWS" />
+					<Add option="/D_MBCS" />
+					<Add option="/D_USRDLL" />
+					<Add option="/DFLHOOK_EXPORTS" />
+					<Add option="/YX" />
+					<Add option="/FD" />
+					<Add option="/ZI" />
+					<Add option="/GZ" />
+					<Add option="/Zd" />
+					<Add option="/FR" />
+				</Compiler>
+				<Linker>
+					<Add option="/dll" />
+					<Add option="/debug" />
+					<Add option="/machine:I386" />
+					<Add option="/pdbtype:sept" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="winmm" />
+					<Add library="psapi" />
+					<Add library="wsock32" />
+					<Add library="ws2_32" />
+					<Add library="../source/libs/server" />
+					<Add library="../source/libs/common" />
+					<Add library="../source/libs/remoteclient" />
+					<Add library="../source/libs/dalib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="..\source\CCmds.cpp" />
+		<Unit filename="..\source\CCmds.h" />
+		<Unit filename="..\source\CConsole.cpp" />
+		<Unit filename="..\source\CConsole.h" />
+		<Unit filename="..\source\CInGame.cpp" />
+		<Unit filename="..\source\CInGame.h" />
+		<Unit filename="..\source\CSocket.cpp" />
+		<Unit filename="..\source\CSocket.h" />
+		<Unit filename="..\source\flcodec.cpp" />
+		<Unit filename="..\source\flcodec.h" />
+		<Unit filename="..\source\common.h" />
+		<Unit filename="..\source\dalib.h" />
+		<Unit filename="..\source\remoteclient.h" />
+		<Unit filename="..\source\server.h" />
+		<Unit filename="..\source\HkCbChat.cpp" />
+		<Unit filename="..\source\HkCbDamage.cpp" />
+		<Unit filename="..\source\HkCbDeath.cpp" />
+		<Unit filename="..\source\HkCbDisconnect.cpp" />
+		<Unit filename="..\source\HkCbIServerImpl.cpp" />
+		<Unit filename="..\source\HkCbOther.cpp" />
+		<Unit filename="..\source\HkTimers.cpp" />
+		<Unit filename="..\source\HkUserCmd.cpp" />
+		<Unit filename="..\source\HkFuncLog.cpp" />
+		<Unit filename="..\source\HkFuncMsg.cpp" />
+		<Unit filename="..\source\HkFuncOther.cpp" />
+		<Unit filename="..\source\HkFuncPlayers.cpp" />
+		<Unit filename="..\source\HkFuncTools.cpp" />
+		<Unit filename="..\source\HkDataBaseMarket.cpp" />
+		<Unit filename="..\source\HkDataBaseOther.cpp" />
+		<Unit filename="..\source\HkError.cpp" />
+		<Unit filename="..\source\HkFLIni.cpp" />
+		<Unit filename="..\source\HkInit.cpp" />
+		<Unit filename="..\source\Hook.h" />
+		<Unit filename="..\source\xtrace.cpp">
+			<Option target="Win32 Debug" />
+		</Unit>
+		<Unit filename="..\source\xtrace.h">
+			<Option target="Win32 Debug" />
+		</Unit>
+		<Unit filename="..\source\wildcards.cpp" />
+		<Unit filename="..\source\wildcards.hh" />
+		<Unit filename="..\source\binarytree.cpp" />
+		<Unit filename="..\source\binarytree.h" />
+		<Unit filename="..\source\ResString.cpp" />
+		<Unit filename="..\source\ResString.h" />
+		<Unit filename="..\source\FLHook.cpp" />
+		<Unit filename="..\source\global.h" />
+		<Unit filename="..\source\Settings.cpp" />
+		<Unit filename="..\source\Tools.cpp" />
+		<Unit filename="..\source\Version.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
