@@ -1,74 +1,16 @@
--- Major improvements to functionality and stability of MP mission scripting, thanks to M0tah.
--- Fixed the death_comm related bug.
--- Removed the tips section from the death message text, as the tips text from the F5 tips screen is shown right below it.
--- Currently active server options are now reported to the bottom of the F5 tips screen, so you don't have to make a new character to see which options are enabled.
--- Torpedo splash damage radius has been halved from 360m to 180m.
--- The Player-Carrier stat displayed on ships now displays rather that ship can actually dock on player-carriers or not.
--- Nomad Fighters now have a 20 Nanobot limit, raised from 10 (which was mistakenly 5 in the actual code, oops!). They also regenerate hull at 80hp/s, raised from 60hp/s.
--- Repair Ship self-repair now repairs 100hp/s, raised from 80hp/s.
--- Power Modulators now grant small amounts of hull regneration (5hp/s and 10hp/s respectively), so that putting a single dent in your ship no longer requires you to use Nanobots or go repair.
--- Nomad Fighter weaponry has been buffed. It now deals more damage, and carries a faster firing rate.
--- Adjustments made to price of various trade ships. The Large Transport / Train & Heavy Lifter, as well as the two Liners, are all $1,000,000 more (adding $50,000 to their Death Penalties). This was done to make trading in a Small Transport / Train - even though they are inferior traders - more worthwhile and cost-effective to pilot as a low-risk trader.
--- Player-Purchasable bases now correctly sell the Order Shield and Order Thruster (which is needed, as that's one of the few ways to obtain such items).
--- The Faction Tag Removal guy has been turned into a "Mysterious Vendor" (sells all Player-Purchasable Bases, as well as some other goodies).
--- Player-Purchasable Base offers now list the system where the PBase you're about to purshase resides.
--- Challenge systems are now based on a Credit Chip requirement, rather than Kill Tokens. Perhaps everybody's precious cash reserves will actually be useful again. ;)
--- VHFs can now mount regular weaponry over the CD/Torpedo mount. The power supply, however, has not been increased, so overloading your VHF may not be wise.
--- Ships are now automatically untargeted when they pass the death-revive threshold.
--- Re-organization to the mission script structure. This fixes an issue with the F5 tips screen printing multiple times.
--- A Class 5 EMP Missile, the Decimator Missile (Eraser -> Sweeper -> Neutralizer -> Paralyzer -> Decimator). Although the EMP missiles were previously classed as Class 2-5, they were in reality Class 1-4, so the Decimator rounds out the EMP line.
--- Missile, CD, Mine, and Torpedo prices have been adjusted to be more reasonable. Previously, a single launcher was sometimes worth upwards of $250,000.
--- Doubled damage of all guns, as guns were on the weaker side in general - missiles have not been changed. However, all power usages of guns have been doubled as well.
--- Less stupid positioning of added fins on the Covenanter and Hydra VHFs.
--- Added option to enable higher effect view distances but not the new effects themselves when using High-End FX.
--- Better Cruise Disruption effects (now colored by engine color).
--- The high-end damage effect now correctly only plays when High-End FX is activated. This should result in a large performance gain for those computers that don't use / can't quite handle High-End FX.
--- High-resolution textures are no longer applied if High-End FX is not selected. This should result in a large performance gain for those computers that don't use / can't quite handle High-End FX.
--- Major shield power draw rebalances. Shields are now balanced to the rare item formula of 5 Shield Regen = 1 Power Regen, and 100 Shield Capacity = 1 Power Regen.
--- Shields have been majorly reworked, with low-class shields having a higher regen:capacity ratio and a low offline time, and high-class shields having a higher capacity:regen ratio and a long offline time - this makes low-class shields best against missile assaults, while high-class shields are best against sustained damage.
--- Rare items have been slightly rebalanced. If you're looking to finely tune your shield capacity/regeneration : power draw ratio, it is now much more efficient to do so via use of rare items - to the point where it's worth combining a low-class shield and capacity/regen rares to "make" a high-class shield. Before, if trying to save power, it was always far more efficient to simply drop a shield class.
--- The Light / Heavy Power Modulators now grant 200 / 400 added power regen, respectively, decreased from 300 / 600.
--- Fixed an issue with AI Companion Bots ignoring your selected engagement settings (they were stuck on always engaging hostile targets, even if you picked "always engage unlawfuls" etc.)
--- The 3D Sound Notice now displays when you launch from the n00b Base, since people seem to miss it in the menu.
--- Tweaked behavior of the Wasp / Nomad Cruise Disruptor and the Hornet. The Wasp / NCD is now a very agile, short-range CD missiles (4.5km range), while the Hornet is a slower, long-range CD missile (8.5km range) with a wide area of effect.
--- The debris option is no longer marked as "slightly unstable", as it appears RC128's stability fix did the trick.
--- Increased the amount of shielding given from a Shield Battery to 1000, from 750.
--- Lowered the resolution of Why485's High-End FX smoke effect, which should result in a large FPS gain with minimal quality loss when using High-End FX.
--- AI weapon usage has been slightly scaled back to ease up the difficulty a little. AI Bots remain unchanged.
--- Commodities can no longer be traded in Alaska and subsequently linked systems, to correct trading exploits (and if you eject Commodities in these systems, they will be placed back in your hold). All other item types (normal items, rares, etc.) can all still be traded normally.
--- Added four contrails to the Serafina, since it was lacking 'em entirely.
--- Stations, Weapons Platforms, etc. all affect your reputation when killed - the amount of reputation drop is multiplied by the severity of the attack and the importance of the target - killing common NPCs is worth a fair amount of reputation, killing Players / AI Bots is worth a large amount of reputation, and killing Stations / WPs is worth a huge amount of reputation. If you single-handedly slaugter a Station, you will go from full friendly to nearly hostile for that faction (with relevant reputation changes applied to allies etc. as well)
--- Reputation drop is now roughly based off the formula "inflicted damage on target / total damage on target" - meaning, if you only inflict 20% of the damage to a ship, you will only receive 20% of the full rep drop - but if you single-handedly butcher a target, you will receive a full rep drop (roughly 22.5% of the rep bar depending on target).
--- Death messages are now shown when Stations, AI Wingmen, and AI Bots are killed - "A Navy Patriot was killed by a 3 Rogue ships with guns and missiles / torpedoes.", "foxBot was killed by DeathFlier with guns.", etc.
--- Bribes for Nomads are now only offered by the robot in Nomad Buoys - you can no longer take the bribe on the neutral easter-egg planets.
--- Added 26 AI Bots to the AI Companion roster, increasing the number of selectable AI Companions to 30 unique bots spannning a total of 52 different loadout selections to add to your AI Companion squad.
--- 88 Flak ST music is now handled in a seperate music_st.ini activated by the ST, which will stop "Missing Sound File" errors when the ST is not activated.
--- All 30 unique bots now have individual bot mini-factions and can be seen roaming the universe.
--- Certain AI Bots now occupy their time trading various goods.
--- Player-Purchasable Bases now sell all fighters and transports - there is a new mod option that will allow you to select the ship sold for you at Player-Purchasable Bases.
--- AI are now more likely to assist you / other friendlies in a distant fight (before, they'd always ignore fights in progress when far away).
--- Bot AI / Hard Mode AI now have slightly slower repair usage times, instead of slightly quicker repair usage times, as delaying before Nanobot or Shield Battery presses is actually more efficient for AI usage. Before, they were using them too quickly and weren't always getting the full benefit per-Nanobot/Battery.
--- Better commodity market data for Ryuku Base and Heaven's Gate (real name of Tekagi's Base) in the Tohoku system. Before, they were treated as misc/rare bases in the commodity market, with all commodities sold for near-nothing.
--- Better explosions for Nomad Fighter, Gunboat, and Battleship. The explosion creates nomad-y trails instead of fire/smoke trails, which suits the ships a little more. The nomad-y trails were given to all Nomad equipment as well.
--- 8-Way Strafe plugin added courtesy of Adoxa. This allows vertical strafing to be used in tandem with horizontal strafing.
--- Reorganized the SourceFiles folder; placed all files in folders by author.
--- Player tags are now handled manually; you may set your tag with /tag (faction), for example "/tag Liberty Navy". Purchasing an operative tag with no other tag present will still change your tag as always.
--- Added another title song / screen.
--- Added a fully-featured, in-game scripted multiplayer tutorial that fires when you create a new character. It guides you through basic 1v1 and 4v4 combat with AI, as well as advanced features like faction tags, cloaks, mobile docking, the death penalty, and target marking. You can complete this tutorial with other players.
--- Large readme overhauls.
--- Price of Trade Ships (Transports, Trains, Liners, etc.), Capital Ships, WPs, and Stations all tripled. Beware, as this also (almost) triples their Death Penalty as well. Clear tactical judgement is now required for use of these vessels, since death with them is a much bigger deal than it was before.
--- Price of Nomad Fighter reduced from $6,000,000 to $1,400,000. Its Death Penalty should be much lower.
--- Resorted and easier-to-use options script.
--- Added Honken's work-in-progress post process shader - select "version 2.0" in the post-process option to use it. "Version 1.0" uses the traditional post-process.
--- Explosion radius of Capital Ship Missiles doubled.
--- The Nomad Buoy is now treated like any other base, and can be destroyed, with a normal repair cycle.
--- Pursuit LFs now have less armor than regular LFs, with 10000 armor (decreased from 12500) and a 20 max Battery / Nanobot limit (decreased from 25).
+-- Removed the tutorial script, as was not working very well with high player counts and may have been leading to crashes (this was the RC129 Hotfix Patch).
+-- Fixed the in-game 3D Sound Notice.
+-- Roaming AI Bot presense has been increased. Bot relations are now a little more important.
+-- AI Wingmen are no longer considered Bots, and as such no longer print death messages when they die.
+-- Adjustments to the AI chase-targets-in-cruise behavior that should help stop some of the random NPC disappearance issues.
+-- Improved the general responsiveness of death fuses. Effects now start as soon as the death fuse starts, and while the effect firing remains randomized, there is always an explosion right at the start of the fuse.
 
 Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- maybe make CDs 0* only?
--- some change I knew I'd forget (I already nailed bot trading..)
+-- change AI Bots to only spawn around a buoy in the arenas?
+-- find out what's up with Transport etc. CC drops (I think they're actually fleeing out of the 5k range)
+-- somehow balance shipclass spawning (make VHFs their own class (mixed with all others) and assign them to only assault encs)
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- eventually do a bunch of other updates to the readme
 -- Internal rename of version!

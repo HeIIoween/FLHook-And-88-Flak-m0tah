@@ -1562,3 +1562,55 @@ Since 1.26, in order of appearance (not an exhaustive/full list of changes):
 -- Changed: System security ratings now have more weight in determining what spawns.
 -- Bugfix: Fixed "Unlawful Freelance Operative" token not being sold at Player-Purchasable Bases.
 -- Bugfix: Fixed New York weirdness. If you clicked a commodity and clicked "Trade Routes", NY bases would not show in the list.
+-- Added: Major improvements to functionality and stability of MP mission scripting, thanks to M0tah.
+-- Added: Currently active server options are now reported to the bottom of the F5 tips screen, so you don't have to make a new character to see which options are enabled.
+-- Misc: The Player-Carrier stat displayed on ships now displays rather that ship can actually dock on player-carriers or not.
+-- Changed: Power Modulators now grant small amounts of hull regneration (5hp/s and 10hp/s respectively), so that putting a single dent in your ship no longer requires you to use Nanobots or go repair.
+-- Changed: Nomad Fighter weaponry has been buffed. It now deals more damage, and carries a faster firing rate.
+-- Changed: Adjustments made to price of various trade ships. The Large Transport / Train & Heavy Lifter, as well as the two Liners, are all $1,000,000 more (adding $50,000 to their Death Penalties). This was done to make trading in a Small Transport / Train - even though they are inferior traders - more worthwhile and cost-effective to pilot as a low-risk trader.
+-- Changed: The Faction Tag Removal guy has been turned into a "Mysterious Vendor" (sells all Player-Purchasable Bases, as well as some other goodies).
+-- Changed: Player-Purchasable Base offers now list the system where the PBase you're about to purshase resides.
+-- Changed: Challenge systems are now based on a Credit Chip requirement, rather than Kill Tokens. Perhaps everybody's precious cash reserves will actually be useful again. ;)
+-- Changed: Ships are now automatically untargeted when they pass the death-revive threshold.
+-- Bugfix: Re-organization to the mission script structure. This fixes an issue with the F5 tips screen printing multiple times.
+-- Added: Added a Class 5 EMP Missile, the Decimator Missile (Eraser -> Sweeper -> Neutralizer -> Paralyzer -> Decimator). Although the EMP missiles were previously classed as Class 2-5, they were in reality Class 1-4, so the Decimator rounds out the EMP line.
+-- Changed: Missile, CD, Mine, and Torpedo prices have been adjusted to be more reasonable. Previously, a single launcher was sometimes worth upwards of $250,000.
+-- Changed: Doubled damage of all guns, as guns were on the weaker side in general - missiles have not been changed. However, all power usages of guns have been doubled as well.
+-- Misc: Added option to enable higher effect view distances but not the new effects themselves when using High-End FX.
+-- Added: Better Cruise Disruption effects (now colored by engine color).
+-- Bugfix: The high-end damage effect now correctly only plays when High-End FX is activated. This should result in a large performance gain for those computers that don't use / can't quite handle High-End FX.
+-- Misc: High-resolution textures are no longer applied if High-End FX is not selected. This should result in a large performance gain for those computers that don't use / can't quite handle High-End FX.
+-- Changed: Major shield power draw rebalances. Shields are now balanced to the rare item formula of 5 Shield Regen = 1 Power Regen, and 100 Shield Capacity = 1 Power Regen.
+-- Changed: Shields have been majorly reworked, with low-class shields having a higher regen:capacity ratio and a low offline time, and high-class shields having a higher capacity:regen ratio and a long offline time - this makes low-class shields best against missile assaults, while high-class shields are best against sustained damage.
+-- Changed: Rare items have been slightly rebalanced. If you're looking to finely tune your shield capacity/regeneration : power draw ratio, it is now much more efficient to do so via use of rare items - to the point where it's worth combining a low-class shield and capacity/regen rares to "make" a high-class shield. Before, if trying to save power, it was always far more efficient to simply drop a shield class.
+-- Changed: The Light / Heavy Power Modulators now grant 200 / 400 added power regen, respectively, decreased from 300 / 600.
+-- Bugfix: Fixed an issue with AI Companion Bots ignoring your selected engagement settings (they were stuck on always engaging hostile targets, even if you picked "always engage unlawfuls" etc.)
+-- Added: The 3D Sound Notice now displays when you launch from the n00b Base, since people seem to miss it in the menu.
+-- Changed: Tweaked behavior of the Wasp / Nomad Cruise Disruptor and the Hornet. The Wasp / NCD is now a very agile, short-range CD missiles (4.5km range), while the Hornet is a slower, long-range CD missile (8.5km range) with a wide area of effect.
+-- Misc: The debris option is no longer marked as "slightly unstable", as it appears RC128's stability fix did the trick.
+-- Changed: Increased the amount of shielding given from a Shield Battery to 1000, from 750.
+-- Misc: Lowered the resolution of Why485's High-End FX smoke effect, which should result in a large FPS gain with minimal quality loss when using High-End FX.
+-- Changed: AI weapon usage has been slightly scaled back to ease up the difficulty a little. AI Bots remain unchanged.
+-- Changed: Commodities can no longer be traded in Alaska and subsequently linked systems, to correct trading exploits (and if you eject Commodities in these systems, they will be placed back in your hold). All other item types (normal items, rares, etc.) can all still be traded normally.
+-- Mics: Added four contrails to the Serafina, since it was lacking 'em entirely.
+-- Added: Stations, Weapons Platforms, etc. all affect your reputation when killed - the amount of reputation drop is multiplied by the severity of the attack and the importance of the target - killing common NPCs is worth a fair amount of reputation, killing Players / AI Bots is worth a large amount of reputation, and killing Stations / WPs is worth a huge amount of reputation. If you single-handedly slaugter a Station, you will go from full friendly to nearly hostile for that faction (with relevant reputation changes applied to allies etc. as well)
+-- Changed: Reputation drop is now roughly based off the formula "inflicted damage on target / total damage on target" - meaning, if you only inflict 20% of the damage to a ship, you will only receive 20% of the full rep drop - but if you single-handedly butcher a target, you will receive a full rep drop (roughly 22.5% of the rep bar depending on target).
+-- Added: Added 26 AI Bots to the AI Companion roster, increasing the number of selectable AI Companions to 30 unique bots spannning a total of 52 different loadout selections to add to your AI Companion squad.
+-- Misc: 88 Flak ST music is now handled in a seperate music_st.ini activated by the ST, which will stop "Missing Sound File" errors when the ST is not activated.
+-- Added: All 30 unique bots now have individual bot mini-factions and can be seen roaming the universe.
+-- Misc: Certain AI Bots now occupy their time trading various goods.
+-- Added: Player-Purchasable Bases now sell all fighters and transports - there is a new mod option that will allow you to select the ship sold for you at Player-Purchasable Bases.
+-- Changed: AI are now more likely to assist you / other friendlies in a distant fight (before, they'd always ignore fights in progress when far away).
+-- Changed: Bot AI / Hard Mode AI now have slightly slower repair usage times, instead of slightly quicker repair usage times, as delaying before Nanobot or Shield Battery presses is actually more efficient for AI usage. Before, they were using them too quickly and weren't always getting the full benefit per-Nanobot/Battery.
+-- Added: Better commodity market data for Ryuku Base and Heaven's Gate (real name of Tekagi's Base) in the Tohoku system. Before, they were treated as misc/rare bases in the commodity market, with all commodities sold for near-nothing.
+-- Added: Better explosions for Nomad Fighter, Gunboat, and Battleship. The explosion creates nomad-y trails instead of fire/smoke trails, which suits the ships a little more. The nomad-y trails were given to all Nomad equipment as well.
+-- Added: 8-Way Strafe plugin added courtesy of Adoxa. This allows vertical strafing to be used in tandem with horizontal strafing.
+-- Misc: Reorganized the SourceFiles folder; placed all files in folders by author.
+-- Changed: Player tags are now handled manually; you may set your tag with /tag (faction), for example "/tag Liberty Navy". Purchasing an operative tag with no other tag present will still change your tag as always.
+-- Misc: Large readme overhauls.
+-- Changed: Price of Trade Ships (Transports, Trains, Liners, etc.), Capital Ships, WPs, and Stations all tripled. Beware, as this also (almost) triples their Death Penalty as well. Clear tactical judgement is now required for use of these vessels, since death with them is a much bigger deal than it was before.
+-- Changed: Price of Nomad Fighter reduced from $6,000,000 to $1,400,000. Its Death Penalty should be much lower.
+-- Misc: Resorted and easier-to-use options script.
+-- Added: Added Honken's work-in-progress post process shader - select "version 2.0" in the post-process option to use it. "Version 1.0" uses the traditional post-process.
+-- Changed: Explosion radius of Capital Ship Missiles doubled.
+-- Changed: Pursuit LFs now have less armor than regular LFs, with 10000 armor (decreased from 12500) and a 20 max Battery / Nanobot limit (decreased from 25).

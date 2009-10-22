@@ -2,7 +2,7 @@ This file is for designing additional systems to conform with 88 Flak standards.
 Please reference this if designing a new system.
 
 IMPORTANT NOTE: For player docking to function in your system, you MUST at least have the Mobile_Proxy_Base object somewhere in your system!
-See "System-Wide Follow-Bot Template.txt" for the needed code.
+                Otherwise, your server will probably crash. See "System-Wide Follow-Bot Template.txt" for the needed code.
 
 ---
 88 Flak System Conformity:
@@ -316,65 +316,65 @@ repop_time = 80 ;AmbRepop
 pop_type = background
 relief_time = 30
 population_additive = true
-encounter = foxBot, 1, 0.001000
+encounter = foxBot, 1, 0.002100
 faction = foxBot_grp, 1.000000
-encounter = KittBot, 1, 0.001000
+encounter = KittBot, 1, 0.002100
 faction = KittBot_grp, 1.000000
-encounter = GrimsGreen, 1, 0.001000
+encounter = GrimsGreen, 1, 0.002100
 faction = GrimsGreen_grp, 1.000000
-encounter = Wo3dy, 1, 0.001000
+encounter = Wo3dy, 1, 0.002100
 faction = Wo3dy_grp, 1.000000
-encounter = ChipBot, 1, 0.001000
+encounter = ChipBot, 1, 0.002100
 faction = ChipBot_grp, 1.000000
-encounter = SnakePlisskin, 1, 0.001000
+encounter = SnakePlisskin, 1, 0.002100
 faction = SnakePlisskin_grp, 1.000000
-encounter = SushiBot, 1, 0.001000
+encounter = SushiBot, 1, 0.002100
 faction = SushiBot_grp, 1.000000
-encounter = Lonestar, 1, 0.001000
+encounter = Lonestar, 1, 0.002100
 faction = Lonestar_grp, 1.000000
-encounter = M0tahBot, 1, 0.001000
+encounter = M0tahBot, 1, 0.002100
 faction = M0tahBot_grp, 1.000000
-encounter = SSGTSolaBot, 1, 0.001000
+encounter = SSGTSolaBot, 1, 0.002100
 faction = SSGTSolaBot_grp, 1.000000
-encounter = DofodBot, 1, 0.001000
+encounter = DofodBot, 1, 0.002100
 faction = DofodBot_grp, 1.000000
-encounter = PetBot, 1, 0.001000
+encounter = PetBot, 1, 0.002100
 faction = PetBot_grp, 1.000000
-encounter = Why485Bot, 1, 0.001000
+encounter = Why485Bot, 1, 0.002100
 faction = Why485Bot_grp, 1.000000
-encounter = SonaBot, 1, 0.001000
+encounter = SonaBot, 1, 0.002100
 faction = SonaBot_grp, 1.000000
-encounter = Trickbot, 1, 0.001000
+encounter = Trickbot, 1, 0.002100
 faction = Trickbot_grp, 1.000000
-encounter = OutsidersFollowers, 1, 0.001000
+encounter = OutsidersFollowers, 1, 0.002100
 faction = OutsidersFollowers_grp, 1.000000
-encounter = DarkMarauderBot, 1, 0.001000
+encounter = DarkMarauderBot, 1, 0.002100
 faction = DarkMarauderBot_grp, 1.000000
-encounter = ww2JacobBot, 1, 0.001000
+encounter = ww2JacobBot, 1, 0.002100
 faction = ww2JacobBot_grp, 1.000000
-encounter = DreadPirateLowsound, 1, 0.001000
+encounter = DreadPirateLowsound, 1, 0.002100
 faction = DreadPirateLowsound_grp, 1.000000
-encounter = AshBot, 1, 0.001000
+encounter = AshBot, 1, 0.002100
 faction = AshBot_grp, 1.000000
-encounter = NairaX, 1, 0.001000
+encounter = NairaX, 1, 0.002100
 faction = NairaX_grp, 1.000000
-encounter = KillerJaguarBot, 1, 0.001000
+encounter = KillerJaguarBot, 1, 0.002100
 faction = KillerJaguarBot_grp, 1.000000
-encounter = StarAvenger, 1, 0.001000
+encounter = StarAvenger, 1, 0.002100
 faction = StarAvenger_grp, 1.000000
-encounter = Helloween, 1, 0.001000
+encounter = Helloween, 1, 0.002100
 faction = Helloween_grp, 1.000000
-encounter = StilBot, 1, 0.001000
+encounter = StilBot, 1, 0.002100
 faction = StilBot_grp, 1.000000
-encounter = DarkWraith007, 1, 0.001000
+encounter = DarkWraith007, 1, 0.002100
 faction = DarkWraith007_grp, 1.000000
-encounter = SojournBot, 1, 0.001000
+encounter = SojournBot, 1, 0.002100
 faction = SojournBot_grp, 1.000000
-encounter = HonkBot, 1, 0.001000
+encounter = HonkBot, 1, 0.002100
 faction = HonkBot_grp, 1.000000
-encounter = HowdaDoodeWTF, 1, 0.001000
+encounter = HowdaDoodeWTF, 1, 0.000600
 faction = HowdaDoodeWTF_grp, 1.000000
-encounter = Borg, 1, 0.001000
+encounter = Borg, 1, 0.000600
 faction = Borg_grp, 1.000000
 encounter = area_nomadsamb, 1, 0.034500
 faction = fc_n_grp, 1.000000
@@ -403,7 +403,7 @@ encounter = area_warcap, 1, 0.000500
 faction = gd_lfl_grp, 0.500000
 faction = fc_pfl_grp, 0.500000
 ;No need to move this. Just stick it in. =P
-;.03 total for bots
+;.06 total for bots
 ;.04 total for Nomads
 ;.24 total for FL NPCs
 
@@ -413,6 +413,7 @@ faction = fc_pfl_grp, 0.500000
 ;.45 total for in-house spawns
 ;.575 total if minimum OR maximum/high security system (low security systems have no spawn modifiers)
 ;.0225 total for out-house spawns
+
 encounter = area_war, 1, 0.125000 ;(Minimum) Security
 faction = fc_lr_grp, 1.000000
 encounter = area_war, 1, 0.093750 ;(Maximum / High) Security

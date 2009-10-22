@@ -478,11 +478,6 @@ Var2 = br_destroyer_turret01
 
 [Operation]
 Type = RemoveReplaceEquip
-Var1 = br_gunboat_turret02
-Var2 = br_gunboat_turret01
-
-[Operation]
-Type = RemoveReplaceEquip
 Var1 = br_battleship_turret03
 Var2 = br_battleship_turret01
 
@@ -500,11 +495,6 @@ Var2 = rh_cruiser_turret01
 Type = RemoveReplaceEquip
 Var1 = rh_cruiser_turret03_rtc
 Var2 = rh_cruiser_turret01_rtc
-
-[Operation]
-Type = RemoveReplaceEquip
-Var1 = rh_gunboat_turret02
-Var2 = rh_gunboat_turret01
 
 [Operation]
 Type = RemoveReplaceEquip
