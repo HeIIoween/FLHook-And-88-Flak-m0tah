@@ -318,10 +318,13 @@ void LoadSettings()
 		// bans
 		set_bBanAccountOnMatch = IniGetB(set_scCfgGeneralFile, "Bans", "BanAccountOnMatch", false);
 		set_lstBans.clear();
-		IniGetSection(set_scCfgFile, "Bans", lstValues);
-		lstValues.pop_front();
-		foreach(lstValues, INISECTIONVALUE, itisv)
-			set_lstBans.push_back(stows(itisv->scKey));		
+		IniGetSection(set_scCfgGeneralFile, "Bans", lstValues);
+		if(lstValues.size())
+		{
+			lstValues.pop_front();
+			foreach(lstValues, INISECTIONVALUE, itisv)
+				set_lstBans.push_back(stows(itisv->scKey));		
+		}
 	
 	//Misc settings
 		//Faction tag affiliation change init
