@@ -1,3 +1,21 @@
+Act_ActTrig = welcome_3dsoundnotice
+[Trigger]
+nickname = welcome_3dsoundnotice
+system = Li07
+Cnd_LaunchComplete = Player
+Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
+
+[MsnLoot]
+nickname = Tutorial_Complete_Loot
+archetype = rarepower01
+string_id = 458758
+rel_pos_obj = Player
+rel_pos_offset = 0, 0, 250
+velocity = 0, 0, 0
+equip_amount = 1
+health = 1.000000
+Can_Jettison = true
+
 ;------ Li07 Tutorial (WIP!) ------
 [NPC]
 nickname = Tutorial_RepCheck_NPC
@@ -115,27 +133,16 @@ ship = Combat_Ally_1
 ship = Combat_Ally_2
 ship = Combat_Ally_3
 
-[MsnLoot]
-nickname = Tutorial_Complete_Loot
-archetype = rarepower01
-string_id = 458758
-rel_pos_obj = Player
-rel_pos_offset = 0, 0, 250
-velocity = 0, 0, 0
-equip_amount = 1
-health = 1.000000
-Can_Jettison = true
-
 [Trigger]
 nickname = Tutorial_Init
 system = Li07
-Cnd_LaunchComplete = Player
+Cnd_SpaceEnter = no_params
 Act_ActTrig = pux_Tutorial_Init
 
 [Trigger]
 nickname = pux_Tutorial_Init
 system = Li07
-Cnd_Timer = 2
+Cnd_Timer = 6
 Act_SpawnShip = Tutorial_RepCheck
 Act_SetLifetime = Tutorial_RepCheck, 2
 Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
@@ -361,5 +368,4 @@ Cnd_Timer = 2
 Act_PlayerCanDock = true
 Act_SetRep = Player, foxBot_grp, 0.900000
 Act_AdjAcct = 10000
-Act_SpawnLoot = Tutorial_Complete_Loot
 Act_NNIds = 459217, OBJECTIVE

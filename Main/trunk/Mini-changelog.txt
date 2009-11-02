@@ -1,23 +1,36 @@
--- Removed the tutorial script, as was not working very well with high player counts and may have been leading to crashes (this was the RC129 Hotfix Patch).
 -- Fixed the in-game 3D Sound Notice.
--- Roaming AI Bot presense has been increased. Bot relations are now a little more important.
+-- Roaming AI Bot presence has been increased. Bot relations are now a little more important.
 -- AI Wingmen are no longer considered Bots, and as such no longer print death messages when they die.
 -- Adjustments to the AI chase-targets-in-cruise behavior that should help stop some of the random NPC disappearance issues.
 -- Improved the general responsiveness of death fuses. Effects now start as soon as the death fuse starts, and while the effect firing remains randomized, there is always an explosion right at the start of the fuse.
+-- Tweaked spawning rates of AI VHFs - they now only spawn in select positions of assault/defense wings, balancing AI groups a little more.
+-- AI Bot donations are now cheaper, and will appear more often.
+-- Player-Purchasable Bases are approximately $4.4 million.
+-- All Player-Purchasable Bases are now armed with anti-fighter support Small Capitals. Before, some were armed with support Battleships or even support Mobile Stations, which weren't very effective anti-fighter defense.
+-- Corrected an issue where reputations would not change when playing an OpenSP game.
+-- The Storage Depot now only travels at 375m/s when in cruise.
+-- Fixed a bug where the Bretonia Destroyer had a 4s cruise charge time, instead of 8s like all other capitals.
+-- VHFs now have a 4s cruise charge time, decreased from 8s.
+-- Transports and Liners now only regenerate 10% of their power regen while in cruise, similar to Capital Ships.
+-- Multi-instance support removed.
+-- Fixed (hopefully) the issue where the Tutorial would sometimes not begin, or have issues midway through.
+-- Fixed some ugly hardpointing with Sniper Turret weapon models.
 
 Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- change AI Bots to only spawn around a buoy in the arenas?
+-- play with draw distance of dynamic asteroids
+-- perhaps extend death fuse length
+-- Crazy scanner and weaponry for the Nomad Buoy
+-- FLHook automarking code is broken (only sometimes - stack thing?)
 -- find out what's up with Transport etc. CC drops (I think they're actually fleeing out of the 5k range)
--- somehow balance shipclass spawning (make VHFs their own class (mixed with all others) and assign them to only assault encs)
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- eventually do a bunch of other updates to the readme
 -- Internal rename of version!
 
 What's not really todo but should be done eventually:
 -- moors for AI ships? - it works as expected, however I'm not totally sure I like it
--- FLSM script the PBase thingies (a blind append wouldn't be very good though)
+-- FLSM script the PBase thingies (a blind append wouldn't be very good though, as it'll hit existing chars)
 -- Create missiles for the Nomad Fighter.
 -- Create a "Nomad Repair Ship", essentially a copypasta of the current Repair Ship but with a Nomad Fighter model for RP purposes. In place of the RS's 360* Class 3 mounts and shield, the Nomad RS will simply have a single Nomad Laser mount, and no shield. The Repair Beam will function identically. In practice, the Nomad RS will be a more offensive version of the stock RS, but will be more easily killed.
 -- test out EMP ship - may be able to wedge it in as a VHF varient
@@ -37,6 +50,7 @@ Stuff I should do but don't really want to:
 
 What was done and might be done again:
 -- Being friendly to one house, while hostile to another, will now cause some interesting diplomacy to occur between military forces. Liberty pirate seeking shelter in Kusari space? They might help you out with an off-the-record engagement or two; just try not to start a war over it.
+-- Removed the tutorial script, as was not working very well with high player counts and may have been leading to crashes (this was the RC129 Hotfix Patch).
 
 Hook wishlist:
 -- dockkill/apvptoken protection messages for when you shoot a player - "You can not damage this player because of (x reason)"

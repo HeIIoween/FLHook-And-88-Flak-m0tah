@@ -102,9 +102,9 @@ Options are grouped as follows:
 
 -- Essential Options --
 SP Only: Enable full OpenSP support? - No / Yes
-Enables tweaks to the mod to help support OpenSP mode.
-Currently, this consists of removing cloaks from purchasable ships, as they can not be toggled in SP (they are permenantly on).
-As such, it is actually possible to play Multiplayer with this enabled - just don't plan on purchasing any ships with a cloak mounted, or you will be kicked for cheating.
+Enables tweaks to the mod to help support OpenSP mode, until FLHook can be properly ported to OpenSP architecture.
+Currently, this consists of fixing reputation changes in OpenSP (reputations are completely handled by FLHook in MP), and removing cloaks from purchasable ships as they can not be toggled in SP (they are permenantly on).
+As such, it is actually possible to play Multiplayer with this enabled - just don't plan on hosting any servers or purchasing any ships with a cloak mounted, or you will be kicked for cheating.
 Default: No
 
 MP Client: Enable Global Server Workaround? - No / Yes
