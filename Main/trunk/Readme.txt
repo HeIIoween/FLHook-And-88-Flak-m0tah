@@ -130,11 +130,15 @@ Version 2 features a shader custom-written for 88 Flak by Honken. It is a work-i
 Since Version 2 still needs some work, I'd recommend just using Version 1.
 Default: No
 
-MP Client: Enable higher view distances? - No / Yes (10x) / Yes (Unlimited)
+MP Client: Enable high-end view distances? - No / Yes (10x) / Yes (Unlimited)
 If enabled, this will tweak the in-game Level of Detail (LOD) manager to render objects at a higher distance.
 If the 10x option is picked, the distance in which an object is rendered is increased by 10x the normal Freelancer distance.
 If the Unlimited option is picked, there is no limit to how far away an object is drawn.
 Please note that unless you have a very high-end PC, this will probably introduce quite a bit of FPS lag. Try the high-end special effects and sound system first.
+Default: No
+
+MP Client: Enable high-end asteroid fields? - No / Yes
+If enabled, this will tweak asteroid fields to render a greater amount of asteroids at higher distances.
 Default: No
 
 MP Client: Enable high-end special effects? - No / Yes / Yes (higher effects distance only)

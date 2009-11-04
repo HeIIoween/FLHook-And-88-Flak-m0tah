@@ -15,15 +15,19 @@
 -- Multi-instance support removed.
 -- Fixed (hopefully) the issue where the Tutorial would sometimes not begin, or have issues midway through.
 -- Fixed some ugly hardpointing with Sniper Turret weapon models.
+-- Added a high-end asteroid fields option that renders more asteroids at greater distances.
+-- Fixed rare scanners and rare ship tokens not being automatically marked.
+-- Credit Chips are now always dropped from NPC Capital Ships, regardless of rather players did most of the damage or not. Since you'll usually have AI assistance engaging Capitals, this makes it a little more worth it.
+-- Random loot (including rares) should now drop from Transports and Capital Ships like it's supposed to.
+-- NPC ranks are now organized by ship class, increasing by size / bulk - PLFs are 1, LFs are 2, Freighters are 5, Large Capitals are 8, etc. This should make it much easier to distinguish your target at a moment's glance, especially if you forget which ships are what.
+-- NPC rank titles are now based around their task, instead of an arbitrary title of "Rookie," "Veteran," etc. Instead, they now carry more descriptive titles such as "Patroller," "Raider," "Hauler," "Forager," etc.
+-- AI are now a little sharper with missile evasion. While normal NPCs aren't changed much, AI Bots (or Hard Mode AI) will now only enter drastic evasion if under a swarm of incoming ordinance (before, you could break off their attacks and give yourself breathing room by firing only a single missile).
 
 Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
 
 What's sorta todo:
--- play with draw distance of dynamic asteroids
--- perhaps extend death fuse length
+-- perhaps extend death fuse length for fighters (4 seconds?)
 -- Crazy scanner and weaponry for the Nomad Buoy
--- FLHook automarking code is broken (only sometimes - stack thing?)
--- find out what's up with Transport etc. CC drops (I think they're actually fleeing out of the 5k range)
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- eventually do a bunch of other updates to the readme
 -- Internal rename of version!

@@ -181,15 +181,15 @@ ID + 458752 - IDS
 255 - Admin Shield
 256 - ADMIN - for Admin faction
 257 - Flak does not work in SP Mode! Run a multiplayer server.
-258 - [SmOp]foxBot
+258 - foxBot
 259 - HowdaDoodeWTF
 260 - Osiris
-261 - [SmOp]KittBot
+261 - KittBot
 262 - Outsider's Followers
-263 - [SmOp]Trickbot
+263 - Trickbot
 264 - SonaBot (was "Xandas Strain Bioship", recycled)
 265 - Grim's Green
-266 - [SmOp]Dread Pirate Lowsound
+266 - Dread Pirate Lowsound
 267 - ww2JacobBot
 268 - Wo3dy
 269 - Lawful Freelancers
@@ -206,7 +206,7 @@ ID + 458752 - IDS
 280 - Hydra (Kusari VHF)
 281 - Harlequin (Rheinland VHF)
 282 - Nomad Bribe
-283 - [SmOp]ChipBot
+283 - ChipBot
 284 - Mysterious Vendor - PBase Vendor (was "Faction Tag Removal", recycled)
 285 - DarkMarauderBot
 286 - Progenator Power Supply
@@ -279,7 +279,26 @@ ID + 458752 - IDS
 353 - 3D Sound Notice (popup title)
 354 - 3D Sound Notice (popup text)
 355 - Random Bot Bribe
+356 - Badass
+357 - Patroller
+358 - Warder
+359 - Commander
+360 - Raider
+361 - Smuggler
+362 - Warlord
+363 - Forager
+364 - Collector
+365 - Scrapper
+366 - Traveller
+367 - Miner
+368 - Hauler
+369 - Taskmaster
+370 - Fighter
+371 - Trader
+372 - Captain
+373 - Hunter
 
+ID + 458752 - IDS
 400 through 412 - Blue Ball puzzle
 
 450s - Tutorial Text (starting on 459202)

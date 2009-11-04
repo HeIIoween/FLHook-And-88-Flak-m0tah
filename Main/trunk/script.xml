@@ -192,7 +192,7 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 </item>
 </option>
 
-<option id="012" name="MP Client: Enable higher view distances?" savesafe="true">
+<option id="012" name="MP Client: Enable high-end view distances?" savesafe="true">
 <item id="0" name=" (Default) No">
 </item>
 <item id="1" name="Yes (10x)">
@@ -201,7 +201,14 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 </item>
 </option>
 
-<option id="013" name="MP Client: Enable high-end special effects?" savesafe="true">
+<option id="013" name="MP Client: Enable high-end asteroid fields?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes">
+</item>
+</option>
+
+<option id="014" name="MP Client: Enable high-end special effects?" savesafe="true">
 <item id="0" name=" (Default) No">
 </item>
 <item id="1" name="Yes">
@@ -210,14 +217,14 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 </item>
 </option>
 
-<option id="014" name="MP Client: Enable high-end sound system?" savesafe="true">
+<option id="015" name="MP Client: Enable high-end sound system?" savesafe="true">
 <item id="0" name=" (Default) No">
 </item>
 <item id="1" name="Yes (MUST have 3D Sound enabled!)">
 </item>
 </option>
 
-<option id="015" name="MP Client: Enable dynamic lighting / debris for explosions?" savesafe="true">
+<option id="016" name="MP Client: Enable dynamic lighting / debris for explosions?" savesafe="true">
 <item id="0" name=" (Default) No">
 </item>
 <item id="1" name="Yes">
@@ -228,7 +235,7 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 </item>
 </option>
 
-<option id="016" name="MP Client: Enable Battledust?" savesafe="true">
+<option id="017" name="MP Client: Enable Battledust?" savesafe="true">
 <item id="0" name=" (Default) No">
 </item>
 <item id="1" name="Yes (MUST have High-End FX enabled!)">
@@ -1030,7 +1037,1518 @@ marketgood = storage_depot_package, 0, -1, 1, 1, 0, 1, 1
 <data file="Exe\freelancer.exe" method="copyfile" sourcefile="Exe\freelancer.exe.highlod" options="012:2">
 </data>
 
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Data\Solar\asteroids\Br01_Cornwall_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br01_Cumbria_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br01_Devon_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br01_Somerset_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br01_Southampton_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br02_Birmingham_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br02_Sheffield_north_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br02_Sheffield_south_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br03_Cardiff_beryllium_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br03_Cardiff_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br03_Grasmere_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br03_Keswick_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br03_Newcastle_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br04_LD14_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br04_Leeds_high_density_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br04_Leeds_smog_cloud_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br04_radioactive_dust_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br04_Stokes_mineable_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br04_Stokes_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br05_GSM_mineable_gold_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br05_GSM_minedout_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br05_Hood_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br05_Independent_gold_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br05_Molly_gold_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br06_Arran_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br06_Islay_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Br06_Skye_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw01_burgess_ice_crystal_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw01_coombe_carbon_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw01_graham_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw01_roth_carbon_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw01_wilkes_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw02_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw02_minefield.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw03_Daumann_mineable.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw03_Ebersfelde_nonmineable.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw03_Furstenfelde_nonmineable.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw03_Gubenfelde_lava.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw03_IMG_mineable.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw03_Kruger_mineable.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw04_NordostRiemen_planetary_fragments.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw04_NordwestRiemen_planetary_fragments.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw04_SudwestRiemen_planetary_fragments.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw04_Von_Rohe_lava_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw04_WestRiemen_planetary_fragments.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw05_yanagi_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw05_yanagi_pocket_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw06_Nemuro_dust_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw07_Gikka_dust_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw08_beryllium.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw08_mines.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw08_niobium.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw08_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw09_Freeport6_ice_crystal_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw09_Nago_carbon_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw09_oxygen_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw09_Shinkaku_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Bw10_ice_crystal_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ch06_Badlands_Asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ch06_Badlands_low_density_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ch06_debris_field_small.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ch06_Detroit_debris_field_001.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ch06_Detroit_high_density_debris.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ch06_Jersey_debris_field_001.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ch06_Pittsburgh_debris_field_001.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ch06_Pittsburgh_high_density_debris.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew01_Bermejo_ice_crystals.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew01_Malvinas_mineable_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew01_Torres_ice_crystal_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew02_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew03_northeast_minefield.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew03_planetary_fragments.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew03_west_minefield.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew04_Amarus_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew04_Napo_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew04_Orinoco_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew04_Sabana_fragments.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ew06_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Hi01_Hispania_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Hi01_Mahon_dust_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Hi02_Gredos_lava_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Hi02_Malvada_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Hi02_Tenereife_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Hi02_Tenereife_rock_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw01_Tanner_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw02_Kenai_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw02_Sitka_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw02_Wrangell_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw03_Barrier_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw03_Weddell_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw04_Corcovado_ice_crystal_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw04_Paloma_ice_crystal_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw04_Roatan_ice_crystal_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw05_Denko_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw05_Kuryo_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw05_Matsuo_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw06_Komatsu_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw06_Raiden_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Iw06_Reppu_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku01_Chiba_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku01_Kanto_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku02_Saiun_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku03_Hayate_dust_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku03_Ohka_dust_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku03_Seiran_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku04_Hiyo_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku05_Kayo_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku06_Okamura_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku07_Izu_planetary_fragment_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Ku07_Nampo_planetary_fragment_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li01_Badlands_Asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li01_Badlands_low_density_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li01_debris_field_small.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li01_Detroit_debris_field_001.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li01_Detroit_high_density_debris.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li01_Jersey_debris_field_001.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li01_Pittsburgh_debris_field_001.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li01_Pittsburgh_high_density_debris.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li02_Sierra_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li02_Tahoe_ice_crystal_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li02_Whitney_ice_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li03_Alamosa_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li03_Cheyenne_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li03_Copperton_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li03_Silverton_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li04_East_Dallas_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li04_Negra_cloud_debris.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li04_North_Dallas_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li04_South_Dallas_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li04_West_Dallas_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Li05_ice_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh01_Aachen_minedout_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh01_Harz_minedout_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh01_Ruhr_debris_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh01_Ruhr_minedout_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh01_Saar_minedout_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh02_Alster_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh02_Kiel_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh02_North_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh02_South_rock_asteroid_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh03_Westnebel_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh04_Taunus_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh04_Verbotene_field.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh05_Daumann_feld.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh05_Kruger_lavafeld.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh05_Leipzig_mine.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh05_Schwefelwolke_lavafeld.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\Rh05_West_lavafeld.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\St01_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\St02_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+<data file="Data\Solar\asteroids\St03b_nomad_asteroids.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+count = 100 ;LAst
+placement_radius = 1500.000000 ;LAst
+</dest>
+<source>
+count = 140 ;LAst
+placement_radius = 2000.000000 ;LAst
+</source>
+</data>
+
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 effects = Fx\effect_types.ini			; needs to be before effects.ini
 </dest>
@@ -1038,7 +2556,7 @@ effects = Fx\effect_types.ini			; needs to be before effects.ini
 effects = Fx\effect_typeshigh.ini			; needs to be before effects.ini
 </source>
 </data>
-<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 FxBasicAppearance.poolSize    = 1000		; each particle can generate: 4 verts 6, indices
 FxRectAppearance.poolSize     = 400			; each particle can generate: 4 verts 6, indices
@@ -1064,7 +2582,7 @@ FxMeshAppearance.poolSize  = 50000			; generates meshes not particles; need enou
 FxParticleAppearance.poolSize = 10000			; generates effects not particles
 </source>
 </data>
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 effects = Fx\weapons\weapons_ale.ini
 </dest>
@@ -1072,7 +2590,7 @@ effects = Fx\weapons\weapons_ale.ini
 effects = Fx\weapons\weapons_alehigh.ini
 </source>
 </data>
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 effects = Fx\explosions\explosions_ale.ini
 </dest>
@@ -1080,13 +2598,13 @@ effects = Fx\explosions\explosions_ale.ini
 effects = Fx\explosions\explosions_alehigh.ini
 </source>
 </data>
-<data file="Data\Fx\lightbeam.txm" method="copyfile" sourcefile="Data\Fx\lightbeam-high.txm" options="013:1">
+<data file="Data\Fx\lightbeam.txm" method="copyfile" sourcefile="Data\Fx\lightbeam-high.txm" options="014:1">
 </data>
-<data file="Data\Fx\smoke.txm" method="copyfile" sourcefile="Data\Fx\smoke-high.txm" options="013:1">
+<data file="Data\Fx\smoke.txm" method="copyfile" sourcefile="Data\Fx\smoke-high.txm" options="014:1">
 </data>
-<data file="Data\Fx\standardeffects.txm" method="copyfile" sourcefile="Data\Fx\standardeffects-high.txm" options="013:1">
+<data file="Data\Fx\standardeffects.txm" method="copyfile" sourcefile="Data\Fx\standardeffects-high.txm" options="014:1">
 </data>
-<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 effect_type = EFT_EXPLOSION_SHIP
 vis_effect = ku_flakcannon01_flash
@@ -1096,7 +2614,7 @@ effect_type = EFT_EXPLOSION_SHIP
 vis_effect = gf_explosion_super_flak
 </source>
 </data>
-<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 effect_type = EFT_EXPLOSION_SHIP
 vis_effect = br_flakcannon01_flash
@@ -1106,7 +2624,7 @@ effect_type = EFT_EXPLOSION_SHIP
 vis_effect = gf_explosion_super_nomad_flak
 </source>
 </data>
-<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 ;snd_effect = const_missile_homing
 </dest>
@@ -1114,7 +2632,7 @@ vis_effect = gf_explosion_super_nomad_flak
 snd_effect = const_missile_homing
 </source>
 </data>
-<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 ;snd_effect = const_missile_regular
 </dest>
@@ -1122,7 +2640,7 @@ snd_effect = const_missile_homing
 snd_effect = const_missile_regular
 </source>
 </data>
-<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 ;snd_effect = const_missile_emp
 </dest>
@@ -1130,7 +2648,7 @@ snd_effect = const_missile_regular
 snd_effect = const_missile_emp
 </source>
 </data>
-<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
 ;snd_effect = const_torpedo
 </dest>
@@ -1138,7 +2656,7 @@ snd_effect = const_missile_emp
 snd_effect = const_torpedo
 </source>
 </data>
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:2">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="014:2">
 <dest>
 effects = Fx\effect_types.ini			; needs to be before effects.ini
 </dest>
@@ -1146,7 +2664,7 @@ effects = Fx\effect_types.ini			; needs to be before effects.ini
 effects = Fx\effect_typeshigh.ini			; needs to be before effects.ini
 </source>
 </data>
-<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="013:2">
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="014:2">
 <dest>
 FxBasicAppearance.poolSize    = 1000		; each particle can generate: 4 verts 6, indices
 FxRectAppearance.poolSize     = 400			; each particle can generate: 4 verts 6, indices
@@ -1173,7 +2691,7 @@ FxParticleAppearance.poolSize = 10000			; generates effects not particles
 </source>
 </data>
 
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="014:1">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="015:1">
 <dest>
 sounds = Audio\sounds.ini				;all sfx not falling into some other category
 sounds = Audio\engine_sounds.ini			;engine sounds only
@@ -1184,7 +2702,7 @@ sounds = Audio\engine_soundshigh.ini			;engine sounds only
 </source>
 </data>
 
-<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="015:1">
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="016:1">
 <dest>
 ;DYNAMIC LIGHT
 </dest>
@@ -1194,7 +2712,7 @@ lgt_range_scale = 30
 lgt_radius = 30
 </source>
 </data>
-<data file="Data\Fx\effects_explosion.ini" method="filereplace" numtimes="-1" options="015:1">
+<data file="Data\Fx\effects_explosion.ini" method="filereplace" numtimes="-1" options="016:1">
 <dest>
 ;DYNAMIC LIGHT
 </dest>
@@ -1204,7 +2722,7 @@ lgt_range_scale = 30
 lgt_radius = 30
 </source>
 </data>
-<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="015:1">
+<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="016:1">
 <dest>
 ;MISSILE DEBRIS
 </dest>
@@ -1217,7 +2735,7 @@ innards_debris_radius = 5
 innards_debris_object = simple_torpedo_debris
 </source>
 </data>
-<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="015:1">
+<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="016:1">
 <dest>
 ;TORPEDO DEBRIS
 </dest>
@@ -1230,7 +2748,7 @@ innards_debris_radius = 5
 innards_debris_object = simple_torpedo_debris
 </source>
 </data>
-<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="015:1">
+<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="016:1">
 <dest>
 ;MISSILE DEBRIS
 </dest>
@@ -1243,7 +2761,7 @@ innards_debris_radius = 5
 innards_debris_object = simple_torpedo_debris
 </source>
 </data>
-<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="015:1">
+<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="016:1">
 <dest>
 ;TORPEDO DEBRIS
 </dest>
@@ -1256,7 +2774,7 @@ innards_debris_radius = 5
 innards_debris_object = simple_torpedo_debris
 </source>
 </data>
-<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="015:2">
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="016:2">
 <dest>
 ;DYNAMIC LIGHT
 </dest>
@@ -1266,7 +2784,7 @@ lgt_range_scale = 30
 lgt_radius = 30
 </source>
 </data>
-<data file="Data\Fx\effects_explosion.ini" method="filereplace" numtimes="-1" options="015:2">
+<data file="Data\Fx\effects_explosion.ini" method="filereplace" numtimes="-1" options="016:2">
 <dest>
 ;DYNAMIC LIGHT
 </dest>
@@ -1276,7 +2794,7 @@ lgt_range_scale = 30
 lgt_radius = 30
 </source>
 </data>
-<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="015:3">
+<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="016:3">
 <dest>
 ;MISSILE DEBRIS
 </dest>
@@ -1289,7 +2807,7 @@ innards_debris_radius = 5
 innards_debris_object = simple_torpedo_debris
 </source>
 </data>
-<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="015:3">
+<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="016:3">
 <dest>
 ;TORPEDO DEBRIS
 </dest>
@@ -1302,7 +2820,7 @@ innards_debris_radius = 5
 innards_debris_object = simple_torpedo_debris
 </source>
 </data>
-<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="015:3">
+<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="016:3">
 <dest>
 ;MISSILE DEBRIS
 </dest>
@@ -1315,7 +2833,7 @@ innards_debris_radius = 5
 innards_debris_object = simple_torpedo_debris
 </source>
 </data>
-<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="015:3">
+<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="016:3">
 <dest>
 ;TORPEDO DEBRIS
 </dest>
@@ -1329,7 +2847,7 @@ innards_debris_object = simple_torpedo_debris
 </source>
 </data>
 
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="016:1">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="017:1">
 <dest>
 equipment = Equipment\weapon_equip.ini
 </dest>
@@ -1337,7 +2855,7 @@ equipment = Equipment\weapon_equip.ini
 equipment = Equipment\weapon_equip_dust.ini
 </source>
 </data>
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="016:2">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="017:2">
 <dest>
 equipment = Equipment\weapon_equip.ini
 </dest>
@@ -1345,7 +2863,7 @@ equipment = Equipment\weapon_equip.ini
 equipment = Equipment\weapon_equip_dust.ini
 </source>
 </data>
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="016:2">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="017:2">
 <dest>
 effects = Fx\battledust\battledust_ale.ini
 </dest>
@@ -1353,7 +2871,7 @@ effects = Fx\battledust\battledust_ale.ini
 effects = Fx\battledust\battledust_alehigh.ini
 </source>
 </data>
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="016:3">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="017:3">
 <dest>
 equipment = Equipment\weapon_equip.ini
 </dest>
@@ -1361,7 +2879,7 @@ equipment = Equipment\weapon_equip.ini
 equipment = Equipment\weapon_equip_dust.ini
 </source>
 </data>
-<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="016:3">
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="017:3">
 <dest>
 effects = Fx\battledust\battledust_ale.ini
 </dest>
