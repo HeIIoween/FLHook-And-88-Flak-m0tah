@@ -229,7 +229,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			if(objDmgTo && fPrevHealth)
 			{
 				uint iInflictor = dmgList->get_inflictor_id();
-				if(objDmgTo && iInflictor)
+				if(iInflictor)
 				{
 					if(iDmgTo)
 					{
@@ -258,7 +258,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 								dmgInfo.fDamage = fPrevHealth - p2;
 								if(p2 == 0 && iDmgToSpaceID / 1000000000)
 								{
-									lstSolarDestroyDelay.push_back(make_pair(objDmgTo, dmgInfo));
+									lstSolarDestroyDelay.push_back(make_pair(iDmgToSpaceID, dmgInfo));
 								}
 								else
 								{

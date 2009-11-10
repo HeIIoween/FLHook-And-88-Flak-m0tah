@@ -904,7 +904,7 @@ void HkTimerMarkDelay();
 void HkTimerNPCDockHandler();
 void HkTimerBeamDelayHandler();
 void HkTimerRepairShip();
-extern list< pair<IObjInspectImpl*, DAMAGE_INFO> > lstSolarDestroyDelay;
+extern list< pair<uint, DAMAGE_INFO> > lstSolarDestroyDelay;
 void HkTimerSolarDestroyDelay();
 
 extern list<BASE_INFO> lstBases;

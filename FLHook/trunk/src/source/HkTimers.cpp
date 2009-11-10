@@ -524,7 +524,6 @@ void HkTimerMarkDelay()
 	if(!g_lstDelayedMarks.size())
 		return;
 
-	float fMaxDistance = *(float*)SRV_ADDR(0x86AF0); //"square of player disappear distance in MP"
 	mstime tmTimeNow = timeInMS();
 	for(list<DELAY_MARK>::iterator mark = g_lstDelayedMarks.begin(); mark != g_lstDelayedMarks.end(); )
 	{
@@ -543,7 +542,7 @@ void HkTimerMarkDelay()
 				if(Players[iClientID].iSystemID == iItemSystem)
 				{
 					pub::SpaceObj::GetLocation(Players[iClientID].iSpaceObjID, vPlayer, mTemp);
-					if(HkDistance3D(vPlayer, vItem) <= fMaxDistance)
+					if(HkDistance3D(vPlayer, vItem) <= LOOT_UNSEEN_RADIUS)
 					{
 						HkMarkObject(iClientID, mark->iObj);
 					}
@@ -613,17 +612,17 @@ void HkTimerRepairShip()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-list< pair<IObjInspectImpl*, DAMAGE_INFO> > lstSolarDestroyDelay;
+list< pair<uint, DAMAGE_INFO> > lstSolarDestroyDelay;
 void HkTimerSolarDestroyDelay()
 {
 	try {
-		foreach(lstSolarDestroyDelay, pair<IObjInspectImpl* COMMA DAMAGE_INFO>, damage)
+		foreach(lstSolarDestroyDelay, pair<uint COMMA DAMAGE_INFO>, damage)
 		{
+			uint iSpaceObj = damage->first;
 			float fHealth, fMaxHealth;
-			damage->first->get_status(fHealth, fMaxHealth);
+			pub::SpaceObj::GetHealth(iSpaceObj, fHealth, fMaxHealth);
 			if(!fHealth)
 			{
-				uint iSpaceObj = damage->first->get_id();
 				pair< map<uint, list<DAMAGE_INFO> >::iterator, bool> findSpaceObj = mapSpaceObjDmgRec.insert(make_pair(iSpaceObj, list<DAMAGE_INFO>()));
 				findSpaceObj.first->second.push_back(damage->second);
 				SpaceObjDestroyed(iSpaceObj, true);

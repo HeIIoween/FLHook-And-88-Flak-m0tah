@@ -12,6 +12,7 @@ IMPORT class GoodInfoList * __cdecl GoodList_get(void);
 IMPORT char *  StringAlloc(char const *,bool);
 IMPORT void __cdecl BaseDataList_load_market_data(char const *);
 IMPORT int MAX_PLAYER_AMMO;
+IMPORT float LOOT_UNSEEN_RADIUS;
 
 class Vector
 {
