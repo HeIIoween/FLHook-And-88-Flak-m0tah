@@ -123,6 +123,9 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			//ConPrint(L"p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id());
 		//if(dmgList->is_inflictor_a_player()) {PrintUniverseText(L"%f", p2);}
 
+		//if(!iDmgToSpaceID || !pub::SpaceObj::ExistsAndAlive(iDmgToSpaceID));
+			//Clear_DmgTo();
+
 		if(!iDmgToSpaceID && iDmgTo)
 			pub::Player::GetShip(iDmgTo, iDmgToSpaceID);
 				
@@ -140,18 +143,21 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 
 		//Check if damage should be redirected to hull
 		CEquip *equip = 0;
-		if(objDmgTo && p1 != 1)
+		if(objDmgTo && p1 != 1 && p1 != 65521)
 		{
 			CEquipManager *equipment = HkGetEquipMan(objDmgTo);
-			equip = equipment->FindByID(p1);
-			if(equip)
+			if(equipment)
 			{
-				set<uint>::iterator equipIter = set_setEquipReDam.find(equip->EquipArch()->iEquipID);
-				if(equipIter != set_setEquipReDam.end())
+				equip = equipment->FindByID(p1);
+				if(equip)
 				{
-					float fHealth = equip->GetHitPoints();
-					p2 = fPrevHealth - (fHealth - p2);
-					p1 = 1;
+					set<uint>::iterator equipIter = set_setEquipReDam.find(equip->EquipArch()->iEquipID);
+					if(equipIter != set_setEquipReDam.end())
+					{
+						float fHealth = equip->GetHitPoints();
+						p2 = fPrevHealth - (fHealth - p2);
+						p1 = 1;
+					}
 				}
 			}
 		}
@@ -178,7 +184,11 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 						if(objDmgTo)
 						{
 							if(!equip)
-								equip = HkGetEquipMan(objDmgTo)->FindByID(p1);
+							{
+								CEquipManager *equipment = HkGetEquipMan(objDmgTo);
+								if(equipment)
+									equip = equipment->FindByID(p1);
+							}
 							if(!equip)
 							{
 								p1 = 1;
@@ -219,7 +229,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			}
 			g_bRepairPendHit = false;
 		}
-	} catch(...) {AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) {AddLog("Exception in %s0", __FUNCTION__); }
 
 	if(bAddDmgEntry)
 	{
@@ -278,7 +288,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 					}
 				}
 			}
-		} catch(...) {AddLog("Exception in %s", __FUNCTION__); }
+		} catch(...) {AddLog("Exception in %s1", __FUNCTION__); }
 	}
 
 	Clear_DmgTo();

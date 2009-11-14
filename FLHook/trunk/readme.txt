@@ -616,6 +616,10 @@ downloaded from http://www.schneier.com/blowfish-download.html
 == CHANGELOG ===================================================================
 ================================================================================
 
+1.6.7 (unofficial)
+- Fixed server crash on shutdown after using rename command
+- Changed spawned item marking to use LOOT_UNSEEN_RADIUS as the max distance
+
 1.6.6 (unofficial)
 - Re-implemented the kill event (for the socket eventmode)
 - Autobuy checks if the number of nanobots and shield batteries in the template are greater than allowed for the ship

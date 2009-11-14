@@ -940,7 +940,7 @@ HK_ERROR HkRename(wstring wscCharname, wstring wscNewCharname, bool bOnlyDelete)
 	tn->pLeft = leaf;
 	tn->pParent = lastparent;
 	tn->pRight = leaf;
-	tn->szFLName = new char[32];
+	tn->szFLName = (char*)flnew(32);
 	strcpy(tn->szFLName, wstos(wscNewFilename + L".fl").c_str());
 	tn->lLength = (uint)strlen(tn->szFLName);
 	tn->l2 = 0x1F; // seems to be always 0x1F
@@ -976,7 +976,7 @@ HK_ERROR HkRename(wstring wscCharname, wstring wscNewCharname, bool bOnlyDelete)
 	LISTNODE *ln = (LISTNODE *)flnew(sizeof(LISTNODE));
 	ln->next = lnHead;
 	ln->prev = lnCur;
-	ln->wszCharname = new wchar_t[32];
+	ln->wszCharname = (wchar_t*)flnew(sizeof(wchar_t) * 32);
 	wcscpy(ln->wszCharname, wscNewCharname.c_str());
 	lnCur->next = ln;
 
