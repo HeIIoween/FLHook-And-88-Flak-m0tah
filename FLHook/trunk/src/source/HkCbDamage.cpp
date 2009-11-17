@@ -123,14 +123,23 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			//ConPrint(L"p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id());
 		//if(dmgList->is_inflictor_a_player()) {PrintUniverseText(L"%f", p2);}
 
-		//if(!iDmgToSpaceID || !pub::SpaceObj::ExistsAndAlive(iDmgToSpaceID));
-			//Clear_DmgTo();
-
 		if(!iDmgToSpaceID && iDmgTo)
 			pub::Player::GetShip(iDmgTo, iDmgToSpaceID);
-				
+
 		if(objDmgTo)
-			objDmgTo->get_status(fPrevHealth, fMaxHealth);
+		{
+			uint *test = *((uint**)(objDmgTo)); //VFT
+			if(!test) //VFT missing !?!
+				Clear_DmgTo();
+			else
+			{
+				test += 2; //Second entry in VFT
+				if(!*test) //offset for some reason
+					objDmgTo = (IObjRW*)(((char*)objDmgTo) + 4);
+
+				objDmgTo->get_status(fPrevHealth, fMaxHealth);
+			}
+		}
 		
 		if(!dmgList->get_inflictor_owner_player() && !dmgList->get_inflictor_id())
 		{
@@ -229,14 +238,14 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			}
 			g_bRepairPendHit = false;
 		}
-	} catch(...) {AddLog("Exception in %s0", __FUNCTION__); }
+	} catch(...) { AddLog("Exception in %s0", __FUNCTION__); }
 
 	if(bAddDmgEntry)
 	{
 		dmgList->add_damage_entry(p1, p2, p3);
 
 		try {
-			if(objDmgTo && fPrevHealth)
+			if(objDmgTo && iDmgToSpaceID && fPrevHealth)
 			{
 				uint iInflictor = dmgList->get_inflictor_id();
 				if(iInflictor)
@@ -255,7 +264,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 					else if(p1 == 1)
 					{
 						uint iType;
-						objDmgTo->get_type(iType);
+						pub::SpaceObj::GetType(iDmgToSpaceID, iType); //objDmgTo->get_type(iType);
 
 						if(iType & set_iNPCDeathType)
 						{

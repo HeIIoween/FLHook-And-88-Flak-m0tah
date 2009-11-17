@@ -2152,102 +2152,109 @@ bool HkIsOkayToDock(uint iClientID, uint iTargetClientID)
 void HkNewShipBought(uint iClientID)
 {
 	//Erase autobuy settings
-	if(ClientInfo[iClientID].lstAutoBuyItems.size())
-	{
-		CAccount *acc = Players.FindAccountFromClientID(iClientID);
-		wstring wscDir;
-		HkGetAccountDirName(acc, wscDir);
-		string scUserFile = scAcctPath + wstos(wscDir) + "\\flhookuser.ini";
-		wstring wscFilename;
-		HkGetCharFileName(ARG_CLIENTID(iClientID), wscFilename);
-		string scSection = "autobuy_" + wstos(wscFilename);
-		ClientInfo[iClientID].lstAutoBuyItems.clear();
-		IniDelSection(scUserFile, scSection);
-		PrintUserCmdText(iClientID, L"Notice: your autobuy settings have been erased. Use the autobuy command again with your new ship.");
-	}
+	try {
+		if(ClientInfo[iClientID].lstAutoBuyItems.size())
+		{
+			CAccount *acc = Players.FindAccountFromClientID(iClientID);
+			wstring wscDir;
+			HkGetAccountDirName(acc, wscDir);
+			string scUserFile = scAcctPath + wstos(wscDir) + "\\flhookuser.ini";
+			wstring wscFilename;
+			HkGetCharFileName(ARG_CLIENTID(iClientID), wscFilename);
+			string scSection = "autobuy_" + wstos(wscFilename);
+			ClientInfo[iClientID].lstAutoBuyItems.clear();
+			IniDelSection(scUserFile, scSection);
+			PrintUserCmdText(iClientID, L"Notice: your autobuy settings have been erased. Use the autobuy command again with your new ship.");
+		}
+	} catch(...) { AddLog("Exception in %s|Autobuy", __FUNCTION__); }
 
 	//Unmount items that aren't allowed to be mounted on the new ship
-	list<CARGO_INFO> lstCargo;
-	HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
-	foreach(lstCargo, CARGO_INFO, cargo)
-	{
-		if(cargo->bMounted)
-		{
-			MOUNT_RESTRICTION mrFind = MOUNT_RESTRICTION(cargo->iArchID);
-			MOUNT_RESTRICTION *mrFound = set_btMRestrict->Find(&mrFind);
-			if(mrFound)
-			/*Check to make sure ship can mount good*/
-			{
-				uint iShipArchID;
-				pub::Player::GetShipID(iClientID, iShipArchID);
-				UINT_WRAP uw = UINT_WRAP(iShipArchID);
-				if(!mrFound->btShipArchIDs->Find(&uw))
-				{
-					//remove and then add cargo to fix client mounted disagreement
-					pub::Player::RemoveCargo(iClientID, cargo->iID, cargo->iCount);
-					pub::Player::AddCargo(iClientID, cargo->iArchID, cargo->iCount, 1, false);
-				}
-			}
-		}
-		else
-		{
-			set<uint>::iterator mount = set_setAutoMount.find(cargo->iArchID);
-			if(mount != set_setAutoMount.end())
-			{
-				pub::Player::RemoveCargo(iClientID, cargo->iID, cargo->iCount);
-				HkAddCargo(ARG_CLIENTID(iClientID), cargo->iArchID, "internal", false);
-			}
-		}
-	}
-
-	//Check if player has over the max number of nanobots or shield batteries, since FL doesn't
-	Archetype::Ship *ship = Archetype::GetShip(Players[iClientID].iShipArchID);
-	if(ship)
-	{
-		uint iNanobotsID = 2911012559;
-		uint iShieldBatID = 2596081674;
-		int iNumNanobots = 0, iNumShieldBat = 0;
-		ushort iNanobots, iShieldBat;
+	try {
 		list<CARGO_INFO> lstCargo;
 		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
 		foreach(lstCargo, CARGO_INFO, cargo)
 		{
-			if(cargo->iArchID == iNanobotsID)
+			if(cargo->bMounted)
 			{
-				iNumNanobots = cargo->iCount;
-				iNanobots = cargo->iID;
-				if(iNumShieldBat)
-					break;
+				MOUNT_RESTRICTION mrFind = MOUNT_RESTRICTION(cargo->iArchID);
+				MOUNT_RESTRICTION *mrFound = set_btMRestrict->Find(&mrFind);
+				if(mrFound)
+				/*Check to make sure ship can mount good*/
+				{
+					uint iShipArchID;
+					pub::Player::GetShipID(iClientID, iShipArchID);
+					UINT_WRAP uw = UINT_WRAP(iShipArchID);
+					if(!mrFound->btShipArchIDs->Find(&uw))
+					{
+						//remove and then add cargo to fix client mounted disagreement
+						pub::Player::RemoveCargo(iClientID, cargo->iID, cargo->iCount);
+						pub::Player::AddCargo(iClientID, cargo->iArchID, cargo->iCount, 1, false);
+					}
+				}
 			}
-			else if(cargo->iArchID == iShieldBatID)
+			else
 			{
-				iNumShieldBat = cargo->iCount;
-				iShieldBat = cargo->iID;
-				if(iNumNanobots)
-					break;
+				set<uint>::iterator mount = set_setAutoMount.find(cargo->iArchID);
+				if(mount != set_setAutoMount.end())
+				{
+					pub::Player::RemoveCargo(iClientID, cargo->iID, cargo->iCount);
+					HkAddCargo(ARG_CLIENTID(iClientID), cargo->iArchID, "internal", false);
+				}
 			}
 		}
-		iNumNanobots -= ship->iMaxNanobots;
-		iNumShieldBat -= ship->iMaxShieldBats;
-		if(iNumNanobots > 0)
+	} catch(...) { AddLog("Exception in %s|Unmount", __FUNCTION__); }
+
+	//Check if player has over the max number of nanobots or shield batteries, since FL doesn't
+	try {
+		Archetype::Ship *ship = Archetype::GetShip(Players[iClientID].iShipArchID);
+		if(ship)
 		{
-			pub::Player::RemoveCargo(iClientID, iNanobots, iNumNanobots);
-			uint iBaseID;
-			pub::Player::GetBase(iClientID, iBaseID);
-			float fPrice = 0;
-			pub::Market::GetPrice(iBaseID, iNanobotsID, fPrice);
-			if(fPrice)
-				HkAddCash(ARG_CLIENTID(iClientID), (int)fPrice * iNumNanobots);
+			uint iNanobotsID = 2911012559;
+			uint iShieldBatID = 2596081674;
+			int iNumNanobots = 0, iNumShieldBat = 0;
+			ushort iNanobots, iShieldBat;
+			list<CARGO_INFO> lstCargo;
+			HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
+			foreach(lstCargo, CARGO_INFO, cargo)
+			{
+				if(cargo->iArchID == iNanobotsID)
+				{
+					iNumNanobots = cargo->iCount;
+					iNanobots = cargo->iID;
+					if(iNumShieldBat)
+						break;
+				}
+				else if(cargo->iArchID == iShieldBatID)
+				{
+					iNumShieldBat = cargo->iCount;
+					iShieldBat = cargo->iID;
+					if(iNumNanobots)
+						break;
+				}
+			}
+			iNumNanobots -= ship->iMaxNanobots;
+			iNumShieldBat -= ship->iMaxShieldBats;
+			if(iNumNanobots > 0)
+			{
+				pub::Player::RemoveCargo(iClientID, iNanobots, iNumNanobots);
+				uint iBaseID;
+				pub::Player::GetBase(iClientID, iBaseID);
+				float fPrice = 0;
+				pub::Market::GetPrice(iBaseID, iNanobotsID, fPrice);
+				if(fPrice)
+					HkAddCash(ARG_CLIENTID(iClientID), (int)fPrice * iNumNanobots);
+			}
+			if(iNumShieldBat > 0)
+			{
+				pub::Player::RemoveCargo(iClientID, iShieldBat, iNumShieldBat);
+				uint iBaseID;
+				pub::Player::GetBase(iClientID, iBaseID);
+				float fPrice = 0;
+				pub::Market::GetPrice(iBaseID, iShieldBat, fPrice);
+				if(fPrice)
+					HkAddCash(ARG_CLIENTID(iClientID), (int)fPrice * iNumShieldBat);
+			}
 		}
-		if(iNumShieldBat > 0)
-		{
-			pub::Player::RemoveCargo(iClientID, iShieldBat, iNumShieldBat);
-			uint iBaseID;
-			pub::Player::GetBase(iClientID, iBaseID);
-			float fPrice = 0;
-			pub::Market::GetPrice(iBaseID, iShieldBat, fPrice);
-			if(fPrice)
-				HkAddCash(ARG_CLIENTID(iClientID), (int)fPrice * iNumShieldBat);
-		}
-	}
+	} catch(...) { AddLog("Exception in %s|BotsBatsCheck", __FUNCTION__); }
+
 }
