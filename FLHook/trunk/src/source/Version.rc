@@ -28,8 +28,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,6,0,6
- PRODUCTVERSION 1,6,0,6
+ FILEVERSION 1,6,0,7
+ PRODUCTVERSION 1,6,0,7
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -47,11 +47,11 @@ BEGIN
             VALUE "Comments", "Based on FLHook 1.5.5 by mc_horst with cloak by w0dk4.  Programmed for use in '88 Flak.\0"
             VALUE "CompanyName", "M0tah, w0dk4, and mc_horst\0"
             VALUE "FileDescription", "FLHook\0"
-            VALUE "FileVersion", "1, 6, 0, 6\0"
+            VALUE "FileVersion", "1, 6, 0, 7\0"
             VALUE "InternalName", "FLHook\0"
             VALUE "OriginalFilename", "FLHook.dll\0"
             VALUE "ProductName", "  FLHook\0"
-            VALUE "ProductVersion", "1, 6, 0, 6\0"
+            VALUE "ProductVersion", "1, 6, 0, 7\0"
         END
     END
     BLOCK "VarFileInfo"

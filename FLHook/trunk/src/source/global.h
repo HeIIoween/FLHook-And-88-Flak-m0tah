@@ -15,7 +15,7 @@
 using namespace std;
 
 // defines
-#define VERSION L"'88 Flak v1.6.6"
+#define VERSION L"'88 Flak v1.6.7 dev build 7"
 
 #define TIME_UPDATE 50
 #define IMPORT __declspec(dllimport)

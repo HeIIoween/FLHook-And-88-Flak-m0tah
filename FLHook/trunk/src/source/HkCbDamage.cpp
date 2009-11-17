@@ -2,7 +2,7 @@
 
 uint		iDmgTo = 0;
 uint		iDmgToSpaceID = 0;
-IObjInspectImpl *objDmgTo = 0;
+IObjRW		*objDmgTo = 0;
 
 bool g_gNonGunHitsBase = false;
 float g_LastHitPts;
@@ -125,8 +125,13 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 
 		if(!iDmgToSpaceID && iDmgTo)
 			pub::Player::GetShip(iDmgTo, iDmgToSpaceID);
+		
+		if(iDmgToSpaceID)
+			objDmgTo = GetIObjRW(iDmgToSpaceID);
+		else
+			objDmgTo = 0;
 
-		if(objDmgTo)
+		/*if(objDmgTo)
 		{
 			uint *test = *((uint**)(objDmgTo)); //VFT
 			if(!test) //VFT missing !?!
@@ -139,7 +144,10 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 
 				objDmgTo->get_status(fPrevHealth, fMaxHealth);
 			}
-		}
+		}*/
+
+		if(objDmgTo)
+			objDmgTo->get_status(fPrevHealth, fMaxHealth);
 		
 		if(!dmgList->get_inflictor_owner_player() && !dmgList->get_inflictor_id())
 		{
@@ -245,7 +253,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 		dmgList->add_damage_entry(p1, p2, p3);
 
 		try {
-			if(objDmgTo && iDmgToSpaceID && fPrevHealth)
+			if(objDmgTo && fPrevHealth)
 			{
 				uint iInflictor = dmgList->get_inflictor_id();
 				if(iInflictor)
@@ -264,7 +272,8 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 					else if(p1 == 1)
 					{
 						uint iType;
-						pub::SpaceObj::GetType(iDmgToSpaceID, iType); //objDmgTo->get_type(iType);
+						//pub::SpaceObj::GetType(iDmgToSpaceID, iType);
+						objDmgTo->get_type(iType);
 
 						if(iType & set_iNPCDeathType)
 						{
@@ -337,7 +346,7 @@ void __stdcall HkCb_GeneralDmg(char *szECX)
 
 		iDmgTo = iClientID;
 		iDmgToSpaceID = iSpaceID;
-		objDmgTo = (IObjInspectImpl*)szECX;
+		objDmgTo = (IObjRW*)szECX;
 	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
 }
 
