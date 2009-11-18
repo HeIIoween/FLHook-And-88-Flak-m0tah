@@ -14,7 +14,7 @@ pilot_id = pilot_default
 
 [Trigger]
 nickname = pre_(FACTION HERE)
-system = any
+system = ANY
 Cnd_LootAcquired = (FACTION HERE)_beacon, Player
 Act_EnableEnc = (FACTION HERE)_help
 Act_NNIds = 459010, OBJECTIVE
@@ -22,14 +22,14 @@ Act_ActTrig = (FACTION HERE)_dies
 
 [Trigger]
 nickname = (FACTION HERE)_dies
-system = any
+system = ANY
 Cnd_Destroyed = (FACTION HERE), -1, ALL
 Act_DisableEnc = (FACTION HERE)_help
 Act_ActTrig = post_(FACTION HERE)
 
 [Trigger]
 nickname = post_(FACTION HERE)
-system = any
+system = ANY
 Cnd_Timer = 120
 Act_NNIds = 459010, OBJECTIVE
 Act_ActTrig = pre_(FACTION HERE)

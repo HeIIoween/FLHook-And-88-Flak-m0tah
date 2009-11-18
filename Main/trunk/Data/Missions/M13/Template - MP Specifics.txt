@@ -1,7 +1,7 @@
 ;------ MP Specifics ------
 [Trigger]
 nickname = MP_setup
-system = any
+system = ANY
 Cnd_Timer = 2
 ;Act_NNIds = 458894, HISTORY ;AI Wingmen
 ;Act_NNIds = 458920, HISTORY ;Random CS Patrols (FL NPCs)

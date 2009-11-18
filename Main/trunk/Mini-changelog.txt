@@ -13,7 +13,6 @@
 -- VHFs now have a 4s cruise charge time, decreased from 8s.
 -- Transports and Liners now only regenerate 10% of their power regen while in cruise, similar to Capital Ships.
 -- Multi-instance support removed.
--- Fixed (hopefully) the issue where the Tutorial would sometimes not begin, or have issues midway through.
 -- Fixed some ugly hardpointing with Sniper Turret weapon models.
 -- Added a high-end asteroid fields option that renders more asteroids at greater distances.
 -- Fixed rare scanners and rare ship tokens not being automatically marked.
@@ -22,15 +21,37 @@
 -- NPC ranks are now organized by ship class, increasing by size / bulk - PLFs are 1, LFs are 2, Freighters are 5, Large Capitals are 8, etc. This should make it much easier to distinguish your target at a moment's glance, especially if you forget which ships are what.
 -- NPC rank titles are now based around their task, instead of an arbitrary title of "Rookie," "Veteran," etc. Instead, they now carry more descriptive titles such as "Patroller," "Raider," "Hauler," "Forager," etc.
 -- AI are now a little sharper with missile evasion. While normal NPCs aren't changed much, AI Bots (or Hard Mode AI) will now only enter drastic evasion if under a swarm of incoming ordinance (before, you could break off their attacks and give yourself breathing room by firing only a single missile).
+-- Total death fuse time for fighters extended to 4 seconds, extending the pull-out-of-death timeframe (time you can use a Nanobot after 0 health to save yourself) to 2 seconds.
+-- Ships now catch fire at 1/2 health, and again at 1/4 health, instead of arbitrary values before. This applies to all ships, including Capital Ships and Liners, which previously only caught fire when near death.
+-- New, custom-fit hitbox for the Serafina by Lonestar, your local Serafina nut. ;)
+-- Random server crashes in damage-handling code (HkCb_AddDmgEntry in FLHook) fixed.
+-- Server crash related to /rename fixed.
+-- Fixed a glitch where Challenge Systems could not be entered, even if the correct amount of Credit Chips were held.
+-- Shield resistances are now more important; using a weapon against a shield resistant to that weapon type will now reduce damage by 50% (previously 20%), and using a weapon against a shield weak to that weapon type will increase damage by 50% (previously 20%).
+-- Pulse weapon resistances / affinities removed - in other words, Graviton Shields are no longer strong against Pulse weapons, and Positron Shields are no longer weak against Pulse weapons.
+-- Shield regeneration rates doubled.
+-- Shield capacities tripled.
+-- Shield Batteries have been toned down; they now only replenish 750 shield per battery (decreased 25% from 1000).
 
-Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to your m13.ini - please note that you'll have to add the "init" triggers of each script to the "init_all" trigger at the top of m13.ini
+Also, the test wingmen scripts have been removed. If you really want to play with them, copy the contents of Wingmen - Script.txt in the m13 folder to the bottom your m13.ini / m12.ini
 
 What's sorta todo:
--- perhaps extend death fuse length for fighters (4 seconds?)
+-- check nomad bribes
+-- Re-add in dynamic asteroids for minable dust belts
 -- Crazy scanner and weaponry for the Nomad Buoy
 -- Implement basic rewards for the existing challenge systems, and perhaps finish some of the other ideas.
 -- eventually do a bunch of other updates to the readme
 -- Internal rename of version!
+
+What was done and might be done again:
+-- Being friendly to one house, while hostile to another, will now cause some interesting diplomacy to occur between military forces. Liberty pirate seeking shelter in Kusari space? They might help you out with an off-the-record engagement or two; just try not to start a war over it.
+-- Removed the tutorial script, as was not working very well with high player counts and may have been leading to crashes (this was the RC129 Hotfix Patch).
+-- Fixed (hopefully) the issue where the Tutorial would sometimes not begin, or have issues midway through.
+
+Stuff I should do but don't really want to:
+-- further redo AI loadouts to have all CDs on LFs and all Torps on HFs? Nah
+-- interfaction relations - establish a base for each relation (look at ids_infos) and standardize the empathies
+-- better AI loadouts - looks like it's time to finally do a pool and churn out some loadouts (hey, maybe this will actually happen soon!)
 
 What's not really todo but should be done eventually:
 -- moors for AI ships? - it works as expected, however I'm not totally sure I like it
@@ -46,15 +67,6 @@ What's not really todo but should be done eventually:
 -- look into better solution for base drops
 -- pilot stuff
 -- fix up prisoners to pilot stuff standards (if implemented)
-
-Stuff I should do but don't really want to:
--- further redo AI loadouts to have all CDs on LFs and all Torps on HFs? Nah
--- interfaction relations - establish a base for each relation (look at ids_infos) and standardize the empathies
--- better AI loadouts - looks like it's time to finally do a pool and churn out some loadouts (hey, maybe this will actually happen soon!)
-
-What was done and might be done again:
--- Being friendly to one house, while hostile to another, will now cause some interesting diplomacy to occur between military forces. Liberty pirate seeking shelter in Kusari space? They might help you out with an off-the-record engagement or two; just try not to start a war over it.
--- Removed the tutorial script, as was not working very well with high player counts and may have been leading to crashes (this was the RC129 Hotfix Patch).
 
 Hook wishlist:
 -- dockkill/apvptoken protection messages for when you shoot a player - "You can not damage this player because of (x reason)"

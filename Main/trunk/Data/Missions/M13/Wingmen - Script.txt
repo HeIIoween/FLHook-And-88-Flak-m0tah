@@ -1,6 +1,6 @@
 ;Notes:
 ;-- If a player jumps through a gate and logs out, the wingmen will have 999999 lifetime because he/she does not complete the jump - try using Cnd_SystemEnter or Cnd_NPCSystemEnter instead of Cnd_JumpInComplete?
-;-- Sometimes the jump script doesn't work at all, and the wingmen are destroyed anyways - my guess is 35000 is too large of a distance - a Cnd_Timer of 1 for the catch scipt, with a distance of 30000, would probably be more appropriate.
+;   -- Cnd_SystemEnter works great; now to nail exiting the system (if you are .killed or crash while exiting the system in-gate it can still go FUBAR)
 ;-- I'm currently using Cnd_SpaceEnter for the dock handlers as a hack, as calling Act_Destroy on Cnd_SpaceExit or Cnd_BaseEnter doesn't work (player must be physically present to call Act_Destroy)
 ;-- For wingmen to function with multiple players, different nicknames (foxBot_m016 etc.) are needed, or order conflicts still occur. =|
 
@@ -20,8 +20,9 @@ orientation = 0, 180, 0, 0
 jumper = false
 
 [Trigger]
-nickname = Wingmen_Init_All
-system = any
+nickname = Wingmen_Init
+system = ANY
+InitState = ACTIVE ;Wingmen
 Cnd_True = no_params
 Act_ActTrig = PlayerPosMark
 Act_ActTrig = foxBot_Init
@@ -31,7 +32,7 @@ Act_ActTrig = ChipBot_Init
 
 [Trigger]
 nickname = PlayerPosMark
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_SpawnShip = PlayerMarker
 Act_SetLifetime = PlayerMarker, 2
@@ -40,7 +41,7 @@ Act_ActTrig = PlayerPosMark_Push
 
 [Trigger]
 nickname = PlayerPosMark_Pull
-system = any
+system = ANY
 Cnd_SpaceEnter = no_params
 Act_Destroy = PlayerMarker, SILENT
 Act_DeactTrig = PlayerPosMark_Push
@@ -48,7 +49,7 @@ Act_ActTrig = PlayerPosMark
 
 [Trigger]
 nickname = PlayerPosMark_Push
-system = any
+system = ANY
 Cnd_Timer = 15
 Act_Destroy = PlayerMarker, SILENT
 Act_DeactTrig = PlayerPosMark_Pull
@@ -56,13 +57,13 @@ Act_ActTrig = PlayerPosMark
 
 [Trigger]
 nickname = Wingmen_Count_1
-system = any
+system = ANY
 Cnd_True = no_params
 Act_NNIds = 458831, OBJECTIVE ;Test, needs new IDS
 
 [Trigger]
 nickname = Wingmen_Count_2
-system = any
+system = ANY
 Cnd_True = no_params
 Act_Destroy = foxBot_RepCheck, SILENT
 Act_Destroy = KittBot_RepCheck, SILENT
@@ -72,7 +73,7 @@ Act_NNIds = 458831, OBJECTIVE ;Test, needs new IDS
 
 [Trigger]
 nickname = Wingmen_FormUp_Init
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = Wingmen_FormUp_Init_Push
 Act_DeactTrig = Wingmen_FormUp_01_Push
@@ -99,7 +100,7 @@ Act_ActTrig = Wingmen_BreakAll
 
 [Trigger]
 nickname = Wingmen_FormUp_Init_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_Attack_01
 Act_ActTrig = KittBot_Attack_01
@@ -109,7 +110,7 @@ Act_GiveObjList = Player, Default_FormUp
 
 [Trigger]
 nickname = Wingmen_FormUp_01
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_FormUp_01
 Act_DeactTrig = KittBot_FormUp_01
@@ -119,7 +120,7 @@ Act_ActTrig = Wingmen_FormUp_01_Push
 
 [Trigger]
 nickname = Wingmen_FormUp_01_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_Attack_01
 Act_ActTrig = KittBot_Attack_01
@@ -128,7 +129,7 @@ Act_ActTrig = ChipBot_Attack_01
 
 [Trigger]
 nickname = Wingmen_Attack_01
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_Attack_01
 Act_DeactTrig = KittBot_Attack_01
@@ -139,7 +140,7 @@ Act_ActTrig = Wingmen_BreakAll
 
 [Trigger]
 nickname = Wingmen_Attack_01_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_FormUp_02
 Act_ActTrig = KittBot_FormUp_02
@@ -148,7 +149,7 @@ Act_ActTrig = ChipBot_FormUp_02
 
 [Trigger]
 nickname = Wingmen_FormUp_02
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_FormUp_02
 Act_DeactTrig = KittBot_FormUp_02
@@ -158,7 +159,7 @@ Act_ActTrig = Wingmen_FormUp_02_Push
 
 [Trigger]
 nickname = Wingmen_FormUp_02_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_Attack_02
 Act_ActTrig = KittBot_Attack_02
@@ -167,7 +168,7 @@ Act_ActTrig = ChipBot_Attack_02
 
 [Trigger]
 nickname = Wingmen_Attack_02
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_Attack_02
 Act_DeactTrig = KittBot_Attack_02
@@ -178,7 +179,7 @@ Act_ActTrig = Wingmen_BreakAll
 
 [Trigger]
 nickname = Wingmen_Attack_02_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_FormUp_03
 Act_ActTrig = KittBot_FormUp_03
@@ -187,7 +188,7 @@ Act_ActTrig = ChipBot_FormUp_03
 
 [Trigger]
 nickname = Wingmen_FormUp_03
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_FormUp_03
 Act_DeactTrig = KittBot_FormUp_03
@@ -197,7 +198,7 @@ Act_ActTrig = Wingmen_FormUp_03_Push
 
 [Trigger]
 nickname = Wingmen_FormUp_03_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_Attack_03
 Act_ActTrig = KittBot_Attack_03
@@ -206,7 +207,7 @@ Act_ActTrig = ChipBot_Attack_03
 
 [Trigger]
 nickname = Wingmen_Attack_03
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_Attack_03
 Act_DeactTrig = KittBot_Attack_03
@@ -217,7 +218,7 @@ Act_ActTrig = Wingmen_BreakAll
 
 [Trigger]
 nickname = Wingmen_Attack_03_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_FormUp_04
 Act_ActTrig = KittBot_FormUp_04
@@ -226,7 +227,7 @@ Act_ActTrig = ChipBot_FormUp_04
 
 [Trigger]
 nickname = Wingmen_FormUp_04
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_FormUp_04
 Act_DeactTrig = KittBot_FormUp_04
@@ -236,7 +237,7 @@ Act_ActTrig = Wingmen_FormUp_04_Push
 
 [Trigger]
 nickname = Wingmen_FormUp_04_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_Attack_04
 Act_ActTrig = KittBot_Attack_04
@@ -245,7 +246,7 @@ Act_ActTrig = ChipBot_Attack_04
 
 [Trigger]
 nickname = Wingmen_Attack_04
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_Attack_04
 Act_DeactTrig = KittBot_Attack_04
@@ -256,7 +257,7 @@ Act_ActTrig = Wingmen_BreakAll
 
 [Trigger]
 nickname = Wingmen_Attack_04_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_FormUp_05
 Act_ActTrig = KittBot_FormUp_05
@@ -265,7 +266,7 @@ Act_ActTrig = ChipBot_FormUp_05
 
 [Trigger]
 nickname = Wingmen_FormUp_05
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_FormUp_05
 Act_DeactTrig = KittBot_FormUp_05
@@ -275,7 +276,7 @@ Act_ActTrig = Wingmen_FormUp_05_Push
 
 [Trigger]
 nickname = Wingmen_FormUp_05_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_Attack_05
 Act_ActTrig = KittBot_Attack_05
@@ -284,7 +285,7 @@ Act_ActTrig = ChipBot_Attack_05
 
 [Trigger]
 nickname = Wingmen_Attack_05
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_Attack_05
 Act_DeactTrig = KittBot_Attack_05
@@ -295,7 +296,7 @@ Act_ActTrig = Wingmen_BreakAll
 
 [Trigger]
 nickname = Wingmen_Attack_05_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_FormUp_06
 Act_ActTrig = KittBot_FormUp_06
@@ -304,7 +305,7 @@ Act_ActTrig = ChipBot_FormUp_06
 
 [Trigger]
 nickname = Wingmen_FormUp_06
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_FormUp_06
 Act_DeactTrig = KittBot_FormUp_06
@@ -314,7 +315,7 @@ Act_ActTrig = Wingmen_FormUp_06_Push
 
 [Trigger]
 nickname = Wingmen_FormUp_06_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_Attack_06
 Act_ActTrig = KittBot_Attack_06
@@ -323,7 +324,7 @@ Act_ActTrig = ChipBot_Attack_06
 
 [Trigger]
 nickname = Wingmen_Attack_06
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_Attack_06
 Act_DeactTrig = KittBot_Attack_06
@@ -334,7 +335,7 @@ Act_ActTrig = Wingmen_BreakAll
 
 [Trigger]
 nickname = Wingmen_Attack_06_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = foxBot_FormUp_01
 Act_ActTrig = KittBot_FormUp_01
@@ -343,7 +344,7 @@ Act_ActTrig = ChipBot_FormUp_01
 
 [Trigger]
 nickname = Wingmen_BreakAll
-system = any
+system = ANY
 Cnd_True = no_params
 Act_GiveObjList = foxBot, Default_Attack
 Act_GiveObjList = KittBot, Default_Attack
@@ -352,38 +353,44 @@ Act_GiveObjList = ChipBot, Default_Attack
 
 [ObjList]
 nickname = Default_Attack
+SetLifetime = 1
 BreakFormation = no_params
 
 [Trigger]
 nickname = Wingmen_Jump
-system = any
+system = ANY
 Cnd_JumpInComplete = Player
 Act_ActTrig = Wingmen_Jump_Push
 
 [Trigger]
 nickname = Wingmen_Jump_Push
-system = any
+system = ANY
 Cnd_Timer = 4
 Act_ActTrig = Wingmen_FormUp_Init
 
 [ObjList]
 nickname = Default_FormUp
+SetLifetime = 1
 FollowPlayer = form_wall_scripted, foxBot, KittBot, Wo3dy, ChipBot
 
 [ObjList]
 nickname = foxBot_FormUp
+SetLifetime = 1
 FollowPlayer = form_wall_scripted, foxBot, KittBot, Wo3dy, ChipBot
 
 [ObjList]
 nickname = KittBot_FormUp
+SetLifetime = 1
 FollowPlayer = form_wall_scripted, KittBot, Wo3dy, ChipBot, foxBot
 
 [ObjList]
 nickname = Wo3dy_FormUp
+SetLifetime = 1
 FollowPlayer = form_wall_scripted, Wo3dy, ChipBot, foxBot, KittBot
 
 [ObjList]
 nickname = ChipBot_FormUp
+SetLifetime = 1
 FollowPlayer = form_wall_scripted, ChipBot, foxBot, KittBot, Wo3dy
 
 ;------ foxBot Wingman ------
@@ -417,7 +424,7 @@ jumper = false
 
 [Trigger]
 nickname = foxBot_Init
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_SpawnShip = foxBot_RepCheck
 Act_SetLifetime = foxBot_RepCheck, 2
@@ -427,29 +434,29 @@ Act_ActTrig = foxBot_Init_Push
 
 [Trigger]
 nickname = foxBot_Init_Pull
-system = any
-Cnd_WatchVibe = foxBot_RepCheck, Player, 0.900000, lt
+system = ANY
+Cnd_WatchVibe = foxBot_RepCheck, Player, 0.800000, lt
 Act_Destroy = foxBot_RepCheck, SILENT
 Act_DeactTrig = foxBot_Init_Push
 
 [Trigger]
 nickname = foxBot_Init_Push
-system = any
-Cnd_WatchVibe = foxBot_RepCheck, Player, 0.900000, gt
+system = ANY
+Cnd_WatchVibe = foxBot_RepCheck, Player, 0.800000, gt
 Act_DeactTrig = foxBot_Init_Pull
 Act_ActTrig = foxBot_ReadyToRock_Pull
 Act_ActTrig = foxBot_ReadyToRock_Push
 
 [Trigger]
 nickname = foxBot_ReadyToRock_Pull
-system = any
+system = ANY
 Cnd_Timer = 10
 Act_Destroy = foxBot_RepCheck, SILENT
 Act_DeactTrig = foxBot_ReadyToRock_Push
 
 [Trigger]
 nickname = foxBot_ReadyToRock_Push
-system = any
+system = ANY
 Cnd_CargoScanned = Player, foxBot_RepCheck
 Act_Destroy = foxBot_RepCheck, SILENT
 Act_DeactTrig = foxBot_ReadyToRock_Pull
@@ -458,25 +465,23 @@ Act_ActTrig = foxBot_Wingmen_Count_1
 
 [Trigger]
 nickname = foxBot_Wingmen_Count_0
-system = any
+system = ANY
 Cnd_WatchTrigger = Wingmen_Count_1, INACTIVE
 Act_DeactTrig = foxBot_Wingmen_Count_1
-Act_NNIds = 459010, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wingmen_Count_1
 Act_ActTrig = foxBot_Spawn
 
 [Trigger]
 nickname = foxBot_Wingmen_Count_1
-system = any
+system = ANY
 Cnd_WatchTrigger = Wingmen_Count_1, COMPLETE
 Act_DeactTrig = foxBot_Wingmen_Count_0
-Act_NNIds = 459010, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wingmen_Count_2
 Act_ActTrig = foxBot_Spawn
 
 [Trigger]
 nickname = foxBot_CleanTriggers
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_Respawn
 Act_DeactTrig = foxBot_Cmd
@@ -485,6 +490,7 @@ Act_DeactTrig = foxBot_Cmd_Wait
 Act_DeactTrig = foxBot_Cmd_Push
 Act_DeactTrig = foxBot_Death
 Act_DeactTrig = foxBot_Dock
+Act_DeactTrig = foxBot_Dock_Push
 Act_DeactTrig = foxBot_JumpFix
 Act_DeactTrig = foxBot_JumpFix_Pull
 Act_DeactTrig = foxBot_JumpFix_Wait
@@ -494,7 +500,7 @@ Act_DeactTrig = foxBot_StayClose_Push
 
 [Trigger]
 nickname = foxBot_CleanForms
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = foxBot_FormUp_01
 Act_DeactTrig = foxBot_Attack_01
@@ -513,7 +519,7 @@ Act_DeactTrig = foxBot_Attack_01
 
 [Trigger]
 nickname = foxBot_Spawn
-system = any
+system = ANY
 Cnd_Timer = 2
 Act_ActTrig = foxBot_CleanTriggers
 Act_ActTrig = foxBot_CleanForms
@@ -524,17 +530,18 @@ Act_ActTrig = foxBot_Cmd
 Act_ActTrig = foxBot_Death
 Act_ActTrig = foxBot_Dock
 Act_ActTrig = foxBot_JumpFix
+Act_ActTrig = foxBot_StayClose
 Act_ActTrig = Wingmen_FormUp_Init
 
 [Trigger]
 nickname = foxBot_Respawn
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_ActTrig = foxBot_Spawn
 
 [Trigger]
 nickname = foxBot_Cmd
-system = any
+system = ANY
 Cnd_CargoScanned = Player, foxBot
 Act_ActTrig = foxBot_Cmd_Pull
 Act_ActTrig = foxBot_Cmd_Wait
@@ -558,7 +565,7 @@ Act_ActTrig = foxBot_Cmd
 
 [Trigger]
 nickname = foxBot_FormUp_01
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_01
 Act_SendComm = foxBot, Player, gcs_combat_resume_patrol_04-
@@ -566,14 +573,14 @@ Act_GiveObjList = Player, foxBot_FormUp
 
 [Trigger]
 nickname = foxBot_Attack_01
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_01
 Act_SendComm = foxBot, Player, gcs_combat_order_engage_01-
 
 [Trigger]
 nickname = foxBot_FormUp_02
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_02
 Act_SendComm = foxBot, Player, gcs_combat_rejoiningform_01-
@@ -581,14 +588,14 @@ Act_GiveObjList = Player, foxBot_FormUp
 
 [Trigger]
 nickname = foxBot_Attack_02
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_02
 Act_SendComm = foxBot, Player, gcs_combat_order_engage_02-
 
 [Trigger]
 nickname = foxBot_FormUp_03
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_03
 Act_SendComm = foxBot, Player, gcs_combat_resume_patrol_01-
@@ -596,14 +603,14 @@ Act_GiveObjList = Player, foxBot_FormUp
 
 [Trigger]
 nickname = foxBot_Attack_03
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_03
 Act_SendComm = foxBot, Player, gcs_combat_order_engage_03-
 
 [Trigger]
 nickname = foxBot_FormUp_04
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_04
 Act_SendComm = foxBot, Player, gcs_combat_resume_patrol_02-
@@ -611,14 +618,14 @@ Act_GiveObjList = Player, foxBot_FormUp
 
 [Trigger]
 nickname = foxBot_Attack_04
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_04
 Act_SendComm = foxBot, Player, gcs_combat_order_engage_04-
 
 [Trigger]
 nickname = foxBot_FormUp_05
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_05
 Act_SendComm = foxBot, Player, gcs_combat_rejoiningform_02-
@@ -626,14 +633,14 @@ Act_GiveObjList = Player, foxBot_FormUp
 
 [Trigger]
 nickname = foxBot_Attack_05
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_05
 Act_SendComm = foxBot, Player, gcs_combat_order_engage_05-
 
 [Trigger]
 nickname = foxBot_FormUp_06
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_06
 Act_SendComm = foxBot, Player, gcs_combat_resume_patrol_03-
@@ -641,43 +648,49 @@ Act_GiveObjList = Player, foxBot_FormUp
 
 [Trigger]
 nickname = foxBot_Attack_06
-system = any
+system = ANY
 Cnd_WatchTrigger = foxBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_06
 Act_SendComm = foxBot, Player, gcs_combat_order_engage_06-
 
 [Trigger]
 nickname = foxBot_Death
-system = any
+system = ANY
 Cnd_Destroyed = foxBot, -1, ALL
 Act_NNIds = 459010, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = foxBot_Respawn
 
 [Trigger]
 nickname = foxBot_Dock
-system = any
-Cnd_SpaceEnter = no_params
+system = ANY
+Cnd_SpaceExit = no_params
 Act_DeactTrig = foxBot_Death
+Act_ActTrig = foxBot_Dock_Push
+
+[Trigger]
+nickname = foxBot_Dock_Push
+system = ANY
+Cnd_SpaceEnter = no_params
 Act_Destroy = foxBot, SILENT
 Act_ActTrig = foxBot_Respawn
 
 [Trigger]
 nickname = foxBot_JumpFix
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, foxBot, 25000
 Act_ActTrig = foxBot_JumpFix_Pull
 Act_ActTrig = foxBot_JumpFix_Wait
 
 [Trigger]
 nickname = foxBot_JumpFix_Pull
-system = any
+system = ANY
 Cnd_Timer = 2
 Act_DeactTrig = foxBot_JumpFix_Wait
 Act_Destroy = foxBot, EXPLODE
 
 [Trigger]
 nickname = foxBot_JumpFix_Wait
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, foxBot, 30000
 Act_DeactTrig = foxBot_JumpFix_Pull
 Act_SetLifetime = foxBot, 999999
@@ -685,21 +698,21 @@ Act_ActTrig = foxBot_JumpFix_Push
 
 [Trigger]
 nickname = foxBot_JumpFix_Push
-system = any
-Cnd_SystemEnter = no_params
+system = ANY
+Cnd_SystemEnter = ANY
 Act_SetLifetime = foxBot, 2
 Act_ActTrig = foxBot_JumpFix
 
 [Trigger]
 nickname = foxBot_StayClose
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, foxBot, 15000
 Act_ActTrig = Wingmen_FormUp_Init
 Act_ActTrig = foxBot_StayClose_Push
 
 [Trigger]
 nickname = foxBot_StayClose_Push
-system = any
+system = ANY
 Cnd_DistShip = inside, Player, foxBot, 14000
 Act_ActTrig = foxBot_StayClose
 
@@ -734,7 +747,7 @@ jumper = false
 
 [Trigger]
 nickname = KittBot_Init
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_SpawnShip = KittBot_RepCheck
 Act_SetLifetime = KittBot_RepCheck, 2
@@ -744,29 +757,29 @@ Act_ActTrig = KittBot_Init_Push
 
 [Trigger]
 nickname = KittBot_Init_Pull
-system = any
-Cnd_WatchVibe = KittBot_RepCheck, Player, 0.900000, lt
+system = ANY
+Cnd_WatchVibe = KittBot_RepCheck, Player, 0.800000, lt
 Act_Destroy = KittBot_RepCheck, SILENT
 Act_DeactTrig = KittBot_Init_Push
 
 [Trigger]
 nickname = KittBot_Init_Push
-system = any
-Cnd_WatchVibe = KittBot_RepCheck, Player, 0.900000, gt
+system = ANY
+Cnd_WatchVibe = KittBot_RepCheck, Player, 0.800000, gt
 Act_DeactTrig = KittBot_Init_Pull
 Act_ActTrig = KittBot_ReadyToRock_Pull
 Act_ActTrig = KittBot_ReadyToRock_Push
 
 [Trigger]
 nickname = KittBot_ReadyToRock_Pull
-system = any
+system = ANY
 Cnd_Timer = 10
 Act_Destroy = KittBot_RepCheck, SILENT
 Act_DeactTrig = KittBot_ReadyToRock_Push
 
 [Trigger]
 nickname = KittBot_ReadyToRock_Push
-system = any
+system = ANY
 Cnd_CargoScanned = Player, KittBot_RepCheck
 Act_Destroy = KittBot_RepCheck, SILENT
 Act_DeactTrig = KittBot_ReadyToRock_Pull
@@ -775,25 +788,23 @@ Act_ActTrig = KittBot_Wingmen_Count_1
 
 [Trigger]
 nickname = KittBot_Wingmen_Count_0
-system = any
+system = ANY
 Cnd_WatchTrigger = Wingmen_Count_1, INACTIVE
 Act_DeactTrig = KittBot_Wingmen_Count_1
-Act_NNIds = 459013, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wingmen_Count_1
 Act_ActTrig = KittBot_Spawn
 
 [Trigger]
 nickname = KittBot_Wingmen_Count_1
-system = any
+system = ANY
 Cnd_WatchTrigger = Wingmen_Count_1, COMPLETE
 Act_DeactTrig = KittBot_Wingmen_Count_0
-Act_NNIds = 459013, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wingmen_Count_2
 Act_ActTrig = KittBot_Spawn
 
 [Trigger]
 nickname = KittBot_CleanTriggers
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = KittBot_Respawn
 Act_DeactTrig = KittBot_Cmd
@@ -802,6 +813,7 @@ Act_DeactTrig = KittBot_Cmd_Wait
 Act_DeactTrig = KittBot_Cmd_Push
 Act_DeactTrig = KittBot_Death
 Act_DeactTrig = KittBot_Dock
+Act_DeactTrig = KittBot_Dock_Push
 Act_DeactTrig = KittBot_JumpFix
 Act_DeactTrig = KittBot_JumpFix_Pull
 Act_DeactTrig = KittBot_JumpFix_Wait
@@ -811,7 +823,7 @@ Act_DeactTrig = KittBot_StayClose_Push
 
 [Trigger]
 nickname = KittBot_CleanForms
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = KittBot_FormUp_01
 Act_DeactTrig = KittBot_Attack_01
@@ -830,7 +842,7 @@ Act_DeactTrig = KittBot_Attack_01
 
 [Trigger]
 nickname = KittBot_Spawn
-system = any
+system = ANY
 Cnd_Timer = 2
 Act_ActTrig = KittBot_CleanTriggers
 Act_ActTrig = KittBot_CleanForms
@@ -841,17 +853,18 @@ Act_ActTrig = KittBot_Cmd
 Act_ActTrig = KittBot_Death
 Act_ActTrig = KittBot_Dock
 Act_ActTrig = KittBot_JumpFix
+Act_ActTrig = KittBot_StayClose
 Act_ActTrig = Wingmen_FormUp_Init
 
 [Trigger]
 nickname = KittBot_Respawn
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_ActTrig = KittBot_Spawn
 
 [Trigger]
 nickname = KittBot_Cmd
-system = any
+system = ANY
 Cnd_CargoScanned = Player, KittBot
 Act_ActTrig = KittBot_Cmd_Pull
 Act_ActTrig = KittBot_Cmd_Wait
@@ -875,7 +888,7 @@ Act_ActTrig = KittBot_Cmd
 
 [Trigger]
 nickname = KittBot_FormUp_01
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_01
 Act_SendComm = KittBot, Player, gcs_combat_resume_patrol_04-
@@ -883,14 +896,14 @@ Act_GiveObjList = Player, KittBot_FormUp
 
 [Trigger]
 nickname = KittBot_Attack_01
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_01
 Act_SendComm = KittBot, Player, gcs_combat_order_engage_01-
 
 [Trigger]
 nickname = KittBot_FormUp_02
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_02
 Act_SendComm = KittBot, Player, gcs_combat_rejoiningform_01-
@@ -898,14 +911,14 @@ Act_GiveObjList = Player, KittBot_FormUp
 
 [Trigger]
 nickname = KittBot_Attack_02
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_02
 Act_SendComm = KittBot, Player, gcs_combat_order_engage_02-
 
 [Trigger]
 nickname = KittBot_FormUp_03
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_03
 Act_SendComm = KittBot, Player, gcs_combat_resume_patrol_01-
@@ -913,14 +926,14 @@ Act_GiveObjList = Player, KittBot_FormUp
 
 [Trigger]
 nickname = KittBot_Attack_03
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_03
 Act_SendComm = KittBot, Player, gcs_combat_order_engage_03-
 
 [Trigger]
 nickname = KittBot_FormUp_04
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_04
 Act_SendComm = KittBot, Player, gcs_combat_resume_patrol_02-
@@ -928,14 +941,14 @@ Act_GiveObjList = Player, KittBot_FormUp
 
 [Trigger]
 nickname = KittBot_Attack_04
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_04
 Act_SendComm = KittBot, Player, gcs_combat_order_engage_04-
 
 [Trigger]
 nickname = KittBot_FormUp_05
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_05
 Act_SendComm = KittBot, Player, gcs_combat_rejoiningform_02-
@@ -943,14 +956,14 @@ Act_GiveObjList = Player, KittBot_FormUp
 
 [Trigger]
 nickname = KittBot_Attack_05
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_05
 Act_SendComm = KittBot, Player, gcs_combat_order_engage_05-
 
 [Trigger]
 nickname = KittBot_FormUp_06
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_06
 Act_SendComm = KittBot, Player, gcs_combat_resume_patrol_03-
@@ -958,43 +971,49 @@ Act_GiveObjList = Player, KittBot_FormUp
 
 [Trigger]
 nickname = KittBot_Attack_06
-system = any
+system = ANY
 Cnd_WatchTrigger = KittBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_06
 Act_SendComm = KittBot, Player, gcs_combat_order_engage_06-
 
 [Trigger]
 nickname = KittBot_Death
-system = any
+system = ANY
 Cnd_Destroyed = KittBot, -1, ALL
 Act_NNIds = 459013, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = KittBot_Respawn
 
 [Trigger]
 nickname = KittBot_Dock
-system = any
-Cnd_SpaceEnter = no_params
+system = ANY
+Cnd_SpaceExit = no_params
 Act_DeactTrig = KittBot_Death
+Act_ActTrig = KittBot_Dock_Push
+
+[Trigger]
+nickname = KittBot_Dock_Push
+system = ANY
+Cnd_SpaceEnter = no_params
 Act_Destroy = KittBot, SILENT
 Act_ActTrig = KittBot_Respawn
 
 [Trigger]
 nickname = KittBot_JumpFix
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, KittBot, 25000
 Act_ActTrig = KittBot_JumpFix_Pull
 Act_ActTrig = KittBot_JumpFix_Wait
 
 [Trigger]
 nickname = KittBot_JumpFix_Pull
-system = any
+system = ANY
 Cnd_Timer = 2
 Act_DeactTrig = KittBot_JumpFix_Wait
 Act_Destroy = KittBot, EXPLODE
 
 [Trigger]
 nickname = KittBot_JumpFix_Wait
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, KittBot, 30000
 Act_DeactTrig = KittBot_JumpFix_Pull
 Act_SetLifetime = KittBot, 999999
@@ -1002,21 +1021,21 @@ Act_ActTrig = KittBot_JumpFix_Push
 
 [Trigger]
 nickname = KittBot_JumpFix_Push
-system = any
-Cnd_SystemEnter = no_params
+system = ANY
+Cnd_SystemEnter = ANY
 Act_SetLifetime = KittBot, 2
 Act_ActTrig = KittBot_JumpFix
 
 [Trigger]
 nickname = KittBot_StayClose
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, KittBot, 15000
 Act_ActTrig = Wingmen_FormUp_Init
 Act_ActTrig = KittBot_StayClose_Push
 
 [Trigger]
 nickname = KittBot_StayClose_Push
-system = any
+system = ANY
 Cnd_DistShip = inside, Player, KittBot, 14000
 Act_ActTrig = KittBot_StayClose
 
@@ -1051,7 +1070,7 @@ jumper = false
 
 [Trigger]
 nickname = Wo3dy_Init
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_SpawnShip = Wo3dy_RepCheck
 Act_SetLifetime = Wo3dy_RepCheck, 2
@@ -1061,29 +1080,29 @@ Act_ActTrig = Wo3dy_Init_Push
 
 [Trigger]
 nickname = Wo3dy_Init_Pull
-system = any
-Cnd_WatchVibe = Wo3dy_RepCheck, Player, 0.900000, lt
+system = ANY
+Cnd_WatchVibe = Wo3dy_RepCheck, Player, 0.800000, lt
 Act_Destroy = Wo3dy_RepCheck, SILENT
 Act_DeactTrig = Wo3dy_Init_Push
 
 [Trigger]
 nickname = Wo3dy_Init_Push
-system = any
-Cnd_WatchVibe = Wo3dy_RepCheck, Player, 0.900000, gt
+system = ANY
+Cnd_WatchVibe = Wo3dy_RepCheck, Player, 0.800000, gt
 Act_DeactTrig = Wo3dy_Init_Pull
 Act_ActTrig = Wo3dy_ReadyToRock_Pull
 Act_ActTrig = Wo3dy_ReadyToRock_Push
 
 [Trigger]
 nickname = Wo3dy_ReadyToRock_Pull
-system = any
+system = ANY
 Cnd_Timer = 10
 Act_Destroy = Wo3dy_RepCheck, SILENT
 Act_DeactTrig = Wo3dy_ReadyToRock_Push
 
 [Trigger]
 nickname = Wo3dy_ReadyToRock_Push
-system = any
+system = ANY
 Cnd_CargoScanned = Player, Wo3dy_RepCheck
 Act_Destroy = Wo3dy_RepCheck, SILENT
 Act_DeactTrig = Wo3dy_ReadyToRock_Pull
@@ -1092,25 +1111,23 @@ Act_ActTrig = Wo3dy_Wingmen_Count_1
 
 [Trigger]
 nickname = Wo3dy_Wingmen_Count_0
-system = any
+system = ANY
 Cnd_WatchTrigger = Wingmen_Count_1, INACTIVE
 Act_DeactTrig = Wo3dy_Wingmen_Count_1
-Act_NNIds = 459020, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wingmen_Count_1
 Act_ActTrig = Wo3dy_Spawn
 
 [Trigger]
 nickname = Wo3dy_Wingmen_Count_1
-system = any
+system = ANY
 Cnd_WatchTrigger = Wingmen_Count_1, COMPLETE
 Act_DeactTrig = Wo3dy_Wingmen_Count_0
-Act_NNIds = 459020, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wingmen_Count_2
 Act_ActTrig = Wo3dy_Spawn
 
 [Trigger]
 nickname = Wo3dy_CleanTriggers
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = Wo3dy_Respawn
 Act_DeactTrig = Wo3dy_Cmd
@@ -1119,6 +1136,7 @@ Act_DeactTrig = Wo3dy_Cmd_Wait
 Act_DeactTrig = Wo3dy_Cmd_Push
 Act_DeactTrig = Wo3dy_Death
 Act_DeactTrig = Wo3dy_Dock
+Act_DeactTrig = Wo3dy_Dock_Push
 Act_DeactTrig = Wo3dy_JumpFix
 Act_DeactTrig = Wo3dy_JumpFix_Pull
 Act_DeactTrig = Wo3dy_JumpFix_Wait
@@ -1128,7 +1146,7 @@ Act_DeactTrig = Wo3dy_StayClose_Push
 
 [Trigger]
 nickname = Wo3dy_CleanForms
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = Wo3dy_FormUp_01
 Act_DeactTrig = Wo3dy_Attack_01
@@ -1147,7 +1165,7 @@ Act_DeactTrig = Wo3dy_Attack_01
 
 [Trigger]
 nickname = Wo3dy_Spawn
-system = any
+system = ANY
 Cnd_Timer = 2
 Act_ActTrig = Wo3dy_CleanTriggers
 Act_ActTrig = Wo3dy_CleanForms
@@ -1158,17 +1176,18 @@ Act_ActTrig = Wo3dy_Cmd
 Act_ActTrig = Wo3dy_Death
 Act_ActTrig = Wo3dy_Dock
 Act_ActTrig = Wo3dy_JumpFix
+Act_ActTrig = Wo3dy_StayClose
 Act_ActTrig = Wingmen_FormUp_Init
 
 [Trigger]
 nickname = Wo3dy_Respawn
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_ActTrig = Wo3dy_Spawn
 
 [Trigger]
 nickname = Wo3dy_Cmd
-system = any
+system = ANY
 Cnd_CargoScanned = Player, Wo3dy
 Act_ActTrig = Wo3dy_Cmd_Pull
 Act_ActTrig = Wo3dy_Cmd_Wait
@@ -1192,7 +1211,7 @@ Act_ActTrig = Wo3dy_Cmd
 
 [Trigger]
 nickname = Wo3dy_FormUp_01
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_01
 Act_SendComm = Wo3dy, Player, gcs_combat_resume_patrol_04-
@@ -1200,14 +1219,14 @@ Act_GiveObjList = Player, Wo3dy_FormUp
 
 [Trigger]
 nickname = Wo3dy_Attack_01
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_01
 Act_SendComm = Wo3dy, Player, gcs_combat_order_engage_01-
 
 [Trigger]
 nickname = Wo3dy_FormUp_02
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_02
 Act_SendComm = Wo3dy, Player, gcs_combat_rejoiningform_01-
@@ -1215,14 +1234,14 @@ Act_GiveObjList = Player, Wo3dy_FormUp
 
 [Trigger]
 nickname = Wo3dy_Attack_02
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_02
 Act_SendComm = Wo3dy, Player, gcs_combat_order_engage_02-
 
 [Trigger]
 nickname = Wo3dy_FormUp_03
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_03
 Act_SendComm = Wo3dy, Player, gcs_combat_resume_patrol_01-
@@ -1230,14 +1249,14 @@ Act_GiveObjList = Player, Wo3dy_FormUp
 
 [Trigger]
 nickname = Wo3dy_Attack_03
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_03
 Act_SendComm = Wo3dy, Player, gcs_combat_order_engage_03-
 
 [Trigger]
 nickname = Wo3dy_FormUp_04
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_04
 Act_SendComm = Wo3dy, Player, gcs_combat_resume_patrol_02-
@@ -1245,14 +1264,14 @@ Act_GiveObjList = Player, Wo3dy_FormUp
 
 [Trigger]
 nickname = Wo3dy_Attack_04
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_04
 Act_SendComm = Wo3dy, Player, gcs_combat_order_engage_04-
 
 [Trigger]
 nickname = Wo3dy_FormUp_05
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_05
 Act_SendComm = Wo3dy, Player, gcs_combat_rejoiningform_02-
@@ -1260,14 +1279,14 @@ Act_GiveObjList = Player, Wo3dy_FormUp
 
 [Trigger]
 nickname = Wo3dy_Attack_05
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_05
 Act_SendComm = Wo3dy, Player, gcs_combat_order_engage_05-
 
 [Trigger]
 nickname = Wo3dy_FormUp_06
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_06
 Act_SendComm = Wo3dy, Player, gcs_combat_resume_patrol_03-
@@ -1275,43 +1294,49 @@ Act_GiveObjList = Player, Wo3dy_FormUp
 
 [Trigger]
 nickname = Wo3dy_Attack_06
-system = any
+system = ANY
 Cnd_WatchTrigger = Wo3dy_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_06
 Act_SendComm = Wo3dy, Player, gcs_combat_order_engage_06-
 
 [Trigger]
 nickname = Wo3dy_Death
-system = any
+system = ANY
 Cnd_Destroyed = Wo3dy, -1, ALL
 Act_NNIds = 459020, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wo3dy_Respawn
 
 [Trigger]
 nickname = Wo3dy_Dock
-system = any
-Cnd_SpaceEnter = no_params
+system = ANY
+Cnd_SpaceExit = no_params
 Act_DeactTrig = Wo3dy_Death
+Act_ActTrig = Wo3dy_Dock_Push
+
+[Trigger]
+nickname = Wo3dy_Dock_Push
+system = ANY
+Cnd_SpaceEnter = no_params
 Act_Destroy = Wo3dy, SILENT
 Act_ActTrig = Wo3dy_Respawn
 
 [Trigger]
 nickname = Wo3dy_JumpFix
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, Wo3dy, 25000
 Act_ActTrig = Wo3dy_JumpFix_Pull
 Act_ActTrig = Wo3dy_JumpFix_Wait
 
 [Trigger]
 nickname = Wo3dy_JumpFix_Pull
-system = any
+system = ANY
 Cnd_Timer = 2
 Act_DeactTrig = Wo3dy_JumpFix_Wait
 Act_Destroy = Wo3dy, EXPLODE
 
 [Trigger]
 nickname = Wo3dy_JumpFix_Wait
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, Wo3dy, 30000
 Act_DeactTrig = Wo3dy_JumpFix_Pull
 Act_SetLifetime = Wo3dy, 999999
@@ -1319,21 +1344,21 @@ Act_ActTrig = Wo3dy_JumpFix_Push
 
 [Trigger]
 nickname = Wo3dy_JumpFix_Push
-system = any
-Cnd_SystemEnter = no_params
+system = ANY
+Cnd_SystemEnter = ANY
 Act_SetLifetime = Wo3dy, 2
 Act_ActTrig = Wo3dy_JumpFix
 
 [Trigger]
 nickname = Wo3dy_StayClose
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, Wo3dy, 15000
 Act_ActTrig = Wingmen_FormUp_Init
 Act_ActTrig = Wo3dy_StayClose_Push
 
 [Trigger]
 nickname = Wo3dy_StayClose_Push
-system = any
+system = ANY
 Cnd_DistShip = inside, Player, Wo3dy, 14000
 Act_ActTrig = Wo3dy_StayClose
 
@@ -1368,7 +1393,7 @@ jumper = false
 
 [Trigger]
 nickname = ChipBot_Init
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_SpawnShip = ChipBot_RepCheck
 Act_SetLifetime = ChipBot_RepCheck, 2
@@ -1378,29 +1403,29 @@ Act_ActTrig = ChipBot_Init_Push
 
 [Trigger]
 nickname = ChipBot_Init_Pull
-system = any
-Cnd_WatchVibe = ChipBot_RepCheck, Player, 0.900000, lt
+system = ANY
+Cnd_WatchVibe = ChipBot_RepCheck, Player, 0.800000, lt
 Act_Destroy = ChipBot_RepCheck, SILENT
 Act_DeactTrig = ChipBot_Init_Push
 
 [Trigger]
 nickname = ChipBot_Init_Push
-system = any
-Cnd_WatchVibe = ChipBot_RepCheck, Player, 0.900000, gt
+system = ANY
+Cnd_WatchVibe = ChipBot_RepCheck, Player, 0.800000, gt
 Act_DeactTrig = ChipBot_Init_Pull
 Act_ActTrig = ChipBot_ReadyToRock_Pull
 Act_ActTrig = ChipBot_ReadyToRock_Push
 
 [Trigger]
 nickname = ChipBot_ReadyToRock_Pull
-system = any
+system = ANY
 Cnd_Timer = 10
 Act_Destroy = ChipBot_RepCheck, SILENT
 Act_DeactTrig = ChipBot_ReadyToRock_Push
 
 [Trigger]
 nickname = ChipBot_ReadyToRock_Push
-system = any
+system = ANY
 Cnd_CargoScanned = Player, ChipBot_RepCheck
 Act_Destroy = ChipBot_RepCheck, SILENT
 Act_DeactTrig = ChipBot_ReadyToRock_Pull
@@ -1409,25 +1434,23 @@ Act_ActTrig = ChipBot_Wingmen_Count_1
 
 [Trigger]
 nickname = ChipBot_Wingmen_Count_0
-system = any
+system = ANY
 Cnd_WatchTrigger = Wingmen_Count_1, INACTIVE
 Act_DeactTrig = ChipBot_Wingmen_Count_1
-Act_NNIds = 459035, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wingmen_Count_1
 Act_ActTrig = ChipBot_Spawn
 
 [Trigger]
 nickname = ChipBot_Wingmen_Count_1
-system = any
+system = ANY
 Cnd_WatchTrigger = Wingmen_Count_1, COMPLETE
 Act_DeactTrig = ChipBot_Wingmen_Count_0
-Act_NNIds = 459035, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = Wingmen_Count_2
 Act_ActTrig = ChipBot_Spawn
 
 [Trigger]
 nickname = ChipBot_CleanTriggers
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = ChipBot_Respawn
 Act_DeactTrig = ChipBot_Cmd
@@ -1436,6 +1459,7 @@ Act_DeactTrig = ChipBot_Cmd_Wait
 Act_DeactTrig = ChipBot_Cmd_Push
 Act_DeactTrig = ChipBot_Death
 Act_DeactTrig = ChipBot_Dock
+Act_DeactTrig = ChipBot_Dock_Push
 Act_DeactTrig = ChipBot_JumpFix
 Act_DeactTrig = ChipBot_JumpFix_Pull
 Act_DeactTrig = ChipBot_JumpFix_Wait
@@ -1445,7 +1469,7 @@ Act_DeactTrig = ChipBot_StayClose_Push
 
 [Trigger]
 nickname = ChipBot_CleanForms
-system = any
+system = ANY
 Cnd_True = no_params
 Act_DeactTrig = ChipBot_FormUp_01
 Act_DeactTrig = ChipBot_Attack_01
@@ -1464,7 +1488,7 @@ Act_DeactTrig = ChipBot_Attack_01
 
 [Trigger]
 nickname = ChipBot_Spawn
-system = any
+system = ANY
 Cnd_Timer = 2
 Act_ActTrig = ChipBot_CleanTriggers
 Act_ActTrig = ChipBot_CleanForms
@@ -1475,17 +1499,18 @@ Act_ActTrig = ChipBot_Cmd
 Act_ActTrig = ChipBot_Death
 Act_ActTrig = ChipBot_Dock
 Act_ActTrig = ChipBot_JumpFix
+Act_ActTrig = ChipBot_StayClose
 Act_ActTrig = Wingmen_FormUp_Init
 
 [Trigger]
 nickname = ChipBot_Respawn
-system = any
+system = ANY
 Cnd_LaunchComplete = Player
 Act_ActTrig = ChipBot_Spawn
 
 [Trigger]
 nickname = ChipBot_Cmd
-system = any
+system = ANY
 Cnd_CargoScanned = Player, ChipBot
 Act_ActTrig = ChipBot_Cmd_Pull
 Act_ActTrig = ChipBot_Cmd_Wait
@@ -1509,7 +1534,7 @@ Act_ActTrig = ChipBot_Cmd
 
 [Trigger]
 nickname = ChipBot_FormUp_01
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_01
 Act_SendComm = ChipBot, Player, gcs_combat_resume_patrol_04-
@@ -1517,14 +1542,14 @@ Act_GiveObjList = Player, ChipBot_FormUp
 
 [Trigger]
 nickname = ChipBot_Attack_01
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_01
 Act_SendComm = ChipBot, Player, gcs_combat_order_engage_01-
 
 [Trigger]
 nickname = ChipBot_FormUp_02
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_02
 Act_SendComm = ChipBot, Player, gcs_combat_rejoiningform_01-
@@ -1532,14 +1557,14 @@ Act_GiveObjList = Player, ChipBot_FormUp
 
 [Trigger]
 nickname = ChipBot_Attack_02
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_02
 Act_SendComm = ChipBot, Player, gcs_combat_order_engage_02-
 
 [Trigger]
 nickname = ChipBot_FormUp_03
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_03
 Act_SendComm = ChipBot, Player, gcs_combat_resume_patrol_01-
@@ -1547,14 +1572,14 @@ Act_GiveObjList = Player, ChipBot_FormUp
 
 [Trigger]
 nickname = ChipBot_Attack_03
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_03
 Act_SendComm = ChipBot, Player, gcs_combat_order_engage_03-
 
 [Trigger]
 nickname = ChipBot_FormUp_04
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_04
 Act_SendComm = ChipBot, Player, gcs_combat_resume_patrol_02-
@@ -1562,14 +1587,14 @@ Act_GiveObjList = Player, ChipBot_FormUp
 
 [Trigger]
 nickname = ChipBot_Attack_04
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_04
 Act_SendComm = ChipBot, Player, gcs_combat_order_engage_04-
 
 [Trigger]
 nickname = ChipBot_FormUp_05
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_05
 Act_SendComm = ChipBot, Player, gcs_combat_rejoiningform_02-
@@ -1577,14 +1602,14 @@ Act_GiveObjList = Player, ChipBot_FormUp
 
 [Trigger]
 nickname = ChipBot_Attack_05
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_05
 Act_SendComm = ChipBot, Player, gcs_combat_order_engage_05-
 
 [Trigger]
 nickname = ChipBot_FormUp_06
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_FormUp_06
 Act_SendComm = ChipBot, Player, gcs_combat_resume_patrol_03-
@@ -1592,43 +1617,49 @@ Act_GiveObjList = Player, ChipBot_FormUp
 
 [Trigger]
 nickname = ChipBot_Attack_06
-system = any
+system = ANY
 Cnd_WatchTrigger = ChipBot_Cmd_Push, ON
 Act_ActTrig = Wingmen_Attack_06
 Act_SendComm = ChipBot, Player, gcs_combat_order_engage_06-
 
 [Trigger]
 nickname = ChipBot_Death
-system = any
+system = ANY
 Cnd_Destroyed = ChipBot, -1, ALL
 Act_NNIds = 459035, OBJECTIVE ;Test, needs new IDS?
 Act_ActTrig = ChipBot_Respawn
 
 [Trigger]
 nickname = ChipBot_Dock
-system = any
-Cnd_SpaceEnter = no_params
+system = ANY
+Cnd_SpaceExit = no_params
 Act_DeactTrig = ChipBot_Death
+Act_ActTrig = ChipBot_Dock_Push
+
+[Trigger]
+nickname = ChipBot_Dock_Push
+system = ANY
+Cnd_SpaceEnter = no_params
 Act_Destroy = ChipBot, SILENT
 Act_ActTrig = ChipBot_Respawn
 
 [Trigger]
 nickname = ChipBot_JumpFix
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, ChipBot, 25000
 Act_ActTrig = ChipBot_JumpFix_Pull
 Act_ActTrig = ChipBot_JumpFix_Wait
 
 [Trigger]
 nickname = ChipBot_JumpFix_Pull
-system = any
+system = ANY
 Cnd_Timer = 2
 Act_DeactTrig = ChipBot_JumpFix_Wait
 Act_Destroy = ChipBot, EXPLODE
 
 [Trigger]
 nickname = ChipBot_JumpFix_Wait
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, ChipBot, 30000
 Act_DeactTrig = ChipBot_JumpFix_Pull
 Act_SetLifetime = ChipBot, 999999
@@ -1636,20 +1667,20 @@ Act_ActTrig = ChipBot_JumpFix_Push
 
 [Trigger]
 nickname = ChipBot_JumpFix_Push
-system = any
-Cnd_SystemEnter = no_params
+system = ANY
+Cnd_SystemEnter = ANY
 Act_SetLifetime = ChipBot, 2
 Act_ActTrig = ChipBot_JumpFix
 
 [Trigger]
 nickname = ChipBot_StayClose
-system = any
+system = ANY
 Cnd_DistShip = outside, Player, ChipBot, 15000
 Act_ActTrig = Wingmen_FormUp_Init
 Act_ActTrig = ChipBot_StayClose_Push
 
 [Trigger]
 nickname = ChipBot_StayClose_Push
-system = any
+system = ANY
 Cnd_DistShip = inside, Player, ChipBot, 14000
 Act_ActTrig = ChipBot_StayClose

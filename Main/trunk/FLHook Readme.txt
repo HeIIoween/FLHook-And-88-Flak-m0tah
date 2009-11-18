@@ -1,6 +1,6 @@
 F L   H O O K
 =============
-version: 1.6.6
+version: 1.6.7
 Based on FLHook v1.5.5 with w0dk4's cloak code
 
 NOTE: If you wish to use this version of FLHook in place of your standard 1.5.5,
@@ -615,6 +615,11 @@ downloaded from http://www.schneier.com/blowfish-download.html
 ================================================================================
 == CHANGELOG ===================================================================
 ================================================================================
+
+1.6.7 (unofficial)
+- Fixed server crash on shutdown after using rename command
+- Changed spawned item marking to use LOOT_UNSEEN_RADIUS as the max distance
+- Fixed exceptions and server crashes in HkCb_AddDmgEntry
 
 1.6.6 (unofficial)
 - Re-implemented the kill event (for the socket eventmode)

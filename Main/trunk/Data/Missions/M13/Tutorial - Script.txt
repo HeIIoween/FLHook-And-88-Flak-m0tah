@@ -143,9 +143,9 @@ Act_ActTrig = pux_Tutorial_Init
 nickname = pux_Tutorial_Init
 system = Li07
 Cnd_Timer = 6
+Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
 Act_SpawnShip = Tutorial_RepCheck
 Act_SetLifetime = Tutorial_RepCheck, 2
-Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
 Act_ActTrig = Tutorial_Init_Pull
 Act_ActTrig = Tutorial_Init_Push
 
@@ -209,7 +209,7 @@ Act_ActTrig = Combat_Basic_Hostile_Death
 [Trigger]
 nickname = Combat_Basic_Hostile_Death
 system = Li07
-Cnd_Destroyed = Combat_Basic_Hostile, -1, EXPLODE
+Cnd_Destroyed = Combat_Basic_Hostile, 1, EXPLODE
 Act_ActTrig = Combat_Basic_Hostile_Death_Push
 
 [Trigger]
@@ -248,7 +248,7 @@ Act_ActTrig = Combat_Advanced_Hostile_FirstWave_Death
 [Trigger]
 nickname = Combat_Advanced_Hostile_FirstWave_Death
 system = Li07
-Cnd_Destroyed = Combat_Advanced_Hostile, -1, EXPLODE
+Cnd_Destroyed = Combat_Advanced_Hostile, 4, EXPLODE
 Act_ActTrig = Combat_Advanced_Hostile_FirstWave_Death_Push
 
 [Trigger]
@@ -266,7 +266,7 @@ Act_ActTrig = Combat_Advanced_Hostile_SecondWave_Death
 [Trigger]
 nickname = Combat_Advanced_Hostile_SecondWave_Death
 system = Li07
-Cnd_Destroyed = Combat_Advanced_Hostile, -1, EXPLODE
+Cnd_Destroyed = Combat_Advanced_Hostile, 4, EXPLODE
 Act_ActTrig = Combat_Advanced_Hostile_SecondWave_Death_Push
 
 [Trigger]
