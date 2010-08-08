@@ -40,7 +40,7 @@ Required Kill Tokens: 100
 Boss: 1x Nomad Hivemind - an invincible Nomad Fighter with lots of guns. Can only be destroyed by special WPs.
 System: The old Alaska mine maze, which players must traverse to meet Hivemind at the end. After meeting Hivemind, players must lure it back through the maze, where it will be destroyed by a super death ray WP.
 Hostiles: Floods of Nomad Fighters, same deal as Trial of Courage. Group will be fine as long as they don't stop moving.
-Reward: Patience Pendant, permenant NPC magnet similar to Admin Token - now you don't have to be patient waiting for wingmen any longer. ;)
+Reward: Patience Pendant, permanent NPC magnet similar to Admin Token - now you don't have to be patient waiting for wingmen any longer. ;)
 Notes: The Hivemind has a special state_graph, so it will always follow players if they're cruising.
 
 ---

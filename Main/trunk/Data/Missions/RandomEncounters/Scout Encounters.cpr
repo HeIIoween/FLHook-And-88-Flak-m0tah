@@ -1,6 +1,6 @@
 [General]
 Signature=ConTEXT project file
-FilesCount=13
+FilesCount=16
 ActiveFile=1
 Maximized=1
 RelativePath=1
@@ -14,12 +14,38 @@ Top=0
 Width=717
 Height=388
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
 [File2]
+Name=area_88flak_scoutfr.ini
+Open=1
+Left=110
+Top=110
+Width=870
+Height=323
+TopLine=0
+CursorX=21
+CursorY=13
+Highlighter=
+BookmarkCount=0
+
+[File3]
+Name=area_88flak_scouttrans.ini
+Open=1
+Left=132
+Top=132
+Width=870
+Height=323
+TopLine=0
+CursorX=21
+CursorY=13
+Highlighter=
+BookmarkCount=0
+
+[File4]
 Name=area_ambscout.ini
 Open=1
 Left=44
@@ -27,12 +53,12 @@ Top=44
 Width=826
 Height=411
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File3]
+[File5]
 Name=area_bh_scout.ini
 Open=1
 Left=22
@@ -40,12 +66,12 @@ Top=23
 Width=717
 Height=388
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File4]
+[File6]
 Name=area_flnpcs.ini
 Open=1
 Left=0
@@ -53,12 +79,12 @@ Top=0
 Width=932
 Height=474
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File5]
+[File7]
 Name=area_flnpcstransport.ini
 Open=1
 Left=44
@@ -66,12 +92,12 @@ Top=46
 Width=848
 Height=424
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File6]
+[File8]
 Name=area_nomadsamb.ini
 Open=1
 Left=44
@@ -79,12 +105,12 @@ Top=46
 Width=932
 Height=493
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File7]
+[File9]
 Name=area_scavenger.ini
 Open=1
 Left=88
@@ -92,12 +118,12 @@ Top=92
 Width=932
 Height=493
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File8]
+[File10]
 Name=area_scout.ini
 Open=1
 Left=110
@@ -105,12 +131,12 @@ Top=115
 Width=932
 Height=493
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File9]
+[File11]
 Name=area_trade_smuggler.ini
 Open=1
 Left=220
@@ -118,12 +144,12 @@ Top=230
 Width=673
 Height=493
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File10]
+[File12]
 Name=area_trade_trader.ini
 Open=1
 Left=0
@@ -131,12 +157,12 @@ Top=0
 Width=673
 Height=493
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File11]
+[File13]
 Name=miningp_scavenger.ini
 Open=1
 Left=132
@@ -144,12 +170,25 @@ Top=138
 Width=932
 Height=493
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File12]
+[File14]
+Name=patrolp_follow_random.ini
+Open=1
+Left=154
+Top=154
+Width=870
+Height=318
+TopLine=0
+CursorX=21
+CursorY=13
+Highlighter=
+BookmarkCount=0
+
+[File15]
 Name=tradep_trade_smuggler.ini
 Open=1
 Left=22
@@ -157,12 +196,12 @@ Top=23
 Width=673
 Height=493
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File13]
+[File16]
 Name=tradep_trade_trader.ini
 Open=1
 Left=44
@@ -170,7 +209,7 @@ Top=46
 Width=673
 Height=493
 TopLine=0
-CursorX=0
-CursorY=0
+CursorX=21
+CursorY=13
 Highlighter=
 BookmarkCount=0

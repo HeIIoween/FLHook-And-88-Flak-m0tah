@@ -1,6 +1,6 @@
 [General]
 Signature=ConTEXT project file
-FilesCount=2
+FilesCount=3
 ActiveFile=1
 Maximized=1
 RelativePath=0
@@ -28,6 +28,19 @@ Width=826
 Height=430
 TopLine=0
 CursorX=59
+CursorY=1
+Highlighter=
+BookmarkCount=0
+
+[File3]
+Name=..\88 Flak v127 Ship Selector\script.xml
+Open=1
+Left=0
+Top=0
+Width=188
+Height=378
+TopLine=0
+CursorX=67
 CursorY=1
 Highlighter=
 BookmarkCount=0

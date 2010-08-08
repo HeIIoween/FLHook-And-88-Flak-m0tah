@@ -1,6 +1,5 @@
 2158028940 = gd_bh_grp_token, Bounty Hunters Operative
 2158214286 = fc_x_grp_token, Xenos Operative
-2166021834 = fc_pfl_grp_token, Unlawful Freelance Operative
 2172279368 = ku_arena_token, Kusari Arena Token
 2174919879 = fc_bd_grp_token, Blood Dragons Operative
 2177189960 = fc_lwb_grp_token, LWB Operative
@@ -15,7 +14,6 @@
 2248647617 = sfx_rumble_train, sfx_rumble_train Sound
 2254717708 = gasminer_intake, Gas Miner Intake
 2260738447 = fc_gc_grp_token, Golden Crysanthemums Operative
-2264366400 = LargeWhiteSpecialCone, LargeWhiteSpecial Cone Dynamic Light
 2268880449 = rh_n_grp_token, Rheinland Military Operative
 2272901322 = ku_elite_fin02, Hydra Starboard Fin
 2276044485 = li_p_grp_token, Liberty Police Operative
@@ -33,7 +31,6 @@
 2370026693 = fc_u_grp_token, Unioners Operative
 2370158347 = fc_lh_grp_token, Lane Hackers Operative
 2370478221 = fc_rh_grp_token, Red Hessians Operative
-2372350153 = gd_lfl_grp_token, Lawful Freelance Operative
 2379990021 = mining_ship_dust01, Mining Ship Dust 01
 2385746179 = br_n_grp_token, Bretonia Armed Forces Operative
 2391351497 = rareshieldregen14, Rare Shield Regen. 14
@@ -49,12 +46,17 @@
 2444466628 = br_p_grp_token, Bretonia Police Operative
 2445523982 = fc_h_grp_token, Hogosha Operative
 2445542144 = fc_ou_grp_token, Outcasts Operative
-2459217227 = br_elite_fin01, Covenanter Port Fin
+2459217227 = br_elite_fin01, Paladin Port Fin
 2479078406 = fc_j_grp_token, Junkers Operative
 2493281222 = admin_token, Admin Armor + Wingmen License
 2493758479 = fc_m_grp_token, Mollys Operative
 2500775748 = contrail01, Contrail
 2504938758 = gd_z_grp_token, Zoners Operative
+2520301258 = rarearmor08, Rare Armor 8
+2520321738 = rarearmor04, Rare Armor 4
+2520344266 = rarearmor06, Rare Armor 6
+2520381130 = rarearmor02, Rare Armor 2
+2520620736 = rarearmor10, Rare Armor 10
 2527444937 = fc_lr_grp_token, Liberty Rogues Operative
 2544042112 = rarepower12, Rare Power Generator 12
 2544068736 = rarepower10, Rare Power Generator 10
@@ -73,7 +75,7 @@
 2588130376 = fc_c_grp_token, Corsairs Operative
 2596470089 = outpost_wallah, outpost_wallah Sound
 2604907596 = fc_b_grp_token, Bundschuh Operative
-2610653705 = rh_elite_fin01, Harlequin Port Fin
+2610653705 = rh_elite_fin01, Deimos Port Fin
 2621619471 = sfx_rumble_station_small, sfx_rumble_station_small Sound
 2629007880 = sfx_rumble_destroyer, sfx_rumble_destroyer Sound
 2653142093 = fc_g_grp_token, Gaians Operative
@@ -115,8 +117,13 @@
 2959689030 = sfx_rumble_ut_large, sfx_rumble_ut_large Sound
 2970288833 = mining_ship_sucking01, Mining Ship Sucking 01
 2990020618 = Conveyor, Conveyor Sound
-2996097355 = br_elite_fin02, Covenanter Starboard Fin
+2996097355 = br_elite_fin02, Paladin Starboard Fin
 3029808073 = br_arena_token, Bretonia Arena Token
+3057167050 = rarearmor09, Rare Armor 9
+3057195722 = rarearmor05, Rare Armor 5
+3057218250 = rarearmor07, Rare Armor 7
+3057224394 = rarearmor01, Rare Armor 1
+3057246922 = rarearmor03, Rare Armor 3
 3065516173 = sfx_rumble_cruiser, sfx_rumble_cruiser Sound
 3071340547 = sfx_rumble_gas_collector, sfx_rumble_gas_collector Sound
 3080918144 = rarepower13, Rare Power Generator 13
@@ -133,7 +140,7 @@
 3115493318 = sfx_rumble_gas_miner, sfx_rumble_gas_miner Sound
 3122965067 = mining_ship_engine_sound, mining_ship_engine_sound Sound
 3128705348 = mining_ship_enhaust, mining_ship_enhaust
-3147503113 = rh_elite_fin02, Harlequin Starboard Fin
+3147503113 = rh_elite_fin02, Deimos Starboard Fin
 3150769097 = sfx_rumble_liner, sfx_rumble_liner Sound
 3151949954 = ku_n_grp_token, Kusari Naval Forces Operative
 3180917899 = rh_arena_token, Rheinland Arena Token

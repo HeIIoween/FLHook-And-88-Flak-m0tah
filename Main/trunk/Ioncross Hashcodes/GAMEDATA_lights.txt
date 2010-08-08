@@ -9,6 +9,7 @@
 2239665871 = DockingLightBlue, Pursuit Light Blue
 2244540233 = SmallRed, SmallRed
 2249343682 = Orange, Orange
+2264366400 = LargeWhiteSpecialCone, LargeWhiteSpecial Cone Dynamic Light
 2265531853 = LargeWhiteSpecial, LargeWhiteSpecial
 2273496005 = engine_glow_yellow, engine_glow_yellow
 2274320066 = BuoyGreen, BuoyGreen
@@ -39,6 +40,7 @@
 2641833992 = MediumGreen, MediumGreen
 2667375436 = FastSmallYellow, FastSmallYellow
 2668181836 = Blue, Blue
+2691566021 = pursuit_lightbar, Pursuit Lightbar
 2708160588 = Green, Green
 2733010766 = LargeBlueSource, LargeBlueSource
 2744642050 = WhiteCone, WhiteCone
@@ -86,6 +88,7 @@
 3111178759 = SlowXLargeGreen, SlowXLargeGreen
 3118161347 = engine_glow_green, engine_glow_green
 3119591810 = SlowXLargeBlue, SlowXLargeBlue
+3127862405 = foxLight, fox Pilot
 3174296966 = LargeGreen, LargeGreen
 3199310980 = LargeOrange, LargeOrange
 3203756301 = LargeBlue, LargeBlue

@@ -6,6 +6,7 @@
 2198437771 = co_wplatform_turret01, Civilian Weapon Platform Laser Turret
 2219759557 = br_destroyer_turret02, Bretonia Destroyer Defense Turret
 2223101830 = co_miner_turret01, Small Miner Turret Type 2
+2223396678 = li_gunboat_turret01, Liberty Gunboat Primary Turret
 2231152454 = rh_battleship_flak_turret01_a, SmOp Battleship Flak A Turret
 2243684292 = li_battleship_missile_turret01, Liberty Battleship Missile Turret
 2251210570 = li_battleship_flak_turret02, Liberty Battleship Flak B Turret
@@ -47,6 +48,7 @@
 2655614920 = li_prison_turret01, Liberty Prison Ship Turret
 2661853313 = br_destroyer_missile_turret01, Bretonia Destroyer Missile Turret
 2668812674 = ku_station_turret01, Kusari Station Turret
+2671113411 = li_gunboat_forward_gun01, Liberty Large Forward Gun
 2686817801 = co_lifter_turret01, Heavy Lifter Turret
 2687575811 = rh_wplatform_missile_turret01, Rheinland Weapon Platform Missile Turret
 2691611783 = rh_gunboat_turret01, Rheinland Gunboat Primary Turret
@@ -56,6 +58,8 @@
 2742868234 = ku_gunboat_missile_turret01, Kusari Gunboat Missile Turret
 2752913676 = rh_gunboat_missile_turret01, Rheinland Gunboat Missile Turret
 2756619205 = br_destroyer_turret01, Bretonia Destroyer Primary Turret
+2759769677 = li_gunboat_missile_turret01, Liberty Gunboat Missile Turret
+2760256326 = li_gunboat_turret02, Liberty Gunboat Defense Turret
 2760937421 = rh_battleship_turret01, Rheinland Battleship Primary Turret
 2761429761 = br_prison_turret01, Bretonia Prison Ship Turret
 2784957580 = no_gunboat_missile_turret01, Nomad Gunboat Missile Turret
@@ -71,7 +75,7 @@
 2877796430 = rh_cruiser_turret01, Rheinland Cruiser Primary Turret
 2885014282 = co_sniper_turret01, Stunpoint Sniping System
 2888215945 = orbital_defense_turret01, ORBITAL DEFENSE TURRET (solar objects only!)
-2909563015 = li_cruiser_forward_gun01, Liberty Large Forward Gun
+2909563015 = li_cruiser_forward_gun01, Liberty Large Forward Gun (L. Cruiser Only)
 2914237901 = pi_station_turret01, Pirate Station Turret
 2920453062 = br_gunboat_forward_gun01, Bretonia Large Forward Gun
 2938921288 = ku_destroyer_turret01, Kusari Destroyer Primary Turret

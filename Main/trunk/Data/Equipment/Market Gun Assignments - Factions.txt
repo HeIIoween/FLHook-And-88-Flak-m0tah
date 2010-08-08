@@ -1,5 +1,4 @@
 ;---- br_m_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -115,7 +114,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- br_n_grp
 MarketGood = br_n_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -229,7 +227,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- br_p_grp
 MarketGood = br_p_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -342,7 +339,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_alg_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -457,7 +453,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_be_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -572,7 +567,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_hsp_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -687,7 +681,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_ic_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -802,7 +795,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_khc_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -917,7 +909,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_kt_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1032,7 +1023,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_me_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1147,7 +1137,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_nws_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1262,7 +1251,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_os_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1377,7 +1365,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_rs_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1492,7 +1479,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_shi_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1607,7 +1593,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_ss_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1722,7 +1707,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_ti_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1837,7 +1821,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- co_vr_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -1953,7 +1936,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_b_grp
 MarketGood = fc_b_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2062,7 +2044,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_bd_grp
 MarketGood = fc_bd_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2172,7 +2153,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_c_grp
 MarketGood = fc_c_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2286,7 +2266,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_fa_grp
 MarketGood = fc_fa_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2395,7 +2374,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_g_grp
 MarketGood = fc_g_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2505,7 +2483,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_gc_grp
 MarketGood = fc_gc_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2614,7 +2591,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_h_grp
 MarketGood = fc_h_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2723,7 +2699,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_j_grp
 MarketGood = fc_j_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2832,7 +2807,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_lh_grp
 MarketGood = fc_lh_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -2941,7 +2915,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_lr_grp
 MarketGood = fc_lr_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -3052,7 +3025,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_lwb_grp
 MarketGood = fc_lwb_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -3162,7 +3134,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_m_grp
 MarketGood = fc_m_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -3358,7 +3329,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_or_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -3452,7 +3422,6 @@ MarketGood = order_thruster, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_ou_grp
 MarketGood = fc_ou_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -3568,7 +3537,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_rh_grp
 MarketGood = fc_rh_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -3678,7 +3646,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_u_grp
 MarketGood = fc_u_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -3787,7 +3754,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- fc_x_grp
 MarketGood = fc_x_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = fc_pfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -3897,7 +3863,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- gd_bh_grp
 MarketGood = gd_bh_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4014,7 +3979,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- gd_gm_grp
 MarketGood = gd_gm_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4124,7 +4088,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- gd_im_grp
 MarketGood = gd_im_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4235,7 +4198,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- gd_z_grp
 MarketGood = gd_z_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4346,7 +4308,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- ku_n_grp
 MarketGood = ku_n_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4460,7 +4421,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- ku_p_grp
 MarketGood = ku_p_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4574,7 +4534,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- li_n_grp
 MarketGood = li_n_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4692,7 +4651,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- li_p_grp
 MarketGood = li_p_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4809,7 +4767,6 @@ MarketGood = ge_s_thruster_03, 0, -0.100000, 10, 10, 0, 1
 MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- rh_m_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 10, 10, 0, 1
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -4915,7 +4872,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- rh_n_grp
 MarketGood = rh_n_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -5030,7 +4986,6 @@ MarketGood = ge_s_thruster_04, 0, -0.100000, 10, 10, 0, 1
 
 ;---- rh_p_grp
 MarketGood = rh_p_grp_token, 50, 0.850000, 10, 10, 0, 1
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, -0.100000, 10, 10, 0, 1
@@ -5240,8 +5195,6 @@ MarketGood = ge_s_cm_02_ammo, 0, -0.900000, 10, 10, 0, 1
 MarketGood = ge_s_cm_03_ammo, 0, -0.900000, 10, 10, 0, 1
 
 ;---- br01_station_1_grp
-MarketGood = gd_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
-MarketGood = fc_lfl_grp_token, 50, 0.600000, 10, 10, 0, 1
 MarketGood = shipping_token, 50, 0.850000, 0, 0, 1, 0.5
 MarketGood = ge_s_scanner_01, 0, -1, 10, 10, 0, 1
 MarketGood = ge_s_tractor_01, 0, 0.600000, 10, 10, 0, 1

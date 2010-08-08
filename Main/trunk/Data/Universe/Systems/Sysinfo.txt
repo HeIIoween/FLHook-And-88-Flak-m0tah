@@ -10,10 +10,11 @@ IMPORTANT NOTE: For player docking to function in your system, you MUST at least
 Every zone with NPCs MUST have the following set:
 density = 8
 density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
 max_battle_size = 9999
 repop_time = 40
 pop_type = background
-relief_time = 30
+relief_time = 40
 ;(density MUST be these values for the NPC Count FLMM option to work!)
 ;(max_battle_size MUST be 9999!)
 ;all other density_restriction, etc. instances that aren't these MUST be commented out! (this is very important!)
@@ -49,9 +50,10 @@ toughness = 1
 max_battle_size = 9999
 density = 8
 density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
 repop_time = 40
 pop_type = background
-relief_time = 30
+relief_time = 40
 population_additive = false
 encounter = area_war, 1, 0.100000
 faction = li_n_grp, 0.250000
@@ -105,12 +107,13 @@ comment = ANOTHER NOMAD SHIP OF DOOM YAY ;Change this to whatever
 sort = 99
 toughness = 1
 max_battle_size = 9999
-density = 16 ;Ch
+density = 8 ;Ch
 density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
 density_restriction = 1, class_single_boss
 repop_time = 40
 pop_type = background
-relief_time = 30
+relief_time = 40
 population_additive = true
 encounter = (BOSS HERE), 1, 1.000000
 faction = fc_ouk_grp, 1.000000
@@ -156,8 +159,17 @@ filename = missions\randomencounters\patrolp_defend.ini
 nickname = patrolp_follow
 filename = missions\randomencounters\patrolp_follow.ini
 [EncounterParameters]
+nickname = patrolp_follow_solo
+filename = missions\randomencounters\patrolp_follow_solo.ini
+[EncounterParameters]
+nickname = patrolp_follow_random
+filename = missions\randomencounters\patrolp_follow_random.ini
+[EncounterParameters]
 nickname = patrolp_follow_cap
 filename = missions\randomencounters\patrolp_follow_cap.ini
+[EncounterParameters]
+nickname = patrolp_follow_nomad
+filename = missions\randomencounters\patrolp_follow_nomad.ini
 [EncounterParameters]
 nickname = patrolp_follow_bot
 filename = missions\randomencounters\patrolp_follow_bot.ini
@@ -278,9 +290,10 @@ toughness = 1
 max_battle_size = 9999
 density = 8
 density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
 density_restriction = 1, class_bot_foxBot
 density_restriction = 1, class_bot_KittBot
-density_restriction = 1, class_bot_GrimsGreen
+density_restriction = 2, class_bot_GrimsGreen
 density_restriction = 1, class_bot_Wo3dy
 density_restriction = 1, class_bot_ChipBot
 density_restriction = 1, class_bot_SnakePlisskin
@@ -302,7 +315,7 @@ density_restriction = 1, class_bot_NairaX
 density_restriction = 1, class_bot_KillerJaguarBot
 density_restriction = 1, class_bot_StarAvenger
 density_restriction = 1, class_bot_Helloween
-density_restriction = 1, class_bot_StilBot
+density_restriction = 2, class_bot_StilBot
 density_restriction = 1, class_bot_DarkWraith007
 density_restriction = 1, class_bot_SojournBot
 density_restriction = 1, class_bot_HonkBot
@@ -314,7 +327,7 @@ density_restriction = 1, class_bot_CustomSlot3
 density_restriction = 1, class_bot_CustomSlot4
 repop_time = 80 ;AmbRepop
 pop_type = background
-relief_time = 30
+relief_time = 80 ;AmbRepop
 population_additive = true
 encounter = foxBot, 1, 0.002100
 faction = foxBot_grp, 1.000000
@@ -409,7 +422,7 @@ faction = fc_pfl_grp, 0.500000
 
 ;Optional "ambient" factional encounters - for my reference, really.
 ;Liberty example - change accordingly for other houses
-;As a check, everything from HowdaDoodeWTF/Borg down should always total 110 lines (without these comments)
+;As a check, everything from area_nomadsamb down should always total 110 lines (without these comments)
 ;.45 total for in-house spawns
 ;.575 total if minimum OR maximum/high security system (low security systems have no spawn modifiers)
 ;.0225 total for out-house spawns

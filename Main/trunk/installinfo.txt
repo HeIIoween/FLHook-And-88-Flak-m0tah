@@ -1,11 +1,12 @@
 88 Flak Important Stuff
 Will this be running on a fresh install of Freelancer?
-Although 88 Flak does NOT require it, it is recommended that you use a fresh install of Freelancer. You will not need ANY patches of any kind to run this mod. 88 Flak also does not require the CD to be in the drive, so no need to use a No-CD EXE.
+Although 88 Flak does NOT require it, it is recommended that you use a fresh install of Freelancer. You will not need ANY patches of any kind to run this mod. 88 Flak also does NOT require the CD to be in the drive, so you do not need to use a No-CD EXE.
+
+If you're upgrading from an older version of 88 Flak, a fresh install is not needed, however you should deactivate 88 Flak before proceeding with this install.
 
 88 Flak is 100% ready to run on your own server - please see the Server Info section of the Readme for more information.
 
 Also, if you're running Freelancer on Windows Vista, OR you plan on connecting to the 24/7 server, please view the readme for instructions on how to do so. Normally, multiplayer does not function on Windows Vista, and since there is no global list server you will have to connect directly to the server (again, view the readme for instructions).
 
-So, unless upgrading, if you have a 100% fresh install click "yes". Otherwise, please click "no" and re-install - you'll have a much more enjoyable time playing the mod if you're not worrying about rather everything's set up right or not, trust me. =)
 If you're all set to go, happy fragging, and be sure drop by the 24/7 Flak Server and the forums at http://www.memes.no/88flak/
 ~fox, and the 88 Flak Community

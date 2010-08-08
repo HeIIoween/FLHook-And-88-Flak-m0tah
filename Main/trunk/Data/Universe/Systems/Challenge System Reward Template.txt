@@ -1,0 +1,173 @@
+[EncounterParameters]
+nickname = ChestSpawn
+filename = missions\randomencounters\bosses\chests\Chest(Small|Medium|Large|Huge).ini
+
+;------
+
+[Object]
+nickname = (SYSTEM HERE)_reward_hole_1
+ids_name = 459133
+pos = (POS HERE) + 1000
+rotate = 0, 0, 0
+archetype = jumphole_green_dock
+msg_id_prefix = gcs_refer_system_Li05
+jump_effect = jump_effect_hole
+ids_info = 66146
+visit = 0
+goto = (SYSTEM HERE), (SYSTEM HERE)_reward_hole_2, gate_tunnel_bretonia
+
+[Object]
+nickname = (SYSTEM HERE)_reward_hole_to_Li05b
+ids_name = 459368
+pos = (POS HERE) - 1000
+rotate = 0, 0, 0
+archetype = jumphole_dock
+msg_id_prefix = gcs_refer_system_Li05
+jump_effect = jump_effect_hole
+ids_info = 66146
+visit = 0
+goto = Li05b, Li05b_to_(SYSTEM HERE)_hole, gate_tunnel_bretonia
+
+[Object]
+nickname = (SYSTEM HERE)_reward_hole_2
+ids_name = 459368
+pos = 0, 0, 600000
+rotate = 0, 0, 0
+archetype = jumphole_orange_dock
+msg_id_prefix = gcs_refer_system_Li05
+jump_effect = jump_effect_hole
+ids_info = 66146
+visit = 128
+goto = Li05b, Li05b_to_(SYSTEM HERE)_hole, gate_tunnel_bretonia
+
+[Zone]
+nickname = Zone_(SYSTEM HERE)_chest_protector
+pos = 0, 0, 400000
+rotate = 0, 90, 0
+shape = BOX
+size = 50000, 800000, 800000
+visit = 128
+sort = 0
+toughness = 1
+density = 0
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+relief_time = 40 ;Blank
+population_additive = false
+damage = 999999999999
+
+[Zone]
+nickname = Zone_(SYSTEM HERE)_chest_antimove_1
+pos = 0, 0, 560000 ;Chest
+rotate = 0, 90, 0
+shape = BOX
+size = 50000, 130000, 30000 ;Chest
+visit = 128
+sort = 0
+toughness = 1
+density = 0
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+relief_time = 40 ;Blank
+population_additive = false
+damage = 999999999999
+
+[Zone]
+nickname = Zone_(SYSTEM HERE)_chest_antimove_2
+pos = -40000, 0, 800000 ;Chest
+rotate = 0, 0, 0
+shape = BOX
+size = 50000, 130000, 530000 ;Chest
+visit = 128
+sort = 0
+toughness = 1
+density = 0
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+relief_time = 40 ;Blank
+population_additive = false
+damage = 999999999999
+
+[Zone]
+nickname = Zone_(SYSTEM HERE)_chest_antimove_3
+pos = 40000, 0, 800000 ;Chest
+rotate = 0, 0, 0
+shape = BOX
+size = 50000, 130000, 530000 ;Chest
+visit = 128
+sort = 0
+toughness = 1
+density = 0
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+relief_time = 40 ;Blank
+population_additive = false
+damage = 999999999999
+
+[Zone]
+nickname = Zone_(SYSTEM HERE)_chest_antimove_4
+pos = 0, 40000, 825000 ;Chest
+rotate = 0, 0, 0
+shape = BOX
+size = 30000, 50000, 480000 ;Chest
+visit = 128
+sort = 0
+toughness = 1
+density = 0
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+relief_time = 40 ;Blank
+population_additive = false
+damage = 999999999999
+
+[Zone]
+nickname = Zone_(SYSTEM HERE)_chest_antimove_5
+pos = 0, -40000, 825000 ;Chest
+rotate = 0, 0, 0
+shape = BOX
+size = 30000, 50000, 480000 ;Chest
+visit = 128
+sort = 0
+toughness = 1
+density = 0
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+relief_time = 40 ;Blank
+population_additive = false
+damage = 999999999999
+
+[Zone]
+nickname = Zone_(SYSTEM HERE)_chest_antimove_6
+pos = 0, 0, 615000 ;Chest
+rotate = 0, 0, 0
+shape = BOX
+size = 30000, 30000, 500 ;Chest
+visit = 128
+sort = 0
+toughness = 1
+density = 0
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+relief_time = 40 ;Blank
+population_additive = false
+damage = 999999999999
+
+[Zone]
+nickname = Zone_(SYSTEM HERE)_chest_spawn
+pos = 0, 0, 600000
+shape = SPHERE
+size = 5000 ;Chest
+visit = 128
+sort = 100 ;Chest
+toughness = 1
+max_battle_size = 9999
+density = 8
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+density_restriction = 1, class_single_boss
+repop_time = 10 ;Chest
+pop_type = background
+relief_time = 10 ;Chest
+population_additive = false
+encounter = ChestSpawn, 1, 1.000000
+faction = fc_q_grp, 1.000000

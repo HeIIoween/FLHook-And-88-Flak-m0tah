@@ -1,0 +1,141 @@
+------ Changelog ------
+07/17/10:
+-- Indexed adoxa's sun visit flags, planet spinning and trading range offsets
+
+07/16/10:
+-- Indexed adoxa's NPC scanner (enables CM usage) offset
+-- Indexed adoxa's wireframe flashing fix for hit_pts = 0 items
+-- Oops forgot adoxa's maximum FPS offset
+-- Indexed M0tah's engine selling offset from forever ago
+-- Indexed adoxa's engine transfer offset from forever ago
+-- Indexed vital's tradelane ring spawn rejection offset
+
+07/14/10:
+-- Added adoxa's radiation offsets for CloakingDevices
+-- Added adoxa's repair offsets for items with ids_name = 0
+-- Completely reformatted the list, axing the 1.0 offsets and removing the 0x before every hex value to make the list more efficient
+
+07/07/10:
+-- Misc additions and cleanup
+
+07/02/10:
+-- Indexed adoxa's minimum damage for heal offset
+-- Indexed some of the FollowOp stuff
+-- Slight reorganization - Damage Indicators category is now under HUD stuff
+
+06/23/10:
+-- Indexed adoxa's docking offsets, including speeds and F3 docking on FREIGHTER type
+-- Indexed w0dk4's effects timer hack
+-- Indexed adoxa's energy weapons power supply damage hack
+-- Indexed adoxa's aiming lead displayed on solars hack
+-- Indexed adoxa's drag_modifier / interference link hack
+
+06/11/10:
+-- Indexed w0dk4's [gun] light_anim activation entries
+
+06/07/10:
+-- More stuff!
+
+06/06/10:
+-- Added several offsets I either missed or were new.
+-- Added several more offsets I missed.
+-- Fixed Tradelane Speed (thanks NeXoSE!)
+-- Massive reformat to make the list easier to read and update
+-- Updated tutorial
+
+04/11/10:
+-- Indexed everything I could find in the Limit Breaking 101 topic from 08/31/09 to today. The list is likely in need of some major overhaul soon. I also think this topic needs to be renamed to Limit Breaking 400, because the stuff you guys are finding is insane. =P
+-- Moved the changelog into its own file.
+
+03/27/10:
+-- Indexed M0tah's server explosion fix that allows explosions to damage a ship no matter where it is hit (useful for very large capital ships), under misc
+
+08/22/09:
+-- added M0tah's vertical offset of player name in contact list (useful if you display player names with the same AgencyFB font as all other objects)
+
+07/06/09:
+-- Indexed seconds between updates of displays in weapons list, 'cause I could
+
+06/03/09:
+-- Correctly indexed my patrol_path NPC min spawn distance check
+
+06/02/09:
+-- Indexed Vital's distance from the patrol zone that patrol_path encounters begin to spawn
+-- Indexed Vital's distance from 1st mission waypoint that second waypoint (and ships at it) in randommissions are created
+-- Indexed M0tah's remove HUD elements on objects in space hack - includes text, brackets, targeting reticles, and missile warnings
+-- Indexed Vital's core retreat distance from randommission waypoint, modified by below offset
+-- Indexed Vital's amount to add to the core retreat distance (above) to work out a real retreat distance, and amount to subtract from the core retreat distance (above) to work out a real back-in-range distance
+-- Indexed Vital's max range at which randommission NPCs will engage enemies
+
+05/15/09:
+-- Moved System Editing section closer to the top, under Visibility, as the two sections have similar utility
+-- Added w0dk4's offset to render asteroid fields from greater distances, under System Editing
+
+05/10/09:
+-- Added an htm version of the tutorial that displays the pictures with the text. Please see the "Tutorial" section of this document.
+-- Indexed Viper's RGB color as Hex value of the messages "New Player" etc.
+-- Indexed FriendlyFire's resale % for ships (server-side)
+
+05/05/09:
+-- Indexed M0tah's hack to prevent mission failures due to attacking a neutral/friendly object - recommended if using mission scripting for sandbox purposes
+
+04/29/09:
+-- Indexed w0dk4's collision detection min check distance (increasing this will fix issues with the sur collisions on objects > 130k from center of system)
+
+04/28/09:
+-- Indexed M0tah's chat-block offset (stops chat from being displayed, useful for filming)
+
+04/15/09:
+-- Corrected the credit in "maximum number of characters per account, part 1" entry, which was actually discovered by Zephyer
+
+04/13/09:
+-- Minor cleanups
+-- Re-organized the list to a cleaner "(default value) in (file), (1.0 hex offset), (1.1 hex offset) = (description)" format
+-- Indexed M0tah's damage indicator entries, under HUD
+
+04/01/09:
+-- Slight reorganization of the sections, less crap in the "Misc" section now
+-- Indexed M0tah's multi-instance hack
+-- Indexed M0tah's two group invite bypass hacks for missions
+
+03/27/09:
+-- Indexed Cheese on Toast's HUD offsets
+-- Indexed Vital's misc patrol_path NPC behavior offsets
+-- Indexed Crazy's freelancer.exe rename for remoteserver.dll
+-- Indexed M0tah's chat box offsets
+-- Indexed M0tah's System + House IDS offsets
+-- Indexed M0tah's Equipment Class Number offset
+
+03/08/09:
+-- Indexed w0dk4's solar respawn offset, which I somehow forgot until now
+
+02/12/09:
+-- Indexed some NPC reputation stuff, under the Reputation section
+
+02/06/09:
+-- Indexed M0tah's max chat lines and characters
+
+01/07/09:
+-- Happy new year! I guess. XD
+-- Indexed Xerx's OpenSP hack that routes rank reading to ptough.ini, and found the 1.1 DLL equivilant
+-- Indexed SP max NPC persist offset
+-- Cleared up description of density ignore ranges
+-- Indexed tractor beam width offset
+-- A bunch of other stuff I forgot
+
+11/30/08:
+-- Added new HUD-related offsets courtesy of M0tah
+
+03/20/08:
+-- Indexed the 2500f that controls patrol_path NPC spawn distance
+-- Indexed the 100d that controls minimum NPC spawn distance
+-- Wrote up a picture-guided tutorial for using these editing techniques, which may be found in the "information" section below.
+
+02/15/08:
+-- Technically, the rep hacks Gibbon posted were quoted from Bejaymac, so I have reflected this in the file
+
+02/07/08:
+-- Added 8 offsets found by FriendlyFire, Vital, and Gibbon from http://forums.lancersreactor.com/showthread.php?t=318
+-- Indexed 1.1 offsets of Gibbon's reputation info
+-- Indexed 1.0 offsets of Vital's randommission findings
+-- Re-organized the file slightly

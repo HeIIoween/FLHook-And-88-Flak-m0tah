@@ -2,7 +2,6 @@
 2152402501 = rm_heavy_water, Heavy Water
 2158028940 = gd_bh_grp_token, Bounty Hunters Operative
 2158214286 = fc_x_grp_token, Xenos Operative
-2166021834 = fc_pfl_grp_token, Unlawful Freelance Operative
 2172279368 = ku_arena_token, Kusari Arena Token
 2174073098 = credit_chip, Credit Chip
 2174919879 = fc_bd_grp_token, Blood Dragons Operative
@@ -42,6 +41,7 @@
 2312093509 = commodity_cardamine, Cardamine
 2314552463 = rm_infectious_waste, Infectious Waste
 2316725634 = rm_carnivorous_insectoids, Carnivorous Insectoids
+2336929740 = boss_token_3, Boss Kill Token 3
 2341271247 = rm_experimental_ship_research, Experimental Ship Research
 2345786242 = commodity_luxury_food, Luxury Food
 2348068164 = rm_biowarfare_ampules, Biowarfare Ampules
@@ -50,7 +50,6 @@
 2370026693 = fc_u_grp_token, Unioners Operative
 2370158347 = fc_lh_grp_token, Lane Hackers Operative
 2370478221 = fc_rh_grp_token, Red Hessians Operative
-2372350153 = gd_lfl_grp_token, Lawful Freelance Operative
 2383732224 = rm_secret_files_on_government_officials, Secret Files on Government Officials
 2385746179 = br_n_grp_token, Bretonia Armed Forces Operative
 2404732995 = rm_classified_artifact_reports, Classified Artifact Reports
@@ -88,6 +87,11 @@
 2506555791 = rm_experimental_troop_enhancement_research, Experimental Troop Enhancement Research
 2517790468 = commodity_super_alloys, Super Alloy
 2518124616 = commodity_silver, Silver
+2520301258 = rarearmor08, Rare Armor 8
+2520321738 = rarearmor04, Rare Armor 4
+2520344266 = rarearmor06, Rare Armor 6
+2520381130 = rarearmor02, Rare Armor 2
+2520620736 = rarearmor10, Rare Armor 10
 2527444937 = fc_lr_grp_token, Liberty Rogues Operative
 2532875145 = commodity_water, Water
 2533535562 = ge_lfr_engine_01, Liberty Fr Engine
@@ -148,6 +152,7 @@
 2750599047 = ge_bwe2_engine_01, Border World VHF Engine
 2757685317 = ku_p_grp_token, Kusari Police Operative
 2758644160 = npcfollowoption_token, The 'This server has NPC Follow disabled' Token
+2758890124 = boss_token, Boss Kill Token
 2780745223 = ge_pursuit_gf4_engine_01, Civilian PLF Engine
 2785877134 = ge_solar_engine_01, Solar Object Engine (stations, etc.)
 2792430274 = commodity_high_temp_alloys, High Temperature Alloy
@@ -171,6 +176,8 @@
 2866206539 = commodity_gold, Gold
 2869235141 = ge_rh_t_engine_01, Rheinland Transport Engine (unused)
 2870002179 = welcome_token, Welcome Token
+2873777100 = boss_token_4, Boss Kill Token 4
+2873795532 = boss_token_2, Boss Kill Token 2
 2877175049 = rm_holstein_sea_serpent_venom, Holstein Sea Serpent Venom
 2878617798 = commodity_alien_artifacts, Artifacts
 2903475279 = rm_experimental_cloning_materials, Experimental Cloning Materials
@@ -185,6 +192,7 @@
 2977071884 = commodity_niobium, Niobium
 2978678016 = rm_blistering_agents, Blistering Agents
 2987282881 = rm_human_bomb_implants, Human Bomb Implants
+2999063304 = hardcore_token, Hardcore Mode
 2999087814 = commodity_alien_organisms, Alien Organisms
 3003269639 = rm_government_agents_list, Government Agents List
 3013856323 = ge_pursuit_kf_engine_01_silent, Camera Ship Engine (Special)
@@ -195,6 +203,11 @@
 3041687117 = ge_tl_engine_01, Transport / Train / Armored Transport Engine
 3042961544 = rm_mutagens, Mutagens
 3048081476 = rm_water_poisoning_supplies, Water Poisoning Supplies
+3057167050 = rarearmor09, Rare Armor 9
+3057195722 = rarearmor05, Rare Armor 5
+3057218250 = rarearmor07, Rare Armor 7
+3057224394 = rarearmor01, Rare Armor 1
+3057246922 = rarearmor03, Rare Armor 3
 3062202251 = commodity_polymers, Polymers
 3065229389 = commodity_sidearms, Light Arms
 3066623241 = rm_military_troop_assignments, Military Troop Assignments
@@ -229,6 +242,7 @@
 3183738305 = ge_kd_engine_01, Kusari Destroyer Engine
 3183954819 = ge_bd_engine_01, Bretonia Destroyer Engine
 3198517380 = rm_quantum_bomb_components, Quantum Bomb Components
+3200274444 = ge_lg_engine_01, Liberty Gunboat Engine
 3200350348 = ge_ng_engine_01, Nomad Gunboat Engine
 3200496391 = commodity_copper, Copper
 3200515533 = ge_kg_engine_01, Kusari Gunboat Engine

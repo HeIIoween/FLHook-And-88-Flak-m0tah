@@ -75,6 +75,7 @@
 2611179842 = fc_ou_gun02_mark03, Pyros Type 3 (Class 6)
 2611185986 = fc_ou_gun02_mark05, Kraken Type 2 (Class 9)
 2611204417 = fc_ou_gun01_mark04, Wyrm Type 1 (Class 8)
+2618576197 = admin_cloak, Admin Cloak
 2627995852 = fc_b_gun01_mark02, Luger Type B (Class 7)
 2639898956 = special_nomad_gun03, NOMAD PROTOTYPE (Class 5)
 2639905100 = special_nomad_gun01, NOMAD ENERGY BLASTER (Class 5)

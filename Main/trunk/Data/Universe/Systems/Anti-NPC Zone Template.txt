@@ -8,5 +8,6 @@ sort = 100 ;AntiNPCSpawn
 toughness = 1
 density = 0
 density_restriction = 1, class_patroller
-relief_time = 30
+density_restriction = 1, class_bot_patroller
+relief_time = 40 ;Blank
 population_additive = false

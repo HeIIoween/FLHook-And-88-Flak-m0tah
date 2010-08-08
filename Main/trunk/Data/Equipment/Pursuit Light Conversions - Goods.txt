@@ -1,0 +1,99 @@
+-- bw_katana --
+addon = DockingLightWhite, HpDockLight01, 1
+addon = DockingLightWhite, HpDockLight02, 1
+->
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = DockingLightWhite, HpDockLight01, 1
+addon = DockingLightWhite, HpDockLight02, 1
+
+-- li_figher_pursuit --
+addon = DockingLightRedOn, HpDockLight01, 1
+addon = DockingLightBlue, HpDockLight02, 1
+->
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = DockingLightRedOn, HpPursuit01, 1
+addon = DockingLightBlue, HpPursuit02, 1
+addon = DockingLightWhite, HpPursuit03, 1
+
+-- br_fighter_pursuit --
+addon = DockingLightBlue, HpDockLight01, 1
+addon = DockingLightWhiteSlow, HpDockLight01, 1
+addon = DockingLightBlue, HpDockLight02, 1
+addon = DockingLightWhiteSlow, HpDockLight02, 1
+->
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = DockingLightBlue, HpPursuit01, 1
+addon = DockingLightWhiteSlow, HpPursuit01, 1
+
+-- ku_fighter_pursuit --
+addon = DockingLightRedOn, HpDockLight01, 1
+addon = DockingLightWhiteSlow, HpDockLight01, 1
+addon = DockingLightRedOn, HpDockLight02, 1
+addon = DockingLightWhiteSlow, HpDockLight02, 1
+->
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = DockingLightRedOn, HpPursuit01, 1
+addon = DockingLightRedOn, HpPursuit02, 1
+addon = DockingLightWhite, HpPursuit03, 1
+
+-- ku_diablo --
+addon = DockingLightBlue, HpDockLight01, 1
+addon = DockingLightBlue, HpDockLight02, 1
+->
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = DockingLightRedOn, HpPursuit01, 1
+addon = DockingLightBlue, HpPursuit02, 1
+addon = DockingLightWhite, HpPursuit03, 1
+
+-- ku_heretic --
+addon = DockingLightBlue, HpDockLight01, 1
+addon = DockingLightBlue, HpDockLight02, 1
+->
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = DockingLightRedOn, HpPursuit01, 1
+addon = DockingLightBlue, HpPursuit02, 1
+addon = DockingLightWhite, HpPursuit03, 1
+
+-- rh_fighter_pursuit --
+addon = DockingLightBlue, HpDockLight01, 1
+addon = DockingLightBlue, HpDockLight02, 1
+->
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = DockingLightBlue, HpPursuit01, 1
+addon = DockingLightBlue, HpPursuit02, 1
+addon = DockingLightWhite, HpPursuit03, 1
+
+------ Removals ------
+
+-- bw_fighter_pursuit --
+addon = DockingLightOrange, HpDockLight01, 1
+addon = DockingLightWhiteSlow, HpDockLight01, 1
+addon = DockingLightOrange, HpDockLight02, 1
+addon = DockingLightWhiteSlow, HpDockLight02, 1
+
+-- co_fighter_pursuit --
+addon = DockingLightGreen, HpDockLight01, 1
+addon = DockingLightWhiteSlow, HpDockLight01, 1
+addon = DockingLightGreen, HpDockLight02, 1
+addon = DockingLightWhiteSlow, HpDockLight02, 1
+
+-- li_predator --
+addon = DockingLightRedOn, HpDockLight01, 1
+addon = DockingLightBlue, HpDockLight02, 1
+
+-- pi_fighter_pursuit --
+addon = DockingLightRedOn, HpDockLight01, 1
+addon = DockingLightRedOn, HpDockLight02, 1
+
+-- bh_fighter_pursuit --
+addon = DockingLightRedOn, HpDockLight01, 1
+addon = DockingLightWhiteSlow, HpDockLight01, 1
+addon = DockingLightBlue, HpDockLight02, 1
+addon = DockingLightWhiteSlow, HpDockLight02, 1

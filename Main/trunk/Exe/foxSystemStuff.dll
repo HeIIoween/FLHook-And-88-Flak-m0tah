@@ -2,7 +2,7 @@ WARNING: This file may contain spoilers for
          some of Flak's unlockable content.
          If you want to discover what you
          can obtain in Flak youself, please,
-         close this now.
+         close this now. ~fox
 
 Faction IDs:
 +131834 - "(faction)"
@@ -61,7 +61,7 @@ ID + 458752 - IDS
 107 - Strafe Up
 108 - Strafe Down
 109 - Fire Forwards
-110 - Particle Splitter
+110 - Nomad Particle Splitter
 111 - REBUILDER MK I    ;---
 112 - REBUILDER MK II   ;--- All four rare rebuild crap.
 113 - FUZZYLOGIC        ;--- These are unused.
@@ -112,9 +112,9 @@ ID + 458752 - IDS
 164 - 4 Gun LS - 830
 165 - Storage Depot
 166 - Station Cost-A-Lot-Block!
-167 - + Freelancer (long name at 269)
+167 - Lawful FLs (long name at 269)
 168 - Freelancer NPCs
-169 - - Freelancer (long name at 270)
+169 - Unlawful FLs (long name at 270)
 170 - Freelancer
 171 - Lawful faction join ids_info, for n00b base bribes
 172 - Faction join ids_info
@@ -161,10 +161,10 @@ ID + 458752 - IDS
 235 - Bounty Hunters Operative
 236 - Red Hessians Operative
 237 - fox's Heretic
-238 - Lawful Freelance Operative (was Lawful (+ Freelancer) New York Jump Hole)
-239 - Unlawful Freelance Operative (was Un-lawful (- Freelancer) New York Jump Hole)
-240 - + Freelancer Player-Tag Station (Optional)
-241 - - Freelancer Player-Tag Station (Optional)
+238 - Lawful Freelance Operative (was Lawful (+ Freelancer) New York Jump Hole, recycled)
+239 - Unlawful Freelance Operative (was Un-lawful (- Freelancer) New York Jump Hole, recycled)
+240 - Lawful Reputation Set - Press F9 (for bases, IDS Info is information)
+241 - Unlawful Reputation Set - Press F9
 242 - Pursuit Patriot (ids_info contains PCraft info)
 243 - Pursuit Cavalier
 244 - Pursuit Drake
@@ -202,9 +202,9 @@ ID + 458752 - IDS
 276 - Starfury Sniping System
 277 - Fireviper Sniping System
 278 - Stunpoint Sniping System
-279 - Covenanter (Bretonia VHF, previously named "Reaper")
+279 - Paladin (Bretonia VHF, previously named "Covenanter" and "Reaper")
 280 - Hydra (Kusari VHF)
-281 - Harlequin (Rheinland VHF)
+281 - Deimos (Rheinland VHF, previously named "Harlequin")
 282 - Nomad Bribe
 283 - ChipBot
 284 - Mysterious Vendor - PBase Vendor (was "Faction Tag Removal", recycled)
@@ -297,6 +297,22 @@ ID + 458752 - IDS
 371 - Trader
 372 - Captain
 373 - Hunter
+374 - Liberty Gunboat
+375 - Liberty PG Primary Turret
+376 - Liberty PG Missile Turret
+377 - Liberty PG Defense Turret
+378 - Lawful Reputation Set
+379 - Unlawful Reputation Set
+380 - Boss Token
+381 - Chest
+382 - Lame (for Chests)
+383 - Decent (for Chests)
+384 - AI Bot Spawning Buoy (for NPC arenas)
+385 - Hardcore Mode
+386 - Juggernaut
+387 - Deathflier
+388 - Hivemind
+389 - Nomad Pulse Emitter
 
 ID + 458752 - IDS
 400 through 412 - Blue Ball puzzle
@@ -350,26 +366,31 @@ ID + 458752 - IDS
 627 - PvP Arena (Outer Lair) -> Alaska
 628 - Alaska -> NPC Arena (Outer Lair)
 629 - NPC Arena (Outer Lair) -> Alaska
-630 - Liberty Jump Hole (Normal Start)
-631 - Bretonia Jump Hole (Hard Start)
-632 - Kusari Jump Hole (Hard Start)
-633 - Rheinland Jump Hole (Very Hard Start)
-634 - Unknown Jump Hole (Impossible Start)
-635 - Hël Nebula
-636 - Hël Nebula Jump Hole
+630 - Liberty Jump Hole (Lawful, Normal Start)
+631 - Bretonia Jump Hole (Lawful, Hard Start)
+632 - Kusari Jump Hole (Lawful, Hard Start)
+633 - Rheinland Jump Hole (Lawful, Very Hard Start)
+634 - Unknown Jump Hole (???, Impossible Start)
+635 - Chamber of Sorrows
+636 - Chamber of Sorrows Jump Hole
 637 - Hivemind Tunnels
 638 - Hivemind Tunnels Jump Hole
 639 - The Gauntlet
 640 - The Gauntlet Jump Hole
 641 - The Dark Void
 642 - The Dark Void Jump Hole
-643 - New York Dreamscape
-644 - New York Dreamscape Jump Hole
+643 - Dreamscape
+644 - Dreamscape Jump Hole
 645 - Trial of Patience / Token Descrip.
 646 - Trial of Agility / Token Descrip.
 647 - Trial of Perception / Token Descrip.
 648 - Trial of Memory / Token Descrip.
+649 - Liberty Jump Hole (Unlawful, Very Hard Start)
+650 - Bretonia Jump Hole (Unlawful, Very Hard Start)
+651 - Kusari Jump Hole (Unlawful, Very Hard Start)
+652 - Rheinland Jump Hole (Unlawful, Very Hard Start)
 
+ID + 458752 - IDS
 New System IDSs
 197143 New York
 197144 New York System, Liberty Space. Maximum Security.
@@ -499,6 +520,8 @@ New System IDSs
 197268 Hivemind Tunnels System, Unknown Space. Unknown Security.
 197269 New York Dreamscape
 197270 New York Dreamscape System, Dream Space. Unknown Security.
+197271 Chamber of Sorrows
+197272 Chamber of So#ro@% Sy |em, Un !o-n Sp[]e. Unded^n Se=+r&ty.
 
 Wow, this list is getting REALLY fucking large.
 I'm going to run out of IDS entries at this rate.

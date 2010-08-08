@@ -620,6 +620,14 @@ downloaded from http://www.schneier.com/blowfish-download.html
 - Fixed server crash on shutdown after using rename command
 - Changed spawned item marking to use LOOT_UNSEEN_RADIUS as the max distance
 - Fixed exceptions and server crashes in HkCb_AddDmgEntry
+- Added RespawnDelay feature, which can be set in Death->General->RespawnDelay
+- Fixed exception in HkNewShipBought|BotsBatsCheck
+- Fixed FLServer commands more than 3 characters long resulting in chat oddities
+- Added additional debug information for exception log messages
+- Marking objects now plays ui_select_add and ui_select_remove instead of printing "OK"
+- Added missile and torpedo damage redirection, see General->General->MissileDmgToMine and TorpedoDmgToMine
+- Fixed a docking restriction exploit - players could bypass the restrictions by traveling in a carrier that met them
+- Fixed AFK messages not working (and throwing an exception) when the /me command was used
 
 1.6.6 (unofficial)
 - Re-implemented the kill event (for the socket eventmode)

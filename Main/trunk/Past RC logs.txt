@@ -1,3 +1,98 @@
+RC130 (01/30/09):
+-- Removed the tutorial script, as was not working very well with high player counts and may have been leading to crashes (this was the RC129 Hotfix Patch).
+-- Fixed the in-game 3D Sound Notice.
+-- Roaming AI Bot presence has been increased. Bot relations are now a little more important.
+-- Adjustments to the AI chase-targets-in-cruise behavior that should help stop some of the random NPC disappearance issues.
+-- Improved the general responsiveness of death fuses. Effects now start as soon as the death fuse starts, and while the effect firing remains randomized, there is always an explosion right at the start of the fuse.
+-- Tweaked spawning rates of AI VHFs - they now only spawn in select positions of assault/defense wings, balancing AI groups a little more.
+-- AI Bot donations are now cheaper, and will appear more often.
+-- Player-Purchasable Bases are approximately $4.4 million.
+-- All Player-Purchasable Bases are now armed with anti-fighter support Small Capitals. Before, some were armed with support Battleships or even support Mobile Stations, which weren't very effective anti-fighter defense.
+-- Corrected an issue where reputations would not change when playing an OpenSP game.
+-- The Storage Depot now only travels at 250m/s when in cruise (1/3 of full cruise speed).
+-- Fixed a bug where the Bretonia Destroyer had a 4s cruise charge time, instead of 8s like all other capitals.
+-- VHFs now have a 4s cruise charge time, decreased from 8s.
+-- Transports and Liners now only regenerate 10% of their power regen while in cruise, similar to Capital Ships.
+-- Multi-instance support removed.
+-- Fixed some ugly hardpointing with Sniper Turret weapon models.
+-- Added a high-end asteroid fields option that renders more asteroids at greater distances.
+-- Fixed rare scanners and rare ship tokens not being automatically marked.
+-- Credit Chips are now always dropped from NPC Capital Ships, regardless of rather players did most of the damage or not. Since you'll usually have AI assistance engaging Capitals, this makes it a little more worth it.
+-- Random loot (including rares) should now drop from Transports and Capital Ships like it's supposed to.
+-- NPC ranks are now organized by ship class, increasing by size / bulk - PLFs are 1, LFs are 2, Freighters are 5, Large Capitals are 8, etc. This should make it much easier to distinguish your target at a moment's glance, especially if you forget which ships are what.
+-- NPC rank titles are now based around their task, instead of an arbitrary title of "Rookie," "Veteran," etc. Instead, they now carry more descriptive titles such as "Patroller," "Raider," "Hauler," "Forager," etc.
+-- AI are now a little sharper with missile evasion. While normal NPCs aren't changed much, AI Bots (or Hard Mode AI) will now only enter drastic evasion if under a swarm of incoming ordinance (before, you could break off their attacks and give yourself breathing room by firing only a single missile).
+-- Total death fuse time for fighters extended to 4 seconds, extending the pull-out-of-death timeframe (time you can use a Nanobot after 0 health to save yourself) to 2 seconds.
+-- Ships now catch fire at 1/2 health, and again at 1/4 health, instead of arbitrary values before. This applies to all ships, including Capital Ships and Liners, which previously only caught fire when near death.
+-- Random server crashes in damage-handling code (HkCb_AddDmgEntry in FLHook) fixed.
+-- Server crash related to /rename fixed.
+-- Fixed a glitch where Challenge Systems could not be entered, even if the correct amount of Credit Chips were held.
+-- Base shield damage is now 35% of a weapon's hull damage, decreased from 40%. This gives the basic end effect of increased shield capacity / regen (rares included), without needing to raise power demands of shields (as they're very carefully balanced in power usage with rare items).
+-- Shield resistances are now more important; using a weapon against a shield resistant to that weapon type will now reduce damage by 30% (previously 20%), and using a weapon against a shield weak to that weapon type will increase damage by 50% (previously 20%).
+-- Pulse weapon resistances / affinities removed - in other words, Graviton Shields are no longer strong against Pulse weapons, and Positron Shields are no longer weak against Pulse weapons.
+-- Shield Batteries have been toned down; they now only replenish 750 shield per battery (decreased 25% from 1000).
+-- Slightly decreased the annoying amounts of Molly / IMG empathy. They now share an empathy amount similar to Xenos / IMG.
+-- Changed the reputation of two Trade Lane Buoy WPs in Sigma-13, as there were GMG buoys next to an ALG / Military outpost that were always fighting (GMG and Rheinland hate eachother).
+-- The Nomad bribe will now always appear on the Nomad Buoys.
+-- Gas Pocket fields are now mineable again.
+-- The Rogue Drail is now correctly classed as a Class 2 weapon (mistakenly classed as a Class 3 with a price tag to match, despite carrying Class 2 stats).
+-- The default NPC density has been raised. Player AI Wingmen now come in squads of either 4 fighters or 1 capital / 1 fighter.
+-- All storyline holes have been locked, as there was too much trading abuse.
+-- Raised reputation requirements of commodities.
+-- Removed faction-join bribes from bartenders. Full reputation must now be earned in merit, not in cash.
+-- Corrected some minor issues with rare Nomad weaponry (Nomad Prototype, Nomad Energy Cannon, etc.)
+-- Added a selectable ship slot at Player-Purchasable Bases - you can now define two ships sold at PBases, instead of just one.
+-- Major improvements to the AI Wingmen system; AI wingmen will follow more responsively.
+-- Fixed an issue where you would randomly collide with an invisible object when using AI Wingmen - Wingmen can now be properly used with the Sleeper Ship, most Stations, etc. That object is actually the squad leader for the wingmen, which controls when the wingmen should attack and when they should return to you; it is now always intangible.
+-- Somewhat fixed the issue where, if you jumped systems, your next AI Wingmen squad would be in a strange formation until you docked at a base.
+-- The explosion radius for missiles has been slightly reduced; this will have no affect on actual missile performance, but should stop accidentally tagging nearby neutral ships in the explosion (and thus turning them hostile).
+-- Torpedo tracking rates have been increased (half-way in-between RC129 and RC126 values).
+-- Improvements to the Liberty Cruiser and Forward Guns - now, when using the Liberty FG on the Liberty Cruiser, the cruiser's built-in gun is used as a firing point. Any other weapon mounted to that slot will be placed at an actual point.
+-- Small optimization to system structure (slightly fewer zones to process; the AI Companion Bot now uses 51 paths instead of 101 - far optimized over the first 204)
+-- The Liberty Gunboat, modeled by Why485 and imported with assistance from MegalodonEC, has been added to the game.
+-- Large ships (Transports, Capital Ships, etc.) now have a small degree of banking to assist in turning, which should help eliminate Capital Ship fights degrading into simply turning down all the time.
+-- 10x LOD functionality reworked - it now correctly displays all objects at exactly 10x their vanilla distance without screwing up on single-LOD meshes (Serafina, new Liberty Gunboat, etc.). It also no longer erroneously renders certain objects at 20-100x distance (error in LOD calculation formula). Overall, it looks a little uglier, but is far more efficient.
+-- Security ratings now have slightly more impact on spawning rates - particularly in High Security systems (before, there wasn't too much of a difference between a High Security and Low Security system). Core Security systems are unchanged.
+-- Storage Depots are now only sold in Alaska. The Repair Ship is now featured at the starting base.
+-- Storage Depots can no longer purchase trade commodities (Credit Chips etc. do not apply).
+-- Slightly increased the amount of loot dropped from minable asteroids.
+-- Fixed an issue where multiplayer mission scripts would not restart properly if you clicked "Respawn" too quickly after death.
+-- Cardamine and Alien Artifacts now take up slightly more cargo space. It may be more profitable to experiment trading with other commodities instead.
+-- Re-hardpointed the Nomad Fighter with wider firing arc for its weapons, and to be slightly less ugly when shooting.
+-- The Nomad Buoy now defends itself from attack.
+-- Removed the annoying AI Bot / Wingmen death messages.
+-- AI Traders now make more intelligent combat decisions. If a large enemy wing approaches that looks too intimidating, they'll immediately attempt to flee the fight.
+-- Since Nomads are hostile to everything, Nomad AI wingmen squads now come with a few more ships, since the standard wingmen squad will simply get mowed down by the overwhelming number of hostiles.
+-- Target marks now play sounds instead of printing "OK" for confirmation. Sounds are also played when another group member group-marks a target.
+-- Switched the sounds of the bottom three laser classes. That weaksauce "pew pew!" sound fits Class 1s a lot more than it does Class 2s and 3s. =P
+-- Lower-class weapons now have a slightly quicker rate of fire; higher-class weapons now have a slightly slower rate of fire. Class 4 weapons have not changed, and were used as a base for the refire curve. To sum it up, the damage gap between classes has narrowed; a Class 1 gives 50% of the output of a Class 4, instead of 25% of the output.
+-- Grazing a neutral NPC with a Missile or Torpedo will no longer turn them insta-hostile. Instead, you'll receive friendly fire warnings before they take action.
+-- Fixed an issue where players could sometimes become permanently hostile to Abandoned objects.
+-- Added a blurb in the readme for Windows Vista Service Pack 2 (SP2), which apparently corrects most issues with Freelancer on Vista.
+-- Halved the fire rate of Sniper Turrets (rare) and Orbital Defense Turrets (used by docking rings etc.)
+-- New free-floating gun fixtures added to Docking Rings to give them more coverage.
+-- Reward for killing Docking Rings / Orbital Cannon Fixtures greatly increased.
+-- Unless repaired manually, Weapons Platforms, Stations, etc. will now take 15 minutes to repair, and will only repair to 20% health.
+-- The standard Tractor beam will never be confiscated on Death Penalty. Rare Tractors may still be confiscated.
+-- Fixed issue where Cruise Disruptors would not actually disrupt cruise.
+-- Added a blurb in Torpedo infocards explaining how only direct missile hits will cause early detonation.
+-- Nomad Fighter Particle Splitter muzzle velocity doubled.
+-- Power regeneration rates of Capital Ships, Stations / WPs, Transports and Liners have been increased.
+-- Power usages of all missile launchers decreased; they are now a function of 1/10 their damage output, instead of arbitrary numbers.
+-- Killing NPCs now invokes the built-in reputation change method instead of FLHook reputation change, since it seems a little more stable (and to maintain OpenSP compatibility); killing Stations etc. still invokes FLHook-based reputation change.
+-- Added a "Torpedoes Only" selection to the "Draw white boxes around missiles/mines?" option.
+-- Corrected rampant misspelling of "torpedoes" as "torpedos." Durp.
+-- PvP protection from undocking increased to 30 seconds.
+-- Tweaks made to Torpedoes. Starkillers now have a 4500m range, while Sunslayers have a 6000m range and 10% better tracking. This opens up the tactical possibility of using Sunslayers for long-range single-torpedo bombing, while Starkillers remain good for short-range multi-torpedo bombing.
+-- Better hitbox for the Serafina.
+-- Optimizations to filesize for sounds played by High-End FX missiles.
+-- Jump Gates and Jump Holes are now a little harder to disable (2x hitpoints, Jump Gates now have a shield), but will stay disabled for the full 15 minute base repair time unless manually repaired early. This means you can effectively isolate players / NPCs in a system, unless they have a Repair Turret on them.
+-- The "Launch Mines" control now repeats when held down (you can hold down "Launch Mines" to continuously launch mines, similar to holding down "Launch Missiles" to continuously launch missiles).
+-- Fixed a bizarre issue with Mines where, when fired from weapon control, could be launched in any direction.
+-- Added 4 new Unlawful starting jumpholes, with a corresponding base that automatically sets your reputation to that of a pirate when docked with; no bribes or anything needed.
+-- Removed reputation requirements for Nanobots and Shield Batteries.
+-- Decreased reputation requirements for all other items.
+
 RC129 (10/11/09):
 -- Major improvements to functionality and stability of MP mission scripting, thanks to M0tah.
 -- Fixed the death_comm related bug.
@@ -228,7 +323,7 @@ RC125 (04/02/09):
 -- The "AI Bots Killed" stat now functions correctly. It also counts AI Wingmen killed now.
 -- Maximum number of lines in chat history raised to 127, from 32.
 -- Extra debris from ship explosions is now only thrown if the lighting/debris option is selected.
--- TL Buoy WPs are now permenantly disabled when killed. They lose all turrets, as well as some/all of the lights and directional flares. Active player pirates on a server can make a Trade Lane considerably less safe now.
+-- TL Buoy WPs are now permanently disabled when killed. They lose all turrets, as well as some/all of the lights and directional flares. Active player pirates on a server can make a Trade Lane considerably less safe now.
 -- Small optimization to system structure (got rid of 102 un-needed AI Bot paths per system, and rewrote the density control code for zones). May slightly improve system memory usage/load times.
 -- Small AI tweaks to prevent fights from getting too spread apart; AI should try a little harder to concentrate fighting instead of breaking off into small duels 10km away from other ships.
 -- Alaska has been rebuilt - it now acts as the central PvP hub linking to all the PvP/NPC Arenas, and can now be accessed from any house via purchasing that house's PvP Token. For example, if you have the Kusari PvP Token, you may only enter/exit Alaska via Kusari; Alaska can not be used for travel.
@@ -236,9 +331,9 @@ RC125 (04/02/09):
 -- Repair Ship can no longer dock on mobile player-carrier bases.
 -- Set Best Path now functions across systems, as it should (thanks FriendlyFire!). Alaska is excluded from this scheme, as it now acts as the central PvP hub and would give bad path info, since Alaska can not be used for travel.
 -- AI Bots in the PvP Arenas should no longer attack the random WPs scattered about, and instead focus on other ships.
--- Rare ships have been cleaned up. They no longer require a special Power Supply, but the token used to retrieve the ship is now permenantly expended upon docking with the rare ship's base.
+-- Rare ships have been cleaned up. They no longer require a special Power Supply, but the token used to retrieve the ship is now permanently expended upon docking with the rare ship's base.
 -- Reduction in debris thrown by the debris tosser, which should make the "explosion debris" option more stable.
--- Fixed up the solar object hitpoints - now all system-placed station hitpoints match up with corrosponding flown station hitpoints (solar objects did not get the 1.5x HP buff from a few RCs ago; other stations mysteriously had too much health)
+-- Fixed up the solar object hitpoints - now all system-placed station hitpoints match up with corresponding flown station hitpoints (solar objects did not get the 1.5x HP buff from a few RCs ago; other stations mysteriously had too much health)
 -- System chat is now routed to universe chat, so that everyone does not have to be in the same group to talk to one-another.
 -- Reputation with pirates is no longer as quickly gained for picking on Xenos, and both the IMG and Zoners are now slightly empathetic towards their cause.
 -- Xenos are now armed to deal with Capital Ship threats.
@@ -385,7 +480,7 @@ RC122 (11/01/08):
 -- All Capital Ships, Weapons Platforms, and Stations all have 2x as much armor, as per KillerJaguar and Why485's rebalances.
 -- Capital Ship missiles are now fired via the Torpedo key, and as such can be fired independantly of the Flak cannons.
 -- Torpedoes and Capital Ship Missile Turrets will now disrupt cruise.
--- Firing Torpedos and firing Cruise Disruptors is now mapped to the same key, "FIRE CRUISE DISRUPTOR / TORPEDO", as a ship will never have both a Cruise Disruptor and Torpedo.
+-- Firing Torpedoes and firing Cruise Disruptors is now mapped to the same key, "FIRE CRUISE DISRUPTOR / TORPEDO", as a ship will never have both a Cruise Disruptor and Torpedo.
 -- AI are slightly smarter with Torpedo usage, and will try to AVOID launching them point-blank (thus killing themselves).
 -- Fixed a bug with the Nomad Fighter Lasers MkI-III where no hit effect was called.
 -- Added Nomad Gunboat Primary Turret, Defense Turret, and Missile Turret, as well as Nomad Battleship Flak Turret and Missile Turret.
@@ -409,7 +504,7 @@ RC122 (11/01/08):
 -- Added Why485's new crazy missile and torpedo effects.
 -- Armored Transport can now only use a Class 5 Fighter Turret, down from Class 6.
 -- Lowered the Drake Type A to a Class 5 gun from a Class 6 gun (with adjusted damage/refire/power usage/dispersion values), so the Hogosha CSVs can mount their own equipment instead of using Kusari equipment.
--- Further improvements to AI cruise handling. They now intellegently either cruise after or just keep shooting fleeing targets, instead of just blindly cruising after them all the time. They will also use cruise to catch up to a target far away (no more thrusting away from an angry Capital Ship).
+-- Further improvements to AI cruise handling. They now intelligently either cruise after or just keep shooting fleeing targets, instead of just blindly cruising after them all the time. They will also use cruise to catch up to a target far away (no more thrusting away from an angry Capital Ship).
 -- Fixed various bugs related to AI cruise in formation.
 -- Added in spiced up explosions, particularly to the Torpedo, Flak Cannon, and Ship explosion effects.
 -- Added two new options - Dynamic Lighting on Explosions, and Battledust. Battledust is a new effect by Why485 that generates fog and debris off fighting, creating dark clouds where heavy combat areas have occurred.
@@ -512,7 +607,7 @@ RC119 (06/11/08):
 -- More satisfying Capital Ship hit effects.
 -- Fixed "Departing group member" message.
 -- Integrated the experimental ENBSeries Bloom Shader by Vorontsov Boris (http://boris-vorontsov.narod.ru) as a High-End FX option.
--- All development and testing bases have been permenantly locked. They were never meant to be accessed in the first place, and I only left them open to be nice to the overly-curious. However, due to the amount of exploitation, they are now locked.
+-- All development and testing bases have been permanently locked. They were never meant to be accessed in the first place, and I only left them open to be nice to the overly-curious. However, due to the amount of exploitation, they are now locked.
 -- The bases rare ships are sold at can be no longer accessed unless you possess the rare ship's power supply.
 -- Fixed client-side crash when going from the bar to equipment dealer on Planet Gammu.
 -- Arena names have been changed to be more easily read. For example, "Outer Sphere NPC Arena" instead of "NPC Arena (Outer Sphere)".

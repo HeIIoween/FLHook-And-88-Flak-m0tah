@@ -1,5 +1,6 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //ENBSeries: boris-vorontsov@yandex.ru, boris-vorontsov.narod.ru
+//Modifications by Honken and fox
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //Keyboard variables, change with shift + 1 + PG{UP|Down}
@@ -57,7 +58,6 @@ VS_OUTPUT_POST VS_PostProcess(VS_INPUT_POST IN)
 
 float4 PS_PostProcess(VS_OUTPUT_POST In) : COLOR
 {
-
 	float2 offset[4]=
 	{
 		float2(-1.0,-1.0),
@@ -94,7 +94,7 @@ float4 PS_PostProcess(VS_OUTPUT_POST In) : COLOR
 	float4 envcol3=tex2D(SamplerBloom, coord);
 	float4 envcol=(envcol1+envcol2+envcol3)*0.7;
 	//envcol=pow(envcol, 2*tempF1 );
-	envcol=envcol*1.1;
+	envcol=envcol*1.08;
 	res=lerp(envcol, res*envcol, 0.1f );
 	float middlegray=(res.r+res.g+res.b)*0.3;
 	float3 diffcolor=res.rgb-middlegray;
@@ -112,7 +112,7 @@ technique PostProcess
 		FogEnable=FALSE;
 		ALPHATESTENABLE=FALSE;
 		SEPARATEALPHABLENDENABLE=FALSE;
-		AlphaBlendEnable=FALSE;
+		AlphaBlendEnable=TRUE;
 		SRGBWRITEENABLE=FALSE;
 	}
 }

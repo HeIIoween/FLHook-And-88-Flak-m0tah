@@ -61,6 +61,7 @@
 3167702914 = ge_re_engine_01, Rheinland HF Engine
 3183738305 = ge_kd_engine_01, Kusari Destroyer Engine
 3183954819 = ge_bd_engine_01, Bretonia Destroyer Engine
+3200274444 = ge_lg_engine_01, Liberty Gunboat Engine
 3200350348 = ge_ng_engine_01, Nomad Gunboat Engine
 3200515533 = ge_kg_engine_01, Kusari Gunboat Engine
 3200732047 = ge_bg_engine_01, Bretonia Gunboat Engine

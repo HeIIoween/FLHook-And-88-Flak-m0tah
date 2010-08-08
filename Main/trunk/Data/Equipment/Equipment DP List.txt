@@ -12,6 +12,7 @@ no_thruster
 admin_shield
 
 *scanner*
+ge_s_tractor_01
 cargopod_*
 *_power_regen
 *_stationmod
@@ -452,6 +453,16 @@ rareshieldregen12=0.09375
 rareshieldregen13=0.09375
 rareshieldregen14=0.09375
 rareshieldregen15=0.09375
+rarearmor01=0.09375
+rarearmor02=0.09375
+rarearmor03=0.09375
+rarearmor04=0.09375
+rarearmor05=0.09375
+rarearmor06=0.09375
+rarearmor07=0.09375
+rarearmor08=0.09375
+rarearmor09=0.09375
+rarearmor10=0.09375
 li_n_grp_token=0.75
 li_p_grp_token=0.75
 br_n_grp_token=0.75
@@ -482,5 +493,3 @@ fc_n_grp_token=0.75
 gd_im_grp_token=0.75
 gd_z_grp_token=0.75
 gd_bh_grp_token=0.75
-gd_lfl_grp_token=0.75
-fc_pfl_grp_token=0.75

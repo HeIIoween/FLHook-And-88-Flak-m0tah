@@ -2,5 +2,5 @@ Act_ActTrig = pux_
 
 [Trigger]
 nickname = pux_
-system = Li07
+system = ANY
 Cnd_Timer = 2

@@ -7,12 +7,12 @@
 001531 hp_gun_special_7 = Gun/Missile/Rare Gun-Class 7
 001532 hp_gun_special_8 = Gun/Missile/Rare Gun-Class 8
 001533 hp_gun_special_9 = Gun/Missile/Rare Gun-Class 9
-001534 hp_gun_special_10 = Nomad Laser
+001534 hp_gun_special_10 = Armored SC Foward Gun (Lib Cruiser)
 
-001731 hp_turret_special_1 = Nomad Melee Torpedo
+001731 hp_turret_special_1 = Nomad Torpedo
 001732 hp_turret_special_2 = Repair Ship Turret
 001733 hp_turret_special_3 = WTF Cannon!?
-001734 hp_turret_special_4 =
+001734 hp_turret_special_4 = Nomad Laser
 001735 hp_turret_special_5 = Armored Freighter Turret    
 001736 hp_turret_special_6 = Nomad SC Turret             
 001737 hp_turret_special_7 = Nomad LC Turret             

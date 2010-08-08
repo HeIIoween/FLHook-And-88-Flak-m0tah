@@ -1,7 +1,7 @@
 Act_ActTrig = welcome_3dsoundnotice
 [Trigger]
 nickname = welcome_3dsoundnotice
-system = Li07
+system = ANY
 Cnd_LaunchComplete = Player
 Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
 
@@ -135,15 +135,21 @@ ship = Combat_Ally_3
 
 [Trigger]
 nickname = Tutorial_Init
-system = Li07
-Cnd_SpaceEnter = no_params
-Act_ActTrig = pux_Tutorial_Init
+system = ANY
+Cnd_LaunchComplete = Player
+Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
+Act_ActTrig = WaitFor3DNotice
 
 [Trigger]
-nickname = pux_Tutorial_Init
-system = Li07
-Cnd_Timer = 6
-Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
+nickname = WaitFor3DNotice
+system = ANY
+Cnd_PopupDialog = CLOSE
+Act_ActTrig = pux_WaitFor3DNotice
+
+[Trigger]
+nickname = pux_WaitFor3DNotice
+system = ANY
+Cnd_Timer = 2
 Act_SpawnShip = Tutorial_RepCheck
 Act_SetLifetime = Tutorial_RepCheck, 2
 Act_ActTrig = Tutorial_Init_Pull
@@ -151,54 +157,105 @@ Act_ActTrig = Tutorial_Init_Push
 
 [Trigger]
 nickname = Tutorial_Init_Pull
-system = Li07
-Cnd_WatchVibe = Tutorial_RepCheck, Player, 0.100000, gt
+system = ANY
+Cnd_WatchVibe = Tutorial_RepCheck, Player, 0.1, gt
 Act_Destroy = Tutorial_RepCheck, SILENT
 Act_DeactTrig = Tutorial_Init_Push
 
 [Trigger]
 nickname = Tutorial_Init_Push
-system = Li07
-Cnd_WatchVibe = Tutorial_RepCheck, Player, 0.100000, lt
+system = ANY
+Cnd_WatchVibe = Tutorial_RepCheck, Player, 0.1, lt
 Act_Destroy = Tutorial_RepCheck, SILENT
 Act_DeactTrig = Tutorial_Init_Pull
 Act_ActTrig = Tutorial_ReadyToRock
 
 [Trigger]
 nickname = Tutorial_ReadyToRock
-system = Li07
-Cnd_Timer = 10
+system = ANY
+Cnd_Timer = 4
 Act_MarkObj = Li07_Tutorial_MoveTo, 1
+Act_ActTrig = WaitMark_1
+
+[Trigger]
+nickname = WaitMark_1
+system = ANY
+Cnd_Timer = 1
 Act_PopupDialog = 459202, 459203, CLOSE
+Act_ActTrig = Tutorial_ReadyToRock_Push
+
+[Trigger]
+nickname = Tutorial_ReadyToRock_Push
+system = ANY
+Cnd_PopupDialog = CLOSE
+Act_ActTrig = pux_Tutorial_ReadyToRock_Push
+
+[Trigger]
+nickname = pux_Tutorial_ReadyToRock_Push
+system = ANY
+Cnd_Timer = 2
 Act_ActTrig = Tutorial_Activate
 
 [Trigger]
 nickname = Tutorial_Activate
-system = Li07
+system = ANY
 Cnd_DistShip = inside, Player, Li07_Tutorial_MoveTo, 600
 Act_PlayerCanDock = false
+Act_DeactTrig = Li01_Lawful_Jump_SetRep
+Act_DeactTrig = Br01_Lawful_Jump_SetRep
+Act_DeactTrig = Ku01_Lawful_Jump_SetRep
+Act_DeactTrig = Rh01_Lawful_Jump_SetRep
+Act_DeactTrig = Li01_Unlawful_Jump_SetRep
+Act_DeactTrig = Br01_Unlawful_Jump_SetRep
+Act_DeactTrig = Ku01_Unlawful_Jump_SetRep
+Act_DeactTrig = Rh01_Unlawful_Jump_SetRep
+Act_ActTrig = setrep_lawful
 Act_MarkObj = Li07_Tutorial_MoveTo, 0
 Act_MarkObj = n00b_base_dock, 1
+Act_ActTrig = WaitMark_2
+
+[Trigger]
+nickname = WaitMark_2
+system = ANY
+Cnd_Timer = 1
 Act_PopupDialog = 459202, 459204, CLOSE
+Act_ActTrig = Tutorial_Activate_Push
+
+[Trigger]
+nickname = Tutorial_Activate_Push
+system = ANY
+Cnd_PopupDialog = CLOSE
+Act_ActTrig = pux_Tutorial_Activate_Push
+
+[Trigger]
+nickname = pux_Tutorial_Activate_Push
+system = ANY
+Cnd_Timer = 2
 Act_ActTrig = Combat_Basic
 
 [Trigger]
 nickname = Combat_Basic
-system = Li07
+system = ANY
 Cnd_DistShip = inside, Player, n00b_base_dock, 600
 Act_MarkObj = n00b_base_dock, 0
+Act_ActTrig = WaitMark_3
+
+[Trigger]
+nickname = WaitMark_3
+system = ANY
+Cnd_Timer = 1
 Act_PopupDialog = 459202, 459205, CLOSE
 Act_ActTrig = Combat_Basic_Push
 
 [Trigger]
 nickname = Combat_Basic_Push
-system = Li07
+system = ANY
 Cnd_PopupDialog = CLOSE
 Act_ActTrig = pux_Combat_Basic_Push
 
 [Trigger]
 nickname = pux_Combat_Basic_Push
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_SpawnShip = Combat_Basic_Hostile
 Act_SetLifetime = Combat_Basic_Hostile, 2
@@ -208,28 +265,39 @@ Act_ActTrig = Combat_Basic_Hostile_Death
 
 [Trigger]
 nickname = Combat_Basic_Hostile_Death
-system = Li07
+system = ANY
 Cnd_Destroyed = Combat_Basic_Hostile, 1, EXPLODE
 Act_ActTrig = Combat_Basic_Hostile_Death_Push
 
 [Trigger]
 nickname = Combat_Basic_Hostile_Death_Push
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_MarkObj = Li07_Tutorial_MoveTo, 1
+Act_ActTrig = WaitMark_4
+
+[Trigger]
+nickname = WaitMark_4
+system = ANY
+Cnd_Timer = 1
 Act_PopupDialog = 459202, 459207, CLOSE
 Act_ActTrig = Combat_Advanced
 
 [Trigger]
 nickname = Combat_Advanced
-system = Li07
+system = ANY
 Cnd_PopupDialog = CLOSE
 Act_ActTrig = pux_Combat_Advanced
 
 [Trigger]
 nickname = pux_Combat_Advanced
-system = Li07
+system = ANY
 Cnd_Timer = 2
+Act_ActTrig = Combat_Advanced_Push
+
+[Trigger]
+nickname = Combat_Advanced_Push
+system = ANY
 Cnd_DistShip = inside, Player, Li07_Tutorial_MoveTo, 600
 Act_MarkObj = Li07_Tutorial_MoveTo, 0
 Act_SpawnFormation = Combat_Advanced_Hostile_Wing
@@ -247,13 +315,13 @@ Act_ActTrig = Combat_Advanced_Hostile_FirstWave_Death
 
 [Trigger]
 nickname = Combat_Advanced_Hostile_FirstWave_Death
-system = Li07
+system = ANY
 Cnd_Destroyed = Combat_Advanced_Hostile, 4, EXPLODE
 Act_ActTrig = Combat_Advanced_Hostile_FirstWave_Death_Push
 
 [Trigger]
 nickname = Combat_Advanced_Hostile_FirstWave_Death_Push
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_SpawnFormation = Combat_Advanced_Hostile_Wing
 Act_SetLifetime = Combat_Advanced_Hostile_1, 2
@@ -265,107 +333,115 @@ Act_ActTrig = Combat_Advanced_Hostile_SecondWave_Death
 
 [Trigger]
 nickname = Combat_Advanced_Hostile_SecondWave_Death
-system = Li07
+system = ANY
 Cnd_Destroyed = Combat_Advanced_Hostile, 4, EXPLODE
 Act_ActTrig = Combat_Advanced_Hostile_SecondWave_Death_Push
 
 [Trigger]
 nickname = Combat_Advanced_Hostile_SecondWave_Death_Push
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459209, CLOSE
 Act_ActTrig = Features_Tag
 
 [Trigger]
 nickname = Features_Tag
-system = Li07
+system = ANY
 Cnd_PopupDialog = CLOSE
 Act_ActTrig = pux_Features_Tag
 
 [Trigger]
 nickname = pux_Features_Tag
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459210, CLOSE
 Act_ActTrig = Features_Tag_GoDoStuff
 
 [Trigger]
 nickname = Features_Tag_GoDoStuff
-system = Li07
+system = ANY
 Cnd_PopupDialog = CLOSE
 Act_ActTrig = pux_Features_Tag_GoDoStuff
 
 [Trigger]
 nickname = pux_Features_Tag_GoDoStuff
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_NNIds = 459211, OBJECTIVE
 Act_ActTrig = Features_Cloak
 
 [Trigger]
 nickname = Features_Cloak
-system = Li07
+system = ANY
 Cnd_Timer = 10
 Act_PopupDialog = 459202, 459212, CLOSE
 Act_ActTrig = Features_Docking
 
 [Trigger]
 nickname = Features_Docking
-system = Li07
+system = ANY
 Cnd_PopupDialog = CLOSE
 Act_ActTrig = pux_Features_Docking
 
 [Trigger]
 nickname = pux_Features_Docking
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459213, CLOSE
 Act_ActTrig = Features_Marking
 
 [Trigger]
 nickname = Features_Marking
-system = Li07
+system = ANY
 Cnd_PopupDialog = CLOSE
 Act_ActTrig = pux_Features_Marking
 
 [Trigger]
 nickname = pux_Features_Marking
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_PopupDialog = 459202, 459214, CLOSE
 Act_ActTrig = Features_Marking_GoMarkStuff
 
 [Trigger]
 nickname = Features_Marking_GoMarkStuff
-system = Li07
+system = ANY
 Cnd_PopupDialog = CLOSE
 Act_ActTrig = pux_Features_Marking_GoMarkStuff
 
 [Trigger]
 nickname = pux_Features_Marking_GoMarkStuff
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_NNIds = 459215, OBJECTIVE
 Act_ActTrig = Features_Final
 
 [Trigger]
 nickname = Features_Final
-system = Li07
+system = ANY
 Cnd_Timer = 15
 Act_PopupDialog = 459202, 459216, CLOSE
 Act_ActTrig = Tutorial_End
 
 [Trigger]
 nickname = Tutorial_End
-system = Li07
+system = ANY
 Cnd_PopupDialog = CLOSE
 Act_ActTrig = pux_Tutorial_End
 
 [Trigger]
 nickname = pux_Tutorial_End
-system = Li07
+system = ANY
 Cnd_Timer = 2
 Act_PlayerCanDock = true
-Act_SetRep = Player, foxBot_grp, 0.900000
+Act_ActTrig = Li01_Lawful_Jump_SetRep
+Act_ActTrig = Br01_Lawful_Jump_SetRep
+Act_ActTrig = Ku01_Lawful_Jump_SetRep
+Act_ActTrig = Rh01_Lawful_Jump_SetRep
+Act_ActTrig = Li01_Unlawful_Jump_SetRep
+Act_ActTrig = Br01_Unlawful_Jump_SetRep
+Act_ActTrig = Ku01_Unlawful_Jump_SetRep
+Act_ActTrig = Rh01_Unlawful_Jump_SetRep
+Act_SetRep = Player, foxBot_grp, 0.9
 Act_AdjAcct = 10000
 Act_NNIds = 459217, OBJECTIVE

@@ -1,1 +1,1 @@
--- 0x0F85->0x90E9 in freelancer.exe, 0xED5B9, 0xED5B9 = remove HUD elements on objects in space - includes text, brackets, targeting reticles, and missile warnings ~M0tah
+ED5B9 0F85->90E9

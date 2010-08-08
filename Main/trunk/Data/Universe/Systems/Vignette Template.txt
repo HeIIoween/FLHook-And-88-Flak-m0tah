@@ -2,6 +2,7 @@ toughness = 1
 max_battle_size = 9999
 density = 8
 density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
 repop_time = 240 ;Vignette
 encounter = area_flnpcsstation, 1, 0.600000
 faction = gd_lfl_grp, 0.500000
