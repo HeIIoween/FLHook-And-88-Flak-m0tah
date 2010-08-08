@@ -55,6 +55,8 @@ bool			set_bSetAutoErrorMargin;
 float			set_fAutoErrorMargin;
 bool			set_bDamageNPCsCollision;
 bool			set_bDropShieldsCloak;
+bool			set_bMissileDmgToMine;
+bool			set_bTorpDmgToMine;
 
 // Kick
 uint			set_iAntiBaseIdle;
@@ -103,6 +105,7 @@ uint			set_iMaxDeathFactionCauses;
 uint			set_iMaxDeathEquipmentCauses;
 float			set_fRepChangePvP;
 float			set_fDeathPenaltyKiller;
+uint			set_iRespawnDelay;
 
 // NoPVP
 list<uint>		set_lstNoPVPSystems;
@@ -255,6 +258,8 @@ void LoadSettings()
 		string scMarketData = IniGetS(set_scCfgGeneralFile, "General", "MarketData", "");
 		if(scMarketData.length())
 			BaseDataList_load_market_data(scMarketData.c_str());
+		set_bMissileDmgToMine = IniGetB(set_scCfgGeneralFile, "General", "MissileDmgToMine", false);
+		set_bTorpDmgToMine = IniGetB(set_scCfgGeneralFile, "General", "TorpedoDmgToMine", false);
 		// Kick
 		set_iAntiBaseIdle = IniGetI(set_scCfgGeneralFile, "Kick", "AntiBaseIdle", 0);
 		set_iAntiCharMenuIdle = IniGetI(set_scCfgGeneralFile, "Kick", "AntiCharMenuIdle", 0);
@@ -409,6 +414,7 @@ void LoadSettings()
 		set_iMaxDeathFactionCauses = IniGetI(set_scCfgDeathFile, "General", "NumDeathFactionReasons", 1);
 		set_iMaxDeathEquipmentCauses = IniGetI(set_scCfgDeathFile, "General", "NumDeathEquipmentReasons", 1);
 		set_fRepChangePvP = IniGetF(set_scCfgDeathFile, "General", "PvPRepChangeDeath", 0.0f);
+		set_iRespawnDelay = IniGetI(set_scCfgDeathFile, "General", "RespawnDelay", 0);
 		//Death Message singular factions
 		IniGetSection(set_scCfgDeathFile, "DeathMsgOneFaction", lstValues);
 		set_btOneFactionDeathRep->Clear();
@@ -653,7 +659,6 @@ void LoadSettings()
 			iGunID = CreateID((*value).scKey.c_str());
 			gunEquip = Archetype::GetEquipment(iGunID);
 			ammo = Archetype::GetEquipment(gunEquip->iAmmoArchID);
-			//ammo = (Archetype::Equipment*)(((char*)gunEquip) - 408);
 			REPAIR_GUN *gun = new REPAIR_GUN(gunEquip->iAmmoArchID, ammo->fHullDamage);
 			set_btRepairGun->Add(gun);
 		}
@@ -687,7 +692,7 @@ void LoadSettings()
 			set_vAffilItems.push_back(iGoodID);
 		}
 
-	} catch(...) { ConPrint(L"Exception in %s, settings likely not loaded\n", stows(__FUNCTION__).c_str()); AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { ConPrint(L"Exception in %s, settings likely not loaded\n", stows(__FUNCTION__).c_str()); LOG_EXCEPTION }
 
 }
 

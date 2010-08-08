@@ -15,7 +15,7 @@
 using namespace std;
 
 // defines
-#define VERSION L"'88 Flak v1.6.7 dev build 7"
+#define VERSION L"'88 Flak v1.6.7 dev build 19"
 
 #define TIME_UPDATE 50
 #define IMPORT __declspec(dllimport)
@@ -51,6 +51,7 @@ using namespace std;
 	}
 
 #define LOG_LEAVE() if(set_iDebug >= 3) AddLog(__FUNCTION__ " stepout");
+#define LOG_EXCEPTION AddLog("Exception in %s", __FUNCTION__); AddExceptionInfoLog();
 
 // typedefs
 typedef unsigned int uint;
@@ -125,7 +126,8 @@ struct FLOAT_WRAP
 bool FLHookInit();
 void FLHookInitUnload();
 void FLHookUnload();
-void ProcessEvent(wstring wscText, ...);
+void ConPrint(const wstring wscText, ...);
+void ProcessEvent(const wstring wscText, ...);
 void LoadSettings();
 void ProcessPendingCommands();
 
@@ -148,7 +150,6 @@ int ToInt(wstring wscStr);
 int ToInt(string scStr);
 uint ToUint(wstring wscStr);
 uint ToUint(string scStr);
-void ConPrint(wstring wscText, ...);
 void AddLog(const char *szString, ...);
 wstring XMLText(wstring wscText);
 wstring GetParam(wstring wscLine, wchar_t wcSplitChar, uint iPos);
@@ -169,12 +170,16 @@ float ToFloat(string scStr);
 mstime timeInMS();
 void dumpHex(string scFile, void *ptr, uint iNumBytes);
 void SwapBytes(void *ptr, uint iLen);
+bool CmpStrStart(const string &scSource, const char *scFind);
+bool CmpStrStart(const wstring &wscSource, const wchar_t *wscFind);
+void AddExceptionInfoLog();
 
 // variables
 extern HANDLE hProcFL;
 extern HMODULE hModServer;
 extern HMODULE hModCommon;
 extern HMODULE hModRemoteClient;
+extern HMODULE hMe;
 extern HMODULE hModDPNet;
 extern HMODULE hModDaLib;
 extern HMODULE hModContent;
@@ -448,5 +453,10 @@ extern uint set_iNPCDeathType;
 
 extern float set_fMinTagRep;
 extern bool set_bUserCmdTag;
+
+extern uint set_iRespawnDelay;
+
+extern bool set_bMissileDmgToMine;
+extern bool set_bTorpDmgToMine;
 
 #endif

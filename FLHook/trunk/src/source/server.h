@@ -229,6 +229,11 @@ namespace pub
 		IMPORT  int __cdecl _SendMessage(unsigned int const &,int,void const *);
 	};
 
+	namespace Audio
+	{
+		IMPORT  int PlaySoundEffect(unsigned int,unsigned int);
+	};
+
 	IMPORT int Save(unsigned int,unsigned int);
 	IMPORT int GetBaseID(unsigned int &,char const *);
 	IMPORT int GetSystemID(unsigned int &,char const *);
@@ -504,6 +509,20 @@ private:
 	unsigned char load_user_data(struct SLoginInfo const &,unsigned int);
 public:
 	unsigned char data[OBJECT_DATA_SIZE];
+};
+
+class IMPORT StarSystem
+{
+public:
+	 unsigned int count_players(unsigned int)const ;
+
+public:
+	unsigned char data[OBJECT_DATA_SIZE];
+};
+
+namespace SysDB
+{
+	IMPORT  std::map<unsigned int,class StarSystem> SysMap;
 };
 
 #endif

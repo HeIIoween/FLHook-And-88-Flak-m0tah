@@ -1,8 +1,12 @@
 #include "hook.h"
 
-uint		iDmgTo = 0;
-uint		iDmgToSpaceID = 0;
-IObjRW		*objDmgTo = 0;
+uint	iDmgTo = 0;
+uint	iDmgToSpaceID = 0;
+IObjRW	*objDmgTo = 0;
+Archetype::Equipment const *subObjArch = 0;
+float	fPrevHealth, fMaxHealth, fEquipPrevHealth, fEquipMaxHealth;
+uint	iType = 0;
+bool	bCrashyDmg = false;
 
 bool g_gNonGunHitsBase = false;
 float g_LastHitPts;
@@ -43,7 +47,9 @@ int __stdcall HkCB_MissileTorpHit(char *ECX, char *p1, DamageList *dmg)
 					dmg->set_cause((enum DamageCause)0xC0); // change to sth else, so client won't recognize it as a disruptor
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+
+		PrintUniverseText(L"MissileTorpHit!");
+	} catch(...) { LOG_EXCEPTION }
 	return 0;
 }
 
@@ -66,7 +72,7 @@ __declspec(naked) void _HookMissileTorpHit()
 		jmp edx
 
 go_ahead:
-		jmp [fpOldMissileTorpHit]
+		jmp [fpOldMissileTorpHit] //0x6CE9A90
 	}
 }
 
@@ -75,6 +81,7 @@ void Clear_DmgTo()
 	iDmgToSpaceID = 0;
 	iDmgTo = 0;
 	objDmgTo = 0;
+	subObjArch = 0;
 }
 
 /**************************************************************************************************************
@@ -91,7 +98,7 @@ DamageCause dcTakeOver = DC_HOOK;
 void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2, enum DamageEntry::SubObjFate p3)
 {
 	bool bAddDmgEntry = true;
-	float fPrevHealth, fMaxHealth;
+	DamageCause iRealDmgCause = dmgList->get_cause();
 	
 	try {
 		if(bTakeOverDmgEntry)
@@ -112,6 +119,10 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			return;
 		}
 
+		//if(dmgList->is_inflictor_a_player()) 
+			PrintUniverseText(L"p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u cause=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id(), dmgList->get_cause());
+		//if(dmgList->is_inflictor_a_player()) {PrintUniverseText(L"%f", p2);}
+
 		if(g_gNonGunHitsBase && (dmgList->get_cause() == 5))
 		{
 			float fDamage = g_LastHitPts - p2;
@@ -119,18 +130,15 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			if(p2 < 0)
 				p2 = 0;
 		}
-		//if(dmgList->is_inflictor_a_player()) 
-			//ConPrint(L"p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id());
-		//if(dmgList->is_inflictor_a_player()) {PrintUniverseText(L"%f", p2);}
+
+		if(set_bMissileDmgToMine && iRealDmgCause == DC_MISSILE)
+			dmgList->set_cause(DC_MINE);
+		else if(set_bTorpDmgToMine && iRealDmgCause == DC_TORPEDO)
+			dmgList->set_cause(DC_MINE);
 
 		if(!iDmgToSpaceID && iDmgTo)
 			pub::Player::GetShip(iDmgTo, iDmgToSpaceID);
 		
-		if(iDmgToSpaceID)
-			objDmgTo = GetIObjRW(iDmgToSpaceID);
-		else
-			objDmgTo = 0;
-
 		/*if(objDmgTo)
 		{
 			uint *test = *((uint**)(objDmgTo)); //VFT
@@ -146,9 +154,6 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			}
 		}*/
 
-		if(objDmgTo)
-			objDmgTo->get_status(fPrevHealth, fMaxHealth);
-		
 		if(!dmgList->get_inflictor_owner_player() && !dmgList->get_inflictor_id())
 		{
 			FLOAT_WRAP fw = FLOAT_WRAP(p2);
@@ -159,23 +164,14 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 		}
 
 		//Check if damage should be redirected to hull
-		CEquip *equip = 0;
 		if(objDmgTo && p1 != 1 && p1 != 65521)
 		{
-			CEquipManager *equipment = HkGetEquipMan(objDmgTo);
-			if(equipment)
+			set<uint>::iterator equipIter = set_setEquipReDam.find(subObjArch->iEquipID);
+			if(equipIter != set_setEquipReDam.end())
 			{
-				equip = equipment->FindByID(p1);
-				if(equip)
-				{
-					set<uint>::iterator equipIter = set_setEquipReDam.find(equip->EquipArch()->iEquipID);
-					if(equipIter != set_setEquipReDam.end())
-					{
-						float fHealth = equip->GetHitPoints();
-						p2 = fPrevHealth - (fHealth - p2);
-						p1 = 1;
-					}
-				}
+				float fHealth = fEquipPrevHealth;
+				p2 = fPrevHealth - (fHealth - p2);
+				p1 = 1;
 			}
 		}
 
@@ -198,38 +194,11 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 					}
 					else //Equipment hit
 					{
-						if(objDmgTo)
+						float fMaxHP = fEquipMaxHealth;
+						p2 = g_fRepairDamage + fEquipPrevHealth;
+						if(p2 > fMaxHP)
 						{
-							if(!equip)
-							{
-								CEquipManager *equipment = HkGetEquipMan(objDmgTo);
-								if(equipment)
-									equip = equipment->FindByID(p1);
-							}
-							if(!equip)
-							{
-								p1 = 1;
-								p2 = g_fRepairDamage + g_fRepairBeforeHP;
-								if(p2 > g_fRepairMaxHP)
-								{
-									p2 = g_fRepairMaxHP;
-								}
-							}
-							float fMaxHP = equip->GetMaxHitPoints();
-							p2 = g_fRepairDamage + equip->GetHitPoints();
-							if(p2 > fMaxHP)
-							{
-								p2 = fMaxHP;
-							}
-						}
-						else
-						{
-							p1 = 1;
-							p2 = g_fRepairDamage + g_fRepairBeforeHP;
-							if(p2 > g_fRepairMaxHP)
-							{
-								p2 = g_fRepairMaxHP;
-							}
+							p2 = fMaxHP;
 						}
 					}
 				}
@@ -246,14 +215,14 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 			}
 			g_bRepairPendHit = false;
 		}
-	} catch(...) { AddLog("Exception in %s0", __FUNCTION__); }
+	} catch(...) { AddLog("Exception in %s0", __FUNCTION__); AddExceptionInfoLog(); AddLog("p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id()); }
 
 	if(bAddDmgEntry)
 	{
 		dmgList->add_damage_entry(p1, p2, p3);
 
 		try {
-			if(objDmgTo && fPrevHealth)
+			if(objDmgTo && !bCrashyDmg && fPrevHealth)
 			{
 				uint iInflictor = dmgList->get_inflictor_id();
 				if(iInflictor)
@@ -264,34 +233,32 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 						{
 							DAMAGE_INFO dmgInfo;
 							dmgInfo.iInflictor = iInflictor;
-							dmgInfo.iCause = dmgList->get_cause();
+							dmgInfo.iCause = iRealDmgCause;
 							dmgInfo.fDamage = fPrevHealth - p2;
 							ClientInfo[iDmgTo].lstDmgRec.push_back(dmgInfo);
 						}
 					}
 					else if(p1 == 1)
 					{
-						uint iType;
-						//pub::SpaceObj::GetType(iDmgToSpaceID, iType);
-						objDmgTo->get_type(iType);
-
 						if(iType & set_iNPCDeathType)
 						{
-							DamageCause iCause = dmgList->get_cause();
-							if(iCause != DC_HOOK)
+							if(iRealDmgCause != DC_HOOK)
 							{
 								DAMAGE_INFO dmgInfo;
-								dmgInfo.iInflictor = iInflictor;
-								dmgInfo.iCause = iCause;
 								dmgInfo.fDamage = fPrevHealth - p2;
-								if(p2 == 0 && iDmgToSpaceID / 1000000000)
+								if(dmgInfo.fDamage > 0)
 								{
-									lstSolarDestroyDelay.push_back(make_pair(iDmgToSpaceID, dmgInfo));
-								}
-								else
-								{
-									pair< map<uint, list<DAMAGE_INFO> >::iterator, bool> findSpaceObj = mapSpaceObjDmgRec.insert(make_pair(iDmgToSpaceID, list<DAMAGE_INFO>()));
-									findSpaceObj.first->second.push_back(dmgInfo);
+									dmgInfo.iInflictor = iInflictor;
+									dmgInfo.iCause = iRealDmgCause;
+									if(p2 == 0 && iDmgToSpaceID / 1000000000)
+									{
+										lstSolarDestroyDelay.push_back(make_pair(iDmgToSpaceID, dmgInfo));
+									}
+									else
+									{
+										pair< map<uint, list<DAMAGE_INFO> >::iterator, bool> findSpaceObj = mapSpaceObjDmgRec.insert(make_pair(iDmgToSpaceID, list<DAMAGE_INFO>()));
+										findSpaceObj.first->second.push_back(dmgInfo);
+									}
 								}
 							}
 						}
@@ -306,7 +273,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 					}
 				}
 			}
-		} catch(...) {AddLog("Exception in %s1", __FUNCTION__); }
+		} catch(...) {AddLog("Exception in %s1", __FUNCTION__); AddExceptionInfoLog(); }
 	}
 
 	Clear_DmgTo();
@@ -347,7 +314,10 @@ void __stdcall HkCb_GeneralDmg(char *szECX)
 		iDmgTo = iClientID;
 		iDmgToSpaceID = iSpaceID;
 		objDmgTo = (IObjRW*)szECX;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+		objDmgTo->get_status(fPrevHealth, fMaxHealth);
+		objDmgTo->get_type(iType);
+		bCrashyDmg = false;
+	} catch(...) { LOG_EXCEPTION }
 }
 
 __declspec(naked) void _HkCb_GeneralDmg()
@@ -362,13 +332,43 @@ __declspec(naked) void _HkCb_GeneralDmg()
 	}
 }
 
+void __stdcall HkCb_OtherDmg(char *szECX, CEquip *equip)
+{
+	try {
+		char *szP;
+		memcpy(&szP, szECX + 0x10, 4);
+		uint iClientID;
+		memcpy(&iClientID, szP + 0xB4, 4);
+		uint iSpaceID;
+		memcpy(&iSpaceID, szP + 0xB0, 4);
+
+		iDmgTo = iClientID;
+		iDmgToSpaceID = iSpaceID;
+		objDmgTo = (IObjRW*)szECX;
+		objDmgTo->get_status(fPrevHealth, fMaxHealth);
+		if(equip)
+		{
+			fEquipPrevHealth = equip->GetHitPoints();
+			fEquipMaxHealth = equip->GetMaxHitPoints();
+			subObjArch = equip->EquipArch();
+		}
+		else
+		{
+			subObjArch = 0;
+		}
+		objDmgTo->get_type(iType);
+		bCrashyDmg = true;
+	} catch(...) { LOG_EXCEPTION }
+}
+
 __declspec(naked) void _HkCb_OtherDmg()
 {
 	__asm
 	{
 		push ecx
+		push [esp+8]
 		push ecx
-		call HkCb_GeneralDmg
+		call HkCb_OtherDmg
 		pop ecx
 		jmp [fpOldOtherDmg]
 	}
@@ -434,7 +434,7 @@ void __stdcall HkCb_NonGunWeaponHitsBaseBefore(char *ECX, char *p1, DamageList *
 		uint iInflictorShip;
 		memcpy(&iInflictorShip, p1 + 4, 4);
 		iClientIDInflictor = HkGetClientIDByShip(iInflictorShip);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); } */
+	} catch(...) { LOG_EXCEPTION } */
 	g_gNonGunHitsBase = true;
 }
 

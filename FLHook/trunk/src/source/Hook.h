@@ -49,6 +49,9 @@
 #define ADDR_SRV_GETINSPECT 0x206C0 // 06D006C0
 #define ADDR_SRV_ADDCARGODOCKED 0x6EFC0 // 06D4EFC0
 #define ADDR_SRV_SPAWN_ITEM 0x28A40
+#define ADDR_SRV_GETSTARSYSTEM 0x20280 //06D00280
+#define ADDR_SRV_SENDMESSAGEWRAPPER 0x63650 //06D43650
+#define ADDR_SRV_GETSHIPANDSYSTEM 0x206C0 //06D006C0
 #define ADDR_COMMON_VFTABLE_MINE 0x139C64
 #define ADDR_COMMON_VFTABLE_CM 0x139C90
 #define ADDR_COMMON_VFTABLE_GUN 0x139C38
@@ -207,10 +210,16 @@ typedef void (__cdecl *_GetFLName)(char *szBuf, const wchar_t *wszStr);
 typedef bool (__cdecl *_GetShipInspect)(uint &iShip, IObjInspectImpl* &inspect, uint &iDunno);
 typedef IObjRW * (__cdecl *_GetIObjRW)(uint iShip);
 typedef bool (__stdcall *_AddCargoDocked)(uint iGoodID, CacheString *&hardpoint, int iNumItems, float fHealth, int bMounted, int bMission, uint iOne);
+typedef StarSystem * (__cdecl *_GetStarSystem)(uint iSystem);
+typedef void (__cdecl *_SendMessageWrapper)(uint iCode, void *data);
+typedef bool (__cdecl *_GetShipAndSystem)(uint const &iShip, IObjRW *&ship, StarSystem *&leavingSystemObject);
 
 extern _GetShipInspect GetShipInspect;
 extern _GetIObjRW GetIObjRW;
 extern _AddCargoDocked AddCargoDocked;
+extern _GetStarSystem GetStarSystem;
+extern _SendMessageWrapper SendMessageWrapper;
+extern _GetShipAndSystem GetShipAndSystem;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // enums
@@ -488,7 +497,7 @@ struct CLIENT_INFO
 	uint		iDockClientID;
 	list<uint>	lstJumpPath;
 	bool		bPathJump;
-	bool		bCharInfoReqAfterDeath;
+	mstime		tmCharInfoReqAfterDeath;
 	Vector		Vlaunch;
 	Matrix		Mlaunch;
 	bool		bMobileBase;
@@ -521,6 +530,7 @@ struct CLIENT_INFO
 // other
 	wstring		wscHostname;
 	uint		iShipID;
+	bool bBlockSystemSwitchOut;
 };
 
 // taken from directplay
@@ -631,6 +641,15 @@ struct RepCB
 	char szName[16];
 };
 typedef bool (__stdcall *_RepCallback)(RepCB *rep);
+
+struct RESPAWN_DELAY
+{
+	RESPAWN_DELAY(uint iClientID, CHARACTER_ID whatever, mstime tmCall) : iClientID(iClientID), whatever(whatever), tmCall(tmCall) {}
+	uint iClientID;
+	CHARACTER_ID whatever;
+	mstime tmCall;
+};
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // prototypes
@@ -749,10 +768,12 @@ HK_ERROR HkCloak(uint iClientID);
 HK_ERROR HkUnCloak(uint iClientID);
 HK_ERROR HkInitCloakSettings(uint iClientID);
 char HkMarkObject(uint iClientID, uint iObject);
-void HkUnMarkObject(uint iClientID, uint iObject);
+char HkUnMarkObject(uint iClientID, uint iObject);
 void HkUnMarkAllObjects(uint iClientID);
 bool HkIsOkayToDock(uint iClientID, uint iTargetClientID);
 void HkNewShipBought(uint iClientID);
+bool HkDockingRestrictions(uint iClientID, uint iDockObj);
+void HkSwitchSystem(uint iClientID, uint iSystem);
 
 // HkFuncLog
 void HkHandleCheater(uint iClientID, bool bBan, wstring wscReason, ...);
@@ -782,6 +803,8 @@ void HkSetHullHealth(uint iSpaceObj, uint iClientIDGiver, uint iSpaceObjGiver, D
 void HkSetXHealth(uint iSpaceObj, ushort iSubObjID, DamageCause cause, float fHealth);
 void HkSetXHealth(uint iSpaceObj, uint iSpaceObjGiver, ushort iSubObjID, DamageCause cause, float fHealth);
 void HkSetXHealth(uint iSpaceObj, uint iClientIDGiver, uint iSpaceObjGiver, ushort iSubObjID, DamageCause cause, float fHealth);
+bool __stdcall HkLightFuse(IObjRW *ship, uint iFuseID, float fDelay, float fLifetime, float fSkip);
+bool __stdcall HkUnLightFuse(IObjRW *ship, uint iFuseID, float fDelay);
 void HkTest(int iArg, int iArg2, int iArg3);
 
 // HkFLIni
@@ -906,6 +929,8 @@ void HkTimerBeamDelayHandler();
 void HkTimerRepairShip();
 extern list< pair<uint, DAMAGE_INFO> > lstSolarDestroyDelay;
 void HkTimerSolarDestroyDelay();
+extern list<RESPAWN_DELAY> lstRespawnDelay;
+void HkTimerRespawnDelay();
 
 extern list<BASE_INFO> lstBases;
 extern CRITICAL_SECTION csIPResolve;

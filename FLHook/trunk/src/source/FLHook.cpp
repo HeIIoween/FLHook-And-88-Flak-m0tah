@@ -519,9 +519,9 @@ bool ProcessSocketCmd(SOCKET_CONNECTION *sc, wstring wscCmd)
 		{
 			char szBuf[64];
 			sprintf(szBuf, "pass%u", i);
-			string scPass = IniGetS(set_scCfgFile, "Socket", szBuf, "");
+			string scPass = IniGetS(set_scCfgGeneralFile, "Socket", szBuf, "");
 			sprintf(szBuf, "rights%u", i);
-			string scRights = IniGetS(set_scCfgFile, "Socket", szBuf, "");
+			string scRights = IniGetS(set_scCfgGeneralFile, "Socket", szBuf, "");
 
 			if(!scPass.length()) {
 				sc->csock.Print(L"ERR Wrong password\n");
@@ -559,7 +559,7 @@ bool ProcessSocketCmd(SOCKET_CONNECTION *sc, wstring wscCmd)
 write text to console
 **************************************************************************************************************/
 
-void ConPrint(wstring wscText, ...)
+void ConPrint(const wstring wscText, ...)
 {
 	wchar_t wszBuf[1024*8] = L"";
 	va_list marker;
@@ -575,7 +575,7 @@ void ConPrint(wstring wscText, ...)
 send event to all sockets which are in eventmode
 **************************************************************************************************************/
 
-void ProcessEvent(wstring wscText, ...)
+void ProcessEvent(const wstring wscText, ...)
 {
 	wchar_t wszBuf[1024] = L"";
 	va_list marker;
@@ -788,7 +788,7 @@ void ProcessPendingCommands()
 
 		lstDelete.clear();
 	} catch(...) { 
-		AddLog("Exception in %s", __FUNCTION__); 
+		LOG_EXCEPTION 
 		throw "exception"; 
 	}
 }

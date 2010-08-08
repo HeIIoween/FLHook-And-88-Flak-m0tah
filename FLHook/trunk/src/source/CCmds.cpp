@@ -1153,10 +1153,43 @@ void CCmds::CmdType(wstring wscCharname)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void CCmds::CmdTest()
+/*void CCmds::CmdTest()
 {
 	Print(L"command=nothing\nOK");
+}*/
+
+void CCmds::CmdTest()
+{
+	uint iShip;
+	pub::Player::GetShip(admin.iClientID, iShip);
+	//pub::SpaceObj::LightFuse(iShip, wstos(ArgStr(1)).c_str(), 0);
+	IObjRW *ship = GetIObjRW(iShip);
+	uint iFuseID = CreateID(wstos(ArgStr(1)).c_str());
+	if(ArgStr(2) == L"1")
+		HkLightFuse(ship, iFuseID, 2.0f, 0.0f, -1.0f);
+	else
+		try{ HkUnLightFuse(ship, iFuseID, 0.0f); } catch(...) { LOG_EXCEPTION }
+	ConPrint(L"OK\n");
 }
+
+/*void CCmds::CmdTest()
+{
+	wstring wscSystem = ArgStr(1);
+	uint iSystem = Universe::get_system_id(wstos(wscSystem).c_str());
+	ConPrint(L"system %u\n", iSystem);
+	HkSwitchSystem(admin.iClientID, iSystem);
+	uint iShip;
+	pub::Player::GetShip(admin.iClientID, iShip);
+	float fHealth;
+	pub::SpaceObj::GetRelativeHealth(iShip, fHealth);
+	Print(L"fHealth=%f", fHealth);
+	uint iCurSys;
+	pub::SpaceObj::GetSystem(iShip, iCurSys);
+	pub::System::GetName(iCurSys, iCurSys);
+	Print(HkGetWStringFromIDS(iCurSys));
+	Print(L"ExistsAndAlive=%i", pub::SpaceObj::ExistsAndAlive(iShip));
+	Print(L"OK\n");
+}*/
 
 /*void CCmds::CmdTest()
 {

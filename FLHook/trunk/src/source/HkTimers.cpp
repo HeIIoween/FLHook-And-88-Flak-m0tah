@@ -44,7 +44,7 @@ void HkTimerUpdatePingData()
 
 			ClientInfo[iClientID].lstPing.push_front(ci.dwRoundTripLatencyMS);
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -88,7 +88,7 @@ void HkTimerUpdateLossData()
 			ClientInfo[iClientID].lstLoss.push_front(ci.dwBytesRetried - ClientInfo[iClientID].iLastLoss); // loss per sec
 			ClientInfo[iClientID].iLastLoss = ci.dwBytesRetried;
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -158,7 +158,7 @@ void HkTimerCheckKick()
 				}
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -202,7 +202,7 @@ void HkTimerNPCAndF1Check()
 			else
 				HkChangeNPCSpawn(false);
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -250,7 +250,7 @@ void HkTimerSolarRepair()
 			solarIter->Next();
 		}
 		delete solarIter;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -289,7 +289,7 @@ void HkThreadResolver()
 
 			Sleep(50);
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -320,7 +320,7 @@ void HkTimerCheckResolveResults()
 
 		g_lstResolveIPsResult.clear();
 		LeaveCriticalSection(&csIPResolve);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -396,7 +396,7 @@ void HkTimerCloakHandler()
 			}
 		}
 
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 }
 
@@ -515,7 +515,7 @@ void HkTimerSpaceObjMark()
 
 		
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 list<DELAY_MARK> g_lstDelayedMarks;
@@ -577,7 +577,7 @@ void HkTimerNPCDockHandler()
 				vDelayedNPCDocks.pop_back();
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -607,7 +607,7 @@ void HkTimerRepairShip()
 				ship = g_lstRepairShips.erase(ship);
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -629,7 +629,27 @@ void HkTimerSolarDestroyDelay()
 			}
 		}
 		lstSolarDestroyDelay.clear();
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+list<RESPAWN_DELAY> lstRespawnDelay;
+void HkTimerRespawnDelay()
+{
+	try{
+		mstime tmNow = timeInMS();
+		for(list<RESPAWN_DELAY>::iterator respawn = lstRespawnDelay.begin(); respawn != lstRespawnDelay.end(); )
+		{
+			if(tmNow > respawn->tmCall)
+			{
+				Server.CharacterSelect(respawn->whatever, respawn->iClientID);
+				respawn = lstRespawnDelay.erase(respawn);
+			}
+			else
+				respawn++;
+		}
+	} catch(...) { LOG_EXCEPTION }
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -653,7 +673,7 @@ void __stdcall HkCb_Message(uint iMsg, MSGSTRUCT *msg)
 		FILE *f = fopen("msg.txt", "at");
 		fprintf(f, "%.4d %.4d\n", iMsg, i);
 		fclose(f);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 __declspec(naked) void _SendMessageHook()

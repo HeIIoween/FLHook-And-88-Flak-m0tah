@@ -86,19 +86,23 @@ namespace BehaviorTypes
 namespace Universe {
 	struct IBase
 	{
-		uint iDunno1;
+		uint iVFT;
 		uint iBaseID;
-		uint iDunno2;
+		char *szBaseName;
 		uint iBaseIDS;
-		uint iDunno3;
+		char *szBaseINI;
 		uint iSystemID;
-		uint l2[4];
+		uint iZero;
+		char *szDunno;
+		int iRep;
+		uint iDunno;
 		uint iSpaceObjID;
 	};
 	IMPORT struct IBase * __cdecl GetFirstBase(void);
 	IMPORT struct IBase * __cdecl GetNextBase(void);
 	IMPORT struct IBase * __cdecl get_base(unsigned int);
 	IMPORT unsigned int __cdecl get_base_id(char const *);
+	IMPORT  unsigned int  get_system_id(char const *);
 }
 
 namespace Reputation
@@ -1087,7 +1091,7 @@ class BaseDataList * __cdecl BaseDataList_get(void);
 class IMPORT BaseData
 {
 public: 
-	class std::map<unsigned int,struct MarketGoodInfo,struct std::less<unsigned int>,class std::allocator<struct MarketGoodInfo> > const * get_market(void)const;
+	class std::map<unsigned int,struct MarketGoodInfo> const * get_market(void)const;
 };
 
 class IMPORT CSimple

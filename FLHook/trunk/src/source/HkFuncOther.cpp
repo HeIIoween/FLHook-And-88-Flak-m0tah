@@ -448,6 +448,40 @@ void HkSetXHealth(uint iSpaceObj, uint iClientIDGiver, uint iSpaceObjGiver, usho
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+__declspec(naked) bool __stdcall HkLightFuse(IObjRW *ship, uint iFuseID, float fDelay, float fLifetime, float fSkip)
+{
+	__asm
+	{
+		lea eax, [esp+8] //iFuseID
+		push [esp+20] //fSkip
+		push [esp+16] //fDelay
+		push 0 //SUBOBJ_ID_NONE
+		push eax
+		push [esp+32] //fLifetime
+		mov ecx, [esp+24]
+		mov eax, [ecx]
+		call [eax+0x1E4]
+		ret 20
+	}
+}
+
+__declspec(naked) bool __stdcall HkUnLightFuse(IObjRW *ship, uint iFuseID, float fDunno)
+{
+	__asm
+	{
+		mov ecx, [esp+4]
+		lea eax, [esp+8] //iFuseID
+		push [esp+12] //fDunno
+		push 0 //SUBOBJ_ID_NONE
+		push eax //iFuseID
+		mov eax, [ecx]
+		call [eax+0x1E8]
+		ret 12
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void HkTest(int iArg, int iArg2, int iArg3)
 {
 }

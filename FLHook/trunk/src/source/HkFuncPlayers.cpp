@@ -2044,6 +2044,7 @@ char HkMarkObject(uint iClientID, uint iObject)
 				return 3; //already marked
 		}
 		ClientInfo[iClientID].vDelayedSystemMarkedObjs.push_back(iObject);
+		pub::Audio::PlaySoundEffect(iClientID, 2460046221); //CreateID("ui_select_add")
 		return 0;
 	}
 
@@ -2061,13 +2062,14 @@ char HkMarkObject(uint iClientID, uint iObject)
 		}
 	}
 	ClientInfo[iClientID].vMarkedObjs.push_back(iObject);
+	pub::Audio::PlaySoundEffect(iClientID, 2460046221); //CreateID("ui_select_add")
 	return 0;
 }
 
-void HkUnMarkObject(uint iClientID, uint iObject)
+char HkUnMarkObject(uint iClientID, uint iObject)
 {
 	if(!iObject)
-		return;
+		return 1;
 
 	for(uint i=0; i<ClientInfo[iClientID].vMarkedObjs.size(); i++)
 	{
@@ -2079,7 +2081,8 @@ void HkUnMarkObject(uint iClientID, uint iObject)
 			}
 			ClientInfo[iClientID].vMarkedObjs.pop_back();
 			pub::Player::MarkObj(iClientID, iObject, 0);
-			return;
+			pub::Audio::PlaySoundEffect(iClientID, 2939827141); //CreateID("ui_select_remove")
+			return 0;
 		}
 	}
 
@@ -2093,7 +2096,8 @@ void HkUnMarkObject(uint iClientID, uint iObject)
 			}
 			ClientInfo[iClientID].vAutoMarkedObjs.pop_back();
 			pub::Player::MarkObj(iClientID, iObject, 0);
-			return;
+			pub::Audio::PlaySoundEffect(iClientID, 2939827141); //CreateID("ui_select_remove")
+			return 0;
 		}
 	}
 
@@ -2106,9 +2110,11 @@ void HkUnMarkObject(uint iClientID, uint iObject)
 				ClientInfo[iClientID].vDelayedSystemMarkedObjs[k] = ClientInfo[iClientID].vDelayedSystemMarkedObjs[ClientInfo[iClientID].vDelayedSystemMarkedObjs.size()-1];
 			}
 			ClientInfo[iClientID].vDelayedSystemMarkedObjs.pop_back();
-			return;
+			pub::Audio::PlaySoundEffect(iClientID, 2939827141); //CreateID("ui_select_remove")
+			return 0;
 		}
 	}
+	return 2;
 }
 
 void HkUnMarkAllObjects(uint iClientID)
@@ -2124,6 +2130,7 @@ void HkUnMarkAllObjects(uint iClientID)
 	}
 	ClientInfo[iClientID].vAutoMarkedObjs.clear();
 	ClientInfo[iClientID].vDelayedSystemMarkedObjs.clear();
+	pub::Audio::PlaySoundEffect(iClientID, 2939827141); //CreateID("ui_select_remove")
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2166,7 +2173,7 @@ void HkNewShipBought(uint iClientID)
 			IniDelSection(scUserFile, scSection);
 			PrintUserCmdText(iClientID, L"Notice: your autobuy settings have been erased. Use the autobuy command again with your new ship.");
 		}
-	} catch(...) { AddLog("Exception in %s|Autobuy", __FUNCTION__); }
+	} catch(...) { AddLog("Exception in %s|Autobuy", __FUNCTION__); AddExceptionInfoLog(); }
 
 	//Unmount items that aren't allowed to be mounted on the new ship
 	try {
@@ -2202,7 +2209,7 @@ void HkNewShipBought(uint iClientID)
 				}
 			}
 		}
-	} catch(...) { AddLog("Exception in %s|Unmount", __FUNCTION__); }
+	} catch(...) { AddLog("Exception in %s|Unmount", __FUNCTION__); AddExceptionInfoLog(); }
 
 	//Check if player has over the max number of nanobots or shield batteries, since FL doesn't
 	try {
@@ -2221,14 +2228,14 @@ void HkNewShipBought(uint iClientID)
 				{
 					iNumNanobots = cargo->iCount;
 					iNanobots = cargo->iID;
-					if(iNumShieldBat)
+					if(iShieldBat)
 						break;
 				}
 				else if(cargo->iArchID == iShieldBatID)
 				{
 					iNumShieldBat = cargo->iCount;
 					iShieldBat = cargo->iID;
-					if(iNumNanobots)
+					if(iNanobots)
 						break;
 				}
 			}
@@ -2250,11 +2257,158 @@ void HkNewShipBought(uint iClientID)
 				uint iBaseID;
 				pub::Player::GetBase(iClientID, iBaseID);
 				float fPrice = 0;
-				pub::Market::GetPrice(iBaseID, iShieldBat, fPrice);
+				pub::Market::GetPrice(iBaseID, iShieldBatID, fPrice);
 				if(fPrice)
 					HkAddCash(ARG_CLIENTID(iClientID), (int)fPrice * iNumShieldBat);
 			}
 		}
-	} catch(...) { AddLog("Exception in %s|BotsBatsCheck", __FUNCTION__); }
+	} catch(...) { AddLog("Exception in %s|BotsBatsCheck", __FUNCTION__); AddExceptionInfoLog(); }
 
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+bool HkDockingRestrictions(uint iClientID, uint iDockObj)
+{
+	ClientInfo[iClientID].lstRemCargo.clear();
+	DOCK_RESTRICTION jrFind = DOCK_RESTRICTION(iDockObj);
+	DOCK_RESTRICTION *jrFound = set_btJRestrict->Find(&jrFind);
+	if(jrFound)
+	{
+		list<CARGO_INFO> lstCargo;
+		bool bPresent = false;
+		HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
+		foreach(lstCargo, CARGO_INFO, cargo)
+		{
+			if(cargo->iArchID == jrFound->iArchID) //Item is present
+			{
+				if(jrFound->iCount > 0)
+				{
+					if(cargo->iCount >= jrFound->iCount)
+						bPresent = true;
+				}
+				else if(jrFound->iCount < 0)
+				{
+					if(cargo->iCount >= -jrFound->iCount)
+					{
+						bPresent = true;
+						CARGO_REMOVE cm;
+						cm.iGoodID = cargo->iArchID;
+						cm.iCount = -jrFound->iCount;
+						ClientInfo[iClientID].lstRemCargo.push_back(cm);
+						pub::Player::RemoveCargo(iClientID, cargo->iID, -jrFound->iCount);
+					}
+				}
+				else
+				{
+					if(cargo->bMounted)
+						bPresent = true;
+				}
+				break;
+			}
+		}
+		if(!bPresent)
+		{
+			pub::Player::SendNNMessage(iClientID, pub::GetNicknameId("info_access_denied"));
+			PrintUserCmdText(iClientID, jrFound->wscDeniedMsg);
+			return false; //block dock
+		}
+	}
+	return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+struct SWITCH
+{
+	uint iEnterSystem;
+	uint iLeaveSystem;
+	uint iClientID;
+	uint iEnterGateObj;
+	Vector vEnterPos;
+};
+
+void HkSwitchSystem(uint iClientID, uint iEnterSystem)
+{
+	ClientInfo[iClientID].bBlockSystemSwitchOut = true;
+	PrintUserCmdText(iClientID, L" ChangeSys " + stows(utos(iEnterSystem)));
+
+	uint iShip = Players[iClientID].iSpaceObjID;
+	Vector vPos, vVelocity;
+	Matrix mOrien;
+	pub::SpaceObj::GetLocation(iShip, vPos, mOrien);
+	uint iLeaveSystem = Players[iClientID].iSystemID;
+	StarSystem *enterSystem = GetStarSystem(iEnterSystem);
+	StarSystem *leaveSystem; // = GetStarSystem(iLeaveSystem);
+	IObjRW *ship; // = GetIObjRW(iShip);
+
+	GetShipAndSystem(iShip, ship, leaveSystem);
+
+	SendMessageWrapper(0x25, &iShip);
+	
+	vVelocity = ship->get_velocity();
+	__asm
+	{
+		mov eax, 0x6D087F0
+		mov ecx, leaveSystem
+		push iEnterSystem
+		push iClientID
+		call eax
+	}
+
+	Players[iClientID].iSpaceObjID = iShip;
+
+	__asm
+	{
+		mov eax, 0x6D07E20
+		mov ecx, enterSystem
+		push iClientID
+		call eax
+
+		lea ecx, mOrien
+		push ecx
+		lea eax, vPos
+		push eax
+		lea ecx, vVelocity
+		push ecx
+		push ship
+		mov eax, 0x6D0D100
+		mov ecx, enterSystem
+		call eax
+
+		lea eax, mOrien
+		push eax
+		lea ecx, vPos
+		push ecx
+		push 0
+		push ship
+		mov eax, 0x6D0CC00
+		mov ecx, enterSystem
+		call eax
+	}
+
+	Players[iClientID].iSystemID = iEnterSystem;
+
+	SWITCH swData;
+	swData.iEnterSystem = iEnterSystem;
+	swData.iLeaveSystem = iLeaveSystem;
+	swData.iClientID = iClientID;
+	swData.iEnterGateObj = 0;
+	swData.vEnterPos = vPos;
+	SendMessageWrapper(0x3B, &swData);
+
+	// JumpInComplete
+	/*__asm
+	{
+		mov eax, ship
+		lea ecx, [eax+4]
+		mov eax, [ecx]
+		push iEnterSystem
+		call dword ptr [eax+74h]
+	}*/
+	Server.JumpInComplete(iEnterSystem, iShip);
+
+	*((bool*)(((char*)ship) + 0x40)) = false;
+
+	//pub::SpaceObj::Relocate(iShip, iEnterSystem, vPos, mOrien);
 }

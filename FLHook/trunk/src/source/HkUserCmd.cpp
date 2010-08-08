@@ -1033,7 +1033,7 @@ void UserCmd_MarkObj(uint iClientID, wstring wscParam)
 	switch(err)
 	{
 	case 0: 
-		PRINT_OK();
+		//PRINT_OK()
 		break;
 	case 1:
 		PrintUserCmdText(iClientID, L"Error: you must have something targeted to mark it.");
@@ -1053,19 +1053,26 @@ void UserCmd_UnMarkObj(uint iClientID, wstring wscParam)
 	uint iShip, iTargetShip;
 	pub::Player::GetShip(iClientID, iShip);
 	pub::SpaceObj::GetTarget(iShip, iTargetShip);
-	if(!iTargetShip)
+	char err = HkUnMarkObject(iClientID, iTargetShip);
+	switch(err)
 	{
-		PrintUserCmdText(iClientID, L"Error: you must have something targeted to mark it.");
-		return;
+	case 0: 
+		//PRINT_OK()
+		break;
+	case 1:
+		PrintUserCmdText(iClientID, L"Error: you must have something targeted to unmark it.");
+		break;
+	case 2:
+		PrintUserCmdText(iClientID, L"Error: object is not marked.");
+	default:
+		break;
 	}
-	HkUnMarkObject(iClientID, iTargetShip);
-	PRINT_OK();
 }
 
 void UserCmd_UnMarkAllObj(uint iClientID, wstring wscParam)
 {
 	HkUnMarkAllObjects(iClientID);
-	PRINT_OK();
+	//PRINT_OK()
 }
 
 void UserCmd_MarkObjGroup(uint iClientID, wstring wscParam)
@@ -1094,7 +1101,7 @@ void UserCmd_MarkObjGroup(uint iClientID, wstring wscParam)
 
 		HkMarkObject(vMembers[i], iTargetShip);
 	}
-	PRINT_OK();
+	//PRINT_OK()
 }
 
 void UserCmd_UnMarkObjGroup(uint iClientID, wstring wscParam)
@@ -1116,7 +1123,7 @@ void UserCmd_UnMarkObjGroup(uint iClientID, wstring wscParam)
 	{
 		HkUnMarkObject(vMembers[i], iTargetShip);
 	}
-	PRINT_OK();
+	//PRINT_OK()
 }
 
 void UserCmd_SetIgnoreGroupMark(uint iClientID, wstring wscParam)

@@ -398,7 +398,7 @@ list<fFACTION_INFLICTOR> ProcessDamageInfo(list<DAMAGE_INFO> &lstDmgRec)
 
 	} catch(...)
 	{
-		AddLog("Exception in %s", __FUNCTION__);
+		LOG_EXCEPTION
 		lstDmgRec.clear();
 		return list<fFACTION_INFLICTOR>();
 	}
@@ -459,7 +459,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 						Players[iClientID].iPrevBaseID = iBaseID;
 					}
 				}
-				ClientInfo[iClientID].bCharInfoReqAfterDeath = true;
+				ClientInfo[iClientID].tmCharInfoReqAfterDeath = timeInMS();
 
 				//Generate death message
 				try{
@@ -760,7 +760,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 					uint iSystemID;
 					pub::Player::GetSystem(iClientID, iSystemID);
 					SendDeathMsg(L"Death: " + wstring(Players.GetActiveCharacterName(iClientID)) + L" was killed", iSystemID, iClientID, 0);
-					AddLog("Exception while formulating death message");
+					AddLog("Exception while formulating death message"); AddExceptionInfoLog();
 				}
 			}
 			else
@@ -776,7 +776,7 @@ void __stdcall ShipDestroyed(DamageList *_dmg, char *szECX, uint iKill)
 		}
 
 		bSupressDeathMsg = false;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 FARPROC fpOldShipDestroyed;
@@ -1110,5 +1110,5 @@ void SpaceObjDestroyed(uint iObject, bool bSolar)
 
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }

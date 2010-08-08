@@ -55,7 +55,6 @@ void __stdcall HkCb_SendChat(uint iClientID, uint iTo, uint iSize, void *pRDL)
 			// adjust chatstyle
 			if(HkIServerImpl::g_bChatAction)
 			{
-				wscSender = L"***" + wscSender;
 				wscText = wscText.substr(4);
 				if(ClientInfo[iClientID].chatStyle == CST_ITALIC)
 					cFormat += 0x01; //Bold text
@@ -109,78 +108,81 @@ void __stdcall HkCb_SendChat(uint iClientID, uint iTo, uint iSize, void *pRDL)
 			else
 				wscTRADataColor = set_wscPMColor; // pm chatcolor
 
-			wstring wscXML = L"<TRA data=\"0x" + wscTRADataSenderColor + wscTRADataFormat + L"\" mask=\"-1\"/><TEXT>" + XMLText(wscSender) + (HkIServerImpl::g_bChatAction ? L" </TEXT>" : L": </TEXT>") + L"<TRA data=\"0x" + wscTRADataColor + wscTRADataFormat + L"\" mask=\"-1\"/><TEXT>" + XMLText(wscText) + L"</TEXT>";
+			wstring wscXML = L"<TRA data=\"0x" + wscTRADataSenderColor + wscTRADataFormat + (HkIServerImpl::g_bChatAction ? L"\" mask=\"-1\"/><TEXT>***" : L"\" mask=\"-1\"/><TEXT>") + XMLText(wscSender) + (HkIServerImpl::g_bChatAction ? L" </TEXT>" : L": </TEXT>") + L"<TRA data=\"0x" + wscTRADataColor + wscTRADataFormat + L"\" mask=\"-1\"/><TEXT>" + XMLText(wscText) + L"</TEXT>";
 			HkFMsg(iClientID, wscXML);
 
 			//AFK Messages
 			if(ClientInfo[iClientID].wscAfkMsg.size())
 			{
 				uint iClientIDTarget = HkGetClientIdFromCharname(wscSender);
-				foreach(ClientInfo[iClientID].iSentIds, uint, idTarget)
+				if(iClientIDTarget != -1)
 				{
-					if((*idTarget)==iClientIDTarget)
+					foreach(ClientInfo[iClientID].iSentIds, uint, idTarget)
 					{
-						return;
+						if((*idTarget)==iClientIDTarget)
+						{
+							return;
+						}
 					}
-				}
-				ClientInfo[iClientID].iSentIds.push_back(iClientIDTarget);
-				wstring wscTo = Players.GetActiveCharacterName(iClientID);
-				wscSender = wscTo;
-				wscTo += L"(AFK)";
+					ClientInfo[iClientID].iSentIds.push_back(iClientIDTarget);
+					wstring wscTo = Players.GetActiveCharacterName(iClientID);
+					wscSender = wscTo;
+					wscTo += L"(AFK)";
 
-				//Format AFK Message
-				if(set_bUserCmdIgnore /*&& ((iTo & 0xFFFF) != 0)*/)
-				{ // check ignores
-					foreach(ClientInfo[iClientIDTarget].lstIgnore, IGNORE_INFO, it)
+					//Format AFK Message
+					if(set_bUserCmdIgnore /*&& ((iTo & 0xFFFF) != 0)*/)
+					{ // check ignores
+						foreach(ClientInfo[iClientIDTarget].lstIgnore, IGNORE_INFO, it)
+						{
+							if(HAS_FLAG(*it, L"p") && (iTo & 0x10000))
+								continue; // no privchat
+							else if(!HAS_FLAG(*it, L"i") && !(ToLower(wscSender).compare(ToLower((*it).wscCharname))))
+								return; // ignored
+							else if(HAS_FLAG(*it, L"i") && (ToLower(wscSender).find(ToLower((*it).wscCharname)) != -1))
+								return; // ignored
+						}
+					}
+					// adjust chatsize
+					switch(ClientInfo[iClientIDTarget].chatSize)
 					{
-						if(HAS_FLAG(*it, L"p") && (iTo & 0x10000))
-							continue; // no privchat
-						else if(!HAS_FLAG(*it, L"i") && !(ToLower(wscSender).compare(ToLower((*it).wscCharname))))
-							return; // ignored
-						else if(HAS_FLAG(*it, L"i") && (ToLower(wscSender).find(ToLower((*it).wscCharname)) != -1))
-							return; // ignored
+					case CS_SMALL:
+						cFormat = 0x90;
+						break;
+
+					case CS_BIG:
+						cFormat = 0x10;
+						break;
+
+					default:
+						cFormat = 0x00;
+						break;
 					}
+					// adjust chatstyle
+					switch(ClientInfo[iClientIDTarget].chatStyle)
+					{
+					case CST_BOLD:
+						cFormat += 0x01;
+						break;
+
+					case CST_ITALIC:
+						cFormat += 0x02;
+						break;
+
+					case CST_UNDERLINE:
+						cFormat += 0x04;
+						break;
+
+					default:
+						cFormat += 0x00;
+						break;
+					}
+					wszFormatBuf[8];
+					swprintf(wszFormatBuf, L"%02X", (long)cFormat);
+					wscTRADataFormat = wszFormatBuf;
+					wscXML = L"<TRA data=\"0x" + wscTRADataSenderColor + wscTRADataFormat + L"\" mask=\"-1\"/><TEXT>" + XMLText(wscTo) + L": </TEXT>" + 
+						L"<TRA data=\"0x19BD3A" + wscTRADataFormat + L"\" mask=\"-1\"/><TEXT>" + XMLText(ClientInfo[iClientID].wscAfkMsg) + L"</TEXT>";
+					HkFMsg(iClientIDTarget, wscXML);
 				}
-				// adjust chatsize
-				switch(ClientInfo[iClientIDTarget].chatSize)
-				{
-				case CS_SMALL:
-					cFormat = 0x90;
-					break;
-
-				case CS_BIG:
-					cFormat = 0x10;
-					break;
-
-				default:
-					cFormat = 0x00;
-					break;
-				}
-				// adjust chatstyle
-				switch(ClientInfo[iClientIDTarget].chatStyle)
-				{
-				case CST_BOLD:
-					cFormat += 0x01;
-					break;
-
-				case CST_ITALIC:
-					cFormat += 0x02;
-					break;
-
-				case CST_UNDERLINE:
-					cFormat += 0x04;
-					break;
-
-				default:
-					cFormat += 0x00;
-					break;
-				}
-				wszFormatBuf[8];
-				swprintf(wszFormatBuf, L"%02X", (long)cFormat);
-				wscTRADataFormat = wszFormatBuf;
-				wscXML = L"<TRA data=\"0x" + wscTRADataSenderColor + wscTRADataFormat + L"\" mask=\"-1\"/><TEXT>" + XMLText(wscTo) + L": </TEXT>" + 
-					L"<TRA data=\"0x19BD3A" + wscTRADataFormat + L"\" mask=\"-1\"/><TEXT>" + XMLText(ClientInfo[iClientID].wscAfkMsg) + L"</TEXT>";
-				HkFMsg(iClientIDTarget, wscXML);
 			}
 		} else {
 			__asm
@@ -195,25 +197,7 @@ void __stdcall HkCb_SendChat(uint iClientID, uint iTo, uint iSize, void *pRDL)
 				call [RCSendChatMsg]
 				popad
 			}
-			//AFK Messages
-			/*if(ClientInfo[iClientID].wscAfkMsg.size())
-			{
-				//PrintUniverseText(L"AFK!");
-				wchar_t wszBuf[1024] = L"";
-				// extract text from rdlReader
-				BinaryRDLReader rdl;
-				uint iRet;
-				rdl.extract_text_from_buffer(wszBuf, sizeof(wszBuf), iRet, (const char*)pRDL, iSize);
-				wstring wscBuf = wszBuf;
-				wstring wscSender = wscBuf.substr(0, wscBuf.length() - HkIServerImpl::g_iTextLen - 2);	
-
-				uint iClientIDTarget = HkGetClientIdFromCharname(wscSender);
-				wstring awayMsg = Players.GetActiveCharacterName(iClientID);
-				awayMsg += L": ";
-				awayMsg += ClientInfo[iClientID].wscAfkMsg;
-				HkMsg(iClientIDTarget, awayMsg);
-			}*/
 		}
 
-	}  catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	}  catch(...) { LOG_EXCEPTION }
 }

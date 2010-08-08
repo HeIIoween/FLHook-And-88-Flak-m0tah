@@ -73,7 +73,7 @@ int __cdecl SpaceObjCreate(unsigned int &iShip, struct pub::SpaceObj::ShipInfo c
 				ed = (EquipDesc*)((char*)ed + sizeof(EquipDesc));
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	//pub::AI::enable_all_maneuvers(iShip);
 
@@ -112,50 +112,8 @@ int __cdecl SpaceObjDock(unsigned int const &iShip, unsigned int const & iDockTa
 			{
 				if(!ClientInfo[iClientID].bCheckedDock)
 				{
-					ClientInfo[iClientID].lstRemCargo.clear();
-					DOCK_RESTRICTION jrFind = DOCK_RESTRICTION(iDockTarget);
-					DOCK_RESTRICTION *jrFound = set_btJRestrict->Find(&jrFind);
-					if(jrFound)
-					{
-						list<CARGO_INFO> lstCargo;
-						bool bPresent = false;
-						HkEnumCargo(ARG_CLIENTID(iClientID), lstCargo, 0);
-						foreach(lstCargo, CARGO_INFO, cargo)
-						{
-							if(cargo->iArchID == jrFound->iArchID) //Item is present
-							{
-								if(jrFound->iCount > 0)
-								{
-									if(cargo->iCount >= jrFound->iCount)
-										bPresent = true;
-								}
-								else if(jrFound->iCount < 0)
-								{
-									if(cargo->iCount >= -jrFound->iCount)
-									{
-										bPresent = true;
-										CARGO_REMOVE cm;
-										cm.iGoodID = cargo->iArchID;
-										cm.iCount = -jrFound->iCount;
-										ClientInfo[iClientID].lstRemCargo.push_back(cm);
-										pub::Player::RemoveCargo(iClientID, cargo->iID, -jrFound->iCount);
-									}
-								}
-								else
-								{
-									if(cargo->bMounted)
-										bPresent = true;
-								}
-								break;
-							}
-						}
-						if(!bPresent)
-						{
-							pub::Player::SendNNMessage(iClientID, pub::GetNicknameId("info_access_denied"));
-							PrintUserCmdText(iClientID, jrFound->wscDeniedMsg);
-							return 0; //block dock
-						}
-					}
+					if(!HkDockingRestrictions(iClientID, iDockTarget))
+						return 0;
 				}
 				else
 					ClientInfo[iClientID].bCheckedDock = false;
@@ -177,7 +135,7 @@ int __cdecl SpaceObjDock(unsigned int const &iShip, unsigned int const & iDockTa
 				}
 			}*/
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	return pub::SpaceObj::Dock(iShip, iDockTarget, iCancel, response);
 }
@@ -238,7 +196,7 @@ bool __cdecl _SpawnItem(void *ecx, void *ret1, void *ret2, uint iShip, uint iDun
 			dm.iObj = id->iSpaceObjID;
 			g_lstDelayedMarks.push_back(dm);
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	return true;
 }
@@ -325,14 +283,14 @@ __declspec(naked) void _SpawnItemOrig()
 unsigned int __cdecl ControllerCreate(char const *szDLLPath, char const *szControllerType, struct pub::Controller::CreateParms const *create, enum pub::Controller::PRIORITY iDunno)
 {
 	uint iControllerID;
-	if(!strcmp(szControllerType, "Mission_13"))
+	if(!memcmp(szControllerType, "Mission_", 8))
 	{
 		iControllerID = ClientInfo[create->iClientID].iControllerID;
 		if(!iControllerID)
 		{
 			iControllerID = pub::Controller::Create(szDLLPath, szControllerType, create, iDunno);
 			ClientInfo[create->iClientID].iControllerID = iControllerID;
-			//ConPrint(L"Create %s %u | %u %u\n", stows(szControllerType).c_str(), iControllerID, create->iID, create->iClientID);
+			ConPrint(L"Create %s %u | %u %u\n", stows(szControllerType).c_str(), iControllerID, create->iID, create->iClientID);
 		}
 	}
 	else
@@ -352,6 +310,6 @@ int __cdecl ControllerSend(unsigned int const &iControllerID, int iMsgType, void
 
 void __cdecl ControllerDestroy(unsigned int iControllerID)
 {
-	ConPrint(L"Destroy %u\n", iControllerID);
+	ConPrint(L"DestroyNormal %u %x\n", iControllerID, *(&iControllerID-1));
 	return pub::Controller::Destroy(iControllerID);
 }

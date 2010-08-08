@@ -49,7 +49,8 @@ TIMER Timers[] =
 	{HkTimerNPCDockHandler,			2500,				0},
 	{HkTimerRepairShip,				250,				0},
 	{HkTimerMarkDelay,				150,				0},
-	{HkTimerSolarDestroyDelay,		150,				0}
+	{HkTimerSolarDestroyDelay,		150,				0},
+	{HkTimerRespawnDelay,			500,				0}
 };
 
 int __stdcall Update(void)
@@ -94,7 +95,14 @@ uint g_iTextLen = 0;
 bool g_bChatAction = false;
 void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdlReader, struct CHAT_ID cIdTo, int iP2)
 {
+	ISERVER_LOG();
+	ISERVER_LOGARG_UI(cId.iID);
+	ISERVER_LOGARG_UI(lP1);
+	ISERVER_LOGARG_UI(cIdTo.iID);
+	ISERVER_LOGARG_I(iP2);
+
 	wchar_t wszBuf[1024] = L"";
+	g_bChatAction = false;
 
 	try {
 		uint iClientID = cId.iID;
@@ -105,6 +113,7 @@ void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdl
 			ClientInfo[iClientID].iBaseEnterTime = (uint)time(0);
 		}
 
+		// Group invite/join/leave
 		if(cIdTo.iID == 0x10004)
 		{
 			g_bInSubmitChat = true;
@@ -119,9 +128,22 @@ void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdl
 		rdl.extract_text_from_buffer(wszBuf, sizeof(wszBuf), iRet1, (const char*)rdlReader, lP1);
 		wstring wscBuf = wszBuf;
 		g_iTextLen = (uint)wscBuf.length();
+		ISERVER_LOGARG_UI(g_iTextLen);
+		ISERVER_LOGARG_WS(wszBuf);
+		
 		//Check for FLServer commands
-		if(!wscBuf.find(L"/u ") || !wscBuf.find(L"/universe ") || !wscBuf.find(L"/s ") || !wscBuf.find(L"/system ") || !wscBuf.find(L"/g ") || !wscBuf.find(L"/group ") || !wscBuf.find(L"/l ") || !wscBuf.find(L"/local ") || !wscBuf.find(L"/leave") || !wscBuf.find(L"/lv") || !wscBuf.find(L"/join ") || !wscBuf.find(L"/j "))
+		if(CmpStrStart(wscBuf, L"/u ") || CmpStrStart(wscBuf, L"/s ") || CmpStrStart(wscBuf, L"/g ") || CmpStrStart(wscBuf, L"/l ") || CmpStrStart(wscBuf, L"/j "))
 			g_iTextLen -= 3;
+		else if(CmpStrStart(wscBuf, L"/lv"))
+			g_iTextLen -= 4;
+		else if(CmpStrStart(wscBuf, L"/join "))
+			g_iTextLen -= 6;
+		else if(CmpStrStart(wscBuf, L"/group ") || CmpStrStart(wscBuf, L"/local ") || CmpStrStart(wscBuf, L"/leave"))
+			g_iTextLen -= 7;
+		else if(CmpStrStart(wscBuf, L"/system "))
+			g_iTextLen -= 8;
+		else if(CmpStrStart(wscBuf, L"/universe "))
+			g_iTextLen -= 10;
 
 		// check for user cmds
 		if(UserCmd_Process(iClientID, wscBuf))
@@ -154,11 +176,8 @@ void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdl
 				cIdTo.iID = 0x00010000;
 		}
 
-		if(!wscBuf.find(L"/me "))
+		if(CmpStrStart(wscBuf, L"/me "))
 			g_bChatAction = true;
-		else
-			g_bChatAction = false;
-
 
 		// process chat event
 		if(set_bSocketActivated) //Only process if sockets enabled
@@ -204,7 +223,7 @@ void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdl
 			if((ToLower(wscBuf)).find(ToLower(*i)) == 0)
 				return;
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	// send
 	g_bInSubmitChat = true;
@@ -313,7 +332,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 			}
 		}
 				
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	g_iClientID = iClientID;
 	//Launch hook, mobile docking stuffs
@@ -321,7 +340,8 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 	{
 		if(ClientInfo[iClientID].lstJumpPath.size()) //Not in same system, follow jump path
 		{
-			pub::SpaceObj::GetLocation(ClientInfo[iClientID].lstJumpPath.front(), g_Vlaunch, g_Mlaunch);
+			uint iDockObj = ClientInfo[iClientID].lstJumpPath.front();
+			pub::SpaceObj::GetLocation(iDockObj, g_Vlaunch, g_Mlaunch);
 			g_Vlaunch.x -= g_Mlaunch.data[0][2]*750;
 			g_Vlaunch.y -= g_Mlaunch.data[1][2]*750;
 			g_Vlaunch.z -= g_Mlaunch.data[2][2]*750;
@@ -334,11 +354,18 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 			g_bInPlayerLaunch = true;
 			Server.PlayerLaunch(iShip, iClientID);
 			g_bInPlayerLaunch = false;
-			uint iShip;
-			pub::Player::GetShip(iClientID, iShip);
-			ClientInfo[iClientID].bPathJump = true;
-			pub::SpaceObj::InstantDock(iShip, ClientInfo[iClientID].lstJumpPath.front(), 1);
-			ClientInfo[iClientID].lstJumpPath.pop_front();
+			if(HkDockingRestrictions(iClientID, iDockObj))
+			{
+				uint iShip;
+				pub::Player::GetShip(iClientID, iShip);
+				ClientInfo[iClientID].bPathJump = true;
+				pub::SpaceObj::InstantDock(iShip, ClientInfo[iClientID].lstJumpPath.front(), 1);
+				ClientInfo[iClientID].lstJumpPath.pop_front();
+			}
+			else //Player cannot dock with object the carrier did, so place them in front of it
+			{
+				ClientInfo[iClientID].lstJumpPath.clear();
+			}
 		}
 		else if(ClientInfo[iClientID].iDockClientID) //same system and carrier still exists
 		{
@@ -488,7 +515,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 					iClientID,
 					HkGetPlayerSystem(iClientID).c_str());
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -501,7 +528,7 @@ void __stdcall FireWeapon(unsigned int iClientID, struct XFireWeaponInfo const &
 	ISERVER_LOGARG_UI(iClientID);
 
 	try {
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.FireWeapon(iClientID, wpn);
 }
@@ -564,7 +591,7 @@ void __stdcall SPMunitionCollision(struct SSPMunitionCollisionInfo const & ci, u
 		pub::SpaceObj::GetType(ci.dwTargetShip, iType);
 		PrintUniverseText(L"type=%u", iType);*/
 
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }	
+	} catch(...) { LOG_EXCEPTION }	
 
 	iDmgTo = iClientIDTarget;
 	Server.SPMunitionCollision(ci, iClientID);
@@ -584,7 +611,7 @@ void __stdcall SPObjUpdate(struct SSPObjUpdateInfo const &ui, unsigned int iClie
 			HkUnCloak(iClientID);
 			ClientInfo[iClientID].bMustSendUncloak = false;
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.SPObjUpdate(ui, iClientID);
 }
@@ -638,7 +665,7 @@ void __stdcall SPObjCollision(struct SSPObjCollisionInfo const &ci, unsigned int
 				pub::SpaceObj::GetHealth(iShip, fHealthBefore, fMaxHealth);
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.SPObjCollision(ci, iClientID);
 
@@ -675,7 +702,7 @@ void __stdcall SPObjCollision(struct SSPObjCollisionInfo const &ci, unsigned int
 				}
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -702,7 +729,7 @@ void __stdcall LaunchComplete(unsigned int iBaseID, unsigned int iShip)
 				iClientID,
 				HkGetBaseNickByID(ClientInfo[iClientID].iLastExitedBaseID).c_str(),
 				HkGetPlayerSystem(iClientID).c_str());
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.LaunchComplete(iBaseID, iShip);
 
@@ -735,7 +762,7 @@ void __stdcall LaunchComplete(unsigned int iBaseID, unsigned int iShip)
 			}
 			pub::Player::MarkObj(iClientID, ClientInfo[iClientID].vMarkedObjs[i], 1);
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -750,6 +777,17 @@ void __stdcall CharacterSelect(struct CHARACTER_ID const & cId, unsigned int iCl
 
 	uint iOldGroupID;
 	try {
+		if(ClientInfo[iClientID].tmCharInfoReqAfterDeath)
+		{
+			mstime tmCall = ClientInfo[iClientID].tmCharInfoReqAfterDeath + set_iRespawnDelay;
+			if(tmCall > timeInMS())
+			{
+				lstRespawnDelay.push_back(RESPAWN_DELAY(iClientID, cId, tmCall));
+				return;
+			}
+			ClientInfo[iClientID].tmCharInfoReqAfterDeath = 0;
+		}
+
 		//group re-add on char change
 		if(set_bInviteOnCharChange)
 		{
@@ -763,7 +801,7 @@ void __stdcall CharacterSelect(struct CHARACTER_ID const & cId, unsigned int iCl
 		{
 			HkNewShipBought(iClientID);
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 	
 	wstring wscCharBefore;
 	try {
@@ -807,7 +845,7 @@ void __stdcall CharacterSelect(struct CHARACTER_ID const & cId, unsigned int iCl
 
 			ClientInfo[iClientID].iShipID = 0;
 
-			ClientInfo[iClientID].bCharInfoReqAfterDeath = false;
+			ClientInfo[iClientID].tmCharInfoReqAfterDeath = 0;
 
 		}
 
@@ -839,7 +877,7 @@ void __stdcall CharacterSelect(struct CHARACTER_ID const & cId, unsigned int iCl
 				wscDir.c_str(),
 				iClientID,
 				pi.wscIP.c_str());
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -961,7 +999,7 @@ void __stdcall BaseEnter(unsigned int iBaseID, unsigned int iClientID)
 				iClientID,
 				HkGetBaseNickByID(iBaseID).c_str(),
 				HkGetPlayerSystem(iClientID).c_str());
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -981,7 +1019,7 @@ void __stdcall BaseExit(unsigned int iBaseID, unsigned int iClientID)
 
 		ClientInfo[iClientID].iBaseEnterTime = 0;
 		ClientInfo[iClientID].iLastExitedBaseID = iBaseID;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.BaseExit(iBaseID, iClientID);
 
@@ -994,7 +1032,7 @@ void __stdcall BaseExit(unsigned int iBaseID, unsigned int iClientID)
 				iClientID,
 				HkGetBaseNickByID(iBaseID).c_str(),
 				HkGetPlayerSystem(iClientID).c_str());
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 /**************************************************************************************************************
 Called when player connects
@@ -1011,7 +1049,7 @@ void __stdcall OnConnect(unsigned int iClientID)
 
 		ClientInfo[iClientID].iConnects++;
 		ClearClientInfo(iClientID);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.OnConnect(iClientID);
 
@@ -1022,7 +1060,7 @@ void __stdcall OnConnect(unsigned int iClientID)
 		ProcessEvent(L"connect id=%d ip=%s", 
 				iClientID,
 				wscIP.c_str());
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -1224,7 +1262,10 @@ void __stdcall DisConnect(unsigned int iClientID, enum EFLConnection p2)
 		bDeathPenaltyOnEnter = ClientInfo[iClientID].bDeathPenaltyOnEnter;
 
 		if(ClientInfo[iClientID].iControllerID)
+		{
+			ConPrint(L"DestroyFLHook %u\n", ClientInfo[iClientID].iControllerID);
 			pub::Controller::Destroy(ClientInfo[iClientID].iControllerID);
+		}
 
 		if(!ClientInfo[iClientID].bDisconnected)
 		{
@@ -1236,7 +1277,7 @@ void __stdcall DisConnect(unsigned int iClientID, enum EFLConnection p2)
 					(wszCharname ? wszCharname : L""), 
 					iClientID);
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.DisConnect(iClientID, p2);
 
@@ -1284,7 +1325,7 @@ void __stdcall DisConnect(unsigned int iClientID, enum EFLConnection p2)
 			HkPenalizeDeath(wszCharname, 0, true);
 		}
 
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -1306,7 +1347,7 @@ void __stdcall TerminateTrade(unsigned int iClientID, int iAccepted)
 			if(ClientInfo[iClientID].iTradePartner)
 				HkSaveChar(ARG_CLIENTID(ClientInfo[iClientID].iTradePartner));
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -1323,7 +1364,7 @@ void __stdcall InitiateTrade(unsigned int iClientID1, unsigned int iClientID2)
 		// save traders client-ids
 		ClientInfo[iClientID1].iTradePartner = iClientID2;
 		ClientInfo[iClientID2].iTradePartner = iClientID1;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.InitiateTrade(iClientID1, iClientID2);
 }
@@ -1342,7 +1383,7 @@ void __stdcall ActivateEquip(unsigned int iClientID, struct XActivateEquip const
 			ClientInfo[iClientID].bCruiseActivated = false; // enginekill enabled
 
 		ClientInfo[iClientID].bEngineKilled = !aq.bActivate;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.ActivateEquip(iClientID, aq);
 }
@@ -1358,7 +1399,7 @@ void __stdcall ActivateCruise(unsigned int iClientID, struct XActivateCruise con
 
 	try {
 		ClientInfo[iClientID].bCruiseActivated = ac.bActivate;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.ActivateCruise(iClientID, ac);
 }
@@ -1374,7 +1415,7 @@ void __stdcall ActivateThrusters(unsigned int iClientID, struct XActivateThruste
 
 	try {
 		ClientInfo[iClientID].bThrusterActivated = at.bActivate;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 	Server.ActivateThrusters(iClientID, at);
 }
 
@@ -1408,7 +1449,7 @@ void __stdcall GFGoodSell(struct SGFGoodSellInfo const &gsi, unsigned int iClien
 				HkKick(ARG_CLIENTID(iClientID));
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.GFGoodSell(gsi, iClientID);
 }
@@ -1442,9 +1483,15 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 			uint iShip = 0;
 			pub::Player::GetShip(iClientID, iShip);
 
-			if(!ClientInfo[iClientID].bCharInfoReqAfterDeath)
+			if(!ClientInfo[iClientID].tmCharInfoReqAfterDeath)
 			{
-				pub::Controller::Destroy(ClientInfo[iClientID].iControllerID);
+				if(ClientInfo[iClientID].iControllerID)
+				{
+					ConPrint(L"DestroyFLHook %u\n", ClientInfo[iClientID].iControllerID);
+					pub::Controller::Destroy(ClientInfo[iClientID].iControllerID);
+					ClientInfo[iClientID].iControllerID = 0;
+				}
+
 				//mobile docking
 				if(ClientInfo[iClientID].bMobileDocked)
 				{
@@ -1577,7 +1624,13 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 			}
 			else //Player respawning
 			{
-				ClientInfo[iClientID].bCharInfoReqAfterDeath = false;
+				/*mstime tmCall = ClientInfo[iClientID].tmCharInfoReqAfterDeath + set_iRespawnDelay;
+				if(tmCall > timeInMS())
+				{
+					lstRespawnDelay.push_back(RESPAWN_DELAY(iClientID, p2, tmCall));
+					return;
+				}
+				ClientInfo[iClientID].tmCharInfoReqAfterDeath = 0;*/
 			}
 
 			ClientInfo[iClientID].iControllerID = 0;
@@ -1589,7 +1642,7 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 			}
 
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 	
 	try {
 //		HkAddConnectLog(iClientID);
@@ -1638,7 +1691,7 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 				HkWriteCharFile(wscPlayerName, wscCharFile);
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -1686,9 +1739,30 @@ void __stdcall JumpInComplete(unsigned int iSystemID, unsigned int iShip)
 		if(ClientInfo[iClientID].lstJumpPath.size()) //player is traveling to carrier
 		{
 			ClientInfo[iClientID].bPathJump = true;
-			pub::SpaceObj::InstantDock(iShip, ClientInfo[iClientID].lstJumpPath.front(), 1);
-			ClientInfo[iClientID].lstJumpPath.pop_front();
-			return;
+			uint iDockObj = ClientInfo[iClientID].lstJumpPath.front();
+			if(HkDockingRestrictions(iClientID, iDockObj))
+			{
+				pub::SpaceObj::InstantDock(iShip, iDockObj, 1);
+				ClientInfo[iClientID].lstJumpPath.pop_front();
+				return;
+			}
+			else //Player cannot dock with object the carrier did, so place them in front of it
+			{
+				ClientInfo[iClientID].lstJumpPath.clear();
+				Vector vBeam;
+				Matrix mBeam;
+				pub::SpaceObj::GetLocation(iDockObj, vBeam, mBeam);
+				vBeam.x -= mBeam.data[0][2]*750;
+				vBeam.y -= mBeam.data[1][2]*750;
+				vBeam.z -= mBeam.data[2][2]*750;
+				mBeam.data[0][0] = -mBeam.data[0][0];
+				mBeam.data[1][0] = -mBeam.data[1][0];
+				mBeam.data[2][0] = -mBeam.data[2][0];
+				mBeam.data[0][2] = -mBeam.data[0][2];
+				mBeam.data[1][2] = -mBeam.data[1][2];
+				mBeam.data[2][2] = -mBeam.data[2][2];
+				HkBeamInSys(ARG_CLIENTID(iClientID), vBeam, mBeam);
+			}
 		}
 		else
 		{
@@ -1815,7 +1889,7 @@ void __stdcall JumpInComplete(unsigned int iSystemID, unsigned int iShip)
 				Players.GetActiveCharacterName(iClientID), 
 				iClientID,
 				HkGetSystemNickByID(iSystemID).c_str());
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -1829,6 +1903,12 @@ void __stdcall SystemSwitchOutComplete(unsigned int iShip, unsigned int iClientI
 	ISERVER_LOGARG_UI(iClientID);
 
 	try {
+		if(ClientInfo[iClientID].bBlockSystemSwitchOut)
+		{
+			ClientInfo[iClientID].bBlockSystemSwitchOut = false;
+			return;
+		}
+
 		//mobile docking
 		if(ClientInfo[iClientID].lstPlayersDocked.size())
 		{
@@ -1848,7 +1928,7 @@ void __stdcall SystemSwitchOutComplete(unsigned int iShip, unsigned int iClientI
 				Players.GetActiveCharacterName(iClientID), 
 				iClientID,
 				HkGetPlayerSystem(iClientID).c_str());
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	//Make player invincible to fix JHs/JGs near mine fields sometimes exploding player while jumping (in jump tunnel)
 	pub::SpaceObj::SetInvincible(iShip, true, true, 0);
@@ -1924,7 +2004,7 @@ void __stdcall Login(struct SLoginInfo const &li, unsigned int iClientID)
 		}
 
 		LoadUserSettings(iClientID);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -1943,7 +2023,7 @@ void __stdcall MineAsteroid(unsigned int p1, class Vector const &vPos, unsigned 
 
 	/*try {
 		PrintUniverseText(L"MineAsteroid %u %u %u %u %u", p1, iLookID, iGoodID, iCount, iClientID);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }*/
+	} catch(...) { LOG_EXCEPTION }*/
 
 	Server.MineAsteroid(p1, vPos, iLookID, iGoodID, iCount, iClientID);
 }
@@ -1958,7 +2038,7 @@ void __stdcall GoTradelane(unsigned int iClientID, struct XGoTradelane const &gt
 
 	try {
 		ClientInfo[iClientID].bTradelane = true;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 	Server.GoTradelane(iClientID, gtl);
 }
 
@@ -1975,7 +2055,7 @@ void __stdcall StopTradelane(unsigned int iClientID, unsigned int p2, unsigned i
 
 	try {
 		ClientInfo[iClientID].bTradelane = false;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.StopTradelane(iClientID, p2, p3, p4);
 }
@@ -2033,7 +2113,7 @@ void __stdcall AddTradeEquip(unsigned int iClientID, struct EquipDesc const &ed)
 				}
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 }
 
@@ -2211,7 +2291,7 @@ void __stdcall LocationEnter(unsigned int p1, unsigned int iClientID)
 	try {
 		// anti base-idle
 		ClientInfo[iClientID].iBaseEnterTime = (uint)time(0);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 /**************************************************************************************************************
@@ -2233,7 +2313,7 @@ void __stdcall LocationExit(unsigned int p1, unsigned int iClientID)
 			HkNewShipBought(iClientID);
 		}
 		ClientInfo[iClientID].iShipID = iShipID;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 void __stdcall LocationInfoRequest(unsigned int p1,unsigned int p2, bool p3)
@@ -2357,7 +2437,7 @@ void __stdcall ReqAddItem(unsigned int p1, char const *p2, int p3, float p4, boo
 				}
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 	
 	Server.ReqAddItem(p1, p2, p3, p4, p5, p6);
 
@@ -2416,7 +2496,7 @@ void __stdcall ReqAddItem(unsigned int p1, char const *p2, int p3, float p4, boo
 
 		// anti base-idle
 		ClientInfo[p6].iBaseEnterTime = (uint)time(0);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 }
 
@@ -2458,14 +2538,14 @@ void __stdcall ReqModifyItem(unsigned short p1, char const *p2, int p3, float p4
 				}
 			}
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.ReqModifyItem(p1, p2, p3, p4, p5, iClientID);
 	
 	try {
 		// anti base-idle
 		ClientInfo[iClientID].iBaseEnterTime = (uint)time(0);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 void __stdcall ReqCargo(class EquipDescList const &edl, unsigned int iClientID)
@@ -2515,7 +2595,7 @@ void __stdcall ReqEquipment(class EquipDescList const &edl, unsigned int iClient
 	try {
 		// anti base-idle
 		ClientInfo[iClientID].iBaseEnterTime = (uint)time(0);
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 void __stdcall ReqHullStatus(float p1, unsigned int iClientID)
@@ -2583,7 +2663,7 @@ void __stdcall RequestCancel(int p1, unsigned int p2, unsigned int p3, unsigned 
 			}
 			ClientInfo[p5].lstRemCargo.clear();
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.RequestCancel(p1, p2, p3, p4, p5);
 }
@@ -2697,54 +2777,12 @@ void __stdcall RequestEvent(int p1, unsigned int p2, unsigned int p3, unsigned i
 			{
 				ClientInfo[p6].iLastSpaceObjDocked = p3;
 			}
-
-			ClientInfo[p6].lstRemCargo.clear();
-			DOCK_RESTRICTION jrFind = DOCK_RESTRICTION(p3);
-			DOCK_RESTRICTION *jrFound = set_btJRestrict->Find(&jrFind);
-			if(jrFound)
-			{
-				list<CARGO_INFO> lstCargo;
-				bool bPresent = false;
-				HkEnumCargo(ARG_CLIENTID(p6), lstCargo, 0);
-				foreach(lstCargo, CARGO_INFO, cargo)
-				{
-					if(cargo->iArchID == jrFound->iArchID) //Item is present
-					{
-						if(jrFound->iCount > 0)
-						{
-							if(cargo->iCount >= jrFound->iCount)
-								bPresent = true;
-						}
-						else if(jrFound->iCount < 0)
-						{
-							if(cargo->iCount >= -jrFound->iCount)
-							{
-								bPresent = true;
-								CARGO_REMOVE cm;
-								cm.iGoodID = cargo->iArchID;
-								cm.iCount = -jrFound->iCount;
-								ClientInfo[p6].lstRemCargo.push_back(cm);
-								pub::Player::RemoveCargo(p6, cargo->iID, -jrFound->iCount);
-							}
-						}
-						else
-						{
-							if(cargo->bMounted)
-								bPresent = true;
-						}
-						break;
-					}
-				}
-				if(!bPresent)
-				{
-					pub::Player::SendNNMessage(p6, pub::GetNicknameId("info_access_denied"));
-					PrintUserCmdText(p6, jrFound->wscDeniedMsg);
-					return; //block dock
-				}
-			}
-			ClientInfo[p6].bCheckedDock = true;
 		}
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+
+		ClientInfo[p6].bCheckedDock = true;
+		if(!HkDockingRestrictions(p6, p3))
+			return;
+	} catch(...) { LOG_EXCEPTION }
 
 	Server.RequestEvent(p1, p2, p3, p4, p5, p6);
 }
@@ -2904,7 +2942,7 @@ void __stdcall SetTarget(unsigned int iClientID, struct XSetTarget const &p2)
 			}
 		}
 		iLastSetTarget = p2.iTargetSpaceID;
-	} catch(...) { AddLog("Exception in %s", __FUNCTION__); }
+	} catch(...) { LOG_EXCEPTION }
 }
 
 void __stdcall SetTradeMoney(unsigned int iClientID, unsigned long p2)

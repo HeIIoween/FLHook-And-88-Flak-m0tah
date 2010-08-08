@@ -53,7 +53,7 @@ PATCH_INFO piContentDLL =
 		{0x6FB358C,		&SpaceObjDock,								4, 0,						false},
 		{0x6FB3614,		&ControllerCreate,							4, 0,						false},
 		//{0x6FB360C,		&ControllerSend,							4, 0,						false},
-		//{0x6FB3610,		&ControllerDestroy,							4, 0,						false},
+		{0x6FB3610,		&ControllerDestroy,							4, 0,						false},
 		//{0x6FB33C4,		&SpaceObjLightFuse,							4, 0,						false},
 		//{0x6FB33C8,		&SpaceObjDestroy,							4, 0,						false},
 		//{0x6FB34D4,		&SolarSpaceObjCreate,						4, 0,						false},
@@ -143,6 +143,9 @@ char *g_FLServerDataPtr;
 _GetShipInspect GetShipInspect;
 _GetIObjRW GetIObjRW;
 _AddCargoDocked AddCargoDocked;
+_GetStarSystem GetStarSystem;
+_SendMessageWrapper SendMessageWrapper;
+_GetShipAndSystem GetShipAndSystem;
 
 list<BASE_INFO> lstBases;
 
@@ -217,7 +220,7 @@ void ClearClientInfo(uint iClientID)
 	ClientInfo[iClientID].iDockClientID = 0;
 	ClientInfo[iClientID].lstJumpPath.clear();
 	ClientInfo[iClientID].bPathJump = false;
-	ClientInfo[iClientID].bCharInfoReqAfterDeath = false;
+	ClientInfo[iClientID].tmCharInfoReqAfterDeath = 0;
 	ClientInfo[iClientID].Vlaunch.x = 0;
 	ClientInfo[iClientID].Vlaunch.y = 0;
 	ClientInfo[iClientID].Vlaunch.z = 0;
@@ -242,6 +245,7 @@ void ClearClientInfo(uint iClientID)
 	ClientInfo[iClientID].bCheckedDock = false;
 	ClientInfo[iClientID].lstRemCargo.clear();
 	ClientInfo[iClientID].iControllerID = 0;
+	ClientInfo[iClientID].bBlockSystemSwitchOut = false;
 }
 
 /**************************************************************************************************************
@@ -341,6 +345,9 @@ bool InitHookExports()
 	GetShipInspect = (_GetShipInspect)SRV_ADDR(ADDR_SRV_GETINSPECT);
 	GetIObjRW = (_GetIObjRW)SRV_ADDR(ADDR_SRV_GETIOBJRW);
 	AddCargoDocked = (_AddCargoDocked)SRV_ADDR(ADDR_SRV_ADDCARGODOCKED);
+	GetStarSystem = (_GetStarSystem)SRV_ADDR(ADDR_SRV_GETSTARSYSTEM);
+	SendMessageWrapper = (_SendMessageWrapper)SRV_ADDR(ADDR_SRV_SENDMESSAGEWRAPPER);
+	GetShipAndSystem = (_GetShipAndSystem)SRV_ADDR(ADDR_SRV_GETSHIPANDSYSTEM);
 
 	// get export that failed with link-lib
 	pClient = GetProcAddress(hModRemoteClient, "Client");
