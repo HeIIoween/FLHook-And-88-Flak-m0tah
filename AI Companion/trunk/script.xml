@@ -1,5 +1,5 @@
 <script>
-<header name="88 Flak Version 1.27 AI Companion RC130 11/17/09" savesafe="true" exclusive="false">
+<header name="88 Flak Version 1.27 RC131 AI Companion 07/30/10" savesafe="true" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -49,38 +49,38 @@ This will not work with normal Freelancer.
 </item>
 </option>
 
-<option id="001" name="1st Wingman? (below for L. Capitals / Stations, front-right for everything else)" savesafe="true">
-<item id="0" name="None">
+<option id="001" name="1st Wingman? (front-right)" savesafe="true">
+<item id="0" name=" None">
 </item>
 <item id="1" name="KittBot (Defender: B)">
 </item>
-<item name="foxBot (Rheinland Gunboat: A-)">
+<item name="foxBot (Rheinland Gunboat: A-) *">
 </item>
 <item name="HowdaDoodeWTF (H.D.WTF's Predator: A-)">
 </item>
-<item name="KillerJaguarBot (Osiris: A)">
+<item name="KillerJaguarBot (Osiris: A) **">
 </item>
 <item name="Outsider's Followers (Liberator: B+)">
 </item>
-<item name="Trickbot (Wolfhound: B)">
+<item name="Trickbot (Wolfhound: B) *">
 </item>
-<item name="SonaBot (Sleeper Ship: A)">
+<item name="SonaBot (Sleeper Ship: A) **">
 </item>
 <item name="Grim's Green (Hammerhead: B+)">
 </item>
 <item name="Dread Pirate Lowsound (Serafina: B)">
 </item>
-<item name="ww2JacobBot (Liberty Dreadnought: A)">
+<item name="ww2JacobBot (Liberty Dreadnought: A) **">
 </item>
-<item name="Wo3dy (Rheinland Battleship: A)">
+<item name="Wo3dy (Rheinland Battleship: A) **">
 </item>
 <item name="foxBot (fox's Diablo: B)">
 </item>
-<item name="foxBot (fox's Heretic: B)">
+<item name="foxBot (fox's Heretic: B) *">
 </item>
-<item name="KittBot (Liberty Cruiser: A-)">
+<item name="KittBot (Liberty Cruiser: A-) *">
 </item>
-<item name="Dread Pirate Lowsound (Kusari Gunboat: A-)">
+<item name="Dread Pirate Lowsound (Kusari Gunboat: A-) *">
 </item>
 <item name="Dread Pirate Lowsound (Nomad Fighter: B+)">
 </item>
@@ -88,17 +88,17 @@ This will not work with normal Freelancer.
 </item>
 <item name="ChipBot (CSV: B+)">
 </item>
-<item name="ChipBot (Depot: A)">
+<item name="ChipBot (Depot: A) **">
 </item>
 <item name="DarkMarauderBot (Dagger: B)">
 </item>
 <item name="Trickbot (Dromedary: B)">
 </item>
-<item name="Wo3dy (Valkyrie: B)">
+<item name="Wo3dy (Valkyrie: B) *">
 </item>
 <item name="ww2JacobBot (Pursuit Legionnaire: B)">
 </item>
-<item name="KittBot (Covenanter: B+)">
+<item name="KittBot (Paladin: B+)">
 </item>
 <item name="M0tahBot (Patriot: B)">
 </item>
@@ -110,15 +110,15 @@ This will not work with normal Freelancer.
 </item>
 <item name="Lonestar (Serafina: B)">
 </item>
-<item name="SSGTSolaBot (Centurion: B)">
+<item name="SSGTSolaBot (Centurion: B) *">
 </item>
 <item name="SSGTSolaBot (Transport: B+)">
 </item>
-<item name="AshBot (Lifeboat: B+)">
+<item name="AshBot (Lifeboat: B+) *">
 </item>
 <item name="NairaX (Pursuit Dagger: B)">
 </item>
-<item name="KillerJaguarBot (Red Dragon: B)">
+<item name="KillerJaguarBot (Red Dragon: B) *">
 </item>
 <item name="StarAvenger (Banshee: B)">
 </item>
@@ -136,7 +136,7 @@ This will not work with normal Freelancer.
 </item>
 <item name="PetBot (Hydra: B+)">
 </item>
-<item name="Why486 (Starstinger: B)">
+<item name="Why486 (Starstinger: B) *">
 </item>
 <item name="Why486 (Hawk: B)">
 </item>
@@ -144,17 +144,17 @@ This will not work with normal Freelancer.
 </item>
 <item name="DarkWraith007 (Drake: B)">
 </item>
-<item name="DarkWraith007 (Eagle: B+)">
+<item name="DarkWraith007 (Eagle: B+) *">
 </item>
 <item name="SojournBot (Rheinland Cruiser: A-)">
 </item>
-<item name="SojournBot (Stiletto: B)">
+<item name="SojournBot (Stiletto: B) *">
 </item>
-<item name="HonkBot (Kusari Battleship: A)">
+<item name="HonkBot (Kusari Battleship: A) **">
 </item>
 <item name="HonkBot (Piranha: B)">
 </item>
-<item name="Borg? (Prison Station: A)">
+<item name="Borg? (Prison Station: A) **">
 </item>
 <item id="101" name="Character-Generated Bot 1">
 </item>
@@ -182,38 +182,38 @@ This will not work with normal Freelancer.
 </item>
 </option>
 
-<option id="002" name="2nd Wingman? (above for L. Capitals / Stations, rear-left for everything else)" savesafe="true">
-<item id="0" name="None">
+<option id="002" name="2nd Wingman? (rear-left)      * = Good Assault Role" savesafe="true">
+<item id="0" name=" None">
 </item>
 <item id="1" name="KittBot (Defender: B)">
 </item>
-<item name="foxBot (Rheinland Gunboat: A-)">
+<item name="foxBot (Rheinland Gunboat: A-) *">
 </item>
 <item name="HowdaDoodeWTF (H.D.WTF's Predator: A-)">
 </item>
-<item name="KillerJaguarBot (Osiris: A)">
+<item name="KillerJaguarBot (Osiris: A) **">
 </item>
 <item name="Outsider's Followers (Liberator: B+)">
 </item>
-<item name="Trickbot (Wolfhound: B)">
+<item name="Trickbot (Wolfhound: B) *">
 </item>
-<item name="SonaBot (Sleeper Ship: A)">
+<item name="SonaBot (Sleeper Ship: A) **">
 </item>
 <item name="Grim's Green (Hammerhead: B+)">
 </item>
 <item name="Dread Pirate Lowsound (Serafina: B)">
 </item>
-<item name="ww2JacobBot (Liberty Dreadnought: A)">
+<item name="ww2JacobBot (Liberty Dreadnought: A) **">
 </item>
-<item name="Wo3dy (Rheinland Battleship: A)">
+<item name="Wo3dy (Rheinland Battleship: A) **">
 </item>
 <item name="foxBot (fox's Diablo: B)">
 </item>
-<item name="foxBot (fox's Heretic: B)">
+<item name="foxBot (fox's Heretic: B) *">
 </item>
-<item name="KittBot (Liberty Cruiser: A-)">
+<item name="KittBot (Liberty Cruiser: A-) *">
 </item>
-<item name="Dread Pirate Lowsound (Kusari Gunboat: A-)">
+<item name="Dread Pirate Lowsound (Kusari Gunboat: A-) *">
 </item>
 <item name="Dread Pirate Lowsound (Nomad Fighter: B+)">
 </item>
@@ -221,17 +221,17 @@ This will not work with normal Freelancer.
 </item>
 <item name="ChipBot (CSV: B+)">
 </item>
-<item name="ChipBot (Depot: A-)">
+<item name="ChipBot (Depot: A) **">
 </item>
 <item name="DarkMarauderBot (Dagger: B)">
 </item>
 <item name="Trickbot (Dromedary: B)">
 </item>
-<item name="Wo3dy (Valkyrie: B)">
+<item name="Wo3dy (Valkyrie: B) *">
 </item>
 <item name="ww2JacobBot (Pursuit Legionnaire: B)">
 </item>
-<item name="KittBot (Covenanter: B+)">
+<item name="KittBot (Paladin: B+)">
 </item>
 <item name="M0tahBot (Patriot: B)">
 </item>
@@ -243,15 +243,15 @@ This will not work with normal Freelancer.
 </item>
 <item name="Lonestar (Serafina: B)">
 </item>
-<item name="SSGTSolaBot (Centurion: B)">
+<item name="SSGTSolaBot (Centurion: B) *">
 </item>
 <item name="SSGTSolaBot (Transport: B+)">
 </item>
-<item name="AshBot (Lifeboat: B+)">
+<item name="AshBot (Lifeboat: B+) *">
 </item>
 <item name="NairaX (Pursuit Dagger: B)">
 </item>
-<item name="KillerJaguarBot (Red Dragon: B)">
+<item name="KillerJaguarBot (Red Dragon: B) *">
 </item>
 <item name="StarAvenger (Banshee: B)">
 </item>
@@ -269,7 +269,7 @@ This will not work with normal Freelancer.
 </item>
 <item name="PetBot (Hydra: B+)">
 </item>
-<item name="Why486 (Starstinger: B)">
+<item name="Why486 (Starstinger: B) *">
 </item>
 <item name="Why486 (Hawk: B)">
 </item>
@@ -277,17 +277,17 @@ This will not work with normal Freelancer.
 </item>
 <item name="DarkWraith007 (Drake: B)">
 </item>
-<item name="DarkWraith007 (Eagle: B+)">
+<item name="DarkWraith007 (Eagle: B+) *">
 </item>
 <item name="SojournBot (Rheinland Cruiser: A-)">
 </item>
-<item name="SojournBot (Stiletto: B)">
+<item name="SojournBot (Stiletto: B) *">
 </item>
-<item name="HonkBot (Kusari Battleship: A)">
+<item name="HonkBot (Kusari Battleship: A) **">
 </item>
 <item name="HonkBot (Piranha: B)">
 </item>
-<item name="Borg? (Prison Station: A)">
+<item name="Borg? (Prison Station: A) **">
 </item>
 <item id="101" name="Character-Generated Bot 1">
 </item>
@@ -315,38 +315,38 @@ This will not work with normal Freelancer.
 </item>
 </option>
 
-<option id="003" name="3rd Wingman? (left for L. Capitals / Stations, front-left for everything else)" savesafe="true">
-<item id="0" name="None">
+<option id="003" name="3rd Wingman? (front-left)     ** = Good Siege Role" savesafe="true">
+<item id="0" name=" None">
 </item>
 <item id="1" name="KittBot (Defender: B)">
 </item>
-<item name="foxBot (Rheinland Gunboat: A-)">
+<item name="foxBot (Rheinland Gunboat: A-) *">
 </item>
 <item name="HowdaDoodeWTF (H.D.WTF's Predator: A-)">
 </item>
-<item name="KillerJaguarBot (Osiris: A)">
+<item name="KillerJaguarBot (Osiris: A) **">
 </item>
 <item name="Outsider's Followers (Liberator: B+)">
 </item>
-<item name="Trickbot (Wolfhound: B)">
+<item name="Trickbot (Wolfhound: B) *">
 </item>
-<item name="SonaBot (Sleeper Ship: A)">
+<item name="SonaBot (Sleeper Ship: A) **">
 </item>
 <item name="Grim's Green (Hammerhead: B+)">
 </item>
 <item name="Dread Pirate Lowsound (Serafina: B)">
 </item>
-<item name="ww2JacobBot (Liberty Dreadnought: A)">
+<item name="ww2JacobBot (Liberty Dreadnought: A) **">
 </item>
-<item name="Wo3dy (Rheinland Battleship: A)">
+<item name="Wo3dy (Rheinland Battleship: A) **">
 </item>
 <item name="foxBot (fox's Diablo: B)">
 </item>
-<item name="foxBot (fox's Heretic: B)">
+<item name="foxBot (fox's Heretic: B) *">
 </item>
-<item name="KittBot (Liberty Cruiser: A-)">
+<item name="KittBot (Liberty Cruiser: A-) *">
 </item>
-<item name="Dread Pirate Lowsound (Kusari Gunboat: A-)">
+<item name="Dread Pirate Lowsound (Kusari Gunboat: A-) *">
 </item>
 <item name="Dread Pirate Lowsound (Nomad Fighter: B+)">
 </item>
@@ -354,17 +354,17 @@ This will not work with normal Freelancer.
 </item>
 <item name="ChipBot (CSV: B+)">
 </item>
-<item name="ChipBot (Depot: A-)">
+<item name="ChipBot (Depot: A) **">
 </item>
 <item name="DarkMarauderBot (Dagger: B)">
 </item>
 <item name="Trickbot (Dromedary: B)">
 </item>
-<item name="Wo3dy (Valkyrie: B)">
+<item name="Wo3dy (Valkyrie: B) *">
 </item>
 <item name="ww2JacobBot (Pursuit Legionnaire: B)">
 </item>
-<item name="KittBot (Covenanter: B+)">
+<item name="KittBot (Paladin: B+)">
 </item>
 <item name="M0tahBot (Patriot: B)">
 </item>
@@ -376,15 +376,15 @@ This will not work with normal Freelancer.
 </item>
 <item name="Lonestar (Serafina: B)">
 </item>
-<item name="SSGTSolaBot (Centurion: B)">
+<item name="SSGTSolaBot (Centurion: B) *">
 </item>
 <item name="SSGTSolaBot (Transport: B+)">
 </item>
-<item name="AshBot (Lifeboat: B+)">
+<item name="AshBot (Lifeboat: B+) *">
 </item>
 <item name="NairaX (Pursuit Dagger: B)">
 </item>
-<item name="KillerJaguarBot (Red Dragon: B)">
+<item name="KillerJaguarBot (Red Dragon: B) *">
 </item>
 <item name="StarAvenger (Banshee: B)">
 </item>
@@ -402,7 +402,7 @@ This will not work with normal Freelancer.
 </item>
 <item name="PetBot (Hydra: B+)">
 </item>
-<item name="Why486 (Starstinger: B)">
+<item name="Why486 (Starstinger: B) *">
 </item>
 <item name="Why486 (Hawk: B)">
 </item>
@@ -410,17 +410,17 @@ This will not work with normal Freelancer.
 </item>
 <item name="DarkWraith007 (Drake: B)">
 </item>
-<item name="DarkWraith007 (Eagle: B+)">
+<item name="DarkWraith007 (Eagle: B+) *">
 </item>
 <item name="SojournBot (Rheinland Cruiser: A-)">
 </item>
-<item name="SojournBot (Stiletto: B)">
+<item name="SojournBot (Stiletto: B) *">
 </item>
-<item name="HonkBot (Kusari Battleship: A)">
+<item name="HonkBot (Kusari Battleship: A) **">
 </item>
 <item name="HonkBot (Piranha: B)">
 </item>
-<item name="Borg? (Prison Station: A)">
+<item name="Borg? (Prison Station: A) **">
 </item>
 <item id="101" name="Character-Generated Bot 1">
 </item>
@@ -448,38 +448,38 @@ This will not work with normal Freelancer.
 </item>
 </option>
 
-<option id="004" name="4th Wingman? (right for L. Capitals / Stations, rear-right for everything else)" savesafe="true">
-<item id="0" name="None">
+<option id="004" name="4th Wingman? (rear-right)" savesafe="true">
+<item id="0" name=" None">
 </item>
 <item id="1" name="KittBot (Defender: B)">
 </item>
-<item name="foxBot (Rheinland Gunboat: A-)">
+<item name="foxBot (Rheinland Gunboat: A-) *">
 </item>
 <item name="HowdaDoodeWTF (H.D.WTF's Predator: A-)">
 </item>
-<item name="KillerJaguarBot (Osiris: A)">
+<item name="KillerJaguarBot (Osiris: A) **">
 </item>
 <item name="Outsider's Followers (Liberator: B+)">
 </item>
-<item name="Trickbot (Wolfhound: B)">
+<item name="Trickbot (Wolfhound: B) *">
 </item>
-<item name="SonaBot (Sleeper Ship: A)">
+<item name="SonaBot (Sleeper Ship: A) **">
 </item>
 <item name="Grim's Green (Hammerhead: B+)">
 </item>
 <item name="Dread Pirate Lowsound (Serafina: B)">
 </item>
-<item name="ww2JacobBot (Liberty Dreadnought: A)">
+<item name="ww2JacobBot (Liberty Dreadnought: A) **">
 </item>
-<item name="Wo3dy (Rheinland Battleship: A)">
+<item name="Wo3dy (Rheinland Battleship: A) **">
 </item>
 <item name="foxBot (fox's Diablo: B)">
 </item>
-<item name="foxBot (fox's Heretic: B)">
+<item name="foxBot (fox's Heretic: B) *">
 </item>
-<item name="KittBot (Liberty Cruiser: A-)">
+<item name="KittBot (Liberty Cruiser: A-) *">
 </item>
-<item name="Dread Pirate Lowsound (Kusari Gunboat: A-)">
+<item name="Dread Pirate Lowsound (Kusari Gunboat: A-) *">
 </item>
 <item name="Dread Pirate Lowsound (Nomad Fighter: B+)">
 </item>
@@ -487,17 +487,17 @@ This will not work with normal Freelancer.
 </item>
 <item name="ChipBot (CSV: B+)">
 </item>
-<item name="ChipBot (Depot: A-)">
+<item name="ChipBot (Depot: A) **">
 </item>
 <item name="DarkMarauderBot (Dagger: B)">
 </item>
 <item name="Trickbot (Dromedary: B)">
 </item>
-<item name="Wo3dy (Valkyrie: B)">
+<item name="Wo3dy (Valkyrie: B) *">
 </item>
 <item name="ww2JacobBot (Pursuit Legionnaire: B)">
 </item>
-<item name="KittBot (Covenanter: B+)">
+<item name="KittBot (Paladin: B+)">
 </item>
 <item name="M0tahBot (Patriot: B)">
 </item>
@@ -509,15 +509,15 @@ This will not work with normal Freelancer.
 </item>
 <item name="Lonestar (Serafina: B)">
 </item>
-<item name="SSGTSolaBot (Centurion: B)">
+<item name="SSGTSolaBot (Centurion: B) *">
 </item>
 <item name="SSGTSolaBot (Transport: B+)">
 </item>
-<item name="AshBot (Lifeboat: B+)">
+<item name="AshBot (Lifeboat: B+) *">
 </item>
 <item name="NairaX (Pursuit Dagger: B)">
 </item>
-<item name="KillerJaguarBot (Red Dragon: B)">
+<item name="KillerJaguarBot (Red Dragon: B) *">
 </item>
 <item name="StarAvenger (Banshee: B)">
 </item>
@@ -535,7 +535,7 @@ This will not work with normal Freelancer.
 </item>
 <item name="PetBot (Hydra: B+)">
 </item>
-<item name="Why486 (Starstinger: B)">
+<item name="Why486 (Starstinger: B) *">
 </item>
 <item name="Why486 (Hawk: B)">
 </item>
@@ -543,17 +543,17 @@ This will not work with normal Freelancer.
 </item>
 <item name="DarkWraith007 (Drake: B)">
 </item>
-<item name="DarkWraith007 (Eagle: B+)">
+<item name="DarkWraith007 (Eagle: B+) *">
 </item>
 <item name="SojournBot (Rheinland Cruiser: A-)">
 </item>
-<item name="SojournBot (Stiletto: B)">
+<item name="SojournBot (Stiletto: B) *">
 </item>
-<item name="HonkBot (Kusari Battleship: A)">
+<item name="HonkBot (Kusari Battleship: A) **">
 </item>
 <item name="HonkBot (Piranha: B)">
 </item>
-<item name="Borg? (Prison Station: A)">
+<item name="Borg? (Prison Station: A) **">
 </item>
 <item id="101" name="Character-Generated Bot 1">
 </item>
@@ -581,16 +581,81 @@ This will not work with normal Freelancer.
 </item>
 </option>
 
-<option id="011" name="What should the bots attack?" savesafe="true">
-<item id="0" name="Only the player's enemies">
+<option id="100" name="    -- AI Companion Orders --" savesafe="true">
+<item id="0" name="">
 </item>
-<item id="1" name="Un-lawful stuff (pirates etc.)">
+</option>
+
+<option id="011" name="1st Wingman Combat Role?" savesafe="true">
+<item id="0" name=" None">
 </item>
-<item name="Lawful stuff (military, shipping, etc.)">
+<item id="1" name="Superiority - Attack Fighters">
 </item>
-<item name="Nothing..?">
+<item name="Assault - Attack Transports / Capitals">
 </item>
-<item name="Everything! YAR!">
+<item name="Raze - Attack Weapons Platforms">
+</item>
+<item name="Siege - Attack Bases">
+</item>
+<item name="Cover - Attack Fighters Near Player Only">
+</item>
+</option>
+
+<option id="012" name="2nd Wingman Combat Role?" savesafe="true">
+<item id="0" name=" None">
+</item>
+<item id="1" name="Superiority - Attack Fighters">
+</item>
+<item name="Assault - Attack Transports / Capitals">
+</item>
+<item name="Raze - Attack Weapons Platforms">
+</item>
+<item name="Siege - Attack Bases">
+</item>
+<item name="Cover - Attack Fighters Near Player Only">
+</item>
+</option>
+
+<option id="013" name="3rd Wingman Combat Role?" savesafe="true">
+<item id="0" name=" None">
+</item>
+<item id="1" name="Superiority - Attack Fighters">
+</item>
+<item name="Assault - Attack Transports / Capitals">
+</item>
+<item name="Raze - Attack Weapons Platforms">
+</item>
+<item name="Siege - Attack Bases">
+</item>
+<item name="Cover - Attack Fighters Near Player Only">
+</item>
+</option>
+
+<option id="014" name="4th Wingman Combat Role?" savesafe="true">
+<item id="0" name=" None">
+</item>
+<item id="1" name="Superiority - Attack Fighters">
+</item>
+<item name="Assault - Attack Transports / Capitals">
+</item>
+<item name="Raze - Attack Weapons Platforms">
+</item>
+<item name="Siege - Attack Bases">
+</item>
+<item name="Cover - Attack Fighters Near Player Only">
+</item>
+</option>
+
+<option id="015" name="Squad Attack Orders?" savesafe="true">
+<item id="0" name="Attack only my enemies">
+</item>
+<item id="1" name="Attack unlawful stuff (pirates etc.)">
+</item>
+<item name="Attack lawful stuff (military, shipping, etc.)">
+</item>
+<item name="Do nothing?">
+</item>
+<item name="Time to paint this town red.">
 </item>
 </option>
 
@@ -623,7 +688,11 @@ This will not work with normal Freelancer.
 <item id="0" name="">
 </item>
 </option>
-<option id="100" name="Bots with B or B+ rating are the most recommended." savesafe="true">
+<option id="100" name="A squad of 2 bots with B or B+ rating is most recommended" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option id="100" name="for a fair and balanced experience." savesafe="true">
 <item id="0" name="">
 </item>
 </option>
@@ -637,6 +706,14 @@ This will not work with normal Freelancer.
 </item>
 </option>
 <option id="100" name="This means you can't use them on any server but your own." savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option id="100" name="If custom bots do not show up properly on other computers," savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option id="100" name="send them your Data\custom_bot_ships.ini file to use." savesafe="true">
 <item id="0" name="">
 </item>
 </option>
@@ -682,6 +759,31 @@ scan_chance = 0.000000 ;Changed by AI Bot FLMM Script
 npc_ship = follow_ship ;Bots activated
 </source>
 </data>
+<data file="Data\custom_bot_ships.ini" method="filereplace" numtimes="-1">
+<dest>
+rotation_inertia = 1000000000000, 62500000000000, 62500000000000
+</dest>
+<source>
+rotation_inertia = 62500000000000, 62500000000000, 62500000000000
+</source>
+</data>
+<data file="Data\custom_bot_ships.ini" method="filereplace" numtimes="-1">
+<dest>
+steering_torque = 12500000000000, 100000000000000, 100000000000000
+</dest>
+<source>
+steering_torque = 100000000000000, 100000000000000, 100000000000000
+</source>
+</data>
+<data file="Data\custom_bot_ships.ini" method="filereplace" numtimes="-1">
+<dest>
+steering_torque = 6250000000000, 50000000000000, 50000000000000
+</dest>
+<source>
+steering_torque = 50000000000000, 50000000000000, 50000000000000
+</source>
+</data>
+;Sych With Options 001 and 003 in Flak
 ;Padding End
 
 ;SLOT 1
@@ -692,7 +794,7 @@ npc_ship = follow_ship ;Bots activated
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -703,7 +805,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -714,7 +816,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HowdaDoodeWTF
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_HowdaDoodeWTF
 </source>
 </data>
@@ -725,7 +827,7 @@ make_class = class_bot_HowdaDoodeWTF
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KillerJaguarBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_KillerJaguarBot
 </source>
 </data>
@@ -744,7 +846,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_OutsidersFollowers
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_OutsidersFollowers
 </source>
 </data>
@@ -755,7 +857,7 @@ make_class = class_bot_OutsidersFollowers
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Trickbot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_Trickbot
 </source>
 </data>
@@ -766,7 +868,7 @@ make_class = class_bot_Trickbot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SonaBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_SonaBot
 </source>
 </data>
@@ -785,7 +887,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_GrimsGreen
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_GrimsGreen
 </source>
 </data>
@@ -796,7 +898,7 @@ make_class = class_bot_GrimsGreen
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -807,7 +909,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ww2JacobBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_ww2JacobBot
 </source>
 </data>
@@ -826,7 +928,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Wo3dy
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_Wo3dy
 </source>
 </data>
@@ -845,7 +947,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -856,7 +958,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -867,7 +969,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -878,7 +980,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -889,7 +991,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -900,7 +1002,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -911,7 +1013,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ChipBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_ChipBot
 </source>
 </data>
@@ -922,7 +1024,7 @@ make_class = class_bot_ChipBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ChipBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_ChipBot
 </source>
 </data>
@@ -941,7 +1043,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkMarauderBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_DarkMarauderBot
 </source>
 </data>
@@ -952,7 +1054,7 @@ make_class = class_bot_DarkMarauderBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Trickbot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_Trickbot
 </source>
 </data>
@@ -963,7 +1065,7 @@ make_class = class_bot_Trickbot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Wo3dy2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_Wo3dy
 </source>
 </data>
@@ -974,7 +1076,7 @@ make_class = class_bot_Wo3dy
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ww2JacobBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_ww2JacobBot
 </source>
 </data>
@@ -985,7 +1087,7 @@ make_class = class_bot_ww2JacobBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -996,7 +1098,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_M0tahBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_M0tahBot
 </source>
 </data>
@@ -1007,7 +1109,7 @@ make_class = class_bot_M0tahBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_M0tahBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_M0tahBot
 </source>
 </data>
@@ -1018,7 +1120,7 @@ make_class = class_bot_M0tahBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SnakePlisskin
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_SnakePlisskin
 </source>
 </data>
@@ -1029,7 +1131,7 @@ make_class = class_bot_SnakePlisskin
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SushiBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_SushiBot
 </source>
 </data>
@@ -1040,7 +1142,7 @@ make_class = class_bot_SushiBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Lonestar
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_Lonestar
 </source>
 </data>
@@ -1051,7 +1153,7 @@ make_class = class_bot_Lonestar
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SSGTSolaBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_SSGTSolaBot
 </source>
 </data>
@@ -1062,7 +1164,7 @@ make_class = class_bot_SSGTSolaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SSGTSolaBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_SSGTSolaBot
 </source>
 </data>
@@ -1073,7 +1175,7 @@ make_class = class_bot_SSGTSolaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_AshBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_AshBot
 </source>
 </data>
@@ -1084,7 +1186,7 @@ make_class = class_bot_AshBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_NairaX
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_NairaX
 </source>
 </data>
@@ -1095,7 +1197,7 @@ make_class = class_bot_NairaX
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KillerJaguarBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_KillerJaguarBot
 </source>
 </data>
@@ -1106,7 +1208,7 @@ make_class = class_bot_KillerJaguarBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StarAvenger
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_StarAvenger
 </source>
 </data>
@@ -1117,7 +1219,7 @@ make_class = class_bot_StarAvenger
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Helloween
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_Helloween
 </source>
 </data>
@@ -1128,7 +1230,7 @@ make_class = class_bot_Helloween
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Helloween2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_Helloween
 </source>
 </data>
@@ -1139,7 +1241,7 @@ make_class = class_bot_Helloween
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StilBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_StilBot
 </source>
 </data>
@@ -1150,7 +1252,7 @@ make_class = class_bot_StilBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StilBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_StilBot
 </source>
 </data>
@@ -1161,7 +1263,7 @@ make_class = class_bot_StilBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DofodBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_DofodBot
 </source>
 </data>
@@ -1172,8 +1274,16 @@ make_class = class_bot_DofodBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DofodBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_DofodBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="001:4">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -1183,7 +1293,7 @@ make_class = class_bot_DofodBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_PetBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_PetBot
 </source>
 </data>
@@ -1194,7 +1304,7 @@ make_class = class_bot_PetBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Why485Bot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_Why485Bot
 </source>
 </data>
@@ -1205,7 +1315,7 @@ make_class = class_bot_Why485Bot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Why485Bot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_Why485Bot
 </source>
 </data>
@@ -1216,7 +1326,7 @@ make_class = class_bot_Why485Bot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SonaBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_SonaBot
 </source>
 </data>
@@ -1227,7 +1337,7 @@ make_class = class_bot_SonaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkWraith007
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_DarkWraith007
 </source>
 </data>
@@ -1238,7 +1348,7 @@ make_class = class_bot_DarkWraith007
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkWraith0072
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_DarkWraith007
 </source>
 </data>
@@ -1249,7 +1359,7 @@ make_class = class_bot_DarkWraith007
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SojournBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_SojournBot
 </source>
 </data>
@@ -1260,7 +1370,7 @@ make_class = class_bot_SojournBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SojournBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_SojournBot
 </source>
 </data>
@@ -1271,8 +1381,16 @@ make_class = class_bot_SojournBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HonkBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_HonkBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="001:50">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -1282,7 +1400,7 @@ make_class = class_bot_HonkBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HonkBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_HonkBot
 </source>
 </data>
@@ -1293,8 +1411,16 @@ make_class = class_bot_HonkBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Borg
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_Borg
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="001:52">
+<dest>
+pos = 250, 20, -385 ;Bot
+</dest>
+<source>
+pos = -250, 500, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -1304,7 +1430,7 @@ make_class = class_bot_Borg
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -1315,7 +1441,7 @@ make_class = class_bot_CustomSlot1
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -1326,7 +1452,7 @@ make_class = class_bot_CustomSlot2
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -1337,7 +1463,7 @@ make_class = class_bot_CustomSlot3
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot1
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -1348,7 +1474,7 @@ make_class = class_bot_CustomSlot4
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -1359,7 +1485,7 @@ make_class = class_bot_CustomSlot1
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -1370,7 +1496,7 @@ make_class = class_bot_CustomSlot2
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -1381,7 +1507,7 @@ make_class = class_bot_CustomSlot3
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -1392,7 +1518,7 @@ make_class = class_bot_CustomSlot4
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -1411,7 +1537,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -1430,7 +1556,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -1449,7 +1575,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot1
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -1470,7 +1596,7 @@ pos = -250, 500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -1481,7 +1607,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -1492,7 +1618,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HowdaDoodeWTF
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_HowdaDoodeWTF
 </source>
 </data>
@@ -1503,7 +1629,7 @@ make_class = class_bot_HowdaDoodeWTF
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KillerJaguarBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_KillerJaguarBot
 </source>
 </data>
@@ -1522,7 +1648,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_OutsidersFollowers
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_OutsidersFollowers
 </source>
 </data>
@@ -1533,7 +1659,7 @@ make_class = class_bot_OutsidersFollowers
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Trickbot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_Trickbot
 </source>
 </data>
@@ -1544,7 +1670,7 @@ make_class = class_bot_Trickbot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SonaBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_SonaBot
 </source>
 </data>
@@ -1563,7 +1689,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_GrimsGreen
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_GrimsGreen
 </source>
 </data>
@@ -1574,7 +1700,7 @@ make_class = class_bot_GrimsGreen
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -1585,7 +1711,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ww2JacobBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_ww2JacobBot
 </source>
 </data>
@@ -1604,7 +1730,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Wo3dy
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_Wo3dy
 </source>
 </data>
@@ -1623,7 +1749,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -1634,7 +1760,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -1645,7 +1771,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -1656,7 +1782,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -1667,7 +1793,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -1678,7 +1804,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -1689,7 +1815,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ChipBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_ChipBot
 </source>
 </data>
@@ -1700,7 +1826,7 @@ make_class = class_bot_ChipBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ChipBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_ChipBot
 </source>
 </data>
@@ -1719,7 +1845,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkMarauderBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_DarkMarauderBot
 </source>
 </data>
@@ -1730,7 +1856,7 @@ make_class = class_bot_DarkMarauderBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Trickbot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_Trickbot
 </source>
 </data>
@@ -1741,7 +1867,7 @@ make_class = class_bot_Trickbot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Wo3dy2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_Wo3dy
 </source>
 </data>
@@ -1752,7 +1878,7 @@ make_class = class_bot_Wo3dy
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ww2JacobBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_ww2JacobBot
 </source>
 </data>
@@ -1763,7 +1889,7 @@ make_class = class_bot_ww2JacobBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -1774,7 +1900,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_M0tahBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_M0tahBot
 </source>
 </data>
@@ -1785,7 +1911,7 @@ make_class = class_bot_M0tahBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_M0tahBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_M0tahBot
 </source>
 </data>
@@ -1796,7 +1922,7 @@ make_class = class_bot_M0tahBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SnakePlisskin
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_SnakePlisskin
 </source>
 </data>
@@ -1807,7 +1933,7 @@ make_class = class_bot_SnakePlisskin
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SushiBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_SushiBot
 </source>
 </data>
@@ -1818,7 +1944,7 @@ make_class = class_bot_SushiBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Lonestar
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_Lonestar
 </source>
 </data>
@@ -1829,7 +1955,7 @@ make_class = class_bot_Lonestar
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SSGTSolaBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_SSGTSolaBot
 </source>
 </data>
@@ -1840,7 +1966,7 @@ make_class = class_bot_SSGTSolaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SSGTSolaBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_SSGTSolaBot
 </source>
 </data>
@@ -1851,7 +1977,7 @@ make_class = class_bot_SSGTSolaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_AshBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_AshBot
 </source>
 </data>
@@ -1862,7 +1988,7 @@ make_class = class_bot_AshBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_NairaX
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_NairaX
 </source>
 </data>
@@ -1873,7 +1999,7 @@ make_class = class_bot_NairaX
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KillerJaguarBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_KillerJaguarBot
 </source>
 </data>
@@ -1884,7 +2010,7 @@ make_class = class_bot_KillerJaguarBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StarAvenger
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_StarAvenger
 </source>
 </data>
@@ -1895,7 +2021,7 @@ make_class = class_bot_StarAvenger
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Helloween
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_Helloween
 </source>
 </data>
@@ -1906,7 +2032,7 @@ make_class = class_bot_Helloween
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Helloween2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_Helloween
 </source>
 </data>
@@ -1917,7 +2043,7 @@ make_class = class_bot_Helloween
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StilBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_StilBot
 </source>
 </data>
@@ -1928,7 +2054,7 @@ make_class = class_bot_StilBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StilBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_StilBot
 </source>
 </data>
@@ -1939,7 +2065,7 @@ make_class = class_bot_StilBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DofodBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_DofodBot
 </source>
 </data>
@@ -1950,8 +2076,16 @@ make_class = class_bot_DofodBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DofodBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_DofodBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="002:4">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -1961,7 +2095,7 @@ make_class = class_bot_DofodBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_PetBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_PetBot
 </source>
 </data>
@@ -1972,7 +2106,7 @@ make_class = class_bot_PetBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Why485Bot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_Why485Bot
 </source>
 </data>
@@ -1983,7 +2117,7 @@ make_class = class_bot_Why485Bot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Why485Bot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_Why485Bot
 </source>
 </data>
@@ -1994,7 +2128,7 @@ make_class = class_bot_Why485Bot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SonaBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_SonaBot
 </source>
 </data>
@@ -2005,7 +2139,7 @@ make_class = class_bot_SonaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkWraith007
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_DarkWraith007
 </source>
 </data>
@@ -2016,7 +2150,7 @@ make_class = class_bot_DarkWraith007
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkWraith0072
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_DarkWraith007
 </source>
 </data>
@@ -2027,7 +2161,7 @@ make_class = class_bot_DarkWraith007
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SojournBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_SojournBot
 </source>
 </data>
@@ -2038,7 +2172,7 @@ make_class = class_bot_SojournBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SojournBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_SojournBot
 </source>
 </data>
@@ -2049,8 +2183,16 @@ make_class = class_bot_SojournBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HonkBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_HonkBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="002:50">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -2060,7 +2202,7 @@ make_class = class_bot_HonkBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HonkBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_HonkBot
 </source>
 </data>
@@ -2071,8 +2213,16 @@ make_class = class_bot_HonkBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Borg
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_Borg
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="002:52">
+<dest>
+pos = -250, 10, 385 ;Bot
+</dest>
+<source>
+pos = 250, -500, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -2082,7 +2232,7 @@ make_class = class_bot_Borg
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -2093,7 +2243,7 @@ make_class = class_bot_CustomSlot1
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -2104,7 +2254,7 @@ make_class = class_bot_CustomSlot2
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -2115,7 +2265,7 @@ make_class = class_bot_CustomSlot3
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot2
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -2126,7 +2276,7 @@ make_class = class_bot_CustomSlot4
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -2137,7 +2287,7 @@ make_class = class_bot_CustomSlot1
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -2148,7 +2298,7 @@ make_class = class_bot_CustomSlot2
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -2159,7 +2309,7 @@ make_class = class_bot_CustomSlot3
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -2170,7 +2320,7 @@ make_class = class_bot_CustomSlot4
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -2189,7 +2339,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -2208,7 +2358,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -2227,7 +2377,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot2
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -2248,7 +2398,7 @@ pos = 250, -500, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -2259,7 +2409,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -2270,7 +2420,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HowdaDoodeWTF
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_HowdaDoodeWTF
 </source>
 </data>
@@ -2281,7 +2431,7 @@ make_class = class_bot_HowdaDoodeWTF
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KillerJaguarBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_KillerJaguarBot
 </source>
 </data>
@@ -2300,7 +2450,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_OutsidersFollowers
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_OutsidersFollowers
 </source>
 </data>
@@ -2311,7 +2461,7 @@ make_class = class_bot_OutsidersFollowers
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Trickbot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_Trickbot
 </source>
 </data>
@@ -2322,7 +2472,7 @@ make_class = class_bot_Trickbot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SonaBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_SonaBot
 </source>
 </data>
@@ -2341,7 +2491,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_GrimsGreen
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_GrimsGreen
 </source>
 </data>
@@ -2352,7 +2502,7 @@ make_class = class_bot_GrimsGreen
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -2363,7 +2513,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ww2JacobBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_ww2JacobBot
 </source>
 </data>
@@ -2382,7 +2532,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Wo3dy
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_Wo3dy
 </source>
 </data>
@@ -2401,7 +2551,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -2412,7 +2562,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -2423,7 +2573,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -2434,7 +2584,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -2445,7 +2595,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -2456,7 +2606,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -2467,7 +2617,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ChipBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_ChipBot
 </source>
 </data>
@@ -2478,7 +2628,7 @@ make_class = class_bot_ChipBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ChipBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_ChipBot
 </source>
 </data>
@@ -2497,7 +2647,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkMarauderBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_DarkMarauderBot
 </source>
 </data>
@@ -2508,7 +2658,7 @@ make_class = class_bot_DarkMarauderBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Trickbot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_Trickbot
 </source>
 </data>
@@ -2519,7 +2669,7 @@ make_class = class_bot_Trickbot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Wo3dy2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_Wo3dy
 </source>
 </data>
@@ -2530,7 +2680,7 @@ make_class = class_bot_Wo3dy
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ww2JacobBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_ww2JacobBot
 </source>
 </data>
@@ -2541,7 +2691,7 @@ make_class = class_bot_ww2JacobBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -2552,7 +2702,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_M0tahBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_M0tahBot
 </source>
 </data>
@@ -2563,7 +2713,7 @@ make_class = class_bot_M0tahBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_M0tahBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_M0tahBot
 </source>
 </data>
@@ -2574,7 +2724,7 @@ make_class = class_bot_M0tahBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SnakePlisskin
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_SnakePlisskin
 </source>
 </data>
@@ -2585,7 +2735,7 @@ make_class = class_bot_SnakePlisskin
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SushiBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_SushiBot
 </source>
 </data>
@@ -2596,7 +2746,7 @@ make_class = class_bot_SushiBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Lonestar
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_Lonestar
 </source>
 </data>
@@ -2607,7 +2757,7 @@ make_class = class_bot_Lonestar
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SSGTSolaBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_SSGTSolaBot
 </source>
 </data>
@@ -2618,7 +2768,7 @@ make_class = class_bot_SSGTSolaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SSGTSolaBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_SSGTSolaBot
 </source>
 </data>
@@ -2629,7 +2779,7 @@ make_class = class_bot_SSGTSolaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_AshBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_AshBot
 </source>
 </data>
@@ -2640,7 +2790,7 @@ make_class = class_bot_AshBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_NairaX
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_NairaX
 </source>
 </data>
@@ -2651,7 +2801,7 @@ make_class = class_bot_NairaX
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KillerJaguarBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_KillerJaguarBot
 </source>
 </data>
@@ -2662,7 +2812,7 @@ make_class = class_bot_KillerJaguarBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StarAvenger
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_StarAvenger
 </source>
 </data>
@@ -2673,7 +2823,7 @@ make_class = class_bot_StarAvenger
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Helloween
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_Helloween
 </source>
 </data>
@@ -2684,7 +2834,7 @@ make_class = class_bot_Helloween
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Helloween2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_Helloween
 </source>
 </data>
@@ -2695,7 +2845,7 @@ make_class = class_bot_Helloween
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StilBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_StilBot
 </source>
 </data>
@@ -2706,7 +2856,7 @@ make_class = class_bot_StilBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StilBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_StilBot
 </source>
 </data>
@@ -2717,7 +2867,7 @@ make_class = class_bot_StilBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DofodBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_DofodBot
 </source>
 </data>
@@ -2728,8 +2878,16 @@ make_class = class_bot_DofodBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DofodBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_DofodBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="003:4">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -2739,7 +2897,7 @@ make_class = class_bot_DofodBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_PetBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_PetBot
 </source>
 </data>
@@ -2750,7 +2908,7 @@ make_class = class_bot_PetBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Why485Bot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_Why485Bot
 </source>
 </data>
@@ -2761,7 +2919,7 @@ make_class = class_bot_Why485Bot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Why485Bot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_Why485Bot
 </source>
 </data>
@@ -2772,7 +2930,7 @@ make_class = class_bot_Why485Bot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SonaBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_SonaBot
 </source>
 </data>
@@ -2783,7 +2941,7 @@ make_class = class_bot_SonaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkWraith007
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_DarkWraith007
 </source>
 </data>
@@ -2794,7 +2952,7 @@ make_class = class_bot_DarkWraith007
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkWraith0072
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_DarkWraith007
 </source>
 </data>
@@ -2805,7 +2963,7 @@ make_class = class_bot_DarkWraith007
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SojournBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_SojournBot
 </source>
 </data>
@@ -2816,7 +2974,7 @@ make_class = class_bot_SojournBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SojournBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_SojournBot
 </source>
 </data>
@@ -2827,8 +2985,16 @@ make_class = class_bot_SojournBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HonkBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_HonkBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="003:50">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -2838,7 +3004,7 @@ make_class = class_bot_HonkBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HonkBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_HonkBot
 </source>
 </data>
@@ -2849,8 +3015,16 @@ make_class = class_bot_HonkBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Borg
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_Borg
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="003:52">
+<dest>
+pos = -270, -40, -275 ;Bot
+</dest>
+<source>
+pos = -500, -250, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -2860,7 +3034,7 @@ make_class = class_bot_Borg
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -2871,7 +3045,7 @@ make_class = class_bot_CustomSlot1
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -2882,7 +3056,7 @@ make_class = class_bot_CustomSlot2
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -2893,7 +3067,7 @@ make_class = class_bot_CustomSlot3
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot3
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -2904,7 +3078,7 @@ make_class = class_bot_CustomSlot4
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -2915,7 +3089,7 @@ make_class = class_bot_CustomSlot1
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -2926,7 +3100,7 @@ make_class = class_bot_CustomSlot2
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -2937,7 +3111,7 @@ make_class = class_bot_CustomSlot3
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -2948,7 +3122,7 @@ make_class = class_bot_CustomSlot4
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -2967,7 +3141,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -2986,7 +3160,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -3005,7 +3179,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot3
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -3026,7 +3200,7 @@ pos = -500, -250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -3037,7 +3211,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -3048,7 +3222,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HowdaDoodeWTF
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_HowdaDoodeWTF
 </source>
 </data>
@@ -3059,7 +3233,7 @@ make_class = class_bot_HowdaDoodeWTF
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KillerJaguarBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_KillerJaguarBot
 </source>
 </data>
@@ -3078,7 +3252,7 @@ pos = 500, 250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_OutsidersFollowers
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_OutsidersFollowers
 </source>
 </data>
@@ -3089,7 +3263,7 @@ make_class = class_bot_OutsidersFollowers
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Trickbot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_Trickbot
 </source>
 </data>
@@ -3100,7 +3274,7 @@ make_class = class_bot_Trickbot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SonaBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_SonaBot
 </source>
 </data>
@@ -3119,7 +3293,7 @@ pos = 500, 250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_GrimsGreen
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_GrimsGreen
 </source>
 </data>
@@ -3130,7 +3304,7 @@ make_class = class_bot_GrimsGreen
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -3141,7 +3315,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ww2JacobBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_ww2JacobBot
 </source>
 </data>
@@ -3160,7 +3334,7 @@ pos = 500, 250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Wo3dy
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_Wo3dy
 </source>
 </data>
@@ -3179,7 +3353,7 @@ pos = 500, 250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -3190,7 +3364,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -3201,7 +3375,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -3212,7 +3386,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -3223,7 +3397,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DreadPirateLowsound3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_DreadPirateLowsound
 </source>
 </data>
@@ -3234,7 +3408,7 @@ make_class = class_bot_DreadPirateLowsound
 </dest>
 <source>
 ship_by_class = 1, 1, sc_foxBot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_foxBot
 </source>
 </data>
@@ -3245,7 +3419,7 @@ make_class = class_bot_foxBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ChipBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_ChipBot
 </source>
 </data>
@@ -3256,7 +3430,7 @@ make_class = class_bot_ChipBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ChipBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_ChipBot
 </source>
 </data>
@@ -3275,7 +3449,7 @@ pos = 500, 250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkMarauderBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_DarkMarauderBot
 </source>
 </data>
@@ -3286,7 +3460,7 @@ make_class = class_bot_DarkMarauderBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Trickbot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_Trickbot
 </source>
 </data>
@@ -3297,7 +3471,7 @@ make_class = class_bot_Trickbot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Wo3dy2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_Wo3dy
 </source>
 </data>
@@ -3308,7 +3482,7 @@ make_class = class_bot_Wo3dy
 </dest>
 <source>
 ship_by_class = 1, 1, sc_ww2JacobBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_ww2JacobBot
 </source>
 </data>
@@ -3319,7 +3493,7 @@ make_class = class_bot_ww2JacobBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KittBot3
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_KittBot
 </source>
 </data>
@@ -3330,7 +3504,7 @@ make_class = class_bot_KittBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_M0tahBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_M0tahBot
 </source>
 </data>
@@ -3341,7 +3515,7 @@ make_class = class_bot_M0tahBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_M0tahBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_M0tahBot
 </source>
 </data>
@@ -3352,7 +3526,7 @@ make_class = class_bot_M0tahBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SnakePlisskin
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_SnakePlisskin
 </source>
 </data>
@@ -3363,7 +3537,7 @@ make_class = class_bot_SnakePlisskin
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SushiBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_SushiBot
 </source>
 </data>
@@ -3374,7 +3548,7 @@ make_class = class_bot_SushiBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Lonestar
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_Lonestar
 </source>
 </data>
@@ -3385,7 +3559,7 @@ make_class = class_bot_Lonestar
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SSGTSolaBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_SSGTSolaBot
 </source>
 </data>
@@ -3396,7 +3570,7 @@ make_class = class_bot_SSGTSolaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SSGTSolaBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_SSGTSolaBot
 </source>
 </data>
@@ -3407,7 +3581,7 @@ make_class = class_bot_SSGTSolaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_AshBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_AshBot
 </source>
 </data>
@@ -3418,7 +3592,7 @@ make_class = class_bot_AshBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_NairaX
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_NairaX
 </source>
 </data>
@@ -3429,7 +3603,7 @@ make_class = class_bot_NairaX
 </dest>
 <source>
 ship_by_class = 1, 1, sc_KillerJaguarBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_KillerJaguarBot
 </source>
 </data>
@@ -3440,7 +3614,7 @@ make_class = class_bot_KillerJaguarBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StarAvenger
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_StarAvenger
 </source>
 </data>
@@ -3451,7 +3625,7 @@ make_class = class_bot_StarAvenger
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Helloween
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_Helloween
 </source>
 </data>
@@ -3462,7 +3636,7 @@ make_class = class_bot_Helloween
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Helloween2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_Helloween
 </source>
 </data>
@@ -3473,7 +3647,7 @@ make_class = class_bot_Helloween
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StilBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_StilBot
 </source>
 </data>
@@ -3484,7 +3658,7 @@ make_class = class_bot_StilBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_StilBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_StilBot
 </source>
 </data>
@@ -3495,7 +3669,7 @@ make_class = class_bot_StilBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DofodBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_DofodBot
 </source>
 </data>
@@ -3506,8 +3680,16 @@ make_class = class_bot_DofodBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DofodBot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_DofodBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="004:4">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -3517,7 +3699,7 @@ make_class = class_bot_DofodBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_PetBot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_PetBot
 </source>
 </data>
@@ -3528,7 +3710,7 @@ make_class = class_bot_PetBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Why485Bot
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_Why485Bot
 </source>
 </data>
@@ -3539,7 +3721,7 @@ make_class = class_bot_Why485Bot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Why485Bot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_Why485Bot
 </source>
 </data>
@@ -3550,7 +3732,7 @@ make_class = class_bot_Why485Bot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SonaBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_SonaBot
 </source>
 </data>
@@ -3561,7 +3743,7 @@ make_class = class_bot_SonaBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkWraith007
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_DarkWraith007
 </source>
 </data>
@@ -3572,7 +3754,7 @@ make_class = class_bot_DarkWraith007
 </dest>
 <source>
 ship_by_class = 1, 1, sc_DarkWraith0072
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_DarkWraith007
 </source>
 </data>
@@ -3583,7 +3765,7 @@ make_class = class_bot_DarkWraith007
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SojournBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_SojournBot
 </source>
 </data>
@@ -3594,7 +3776,7 @@ make_class = class_bot_SojournBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_SojournBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_SojournBot
 </source>
 </data>
@@ -3605,8 +3787,16 @@ make_class = class_bot_SojournBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HonkBot
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_HonkBot
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="004:50">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -3616,7 +3806,7 @@ make_class = class_bot_HonkBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_HonkBot2
-pilot_job = wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_HonkBot
 </source>
 </data>
@@ -3627,8 +3817,16 @@ make_class = class_bot_HonkBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_Borg
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_Borg
+</source>
+</data>
+<data file="Data\Missions\formations.ini" method="filereplace" numtimes="-1" options="004:52">
+<dest>
+pos = 270, -30, 275 ;Bot
+</dest>
+<source>
+pos = 500, 250, 0 ;LCapitalBot
 </source>
 </data>
 
@@ -3638,7 +3836,7 @@ make_class = class_bot_Borg
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -3649,7 +3847,7 @@ make_class = class_bot_CustomSlot1
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -3660,7 +3858,7 @@ make_class = class_bot_CustomSlot2
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -3671,7 +3869,7 @@ make_class = class_bot_CustomSlot3
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_fighter_af_job ;BotSlot4
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -3682,7 +3880,7 @@ make_class = class_bot_CustomSlot4
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -3693,7 +3891,7 @@ make_class = class_bot_CustomSlot1
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -3704,7 +3902,7 @@ make_class = class_bot_CustomSlot2
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -3715,7 +3913,7 @@ make_class = class_bot_CustomSlot3
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -3726,7 +3924,7 @@ make_class = class_bot_CustomSlot4
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot1
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_CustomSlot1
 </source>
 </data>
@@ -3745,7 +3943,7 @@ pos = 500, 250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot2
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_CustomSlot2
 </source>
 </data>
@@ -3764,7 +3962,7 @@ pos = 500, 250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot3
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_CustomSlot3
 </source>
 </data>
@@ -3783,7 +3981,7 @@ pos = 500, 250, 0 ;LCapitalBot
 </dest>
 <source>
 ship_by_class = 1, 1, sc_CustomSlot4
-pilot_job = capital_wingman_job
+pilot_job = wingman_capital_af_job ;BotSlot4
 make_class = class_bot_CustomSlot4
 </source>
 </data>
@@ -3798,7 +3996,267 @@ pos = 500, 250, 0 ;LCapitalBot
 
 ;REST OF STUFF
 
-<data file="Data\initialworld.ini" method="filereplace" numtimes="-1" options="011:1">
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="011:2">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot1
+</dest>
+<source>
+pilot_job = wingman_fighter_ac_job ;BotSlot1
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="011:2">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot1
+</dest>
+<source>
+pilot_job = wingman_capital_ac_job ;BotSlot1
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="011:3">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot1
+</dest>
+<source>
+pilot_job = wingman_companion_raze_job ;BotSlot1
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="011:3">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot1
+</dest>
+<source>
+pilot_job = wingman_companion_raze_job ;BotSlot1
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="011:4">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot1
+</dest>
+<source>
+pilot_job = wingman_companion_siege_job ;BotSlot1
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="011:4">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot1
+</dest>
+<source>
+pilot_job = wingman_companion_siege_job ;BotSlot1
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="011:5">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot1
+</dest>
+<source>
+pilot_job = wingman_companion_cover_job ;BotSlot1
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="011:5">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot1
+</dest>
+<source>
+pilot_job = wingman_companion_cover_job ;BotSlot1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="012:2">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot2
+</dest>
+<source>
+pilot_job = wingman_fighter_ac_job ;BotSlot2
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="012:2">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot2
+</dest>
+<source>
+pilot_job = wingman_capital_ac_job ;BotSlot2
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="012:3">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot2
+</dest>
+<source>
+pilot_job = wingman_companion_raze_job ;BotSlot2
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="012:3">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot2
+</dest>
+<source>
+pilot_job = wingman_companion_raze_job ;BotSlot2
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="012:4">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot2
+</dest>
+<source>
+pilot_job = wingman_companion_siege_job ;BotSlot2
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="012:4">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot2
+</dest>
+<source>
+pilot_job = wingman_companion_siege_job ;BotSlot2
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="012:5">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot2
+</dest>
+<source>
+pilot_job = wingman_companion_cover_job ;BotSlot2
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="012:5">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot2
+</dest>
+<source>
+pilot_job = wingman_companion_cover_job ;BotSlot2
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="013:2">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot3
+</dest>
+<source>
+pilot_job = wingman_fighter_ac_job ;BotSlot3
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="013:2">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot3
+</dest>
+<source>
+pilot_job = wingman_capital_ac_job ;BotSlot3
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="013:3">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot3
+</dest>
+<source>
+pilot_job = wingman_companion_raze_job ;BotSlot3
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="013:3">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot3
+</dest>
+<source>
+pilot_job = wingman_companion_raze_job ;BotSlot3
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="013:4">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot3
+</dest>
+<source>
+pilot_job = wingman_companion_siege_job ;BotSlot3
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="013:4">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot3
+</dest>
+<source>
+pilot_job = wingman_companion_siege_job ;BotSlot3
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="013:5">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot3
+</dest>
+<source>
+pilot_job = wingman_companion_cover_job ;BotSlot3
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="013:5">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot3
+</dest>
+<source>
+pilot_job = wingman_companion_cover_job ;BotSlot3
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="014:2">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot4
+</dest>
+<source>
+pilot_job = wingman_fighter_ac_job ;BotSlot4
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="014:2">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot4
+</dest>
+<source>
+pilot_job = wingman_capital_ac_job ;BotSlot4
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="014:3">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot4
+</dest>
+<source>
+pilot_job = wingman_companion_raze_job ;BotSlot4
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="014:3">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot4
+</dest>
+<source>
+pilot_job = wingman_companion_raze_job ;BotSlot4
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="014:4">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot4
+</dest>
+<source>
+pilot_job = wingman_companion_siege_job ;BotSlot4
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="014:4">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot4
+</dest>
+<source>
+pilot_job = wingman_companion_siege_job ;BotSlot4
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="014:5">
+<dest>
+pilot_job = wingman_fighter_af_job ;BotSlot4
+</dest>
+<source>
+pilot_job = wingman_companion_cover_job ;BotSlot4
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_bot.ini" method="filereplace" numtimes="-1" options="014:5">
+<dest>
+pilot_job = wingman_capital_af_job ;BotSlot4
+</dest>
+<source>
+pilot_job = wingman_companion_cover_job ;BotSlot4
+</source>
+</data>
+
+<data file="Data\initialworld.ini" method="filereplace" numtimes="-1" options="015:1">
 <dest>
 rep = 0.60, li_n_grp
 rep = 0.60, li_lsf_grp
@@ -3972,7 +4430,7 @@ rep = 0.60, DreadPirateLowsound_grp
 rep = 0.60, HowdaDoodeWTF_grp
 </source>
 </data>
-<data file="Data\initialworld.ini" method="filereplace" numtimes="-1" options="011:2">
+<data file="Data\initialworld.ini" method="filereplace" numtimes="-1" options="015:2">
 <dest>
 rep = 0.60, li_n_grp
 rep = 0.60, li_lsf_grp
@@ -4146,7 +4604,7 @@ rep = 0.60, DreadPirateLowsound_grp
 rep = 0.60, HowdaDoodeWTF_grp
 </source>
 </data>
-<data file="Data\initialworld.ini" method="filereplace" numtimes="-1" options="011:3">
+<data file="Data\initialworld.ini" method="filereplace" numtimes="-1" options="015:3">
 <dest>
 rep = 0.60, li_n_grp
 rep = 0.60, li_lsf_grp
@@ -4320,7 +4778,7 @@ rep = 0, DreadPirateLowsound_grp
 rep = 0, HowdaDoodeWTF_grp
 </source>
 </data>
-<data file="Data\initialworld.ini" method="filereplace" numtimes="-1" options="011:4">
+<data file="Data\initialworld.ini" method="filereplace" numtimes="-1" options="015:4">
 <dest>
 rep = 0.60, li_n_grp
 rep = 0.60, li_lsf_grp
