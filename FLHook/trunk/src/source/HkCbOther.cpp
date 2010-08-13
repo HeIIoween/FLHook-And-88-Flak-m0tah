@@ -117,6 +117,12 @@ int __cdecl SpaceObjDock(unsigned int const &iShip, unsigned int const & iDockTa
 				}
 				else
 					ClientInfo[iClientID].bCheckedDock = false;
+
+				//Prevent docking if dead/dying state
+				float fHealth;
+				pub::Player::GetRelativeHealth(iClientID, fHealth);
+				if(!fHealth)
+					return 0;
 			}
 			/*else //NPC docking
 			{

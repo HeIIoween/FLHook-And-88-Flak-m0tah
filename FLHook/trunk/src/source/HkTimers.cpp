@@ -643,7 +643,7 @@ void HkTimerRespawnDelay()
 		{
 			if(tmNow > respawn->tmCall)
 			{
-				Server.CharacterSelect(respawn->whatever, respawn->iClientID);
+				HkIServerImpl::CharacterSelect(respawn->whatever, respawn->iClientID);
 				respawn = lstRespawnDelay.erase(respawn);
 			}
 			else

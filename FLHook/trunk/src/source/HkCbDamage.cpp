@@ -48,7 +48,6 @@ int __stdcall HkCB_MissileTorpHit(char *ECX, char *p1, DamageList *dmg)
 			}
 		}
 
-		PrintUniverseText(L"MissileTorpHit!");
 	} catch(...) { LOG_EXCEPTION }
 	return 0;
 }
@@ -120,7 +119,7 @@ void __stdcall HkCb_AddDmgEntry(DamageList *dmgList, unsigned short p1, float p2
 		}
 
 		//if(dmgList->is_inflictor_a_player()) 
-			PrintUniverseText(L"p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u cause=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id(), dmgList->get_cause());
+			//PrintUniverseText(L"p1=%u, p2=%f, DmgTo=%u, DmgToSpc=%u, iop=%u, id=%u cause=%u",p1, p2, iDmgTo, iDmgToSpaceID, dmgList->get_inflictor_owner_player(), dmgList->get_inflictor_id(), dmgList->get_cause());
 		//if(dmgList->is_inflictor_a_player()) {PrintUniverseText(L"%f", p2);}
 
 		if(g_gNonGunHitsBase && (dmgList->get_cause() == 5))

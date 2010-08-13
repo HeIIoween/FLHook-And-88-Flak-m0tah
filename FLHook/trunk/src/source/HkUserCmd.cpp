@@ -49,7 +49,7 @@ void PrintUniverseText(wstring wscText, ...)
 	_vsnwprintf(wszBuf, sizeof(wszBuf)-1, wscText.c_str(), marker);
 
 	wstring wscXML = L"<TRA data=\"" + set_wscAdminCmdStyle + L"\" mask=\"-1\"/><TEXT>" + XMLText(wszBuf) + L"</TEXT>";
-	HkFMsgU( wscXML);
+	HkFMsgU(wscXML);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

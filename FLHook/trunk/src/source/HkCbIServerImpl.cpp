@@ -2701,12 +2701,18 @@ void __stdcall RequestEvent(int p1, unsigned int p2, unsigned int p3, unsigned i
 		{
 			float fRelativeHealth;
 			pub::SpaceObj::GetRelativeHealth(p3, fRelativeHealth);
-			if(fRelativeHealth<set_fBaseDockDmg)
+			if(fRelativeHealth < set_fBaseDockDmg)
 			{
 				pub::Player::SendNNMessage(p6, pub::GetNicknameId("dock_disallowed"));
 				PrintUserCmdText(p6, L"The docking ports are damaged");
 				return;
 			}
+
+			//Prevent docking if player is in dead/dying state
+			float fHealth;
+			pub::Player::GetRelativeHealth(p6, fHealth);
+			if(!fHealth)
+				return;
 
 			//mobile docking
 			if(!((uint)(p3/1000000000))) //Docking at non solar

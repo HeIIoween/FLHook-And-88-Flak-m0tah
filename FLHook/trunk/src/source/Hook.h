@@ -947,6 +947,7 @@ void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdl
 int __stdcall Update(void);
 void __stdcall RequestEvent(int p1, unsigned int p2, unsigned int p3, unsigned int p4, unsigned long p5, unsigned int p6);
 void __stdcall BaseExit(unsigned int iBaseID, unsigned int iClientID);
+void __stdcall CharacterSelect(struct CHARACTER_ID const & cId, unsigned int iClientID);
 extern bool g_bInSubmitChat;
 extern uint g_iTextLen;
 extern bool g_bChatAction;
