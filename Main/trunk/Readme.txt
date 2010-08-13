@@ -233,12 +233,12 @@ Please note toggling this off ONLY disables Capital Ship patrols for Freelancer 
 This does not affect NPCs in Challenge Missions.
 Default: Yes
 
-MP Server: NPC Count? - Normal / Low / High / Lag Please!
+MP Server: NPC Count? - Normal / Low / High / Ridiculous
 This option raises and lowers NPC counts in systems.
 Normal will have a max. of 8 NPCs in a normal area.
-Low will have a max. of 4 NPCs in a normal area. Not recommended, makes things a bit dull unless you have Hard AI on.
-High will have a max. of 16 NPCs in a normal area. Not recommended, may lag an internet server.
-Lag Please will have a max. of 32 NPCs in a normal area. Don't even think of running this on a server, because all the lag generated from each NPC (Flak NPCs generate far more than standard FL NPCs) is enormous.
+Low will have a max. of 4 NPCs in a normal area. This can make things a bit dull, unless you have Hard AI on.
+High will have a max. of 16 NPCs in a normal area. This has the possibility of making things a bit tougher, since a group may get a full hostile 16 NPC spawn. It will also probably lag an internet server.
+Ridiculous will have a max. of 32 NPCs in a normal area. Don't even think of running this on a server, because it earns its namesake.
 This does not affect NPC counts in Challenge Missions.
 Default: Normal
 

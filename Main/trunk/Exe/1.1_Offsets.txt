@@ -210,7 +210,7 @@ server.dll	085530	60d = respawn time for any solar object to regain full health 
 ======
 Tractor Beam / Trading
 ======
-freelancer.exe	1D848C	1000000f = square of distance from loot that the "tractor all" button appears on HUD / can tractor in loot ~fox
+freelancer.exe	1D848C	1000000f = square of distance from loot that the "tractor all" button can tractor in loot / appears on HUD ~fox
 freelancer.exe	1C9800	1.2f = multiplier for width of tractor beams ~fox
 freelancer.exe	1D8D08	1500f = maximum distance to initiate trade ~adoxa
 
@@ -226,6 +226,7 @@ freelancer.exe	0DBB9E	74->EB = keyboard moves ship in turret view PART 4 ~adoxa
 freelancer.exe	0DBBE4	74->EB = keyboard moves ship in turret view PART 5 ~adoxa
 freelancer.exe	0C7EDB	42->00 = mouse moves ship in Turret View, a bit buggy though PART 1 ~adoxa
 freelancer.exe	11A8ED	0F85->90E9 = mouse moves ship in Turret View, a bit buggy though PART 2 ~adoxa
+freelancer.exe	14A65B	A1A04A67008A88B905000084C97438A14497670085C0740583C0F8EB0233C050FF1570645C0083C40485C074088BC8->9CA14497670083C0F850FF1570645C0059919D740DA0CAEC67008881F9000000EB25B0008681F9000000A2CAEC6700 = disable camera level during Turret View (for ship movement) ~adoxa
 freelancer.exe	11D89C	D91D7C526700->E82F820A0090 = camera is independant of ship movement in turret view PART 1 ~adoxa
 freelancer.exe	11D8BB	D91D70526700->E8F0810A0090 = camera is independant of ship movement in turret view PART 2 ~adoxa
 freelancer.exe	1C5AB0	00000000000000000000000000000000000000->D91570526700D80D84906700D91D7C906700C3 = camera is independant of ship movement in turret view PART 3 ~adoxa
@@ -356,8 +357,11 @@ freelancer.exe	0B88A4	75->EB = disable "Select Ship" ship dealer button ~adoxa
 ======
 HUD: Other
 ======
+freelancer.exe	1D97B4	150f = distance from a waypoint when it is considered reached ~M0tah
+freelancer.exe	1D7E80	300f = distance from a waypoint within a tradelane when it is considered reached ~Schmackbolzen
 freelancer.exe	0F045B	8601->0000 = show aiming lead on everything ~adoxa
 freelancer.exe	0D1750	14000f = range at which an object is no longer "unknown" ~FriendlyFire
+freelancer.exe	1D3F28	0.116279d = NavMap zoom factor (lower increases zoom) ~adoxa
 freelancer.exe	0992B0	64->C3 = remove tradelane lines in NavMap ~adoxa
 freelancer.exe	1C9020	1.85f = aspect ratio of the cinematics ~adoxa
 freelancer.exe	0DCA20	81->C3 = remove mouse flight text ~cannon

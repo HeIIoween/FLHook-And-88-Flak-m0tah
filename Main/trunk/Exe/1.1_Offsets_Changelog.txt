@@ -1,4 +1,11 @@
 ------ Changelog ------
+08/12/10:
+-- Indexed adoxa's NapMap zoom distance
+
+08/05/10:
+-- Indexed adoxa's turret view steeting roll fix
+-- Indexed M0tah and Schmackbolzen's waypoint distances
+
 07/17/10:
 -- Indexed adoxa's sun visit flags, planet spinning and trading range offsets
 

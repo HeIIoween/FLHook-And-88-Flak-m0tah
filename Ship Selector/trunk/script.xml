@@ -1,0 +1,1523 @@
+<script>
+<header name="88 Flak Version 1.27 RC131 P-Base Ship Selector 08/13/10" savesafe="true" exclusive="false">
+<scriptversion>
+1.3
+</scriptversion>
+<author>
+Please view Readme for credit
+</author>
+<modurl>
+http://www.memes.no/88flak/
+</modurl>
+<description>
+THIS IS AN OPTIONAL PATCH, AND DOES NOT NEED TO BE ACTIVATED UNLESS YOU WANT THE DESIRED EFFECT FROM THE PATCH.
+Activate this AFTER activating Flak. Ignore FLMM's "incompatible" error messages.
+
+This addon will allow you to place up to two (2) ships for sale at any Player-Purchasable Base you own. These ships will appear for sale only to you and do not have any effect on anyone else using the station.
+
+This addon can be safely reactivated without deactivating the main 88 Flak install - so change your ship selection as much as you want!
+
+This will not work with normal Freelancer.
+</description>
+
+<options>
+;Reserved Option ID Codes
+;0xy - x = category, starting at 0 (0 for essential, 1 for graphics, etc.)
+;      y = option num, starting at 1
+;10x - x = DBG Options, starting at 1
+;100 - Blank Line
+
+<option id="100" name="    -- Player-Purchasable Base Ship Selection --" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option id="001" name="MP Client: Ship 1 at Player-Purchasable Bases?" savesafe="true">
+<item id="0" name=" (Default) None">
+</item>
+<item id="1" name="CSV (PLF)">
+</item>
+<item name="Startracker (LF)">
+</item>
+<item name="Hawk (LF)">
+</item>
+<item name="Falcon (HF)">
+</item>
+<item name="Starstinger (HF)">
+</item>
+<item name="Eagle (VHF)">
+</item>
+<item name="Pursuit Patriot (PLF)">
+</item>
+<item name="Patriot (LF)">
+</item>
+<item name="Defender (HF)">
+</item>
+<item name="Liberator (VHF)">
+</item>
+<item name="Rhino (Fr)">
+</item>
+<item name="Pursuit Cavalier (PLF)">
+</item>
+<item name="Cavalier (LF)">
+</item>
+<item name="Crusader (HF)">
+</item>
+<item name="Paladin (VHF)">
+</item>
+<item name="Clydesdale (Fr)">
+</item>
+<item name="Pursuit Drake (PLF)">
+</item>
+<item name="Drake (LF)">
+</item>
+<item name="Dragon (HF)">
+</item>
+<item name="Red Dragon (HF)">
+</item>
+<item name="Hydra (VHF)">
+</item>
+<item name="Drone (Fr)">
+</item>
+<item name="Pursuit Banshee (PLF)">
+</item>
+<item name="Banshee (LF)">
+</item>
+<item name="Valkyrie (HF)">
+</item>
+<item name="Deimos (VHF)">
+</item>
+<item name="Humpback (Fr)">
+</item>
+<item name="Pursuit Dagger (PLF)">
+</item>
+<item name="Dagger (LF)">
+</item>
+<item name="Stiletto (HF)">
+</item>
+<item name="Sabre (VHF)">
+</item>
+<item name="Dromedary (Fr)">
+</item>
+<item name="Pursuit Piranha (PLF)">
+</item>
+<item name="Piranha (LF)">
+</item>
+<item name="Barracuda (HF)">
+</item>
+<item name="Hammerhead (VHF)">
+</item>
+<item name="Pursuit Bloodhound (PLF)">
+</item>
+<item name="Bloodhound (LF)">
+</item>
+<item name="Wolfhound (HF)">
+</item>
+<item name="Mule (Fr)">
+</item>
+<item name="Pursuit Legionnaire (PLF)">
+</item>
+<item name="Legionnaire (LF)">
+</item>
+<item name="Centurion (HF)">
+</item>
+<item name="Titan (VHF)">
+</item>
+<item name="Transport (Tr)">
+</item>
+<item name="Train (Tr)">
+</item>
+<item name="Heavy Lifter (Tr)">
+</item>
+<item name="Large Transport (Tr)">
+</item>
+<item name="Large Train (Tr)">
+</item>
+<item name="Armored Transport (Tr)">
+</item>
+<item name="Luxury Liner (Tr)">
+</item>
+<item name="Prison Liner (Tr)">
+</item>
+<item name="Mining Ship (SC)">
+</item>
+<item name="Bretonia Battleship (LC)">
+</item>
+<item name="Bretonia Destroyer (SC)">
+</item>
+<item name="Bretonia Gunboat (SC)">
+</item>
+<item name="Kusari Battleship (LC)">
+</item>
+<item name="Kusari Destroyer (SC)">
+</item>
+<item name="Kusari Gunboat (SC)">
+</item>
+<item name="Liberty Dreadnought (LC)">
+</item>
+<item name="Liberty Cruiser (SC)">
+</item>
+<item name="Liberty Gunboat (SC)">
+</item>
+<item name="Rheinland Battleship (LC)">
+</item>
+<item name="Rheinland Cruiser (SC)">
+</item>
+<item name="Rheinland Gunboat (SC)">
+</item>
+<item name="Storage Depot (Misc)">
+</item>
+</option>
+
+<option id="002" name="MP Client: Ship 2 at Player-Purchasable Bases?" savesafe="true">
+<item id="0" name=" (Default) None">
+</item>
+<item id="1" name="CSV (PLF)">
+</item>
+<item name="Startracker (LF)">
+</item>
+<item name="Hawk (LF)">
+</item>
+<item name="Falcon (HF)">
+</item>
+<item name="Starstinger (HF)">
+</item>
+<item name="Eagle (VHF)">
+</item>
+<item name="Pursuit Patriot (PLF)">
+</item>
+<item name="Patriot (LF)">
+</item>
+<item name="Defender (HF)">
+</item>
+<item name="Liberator (VHF)">
+</item>
+<item name="Rhino (Fr)">
+</item>
+<item name="Pursuit Cavalier (PLF)">
+</item>
+<item name="Cavalier (LF)">
+</item>
+<item name="Crusader (HF)">
+</item>
+<item name="Paladin (VHF)">
+</item>
+<item name="Clydesdale (Fr)">
+</item>
+<item name="Pursuit Drake (PLF)">
+</item>
+<item name="Drake (LF)">
+</item>
+<item name="Dragon (HF)">
+</item>
+<item name="Red Dragon (HF)">
+</item>
+<item name="Hydra (VHF)">
+</item>
+<item name="Drone (Fr)">
+</item>
+<item name="Pursuit Banshee (PLF)">
+</item>
+<item name="Banshee (LF)">
+</item>
+<item name="Valkyrie (HF)">
+</item>
+<item name="Deimos (VHF)">
+</item>
+<item name="Humpback (Fr)">
+</item>
+<item name="Pursuit Dagger (PLF)">
+</item>
+<item name="Dagger (LF)">
+</item>
+<item name="Stiletto (HF)">
+</item>
+<item name="Sabre (VHF)">
+</item>
+<item name="Dromedary (Fr)">
+</item>
+<item name="Pursuit Piranha (PLF)">
+</item>
+<item name="Piranha (LF)">
+</item>
+<item name="Barracuda (HF)">
+</item>
+<item name="Hammerhead (VHF)">
+</item>
+<item name="Pursuit Bloodhound (PLF)">
+</item>
+<item name="Bloodhound (LF)">
+</item>
+<item name="Wolfhound (HF)">
+</item>
+<item name="Mule (Fr)">
+</item>
+<item name="Pursuit Legionnaire (PLF)">
+</item>
+<item name="Legionnaire (LF)">
+</item>
+<item name="Centurion (HF)">
+</item>
+<item name="Titan (VHF)">
+</item>
+<item name="Transport (Tr)">
+</item>
+<item name="Train (Tr)">
+</item>
+<item name="Heavy Lifter (Tr)">
+</item>
+<item name="Large Transport (Tr)">
+</item>
+<item name="Large Train (Tr)">
+</item>
+<item name="Armored Transport (Tr)">
+</item>
+<item name="Luxury Liner (Tr)">
+</item>
+<item name="Prison Liner (Tr)">
+</item>
+<item name="Mining Ship (SC)">
+</item>
+<item name="Bretonia Battleship (LC)">
+</item>
+<item name="Bretonia Destroyer (SC)">
+</item>
+<item name="Bretonia Gunboat (SC)">
+</item>
+<item name="Kusari Battleship (LC)">
+</item>
+<item name="Kusari Destroyer (SC)">
+</item>
+<item name="Kusari Gunboat (SC)">
+</item>
+<item name="Liberty Dreadnought (LC)">
+</item>
+<item name="Liberty Cruiser (SC)">
+</item>
+<item name="Liberty Gunboat (SC)">
+</item>
+<item name="Rheinland Battleship (LC)">
+</item>
+<item name="Rheinland Cruiser (SC)">
+</item>
+<item name="Rheinland Gunboat (SC)">
+</item>
+<item name="Storage Depot (Misc)">
+</item>
+</option>
+
+<option id="100" name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option id="100" name="88 Flak P-Base Ship Selector" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option id="100" name="Version 1.27, listed in server list as 88.27" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option id="100" name="Bugs, suggestions, etc: http://www.memes.no/88flak/" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+<option id="100" name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+</options>
+</header>
+
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:1">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = csv_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:2">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:3">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf4_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:4">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf5_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:5">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf7_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:6">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf6_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:7">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:8">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:9">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = le_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:10">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = le2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:11">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:12">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:13">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:14">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = be_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:15">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = be2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:16">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:17">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:18">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:19">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ke_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:20">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ke2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:21">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ke3_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:22">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:23">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:24">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:25">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = re_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:26">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = re2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:27">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:28">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:29">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:30">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwe_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:31">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwe2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:32">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:33">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bhf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:34">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bhf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:35">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bhe_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:36">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bhe2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:37">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = pf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:38">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = pf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:39">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = pe_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:40">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = pfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:41">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = cof_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:42">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = cof_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:43">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = coe_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:44">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = coe2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:45">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = transport_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:46">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = train_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:47">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lifter_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:48">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ltransport_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:49">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ltrain_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:50">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = armored_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:51">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = liner_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:52">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = prison_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:53">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = miner_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:54">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = brbat_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:55">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = brdest_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:56">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = brgun_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:57">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kubat_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:58">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kudest_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:59">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kugun_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:60">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lidre_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:61">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = licru_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:62">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ligun_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:63">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rhbat_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:64">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rhcru_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:65">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rhgun_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="001:66">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = storage_depot_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:1">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = csv_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:2">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:3">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf4_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:4">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf5_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:5">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf7_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:6">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = gf6_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:7">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:8">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:9">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = le_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:10">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = le2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:11">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:12">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:13">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:14">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = be_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:15">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = be2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:16">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:17">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:18">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:19">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ke_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:20">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ke2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:21">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ke3_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:22">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:23">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:24">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:25">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = re_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:26">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = re2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:27">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:28">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:29">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:30">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwe_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:31">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwe2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:32">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bwfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:33">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bhf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:34">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bhf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:35">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bhe_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:36">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = bhe2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:37">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = pf_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:38">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = pf_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:39">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = pe_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:40">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = pfr_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:41">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = cof_pursuit_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:42">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = cof_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:43">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = coe_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:44">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = coe2_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:45">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = transport_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:46">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = train_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:47">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lifter_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:48">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ltransport_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:49">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ltrain_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:50">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = armored_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:51">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = liner_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:52">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = prison_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:53">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = miner_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:54">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = brbat_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:55">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = brdest_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:56">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = brgun_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:57">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kubat_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:58">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kudest_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:59">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = kugun_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:60">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = lidre_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:61">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = licru_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:62">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = ligun_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:63">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rhbat_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:64">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rhcru_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:65">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = rhgun_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+<data file="Data\Equipment\market_ships_pbase.ini" method="sectionappend" numtimes="-1" options="002:66">
+<section>
+[BaseGood]
+;FLMM OPTIONS SHIP PLACEMENT HERE
+</section>
+<source>
+marketgood = storage_depot_package, 0, -1, 1, 1, 0, 1, 1
+</source>
+</data>
+
+</script>

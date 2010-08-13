@@ -111,11 +111,10 @@
 -- Decreased grace period time of fighter deaths by half a second (so, 2s to 1.5s) to make healing in the grace period more risky.
 -- Redesigned AI Companion Bot Addon option screen - among other things (such as useful roles displayed), you can now hit space on any option to reset it to default (in this case, clear bot selection for current slot), which should make the menu a little quicker to use.
 -- Fixed an issue with the orientation of headlights on Corsair ships (was a Vanilla bug).
--- Firing rate of missiles adjusted to 1/1000 of their damage to equalize DPS of missile classes. While low-class missiles had a lower payload, they had a refire rate that put their DPS considerably higher than high-class missiles. With the DPS equalized, spamming low-class missiles is still an effective strategy, but it's not as overpowered as it previously was (remember, small missiles overwhelm a CM launcher, whereas a single large one does not).
--- As a result of the previous change, homing missiles may be refired quicker.
 -- All missiles have a slightly smaller FOV and tracking speed to coincide with reduced thruster speeds, since the supposedly slow-turning missiles were still difficult to dodge in a PLF or LF. This also makes homing missiles a more worthwhile choice for reliability.
 
 What needs to be tested:
+-- hivemind isn't spawning?
 -- test new missiles (particularly dmg missiles vs homing missiles)
 -- test Solar pilot/job fix
 -- test new Hard Mode / Easy Mode AI classes
@@ -128,6 +127,29 @@ What needs to be tested:
 -- test new stuff in challenge systems
 
 What's really todo:
+-- new icon for FLServer / Freelancer EXEs?
+-- undocking issues with player-purchasable bases abound!
+-- tune up the spawning rates to use 14s/32s/36s for defense/normal/ambient, respectively. It'll be more interesting.
+-- client stability issues with debris it seems
+-- widescreen is still messed up - maybe make it totally manual
+-- missile damages need to be toned down?
+-- slap Transport turrets on AT (make a new turret type)
+-- tone down thruster fuel supply
+-- un-engine kill Nomads and give them warp thruster?
+-- adjust Nomad CM a little
+-- increase the range of the PS bigtime to like 2400m or something, really
+-- lower damage of PS as well
+-- 80* banking angle only
+-- put spawning buoy back into NPC Arenas
+-- revert Flak Turrets
+-- much higher dispersion angle on SC def guns
+-- normal laser for SC def guns
+-- rochester has no pilot! Check all solars for pilot
+-- forward guns need a huge buff
+-- camera on shipyards, since ships wag like crazy
+-- PLF-specific CD like wasp/hornet combo but more extreme
+-- give freighters wide camera turning?
+-- mine mazathon client-crashes, turn on logging and figure it out
 -- AI might be a little too difficult with new evasive patterns; perhaps tone down normal a bit
 -- raise Transport armor a little?
 -- make a TRANSPORT state_graph or job that only leaves cruise on being disrupted
@@ -175,6 +197,8 @@ Hook wishlist:
 -- I can haz NPC cloaking?
 
 What was done but didn't work and might be done again:
+-- Firing rate of missiles adjusted to 1/1000 of their damage to equalize DPS of missile classes. While low-class missiles had a lower payload, they had a refire rate that put their DPS considerably higher than high-class missiles. With the DPS equalized, spamming low-class missiles is still an effective strategy, but it's not as overpowered as it previously was (remember, small missiles overwhelm a CM launcher, whereas a single large one does not).
+-- As a result of the previous change, homing missiles may be refired quicker.
 -- Javelin-Cannonball (slow-turning damage missiles) type tweaked - their acceleration motor does not kick in until approximately 2s (when the effect itself kicks in), leaving a small point-blank range blindspot that limits these missiles' effectiveness. If you customarily shoot missiles at point-blank ranges, try rounding out your loadout with some homing missiles instead.
 -- PLF thruster fuel capacity has been decreased to regular LF levels. As a result, the 3rd thruster is a real fuel eater and PLF pilots will have to thrust in short bursts, compared to the more sustained thrusting of a LF.
 -- Implemented a "disable crosshair spin on target lock" option. With this option enabled, the crosshair will glow brighter when locked instead of spin.
