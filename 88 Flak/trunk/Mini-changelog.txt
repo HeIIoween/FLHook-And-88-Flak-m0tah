@@ -134,6 +134,16 @@ What needs to be tested:
 -- test new stuff in challenge systems
 
 What's really todo:
+-- overhaul 3D Sound notice to cover starting system use
+-- re-enable FLHook reps?
+-- docking on Freeports is still fucked (do that vertical dock thing)
+-- docking on Nomad Lair is fucked - raise docking range const
+-- raise all hit_pts value of equipment and set multiplier to 1 so AI aren't gimped
+-- Flak turrets are a little OP it seems
+-- Defense turrets have terrible dispersion, halve it
+-- take out lights on docking fixtures and restore LOD, they're dumb
+-- orbitals on orbital platform and floaters only
+-- fix juneau shipyard's fighter berth
 -- hivemind needs a better way of following?
 -- new icon for FLServer / Freelancer EXEs?
 -- undocking issues with player-carriers abound!

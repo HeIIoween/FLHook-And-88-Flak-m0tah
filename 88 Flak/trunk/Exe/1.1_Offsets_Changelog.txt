@@ -1,4 +1,7 @@
 ------ Changelog ------
+08/15/10:
+-- Added misc docking offsets I found
+
 08/12/10:
 -- Indexed adoxa's NapMap zoom distance
 
