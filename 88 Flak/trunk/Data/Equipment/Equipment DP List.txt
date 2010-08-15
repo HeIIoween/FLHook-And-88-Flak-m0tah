@@ -11,6 +11,7 @@ ge_s_thruster_00
 no_thruster
 admin_shield
 
+nomad_cm_01
 *scanner*
 ge_s_tractor_01
 cargopod_*

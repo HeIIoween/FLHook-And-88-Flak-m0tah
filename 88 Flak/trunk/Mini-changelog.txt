@@ -22,7 +22,6 @@
 -- Credit Chips, Un-Assisted Kill Tokens, and special Boss Tokens can no longer be destroyed by weapons fire.
 -- Nomad Fighter now has 15000 armor, 10 Nanobots and 40hp/s hull regeneration.
 -- Corrected an issue with Nomad Fighter Particle Splitter description, which stated the weapon required 60 seconds of charge-up time. This is an old fact from before weapon delay was displayed, and the weapon only in fact requires 20 seconds.
--- Sniper Turrets have been rebalanced; their hull damage has decreased from 10000 to 5000, and their extra energy damage has been removed.
 -- Improvements to Battleship/Station anti-spin protection. Spinning should no longer be an issue at all when colliding with players or NPCs.
 -- Due to improvements with anti-spin protection, NPCs are no longer pushed as far when colliding a large ship with them.
 -- Corrected issues with custom AI Companion bots piloting Battleships/Stations not working correctly.
@@ -101,8 +100,6 @@
 -- Freighter cargo space upgraded to 150 to make them more worthwhile as solo traders compared to Transports.
 -- Asteroids now have more mass and take a few shots to blow up, thanks to adoxa.
 -- AI now only use Torpedoes on Transports, Capital Ships, and Stations. No more Torpedo spam on fighters.
--- Firing cone of Gunboat/Cruiser/Destroyer Defense Turrets raised to offset the lower armors of fighters. Plus they look cooler like that.
--- Firing cone of Battleship Flak Turrets decreased, but shell detonation range and explosion radius decreased as well. This tightens up the Flak fire around an individual target while helping to minimize friendly hits.
 -- Nomad Splitter and Pulse Emitter (new CM) now available at Nomad shops, incase you for whatever reason lose the items and need to replace them.
 -- Added adoxa's HUD shifting module for better widescreen support. Added screen ratio and widescreen vertical HUD fix options.
 -- Transports and Capital Ships are now prioritized by AI NPCs loaded for such engagements (such as carrying Torpedoes, Anti-Capital Turrets, etc.). This includes other NPCs and players alike.
@@ -112,44 +109,46 @@
 -- Redesigned AI Companion Bot Addon option screen - among other things (such as useful roles displayed), you can now hit space on any option to reset it to default (in this case, clear bot selection for current slot), which should make the menu a little quicker to use.
 -- Fixed an issue with the orientation of headlights on Corsair ships (was a Vanilla bug).
 -- All missiles have a slightly smaller FOV and tracking speed to coincide with reduced thruster speeds, since the supposedly slow-turning missiles were still difficult to dodge in a PLF or LF. This also makes homing missiles a more worthwhile choice for reliability.
+-- Tweaked spawning. Rarer stuff like AI Bots and Capital Fleets will appear more often and there is no longer a 40 second "spawn rhythm". Instead, the spawns cycle through at uneven time intervals, allowing more "organic" spawning.
+-- Nomad Wingmen counts have been reduced to 3.
+-- Fixed 113 cases where solars (bases, depots, etc.) had no pilots assigned and should have (vanilla bug).
+-- Missile damages have been tweaked to reflect the new ship armor values and be more balanced with guns.
+-- Firing cone of Battleship Flak Turrets increased, with shell detonation range and explosion radius decreased as well. This brings the effective killzone of Flak Turrets a little closer to the Battleship, while continuing to allow the Battleship to pepper targets from afar.
+-- Damage of Battleship Flak Turrets decreased slightly as well.
+-- Firing cone of Gunboat/Cruiser/Destroyer Defense Turrets increased, to offset the new, low armor values of fighters and better suit their role as defensive turrets. Plus they look cooler like that.
+-- Better effects for the Gunboat/Cruiser/Destroyer Defense Turrets.
+-- Capital Forward Guns received a large damage buff, but have had energy damages removed. They're also a little easier to aim now.
+-- Rare Sniper Turrets have been tweaked. They now deal 3800 hull damage (38% of a LF's armor), but have a 7s refire time. Considering they never miss with a 5.1km range, they're still worthwhile weapon choices (especially when grouped), but will suffer in tight melee combat.
 
 What needs to be tested:
--- hivemind isn't spawning?
+-- test new 1.5AP AI
 -- test new missiles (particularly dmg missiles vs homing missiles)
 -- test Solar pilot/job fix
 -- test new Hard Mode / Easy Mode AI classes
 -- test new Flak cannon spreads / explosion radii
+-- test new Def turret spreads
 -- test Captial vs Fighter balance
--- test VHF count of 0/2
--- test FR count of 2/0
+-- test new thrusters
 -- test new Nomad Fighter more - its thruster still needs some tweaking, I think
 -- test if rares can actually be blown off by snipers
 -- test new stuff in challenge systems
 
 What's really todo:
+-- hivemind needs a better way of following?
 -- new icon for FLServer / Freelancer EXEs?
--- undocking issues with player-purchasable bases abound!
--- tune up the spawning rates to use 14s/32s/36s for defense/normal/ambient, respectively. It'll be more interesting.
+-- undocking issues with player-carriers abound!
 -- client stability issues with debris it seems
 -- widescreen is still messed up - maybe make it totally manual
--- missile damages need to be toned down?
 -- slap Transport turrets on AT (make a new turret type)
--- tone down thruster fuel supply
 -- un-engine kill Nomads and give them warp thruster?
 -- adjust Nomad CM a little
 -- increase the range of the PS bigtime to like 2400m or something, really
 -- lower damage of PS as well
 -- 80* banking angle only
 -- put spawning buoy back into NPC Arenas
--- revert Flak Turrets
--- much higher dispersion angle on SC def guns
--- normal laser for SC def guns
--- rochester has no pilot! Check all solars for pilot
--- forward guns need a huge buff
 -- camera on shipyards, since ships wag like crazy
 -- PLF-specific CD like wasp/hornet combo but more extreme
 -- give freighters wide camera turning?
--- mine mazathon client-crashes, turn on logging and figure it out
 -- AI might be a little too difficult with new evasive patterns; perhaps tone down normal a bit
 -- raise Transport armor a little?
 -- make a TRANSPORT state_graph or job that only leaves cruise on being disrupted
