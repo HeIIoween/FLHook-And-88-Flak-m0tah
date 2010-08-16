@@ -123,6 +123,7 @@
 -- Possible fix to some of the rare client-crash issues, particularly those related to debris when using High-End FX.
 -- Increased Credit Chip drop amounts.
 -- Zoners now trade commodities around.
+-- Patrol type NPC encounters reduced in size.
 
 What needs to be tested:
 -- repair ship apparently makes bases hostile?

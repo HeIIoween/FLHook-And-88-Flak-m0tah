@@ -1,6 +1,6 @@
 [General]
 Signature=ConTEXT project file
-FilesCount=4
+FilesCount=7
 ActiveFile=1
 Maximized=1
 RelativePath=1
@@ -15,11 +15,37 @@ Width=686
 Height=303
 TopLine=0
 CursorX=21
-CursorY=15
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
 [File2]
+Name=patrolp_assault.ini
+Open=1
+Left=88
+Top=88
+Width=870
+Height=349
+TopLine=0
+CursorX=21
+CursorY=13
+Highlighter=
+BookmarkCount=0
+
+[File3]
+Name=patrolp_bh_assault.ini
+Open=1
+Left=110
+Top=110
+Width=870
+Height=349
+TopLine=0
+CursorX=21
+CursorY=13
+Highlighter=
+BookmarkCount=0
+
+[File4]
 Name=patrolp_bh_patrol.ini
 Open=1
 Left=22
@@ -28,11 +54,11 @@ Width=826
 Height=420
 TopLine=0
 CursorX=21
-CursorY=15
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File3]
+[File5]
 Name=patrolp_gov_patrol.ini
 Open=1
 Left=66
@@ -41,11 +67,24 @@ Width=826
 Height=420
 TopLine=0
 CursorX=21
-CursorY=15
+CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File4]
+[File6]
+Name=patrolp_gunboats.ini
+Open=1
+Left=132
+Top=132
+Width=870
+Height=349
+TopLine=0
+CursorX=21
+CursorY=13
+Highlighter=
+BookmarkCount=0
+
+[File7]
 Name=patrolp_pirate_patrol.ini
 Open=1
 Left=88
@@ -54,6 +93,6 @@ Width=826
 Height=420
 TopLine=0
 CursorX=21
-CursorY=15
+CursorY=13
 Highlighter=
 BookmarkCount=0

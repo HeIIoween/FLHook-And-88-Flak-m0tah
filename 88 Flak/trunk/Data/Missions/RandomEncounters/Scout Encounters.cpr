@@ -1,7 +1,7 @@
 [General]
 Signature=ConTEXT project file
-FilesCount=16
-ActiveFile=1
+FilesCount=15
+ActiveFile=14
 Maximized=1
 RelativePath=1
 Root=
@@ -176,19 +176,6 @@ Highlighter=
 BookmarkCount=0
 
 [File14]
-Name=patrolp_follow_random.ini
-Open=1
-Left=154
-Top=154
-Width=870
-Height=318
-TopLine=0
-CursorX=21
-CursorY=13
-Highlighter=
-BookmarkCount=0
-
-[File15]
 Name=tradep_trade_smuggler.ini
 Open=1
 Left=22
@@ -201,7 +188,7 @@ CursorY=13
 Highlighter=
 BookmarkCount=0
 
-[File16]
+[File15]
 Name=tradep_trade_trader.ini
 Open=1
 Left=44
