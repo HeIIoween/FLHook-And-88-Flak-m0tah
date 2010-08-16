@@ -475,28 +475,28 @@ effects = Fx\effect_typeshigh.ini			; needs to be before effects.ini
 </data>
 <data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="013:1">
 <dest>
-FxBasicAppearance.poolSize    = 1000		; each particle can generate: 4 verts 6, indices
-FxRectAppearance.poolSize     = 400			; each particle can generate: 4 verts 6, indices
-FxPerpAppearance.poolSize     = 250			; each particle can generate: 4 verts 6, indices
-FxOrientedAppearance.poolSize = 0			; each particle can generate: 4 verts 6, indices
-FLBeamAppearance.poolSize     = 680			; custom app from flalchemy.dll: each particle can generate: 5 verts 24 indices
-FLDustAppearance.poolSize     = 250			; custom app from flalchemy.dll: each particle can generate: 4 verts 6 indices
-;---------------------- total = 2600 -------;
-;
-FxMeshAppearance.poolSize  = 500			; generates meshes not particles; need enough of these for all tradelane rings in a system.
-FxParticleAppearance.poolSize = 100			; generates effects not particles
+FxBasicAppearance.poolSize    = 1000
+FxRectAppearance.poolSize     = 400
+FxPerpAppearance.poolSize     = 250
+FxOrientedAppearance.poolSize = 0
+FLBeamAppearance.poolSize     = 680
+FLDustAppearance.poolSize     = 250
+;---------------------- total = 2580 -------;
+FxMeshAppearance.poolSize     = 500
+FxParticleAppearance.poolSize = 100
+;---------------------- total = 3180 -------;
 </dest>
 <source>
-FxBasicAppearance.poolSize    = 100000		; each particle can generate: 4 verts 6, indices
-FxRectAppearance.poolSize     = 40000			; each particle can generate: 4 verts 6, indices
-FxPerpAppearance.poolSize     = 25000			; each particle can generate: 4 verts 6, indices
-FxOrientedAppearance.poolSize = 0			; each particle can generate: 4 verts 6, indices
-FLBeamAppearance.poolSize     = 68000			; custom app from flalchemy.dll: each particle can generate: 5 verts 24 indices
-FLDustAppearance.poolSize     = 25000			; custom app from flalchemy.dll: each particle can generate: 4 verts 6 indices
-;---------------------- total = 260000 -------;
-;
-FxMeshAppearance.poolSize  = 50000			; generates meshes not particles; need enough of these for all tradelane rings in a system.
-FxParticleAppearance.poolSize = 10000			; generates effects not particles
+FxBasicAppearance.poolSize    = 20000
+FxRectAppearance.poolSize     = 8000
+FxPerpAppearance.poolSize     = 5000
+FxOrientedAppearance.poolSize = 0
+FLBeamAppearance.poolSize     = 13600
+FLDustAppearance.poolSize     = 5000
+;---------------------- total = 51600 -------;
+FxMeshAppearance.poolSize     = 500
+FxParticleAppearance.poolSize = 2000
+;---------------------- total = 54100 -------;
 </source>
 </data>
 <data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:1">
@@ -611,28 +611,28 @@ effects = Fx\effect_typeshigh.ini			; needs to be before effects.ini
 </data>
 <data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="013:2">
 <dest>
-FxBasicAppearance.poolSize    = 1000		; each particle can generate: 4 verts 6, indices
-FxRectAppearance.poolSize     = 400			; each particle can generate: 4 verts 6, indices
-FxPerpAppearance.poolSize     = 250			; each particle can generate: 4 verts 6, indices
-FxOrientedAppearance.poolSize = 0			; each particle can generate: 4 verts 6, indices
-FLBeamAppearance.poolSize     = 680			; custom app from flalchemy.dll: each particle can generate: 5 verts 24 indices
-FLDustAppearance.poolSize     = 250			; custom app from flalchemy.dll: each particle can generate: 4 verts 6 indices
-;---------------------- total = 2600 -------;
-;
-FxMeshAppearance.poolSize  = 500			; generates meshes not particles; need enough of these for all tradelane rings in a system.
-FxParticleAppearance.poolSize = 100			; generates effects not particles
+FxBasicAppearance.poolSize    = 1000
+FxRectAppearance.poolSize     = 400
+FxPerpAppearance.poolSize     = 250
+FxOrientedAppearance.poolSize = 0
+FLBeamAppearance.poolSize     = 680
+FLDustAppearance.poolSize     = 250
+;---------------------- total = 2580 -------;
+FxMeshAppearance.poolSize     = 500
+FxParticleAppearance.poolSize = 100
+;---------------------- total = 3180 -------;
 </dest>
 <source>
-FxBasicAppearance.poolSize    = 100000		; each particle can generate: 4 verts 6, indices
-FxRectAppearance.poolSize     = 40000			; each particle can generate: 4 verts 6, indices
-FxPerpAppearance.poolSize     = 25000			; each particle can generate: 4 verts 6, indices
-FxOrientedAppearance.poolSize = 0			; each particle can generate: 4 verts 6, indices
-FLBeamAppearance.poolSize     = 68000			; custom app from flalchemy.dll: each particle can generate: 5 verts 24 indices
-FLDustAppearance.poolSize     = 25000			; custom app from flalchemy.dll: each particle can generate: 4 verts 6 indices
-;---------------------- total = 260000 -------;
-;
-FxMeshAppearance.poolSize  = 50000			; generates meshes not particles; need enough of these for all tradelane rings in a system.
-FxParticleAppearance.poolSize = 10000			; generates effects not particles
+FxBasicAppearance.poolSize    = 20000
+FxRectAppearance.poolSize     = 8000
+FxPerpAppearance.poolSize     = 5000
+FxOrientedAppearance.poolSize = 0
+FLBeamAppearance.poolSize     = 13600
+FLDustAppearance.poolSize     = 5000
+;---------------------- total = 51600 -------;
+FxMeshAppearance.poolSize     = 500
+FxParticleAppearance.poolSize = 2000
+;---------------------- total = 54100 -------;
 </source>
 </data>
 
@@ -648,10 +648,10 @@ sounds = Audio\engine_soundshigh.ini			;engine sounds only
 </data>
 <data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="014:1">
 <dest>
-maxSoundChannels = 24 ; was 30. changed for Beta -psw
+maxSoundChannels = 24
 </dest>
 <source>
-maxSoundChannels = 36 ; was 30. changed for Beta -psw
+maxSoundChannels = 36
 </source>
 </data>
 <data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">

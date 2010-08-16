@@ -16,7 +16,6 @@
 -- Player-Purchasable Base Defenders no longer drop Credit Chips when killed, to fix some exploit concerns.
 -- Fixed up some oddities with patrol_path spawning, thanks to Vital.
 -- Fixed up an issue with DofodBot; for some reason AI really do not like power modulators mounted and will just cruise around in straight lines. It's why DofodBot never did anything other than cruise around, really.
--- Nomad Fighter Particle Splitter damage decreased to 250k and range decreased to 600m.
 -- Nomad Fighter strafing speed reduced to 50%, like other VHFs.
 -- Corrected some issues with the Hivemind Tunnels challenge system (several mine tunnels were out of place).
 -- Credit Chips, Un-Assisted Kill Tokens, and special Boss Tokens can no longer be destroyed by weapons fire.
@@ -113,12 +112,15 @@
 -- Nomad Wingmen counts have been reduced to 3.
 -- Fixed 113 cases where solars (bases, depots, etc.) had no pilots assigned and should have (vanilla bug).
 -- Missile damages have been tweaked to reflect the new ship armor values and be more balanced with guns.
--- Firing cone of Battleship Flak Turrets increased, with shell detonation range and explosion radius decreased as well. This brings the effective killzone of Flak Turrets a little closer to the Battleship, while continuing to allow the Battleship to pepper targets from afar.
--- Damage of Battleship Flak Turrets decreased slightly as well.
--- Firing cone of Gunboat/Cruiser/Destroyer Defense Turrets increased, to offset the new, low armor values of fighters and better suit their role as defensive turrets. Plus they look cooler like that.
+-- Firing cone of Battleship Flak Turrets decreased, with shell detonation range and explosion radius decreased as well. This tightens up the Flak Turrets to help reduce accidental friendly fire incidents.
+-- Damage of Battleship Flak Turrets decreased as well to offset the new, low armor values of fighters.
+-- Firing cone of Gunboat/Cruiser/Destroyer Defense Turrets increased, to help offset the low armor values and better suit their role as defensive turrets. Plus they look cooler like that.
 -- Better effects for the Gunboat/Cruiser/Destroyer Defense Turrets.
--- Capital Forward Guns received a large damage buff, but have had energy damages removed. They're also a little easier to aim now.
+-- Capital Forward Guns received a large damage buff, but have had energy damages removed.
 -- Rare Sniper Turrets have been tweaked. They now deal 3800 hull damage (38% of a LF's armor), but have a 7s refire time. Considering they never miss with a 5.1km range, they're still worthwhile weapon choices (especially when grouped), but will suffer in tight melee combat.
+-- Particle Splitter Tweaked; it now has a 1440 range with 720 muzzle velocity, but damage decreased to 200k. It is equivilant to shooting two Sunslayers that can not be intercepted.
+-- Spawning Buoy added to NPC Arenas to mark where AI Bots actually spawn.
+-- Possible fix to some of the rare client-crash issues, particularly those related to debris when using High-End FX.
 
 What needs to be tested:
 -- test new 1.5AP AI
@@ -139,31 +141,20 @@ What's really todo:
 -- docking on Freeports is still fucked (do that vertical dock thing)
 -- docking on Nomad Lair is fucked - raise docking range const
 -- raise all hit_pts value of equipment and set multiplier to 1 so AI aren't gimped
--- Flak turrets are a little OP it seems
--- Defense turrets have terrible dispersion, halve it
--- take out lights on docking fixtures and restore LOD, they're dumb
 -- orbitals on orbital platform and floaters only
--- fix juneau shipyard's fighter berth
+-- better visibility for floaters (lights? visible platform?)
 -- hivemind needs a better way of following?
 -- new icon for FLServer / Freelancer EXEs?
 -- undocking issues with player-carriers abound!
--- client stability issues with debris it seems
--- widescreen is still messed up - maybe make it totally manual
+-- widescreen is still messed up - maybe make it totally manual?
 -- slap Transport turrets on AT (make a new turret type)
--- un-engine kill Nomads and give them warp thruster?
--- adjust Nomad CM a little
--- increase the range of the PS bigtime to like 2400m or something, really
--- lower damage of PS as well
--- 80* banking angle only
--- put spawning buoy back into NPC Arenas
+-- un-engine kill Nomads, and better warp thruster?
 -- camera on shipyards, since ships wag like crazy
 -- PLF-specific CD like wasp/hornet combo but more extreme
 -- give freighters wide camera turning?
 -- AI might be a little too difficult with new evasive patterns; perhaps tone down normal a bit
 -- raise Transport armor a little?
 -- make a TRANSPORT state_graph or job that only leaves cruise on being disrupted
--- fix docking points on minable stations (check all of them really)
--- cruise_backfire on shielddown sound?
 -- some sort of F9 description buoy in the challenge hub (with a description for each challenge) so people know what they're doing
 
 What's sorta todo:
