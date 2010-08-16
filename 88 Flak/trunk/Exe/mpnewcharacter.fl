@@ -120,7 +120,6 @@ house = -0.9, Borg_grp
 rep_group = gd_wfl_grp
 
 ship_archetype = n00b_package_of_death
-equip = hf_power
 ;cargo = factionjoin_token, 1 ;SP Only
 cargo = n00b_antipvp_token, 1 ;MP Only
 cargo = tradelane_note_token, 1

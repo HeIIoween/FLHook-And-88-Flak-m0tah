@@ -286,7 +286,7 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 
 ;Padding Start
 <data file="Data/custom_bot_ships.ini" method="copyfile" sourcefile="Data/custom_bot_ships.ini" scanfile="true">
-</data>
+</data> ;Yeah, this file really needs a forward slash, dunno why
 ;Padding End
 
 <data file="Data\Missions\empathy.ini" method="filereplace" numtimes="-1" options="001:1">

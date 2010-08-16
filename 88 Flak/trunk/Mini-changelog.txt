@@ -125,6 +125,7 @@
 -- Zoners now trade commodities around.
 
 What needs to be tested:
+-- repair ship apparently makes bases hostile?
 -- test new thruster hit_pts
 -- test new Hard Mode / Easy Mode AI classes
 -- test new Flak cannon spreads / explosion radii
