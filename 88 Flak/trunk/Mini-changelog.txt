@@ -118,14 +118,14 @@
 -- Better effects for the Gunboat/Cruiser/Destroyer Defense Turrets.
 -- Capital Forward Guns received a large damage buff, but have had energy damages removed.
 -- Rare Sniper Turrets have been tweaked. They now deal 3800 hull damage (38% of a LF's armor), but have a 7s refire time. Considering they never miss with a 5.1km range, they're still worthwhile weapon choices (especially when grouped), but will suffer in tight melee combat.
--- Particle Splitter Tweaked; it now has a 1440 range with 720 muzzle velocity, but damage decreased to 200k. It is equivilant to shooting two Sunslayers that can not be intercepted.
+-- Particle Splitter Tweaked; it now has a 1440 range with 720 muzzle velocity, but damage decreased to 200k. It is equivalent to shooting two Sunslayers that can not be intercepted.
 -- Spawning Buoy added to NPC Arenas to mark where AI Bots actually spawn.
 -- Possible fix to some of the rare client-crash issues, particularly those related to debris when using High-End FX.
+-- Increased Credit Chip drop amounts.
+-- Zoners now trade commodities around.
 
 What needs to be tested:
--- test new 1.5AP AI
--- test new missiles (particularly dmg missiles vs homing missiles)
--- test Solar pilot/job fix
+-- test new thruster hit_pts
 -- test new Hard Mode / Easy Mode AI classes
 -- test new Flak cannon spreads / explosion radii
 -- test new Def turret spreads
@@ -138,9 +138,6 @@ What needs to be tested:
 What's really todo:
 -- overhaul 3D Sound notice to cover starting system use
 -- re-enable FLHook reps?
--- docking on Freeports is still fucked (do that vertical dock thing)
--- docking on Nomad Lair is fucked - raise docking range const
--- raise all hit_pts value of equipment and set multiplier to 1 so AI aren't gimped
 -- orbitals on orbital platform and floaters only
 -- better visibility for floaters (lights? visible platform?)
 -- hivemind needs a better way of following?
