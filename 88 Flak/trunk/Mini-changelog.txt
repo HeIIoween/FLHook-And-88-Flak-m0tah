@@ -123,9 +123,10 @@
 -- Possible fix to some of the rare client-crash issues, particularly those related to debris when using High-End FX.
 -- Increased Credit Chip drop amounts.
 -- Zoners now trade commodities around.
--- Patrol type NPC encounters reduced in size.
 
 What needs to be tested:
+-- test out 10k spawn range
+-- test long range assist at 12k
 -- repair ship apparently makes bases hostile?
 -- test new thruster hit_pts
 -- test new Hard Mode / Easy Mode AI classes
@@ -138,6 +139,8 @@ What needs to be tested:
 -- test new stuff in challenge systems
 
 What's really todo:
+-- max cruise speed is 900 - 750; try 670 (690 previously) on FollowShip
+-- either get RMs back in or place random stations - make a special vignette encounter with WPs and stuff
 -- overhaul 3D Sound notice to cover starting system use
 -- re-enable FLHook reps?
 -- orbitals on orbital platform and floaters only

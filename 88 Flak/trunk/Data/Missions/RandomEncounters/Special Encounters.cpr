@@ -1,7 +1,7 @@
 [General]
 Signature=ConTEXT project file
-FilesCount=13
-ActiveFile=13
+FilesCount=12
+ActiveFile=12
 Maximized=1
 RelativePath=1
 Root=
@@ -156,19 +156,6 @@ Left=22
 Top=22
 Width=826
 Height=411
-TopLine=0
-CursorX=21
-CursorY=12
-Highlighter=
-BookmarkCount=0
-
-[File13]
-Name=patrolp_follow_random.ini
-Open=1
-Left=88
-Top=88
-Width=614
-Height=330
 TopLine=0
 CursorX=21
 CursorY=12
