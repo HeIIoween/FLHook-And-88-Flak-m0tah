@@ -106,6 +106,7 @@ content.dll	06C470	500i = max range at which NPCs will scan your cargo ~Dev
 content.dll	06C717	2500f = max range at which NPCs will initiate scan of your cargo ~Dev
 content.dll	1195D4	25000000f = square of the distance from the end of the patrol_path to the object over which patrol_path NPCs won't dock with it (so far tested only with jumpgates; raising this may prevent PP crashes?) ~Vital
 common.dll	07AE5E	200f = unknown, increasing this to 1000f and more makes patrol_path NPCs stand still after spawn (side note by fox: this range seems to also denote the range which MsnRandEnc ships spawned with story scripting cut cruise and engage targets; if you're spawning ships with MsnRandEnc, try increasing this to make them more combat-effective) ~Vital
+common.dll	13E518	0.0001f = nudge_force sensitivity (higher = less auto-dodging from autopilot and AI) ~adoxa
 common.dll	13E6D0	1.5f = autopilot helper value used by all AI functions, including NPC maneuvering and player autopilot; generally, set lower for a more accurate and picky autopilot (beware, has massive effect on how AI handle and may break your NPCs, so be very careful!) ~fox
 common.dll	13E6D4	50f = default follow offset for following NPCs using FollowOp; a following NPC is to the right by default, but will appear to the left, below, and above after jumping systems ~fox
 content.dll	129058	547261696C4F7040414940707562404051414540585A00->466F6C6C6F774F7040414940707562404051414540585A = replace TrailOp behavior with FollowOp behavior (very useful for wingmen addon here: http://the-starport.net/freelancer/forum/viewtopic.php?topic_id=977) ~fox
@@ -139,7 +140,7 @@ common.dll	13F48C	10000f = max docking initiation distance ~Dev
 common.dll	0501B2	E829C1FFFF8B4C24248D54->6A0089F9E835000000EB1F = manually launch from docking bay PART 1 ~adoxa
 server.dll	022040	8B54->EB20 = manually launch from docking bay PART 2 ~adoxa
 common.dll	18BDB8	18f = docking speed ~adoxa
-common.dll	06D6CA	15f = launching speed ~fox
+common.dll	06D6CA	15f = launching speed (for launch sequences that use strafe like battleships) ~fox
 common.dll	050527	1.0f = relative speed after launching (planet) ~adoxa
 common.dll	06DE13	0.5f = relative speed after launching (station) ~adoxa
 common.dll	18BDC0	15f = radius which HpDockPointX01 is considered reached in docking sequence ~fox

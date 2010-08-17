@@ -125,7 +125,6 @@
 -- Zoners now trade commodities around.
 
 What needs to be tested:
--- test out 10k spawn range
 -- test long range assist at 12k
 -- repair ship apparently makes bases hostile?
 -- test new thruster hit_pts
@@ -139,7 +138,12 @@ What needs to be tested:
 -- test new stuff in challenge systems
 
 What's really todo:
--- max cruise speed is 900 - 750; try 670 (690 previously) on FollowShip
+-- put in 0.1 nudge hack and test on reverted Freeport docking and AI strafing
+-- split up Alaska and get best path working again
+-- better rare base system; that whole 100k thing doesn't cut it
+   -- simply Juneau Shipyard for Osiris?
+   -- random wreck minibases in each system for the rest
+-- max cruise speed is 900 - 750; try 675 (690 previously) on FollowShip
 -- either get RMs back in or place random stations - make a special vignette encounter with WPs and stuff
 -- overhaul 3D Sound notice to cover starting system use
 -- re-enable FLHook reps?
@@ -175,9 +179,6 @@ What's sorta todo:
    -- police bases will be police/BH/navy patrols
    -- navy bases will be navy/BH/police
    -- pirate bases will be faction/two allies, etc. just make a list
--- better rare base system; that whole 100k thing doesn't cut it
-   -- simply Juneau Shipyard for Osiris
-   -- random minibases in each system for the rest
 - FLHook:
 -- docking needs to be prevented if you're in death state (will dock with no items, but when you die after they will be mounted again on top of what you have, allowing two guns/thrusters/etc. per one mount)
 -- kbeam does not give back your items when RespawnDelay is active

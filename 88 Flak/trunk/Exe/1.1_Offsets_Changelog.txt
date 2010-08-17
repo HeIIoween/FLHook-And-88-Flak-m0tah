@@ -1,4 +1,7 @@
 ------ Changelog ------
+08/16/10:
+-- Added adoxa's nudge_force controlling offset
+
 08/15/10:
 -- Added misc docking offsets I found
 
