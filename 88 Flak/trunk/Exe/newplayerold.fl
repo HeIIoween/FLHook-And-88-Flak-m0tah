@@ -1,5 +1,5 @@
 [Player]
-name = Trent the Terrible
+name = WhatIsGoingOnHere
 rank = 0
 
 money = 1400000
@@ -10,6 +10,9 @@ com_costume = trent
 system = FP7_system
 pos = 3216,1314,-21775
 rotate = 175,-15,179.8
+
+house = 0.70, fc_n_grp
+rep_group = fc_n_grp
 
 ship_archetype = te_ku_battleship
 equip = rarescanner05
@@ -41,9 +44,6 @@ equip = SlowLargeGreen, HpRunningLight04
 equip = SlowLargeGreen, HpRunningLight03
 equip = SlowLargeGreen, HpRunningLight10
 equip = LargeWhiteSpecial, HpHeadLight01
-
-house = 0.70, fc_n_grp
-rep_group = fc_n_grp
 
 [StoryInfo]
 ship_bought = false

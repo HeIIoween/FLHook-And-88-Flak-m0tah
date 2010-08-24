@@ -1,5 +1,6 @@
 [Player]
-name = %%NAME%%
+name = %%NAME%% ;MP Only
+;name = Trent ;SP Only
 rank = 0
 
 money = 1400000
@@ -119,15 +120,18 @@ house = -0.9, HowdaDoodeWTF_grp
 house = -0.9, Borg_grp
 rep_group = gd_wfl_grp
 
-ship_archetype = n00b_package_of_death
-;cargo = factionjoin_token, 1 ;SP Only
-cargo = n00b_antipvp_token, 1 ;MP Only
-cargo = tradelane_note_token, 1
-cargo = welcome_token, 1
-cargo = missile01_mark02_ammo, 50
-cargo = ge_s_repair_01, 1
-cargo = ge_s_battery_01, 1
+;Ships and items must be a hash to play nice with IFSO, but normal nicks DO work fine with plain FL
+ship_archetype = 2340903936 ;n00b_package_of_death
+equip = 3046640075 ;hf_power
+;cargo = 2808177152, 1 ;factionjoin_token - SP Only
+cargo = 2251033165, 1 ;n00b_antipvp_token - MP Only
+cargo = 2601510535, 1 ;tradelane_note_token
+cargo = 2870002179, 1 ;welcome_token
+cargo = 3130291785, 50 ;missile01_mark02_ammo
+cargo = 2911012559, 1 ;ge_s_repair_01
+cargo = 2596081674, 1 ;ge_s_battery_01
 
+;StoryInfo block - m13 for MP, m12 for SP
 [StoryInfo]
 ship_bought = false
 Mission = Mission_13

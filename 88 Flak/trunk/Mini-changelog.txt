@@ -25,7 +25,7 @@
 -- Due to improvements with anti-spin protection, NPCs are no longer pushed as far when colliding a large ship with them.
 -- Corrected issues with custom AI Companion bots piloting Battleships/Stations not working correctly.
 -- Slight buff to missile refire times.
--- Added axoxa's JFLP plugin to allow built-in widescreen support. Please note the resolution will still need to be manually specified under the [Display] section of "My Documents\My Games\Freelancer\PerfOptions.ini"
+-- Added axoxa's JFLP plugin to allow built-in widescreen support. It will add your desktop's current resolution to the game's resolution listing; if you wish to use a widescreen resolution different from your desktop resolution, it will need to be manually specified under the [Display] section of "My Documents\My Games\Freelancer\PerfOptions.ini"
 -- Removed the FOV options; FOV is now handled directly by JFLP based on your screen aspect ratio.
 -- Rare Armors have been re-added back into the game, bringing the rare item total to 94. Rare Armor is restricted to fighters only. Trade Ships, Capital Ships and Nomads are unable to mount armor.
 -- Capital Ships are now sold at Player-Purchasable Bases, to allow pirates slightly easier access without being limited to only rare ships or Mobile Stations.
@@ -123,36 +123,40 @@
 -- Possible fix to some of the rare client-crash issues, particularly those related to debris when using High-End FX.
 -- Increased Credit Chip drop amounts.
 -- Zoners now trade commodities around.
+-- Fixed an issue with new character creation possibly resulting in a ban if Ioncross had "Ban UNKNOWN Equipment" checked - items were declared as plaintext nicknames in new character files, while Ioncross was expecting a hash (like in normal character files).
+-- 3D Sound Notice on new character launch has been changed to a more helpful "Getting Started" thing.
 
 What needs to be tested:
--- test long range assist at 12k
--- repair ship apparently makes bases hostile?
--- test new thruster hit_pts
+-- repair ship turret apparently makes bases hostile?
 -- test new Hard Mode / Easy Mode AI classes
 -- test new Flak cannon spreads / explosion radii
--- test new Def turret spreads
 -- test Captial vs Fighter balance
--- test new thrusters
--- test new Nomad Fighter more - its thruster still needs some tweaking, I think
--- test if rares can actually be blown off by snipers
+-- test new Nomad Fighter more - its thruster still needs some tweaking
 -- test new stuff in challenge systems
+--- test if rares can actually be blown off by snipers
+    - I doubt it, since they're 0 hit_pts items
+--- test new thruster hit_pts
+    - seem to be okay, test Adv. Thurster more
+--- test long range assist at 9.6k and solar long range at 24k
+    - seem to work, test with other players
 
 What's really todo:
--- put in 0.1 nudge hack and test on reverted Freeport docking and AI strafing
+-- better JFLP notation in readme?
+-- rid of invalid references to patrolp_follow_random.ini
+-- revise thrusters to be DP-based instead of loss-based?
+-- real bays for Nomad lair?
 -- split up Alaska and get best path working again
 -- better rare base system; that whole 100k thing doesn't cut it
    -- simply Juneau Shipyard for Osiris?
    -- random wreck minibases in each system for the rest
 -- max cruise speed is 900 - 750; try 675 (690 previously) on FollowShip
 -- either get RMs back in or place random stations - make a special vignette encounter with WPs and stuff
--- overhaul 3D Sound notice to cover starting system use
 -- re-enable FLHook reps?
 -- orbitals on orbital platform and floaters only
 -- better visibility for floaters (lights? visible platform?)
 -- hivemind needs a better way of following?
 -- new icon for FLServer / Freelancer EXEs?
 -- undocking issues with player-carriers abound!
--- widescreen is still messed up - maybe make it totally manual?
 -- slap Transport turrets on AT (make a new turret type)
 -- un-engine kill Nomads, and better warp thruster?
 -- camera on shipyards, since ships wag like crazy

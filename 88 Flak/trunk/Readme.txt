@@ -165,10 +165,6 @@ Also, please note that this disables the new hit effects system which allows hit
 Default: No
 
 -- Camera Options --
-MP Client: FOV options? - A few options
-Gives the choice of a few FOV (Field of View) options, with various mixes of 70 degrees (Freelancer's default), 90 degrees (Flak's default, widescreen etc.), and 25 degrees (zoom).
-Default: 90/90 FOV
-
 MP Client: Change "Rear View" to "Tactical View"? - A few options
 If enabled, "Rear View" (default V) will be changed to a "Tactical View" - this positions the camera 1.5km or 3km away from your ship, allowing you to shoot everything immediately surrounding you - rather it be in front of you, behind you, above you, etc.
 This is especially useful as you can turn and use "Rear View" at the same time. Great for Capital Ships looking for an immediate readout of all ships surrounding them.
