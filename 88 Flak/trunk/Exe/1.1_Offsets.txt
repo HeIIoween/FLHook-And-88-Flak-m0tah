@@ -263,6 +263,7 @@ Misc
 common.dll	01A74C	200f = maximum FPS PART 1 ~adoxa
 common.dll	01A892	2CB239->4CA727 = maximum FPS PART 2 ~adoxa
 freelancer.exe	1B2819	74->EB = Disable forced logging to FLSpew.txt (logging can still be defined to custom file in freelancer.ini) ~FuryFreelancer
+server.dll	08AE30	"Restart" = name of Restart.fl file ~fox
 freelancer.exe	1E6DCC	"FreelancerClient" = string used for lpName when FL calls CreateMutex (change this for multiple instances) ~M0tah
 freelancer.exe	1E6454	"RemoteServer.dll" = name of RemoteServer DLL filename used by FL (a duplicate RemoveServer.dll with different name is needed to play in MP with the multi-instance hack) ~M0tah
 remoteserver.dl	03F440	"Freelancer.exe" = name of freelancer.exe for RemoteServer; if you're going to rename your freelancer.exe, you'll need to change it here as well, or it will crash when you try to join a server ~Crazy
