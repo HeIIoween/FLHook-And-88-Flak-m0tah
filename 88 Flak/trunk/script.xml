@@ -1,5 +1,5 @@
 <script>
-<header name="88 Flak Version 1.27 RC131 08/29/10" savesafe="false" exclusive="false">
+<header name="88 Flak Version 1.27 RC131 09/04/10" savesafe="false" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -176,15 +176,6 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 <item id="0" name=" (Default) Yes">
 </item>
 <item id="1" name="No">
-</item>
-</option>
-
-<option id="034" name="MP Client: Draw white boxes around missiles/mines?" savesafe="true">
-<item id="0" name=" (Default) No">
-</item>
-<item id="1" name="Yes (All - beware, no audible warnings)">
-</item>
-<item name="Yes (Torpedoes Only - beware, no audible warnings)">
 </item>
 </option>
 
@@ -2512,55 +2503,6 @@ vis_effect = rtc_pistolbullet
 <source>
 effect_type = EFT_ENGINE_CONTRAIL
 ;vis_effect = rtc_pistolbullet
-</source>
-</data>
-
-<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="034:1">
-<dest>
-;type = LOOT
-</dest>
-<source>
-type = LOOT
-</source>
-</data>
-<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="034:1">
-<dest>
-;type = LOOT_TORPEDO
-</dest>
-<source>
-type = LOOT
-</source>
-</data>
-<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="034:1">
-<dest>
-;type = LOOT
-</dest>
-<source>
-type = LOOT
-</source>
-</data>
-<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="034:1">
-<dest>
-;type = LOOT_TORPEDO
-</dest>
-<source>
-type = LOOT
-</source>
-</data>
-<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="034:2">
-<dest>
-;type = LOOT_TORPEDO
-</dest>
-<source>
-type = LOOT
-</source>
-</data>
-<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="034:2">
-<dest>
-;type = LOOT_TORPEDO
-</dest>
-<source>
-type = LOOT
 </source>
 </data>
 

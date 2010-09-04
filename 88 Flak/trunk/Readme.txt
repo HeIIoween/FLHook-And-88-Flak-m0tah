@@ -35,21 +35,21 @@ Version 1.27, listed on server list as 88.27
 ##1 - List of Features
 ======
 Gameplay:
--- Turns Freelancer gameplay into class-based warfare with insanely fast-paced combat. All ships, equipment, and other gear is balanced so that no player - even a brand new player - is left in the dust. In the end, combat boils down to skill and tactics, instead of best ships and equipment.
--- Huge emphasis on teamplay. Unlike normal Freelancer, friendly NPCs will come to your aid in the middle of a fight, assisting you when the going is tough. Got a lot of hostiles on your tail? Retreat to a friendly area and they will be dealt with.
--- Enormous fights. Both friendly and hostile NPCs can join fights in progress, meaning a simple skirmish can escalate into a full-scale war if not ended abruptly - factions have both Capital Ships and Mobile Stations, and are not afraid to roll them out when they need to.
--- A variable universe - factions are no longer constrained to their simple spheres of influence, and will send ships across a system - even across the galaxy - to deal with issues. Yes, AI travel the entire galaxy, and yes, you can see them doing this. Gaians hate you? There's a small chance a wing of Gaians could sneak into Rheinland to make your life miserable. Friendly with the Kusari Naval Forces? Perhaps you'll run into some KNF ships checking up on you in the Border Worlds.
--- NPCs can be seen until 25km out, and players can be seen until 25km out, allowing for more PvP opportunities. Group members can be seen until 300km out as well, allowing for easier organization with groups.
--- Players can join, and attain special rank in, factions. Not only do you get a tag in your name when you join a faction, but you also obtain a reputation towards other players - for instance, if you joined the Liberty Rogues, and a player was hostile to the Rogues, you would appear hostile to that player. If you approached that player, danger/battle music would even play, which can lead to some rather epic PvP engagements.
+-- Turns Freelancer gameplay into class-based warfare with insanely fast-paced combat. All ships, equipment and other gear is balanced so that no player - even a brand new player - is left in the dust. In the end, combat boils down to the greatest skill and tactics, instead of greatest ships and equipment.
+-- Huge emphasis on teamplay. Unlike normal Freelancer, friendly NPCs will come to your aid in the middle of a fight, assisting you when the going gets tough. Got a lot of hostiles on your tail? Retreat to a friendly area and they will be dealt with.
+-- Enormous fights. Both friendly and hostile NPCs can join fights in progress, meaning a simple skirmish can escalate into a full-scale war if not ended abruptly - factions use both Capital Ships and Mobile Stations and are not afraid to roll them out when they need to.
+-- A variable universe - factions are no longer constrained to their simple spheres of influence, and will send ships across a system - even across the galaxy - to deal with issues. Gaians hate you? There's a small chance a wing of Gaians could pop up in Rheinland to make your life miserable. Friendly with the Kusari Naval Forces? Perhaps you'll run into some KNF ships helping you out in the Border Worlds.
+-- NPCs and players can be seen until 25km out, allowing for more PvP opportunities. Group members can be seen until 300km out as well, allowing for easier organization with groups.
+-- Players can join and attain special ranks in factions. Not only do you get a tag in your name when you join a faction, but you also obtain a reputation towards other players - join the Liberty Rogues and you will appear hostile to all players on the Rogues' hit list. Approaching that player would play danger/battle music and show your name under the hostile contacts list.
 -- Everything you could do in a mission (attacking a Station, etc.) is just played out real-time. This means you could see NPCs attack - and possibly destroy - a Station right in front of your eyes. Or you could destroy one yourself, and reap the loot reward.
 -- Full player, NPC, and even Station / Weapons Platform looting. ALL cargo (not just some cargo) will drop off players and NPCs - if a player or NPC is carrying 1207 H-Fuel, then that player or NPC will drop 1207 H-Fuel on death. This means a pirate can make a healthy living hunting player-traders down.
 -- Death Penalties - approximately 6% of your total equipment and ship worth (NOT bank account) is subtracted from your account when you die - if you can't pay your fines, random amounts of equipment will be confiscated from your ship. To put it another way, this is equivalent to paying a full on-base repair bill when you die, in an effort to make retreating from battle more cost-effective than just dieing on the field.
 
 AI:
--- AI Bots - 30 unique player-like AI NPCs (spanning 52 unique loadouts) that travel the universe in search of glory and fortune. AI Bots can be placed in to an AI Companion squad for solo or cooperative play. When in an AI Companion squad, they will accompany you wherever your travels take you, and attack any NPC with a hostile reputation to you. You are given four wingmen "slots" - you may assign a bot to each slot, allowing configurable squads of 1 to 4 bots. Additionally, you may create your own companion bot from an existing player!
+-- AI Bots - 30 unique player-like AI NPCs (spanning 52 unique loadouts) that travel the universe in search of glory and fortune. AI Bots can be placed in to an AI Companion squad for solo or cooperative play. When in an AI Companion squad, they will accompany you wherever your travels take you and attack any NPC with a hostile reputation to you. You are given four wingmen "slots" - you may assign a bot to each slot, allowing configurable squads of 1 to 4 bots. Additionally, you may create your own companion bot from an existing player!
 -- Hirable NPC wingmen squads, which stay with you until you die, log out, land, or jump systems. You can obtain wingmen by paying large amounts of cash or by using high faction reputations - which are not easy to obtain.
--- Jaw-dropping AI - they don't just shoot well, they are smart. AI will chase fleeing targets with cruise, use Counter-Measures, strafe and afterburn effectively, and, of course, serve up a good beating in general. AI Bots (mentioned above) possess combat prowess that will best the average player in a 1v1 fight.
--- AI has no combat bias, and will attack any target of opportunity - not just players. Factions hate each-other just as much as they may hate you.
+-- Advanced AI with potent tactics and combat ability. AI will chase fleeing targets with cruise, use Counter-Measures, strafe and afterburn effectively, prioritize targets based on their loadout, and finally serve up a good beating in general. AI Bots (mentioned above) possess combat prowess that will best the average player in a 1v1 fight.
+-- AI has no combat bias and will attack any target of opportunity - not just players. Factions hate each-other just as much as they may hate you.
 -- Friends don't let friends fly alone - gaining friendly status with a faction does more than just paint green targets on your HUD. Friendly NPCs will go out of their way to assist you in combat, excuse any accidental friendly fire, and even assign escorts to guard you for free (assuming you have faction's unique token, which requires very friendly rep).
 -- NPC loadouts and ships are the exact same as what players use. AI Bots in particular feature highly customized loadouts tailored to that bot's fighting style, many of which were built in-game before being exported to the AI Bot's loadout code.
 -- In addition to AI Bots, there are also regular Freelance NPCs that carry out simple day-to-day tasks in random selections of ships. They can be trading, hunting ships deep within enemy territory, or just flying on patrol.
@@ -188,20 +188,10 @@ MP Client: Draw Contrails on ships? - Yes / No
 Enables contrails (trails given off wing tips) to be drawn, like in normal Freelancer. Engine Trails are always drawn, so if you don't like all the trails, toggle these off.
 Default: Yes
 
-MP Client: Draw white boxes around missiles/mines? - No / Yes (All) / Yes (Torpedoes Only)
-Normally, Freelancer audibly warns you of incoming missiles, and draws a small red "X" leading the missile so you can shoot it. However, this causes problems when lots of missiles are heading your way, as your guns may accidentally fire upon the missiles instead of firing upon your intended targets. Also, hearing "incoming missile" every two seconds gets old.
-The white box option solves these issues by drawing white boxes around incoming missiles and disabling the audible warnings.
-Please also note that when this option is enabled, automatic CM dropping (where you "turn on" the CM dropper in your weapons window) does not function.
-Default: No
-
-MP Client: Disable crosshair spin on target lock? - No / Yes
-With this option enabled, the crosshair will glow brighter when locked onto a target instead of spin.
-Default: No
-
 -- Server Options --
 MP Server: AI difficulty? - Normal / Easy / Very Easy / Hard
 Turning this to Easy limits Nanobot / Shield Battery usage, making them easier to kill.
-Turning this to Very Easy decreases accuracy, firing rate, missile usage, and thrusting skill, in addition to limiting NPC Nanobot / Shield Battery usage.
+Turning this to Very Easy decreases accuracy, firing rate, missile usage, and thrusting skill, in addition to limiting Nanobot / Shield Battery usage.
 Turning this to Hard grants near-perfect accuracy, firing rate, missile usage, and Nanobot / Shield Battery usage. They will never deliberately miss a shot - even if they are screaming by at 500m/s, so you will have to constantly evade incoming fire. One Hard NPC is roughly equal to the skill of most casual players. You will receive double Credit Chip loot from killing AI on this difficulty.
 Default: Normal
 
@@ -239,7 +229,7 @@ This does not affect NPC counts in Challenge Missions.
 Default: Normal
 
 MP Server: Allow Wingmen License to attract wingmen? - Yes / No
-Allows players to lead AI NPC wingmen squads. I HEAVILY recommend to leave this enabled; most of 88 Flak's combat is balanced with the assumption that players have AI helping them at all times.
+Allows players to lead AI NPC wingmen squads. I HEAVILY recommend this be left enabled; most of 88 Flak's combat is balanced under the assumption that players have AI helping them at all times.
 Default: Yes
 
 -- Soundtrack Selection --

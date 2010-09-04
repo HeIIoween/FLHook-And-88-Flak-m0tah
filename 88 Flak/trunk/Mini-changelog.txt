@@ -126,8 +126,11 @@
 -- Fixed an issue with new character creation possibly resulting in a ban if Ioncross had "Ban UNKNOWN Equipment" checked - items were declared as plaintext nicknames in new character files, while Ioncross was expecting a hash (like in normal character files).
 -- 3D Sound Notice on new character launch has been changed to a more helpful "Getting Started" thing.
 -- Re-hardpointed Thruster models to look a little better.
+-- Removed white-box missile option due to crash exploit.
+-- Improved the quality of generic damage and station death fuses.
 
 What needs to be tested:
+-- test new mining values
 -- repair ship turret apparently makes bases hostile?
 -- test new Hard Mode / Easy Mode AI classes
 -- test new Flak cannon spreads / explosion radii
@@ -142,8 +145,6 @@ What needs to be tested:
     - seem to work, test with other players
 
 What's really todo:
--- test loot drops with a ton of 100% chance items - maybe 99% should be used?
--- make generic_damage fuse not use runninglights, but only turret, shield, engine, etc. mounts
 -- better JFLP notation in readme?
 -- rid of invalid references to patrolp_follow_random.ini
 -- revise thrusters to be DP-based instead of loss-based?
