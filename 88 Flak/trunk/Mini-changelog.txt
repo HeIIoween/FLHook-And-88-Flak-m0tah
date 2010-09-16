@@ -128,6 +128,7 @@
 -- Re-hardpointed Thruster models to look a little better.
 -- Removed white-box missile option due to crash exploit.
 -- Improved the quality of generic damage and station death fuses.
+-- Added some new sounds, namely missile and afterburner sounds from Freespace.
 
 What needs to be tested:
 -- test new mining values
@@ -146,7 +147,6 @@ What needs to be tested:
 
 What's really todo:
 -- better JFLP notation in readme?
--- rid of invalid references to patrolp_follow_random.ini
 -- revise thrusters to be DP-based instead of loss-based?
 -- real bays for Nomad lair?
 -- split up Alaska and get best path working again
