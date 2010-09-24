@@ -129,6 +129,7 @@
 -- Removed white-box missile option due to crash exploit.
 -- Improved the quality of generic damage and station death fuses.
 -- Added some new sounds, namely missile and afterburner sounds from Freespace.
+-- Docking Rings redesigned; Orbital Defense Turrets are now only located on the external platforms and the ring itself is armed with anti-fighter turrets.
 
 What needs to be tested:
 -- test new mining values
@@ -156,7 +157,6 @@ What's really todo:
 -- max cruise speed is 900 - 750; try 675 (690 previously) on FollowShip
 -- either get RMs back in or place random stations - make a special vignette encounter with WPs and stuff
 -- re-enable FLHook reps?
--- orbitals on orbital platform and floaters only
 -- better visibility for floaters (lights? visible platform?)
 -- hivemind needs a better way of following?
 -- new icon for FLServer / Freelancer EXEs?
