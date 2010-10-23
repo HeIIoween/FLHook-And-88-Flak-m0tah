@@ -1,0 +1,8 @@
+2314747200 = ge_s_thruster_03, Heavy Thruster
+2314753344 = ge_s_thruster_01, Standard Thruster
+2328926920 = order_thruster, Order Thruster
+2347615178 = no_thruster, Nomad Thruster (special)
+2360257346 = follow_thruster, Camera Ship Thruster (Special)
+2851612992 = ge_s_thruster_02, Deluxe Thruster
+2851619136 = ge_s_thruster_00, VHF Integrated Thruster
+2851656000 = ge_s_thruster_04, Advanced Thruster

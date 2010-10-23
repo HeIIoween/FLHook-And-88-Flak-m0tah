@@ -1,0 +1,13 @@
+[NPCShipArch]
+nickname = wingman_li_n_li_elite_d1-3
+loadout = wingman_li_n_li_elite_loadout01
+level = d3
+ship_archetype = li_elite
+state_graph = FIGHTER
+npc_class = lawful, class_fighter_wingman, d1
+pilot = pilot_wingman_fighter_af
+
+Replace these after:
+pilot_wingman_bot -> pilot_wingman
+pilot_wingman_pbase -> pilot_wingman
+pilot_wingman_transport -> pilot_wingman_capital

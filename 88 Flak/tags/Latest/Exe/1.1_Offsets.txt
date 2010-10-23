@@ -1,0 +1,479 @@
+http://the-starport.net/freelancer/forum/viewtopic.php?topic_id=403
+
+------ Changelog / Tutorial / Download ------
+A changelog for this may by found at http://www.memes.no/88flak/downloads/beta/1.1_Offsets_Changelog.txt
+A picture-guided tutorial for this may be found at http://www.memes.no/88flak/downloads/beta/1.1_Offsets_Tutorial.htm
+A text-only version of the tutorial may be found at http://www.memes.no/88flak/downloads/beta/1.1_Offsets_Tutorial.txt
+An up-to-date download of this may always be found at http://www.memes.no/88flak/downloads/beta/1.1_Offsets.txt
+
+------ Information ------
+This list was originally compiled by Dev in the Lancers Reactor topic Limit Breaking 101.
+I have since taken up the liberty of un-officially organizing this list, and documenting any new offsets I come across. If you find new values that could be of use, please contribute them and they will be added to the list.
+
+Please note all offsets are for 1.1 patch DLLs only. If you do not use the 1.1 patch in your mod, you can easily upgrade with this stand-alone zip file containing all 1.1 patch items: http://www.memes.no/88flak/downloads/beta/flpatch.zip
+
+------ Table of Contents ------
+-- Visibility
+-- NPC Spawning: Generic
+-- NPC Spawning: Patrol Path
+-- NPC Spawning: Tradelane
+-- NPC Behavior
+-- Random Missions
+-- Docking / Jumping
+-- System Editing
+-- Damage / Repair / Collision
+-- Credits / Market
+-- Reputation
+-- Server Operation
+-- Tractor Beam / Trading
+-- Turret View / Mouse
+-- Cruise / Tradelane
+-- Scripted Missions (Story etc.)
+-- OpenSP Hack
+-- Misc
+-- HUD: Chat
+-- HUD: Limits
+-- HUD: Energy Bars
+-- HUD: Damage Indicators
+-- HUD: Ship Brackets
+-- HUD: Contacts / Weapons List / Wireframe
+-- HUD: Nanobot / Shield Battery
+-- HUD: Animation Speeds
+-- HUD: Equipment / Shipdealer
+-- HUD: Other
+-- Effects
+
+Layout:
+(file name)	(1.1 offset)	(default value) = (description)
+
+(default value) meanings:
+f = float, 4 bytes
+d = double, 8 bytes
+i = integer, 4 bytes
+b = byte, 1 byte (-128 to 127)
+Any other value with no suffix means a hexadecimal value. Thus, a value like "0F85->90E9" means replace the original bytes on the left with the new bytes on the right.
+
+======
+Visibility
+======
+freelancer.exe	210530	3f = near plane of view frustum ~Dev
+freelancer.exe	210534	250000f = far plane of view frustum (nothing will be drawn beyond this) ~Dev
+freelancer.exe	213EC8	10000f = maximum draw distance for some bases (like battleships) ~FriendlyFire
+freelancer.exe	1C8910	20000f = same offset as below, max distance at which ships can be seen (even if lodranges specify a higher distance) ~Dev
+freelancer.exe	1C8910	20000f = same offset as above, poly flipping distance - raising this value stops graphical glitches on big CMPs, but raising it too high introduces flickering issues with SPH-based models (like planets) ~FriendlyFire
+freelancer.exe	1D15B8	100000000f = square of max distance that a ship can be selected ~Dev
+server.dll	086AEC	6250000f = square of NPC disappear distance in MP ~Dev
+server.dll	086AF0	25000000f = square of player disappear distance in MP ~Dev
+server.dll	086AF4	100000000f = square of grouped player disappear distance in MP ~Dev
+
+======
+NPC Spawning: Generic
+======
+content.dll	11BC78	100d = initial NPC min spawn distance in SP and MP (such as after respawn) ~fox
+content.dll	11BC80	1775d = initial NPC max spawn distance in SP and MP (such as after respawn) ~Dev
+content.dll	11BC68	2500d = NPC max spawn distance in SP and MP ~Dev
+content.dll	0D3C36	2500f = maximum distance that NPCs will persist in SP ~fox
+content.dll	0D3D6E	2500f = maximum distance that NPCs will persist in MP ~Dev
+content.dll	058F46	3750f = distance over which NPC spawning will ignore density cap in SP ~Dev
+content.dll	117A68	7500f = distance over which NPC spawning will ignore density cap in MP (in other words, players within this distance to another player will "share spawns" with that player, and must move this distance away from other players for FLServer to start spawning NPCs for him/her) ~Dev
+======
+NPC Spawning: Patrol Path
+======
+content.dll	118578	200f = multiplier for patrol_path spawn distances, double this to double patrol_path spawn ranges; use this in tandem with below to raise patrol_path spawn ranges ~Vital
+content.dll	0C4974	2500f = minimum spawn distance for patrol_path NPCs, patrol_path spawns below this distance will be rejected; use this in tandem with above to raise patrol_path spawn ranges ~fox
+content.dll	0BB1DA	2000f = distance from the zone (or from the edge of the patrol_path) that encounters begin to spawn - this is not from the center of the patrol; if your patrol has a radius of 750, encounters will spawn 2750 away from the central axis of the patrol; if your zone is a sphere with 4000 radius encounters start spawning 6000 (4000 + 2000) away from the centre of the zone ~Vital
+content.dll	0C48D7	2500f = distance that patrol_path NPCs spawn when players are close to each other in patrol path (so far seems like closer than 300m) ~Vital
+======
+NPC Spawning: Tradelane
+======
+content.dll	0D8AAF	1400i = distance from a disrupted trade lane that tradelaneattackers are created ~Vital
+content.dll	0BB1DA	2000f = distance from the last tradelane ring that FL will generate NPCs from when you enter tradelane ~Vital
+content.dll	0D3D93	4000f = distance from the last tradelane ring that patrol path NPCs created when you enter tradelane will still exist ~Vital
+content.dll	11BB58	1200f = distance from the last tradelane ring that patrol path NPCs are created (2750 and more, no NPCs are created, unless patrol_path spawn distance is raised?) ~Vital
+content.dll	0C5D53	3750f = distance from the tradelane ring (except the nearest one) at which NPCs with arrival = tradelane encounters are created (negative numbers accepted, though terminal rings will act up) - there are more 3750f in content.dll which may be relevant ~Vital
+content.dll	0C2946	5000i = minimum spawn distance for tradelane NPCs, tradelane spawns below this distance will be rejected and transferred to the next ring instead ~Vital
+
+======
+NPC Behavior
+======
+common.dll	140810	5000f = max range at which NPCs will engage enemies; don't forget to increase the range at which NPCs will engage in pilots_population as well (attack_preference under jobblock) ~Dev
+server.dll	0A8AF0	10000f = maximum AI firing range ~FriendlyFire
+common.dll	08E6D8	74->EB = remove FIGHTER | FREIGHTER testing on Player for attack_preference in JobBlocks ~adoxa
+common.dll	13E52C	04->00 = NPCs use scanner (enables CMs) ~adoxa
+content.dll	0D0630	5000f = max range at which NPCs will go hostile upon seeing their allies go hostile PART 1 ~Dev
+content.dll	11BD10	5000f = max range at which NPCs will go hostile upon seeing their allies go hostile PART 2 ~Dev
+content.dll	06C470	500i = max range at which NPCs will scan your cargo ~Dev
+content.dll	06C717	2500f = max range at which NPCs will initiate scan of your cargo ~Dev
+content.dll	1195D4	25000000f = square of the distance from the end of the patrol_path to the object over which patrol_path NPCs won't dock with it (so far tested only with jumpgates; raising this may prevent PP crashes?) ~Vital
+common.dll	07AE5E	200f = unknown, increasing this to 1000f and more makes patrol_path NPCs stand still after spawn (side note by fox: this range seems to also denote the range which MsnRandEnc ships spawned with story scripting cut cruise and engage targets; if you're spawning ships with MsnRandEnc, try increasing this to make them more combat-effective) ~Vital
+common.dll	13E518	0.0001f = nudge_force sensitivity (higher = less auto-dodging from autopilot and AI) ~adoxa
+common.dll	13E6D0	1.5f = autopilot helper value used by all AI functions, including NPC maneuvering and player autopilot; generally, set lower for a more accurate and picky autopilot (beware, has massive effect on how AI handle and may break your NPCs, so be very careful!) ~fox
+common.dll	13E6D4	50f = default follow offset for following NPCs using FollowOp; a following NPC is to the right by default, but will appear to the left, below, and above after jumping systems ~fox
+content.dll	129058	547261696C4F7040414940707562404051414540585A00->466F6C6C6F774F7040414940707562404051414540585A = replace TrailOp behavior with FollowOp behavior (very useful for wingmen addon here: http://the-starport.net/freelancer/forum/viewtopic.php?topic_id=977) ~fox
+content.dll	085D6F	33FF897C24->E923F9FFFF = replace TrailOp behavior with FollowOp behavior (alternate method) PART 1 ~adoxa
+content.dll	06CDF5	06->07 = replace TrailOp behavior with FollowOp behavior (alternate method) PART 2 ~adoxa
+content.dll	06CE24	14->4C = replace TrailOp behavior with FollowOp behavior (alternate method) PART 3 ~adoxa
+content.dll	0875BC	18->50 = replace TrailOp behavior with FollowOp behavior (alternate method) PART 4 ~adoxa
+content.dll	0875C2	1C->54 = replace TrailOp behavior with FollowOp behavior (alternate method) PART 5 ~adoxa
+
+======
+Random Missions
+======
+content.dll	11C2C4	2500f = distance at which NPC mission target ships in randommissions are created ~Vital
+content.dll	0F17D9	2625f = distance at which NPC wave ships in randommissions are created ~Vital
+content.dll	11C2B0	7500f = distance at which mission target solars in randommissions are created ~Vital
+content.dll	11CBCC	6000f = distance from 1st mission waypoint that second waypoint (and ships at it) in randommissions are created ~Vital
+content.dll	11C2C8	3500f = core retreat distance from randommission waypoint, modified by below offset ~Vital
+content.dll	11CAB4	250f = amount to add to the core retreat distance (above) to work out a real retreat distance, and amount to subtract from the core retreat distance (above) to work out a real back-in-range distance ~Vital
+content.dll	11C2CC	2000f = max range at which randommission NPCs will engage enemies; outside of this range, their behavior will be strange (fly around in circles, ignore fire, etc.) ~Vital
+content.dll	117608	300f = multiplier for zone distance; increase to allow randommissions further from base ~adoxa
+content.dll	12E778	30f = return to battle time (SP) ~adoxa
+content.dll	11C2DC	45f = return to battle time (MP) ~adoxa
+content.dll	0ECED5	5f = return to battle update interval ~adoxa
+content.dll	0AAD7A	8944E404D944E420D864E41CEB0466B8FB06DB44E404D80DD0973906DEC9D844E41C5E83C410C3->99B903000000F7F985D27433D90530B2FB06DD5C2404FFD699DD442404B903000000F7F98D5412 = make MP job difficulty exactly between min and max difficulty in mbases.ini ~adoxa
+
+======
+Docking / Jumping
+======
+common.dll	18BDB4	1000f = max dock acknowledge distance ~Dev
+common.dll	13F48C	10000f = max docking initiation distance ~Dev
+common.dll	0501B2	E829C1FFFF8B4C24248D54->6A0089F9E835000000EB1F = manually launch from docking bay PART 1 ~adoxa
+server.dll	022040	8B54->EB20 = manually launch from docking bay PART 2 ~adoxa
+common.dll	18BDB8	18f = docking speed ~adoxa
+common.dll	06D6CA	15f = launching speed (for launch sequences that use strafe like battleships) ~fox
+common.dll	050527	1.0f = relative speed after launching (planet) ~adoxa
+common.dll	06DE13	0.5f = relative speed after launching (station) ~adoxa
+common.dll	18BDC0	15f = radius which HpDockPointX01 is considered reached in docking sequence ~fox
+common.dll	18BDBC	10f = radius which HpDockPointX02 is considered reached in docking sequence ~fox
+common.dll	063645	60->62 = F3 docking works with FREIGHTER type PART 1 ~adoxa
+common.dll	063650	00->02 = F3 docking works with FREIGHTER type PART 2 ~adoxa
+common.dll	13E678	2000f = how far behind a jumpgate a player will be spawned - from this point, the player will be thrown forward at exceptional speed until he/she has reached the gate ~fox
+
+======
+System Editing
+======
+common.dll	0DAD24	057B->0175 = make drag_modifier independent of interference/damage ~adoxa
+server.dll	08B450	526500000000f = square of distance from the center of the system over which your ship explodes in multiplayer (no 1.0 offset, this feature was added in 1.1) ~fox
+server.dll	086AEC	6250000f = square of distance from the center of the system over which bases no longer wish you well when un-docking (note: this is the same number as NPC disappear distance - as long as you have a good NPC persistence range, loot_unseen_radius = (radius) and loot_unseen_life_time = (time outside radius) in constants.ini, increasing this is safe) ~fox
+freelancer.exe	05B029	77->EB = force "%s System." IDS (1373 in resources.dll) to be used for all system arrival text (no house is displayed) ~M0tah
+freelancer.exe	05B021	83FFFFFCFF83F8->AB01000000EB2F = make the house in the system arrival text the system's IDS +1 ~M0tah
+freelancer.exe	05B021	83FFFFFCFF83F8->9B01000000EB2D = make system arrival text the system's IDS +1 (be sure to also change IDS 1373 to just "%s") ~M0tah
+common.dll	13DFDC	1.74f = multiplier for fill_dist in CmnAsteroid::CAsteroidField::near_field calculation, increase this to make FL render asteroid fields from greater distances ~w0dk4, OutCast
+common.dll	0E698E	7C->EB = some planets keep on spinning ~adoxa
+common.dll	0D670F	C644243001->E947FFFFFF = suns will honor visit flag ~adoxa
+
+======
+Damage / Repair / Collision
+======
+server.dll	00960C	0C->00 = fix explosion damage not causing full damage (or no damage) on large ships ~M0tah
+server.dll	00AFC0	D94424->C20800 = energy weapons don't damage power ~adoxa
+common.dll	04B4D2	1E->0E = exclude cloaking device from total hit points PART 1 ~adoxa
+common.dll	04B582	1E->0E = exclude cloaking device from total hit points PART 2 ~adoxa
+common.dll	04B63E	1E->0E = exclude cloaking device from total hit points PART 3 ~adoxa
+server.dll	08551C	0.05f = minimum fraction of damage required in order to use bots/batts (in other words, if your Nanobot heals 1000 damage, you will need to have at least 50 points of damage to be able to repair) ~adoxa
+freelancer.exe	0B3C42	E9->00 = items with "ids_name = 0" show up in repair list ~adoxa
+common.dll	0EDB44	0.01f = collision detection min check distance (increasing this will fix issues with the sur collisions on objects > 130k from center of system) ~w0dk4
+
+======
+Credits / Market
+======
+freelancer.exe	1CAEE8	9999999f = maximum value of any single good ~Dev
+server.dll	{ 06F46E & 06F475 & 06F4A6
+		& 06F4AD & 06F51E & 06F525
+		& 06FB9B & 06FBA3 & 06FBAE
+		& 06FC00 & 06FC08 & 06FC1C
+		& 07543C & 075443 & 0754E0
+		& 0754E7 & 076426 & 07642D }	999999999i = maximum credits that a player can have in MP (ALL offsets must be changed!) ~adoxa
+freelancer.exe	1D6D38	0.8f = resale % for ships (client-side) ~Dev
+server.dll	08AE78	0.8f = resale % for ships (server-side, must match variable above or 1.1 server dll will kick client for cheating) ~FriendlyFire
+freelancer.exe	1D0E2C	0.3f = resale % for equipment (client-side) ~fox
+server.dll	08AE7C	0.3f = resale % for equipment (server-side, must match variable above or 1.1 server dll will kick client for cheating) ~fox
+freelancer.exe	080942	75->EB = allow engines to be sold ~M0tah
+freelancer.exe	0808AD	0F85->90E9 = allow engines to be transferred ~adoxa
+freelancer.exe	037ECF	7F000000 = number of items in stock ~adoxa
+freelancer.exe	037ECB	C74424440000007F->8944244490909090 = market files control items in stock (MarketGood = <item nickname>, <required level>, <required rep>, <unknown>, <stock>, <sell>, <price multiplier>) ~adoxa, M0tah
+
+======
+Reputation
+======
+common.dll	18D5D4	0.9f = reputation over which will give you affiliation with that faction (faction name appears in space before your name) ~Dev
+content.dll	1143C8	0.6f = reputation set by bribes, can not exceed 0.9 ~fox
+content.dll	11BD84	1.0f = reputation at/over which a faction's NPCs will excuse your friendly fire (killing the NPC should still dock rep, however), same as below ~fox
+content.dll	11BD84	1.0f = reputation at/over which a faction will no longer turn hostile upon seeing its allies turn hostile, same as above ~fox
+content.dll	11BD80	0.6f = reputation over which a faction will be friendly with another faction (such as shooting you if that faction is hostile, etc.) ~fox
+common.dll	143C58	"(group name)" = list of groups (in nickname form) of factions that won't show up on your reputation screen - either replace the nicknames or write over them with 00s (DO NOT change the length of the DLL) ~Bejaymac
+
+======
+Server Operation
+======
+freelancer.exe	16835B	5b = maximum number of characters per account PART 1 ~Zephyer
+freelancer.exe	169D2B	5b = maximum number of characters per account PART 2 ~adoxa
+server.dll	07417C	5b = maximum number of characters per account PART 3 ~M0tah
+server.dll	085530	60d = respawn time for any solar object to regain full health once destroyed ~w0dk4
+
+======
+Tractor Beam / Trading
+======
+freelancer.exe	1D848C	1000000f = square of distance from loot that the "tractor all" button can tractor in loot / appears on HUD ~fox
+freelancer.exe	1C9800	1.2f = multiplier for width of tractor beams ~fox
+freelancer.exe	1D8D08	1500f = maximum distance to initiate trade ~adoxa
+
+======
+Turret View / Mouse
+======
+freelancer.exe	1DBE0C	-1.04719758034f = lower limit of y/z axis rotation in turret view, in radians ~M0tah
+freelancer.exe	1DBE10	1.04719758034f = upper limit of y/z axis rotation in turret view, in radians ~M0tah
+freelancer.exe	0C7903	42->00 = keyboard moves ship in turret view PART 1 ~adoxa
+freelancer.exe	0DBB12	74->EB = keyboard moves ship in turret view PART 2 ~adoxa
+freelancer.exe	0DBB58	74->EB = keyboard moves ship in turret view PART 3 ~adoxa
+freelancer.exe	0DBB9E	74->EB = keyboard moves ship in turret view PART 4 ~adoxa
+freelancer.exe	0DBBE4	74->EB = keyboard moves ship in turret view PART 5 ~adoxa
+freelancer.exe	0C7EDB	42->00 = mouse moves ship in Turret View, a bit buggy though PART 1 ~adoxa
+freelancer.exe	11A8ED	0F85->90E9 = mouse moves ship in Turret View, a bit buggy though PART 2 ~adoxa
+freelancer.exe	14A65B	A1A04A67008A88B905000084C97438A14497670085C0740583C0F8EB0233C050FF1570645C0083C40485C074088BC8->9CA14497670083C0F850FF1570645C0059919D740DA0CAEC67008881F9000000EB25B0008681F9000000A2CAEC6700 = disable camera level during Turret View (for ship movement) ~adoxa
+freelancer.exe	11D89C	D91D7C526700->E82F820A0090 = camera is independant of ship movement in turret view PART 1 ~adoxa
+freelancer.exe	11D8BB	D91D70526700->E8F0810A0090 = camera is independant of ship movement in turret view PART 2 ~adoxa
+freelancer.exe	1C5AB0	00000000000000000000000000000000000000->D91570526700D80D84906700D91D7C906700C3 = camera is independant of ship movement in turret view PART 3 ~adoxa
+freelancer.exe	1C5AD0	0000000000000000->D9157C526700EBDE = camera is independant of ship movement in turret view PART 4 ~adoxa
+freelancer.exe	1C94FC	1.75f = multiplier of mouse speed ~Syd
+
+======
+Cruise / Tradelane
+======
+common.dll	053796	74->EB = adjust cruise speed according to drag_modifier ~adoxa
+freelancer.exe	0C7A81	9090909090909090909090->6A00E86800000083C404C3 = instant deceleration to 0 after dropping cruise PART 1 ~adoxa
+freelancer.exe	0C7AB0	C390909090909090->807CE4040074CAC3 = instant deceleration to 0 after dropping cruise PART 2 ~adoxa
+common.dll	13F3CC	2500f = trade lane travel speed (beware, values over 2500 may have adverse side-effects) ~Lord of Lunacy
+
+======
+Scripted Missions (Story etc.)
+======
+server.dll	03A03E	74->EB = bypass mission check on player invite (beware, may bug up RandomMissions) ~M0tah
+server.dll	03A438	74->EB = remove mission check on group invite accept (beware, may bug up RandomMissions) ~M0tah
+content.dll	019A59	7517->EB0E = prevent mission failures due to attacking a neutral/friendly object ~M0tah
+
+======
+OpenSP Hack
+======
+content.dll	04EE3A	A22A->A26A = OpenSP tweak for 1.1 DLLs to always start from m13; alternatively, simply direct your newplayer.fl file to start on a blank Mission_13 instead of using this hack ~Xerx, Cannon
+
+======
+Misc
+======
+common.dll	01A74C	200f = maximum FPS PART 1 ~adoxa
+common.dll	01A892	2CB239->4CA727 = maximum FPS PART 2 ~adoxa
+freelancer.exe	1B2819	74->EB = Disable forced logging to FLSpew.txt (logging can still be defined to custom file in freelancer.ini) ~FuryFreelancer
+server.dll	08AE30	"Restart" = name of Restart.fl file ~fox
+freelancer.exe	1E6DCC	"FreelancerClient" = string used for lpName when FL calls CreateMutex (change this for multiple instances) ~M0tah
+freelancer.exe	1E6454	"RemoteServer.dll" = name of RemoteServer DLL filename used by FL (a duplicate RemoveServer.dll with different name is needed to play in MP with the multi-instance hack) ~M0tah
+remoteserver.dl	03F440	"Freelancer.exe" = name of freelancer.exe for RemoteServer; if you're going to rename your freelancer.exe, you'll need to change it here as well, or it will crash when you try to join a server ~Crazy
+freelancer.exe	1A5390	81->C3 = don't run dxdiag on crash ~adoxa
+freelancer.exe	1B264C	83FF010F94C2->BA0100000090 = keep FL display running when the window doesn't have focus ~cannon
+
+======
+HUD: Chat
+======
+freelancer.exe	0691D1	20b = maximum number of chat lines in chat history window (signed byte, so max of 127) ~M0tah
+freelancer.exe	0691CA	10000i = time in milliseconds chat text is displayed before disappearing ~M0tah
+freelancer.exe	0691CF	20b = maximum number of chat lines displayed at once -1 ~M0tah
+freelancer.exe	1A6250	8B4424->C21000 = prevent chat from being displayed (but not new/departing player messages) ~M0tah
+freelancer.exe	1CEEE4	-0.265f = y position of chat input box ~M0tah
+freelancer.exe	1CEEE0	0.065f = height of chat input box ~M0tah
+freelancer.exe	1CEEDC	0.46f = width of chat input box ~M0tah
+freelancer.exe	06A440	50b = maximum number of characters in chat input box ~M0tah
+freelancer.exe	05E01B	BF1D1D = RGB color as Hex value of the messages "New Player" etc. ~Viper
+freelancer.exe	06AAF8	0F84->90E9 = disable new player messages ~Cannon
+freelancer.exe	06AF1E	0F84->90E9 = disable departing player messages ~Cannon
+======
+HUD: Limits
+======
+freelancer.exe	0D2C02	2000i = distance over which kilometers rather than meters are displayed (in the contact list) ~Dev
+freelancer.exe	0EEF90	2000i = distance over which kilometers rather than meters are displayed (target bracket in space) ~Dev
+freelancer.exe	0D2C32	10000i = distance over which fractions of kilometers are not displayed ~Dev
+freelancer.exe	0D2C94	99999i = distance over which "far" is displayed rather than an actual distance ~Dev
+freelancer.exe	0D597A	999i = speed over which "---" is displayed ~Dev
+freelancer.exe	0D5936	0F85->90E9 = remove cruise speed display limit of 300 ~Unknown
+======
+HUD: Energy Bars
+======
+freelancer.exe	1D7E50	0.8d = width of bars for energy, shield and hull gauges (for example, set to 1.0 to make the bars solid) ~Dev
+freelancer.exe	1D7E58	0.125d = total width of bars for energy, shield and hull gauges (set to 1.0 to cover the entire bottom part of the screen from left to right) ~Cheese on Toast
+freelancer.exe	1D7E68	0.0052d = height of the energy bars ~Cheese on Toast
+freelancer.exe	1D7E60	0.0855d = individual width of the energy bars (each individual block is a set size - you can only notice this change when the bars are not solid but are standard FL like) ~Cheese on Toast
+======
+HUD: Damage Indicators
+======
+freelancer.exe	1D8010	0.8f = damage indicator sensitivity ~M0tah
+freelancer.exe	1D800C	0.7f = damage indicator fade time ~M0tah
+freelancer.exe	11DB5C	0.02f = screen shake when hull is hit ~w0dk4
+freelancer.exe	11DB89	0.005f = screen shake when shield is hit ~w0dk4
+freelancer.exe	11DB44	74->EB = remove screen shake altogether ~adoxa
+======
+HUD: Ship Brackets
+======
+freelancer.exe	1C9804	1.25f = multiplier for distance at which brackets around non-targeted ships in space will appear (1.25 = ~3km, 37.5 = ~93km, etc) ~Dev
+freelancer.exe	0EC1B3	7A0A->9090 = remove brackets from objects in space ~adoxa
+freelancer.exe	0EC592	E8D9F9FFFF->9090909090 = remove non-targeted brackets from objects in space ~adoxa
+freelancer.exe	0ED5B9	0F85->90E9 = remove HUD elements on objects in space - includes text, brackets, targeting reticles, and missile warnings ~M0tah
+======
+HUD: Contacts / Weapons List / Wireframe
+======
+freelancer.exe	0D3180	E6->00 = add faction name to players in contact list ~M0tah
+freelancer.exe	0D07EB	0E->00 = remove hostile & group ships from "important" filter ~adoxa
+freelancer.exe	0D100F	13->00 = remove hostile solars from "important" filter ~adoxa
+content.dll	091A24	03->01 = freighters are named as large ships ~adoxa
+freelancer.exe	0D094B	0F852A050000->7404FEC875C4 = include player ships in "ship" filter ~adoxa
+freelancer.exe	1D7BF0	0.004d = vertical offset of player name in contact list ~M0tah
+freelancer.exe	1D7964	3.0f = seconds between updates of the distances in the contact list ~Dev
+freelancer.exe	1D8484	1.0f = seconds between updates of displays in weapons list ~fox
+freelancer.exe	0E6F67	D9542418D81D74745C00DFE0F6C44175188B4C2418->D95CE4188B4CE41885C97E1D81F90000803F74XX90 = remove flashing in wireframe for items with hit_pts = 0 (replace XX with: 4E for yellow, 58 for aqua, 15 for dark blue) ~adoxa
+======
+HUD: Nanobot / Shield Battery
+======
+freelancer.exe	0DAD6D	4260653C->00000000 = disable nanobot button ~adoxa
+freelancer.exe	0DADB4	96430B3D->00000000 = remove nanobot count ~adoxa
+freelancer.exe	0DAE0B	4260653C->00000000 = disable battery button ~adoxa
+freelancer.exe	0DAE87	96430B3D->00000000 = remove battery count ~adoxa
+freelancer.exe	1D8690	69->00 = remove Shield Battery use icon ~adoxa
+freelancer.exe	1D86E0	69->00 = remove Nanobot use icon (wrench) ~adoxa
+freelancer.exe	0DE317	999i = maximum number of nanobots displayed in HUD PART 1 ~adoxa
+freelancer.exe	0DE310	999i = maximum number of nanobots displayed in HUD PART 2 ~adoxa
+freelancer.exe	0DE314	7E->EB = ignore nanobot HUD display limit (alternative to above) ~adoxa
+freelancer.exe	0DE369	999i = maximum number of batteries displayed in HUD PART 1 ~adoxa
+freelancer.exe	0DE362	999i = maximum number of batteries displayed in HUD PART 2 ~adoxa
+freelancer.exe	0DE366	7E->EB = ignore battery HUD display limit (alternative to above) ~adoxa
+======
+HUD: Animation Speeds
+======
+freelancer.exe	0944AC	1.5f = time taken to zoom out on NavMap (not zero) ~adoxa
+freelancer.exe	09F2A7	1.5f = time taken to zoom in on NavMap (not zero) ~adoxa
+freelancer.exe	0DFC09	0.6f = multiplier for subtargeting HUD animations (make smaller for faster) ~Dev
+freelancer.exe	1CEA10	0.3f = multiplier for HUD animations from user NN bar (make smaller for faster) ~fox
+freelancer.exe	1CB4D0	0.3f = multiplier for HUD animations from base NN bar (make smaller for faster) ~M0tah
+freelancer.exe	1D8860	0.3f = multiplier for left HUD minimize animation (make smaller for faster) ~M0tah
+freelancer.exe	1D8488	0.3f = multiplier for right HUD minimize animation (make smaller for faster) ~M0tah
+======
+HUD: Equipment / Shipdealer
+======
+freelancer.exe	07C9A8	6098628i->6098632i = remove class number (just the number) on equipment entries ~M0tah
+freelancer.exe	07C943	0F87->90E9 = remove class info from equipment ~adoxa
+freelancer.exe	07CEC0	84->30 = prevents mounting/unmounting of all equipment ~adoxa
+freelancer.exe	0B88A4	75->EB = disable "Select Ship" ship dealer button ~adoxa
+======
+HUD: Other
+======
+freelancer.exe	1D97B4	150f = distance from a waypoint when it is considered reached ~M0tah
+freelancer.exe	1D7E80	300f = distance from a waypoint within a tradelane when it is considered reached ~Schmackbolzen
+freelancer.exe	0F045B	8601->0000 = show aiming lead on everything ~adoxa
+freelancer.exe	0D1750	14000f = range at which an object is no longer "unknown" ~FriendlyFire
+freelancer.exe	1D3F28	0.116279d = NavMap zoom factor (lower increases zoom) ~adoxa
+freelancer.exe	0992B0	64->C3 = remove tradelane lines in NavMap ~adoxa
+freelancer.exe	1C9020	1.85f = aspect ratio of the cinematics ~adoxa
+freelancer.exe	0DCA20	81->C3 = remove mouse flight text ~cannon
+
+======
+Effects
+======
+freelancer.exe	0F86A3	1.0f = Time in seconds for particle effects to stay after emitter died. ~w0dk4
+server.dll	086AEC	6250000f = square of maximum effect draw distance (vis_beam) ~FriendlyFire
+freelancer.exe	12D132	5F5E->EB6D = activate [gun] light_anim entries PART 1 ~w0dk4
+freelancer.exe	12D052	0F8449010000->909090909090 = activate [gun] light_anim entries PART 2 ~w0dk4
+freelancer.exe	12D0F6	5B->53 = activate [gun] light_anim entries PART 3 ~w0dk4
+freelancer.exe	12D0F9	03->02 = activate [gun] light_anim entries PART 4 ~w0dk4
+freelancer.exe	12D100	CB->CA = activate [gun] light_anim entries PART 5 ~w0dk4
+
+eft_explosion_large (limited duration):
+freelancer.exe	212AF0	100f = on-screen radius of effects, affects size-on-screen-based cutoff (make larger to increase cutoff range) ~Dev
+freelancer.exe	212AF8	15f = max run time of effects ~Dev
+freelancer.exe	212B00	100f = unknown, likely the first value of pbubble ~Dev
+freelancer.exe	212B04	500f = visual cutoff range of effects (second value of pbubble) ~Dev
+
+eft_weapon_large_proj (infinite duration):
+freelancer.exe	212C58	50f = on-screen radius of effects ~Dev
+freelancer.exe	212C60	-1f = max run time of effects ~Dev
+freelancer.exe	212C68	100f = unknown, likely the first value of pbubble ~Dev
+freelancer.exe	212C6C	500f = visual cutoff range of effects (second value of pbubble) ~Dev
+freelancer.exe	213158	15f = on-screen radius of vis_beam effects ~Dev
+freelancer.exe	213168	100f = unknown, likely the first value of pbubble for vis_beam ~Dev
+freelancer.exe	21316C	500f = default vis_beam cutoff range (second value of pbubble for vis_beam) ~Dev
+
+eft_damage_large_smoke (infinite duration):
+freelancer.exe	212DE8	20f = on-screen radius of effects ~Dev
+freelancer.exe	212DF0	-1f = max run time of effects ~Dev
+freelancer.exe	212DF8	100f = unknown, likely the first value of pbubble ~Dev
+freelancer.exe	212DFC	500f = visual cutoff range of effects (second value of pbubble) ~Dev
+
+
+
+======
+Unfinished, or the "I'll do this later" section :P
+======
+axoda:
+everything in
+http://the-starport.net/freelancer/forum/viewtopic.php?post_id=23562#forumpost23562
+(I don't even know where to start there)
+
+# Remove the "NEW GAME" and "LOAD GAME" buttons on the main menu.
+# Jason Hood, 28 November, 2009.
+
+File: Freelancer.exe
+174634: E8 47 E5 EA FF 83 7C 24 50 01 77  [ C7 44 24 70 00 00 00 00 C7 44 24 ]
+        11 DB 05 4C 46 57 00 EB 0D        [ 74 00 00 00 00 C7 44 24 78 ]
+1746CA: 00 00   [ 80 3E ]
+174707: 00 00   [ 80 3E ]
+
+to move buttons:
+Go to 1E28C0 in freelancer.exe and change 0.1725f (D7 A3 30 3E) to 0.3369f (28 7E AC 3E; moves the text up) and at 1E3210, change 0.155f (52 B8 1E 3E) to 0.318f (E5 D0 A2 3E; moves the boxes up).
+
+M0tah:
+random offsets that may be interesting if you're into editing the real finer points of AI
+
+-- common.dll:
+FollowOp
+150f, 06CB12 -- increasing may help
+2f, 06CB40 -- "chill out" distance from where it should be
+400f, 06CB4A -- decreasing helps?
+100f, 06CB54 -- increasing may help
+
+FormationOp
+200f, 06C00D -- form ranges?
+500f, 06C017 -- form ranges?
+
+GotoOp
+09D6D0 --
+09D6FA --
+09D745 --
+09D74F --
+09D759 --
+079C52 --
+079C5C --
+079C66 --
+
+GuideOp (unknown)
+06F293 --
+06F29D --
+06F2A7 --
+06F2B1 --
+
+TrailOp
+50f, 06A3DB --
+3.85f, 06A3E5 --
+400f, 06A3EF --
+4f, 06A3F9 --
+2.5f, 06A41B --
+3f, 06A425 --
+5f, 06A42F --
+1f, 06A445 --
+20f, 06A47A --
+1500f, 06A484 --
+
+-- content.dll:
+PatrolPathSpawn
+200f, 0C496A -- multiplier of some sort
+2500f, 0C48D7 -- used in similar fashion to PP spawn offset
+5f, 0C4B0B --
+500f, 0C4C01 --
+2000f, 0C4C06 --
+-1f, 0C4EC5 --
+500f, 0C4ED0 --
+100f, 0C4EEF --

@@ -1,0 +1,20 @@
+Act_ActTrig = jumped_to_Ch01
+Act_ActTrig = jumped_to_Ch03
+Act_ActTrig = jumped_to_Ch06
+
+;------ Challenge IDS Entries ------
+[Trigger]
+nickname = jumped_to_Ch01
+system = ANY
+Cnd_SystemEnter = Li06
+Act_NNIds = 459366, OBJECTIVE
+[Trigger]
+nickname = jumped_to_Ch03
+system = ANY
+Cnd_SystemEnter = Ch03
+Act_NNIds = 459397, OBJECTIVE
+[Trigger]
+nickname = jumped_to_Ch06
+system = ANY
+Cnd_SystemEnter = Ch06
+Act_NNIds = 459400, OBJECTIVE

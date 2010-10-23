@@ -1,0 +1,47 @@
+459108 - Badass
+459109 - Patroller
+459110 - Warder
+459111 - Commander
+459112 - Raider
+459113 - Smuggler
+459114 - Warlord
+459115 - Forager
+459116 - Collector
+459117 - Scrapper
+459118 - Traveller
+459119 - Miner
+459120 - Hauler
+459121 - Taskmaster
+459122 - Fighter
+459123 - Trader
+459124 - Captain
+459125 - Hunter
+
+;Police - Patroller, Warder, Commander
+459109, 459110, 459111, 5, 7
+;Pirate - Raider, Smuggler, Warlord
+459112, 459113, 459114, 5, 7
+;Cool Pirate - Raider, Smuggler, Commander
+459112, 459113, 459111, 5, 7
+;Bounty Hunter - Hunter, Trader, Captain
+459125, 459123, 459124, 5, 7
+;Scavenger - Forager, Collector, Scrapper
+459115, 459116, 459117, 5, 7
+;Wanderer - Traveller, Trader, Captain
+459118, 459123, 459124, 5, 7
+;Miner - Miner, Hauler, Taskmaster
+459119, 459120, 459121, 5, 7
+;Hauler - Fighter, Hauler, Captain
+459122, 459120, 459124, 5, 7
+;Trader - Fighter, Trader, Captain
+459122, 459123, 459124, 5, 7
+;Tourist - Fighter, Captain, Captain
+459122, 459124, 459124, 5, 7
+;Lawful FL - Patroller, Trader, Commander
+459109, 459123, 459111, 5, 7
+;Unlawful FL - Raider, Smuggler, Warlord
+459112, 459113, 459114, 5, 7
+;Nomad - Unknown
+458898, 458898, 458898, 5, 7
+;PBase - Badass
+459108, 459108, 459108, 5, 7

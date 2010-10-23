@@ -1,0 +1,1 @@
+*.rar, *.original.*, dlleditor, *.bak*, *.ini.*, *.txt.*, *.fox*, *.tmp

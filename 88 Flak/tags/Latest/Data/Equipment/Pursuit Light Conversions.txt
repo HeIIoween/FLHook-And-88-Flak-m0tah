@@ -1,0 +1,99 @@
+-- bw_katana --
+equip = DockingLightWhite, HpDockLight01
+equip = DockingLightWhite, HpDockLight02
+->
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = DockingLightWhite, HpDockLight01
+equip = DockingLightWhite, HpDockLight02
+
+-- li_figher_pursuit --
+equip = DockingLightRedOn, HpDockLight01
+equip = DockingLightBlue, HpDockLight02
+->
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = DockingLightRedOn, HpPursuit01
+equip = DockingLightBlue, HpPursuit02
+equip = DockingLightWhite, HpPursuit03
+
+-- br_fighter_pursuit --
+equip = DockingLightBlue, HpDockLight01
+equip = DockingLightWhiteSlow, HpDockLight01
+equip = DockingLightBlue, HpDockLight02
+equip = DockingLightWhiteSlow, HpDockLight02
+->
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = DockingLightBlue, HpPursuit01
+equip = DockingLightWhiteSlow, HpPursuit01
+
+-- ku_fighter_pursuit --
+equip = DockingLightRedOn, HpDockLight01
+equip = DockingLightWhiteSlow, HpDockLight01
+equip = DockingLightRedOn, HpDockLight02
+equip = DockingLightWhiteSlow, HpDockLight02
+->
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = DockingLightRedOn, HpPursuit01
+equip = DockingLightRedOn, HpPursuit02
+equip = DockingLightWhite, HpPursuit03
+
+-- ku_diablo --
+equip = DockingLightBlue, HpDockLight01
+equip = DockingLightBlue, HpDockLight02
+->
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = DockingLightRedOn, HpPursuit01
+equip = DockingLightBlue, HpPursuit02
+equip = DockingLightWhite, HpPursuit03
+
+-- ku_heretic --
+equip = DockingLightBlue, HpDockLight01
+equip = DockingLightBlue, HpDockLight02
+->
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = DockingLightRedOn, HpPursuit01
+equip = DockingLightBlue, HpPursuit02
+equip = DockingLightWhite, HpPursuit03
+
+-- rh_fighter_pursuit --
+equip = DockingLightBlue, HpDockLight01
+equip = DockingLightBlue, HpDockLight02
+->
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = DockingLightBlue, HpPursuit01
+equip = DockingLightBlue, HpPursuit02
+equip = DockingLightWhite, HpPursuit03
+
+------ Removals ------
+
+-- bw_fighter_pursuit --
+equip = DockingLightOrange, HpDockLight01
+equip = DockingLightWhiteSlow, HpDockLight01
+equip = DockingLightOrange, HpDockLight02
+equip = DockingLightWhiteSlow, HpDockLight02
+
+-- co_fighter_pursuit --
+equip = DockingLightGreen, HpDockLight01
+equip = DockingLightWhiteSlow, HpDockLight01
+equip = DockingLightGreen, HpDockLight02
+equip = DockingLightWhiteSlow, HpDockLight02
+
+-- li_predator --
+equip = DockingLightRedOn, HpDockLight01
+equip = DockingLightBlue, HpDockLight02
+
+-- pi_fighter_pursuit --
+equip = DockingLightRedOn, HpDockLight01
+equip = DockingLightRedOn, HpDockLight02
+
+-- bh_fighter_pursuit --
+equip = DockingLightRedOn, HpDockLight01
+equip = DockingLightWhiteSlow, HpDockLight01
+equip = DockingLightBlue, HpDockLight02
+equip = DockingLightWhiteSlow, HpDockLight02
