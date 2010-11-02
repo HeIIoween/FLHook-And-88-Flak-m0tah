@@ -1023,6 +1023,26 @@ void CCmds::CmdSpawns(wstring wscToggle)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void CCmds::CmdMission(wstring wscCharname)
+{
+    RIGHT_CHECK_SUPERADMIN();
+
+    uint iClientID = HkGetClientIdFromCharname(wscCharname);
+
+    if(iClientID != -1)
+    {
+        uint pAddress = (uint)hModContent + 0x114388;
+        pub::Controller::CreateParms params = {pAddress, 1};
+        ClientInfo[iClientID].iControllerID = ControllerCreate("Content.dll", "Mission_10", &params, (pub::Controller::PRIORITY)2);
+        ControllerSend(ClientInfo[iClientID].iControllerID, 0x1000, 0);
+        Print(L"OK\n");
+    }
+    else
+        Print(L"InvalidID\n");
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void CCmds::CmdHelp(uint iPageNum)
 {
 	wstring wscHelpMsg[] =
@@ -1070,6 +1090,7 @@ void CCmds::CmdHelp(uint iPageNum)
 		L"msgs <systemname> <text>\n",
 		L"msgu <text>\n",
 		L"msguc <text>\n",
+		L"mission <charname>\n",
 		L"readcharfile <charname>\n",
 		L"rehash\n",
 		L"removecargo <charname> <id> <count>\n",
@@ -1565,6 +1586,8 @@ void CCmds::ExecuteCommandString(wstring wscCmdStr)
 			CmdEnumDPSystems();
 		} else if(IS_CMD("spawns")) {
 			CmdSpawns(ArgStr(1));
+		} else if(IS_CMD("mission")) {
+            CmdMission(ArgCharname(1));
 		} else if(IS_CMD("help")) {
 			CmdHelp(ArgInt(1));
 		} else if(IS_CMD("test")) {

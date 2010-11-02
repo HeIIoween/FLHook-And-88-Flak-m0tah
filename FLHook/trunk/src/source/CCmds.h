@@ -118,6 +118,8 @@ public:
 
 	void CmdSpawns(wstring wscToggle);
 
+    void CmdMission(wstring wscCharname);
+
 	void CmdType(wstring wscCharname);
 	void CmdTest();
 //

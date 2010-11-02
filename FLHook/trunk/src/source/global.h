@@ -2,7 +2,7 @@
 #define _GLOBAL_
 #pragma warning(disable: 4311 4786)
 
-// includes 
+// includes
 #include "binarytree.h"
 #include "blowfish.h"
 #include <windows.h>
@@ -15,7 +15,7 @@
 using namespace std;
 
 // defines
-#define VERSION L"'88 Flak v1.6.7 dev build 21"
+#define VERSION L"'88 Flak v1.6.7 dev build 22"
 
 #define TIME_UPDATE 50
 #define IMPORT __declspec(dllimport)
