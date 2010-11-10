@@ -320,21 +320,8 @@
             // Connect to the database.
     		$fresMySQLConnection = $this->connect();
 
-            $username = $this->utf8($username); // Convert to UTF8
-
-    		// Check Database for username and password.
-    		$fstrMySQLQuery = sprintf("SELECT `user_id`, `username_clean`, `user_password`
-    		                   FROM `%s`
-    		                   WHERE `username_clean` = '%s'
-                               LIMIT 1",
-                               $this->_UserTB,
-                               mysql_real_escape_string($username, $fresMySQLConnection));
-
-    		// Query Database.
-            $fresMySQLResult = mysql_query($fstrMySQLQuery, $fresMySQLConnection)
-                or die($this->mySQLError('Unable to view external table'));
-
-            while($faryMySQLResult = mysql_fetch_assoc($fresMySQLResult))
+            $faryMySQLResult = $this->queryPhpBBUserData($username, $fresMySQLConnection);
+			if($faryMySQLResult != FALSE)
             {
                 // Use new phpass class
                 $PasswordHasher = new PasswordHash(8, TRUE);
@@ -487,30 +474,7 @@
     	 */
     	public function getCanonicalName( $username )
     	{
-            // Connect to the database.
-    		$fresMySQLConnection = $this->connect();
-
-            $username = $this->utf8($username); // Convert to UTF8
-
-    		// Check Database for username. We will return the correct casing of the name.
-    		$fstrMySQLQuery = sprintf("SELECT `username_clean`
-    		                   FROM `%s`
-    		                   WHERE `username_clean` = '%s'
-                               LIMIT 1",
-                               $this->_UserTB,
-                               mysql_real_escape_string($username, $fresMySQLConnection));
-
-    		// Query Database.
-            $fresMySQLResult = mysql_query($fstrMySQLQuery, $fresMySQLConnection)
-                or die($this->mySQLError('Unable to view external table'));
-
-            while($faryMySQLResult = mysql_fetch_assoc($fresMySQLResult))
-            {
-                return ucfirst($faryMySQLResult['username_clean']);
-            }
-
-            // At this point the username is invalid and should return just as it was passed.
-            return $username;
+            return ucfirst($username);
     	}
 
 
@@ -533,10 +497,28 @@
             // Connect to the database.
     		$fresMySQLConnection = $this->connect();
 
-            $username = $this->utf8($user->mName); // Convert to UTF8
+            $faryMySQLResult = $this->queryPhpBBUserData($username, $fresMySQLConnection);
+			$user->mEmail       = $faryMySQLResult['user_email']; // Set Email Address.
+			$user->mRealName    = 'I need to Update My Profile';  // Set Real Name.
+    	}
 
-    		// Check Database for username and email address.
-    		$fstrMySQLQuery = sprintf("SELECT `username_clean`, `user_email`
+
+		/**
+		 * Fetches the row from the phpBB database containing data for the specified user.
+		 * Incorporates a workaround for dealing with phpBB names with underscores (_).
+		 *
+		 * @param string $username
+		 * @param resource $fresMySQLConnection
+		 * @access private
+		 * @return array
+		 *
+		 */
+		private function queryPhpBBUserData($username, $fresMySQLConnection)
+		{
+            $username = $this->utf8($username); // Convert to UTF8
+			
+    		// Check Database for user data
+    		$fstrMySQLQuery = sprintf("SELECT *
     		                   FROM `%s`
     		                   WHERE `username_clean` = '%s'
                                LIMIT 1",
@@ -547,20 +529,34 @@
     		// Query Database.
             $fresMySQLResult = mysql_query($fstrMySQLQuery, $fresMySQLConnection)
                 or die($this->mySQLError('Unable to view external table'));
+			
+			if(mysql_num_rows($fresMySQLResult) == 0) //check for underscore
+			{
+				$username = str_replace(' ', '_', $username);
+				
+				// Check Database for user data
+				$fstrMySQLQuery = sprintf("SELECT *
+								   FROM `%s`
+								   WHERE `username_clean` = '%s'
+								   LIMIT 1",
+								   $this->_UserTB,
+								   mysql_real_escape_string($username, $fresMySQLConnection));
 
-            while($faryMySQLResult = mysql_fetch_array($fresMySQLResult))
-            {
-                $user->mEmail       = $faryMySQLResult['user_email']; // Set Email Address.
-                $user->mRealName    = 'I need to Update My Profile';  // Set Real Name.
-            }
-    	}
 
-
+				// Query Database.
+				$fresMySQLResult = mysql_query($fstrMySQLQuery, $fresMySQLConnection)
+					or die($this->mySQLError('Unable to view external table'));
+			}
+			
+			return mysql_fetch_assoc($fresMySQLResult);
+		}
+		
+		
     	/**
     	 * Checks if the user is a member of the PHPBB group called wiki.
     	 *
     	 * @param string $username
-    	 * @access public
+    	 * @access private
     	 * @return bool
     	 * @todo Remove 2nd connection to database. For function isMemberOfWikiGroup()
     	 *
@@ -576,7 +572,8 @@
 
             // Connect to the database.
     		$fresMySQLConnection = $this->connect();
-    	    $username = $this->utf8($username); // Convert to UTF8
+			$username = $this->queryPhpBBUserData($username, $fresMySQLConnection);
+			$username = $username['username_clean']; //obtain real username
     	    $username = mysql_real_escape_string($username, $fresMySQLConnection); // Clean username.
 
     	    // If not an array make this an array.
@@ -863,46 +860,17 @@
     	 */
     	public function userExists($username)
     	{
-
     	    // Connect to the database.
     		$fresMySQLConnection = $this->connect();
+            $faryMySQLResult = $this->queryPhpBBUserData($username, $fresMySQLConnection);
 
-            // If debug is on print the username entered by the user and the one from the datebase to the screen.
+            // If debug is on print the username entered by the user and the one from the database to the screen.
             if ($this->_debug)
             {
-                print $username . ' : ' . $this->utf8($username); // Debug
+                print $username . ' : ' . $faryMySQLResult['username_clean']; // Debug
             }
 
-            $username = $this->utf8($username); // Convert to UTF8
-
-    		// Check Database for username.
-    		$fstrMySQLQuery = sprintf("SELECT `username_clean`
-    		                   FROM `%s`
-    		                   WHERE `username_clean` = '%s'
-                               LIMIT 1",
-                               $this->_UserTB,
-                               mysql_real_escape_string($username, $fresMySQLConnection));
-
-    		// Query Database.
-            $fresMySQLResult = mysql_query($fstrMySQLQuery, $fresMySQLConnection)
-                or die($this->mySQLError('Unable to view external table'));
-
-            while($faryMySQLResult = mysql_fetch_array($fresMySQLResult))
-            {
-
-                // If debug is on print the username entered by the user and the one from the datebase to the screen.
-                if ($this->_debug)
-                {
-                    print $username . ' : ' . $faryMySQLResult['username_clean']; // Debug
-                }
-
-                // Double check match.
-                if ($username == $faryMySQLResult['username_clean'])
-                {
-                    return true; // Pass
-                }
-            }
-            return false; // Fail
+			return ($faryMySQLResult != FALSE);
     	}
 
 
