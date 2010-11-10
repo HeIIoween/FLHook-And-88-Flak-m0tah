@@ -62,7 +62,7 @@ void UserCmd_SetDieMsg(uint iClientID, wstring wscParam)
 		return;
 	}
 
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /set diemsg <param>",
@@ -80,7 +80,7 @@ void UserCmd_SetDieMsg(uint iClientID, wstring wscParam)
 		dieMsg = DIEMSG_NONE;
 	else if(!wscDieMsg.compare(L"self"))
 		dieMsg = DIEMSG_SELF;
-	else 
+	else
 		PRINT_ERROR();
 
 	// save to ini
@@ -88,7 +88,7 @@ void UserCmd_SetDieMsg(uint iClientID, wstring wscParam)
 	IniWrite(scUserFile, "settings", "DieMsg", itos(dieMsg));
 
 	// save in ClientInfo
-	ClientInfo[iClientID].dieMsg = dieMsg; 
+	ClientInfo[iClientID].dieMsg = dieMsg;
 
 	// send confirmation msg
 	PRINT_OK();
@@ -103,8 +103,8 @@ void UserCmd_SetDieMsgSize(uint iClientID, wstring wscParam)
 		PRINT_DISABLED();
 		return;
 	}
-	
-	wstring wscError[] = 
+
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /set diemsgsize <size>",
@@ -119,7 +119,7 @@ void UserCmd_SetDieMsgSize(uint iClientID, wstring wscParam)
 		dieMsgSize = CS_SMALL;
 	else if(!wscDieMsgSize.compare(L"default"))
 		dieMsgSize = CS_DEFAULT;
-	else 
+	else
 		PRINT_ERROR();
 
 /*	CHATSTYLE dieMsgStyle;
@@ -131,7 +131,7 @@ void UserCmd_SetDieMsgSize(uint iClientID, wstring wscParam)
 		dieMsgStyle = CST_ITALIC;
 	else if(!wscDieMsgStyle.compare(L"underline"))
 		dieMsgStyle = CST_UNDERLINE;
-	else 
+	else
 		PRINT_ERROR(); */
 
 	// save to ini
@@ -140,7 +140,7 @@ void UserCmd_SetDieMsgSize(uint iClientID, wstring wscParam)
 //	IniWrite(scUserFile, "Settings", "DieMsgStyle", itos(dieMsgStyle));
 
 	// save in ClientInfo
-	ClientInfo[iClientID].dieMsgSize = dieMsgSize; 
+	ClientInfo[iClientID].dieMsgSize = dieMsgSize;
 //	ClientInfo[iClientID].dieMsgStyle = dieMsgStyle;
 
 	// send confirmation msg
@@ -157,7 +157,7 @@ void UserCmd_SetChatFont(uint iClientID, wstring wscParam)
 		return;
 	}
 
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /set chatfont <size> <style>",
@@ -167,7 +167,7 @@ void UserCmd_SetChatFont(uint iClientID, wstring wscParam)
 
 	wstring wscChatSize = ToLower(GetParam(wscParam, ' ', 0));
 	wstring wscChatStyle = ToLower(GetParam(wscParam, ' ', 1));
-	
+
 	CHATSIZE chatSize;
 	if(!wscChatSize.compare(L"small"))
 		chatSize = CS_SMALL;
@@ -175,7 +175,7 @@ void UserCmd_SetChatFont(uint iClientID, wstring wscParam)
 		chatSize = CS_DEFAULT;
 	else if(!wscChatSize.compare(L"big"))
 		chatSize = CS_BIG;
-	else 
+	else
 		PRINT_ERROR();
 
 	CHATSTYLE chatStyle;
@@ -187,7 +187,7 @@ void UserCmd_SetChatFont(uint iClientID, wstring wscParam)
 		chatStyle = CST_ITALIC;
 	else if(!wscChatStyle.compare(L"underline"))
 		chatStyle = CST_UNDERLINE;
-	else 
+	else
 		PRINT_ERROR();
 
 	// save to ini
@@ -196,8 +196,8 @@ void UserCmd_SetChatFont(uint iClientID, wstring wscParam)
 	IniWrite(scUserFile, "settings", "ChatStyle", itos(chatStyle));
 
 	// save in ClientInfo
-	ClientInfo[iClientID].chatSize = chatSize; 
-	ClientInfo[iClientID].chatStyle = chatStyle; 
+	ClientInfo[iClientID].chatSize = chatSize;
+	ClientInfo[iClientID].chatStyle = chatStyle;
 
 	// send confirmation msg
 	PRINT_OK();
@@ -213,7 +213,7 @@ void UserCmd_Ignore(uint iClientID, wstring wscParam)
 		return;
 	}
 
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /ignore <charname> [<flags>]",
@@ -273,7 +273,7 @@ void UserCmd_IgnoreID(uint iClientID, wstring wscParam)
 		return;
 	}
 
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /ignoreid <client-id> [<flags>]",
@@ -351,7 +351,7 @@ void UserCmd_DelIgnore(uint iClientID, wstring wscParam)
 		return;
 	}
 
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /delignore <id> [<id2> <id3> ...]",
@@ -426,7 +426,7 @@ void UserCmd_AutoBuy(uint iClientID, wstring wscParam)
 		return;
 	}
 
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /autobuy <on|off>",
@@ -536,7 +536,7 @@ void UserCmd_Invite(uint iClientID, wstring wscParam)
 
 void UserCmd_InviteID(uint iClientID, wstring wscParam)
 {
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /i$ <client-id>",
@@ -553,7 +553,7 @@ void UserCmd_InviteID(uint iClientID, wstring wscParam)
 		PrintUserCmdText(iClientID, L"Error: Invalid client-id");
 		return;
 	}
-	
+
 	HK_ERROR inviteError = HkInviteToGroup(ARG_CLIENTID(iClientIDTarget), ARG_CLIENTID(iClientID));
 	if(!HKHKSUCCESS(inviteError))
 	{
@@ -563,12 +563,12 @@ void UserCmd_InviteID(uint iClientID, wstring wscParam)
 
 void UserCmd_InviteAll(uint iClientID, wstring wscParam)
 {
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: No players found",
 		L"Usage: /ia [name part]",
 	};
-	
+
 	//wstring wscCharname = Players.GetActiveCharacterName(iClientID);
 	uint iGroupID, iNumInvites = 0;
 	HkGetGroupID(ARG_CLIENTID(iClientID), iGroupID);
@@ -632,7 +632,7 @@ void UserCmd_InviteAll(uint iClientID, wstring wscParam)
 			}
 		}
 	}
-	
+
 	if(!iNumInvites)
 		PRINT_ERROR();
 }
@@ -648,7 +648,7 @@ void UserCmd_Cloak(uint iClientID, wstring wscParam)
 		PrintUserCmdText(iClientID, L"Error: You are docked.");
 		return;
 	}
-		
+
 	if (ClientInfo[iClientID].bCanCloak)
 	{
 		mstime tmTimeNow = timeInMS();
@@ -663,13 +663,13 @@ void UserCmd_Cloak(uint iClientID, wstring wscParam)
 				PrintUserCmdText(iClientID, L"Preparing to cloak...");
 				if(set_bDropShieldsCloak)
 					pub::SpaceObj::DrainShields(Players[iClientID].iSpaceObjID);
-			} 
+			}
 			else
 				PrintUserCmdText(iClientID, L"Your cloak has not cooled down. Time remaining: %i seconds", (int)((ClientInfo[iClientID].iCloakCooldown - (tmTimeNow - ClientInfo[iClientID].tmCloakTime))/1000.0f+0.5f));
-		} 
+		}
 		else
 			PrintUserCmdText(iClientID, L"You are already cloaked.  Time remaining: %i seconds", ClientInfo[iClientID].iCloakingTime ? (int)((ClientInfo[iClientID].iCloakingTime - (tmTimeNow - ClientInfo[iClientID].tmCloakTime))/1000.0f+0.5f) : 0);
-	} 
+	}
 	else
 		PrintUserCmdText(iClientID, L"Error: Your ship does not have a Cloaking Device.");
 }
@@ -684,7 +684,9 @@ void UserCmd_UnCloak(uint iClientID, wstring wscParam)
 	}
 
 	if (ClientInfo[iClientID].bCanCloak) {
-		if (!HKHKSUCCESS(HkUnCloak(iClientID)))
+	    if (!ClientInfo[iClientID].bWantsCloak)
+            PrintUserCmdText(iClientID, L"Error: You are not cloaked.");
+		else if (!HKHKSUCCESS(HkUnCloak(iClientID)))
 			PrintUserCmdText(iClientID, L"Error!");
 	} else
 		PrintUserCmdText(iClientID, L"Error: Your ship does not have a Cloaking Device.");
@@ -696,7 +698,7 @@ void UserCmd_Rename(uint iClientID, wstring wscParam)
 {
 	wchar_t wszChargeAmount[72];
 	swprintf(wszChargeAmount, L"Renames are subject to a %i credit charge", set_iRenameCmdCharge);
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /rename <new charname>",
@@ -708,13 +710,13 @@ void UserCmd_Rename(uint iClientID, wstring wscParam)
 		PRINT_DISABLED();
 		return;
 	}
-	
+
 	if(!wscParam.length())//User hasn't entered any params
 	{
 		PRINT_ERROR();
 		return;
 	}
-	
+
 	wstring wscCharName = (Players.GetActiveCharacterName(iClientID));
 	int cashAmount=0;
 	HkGetCash(ARG_CLIENTID(iClientID), cashAmount);
@@ -766,10 +768,10 @@ void UserCmd_SendCash(uint iClientID, wstring wscParam)
 		PRINT_DISABLED();
 		return;
 	}
-	
+
 	wchar_t wszTaxAmount[72];
 	swprintf(wszTaxAmount, L"Transfers are subject to a %f percent tax paid by the sender", set_fSendCashTax);
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /sendcash <charname> <amount>",
@@ -843,7 +845,7 @@ void UserCmd_SendCash(uint iClientID, wstring wscParam)
 					if(!HKHKSUCCESS(cashError))
 					{
 						PrintUserCmdText(iClientID, L"Error: The money could not be subtracted from your balance. Oh noes!"); //This really shouldn't happen, but if it does, retract the money sent to the other char.
-						cashError = HkAddCash(targetChar, -amount); 
+						cashError = HkAddCash(targetChar, -amount);
 						PrintUserCmdText(targetChar, wscCharName + L" tried to send you money but the transfer failed.");
 						PrintUserCmdText(iClientID, L"Transfer failed.");
 					}
@@ -867,10 +869,10 @@ void UserCmd_SendCashID(uint iClientID, wstring wscParam)
 		PRINT_DISABLED();
 		return;
 	}
-	
+
 	wchar_t wszTaxAmount[72];
 	swprintf(wszTaxAmount, L"Transfers are subject to a %f percent tax paid by the sender", set_fSendCashTax);
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /sendcash <charname> <amount>",
@@ -938,7 +940,7 @@ void UserCmd_SendCashID(uint iClientID, wstring wscParam)
 					if(!HKHKSUCCESS(cashError))
 					{
 						PrintUserCmdText(iClientID, L"Error: The money could not be subtracted from your balance. Oh noes!"); //This really shouldn't happen, but if it does, retract the money sent to the other char.
-						cashError = HkAddCash(targetChar, -amount); 
+						cashError = HkAddCash(targetChar, -amount);
 						PrintUserCmdText(targetChar, wscCharName + L" tried to send you money but the transfer failed.");
 						PrintUserCmdText(iClientID, L"Transfer failed.");
 					}
@@ -1032,7 +1034,7 @@ void UserCmd_MarkObj(uint iClientID, wstring wscParam)
 	char err = HkMarkObject(iClientID, iTargetShip);
 	switch(err)
 	{
-	case 0: 
+	case 0:
 		//PRINT_OK()
 		break;
 	case 1:
@@ -1056,7 +1058,7 @@ void UserCmd_UnMarkObj(uint iClientID, wstring wscParam)
 	char err = HkUnMarkObject(iClientID, iTargetShip);
 	switch(err)
 	{
-	case 0: 
+	case 0:
 		//PRINT_OK()
 		break;
 	case 1:
@@ -1128,7 +1130,7 @@ void UserCmd_UnMarkObjGroup(uint iClientID, wstring wscParam)
 
 void UserCmd_SetIgnoreGroupMark(uint iClientID, wstring wscParam)
 {
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /ignoregroupmarks <on|off>",
@@ -1174,7 +1176,7 @@ void UserCmd_AutoMark(uint iClientID, wstring wscParam)
 		return;
 	}
 
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /automark <on|off> [radius in KM]",
@@ -1269,7 +1271,7 @@ void UserCmd_AutoMark(uint iClientID, wstring wscParam)
 
 void UserCmd_BotCombat(uint iClientID, wstring wscParam)
 {
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /botcombat <on|off>",
@@ -1308,7 +1310,7 @@ void UserCmd_Dock(uint iClientID, wstring wscParam)
 		PRINT_DISABLED();
 		return;
 	}
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Could not dock",
 		L"Usage: /dock",
@@ -1342,13 +1344,13 @@ void UserCmd_Transfer(uint iClientID, wstring wscParam)
 	}
 	wchar_t wszChargeAmount[72];
 	swprintf(wszChargeAmount, L"Transfers are subject to a %i credit charge", set_iTransferCmdCharge);
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /transfer <charname> <item>",
 		wszChargeAmount,
 	};
-	
+
 	wstring wscTargetChar = GetParam(wscParam, ' ', 0);
 	wstring wscItem = GetParamToEnd(wscParam, ' ', 1);
 	if(!wscTargetChar.length() || !wscItem.length())
@@ -1485,13 +1487,13 @@ void UserCmd_TransferID(uint iClientID, wstring wscParam)
 	}
 	wchar_t wszChargeAmount[72];
 	swprintf(wszChargeAmount, L"Transfers are subject to a %i credit charge", set_iTransferCmdCharge);
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /transfer$ <client-id> <item>",
 		wszChargeAmount,
 	};
-	
+
 	wstring wscTargetChar = GetParam(wscParam, ' ', 0);
 	wstring wscItem = GetParamToEnd(wscParam, ' ', 1);
 	if(!wscTargetChar.length() || !wscItem.length())
@@ -1645,7 +1647,7 @@ void UserCmd_EnumCargo(uint iClientID, wstring wscParam)
 
 void UserCmd_DeathPenalty(uint iClientID, wstring wscParam)
 {
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /dp [on|off]",
@@ -1743,7 +1745,7 @@ void UserCmd_DeathPenalty(uint iClientID, wstring wscParam)
 
 void UserCmd_IgnoreUniverse(uint iClientID, wstring wscParam)
 {
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /ignoreuniverse <on|off>",
@@ -1777,9 +1779,35 @@ void UserCmd_IgnoreUniverse(uint iClientID, wstring wscParam)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void UserCmd_Mission(uint iClientID, wstring wscParam)
+{
+    if (ControllerActive == true)
+    {
+        PrintUserCmdText(iClientID, L"Error: Mission in use.");
+        return;
+    }
+
+    uint pAddress = (uint)hModContent + 0x114388;
+    pub::Controller::CreateParms params = {pAddress, iClientID};
+    ClientInfo[iClientID].iControllerID = ControllerCreate("Content.dll", "Mission_09", &params, (pub::Controller::PRIORITY)2);
+    ControllerSend(ClientInfo[iClientID].iControllerID, 0x1000, 0);
+    PRINT_OK();
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void UserCmd_Ping(uint iClientID, wstring wscParam)
+{
+	HKPLAYERINFO pi;
+	HkGetPlayerInfo(iClientID, pi, false);
+    PrintUserCmdText(iClientID, L"ping=%u", pi.ci.dwRoundTripLatencyMS);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void UserCmd_Tag(uint iClientID, wstring wscParam)
 {
-	wstring wscError[] = 
+	wstring wscError[] =
 	{
 		L"Error: Invalid parameters",
 		L"Usage: /tag <faction name>"
@@ -1857,7 +1885,7 @@ struct CMDHELPINFO
 	wchar_t *wscHelpTxt;
 };
 
-CMDHELPINFO HelpInfo[] = 
+CMDHELPINFO HelpInfo[] =
 {
 	{ true,	L"set diemsg",		L"Usage: /set diemsg xxx\n  while xxx must be one of the following values:\n  - all = all deaths will be displayed\n  - system = only display deaths occurring in the system you are currently in\n  - self = only display deaths the player is involved in(either as victim or killer)\n  - none = don't show any death-messages"},
 	{ true, L"set diemsgsize",	L"Usage: /set diemsgsize <small/default>\n  - change the size of the diemsgs"},
@@ -1900,7 +1928,9 @@ CMDHELPINFO HelpInfo[] =
 	{ true, L"transfer",		L"Usage: /transfer <charname> <item>            \n/transfer$ <client-id> <item>\n  Transfers <item> to <charname>.  Valid items are those that are not grouped\n  (like commodities and ammo).  Enter the command to find how how much it costs."},
 	{ true, L"enumcargo",		L"Usage: /enumcargo\n  Prints out a number for each cargo item that can be used with the /transfer command."},
 	{ true, L"dp",				L"Usage: /dp [on|off]\n  Shows information about the death penalty.  Also sets whether a notice about how\n  much the death penalty costs is shown upon launch."},
+	{ true, L"ping",            L"Usage: /ping\nShows your current ping"},
 	{ true, L"tag",				L"/tag <faction>\n  Changes your affiliation to <faction>, making it appear beside your name ingame."},
+	{ true, L"mission",         L"Usage: /mission\nCreates a mission instance"},
 	{ true, L"help [command]",	L"Usage: /help [command]\n            /? [command]\n  Gets help on available commands"},
 	{ false,L"?",				HelpInfo[40].wscHelpTxt},
 };
@@ -1923,7 +1953,7 @@ void UserCmd_Help(uint iClientID, wstring wscParam)
 	{
 		wscParam = ReplaceStr(wscParam, L"/", L"");
 		wscParam = ReplaceStr(wscParam, L"$", L"");
-		
+
 		for(uint i = 0; (i < sizeof(HelpInfo)/sizeof(CMDHELPINFO)); i++)
 		{
 			if(HelpInfo[i].wscCommand == ToLower(wscParam))
@@ -1996,7 +2026,9 @@ USERCMD UserCmds[] =
 	{ L"/enumcargo",			UserCmd_EnumCargo},
 	{ L"/dp",					UserCmd_DeathPenalty},
 	{ L"/ignoreuniverse",		UserCmd_IgnoreUniverse},
+	{ L"/ping",                 UserCmd_Ping},
 	{ L"/tag",					UserCmd_Tag},
+	{ L"/mission",              UserCmd_Mission},
 	{ L"/help",					UserCmd_Help},
 	{ L"/?",					UserCmd_Help},
 };

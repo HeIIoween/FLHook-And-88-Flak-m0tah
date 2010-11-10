@@ -226,29 +226,29 @@ extern _GetShipAndSystem GetShipAndSystem;
 
 enum HK_ERROR
 {
-	HKE_OK,						
-	HKE_PLAYER_NOT_LOGGED_IN,		
-	HKE_CHAR_DOES_NOT_EXIST,		
+	HKE_OK,
+	HKE_PLAYER_NOT_LOGGED_IN,
+	HKE_CHAR_DOES_NOT_EXIST,
 	HKE_COULD_NOT_DECODE_CHARFILE,
 	HKE_COULD_NOT_ENCODE_CHARFILE,
-	HKE_INVALID_BASENAME,			
-	HKE_UNKNOWN_ERROR,			
-	HKE_INVALID_CLIENT_ID,		
-	HKE_INVALID_GROUP_ID,			
-	HKE_INVALID_ID_STRING,		
-	HKE_INVALID_SYSTEM,			
+	HKE_INVALID_BASENAME,
+	HKE_UNKNOWN_ERROR,
+	HKE_INVALID_CLIENT_ID,
+	HKE_INVALID_GROUP_ID,
+	HKE_INVALID_ID_STRING,
+	HKE_INVALID_SYSTEM,
 	HKE_PLAYER_NOT_IN_SPACE,
 	HKE_PLAYER_NOT_DOCKED,
-	HKE_PLAYER_NO_ADMIN,			
-	HKE_WRONG_XML_SYNTAX,			
-	HKE_INVALID_GOOD,				
-	HKE_NO_CHAR_SELECTED,			
-	HKE_CHARNAME_ALREADY_EXISTS,	
-	HKE_CHARNAME_TOO_LONG,		
-	HKE_CHARNAME_TOO_SHORT,		
-	HKE_AMBIGUOUS_SHORTCUT,		
-	HKE_NO_MATCHING_PLAYER,		
-	HKE_INVALID_SHORTCUT_STRING,	
+	HKE_PLAYER_NO_ADMIN,
+	HKE_WRONG_XML_SYNTAX,
+	HKE_INVALID_GOOD,
+	HKE_NO_CHAR_SELECTED,
+	HKE_CHARNAME_ALREADY_EXISTS,
+	HKE_CHARNAME_TOO_LONG,
+	HKE_CHARNAME_TOO_SHORT,
+	HKE_AMBIGUOUS_SHORTCUT,
+	HKE_NO_MATCHING_PLAYER,
+	HKE_INVALID_SHORTCUT_STRING,
 	HKE_MPNEWCHARACTERFILE_NOT_FOUND_OR_INVALID,
 	HKE_INVALID_REP_GROUP,
 	HKE_COULD_NOT_GET_PATH,
@@ -418,7 +418,7 @@ struct CLIENT_INFO
 	uint		iBaseEnterTime;
 	uint		iCharMenuEnterTime;
 
-// connection data	
+// connection data
 	list<uint>	lstLoss;
 	uint		iLastLoss;
 	uint		iAverageLoss;
@@ -478,9 +478,9 @@ struct CLIENT_INFO
 	bool		bMarkEverything;
 	bool		bIgnoreGroupMark;
 	float		fAutoMarkRadius;
-	vector<uint> vMarkedObjs; 
+	vector<uint> vMarkedObjs;
 	vector<uint> vDelayedSystemMarkedObjs;
-	vector<uint> vAutoMarkedObjs; 
+	vector<uint> vAutoMarkedObjs;
 	vector<uint> vDelayedAutoMarkedObjs;
 
 // F1 when going through JH/JG thingy
@@ -491,7 +491,7 @@ struct CLIENT_INFO
 
 //Shield user commands
 	float		fShieldHealth;
-   
+
 //Mobile docking
 	bool		bMobileDocked;
 	uint		iDockClientID;
@@ -545,8 +545,8 @@ typedef struct _DPN_CONNECTION_INFO{
     DWORD   dwPacketsSentNonGuaranteed;
     DWORD   dwBytesRetried;
     DWORD   dwPacketsRetried;
-    DWORD   dwBytesDropped;   
-    DWORD   dwPacketsDropped; 
+    DWORD   dwBytesDropped;
+    DWORD   dwPacketsDropped;
     DWORD   dwMessagesTransmittedHighPriority;
     DWORD   dwMessagesTimedOutHighPriority;
     DWORD   dwMessagesTransmittedNormalPriority;
@@ -649,7 +649,6 @@ struct RESPAWN_DELAY
 	CHARACTER_ID whatever;
 	mstime tmCall;
 };
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // prototypes
@@ -784,6 +783,7 @@ bool HkAddConnectLog(uint iClientID);
 // HkFuncOther
 void HkGetPlayerIP(uint iClientID, wstring &wscIP);
 HK_ERROR HkGetPlayerInfo(wstring wscCharname, HKPLAYERINFO &pi, bool bAlsoCharmenu);
+HK_ERROR HkGetPlayerInfo(uint iClientID, HKPLAYERINFO &pi, bool bAlsoCharmenu);
 list<HKPLAYERINFO> HkGetPlayers();
 HK_ERROR HkGetConnectionStats(uint iClientID, DPN_CONNECTION_INFO &ci);
 HK_ERROR HkSetAdmin(wstring wscCharname, wstring wscRights);
@@ -941,7 +941,7 @@ struct SHIP_REPAIR { uint iObjID; float fIncreaseHealth; };
 extern list<SHIP_REPAIR> g_lstRepairShips;
 
 // namespaces
-namespace HkIServerImpl 
+namespace HkIServerImpl
 {
 void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdlReader, struct CHAT_ID cIdTo, int iP2);
 int __stdcall Update(void);
@@ -997,6 +997,5 @@ extern char *g_FLServerDataPtr;
 
 extern map<uint, map<Archetype::AClassType, char> > set_mapSysItemRestrictions;
 extern list<RepCB> lstTagFactions;
-
 
 #endif

@@ -24,7 +24,7 @@ void HkGetPlayerIP(uint iClientID, wstring &wscIP)
 	{
 		push 0			; dwFlags
 		lea edx, szIDirectPlay8Address
-		push edx		; pAddress 
+		push edx		; pAddress
 		mov edx, [cdpClient]
 		mov edx, [edx+8]
 		push edx		; dpnid
@@ -64,6 +64,53 @@ HK_ERROR HkGetPlayerInfo(wstring wscCharname, HKPLAYERINFO &pi, bool bAlsoCharme
 {
 	HK_GET_CLIENTID(iClientID, wscCharname);
 
+	if(iClientID == -1 || (HkIsInCharSelectMenu(iClientID) && !bAlsoCharmenu))
+		return HKE_PLAYER_NOT_LOGGED_IN; // not on server
+
+	const wchar_t *wszActiveCharname = Players.GetActiveCharacterName(iClientID);
+
+	pi.iClientID = iClientID;
+	pi.wscCharname = wszActiveCharname ? wszActiveCharname : L"";
+	pi.wscBase = pi.wscSystem = L"";
+
+	uint iBase = 0;
+	uint iSystem = 0;
+	pub::Player::GetBase(iClientID, iBase);
+	pub::Player::GetSystem(iClientID, iSystem);
+	pub::Player::GetShip(iClientID, pi.iShip);
+
+	if(iBase)
+	{
+		char szBasename[1024] = "";
+		pub::GetBaseNickname(szBasename, sizeof(szBasename), iBase);
+		pi.wscBase = stows(szBasename);
+	}
+
+	if(iSystem)
+	{
+		char szSystemname[1024] = "";
+		pub::GetSystemNickname(szSystemname, sizeof(szSystemname), iSystem);
+		pi.wscSystem = stows(szSystemname);
+		pi.iSystem = iSystem;
+	}
+
+	// get ping
+	DPN_CONNECTION_INFO ci = {0};
+	CDPClientProxy *cdpClient = g_cClientProxyArray[iClientID - 1];
+	if(cdpClient)
+		cdpClient->GetConnectionStats(&ci);
+	pi.ci = ci;
+
+	// get ip
+	HkGetPlayerIP(iClientID, pi.wscIP);
+
+	pi.wscHostname = ClientInfo[iClientID].wscHostname;
+//	double d = cdpClient->GetLinkSaturation();
+	return HKE_OK;
+}
+
+HK_ERROR HkGetPlayerInfo(uint iClientID, HKPLAYERINFO &pi, bool bAlsoCharmenu)
+{
 	if(iClientID == -1 || (HkIsInCharSelectMenu(iClientID) && !bAlsoCharmenu))
 		return HKE_PLAYER_NOT_LOGGED_IN; // not on server
 
@@ -190,7 +237,7 @@ HK_ERROR HkSetAdminRestriction(wstring wscCharname, wstring wscRestriction)
 
 	wscRestriction = L"\"" + ToLower(wscRestriction) + L"\"";
 	IniWrite(scAdminFile, "admin", "restrict", wstos(wscRestriction));
-	
+
 	return HKE_OK;
 }
 
@@ -219,7 +266,7 @@ HK_ERROR HkGetAdminRestriction(wstring wscCharname, wstring &wscRestriction)
 		return HKE_PLAYER_NO_ADMIN;;
 
 	wscRestriction = stows(IniGetS(scAdminFile, "admin", "restrict", ""));
-	
+
 	return HKE_OK;
 }
 

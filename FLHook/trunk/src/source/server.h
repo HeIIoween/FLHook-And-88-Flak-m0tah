@@ -30,7 +30,7 @@ struct XSetTarget
 };
 
 namespace pub
-{ 
+{
 	struct CargoEnumerator;
 	namespace Player
 	{
@@ -122,7 +122,7 @@ namespace pub
 			 uint iUnknown37; //u 0
 			 uint iUnknown38; // 0
 			 uint iLevel; //u
-		}; 
+		};
 		//struct SolarInfo;
 		IMPORT int __cdecl GetHealth(unsigned int const &,float &,float &);
 		IMPORT int __cdecl GetArchetypeID(unsigned int const &,unsigned int &);
@@ -142,7 +142,7 @@ namespace pub
 		IMPORT int __cdecl GetMass(unsigned int const &,float &);
 		IMPORT int __cdecl DrainShields(unsigned int);
 		IMPORT int __cdecl InstantDock(unsigned int const &,unsigned int const &,int);
-		IMPORT int __cdecl GetSystem(unsigned int,unsigned int &);		
+		IMPORT int __cdecl GetSystem(unsigned int,unsigned int &);
 		IMPORT int __cdecl JumpIn(unsigned int const &,unsigned int const &);
 		IMPORT int __cdecl GetDockingTarget(unsigned int const &,unsigned int &);
 		IMPORT int __cdecl GetTarget(unsigned int const &,unsigned int &);

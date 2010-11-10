@@ -3,15 +3,15 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-PATCH_INFO piServerDLL = 
+PATCH_INFO piServerDLL =
 {
 	"server", 0x6CE0000,
 	{
 		{0x6D67274,		&ShipDestroyedHook,							4, &fpOldShipDestroyed,			false},
 		{0x6D641EC,		&_HkCb_AddDmgEntry,							4, 0,							false},
 		{0x6D67320,		&_HookMissileTorpHit,						4, &fpOldMissileTorpHit,		false},
-		{0x6D65448,		&_HookMissileTorpHit,						4, 0,							false},		
-		{0x6D67670,		&_HookMissileTorpHit,						4, 0,							false},		
+		{0x6D65448,		&_HookMissileTorpHit,						4, 0,							false},
+		{0x6D67670,		&_HookMissileTorpHit,						4, 0,							false},
 		{0x6D653F4,		&_HkCb_GeneralDmg,							4, &fpOldGeneralDmg,			false},
 		{0x6D672CC,		&_HkCb_GeneralDmg,							4, 0,							false},
 		{0x6D6761C,		&_HkCb_GeneralDmg,							4, 0,							false},
@@ -20,12 +20,12 @@ PATCH_INFO piServerDLL =
 		{0x6D6767C,		&_HkCb_OtherDmg,							4, 0,							false},
 		{0x6D67668,		&_HkCb_NonGunWeaponHitsBase,				4, &fpOldNonGunWeaponHitsBase,	false},
 		{0x6D6420C,     &_HkCb_LaunchPos,							4, &fpOldLaunchPos,				false},
-		
+
 		{0,0,0,0} // terminate
 	}
 };
 
-PATCH_INFO piRemoteClientDLL = 
+PATCH_INFO piRemoteClientDLL =
 {
 	"remoteclient", 0x6B30000,
 	{
@@ -35,7 +35,7 @@ PATCH_INFO piRemoteClientDLL =
 	}
 };
 
-PATCH_INFO piDaLibDLL = 
+PATCH_INFO piDaLibDLL =
 {
 	"dalib", 0x65C0000,
 	{
@@ -45,7 +45,7 @@ PATCH_INFO piDaLibDLL =
 	}
 };
 
-PATCH_INFO piContentDLL = 
+PATCH_INFO piContentDLL =
 {
 	"content", 0x6EA0000,
 	{
@@ -215,7 +215,7 @@ void ClearClientInfo(uint iClientID)
 	ClientInfo[iClientID].bInWrapGate = false;
 
 	ClientInfo[iClientID].fShieldHealth = 0.0f;
-	
+
 	ClientInfo[iClientID].bMobileDocked = false;
 	ClientInfo[iClientID].iDockClientID = 0;
 	ClientInfo[iClientID].lstJumpPath.clear();
@@ -341,7 +341,7 @@ bool InitHookExports()
 	DWORD dwID;
 	DWORD dwParam[34]; // else release version crashes, dont ask me why...
 	hThreadResolver = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)HkThreadResolver, &dwParam, 0, &dwID);
- 
+
 	GetShipInspect = (_GetShipInspect)SRV_ADDR(ADDR_SRV_GETINSPECT);
 	GetIObjRW = (_GetIObjRW)SRV_ADDR(ADDR_SRV_GETIOBJRW);
 	AddCargoDocked = (_AddCargoDocked)SRV_ADDR(ADDR_SRV_ADDCARGODOCKED);
@@ -386,7 +386,7 @@ bool InitHookExports()
 	// get CDPServer
 	pAddress = DALIB_ADDR(ADDR_CDPSERVER);
 	ReadProcMem(pAddress, &cdpSrv, 4);
-	 
+
 	// read g_FLServerDataPtr(used for serverload calc)
 	pAddress = FLSERVER_ADDR(ADDR_DATAPTR);
 	ReadProcMem(pAddress , &g_FLServerDataPtr, 4);

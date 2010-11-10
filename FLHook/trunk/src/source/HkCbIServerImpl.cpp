@@ -35,7 +35,7 @@ struct TIMER
 	mstime		tmLastCall;
 };
 
-TIMER Timers[] = 
+TIMER Timers[] =
 {
 	{ProcessPendingCommands,		50,					0},
 	{HkTimerUpdatePingData,			1000,				0},
@@ -130,7 +130,7 @@ void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdl
 		g_iTextLen = (uint)wscBuf.length();
 		ISERVER_LOGARG_UI(g_iTextLen);
 		ISERVER_LOGARG_WS(wszBuf);
-		
+
 		//Check for FLServer commands
 		if(CmpStrStart(wscBuf, L"/u ") || CmpStrStart(wscBuf, L"/s ") || CmpStrStart(wscBuf, L"/g ") || CmpStrStart(wscBuf, L"/l ") || CmpStrStart(wscBuf, L"/j "))
 			g_iTextLen -= 3;
@@ -227,7 +227,7 @@ void __stdcall SubmitChat(struct CHAT_ID cId, unsigned long lP1, void const *rdl
 
 	// send
 	g_bInSubmitChat = true;
-	try { 
+	try {
 		Server.SubmitChat(cId, lP1, rdlReader, cIdTo, iP2);
 	} catch(...) { AddLog("Exception in Server.SubmitChat"); }
 	g_bInSubmitChat = false;
@@ -251,7 +251,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 		ClientInfo[iClientID].bThrusterActivated = false;
 		ClientInfo[iClientID].bEngineKilled = false;
 		ClientInfo[iClientID].bTradelane = false;
-		
+
 		HkInitCloakSettings(iClientID);
 		if(ClientInfo[iClientID].bCanCloak)
 		{
@@ -302,7 +302,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 							pub::Reputation::SetReputation(iRep, set_vNoPvpFactionIDs[i], 0.9f);
 							pub::Reputation::SetAffiliation(iRep, set_vNoPvpFactionIDs[i]);
 						}
-							
+
 						ClientInfo[iClientID].bNoPvp = true;
 						bBreak = true;
 						break;
@@ -331,7 +331,7 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 				}
 			}
 		}
-				
+
 	} catch(...) { LOG_EXCEPTION }
 
 	g_iClientID = iClientID;
@@ -510,8 +510,8 @@ void __stdcall PlayerLaunch(unsigned int iShip, unsigned int iClientID)
 			ClientInfo[iClientID].iLastExitedBaseID = 1;
 
 			// event
-			ProcessEvent(L"spawn char=%s id=%d system=%s", 
-					Players.GetActiveCharacterName(iClientID), 
+			ProcessEvent(L"spawn char=%s id=%d system=%s",
+					Players.GetActiveCharacterName(iClientID),
 					iClientID,
 					HkGetPlayerSystem(iClientID).c_str());
 		}
@@ -591,7 +591,7 @@ void __stdcall SPMunitionCollision(struct SSPMunitionCollisionInfo const & ci, u
 		pub::SpaceObj::GetType(ci.dwTargetShip, iType);
 		PrintUniverseText(L"type=%u", iType);*/
 
-	} catch(...) { LOG_EXCEPTION }	
+	} catch(...) { LOG_EXCEPTION }
 
 	iDmgTo = iClientIDTarget;
 	Server.SPMunitionCollision(ci, iClientID);
@@ -631,7 +631,7 @@ void __stdcall SPObjCollision(struct SSPObjCollisionInfo const &ci, unsigned int
 		uint iClientIDTarget = HkGetClientIDByShip(ci.dwTargetShip);
 		if(iClientIDTarget && !AllowPlayerDamage(iClientID, iClientIDTarget))
 			return;
-		
+
 		pub::Player::GetShip(iClientID, iShip);
 		uint iType;
 		pub::SpaceObj::GetType(ci.dwTargetShip, iType);
@@ -722,10 +722,10 @@ void __stdcall LaunchComplete(unsigned int iBaseID, unsigned int iShip)
 			ClientInfo[iClientID].tmSpawnTime = timeInMS(); // save for anti-dockkill
 		else
 			return;
-		
+
 		// event
-		ProcessEvent(L"launch char=%s id=%d base=%s system=%s", 
-				Players.GetActiveCharacterName(iClientID), 
+		ProcessEvent(L"launch char=%s id=%d base=%s system=%s",
+				Players.GetActiveCharacterName(iClientID),
 				iClientID,
 				HkGetBaseNickByID(ClientInfo[iClientID].iLastExitedBaseID).c_str(),
 				HkGetPlayerSystem(iClientID).c_str());
@@ -802,7 +802,7 @@ void __stdcall CharacterSelect(struct CHARACTER_ID const & cId, unsigned int iCl
 			HkNewShipBought(iClientID);
 		}
 	} catch(...) { LOG_EXCEPTION }
-	
+
 	wstring wscCharBefore;
 	try {
 		const wchar_t *wszCharname = Players.GetActiveCharacterName(iClientID);
@@ -872,7 +872,7 @@ void __stdcall CharacterSelect(struct CHARACTER_ID const & cId, unsigned int iCl
 		HkGetAccountDirName(acc, wscDir);
 		HKPLAYERINFO pi;
 		HkGetPlayerInfo(ARG_CLIENTID(iClientID), pi, false);
-		ProcessEvent(L"login char=%s accountdirname=%s id=%d ip=%s", 
+		ProcessEvent(L"login char=%s accountdirname=%s id=%d ip=%s",
 				wscCharname.c_str(),
 				wscDir.c_str(),
 				iClientID,
@@ -890,8 +890,8 @@ void __stdcall BaseEnter(unsigned int iBaseID, unsigned int iClientID)
 	ISERVER_LOG();
 	ISERVER_LOGARG_UI(iBaseID);
 	ISERVER_LOGARG_UI(iClientID);
-	
-	Server.BaseEnter(iBaseID, iClientID);	
+
+	Server.BaseEnter(iBaseID, iClientID);
 
 	try {
 		//mobile docking - remove from target's docked list
@@ -994,8 +994,8 @@ void __stdcall BaseEnter(unsigned int iBaseID, unsigned int iClientID)
 		HkPenalizeDeath(ARG_CLIENTID(iClientID), 0, true);
 
 		// event
-		ProcessEvent(L"baseenter char=%s id=%d base=%s system=%s", 
-				Players.GetActiveCharacterName(iClientID), 
+		ProcessEvent(L"baseenter char=%s id=%d base=%s system=%s",
+				Players.GetActiveCharacterName(iClientID),
 				iClientID,
 				HkGetBaseNickByID(iBaseID).c_str(),
 				HkGetPlayerSystem(iClientID).c_str());
@@ -1027,8 +1027,8 @@ void __stdcall BaseExit(unsigned int iBaseID, unsigned int iClientID)
 		const wchar_t *wszCharname = Players.GetActiveCharacterName(iClientID);
 
 		// event
-		ProcessEvent(L"baseexit char=%s id=%d base=%s system=%s", 
-				Players.GetActiveCharacterName(iClientID), 
+		ProcessEvent(L"baseexit char=%s id=%d base=%s system=%s",
+				Players.GetActiveCharacterName(iClientID),
 				iClientID,
 				HkGetBaseNickByID(iBaseID).c_str(),
 				HkGetPlayerSystem(iClientID).c_str());
@@ -1057,7 +1057,7 @@ void __stdcall OnConnect(unsigned int iClientID)
 		// event
 		wstring wscIP;
 		HkGetPlayerIP(iClientID, wscIP);
-		ProcessEvent(L"connect id=%d ip=%s", 
+		ProcessEvent(L"connect id=%d ip=%s",
 				iClientID,
 				wscIP.c_str());
 	} catch(...) { LOG_EXCEPTION }
@@ -1082,13 +1082,13 @@ void __stdcall DisConnect(unsigned int iClientID, enum EFLConnection p2)
 		ClientInfo[iClientID].lstMoneyFix.clear();
 		ClientInfo[iClientID].lstCargoFix.clear();
 
-		if (ClientInfo[iClientID].bInWrapGate)   
+		if (ClientInfo[iClientID].bInWrapGate)
 		{
 			// OMG JH disconnection HAXER, KILL KILL KILL NOW
 			uint iShip;
 			pub::Player::GetShip(iClientID, iShip);
 			pub::SpaceObj::SetInvincible(iShip, false, false, 0);
-			pub::SpaceObj::SetRelativeHealth(iShip, 0.0f); // kill the player 
+			pub::SpaceObj::SetRelativeHealth(iShip, 0.0f); // kill the player
 		}
 
 		uint iShip;
@@ -1261,11 +1261,12 @@ void __stdcall DisConnect(unsigned int iClientID, enum EFLConnection p2)
 
 		bDeathPenaltyOnEnter = ClientInfo[iClientID].bDeathPenaltyOnEnter;
 
-		if(ClientInfo[iClientID].iControllerID)
+        /*if(ClientInfo[iClientID].iControllerID)
 		{
 			ConPrint(L"DestroyFLHook %u\n", ClientInfo[iClientID].iControllerID);
-			pub::Controller::Destroy(ClientInfo[iClientID].iControllerID);
-		}
+            pub::Controller::Destroy(ClientInfo[iClientID].iControllerID);
+			ClientInfo[iClientID].iControllerID = 0;
+		}*/
 
 		if(!ClientInfo[iClientID].bDisconnected)
 		{
@@ -1273,8 +1274,8 @@ void __stdcall DisConnect(unsigned int iClientID, enum EFLConnection p2)
 
 			// event
 			wszCharname = Players.GetActiveCharacterName(iClientID);
-			ProcessEvent(L"disconnect char=%s id=%d", 
-					(wszCharname ? wszCharname : L""), 
+			ProcessEvent(L"disconnect char=%s id=%d",
+					(wszCharname ? wszCharname : L""),
 					iClientID);
 		}
 	} catch(...) { LOG_EXCEPTION }
@@ -1467,7 +1468,7 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 	Vector VCharFilePos;
 	wstring wscPlayerName = L"", wscSystem = L"";
 	try {
-		if (ClientInfo[iClientID].bInWrapGate)   
+		if (ClientInfo[iClientID].bInWrapGate)
 		{
 			// OMG JH F1 HAXER, KILL KILL KILL NOW
 			uint iShip;
@@ -1485,12 +1486,12 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 
 			if(!ClientInfo[iClientID].tmCharInfoReqAfterDeath)
 			{
-				if(ClientInfo[iClientID].iControllerID)
+				/*if(ClientInfo[iClientID].iControllerID)
 				{
 					ConPrint(L"DestroyFLHook %u\n", ClientInfo[iClientID].iControllerID);
 					pub::Controller::Destroy(ClientInfo[iClientID].iControllerID);
 					ClientInfo[iClientID].iControllerID = 0;
-				}
+				}*/
 
 				//mobile docking
 				if(ClientInfo[iClientID].bMobileDocked)
@@ -1643,7 +1644,7 @@ void __stdcall CharacterInfoReq(unsigned int iClientID, bool p2)
 
 		}
 	} catch(...) { LOG_EXCEPTION }
-	
+
 	try {
 //		HkAddConnectLog(iClientID);
 		Server.CharacterInfoReq(iClientID, p2);
@@ -1825,7 +1826,7 @@ void __stdcall JumpInComplete(unsigned int iSystemID, unsigned int iShip)
 
 		ClientInfo[iClientID].bInWrapGate = false;
 
-		if(ClientInfo[iClientID].bCanCloak && (ClientInfo[iClientID].bCloaked || ClientInfo[iClientID].bIsCloaking)) 
+		if(ClientInfo[iClientID].bCanCloak && (ClientInfo[iClientID].bCloaked || ClientInfo[iClientID].bIsCloaking))
 			ClientInfo[iClientID].bMustSendUncloak = true;
 
 		//Make player damageable
@@ -1885,8 +1886,8 @@ void __stdcall JumpInComplete(unsigned int iSystemID, unsigned int iShip)
 		}
 
 		// event
-		ProcessEvent(L"jumpin char=%s id=%d system=%s", 
-				Players.GetActiveCharacterName(iClientID), 
+		ProcessEvent(L"jumpin char=%s id=%d system=%s",
+				Players.GetActiveCharacterName(iClientID),
 				iClientID,
 				HkGetSystemNickByID(iSystemID).c_str());
 	} catch(...) { LOG_EXCEPTION }
@@ -1924,8 +1925,8 @@ void __stdcall SystemSwitchOutComplete(unsigned int iShip, unsigned int iClientI
 		}
 
 		// event
-		ProcessEvent(L"switchout char=%s id=%d system=%s", 
-				Players.GetActiveCharacterName(iClientID), 
+		ProcessEvent(L"switchout char=%s id=%d system=%s",
+				Players.GetActiveCharacterName(iClientID),
 				iClientID,
 				HkGetPlayerSystem(iClientID).c_str());
 	} catch(...) { LOG_EXCEPTION }
@@ -1991,8 +1992,8 @@ void __stdcall Login(struct SLoginInfo const &li, unsigned int iClientID)
 		if(iPlayers > (Players.GetMaxPlayerCount() -  set_iReservedSlots))
 		{ // check if player has a reserved slot
 			CAccount *acc = Players.FindAccountFromClientID(iClientID);
-			wstring wscDir; 
-			HkGetAccountDirName(acc, wscDir); 
+			wstring wscDir;
+			HkGetAccountDirName(acc, wscDir);
 			string scUserFile = scAcctPath + wstos(wscDir) + "\\flhookuser.ini";
 
 			bool bReserved = IniGetB(scUserFile, "Settings", "ReservedSlot", false);
@@ -2438,7 +2439,7 @@ void __stdcall ReqAddItem(unsigned int p1, char const *p2, int p3, float p4, boo
 			}
 		}
 	} catch(...) { LOG_EXCEPTION }
-	
+
 	Server.ReqAddItem(p1, p2, p3, p4, p5, p6);
 
 	try {
@@ -2483,7 +2484,7 @@ void __stdcall ReqAddItem(unsigned int p1, char const *p2, int p3, float p4, boo
 				if((*tag).iArchID==p1)
 				{
 					uint iRepGroupID, iOldRepGroupID;
-					pub::Reputation::GetReputationGroup(iRepGroupID, (*tag).scFaction.c_str()); 
+					pub::Reputation::GetReputationGroup(iRepGroupID, (*tag).scFaction.c_str());
 					int iPlayerRep;
 					pub::Player::GetRep(p6, iPlayerRep);
 					Reputation::Vibe::GetAffiliation(iPlayerRep, iOldRepGroupID, false);
@@ -2541,7 +2542,7 @@ void __stdcall ReqModifyItem(unsigned short p1, char const *p2, int p3, float p4
 	} catch(...) { LOG_EXCEPTION }
 
 	Server.ReqModifyItem(p1, p2, p3, p4, p5, iClientID);
-	
+
 	try {
 		// anti base-idle
 		ClientInfo[iClientID].iBaseEnterTime = (uint)time(0);
@@ -2694,7 +2695,7 @@ void __stdcall RequestEvent(int p1, unsigned int p2, unsigned int p3, unsigned i
 	ISERVER_LOGARG_UI(p4);
 	ISERVER_LOGARG_UI(p5);
 	ISERVER_LOGARG_UI(p6);
-	
+
 	try {
 		//Moved to SpaceObjDock, kept here to avoid silly docking responses from bases
 		if(!p1)//docking
@@ -2778,7 +2779,7 @@ void __stdcall RequestEvent(int p1, unsigned int p2, unsigned int p3, unsigned i
 					pub::Player::SendNNMessage(p6, pub::GetNicknameId("dock_disallowed"));
 					return;
 				}
-			} 
+			}
 			if(ClientInfo[p6].bMobileBase)
 			{
 				ClientInfo[p6].iLastSpaceObjDocked = p3;
@@ -2925,7 +2926,7 @@ void __stdcall SetTarget(unsigned int iClientID, struct XSetTarget const &p2)
 	ISERVER_LOGARG_UI(iClientID);
 
 	Server.SetTarget(iClientID, p2);
-	
+
 	try {
 		//Capture solar objects for alternate solar objects repair
 		if(p2.iTargetSpaceID!=iLastSetTarget && (uint)(p2.iTargetSpaceID/1000000000)) //target is a solar

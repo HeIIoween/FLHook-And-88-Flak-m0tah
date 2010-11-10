@@ -15,7 +15,7 @@
 using namespace std;
 
 // defines
-#define VERSION L"'88 Flak v1.6.7 dev build 22"
+#define VERSION L"'88 Flak v1.6.7 dev build 23"
 
 #define TIME_UPDATE 50
 #define IMPORT __declspec(dllimport)
@@ -458,5 +458,7 @@ extern uint set_iRespawnDelay;
 
 extern bool set_bMissileDmgToMine;
 extern bool set_bTorpDmgToMine;
+
+extern bool ControllerActive;
 
 #endif

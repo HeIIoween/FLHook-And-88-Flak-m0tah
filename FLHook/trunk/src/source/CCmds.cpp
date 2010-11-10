@@ -561,7 +561,15 @@ void CCmds::CmdGetPlayers()
 
 void CCmds::XPrintPlayerInfo(HKPLAYERINFO pi)
 {
-	Print(L"Name: %s, ID: %u, IP: %s, Host: %s, Ping: %u, Loss: %u, Base: %s, System: %s\n", pi.wscCharname.c_str(), pi.iClientID, pi.wscIP.c_str(), pi.wscHostname.c_str(), pi.ci.dwRoundTripLatencyMS, ClientInfo[pi.iClientID].iAverageLoss, pi.wscBase.c_str(), pi.wscSystem.c_str());
+	Print(L"Name: %s, ID: %u, IP: %s, Host: %s, Ping: %u, Loss: %u, Base: %s, System: %s\n",
+            pi.wscCharname.c_str(),
+            pi.iClientID,
+            pi.wscIP.c_str(),
+            pi.wscHostname.c_str(),
+            pi.ci.dwRoundTripLatencyMS,
+            ClientInfo[pi.iClientID].iAverageLoss,
+            pi.wscBase.c_str(),
+            pi.wscSystem.c_str());
 }
 
 void CCmds::CmdXGetPlayerInfo(wstring wscCharname)
@@ -1027,12 +1035,18 @@ void CCmds::CmdMission(wstring wscCharname)
 {
     RIGHT_CHECK_SUPERADMIN();
 
+    if (ControllerActive == true)
+    {
+        Print(L"Error: Mission in use\n");
+        return;
+    }
+
     uint iClientID = HkGetClientIdFromCharname(wscCharname);
 
     if(iClientID != -1)
     {
         uint pAddress = (uint)hModContent + 0x114388;
-        pub::Controller::CreateParms params = {pAddress, 1};
+        pub::Controller::CreateParms params = {pAddress, iClientID};
         ClientInfo[iClientID].iControllerID = ControllerCreate("Content.dll", "Mission_10", &params, (pub::Controller::PRIORITY)2);
         ControllerSend(ClientInfo[iClientID].iControllerID, 0x1000, 0);
         Print(L"OK\n");

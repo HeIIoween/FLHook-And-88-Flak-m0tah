@@ -5,8 +5,9 @@ bool g_bInPlayerLaunch = false;
 uint g_iClientID = 0;
 Vector g_Vlaunch;
 Matrix g_Mlaunch;
+bool ControllerActive;
 
-bool __stdcall LaunchPosHook(uint iSpaceID, struct CEqObj &p1, Vector &p2, Matrix &p3, int iDock) 
+bool __stdcall LaunchPosHook(uint iSpaceID, struct CEqObj &p1, Vector &p2, Matrix &p3, int iDock)
 {
 	bool iRet = p1.launch_pos(p2,p3,iDock);
 	if(g_bInPlayerLaunch)
@@ -27,7 +28,7 @@ __declspec(naked) void _HkCb_LaunchPos()
 	  push [esp+16+0] //16
 	  push ecx
 	  push [ecx+176]
-	  call LaunchPosHook   
+	  call LaunchPosHook
 	  pop ecx
 	  ret 0x0C
    }
@@ -37,7 +38,7 @@ vector<uint> vMarkSpaceObjProc;
 int __cdecl SpaceObjCreate(unsigned int &iShip, struct pub::SpaceObj::ShipInfo const & shipinfo)
 {
 	int iRet = pub::SpaceObj::Create(iShip, shipinfo);
-	
+
 	try{
 		if(set_fAutoMarkRadius > 0.0f) //automarking enabled
 		{
@@ -86,7 +87,7 @@ vector<DOCK_INFO> vDelayedNPCDocks;
 int __cdecl SpaceObjDock(unsigned int const &iShip, unsigned int const & iDockTarget, int iCancel, enum DOCK_HOST_RESPONSE response)
 {
 	//PrintUniverseText(L"Dock! %u %u %i", iShip, iDockTarget, iCancel);
-	
+
 	try{
 		//Check to make sure player has permission to dock - formation docks aren't covered under RequestEvent
 		if(!iCancel)
@@ -237,12 +238,12 @@ __declspec(naked) void _SpawnItemOrig()
 		jmp eax
 	}
 }
-#pragma optimize("", on) 
+#pragma optimize("", on)
 
 /*int __cdecl SpaceObjLightFuse(unsigned int const &iShip ,char const *sz ,float fDunno)
 {
 	PrintUniverseText(L"LightFuse %f", fDunno);
-	
+
 	return pub::SpaceObj::LightFuse(iShip, sz, fDunno);
 }*/
 
@@ -292,10 +293,11 @@ unsigned int __cdecl ControllerCreate(char const *szDLLPath, char const *szContr
 	if(!memcmp(szControllerType, "Mission_", 8))
 	{
 		iControllerID = ClientInfo[create->iClientID].iControllerID;
-		if(!iControllerID)
+		if(ControllerActive == false && iControllerID == 0)
 		{
 			iControllerID = pub::Controller::Create(szDLLPath, szControllerType, create, iDunno);
 			ClientInfo[create->iClientID].iControllerID = iControllerID;
+			ControllerActive = true;
 			ConPrint(L"Create %s %u | %u %u\n", stows(szControllerType).c_str(), iControllerID, create->iID, create->iClientID);
 		}
 	}
@@ -317,5 +319,6 @@ int __cdecl ControllerSend(unsigned int const &iControllerID, int iMsgType, void
 void __cdecl ControllerDestroy(unsigned int iControllerID)
 {
 	ConPrint(L"DestroyNormal %u %x\n", iControllerID, *(&iControllerID-1));
+	ControllerActive = false;
 	return pub::Controller::Destroy(iControllerID);
 }
