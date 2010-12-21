@@ -684,10 +684,8 @@ void UserCmd_UnCloak(uint iClientID, wstring wscParam)
 	}
 
 	if (ClientInfo[iClientID].bCanCloak) {
-	    if (!ClientInfo[iClientID].bWantsCloak)
-            PrintUserCmdText(iClientID, L"Error: You are not cloaked.");
-		else if (!HKHKSUCCESS(HkUnCloak(iClientID)))
-			PrintUserCmdText(iClientID, L"Error!");
+	    if (!HKHKSUCCESS(HkUnCloak(iClientID)))
+            PrintUserCmdText(iClientID, L"Error.");
 	} else
 		PrintUserCmdText(iClientID, L"Error: Your ship does not have a Cloaking Device.");
 }
