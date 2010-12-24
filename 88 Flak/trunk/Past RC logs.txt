@@ -1,3 +1,24 @@
+RC132 (12/19/10):
+-- Nerfed AO run
+-- Replaced unlawful House starting jump holes with Omicron Alpha and Gamma
+-- Added unlawful bribe in n00b base ship dealer
+-- Added /ping command
+-- Fixed uncloak timer reset bug
+-- Added /mission command. Creates a working scripting mission. Limit one active per server.
+-- Added the new server to freelancer.bat
+-- Made shipyard docking more cinematic: enter one end and exit the other, with a docking camera to showcase your ship.
+-- Added docking lights to shipyards to signal the front and back
+-- Added new versatile.dll for easily inter-changable IDS and infocards such as missions or custom factions
+-- 8 New Custom factions to be used with aforementioned DLL to easily integrate clans into the server
+-- Made abandoned docking rings invulnerable
+-- Added mooring fixtures to abandoned docking rings
+-- Doubled refire for all Small Capital, weapon platform, tradelane, liner, transport, and various other defense turrets from 0.125 to 0.0625 - Kraizer
+-- Changed effects on the defense turrets to make them look more prominent in battle - Kraizer
+-- Small AI tweak to ease up on repairs. - Fox
+-- Doubled Nanobot / Shield Battery count for better combat pacing. - Fox
+-- Raised chance of Nanobot / Shield Battery drops off un-assisted kills. - Fox
+-- Decreased the percentage variance in shield damage from +30%/-50% to +10%/-20%. - Fox
+
 RC131 (10/22/10):
 -- Decreased NPC counts back to RC129's values.
 -- Decreased AI Wingmen sizes back to default of two.
