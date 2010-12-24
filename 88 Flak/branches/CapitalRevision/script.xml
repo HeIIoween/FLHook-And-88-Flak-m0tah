@@ -1,0 +1,4329 @@
+<script>
+<<<<<<< .mine
+<header name="88 Flak 1.27 RC132 12/18/10" savesafe="false" exclusive="false">
+=======
+<header name="88 Flak 1.27 RC132 12/18/10" savesafe="false" exclusive="false">
+>>>>>>> .r101
+<scriptversion>
+1.3
+</scriptversion>
+<author>
+foxBox (foxUnit01), Please also view Readme for credit
+</author>
+<modurl>
+http://www.memes.no/88flak/
+</modurl>
+<description>
+Read the Readme for more info! Click the "View Readme" button in FLMM to do so.
+Please read the options list right now before activating, located in the Readme, for information on options.
+
+Note 1: If you get a startup crash, go to "Tools > Open Saved Games Folder", and delete all files in the "Singleplayer" folder (back them up first if you need).
+
+Note 2: Although Flak has Open SP support, it is highly recommended to run a multiplayer server instead - refer to the SP Mode FAQ in the readme. It will explain how to set up a multiplayer server if you've never done one before, even if you don't have a network / internet access on the computer you're playing on.
+
+Note 3: Be sure to check out the 88 Flak Soundtrack! If you're sick of Freelancer's default music, check it out at http://www.memes.no/88flak/downloads/beta/88flakv127_st.zip.flmod
+
+Note 4: Read that damn readme!
+
+And lastly, thank you for downloading the mod! Pay us a visit!
+~88 Flak community, http://www.memes.no/88flak/
+</description>
+
+<options>
+;Reserved Option ID Codes
+;0xy - x = category, starting at 0 (0 for essential, 1 for graphics, etc.)
+;      y = option num, starting at 1
+;10x - x = DBG Options, starting at 1
+;100 - Blank Line
+
+<option id="100" name="READ THE README FOR INFORMATION ON MOD OPTIONS." savesafe="true">
+<item id="0" name="No, really. It's there for a reason, read it.">
+</item>
+</option>
+<option id="100" name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option id="100" name="    -- Essential Options --" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option id="001" name="SP Only: Enable full OpenSP support?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes (do not use if playing MP!)">
+</item>
+</option>
+
+<option id="002" name="MP Client: Enable Global Server Workaround?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes (use if the fllistserver.com list is down)">
+</item>
+</option>
+
+<option id="003" name="MP Client: Enable Battleship / Station Anti-Spin?" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No (fixes autopilot on these ships)">
+</item>
+</option>
+
+<option id="004" name="MP Client: Screen resolution ratio?" savesafe="true">
+<item id="0" name=" (Default) 4:3 (1024x768, 1280x960, etc.)">
+</item>
+<item id="1" name="16:9 (1280x720, 1440x810, 1600x900, 1920x1080)">
+</item>
+<item name="15:9 (1280x768)">
+</item>
+<item name="16:10 (1280x800, 1440x900, 1600x1000, 1680x1050, 1920x1200)">
+</item>
+<item name="5:4 (1280x1024)">
+</item>
+</option>
+
+<option id="100" name="    -- High-End Graphics / Sound Options --" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option id="011" name="MP Client: Enable Post-Process effects?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes (version 1, vibrant coloring)">
+</item>
+<item name="Yes (version 2, filtered coloring)">
+</item>
+</option>
+
+<option id="012" name="MP Client: Enable high-end view distances?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes (10x)">
+</item>
+<item name="Yes (Unlimited)">
+</item>
+</option>
+
+<option id="013" name="MP Client: Enable high-end special effects?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes">
+</item>
+<item name="Yes (higher effects distance only)">
+</item>
+</option>
+
+<option id="014" name="MP Client: Enable high-end sound system?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes (MUST have 3D Sound enabled!)">
+</item>
+</option>
+
+<option id="015" name="MP Client: Enable Battledust?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes (MUST have High-End FX enabled!)">
+</item>
+<item name="Yes (2x duration, MUST have High-End FX enabled!)">
+</item>
+<item name="Yes (2x duration + thicker, MUST have High-End FX enabled!)">
+</item>
+</option>
+
+<option id="100" name="    -- Camera Options --" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option id="021" name="MP Client: Change ''Rear View'' to ''Tactical View''?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes (~1.5km Range)">
+</item>
+<item name="Yes (~3km Range)">
+</item>
+</option>
+
+<option id="022" name="MP Client: Wide camera turning with Capitals?" savesafe="true">
+<item id="0" name=" (Default) Full">
+</item>
+<item id="1" name="Partial (oldschool 88 Flak movement)">
+</item>
+<item name="None (fighter-style camera movement)">
+</item>
+</option>
+
+<option id="100" name="    -- Visual Options --" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option id="031" name="MP Client: More realistic space backgrounds?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes">
+</item>
+</option>
+
+<option id="032" name="MP Client: Normal thruster effects?" savesafe="true">
+<item id="0" name=" (Default) No">
+</item>
+<item id="1" name="Yes">
+</item>
+</option>
+
+<option id="033" name="MP Client: Draw Contrails on ships?" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No">
+</item>
+</option>
+
+<option id="100" name="    -- Server Options --" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+<option id="041" name="MP Server: AI difficulty?" savesafe="true">
+<item id="0" name=" (Default) Normal">
+</item>
+<item id="1" name="Easy">
+</item>
+<item name="Very Easy">
+</item>
+<item name="Hard">
+</item>
+</option>
+
+<option id="042" name="MP Server: Random Capital Ship fleets? (all factions)" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No (will disable ALL CS fleets)">
+</item>
+</option>
+
+<option id="043" name="MP Server: Random Capital Ship patrols? (all factions)" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No (will disable ALL CS patrols)">
+</item>
+</option>
+
+<option id="044" name="MP Server: Random Capital Ship patrols? (Nomads)" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No (will disable ONLY Nomad CS patrols)">
+</item>
+</option>
+
+<option id="045" name="MP Server: Random Capital Ship patrols? (Freelancer NPCs)" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No (will disable ONLY FL NPC CS patrols)">
+</item>
+</option>
+
+<option id="046" name="MP Server: NPC Count?" savesafe="true">
+<item id="0" name=" (Default) Normal">
+</item>
+<item id="1" name="Low (Half)">
+</item>
+<item name="High (Double)">
+</item>
+<item name="Ridiculous (Quadruple, not recommended!)">
+</item>
+</option>
+
+<option id="047" name="MP Server: Allow Wingmen License to attract wingmen?" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No">
+</item>
+</option>
+
+<option id="101" name="" savesafe="true">
+<item id="0" name="">
+</item>
+<item id="1" name="Easter Egg: Drunk mode!">
+</item>
+</option>
+<option id="102" name="88 Flak" savesafe="true">
+<item id="0" name="">
+</item>
+<item id="1" name="Debug: AI Target Display + Invincible AI">
+</item>
+</option>
+<option id="103" name="Version 1.27, listed in server list as 88.27" savesafe="true">
+<item id="0" name="">
+</item>
+<item id="1" name="Debug: Log Spew to fl-client-errors.log">
+</item>
+</option>
+<option id="104" name="Bugs, suggestions, etc: http://www.memes.no/88flak/" savesafe="true">
+<item id="0" name="">
+</item>
+<item id="1" name="SP Cheat: FL Still Alive Initiative Camera Ship">
+</item>
+</option>
+<option id="100" name="" savesafe="true">
+<item id="0" name="">
+</item>
+</option>
+
+</options>
+</header>
+
+;Padding Start
+<data file="Data/custom_bot_ships.ini" method="copyfile" sourcefile="Data/custom_bot_ships.ini" scanfile="true">
+</data> ;Yeah, this file really needs a forward slash, dunno why
+;Padding End
+
+<data file="Data\Missions\empathy.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+event = object_destruction, -0.001250
+</dest>
+<source>
+event = object_destruction, -0.125000
+</source>
+</data>
+<data file="Data\Equipment\Goods.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+addon = stealth_hf_cloak, HpCloak01, 1
+</dest>
+<source>
+;addon = stealth_hf_cloak, HpCloak01, 1
+</source>
+</data>
+<data file="Data\Equipment\Goods.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+addon = nomad_fighter_cloak, HpCloak01, 1
+</dest>
+<source>
+;addon = nomad_fighter_cloak, HpCloak01, 1
+</source>
+</data>
+<data file="Data\Equipment\Goods.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+addon = nomad_gunboat_cloak, HpCloak01, 1
+</dest>
+<source>
+;addon = nomad_gunboat_cloak, HpCloak01, 1
+</source>
+</data>
+<data file="Data\Equipment\Goods.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+addon = nomad_battleship_cloak, HpCloak01, 1
+</dest>
+<source>
+;addon = nomad_battleship_cloak, HpCloak01, 1
+</source>
+</data>
+<data file="Data\Equipment\Goods.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+addon = osiris_cloak, HpCloak01, 1
+</dest>
+<source>
+;addon = osiris_cloak, HpCloak01, 1
+</source>
+</data>
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+rotation_inertia = 1000000000000, 62500000000000, 62500000000000
+</dest>
+<source>
+rotation_inertia = 62500000000000, 62500000000000, 62500000000000
+</source>
+</data>
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+steering_torque = 12500000000000, 100000000000000, 100000000000000
+</dest>
+<source>
+steering_torque = 100000000000000, 100000000000000, 100000000000000
+</source>
+</data>
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="001:1">
+<dest>
+steering_torque = 6250000000000, 50000000000000, 50000000000000
+</dest>
+<source>
+steering_torque = 50000000000000, 50000000000000, 50000000000000
+</source>
+</data>
+;Sych with Option 003 and AI Companion
+
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="002:1">
+<dest>
+;libcurl.dll ;GLS Workaround
+;gls_workaround.dll ;GLS Workaround
+</dest>
+<source>
+libcurl.dll ;GLS Workaround activated by FLMM Options
+gls_workaround.dll ;GLS Workaround activated by FLMM Options
+</source>
+</data>
+
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="003:1">
+<dest>
+rotation_inertia = 1000000000000, 62500000000000, 62500000000000
+</dest>
+<source>
+rotation_inertia = 62500000000000, 62500000000000, 62500000000000
+</source>
+</data>
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="003:1">
+<dest>
+steering_torque = 12500000000000, 100000000000000, 100000000000000
+</dest>
+<source>
+steering_torque = 100000000000000, 100000000000000, 100000000000000
+</source>
+</data>
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="003:1">
+<dest>
+steering_torque = 6250000000000, 50000000000000, 50000000000000
+</dest>
+<source>
+steering_torque = 50000000000000, 50000000000000, 50000000000000
+</source>
+</data>
+;Sych with Option 001 and AI Companion
+
+<data file="Data\Interface\hudshift.ini" method="filereplace" numtimes="-1" options="004:1">
+<dest>
+[;HUDShift] ;16:9
+</dest>
+<source>
+[HUDShift] ;16:9 - Activated by FLMM
+</source>
+</data>
+<data file="Data\Interface\hudshift.ini" method="filereplace" numtimes="-1" options="004:2">
+<dest>
+[;HUDShift] ;15:9
+</dest>
+<source>
+[HUDShift] ;15:9 - Activated by FLMM
+</source>
+</data>
+<data file="Data\Interface\hudshift.ini" method="filereplace" numtimes="-1" options="004:3">
+<dest>
+[;HUDShift] ;16:10
+</dest>
+<source>
+[HUDShift] ;16:10 - Activated by FLMM
+</source>
+</data>
+<data file="Data\Interface\hudshift.ini" method="filereplace" numtimes="-1" options="004:4">
+<dest>
+[;HUDShift] ;5:4
+</dest>
+<source>
+[HUDShift] ;5:4 - Activated by FLMM
+</source>
+</data>
+
+<data file="Exe\d3d8.dll" method="copyfile" sourcefile="Exe\bloom8.dll" options="011:1">
+</data>
+<data file="Exe\d3d9.dll" method="copyfile" sourcefile="Exe\bloom9.dll" options="011:1">
+</data>
+<data file="Exe\d3dx9_26.dll" method="copyfile" sourcefile="Exe\bloomx9_26.dll" options="011:1">
+</data>
+<data file="Data\Fx\envmapbasic.mat" method="copyfile" sourcefile="Data\Fx\envmapbasic-d3d9.mat" options="011:1">
+</data>
+<data file="Exe\d3d8.dll" method="copyfile" sourcefile="Exe\bloom8.dll" options="011:2">
+</data>
+<data file="Exe\d3d9.dll" method="copyfile" sourcefile="Exe\bloom9_20.dll" options="011:2">
+</data>
+<data file="Exe\d3dx9_26.dll" method="copyfile" sourcefile="Exe\bloomx9_26.dll" options="011:2">
+</data>
+<data file="Exe\enbseries.ini" method="copyfile" sourcefile="Exe\enbseries_20.ini" options="011:2">
+</data>
+<data file="Exe\effect.txt" method="copyfile" sourcefile="Exe\effect_20.txt" options="011:2">
+</data>
+
+<data file="Exe\freelancer.exe" method="copyfile" sourcefile="Exe\freelancer.exe.medmlod" options="012:1">
+</data>
+<data file="Exe\freelancer.exe" method="copyfile" sourcefile="Exe\freelancer.exe.highlod" options="012:2">
+</data>
+
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+effects = Fx\effect_types.ini			; needs to be before effects.ini
+</dest>
+<source>
+effects = Fx\effect_typeshigh.ini			; needs to be before effects.ini
+</source>
+</data>
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+FxBasicAppearance.poolSize    = 1000
+FxRectAppearance.poolSize     = 400
+FxPerpAppearance.poolSize     = 250
+FxOrientedAppearance.poolSize = 0
+FLBeamAppearance.poolSize     = 680
+FLDustAppearance.poolSize     = 250
+;---------------------- total = 2580 -------;
+FxMeshAppearance.poolSize     = 500
+FxParticleAppearance.poolSize = 100
+;---------------------- total = 3180 -------;
+</dest>
+<source>
+FxBasicAppearance.poolSize    = 20000
+FxRectAppearance.poolSize     = 8000
+FxPerpAppearance.poolSize     = 5000
+FxOrientedAppearance.poolSize = 0
+FLBeamAppearance.poolSize     = 13600
+FLDustAppearance.poolSize     = 5000
+;---------------------- total = 51600 -------;
+FxMeshAppearance.poolSize     = 500
+FxParticleAppearance.poolSize = 2000
+;---------------------- total = 54100 -------;
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+effects = Fx\weapons\weapons_ale.ini
+</dest>
+<source>
+effects = Fx\weapons\weapons_alehigh.ini
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+effects = Fx\explosions\explosions_ale.ini
+</dest>
+<source>
+effects = Fx\explosions\explosions_alehigh.ini
+</source>
+</data>
+<data file="Data\Fx\lightbeam.txm" method="copyfile" sourcefile="Data\Fx\lightbeam-high.txm" options="013:1">
+</data>
+<data file="Data\Fx\smoke.txm" method="copyfile" sourcefile="Data\Fx\smoke-high.txm" options="013:1">
+</data>
+<data file="Data\Fx\standardeffects.txm" method="copyfile" sourcefile="Data\Fx\standardeffects-high.txm" options="013:1">
+</data>
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+;vis_effect = gf_lightcone
+</dest>
+<source>
+vis_effect = gf_lightcone
+</source>
+</data>
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+effect_type = EFT_EXPLOSION_SHIP
+vis_effect = ku_flakcannon01_flash
+</dest>
+<source>
+effect_type = EFT_EXPLOSION_SHIP
+vis_effect = gf_explosion_super_flak
+</source>
+</data>
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+effect_type = EFT_EXPLOSION_SHIP
+vis_effect = br_flakcannon01_flash
+</dest>
+<source>
+effect_type = EFT_EXPLOSION_SHIP
+vis_effect = gf_explosion_super_nomad_flak
+</source>
+</data>
+<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+;MISSILE DEBRIS
+</dest>
+<source>
+debris_impulse = 125
+debris_type = debris_missile, 1.000000
+innards_debris_start_time = 0.000000
+innards_debris_num = 2
+innards_debris_radius = 5
+innards_debris_object = simple_torpedo_debris
+</source>
+</data>
+<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+;TORPEDO DEBRIS
+</dest>
+<source>
+debris_impulse = 125
+debris_type = debris_torpedo, 1.000000
+innards_debris_start_time = 0.000000
+innards_debris_num = 4
+innards_debris_radius = 5
+innards_debris_object = simple_torpedo_debris
+</source>
+</data>
+<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+;MISSILE DEBRIS
+</dest>
+<source>
+debris_impulse = 125
+debris_type = debris_missile, 1.000000
+innards_debris_start_time = 0.000000
+innards_debris_num = 2
+innards_debris_radius = 5
+innards_debris_object = simple_torpedo_debris
+</source>
+</data>
+<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="013:1">
+<dest>
+;TORPEDO DEBRIS
+</dest>
+<source>
+debris_impulse = 125
+debris_type = debris_torpedo, 1.000000
+innards_debris_start_time = 0.000000
+innards_debris_num = 4
+innards_debris_radius = 5
+innards_debris_object = simple_torpedo_debris
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="013:2">
+<dest>
+effects = Fx\effect_types.ini			; needs to be before effects.ini
+</dest>
+<source>
+effects = Fx\effect_typeshigh.ini			; needs to be before effects.ini
+</source>
+</data>
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="013:2">
+<dest>
+FxBasicAppearance.poolSize    = 1000
+FxRectAppearance.poolSize     = 400
+FxPerpAppearance.poolSize     = 250
+FxOrientedAppearance.poolSize = 0
+FLBeamAppearance.poolSize     = 680
+FLDustAppearance.poolSize     = 250
+;---------------------- total = 2580 -------;
+FxMeshAppearance.poolSize     = 500
+FxParticleAppearance.poolSize = 100
+;---------------------- total = 3180 -------;
+</dest>
+<source>
+FxBasicAppearance.poolSize    = 20000
+FxRectAppearance.poolSize     = 8000
+FxPerpAppearance.poolSize     = 5000
+FxOrientedAppearance.poolSize = 0
+FLBeamAppearance.poolSize     = 13600
+FLDustAppearance.poolSize     = 5000
+;---------------------- total = 51600 -------;
+FxMeshAppearance.poolSize     = 500
+FxParticleAppearance.poolSize = 2000
+;---------------------- total = 54100 -------;
+</source>
+</data>
+
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="014:1">
+<dest>
+sounds = Audio\sounds.ini				;all sfx not falling into some other category
+sounds = Audio\engine_sounds.ini			;engine sounds only
+</dest>
+<source>
+sounds = Audio\soundshigh.ini				;all sfx not falling into some other category
+sounds = Audio\engine_soundshigh.ini			;engine sounds only
+</source>
+</data>
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="014:1">
+<dest>
+maxSoundChannels = 24
+</dest>
+<source>
+maxSoundChannels = 36
+</source>
+</data>
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
+<dest>
+;snd_effect = const_missile_homing
+</dest>
+<source>
+snd_effect = const_missile_homing
+</source>
+</data>
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
+<dest>
+;snd_effect = const_missile_regular
+</dest>
+<source>
+snd_effect = const_missile_regular
+</source>
+</data>
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
+<dest>
+;snd_effect = const_missile_emp
+</dest>
+<source>
+snd_effect = const_missile_emp
+</source>
+</data>
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="014:1">
+<dest>
+;snd_effect = const_torpedo
+</dest>
+<source>
+snd_effect = const_torpedo
+</source>
+</data>
+
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="015:1">
+<dest>
+equipment = Equipment\weapon_equip.ini
+</dest>
+<source>
+equipment = Equipment\weapon_equip_dust.ini
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="015:2">
+<dest>
+equipment = Equipment\weapon_equip.ini
+</dest>
+<source>
+equipment = Equipment\weapon_equip_dust.ini
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="015:2">
+<dest>
+effects = Fx\battledust\battledust_ale.ini
+</dest>
+<source>
+effects = Fx\battledust\battledust_alehigh.ini
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="015:3">
+<dest>
+equipment = Equipment\weapon_equip.ini
+</dest>
+<source>
+equipment = Equipment\weapon_equip_dust.ini
+</source>
+</data>
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="015:3">
+<dest>
+effects = Fx\battledust\battledust_ale.ini
+</dest>
+<source>
+effects = Fx\battledust\battledust_alesuperhigh.ini
+</source>
+</data>
+
+<data file="Data\Cockpits\Bretonia\b_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\r_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\r_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\r_freighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\te_rh_battleship.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\te_rh_cruiser.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\te_rh_gunboat.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\bh_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\bh_elite2.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\bh_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\l_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\l_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\l_freighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\miner.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\or_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_armored.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_li_cruiser.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_li_dreadnought.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_li_gunboat.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_ltrain.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_misc.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_train.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\k_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\k_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\k_freighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\pi_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\pi_elite2.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\pi_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\te_ku_battleship.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\te_ku_destroyer.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\te_ku_gunboat.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\bw_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\bw_elite2.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\bw_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\bw_freighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\corsair.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\corsair_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\corsair_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\corsair_freighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian2.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian3.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian_vheavy.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\ge_largestation.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\ge_Xlargestation.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\b_fighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\b_freighter.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\te_br_battleship.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\te_br_destroyer.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\te_br_gunboat.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Nomad\no_elite.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Nomad\no_battleship.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Nomad\no_gunboat.ini" method="sectionappend" numtimes="-1" options="021:1">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 1500.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\b_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\r_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\r_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\r_freighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\te_rh_battleship.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\te_rh_cruiser.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Rheinland\te_rh_gunboat.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\bh_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\bh_elite2.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\bh_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\l_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\l_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\l_freighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\miner.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\or_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_armored.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_li_cruiser.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_li_dreadnought.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_li_gunboat.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_ltrain.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_misc.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Liberty\te_train.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\k_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\k_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\k_freighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\pi_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\pi_elite2.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\pi_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\te_ku_battleship.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\te_ku_destroyer.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Kusari\te_ku_gunboat.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\bw_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\bw_elite2.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\bw_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\bw_freighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\corsair.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\corsair_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\corsair_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\corsair\corsair_freighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian2.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian3.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\civilian_vheavy.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\ge_largestation.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Civilian\ge_Xlargestation.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\b_fighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\b_freighter.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\te_br_battleship.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\te_br_destroyer.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Bretonia\te_br_gunboat.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Nomad\no_elite.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Nomad\no_battleship.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+<data file="Data\Cockpits\Nomad\no_gunboat.ini" method="sectionappend" numtimes="-1" options="021:2">
+<section>
+[RearViewCamera]
+</section>
+<source>
+view_position = 0.000000, 0.000000, 3000.000000
+</source>
+</data>
+
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="022:1">
+<dest>
+camera_turn_look_ahead_slerp_amount = 48
+</dest>
+<source>
+camera_turn_look_ahead_slerp_amount = 16
+</source>
+</data>
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="022:2">
+<dest>
+camera_horizontal_turn_angle = 2.5
+camera_vertical_turn_up_angle = 2.5
+camera_vertical_turn_down_angle = 2.5
+camera_turn_look_ahead_slerp_amount = 48
+</dest>
+<source>
+camera_horizontal_turn_angle = 20
+camera_vertical_turn_up_angle = 20
+camera_vertical_turn_down_angle = 20
+camera_turn_look_ahead_slerp_amount = 2
+</source>
+</data>
+
+<data file="Data\Universe\Systems\Br01\Br01.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 60, 20, 10
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_noband.cmp
+complex_stars = solar\starsphere\starsphere_br01_stars.cmp
+nebulae = solar\starsphere\starsphere_br01.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Br02\Br02.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 35, 30, 40
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_br02_stars.cmp
+nebulae = solar\starsphere\starsphere_br02.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Br03\Br03.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 25, 55
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_br03_stars.cmp
+nebulae = solar\starsphere\starsphere_br03.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Br04\Br04.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 65, 35, 10
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+nebulae = solar\starsphere\starsphere_Br04.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Br04\Br04.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+space_color = 50, 30, 10
+</dest>
+<source>
+space_color = 0, 0, 0
+</source>
+</data>
+<data file="Data\Universe\Systems\Br05\Br05.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 80, 50, 0
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_br05_stars.cmp
+nebulae = solar\starsphere\starsphere_br05.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Br06\Br06.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 55, 20, 30
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_br06_stars.cmp
+nebulae = solar\starsphere\starsphere_br06.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw01\Bw01.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 25, 35, 45
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_noband.cmp
+complex_stars = solar\starsphere\starsphere_bw01_stars.cmp
+nebulae = solar\starsphere\starsphere_bw01.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw02\Bw02.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 20, 50, 60
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_noband.cmp
+complex_stars = solar\starsphere\starsphere_bw02_stars.cmp
+nebulae = solar\starsphere\starsphere_bw02.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw04\Bw04.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 60, 40, 20
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_bw04_stars.cmp
+nebulae = solar\starsphere\starsphere_bw04.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw06\Bw06.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 25, 55, 45
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_bw06_stars.cmp
+nebulae = solar\starsphere\starsphere_bw06.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw07\Bw07.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 20, 30, 60
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_bw07_stars.cmp
+nebulae = solar\starsphere\starsphere_bw07.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw08\Bw08.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 60, 70, 70
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_bw08_stars.cmp
+nebulae = solar\starsphere\starsphere_bw08.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw09\Bw09.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 50, 60
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_noband.cmp
+complex_stars = solar\starsphere\starsphere_bw09_stars.cmp
+nebulae = solar\starsphere\starsphere_bw09.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 90, 90, 110
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+nebulae = solar\starsphere\starsphere_Bw10.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+space_color = 90, 90, 110
+</dest>
+<source>
+space_color = 0, 0, 0
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew03\Ew03.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 55, 65, 70
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_ew03_stars.cmp
+nebulae = solar\starsphere\starsphere_ew03.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew04\Ew04.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 70, 30
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_ew04_stars.cmp
+nebulae = solar\starsphere\starsphere_ew04.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\FP7MP\FP7.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 35, 35, 35
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_bw06_stars.cmp
+nebulae = solar\starsphere\starsphere_Bw06_fp7.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi01\Hi01.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 30, 60, 40
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_hi01_stars.cmp
+nebulae = solar\starsphere\starsphere_hi01.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi02\Hi02.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 80, 50
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_hi02_stars.cmp
+nebulae = solar\starsphere\starsphere_hi02.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw01\Iw01.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 30, 30, 30
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_noband.cmp
+complex_stars = solar\starsphere\starsphere_iw01_stars.cmp
+nebulae = solar\starsphere\starsphere_iw01.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw02\Iw02.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 50, 60
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+nebulae = solar\starsphere\starsphere_iw02.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw03\Iw03.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 65, 75, 85
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_noband.cmp
+complex_stars = solar\starsphere\starsphere_iw03_stars.cmp
+nebulae = solar\starsphere\starsphere_iw03.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw04\Iw04.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 65, 65, 85
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_noband.cmp
+complex_stars = solar\starsphere\starsphere_iw04_stars.cmp
+nebulae = solar\starsphere\starsphere_iw04.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw05\Iw05.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 10, 20, 40
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow.cmp
+complex_stars = solar\starsphere\starsphere_iw05_stars.cmp
+nebulae = solar\starsphere\starsphere_iw05.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw06\Iw06.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 30, 40, 70
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow.cmp
+complex_stars = solar\starsphere\starsphere_iw06_stars.cmp
+nebulae = solar\starsphere\starsphere_iw06.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku01\Ku01.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 70, 100
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_ku01_stars.cmp
+nebulae = solar\starsphere\starsphere_ku01.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku02\Ku02.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 50, 40, 100
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_ku02_stars.cmp
+nebulae = solar\starsphere\starsphere_ku02.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku03\Ku03.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 35, 45, 65
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_ku03_stars.cmp
+nebulae = solar\starsphere\starsphere_ku03.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku04\Ku04.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 30, 40, 90
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow.cmp
+complex_stars = solar\starsphere\starsphere_ku04_stars.cmp
+nebulae = solar\starsphere\starsphere_ku04.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku05\Ku05.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 50, 110
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_ku05_stars.cmp
+nebulae = solar\starsphere\starsphere_ku05.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku07\Ku07.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 40, 40
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_ku07_stars.cmp
+nebulae = solar\starsphere\starsphere_ku07.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Li01\Li01.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 30, 50, 80
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_li01_stars.cmp
+nebulae = solar\starsphere\starsphere_li01.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Li02\Li02.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 25, 50, 80
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_li02_stars.cmp
+nebulae = solar\starsphere\starsphere_li02.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Li03\Li03.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 45, 50, 75
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow.cmp
+complex_stars = solar\starsphere\starsphere_li03_stars.cmp
+nebulae = solar\starsphere\starsphere_li03.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Li04\Li04.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 45, 55
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_walker.cmp
+complex_stars = solar\starsphere\starsphere_li04_stars.cmp
+nebulae = solar\starsphere\starsphere_li04.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Li06\Li06.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 70, 100
+;color = 50, 50, 50 ;MinesRealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_ku01_stars.cmp
+nebulae = solar\starsphere\starsphere_ku01.cmp
+</dest>
+<source>
+[Ambient]
+color = 50, 50, 50 ;MinesRealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch01\Ch01.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 30, 40, 70
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow.cmp
+complex_stars = solar\starsphere\starsphere_iw06_stars.cmp
+nebulae = solar\starsphere\starsphere_iw06.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Ch03\Ch03.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 70, 100
+;color = 50, 50, 50 ;MinesRealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_ku01_stars.cmp
+nebulae = solar\starsphere\starsphere_ku01.cmp
+</dest>
+<source>
+[Ambient]
+color = 50, 50, 50 ;MinesRealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh01\Rh01.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 50, 40, 40
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_walker.cmp
+complex_stars = solar\starsphere\starsphere_rh01_stars.cmp
+nebulae = solar\starsphere\starsphere_rh01.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh02\Rh02.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 30, 30, 30
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_rh02_stars.cmp
+nebulae = solar\starsphere\starsphere_rh02.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh03\Rh03.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 40, 40, 40
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_rh03_stars.cmp
+nebulae = solar\starsphere\starsphere_rh03.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh04\Rh04.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 50, 50, 50
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_crow_walker.cmp
+complex_stars = solar\starsphere\starsphere_rh04_stars.cmp
+nebulae = solar\starsphere\starsphere_rh04.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh05\Rh05.ini" method="filereplace" numtimes="-1" options="031:1">
+<dest>
+[Ambient]
+color = 120, 80, 20
+;color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_caps.cmp
+complex_stars = solar\starsphere\starsphere_rh05_stars.3db
+nebulae = solar\starsphere\starsphere_rh05.cmp
+</dest>
+<source>
+[Ambient]
+color = 5, 5, 5 ;RealAmbColor
+
+[Background]
+basic_stars = solar\starsphere\starsphere_stars_basic.cmp
+complex_stars = solar\starsphere\starsphere_iw02_stars.cmp
+</source>
+</data>
+
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="032:1">
+<dest>
+vis_effect = gf_ge_s_thruster_01
+</dest>
+<source>
+vis_effect = gf_ge_s_thruster_00
+</source>
+</data>
+
+<data file="Data\Fx\effects.ini" method="filereplace" numtimes="-1" options="033:1">
+<dest>
+effect_type = EFT_ENGINE_CONTRAIL
+vis_effect = rtc_pistolbullet
+</dest>
+<source>
+effect_type = EFT_ENGINE_CONTRAIL
+;vis_effect = rtc_pistolbullet
+</source>
+</data>
+
+<data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="041:1">
+<dest>
+repair_id = repair_default
+</dest>
+<source>
+repair_id = repair_easy
+</source>
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="041:1">
+<section>
+[Player]
+</section>
+<source>
+cargo = easymodeoption_token, 1
+</source>
+</data>
+</data>
+<data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="041:2">
+<dest>
+inherit = pilot_base_fighter_default
+</dest>
+<source>
+inherit = pilot_base_fighter_easy
+</source>
+</data>
+<data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="041:2">
+<dest>
+inherit = pilot_base_vhf_default
+</dest>
+<source>
+inherit = pilot_base_vhf_easy
+</source>
+</data>
+<data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="041:2">
+<dest>
+inherit = pilot_base_capital_default
+</dest>
+<source>
+inherit = pilot_base_capital_easy
+</source>
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="041:2">
+<section>
+[Player]
+</section>
+<source>
+cargo = veryeasymodeoption_token, 1
+</source>
+</data>
+<data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="041:3">
+<dest>
+inherit = pilot_base_fighter_default
+</dest>
+<source>
+inherit = pilot_base_fighter_hard
+</source>
+</data>
+<data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="041:3">
+<dest>
+inherit = pilot_base_vhf_default
+</dest>
+<source>
+inherit = pilot_base_vhf_hard
+</source>
+</data>
+<data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="041:3">
+<dest>
+inherit = pilot_base_capital_default
+</dest>
+<source>
+inherit = pilot_base_capital_hard
+</source>
+</data>
+<data file="Data\Ships\loadouts.ini" method="sectionappend" numtimes="-1" options="041:3">
+<section>
+[Loadout]
+</section>
+<source>
+equip = infinite_power
+</source>
+</data>
+<data file="Data\Ships\loadouts_special.ini" method="sectionappend" numtimes="-1" options="041:3">
+<section>
+[Loadout]
+</section>
+<source>
+equip = infinite_power
+</source>
+</data>
+<data file="Data\Ships\loadouts_utility.ini" method="sectionappend" numtimes="-1" options="041:3">
+<section>
+[Loadout]
+</section>
+<source>
+equip = infinite_power
+</source>
+</data>
+<data file="Data\Missions\lootprops.ini" method="filereplace" numtimes="-1" options="041:3">
+<dest>
+num_to_drop = 5, 40 ;CC Drop
+</dest>
+<source>
+num_to_drop = 10, 80 ;CC Drop
+</source>
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="041:3">
+<section>
+[Player]
+</section>
+<source>
+cargo = hardmodeoption_token, 1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\area_war.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\no_war.ini" options="042:1">
+</data>
+<data file="Data\Missions\RandomEncounters\area_warcap.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\no_war.ini" options="042:1">
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="042:1">
+<section>
+[Player]
+</section>
+<source>
+cargo = waroption_token, 1
+</source>
+</data>
+
+<data file="Data\Missions\shipclasses.ini" method="filereplace" numtimes="-1" options="043:1">
+<dest>
+[ShipClass]
+nickname = sc_randomcapsmall
+member = class_capitalsmall
+member = class_capitalsmall_af
+
+[ShipClass]
+nickname = sc_randomcapbig
+member = class_capitalbig
+member = class_capitalbig_af
+member = class_capitalsmall
+member = class_capitalsmall_af
+
+[ShipClass]
+nickname = sc_station
+member = class_station
+member = class_capitalsmall
+member = class_capitalsmall_af
+</dest>
+<source>
+[ShipClass]
+nickname = sc_randomcapsmall
+member = class_fighter
+member = class_freighter
+
+[ShipClass]
+nickname = sc_randomcapbig
+member = class_fighter
+member = class_freighter
+
+[ShipClass]
+nickname = sc_station
+member = class_fighter
+member = class_freighter
+</source>
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="043:1">
+<section>
+[Player]
+</section>
+<source>
+cargo = disablecapshipsoption_token, 1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\area_nomadsambcap.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\no_war.ini" options="044:1">
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="044:1">
+<section>
+[Player]
+</section>
+<source>
+cargo = nomadoption_token, 1
+</source>
+</data>
+
+<data file="Data\Missions\RandomEncounters\area_flnpcscap.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\no_war.ini" options="045:1">
+</data>
+<data file="Data\Missions\RandomEncounters\area_flnpcsstation.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\no_war.ini" options="045:1">
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="045:1">
+<section>
+[Player]
+</section>
+<source>
+cargo = freelancernpcoption_token, 1
+</source>
+</data>
+
+<data file="Data\Universe\Systems\Ar02\Ar02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar04\Ar04.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar06\Ar06.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Br01\Br01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Br02\Br02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Br03\Br03.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Br04\Br04.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Br05\Br05.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Br06\Br06.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw01\Bw01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw02\Bw02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw03\Bw03.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw04\Bw04.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw06\Bw06.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw07\Bw07.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw08\Bw08.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw09\Bw09.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew01\Ew01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew02\Ew02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew03\Ew03.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew04\Ew04.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew05\Ew05.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew06\Ew06.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\FP7MP\FP7.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi01\Hi01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi02\Hi02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw01\Iw01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw02\Iw02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw03\Iw03.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw04\Iw04.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw05\Iw05.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw06\Iw06.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku01\Ku01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku02\Ku02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku03\Ku03.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku04\Ku04.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku05\Ku05.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku06\Ku06.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku07\Ku07.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Li01\Li01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Li02\Li02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Li03\Li03.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Li04\Li04.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh01\Rh01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh02\Rh02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh03\Rh03.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh04\Rh04.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh05\Rh05.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\St01\St01.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\St02\St02.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\St02c\St02c.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\St03\St03.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Universe\Systems\St03B\St03B.ini" method="filereplace" numtimes="-1" options="046:1">
+<dest>
+density = 8
+</dest>
+<source>
+density = 4
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_low.ini" options="046:1">
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_cap.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_cap_low.ini" options="046:1">
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_nomad.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_nomad_low.ini" options="046:1">
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="046:1">
+<section>
+[Player]
+</section>
+<source>
+cargo = lownpcpatch_token, 1
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar02\Ar02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar04\Ar04.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar06\Ar06.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Br01\Br01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Br02\Br02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Br03\Br03.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Br04\Br04.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Br05\Br05.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Br06\Br06.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw01\Bw01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw02\Bw02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw03\Bw03.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw04\Bw04.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw06\Bw06.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw07\Bw07.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw08\Bw08.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw09\Bw09.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew01\Ew01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew02\Ew02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew03\Ew03.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew04\Ew04.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew05\Ew05.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew06\Ew06.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\FP7MP\FP7.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi01\Hi01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi02\Hi02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw01\Iw01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw02\Iw02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw03\Iw03.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw04\Iw04.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw05\Iw05.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw06\Iw06.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku01\Ku01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku02\Ku02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku03\Ku03.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku04\Ku04.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku05\Ku05.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku06\Ku06.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku07\Ku07.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Li01\Li01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Li02\Li02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Li03\Li03.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Li04\Li04.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh01\Rh01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh02\Rh02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh03\Rh03.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh04\Rh04.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh05\Rh05.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\St01\St01.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\St02\St02.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\St02c\St02c.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\St03\St03.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Universe\Systems\St03B\St03B.ini" method="filereplace" numtimes="-1" options="046:2">
+<dest>
+density = 8
+</dest>
+<source>
+density = 16
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_high.ini" options="046:2">
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_cap.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_cap_high.ini" options="046:2">
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_nomad.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_nomad_high.ini" options="046:2">
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="046:2">
+<section>
+[Player]
+</section>
+<source>
+cargo = highnpcpatch_token, 1
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar02\Ar02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar04\Ar04.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ar06\Ar06.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Br01\Br01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Br02\Br02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Br03\Br03.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Br04\Br04.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Br05\Br05.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Br06\Br06.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw01\Bw01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw02\Bw02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw03\Bw03.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw04\Bw04.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw05\Bw05.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw06\Bw06.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw07\Bw07.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw08\Bw08.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw09\Bw09.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Bw10\Bw10.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew01\Ew01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew02\Ew02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew03\Ew03.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew04\Ew04.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew05\Ew05.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ew06\Ew06.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\FP7MP\FP7.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi01\Hi01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Hi02\Hi02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw01\Iw01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw02\Iw02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw03\Iw03.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw04\Iw04.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw05\Iw05.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Iw06\Iw06.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku01\Ku01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku02\Ku02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku03\Ku03.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku04\Ku04.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku05\Ku05.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku06\Ku06.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Ku07\Ku07.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Li01\Li01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Li02\Li02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Li03\Li03.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Li04\Li04.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh01\Rh01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh02\Rh02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh03\Rh03.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh04\Rh04.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\Rh05\Rh05.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\St01\St01.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\St02\St02.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\St02c\St02c.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\St03\St03.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Universe\Systems\St03B\St03B.ini" method="filereplace" numtimes="-1" options="046:3">
+<dest>
+density = 8
+</dest>
+<source>
+density = 32
+</source>
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_superhigh.ini" options="046:3">
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_cap.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_cap_superhigh.ini" options="046:3">
+</data>
+<data file="Data\Missions\RandomEncounters\patrolp_follow_nomad.ini" method="copyfile" sourcefile="Data\Missions\RandomEncounters\patrolp_follow_nomad_superhigh.ini" options="046:3">
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="046:3">
+<section>
+[Player]
+</section>
+<source>
+cargo = superhighnpcpatch_token, 1
+</source>
+</data>
+
+<data file="Data\Missions\shipclasses.ini" method="filereplace" numtimes="-1" options="047:1">
+<dest>
+[ShipClass]
+nickname = sc_follow
+member = class_follow
+
+[ShipClass]
+nickname = sc_wingman
+member = class_fighter_wingman
+member = class_vheavyfighter_wingman
+
+[ShipClass]
+nickname = sc_capitalwingman
+member = class_capitalsmall_wingman
+</dest>
+<source>
+[ShipClass]
+nickname = sc_follow
+member = class_none
+
+[ShipClass]
+nickname = sc_wingman
+member = class_none
+
+[ShipClass]
+nickname = sc_capitalwingman
+member = class_none
+</source>
+</data>
+<data file="Data\Missions\faction_prop.ini" method="filereplace" numtimes="-1" options="047:1">
+<dest>
+scan_chance = 0.999999
+</dest>
+<source>
+scan_chance = 0.000000 ;Changed by FLMM Script
+</source>
+</data>
+<data file="Exe\mpnewcharacter.fl" method="sectionappend" numtimes="-1" options="047:1">
+<section>
+[Player]
+</section>
+<source>
+cargo = npcfollowoption_token, 1
+</source>
+</data>
+
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="101:1">
+<dest>
+type = FIGHTER
+</dest>
+<source>
+type = TRANSPORT
+</source>
+</data>
+<data file="Data\Ships\shiparch.ini" method="filereplace" numtimes="-1" options="101:1">
+<dest>
+type = FREIGHTER
+</dest>
+<source>
+type = TRANSPORT
+</source>
+</data>
+
+<data file="Data\Ships\loadouts.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_boss.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_boss_e.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_bot.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_chest.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_special.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_utility.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_wingmen.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_wingmen_special.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\Ships\loadouts_wingmen_utility.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+<data file="Data\custom_bot_loadouts.ini" method="filereplace" numtimes="-1" options="102:1">
+<dest>
+;equip = AI_DBG_TGT_gun, HpMount
+</dest>
+<source>
+equip = AI_DBG_TGT_gun, HpMount
+</source>
+</data>
+
+<data file="Exe\freelancer.ini" method="filereplace" numtimes="-1" options="103:1">
+<dest>
+;log = fl-client-errors.log, -1		; create file and alert all errors (SEV_ERROR=1)
+</dest>
+<source>
+log = fl-client-errors.log, -1		; create file and alert all errors (SEV_ERROR=1)
+</source>
+</data>
+
+<data file="Exe\freelancer.exe" method="copyfile" sourcefile="Exe\freelancer.exe.cam" options="104:1">
+</data>
+<data file="Data\Interface\HUD\hud_steeringarrow.3db" method="copyfile" sourcefile="Data\Interface\HUD\hud_steeringarrow.3db.cam" options="104:1">
+</data>
+<data file="Data\mouse.ini" method="copyfile" sourcefile="Data\mousecam.ini" options="104:1">
+</data>
+<data file="Data\cameras.ini" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+[CockpitCamera]
+fovx = 0
+znear = 2.000000
+
+[TurretCamera]
+fovx = 0
+
+[ThirdPersonCamera]
+fovx = 0
+</dest>
+<source>
+[CockpitCamera]
+fovx = 30
+znear = 2.000000
+
+[TurretCamera]
+fovx = 90
+
+[ThirdPersonCamera]
+fovx = 60
+</source>
+</data>
+<data file="Data\Missions\m13\m13.ini" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+;Act_ActTrig = setrep_neutral
+</dest>
+<source>
+Act_ActTrig = setrep_neutral
+</source>
+</data>
+<data file="Data\Missions\m12\m12.ini" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+;Act_ActTrig = setrep_neutral
+</dest>
+<source>
+Act_ActTrig = setrep_neutral
+</source>
+</data>
+<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+;type = LOOT
+</dest>
+<source>
+type = NON_TARGETABLE
+</source>
+</data>
+<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+;type = LOOT
+</dest>
+<source>
+type = NON_TARGETABLE
+</source>
+</data>
+<data file="Data\Equipment\weapon_equip.ini" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+;type = LOOT_TORPEDO
+</dest>
+<source>
+type = NON_TARGETABLE
+</source>
+</data>
+<data file="Data\Equipment\weapon_equip_dust.ini" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+;type = LOOT_TORPEDO
+</dest>
+<source>
+type = NON_TARGETABLE
+</source>
+</data>
+<data file="Exe\mpnewcharacter.fl" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+base = n00b_Base
+</dest>
+<source>
+base = n00b_Base_2
+</source>
+</data>
+<data file="Exe\newplayer.fl" method="filereplace" numtimes="-1" options="104:1">
+<dest>
+base = n00b_Base
+</dest>
+<source>
+base = n00b_Base_2
+</source>
+</data>
+
+</script>

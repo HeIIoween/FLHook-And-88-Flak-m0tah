@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Memes! We put the "no" in .no - FL Hex Editing Tutorial</title>
+</head>
+<body bgcolor=#000000 text=#FFFFFF>
+DLL and EXE hex-editing tutorial using Dev's Limit Breaking 101 techniques
+<br>This list can be found at: <a href="http://www.memes.no/88flak/downloads/beta/1.1_Offsets.txt">http://www.memes.no/88flak/downloads/beta/1.1_Offsets.txt</a> or <a href="http://the-starport.net/index.php?option=com_smf&Itemid=26&topic=403.0">http://the-starport.net/index.php?option=com_smf&Itemid=26&topic=403.0</a>
+<br>A tutorial by foxUnit01
+<br>
+<br>------ Introduction ------
+<br>A lot can be done with Freelancer modding; new ships, new systems, new equipment, new gameplay. However, if you wanted to, say, make a mod that allowed NPCs to spawn in at 10km instead of just 2.5km, that would require more advanced editing - specifically, DLL and EXE hex-editing. DLL and EXE files are compiled forms of the game's code, and due to their compiled form are not intended to be edited in any way - these files mostly just appear as a garbled mess that looks something like this:
+<br>
+<br><font color="green">30CA2A06C0FA2A0609060280610CA2A069A9919BF9A99193F9A9919BF9A99193F17B7D1389A9919BF9A
+<br>99193F0000000001000000040000000800000010000000200000003D0000009A9919BF9A99193F9A991
+<br>9BF9A99193F00007A4400409C454A756D70496E00000000A042000020400000003F0000164300001643
+<br>000080404C893A06F0012B0690883A06305C280620CD2706A0E7320650F0280660052B06805C2806105</font>
+<br>
+<br>Before Dev came along on the old Lancers Reactor Forums, not much was possible with hex-editing. While some specific parts of these files are in readable english, not much else is. However, hidden deep within all this hex that you see above, there are a myriad of numbers that can be changed - NPC spawn ranges, max visability distances, HUD properties, etc. can all be changed by altering these numbers. So, on with the show!
+<br>
+<br>------ The Hex-Editor ------
+<br>First, you will need a hex-editor. There are many programs available, but the one I use is ICY Hexplorer, which can be found at <a href="http://hexplorer.sourceforge.net/">http://hexplorer.sourceforge.net/</a> and is the one I will be using for this tutorial. Download it, install it, and open up DLLs/bin/content.dll in the Freelancer directory.
+<br>
+<br>------ The Editing ------
+<br>You should see a mess of garbled numbers like what was displayed above, but do not fear! This is actually pretty simple. Content.dll stores a lot of NPC-related values, and in this file we can find the max NPC spawn range - open up the Limit Breaking 101 offsets file, which can be found at <a href="http://www.memes.no/88flak/downloads/beta/1.1_Offsets.txt">http://www.memes.no/88flak/downloads/beta/1.1_Offsets.txt</a> or <a href="http://the-starport.net/index.php?option=com_smf&Itemid=26&topic=403.0">http://the-starport.net/index.php?option=com_smf&Itemid=26&topic=403.0</a> if you don't have it already, and look for the line that says:
+<br>
+<br>content.dll	0x11AC68, 0x11BC68	2500d = NPC max spawn distance in SP and MP ~Dev
+<br>
+<br>The format for this is as follows:
+<br>
+<br><b>(file name)	(1.1 off.)	(default value) = (description)</b>
+<br>
+<br>The hex offset, or in this case the "0x11AC68", is the number we will use to put our cursor right on the spot we will need to edit; if you are using the 1.1 patch DLLs, the "0x11BC68" is the offset you'll want to use instead. Now, to tell Hexplorer to go to this point, hit F5 and enter in "11AC68" (or "11BC68" if using 1.1 patch DLLs) - notice that the "0x" at the beginning was dropped off - this is NOT part of the number, just something to denote that the value is a hex value! Now, with this entered in, click OK. Your screen should look something like this:
+<br>
+<br><img src="http://img.photobucket.com/albums/v521/foxUnit01/Hex1.jpg">
+<br>
+<br>See the offset in the lower-left of the screen? That should match what you've put in, and the cursor should be in the same area. Now, let's go up to View > Simple Data Types:
+<br>
+<br><img src="http://img.photobucket.com/albums/v521/foxUnit01/Hex2.jpg">
+<br>
+<br>Make sure your cursor is still in the same spot when you do this! When you click this button, you'll get a picture that looks like this:
+<br>
+<br><img src="http://img.photobucket.com/albums/v521/foxUnit01/Hex3.jpg">
+<br>
+<br>See the "double=2500"? Well, that's what the "2500d" means in the offset listing - "f" is "float", "d" is "double", and "i" is "int", (or "word", according to the "Simple Data Types" list); if there is a value to be edited, it is very, very likely that it will be a float, double, or int. Now, double-click the "double=2500" and enter in a new value - let's try 500 for laughs, so that in-game we'll be tripping over spawned NPCs.
+<br>
+<br>------ Post-Tutorial ------
+<br>Okay, let's give you a homework assignment. You didn't think I'd let you off easy, right? ;)
+<br>Tripping over NPCs that spawn right on top of you is fun, but try increasing the spawn ranges to something above 2500 - you'll notice a few problems right away. One, your radar will not pick up new NPCs until they're in range of your radar, so radar range will have to be increased. Two, any NPC will immediately disappear when spawned above 2500m - looking over the offsets list, can you figure out why this is happening, and fix it? (hint: another value needs to be increased)
+<br>
+<br>Good luck, and happy editing!
+<br>~fox
+<br>
+<br>------ Other Info / Contact ------
+<br>This tutorial was written by foxUnit01, aka foxBox. I don't write tutorials often, and I hope that you found this of use. I have un-officially picked up maintaining the DLL and EXE editing offsets list after Dev's original list of findings, as I believe this is far too important of an editing technique to be left forgotten. If you used this tutorial to help understand this type of editing for your mod, I would appreciate it if you gave me credit, however it is not required - my only request is that you DO give credit to whoever found the offsets that you used. Almost all of this work is Dev's (any offset indexed that doesn't have an author is Dev's), and everyone who's helped with this effort deserves credit.
+<br>
+<br>If you have any questions, I can be contacted via:
+<br>AIM at foxUnit01
+<br>MSN-IM at foxUnit01@hotmail.com
+<br>E-Mail at astrout89 at gmail dot com (scrambled to foil spam-bots)
+</body>
+</html>

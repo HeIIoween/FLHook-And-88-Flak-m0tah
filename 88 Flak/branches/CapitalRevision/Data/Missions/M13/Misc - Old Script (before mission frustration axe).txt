@@ -1,0 +1,361 @@
+[Mission]
+npc_ship_file = missions\npcships.ini
+
+;------ MP Specifics ------
+[Trigger]
+nickname = MP_setup
+system = ANY
+Cnd_Timer = 2
+;Act_NNIds = 458894, HISTORY ;AI Wingmen
+;Act_NNIds = 458920, HISTORY ;Random CS Patrols (FL NPCs)
+;Act_NNIds = 458897, HISTORY ;Random CS Patrols (Nomads)
+;Act_NNIds = 458892, HISTORY ;Random CS Patrols (all factions)
+;Act_NNIds = 458891, HISTORY ;Random CS Fleets (all factions)
+;Act_NNIds = 459102, HISTORY
+;Act_NNIds = 458999, HISTORY ;Super-High NPC Count
+;Act_NNIds = 458895, HISTORY ;High NPC Count
+;Act_NNIds = 458896, HISTORY ;Low NPC Count
+;Act_NNIds = 458954, HISTORY ;Hard Mode
+;Act_NNIds = 458953, HISTORY ;Very Easy Mode
+;Act_NNIds = 458893, HISTORY ;Easy Mode
+;Act_NNIds = 459101, HISTORY
+
+;------------ BEGIN SHARED ------------
+;------ Init All ------
+[Trigger]
+nickname = INIT_ALL
+system = ANY
+InitState = ACTIVE ;Init All
+Cnd_True = no_params
+Act_ActTrig = INIT_NEWPLAYER
+Act_ActTrig = INIT_CLAMP
+
+[Trigger]
+nickname = INIT_NEWPLAYER
+system = ANY
+Cnd_BaseEnter = n00b_base
+Act_ActTrig = welcome_to_flak
+Act_ActTrig = welcome_3dsoundnotice
+Act_ActTrig = INIT_NEWPLAYER_SCRIPTS
+
+[Trigger]
+nickname = INIT_NEWPLAYER_SCRIPTS
+system = ANY
+Cnd_WatchTrigger = INIT_SCRIPTS, COMPLETE
+Act_ActTrig = Li01_Lawful_Jump_SetRep
+Act_ActTrig = Br01_Lawful_Jump_SetRep
+Act_ActTrig = Ku01_Lawful_Jump_SetRep
+Act_ActTrig = Rh01_Lawful_Jump_SetRep
+Act_ActTrig = Li01_Unlawful_Jump_SetRep
+Act_ActTrig = Br01_Unlawful_Jump_SetRep
+Act_ActTrig = Ku01_Unlawful_Jump_SetRep
+Act_ActTrig = Rh01_Unlawful_Jump_SetRep
+Act_ActTrig = setrep_lawful
+;Act_ActTrig = Tutorial_Init
+
+[Trigger]
+nickname = INIT_CLAMP
+system = ANY
+Cnd_Timer = 1
+Act_PlayerCanDock = true
+Act_RandomPop = true
+Act_RpopTLAttacksEnabled = true
+Act_RpopAttClamp = false
+Act_HostileClamp = false
+Act_PlayerEnemyClamp = 99, 99
+Act_GCSClamp = false
+Act_SetRep = Player, fc_q_grp, 0
+Act_SetRep = Player, fc_uk_grp, 0.9
+Act_SetRep = Player, fc_ouk_grp, -0.9
+Act_ActTrig = INIT_SCRIPTS
+
+[Trigger]
+nickname = INIT_SCRIPTS
+system = ANY
+Cnd_Timer = 1
+;Act_ActTrig = Wingmen_Init
+Act_ActTrig = INIT_LOG
+
+[Trigger]
+nickname = INIT_LOG
+system = ANY
+Cnd_Timer = 1
+Act_ActTrig = display_tips
+;Act_ActTrig = MP_setup
+
+;------ Welcome IDS Entries ------
+[Trigger]
+nickname = welcome_to_flak
+system = ANY
+Cnd_True = no_params
+Act_NNIds = 459075, OBJECTIVE
+Act_NNIds = 024490, OBJECTIVE
+[Trigger]
+nickname = welcome_3dsoundnotice
+system = ANY
+Cnd_LaunchComplete = Player
+Act_PopupDialog = 459105, 459106, CLOSE ;3D Sound Notice
+
+;------ Tips ------
+[Trigger]
+nickname = display_tips
+system = ANY
+Cnd_True = no_params
+Act_NNIds = 458831, HISTORY
+Act_NNIds = 459076, HISTORY ;Tips
+
+;------ Reputation Settings ------
+[Trigger]
+nickname = Li01_Lawful_Jump_SetRep
+system = ANY
+Cnd_DistShip = inside, Player, Li07_to_Li01_hole_start, 1000
+Act_ActTrig = setrep_lawful
+Act_ActTrig = Li01_Lawful_Jump_SetRep_Push
+[Trigger]
+nickname = Li01_Lawful_Jump_SetRep_Push
+system = ANY
+Cnd_DistShip = outside, Player, Li07_to_Li01_hole_start, 1100
+Act_ActTrig = Li01_Lawful_Jump_SetRep
+
+[Trigger]
+nickname = Br01_Lawful_Jump_SetRep
+system = ANY
+Cnd_DistShip = inside, Player, Li07_to_Br01_hole_start, 1000
+Act_ActTrig = setrep_lawful
+Act_ActTrig = Br01_Lawful_Jump_SetRep_Push
+[Trigger]
+nickname = Br01_Lawful_Jump_SetRep_Push
+system = ANY
+Cnd_DistShip = outside, Player, Li07_to_Br01_hole_start, 1100
+Act_ActTrig = Br01_Lawful_Jump_SetRep
+
+[Trigger]
+nickname = Ku01_Lawful_Jump_SetRep
+system = ANY
+Cnd_DistShip = inside, Player, Li07_to_Ku01_hole_start, 1000
+Act_ActTrig = setrep_lawful
+Act_ActTrig = Ku01_Lawful_Jump_SetRep_Push
+[Trigger]
+nickname = Ku01_Lawful_Jump_SetRep_Push
+system = ANY
+Cnd_DistShip = outside, Player, Li07_to_Ku01_hole_start, 1100
+Act_ActTrig = Ku01_Lawful_Jump_SetRep
+
+[Trigger]
+nickname = Rh01_Lawful_Jump_SetRep
+system = ANY
+Cnd_DistShip = inside, Player, Li07_to_Rh01_hole_start, 1000
+Act_ActTrig = setrep_lawful
+Act_ActTrig = Rh01_Lawful_Jump_SetRep_Push
+[Trigger]
+nickname = Rh01_Lawful_Jump_SetRep_Push
+system = ANY
+Cnd_DistShip = outside, Player, Li07_to_Rh01_hole_start, 1100
+Act_ActTrig = Rh01_Lawful_Jump_SetRep
+
+[Trigger]
+nickname = Li01_Unlawful_Jump_SetRep
+system = ANY
+Cnd_DistShip = inside, Player, Li07_to_Li01_hole_start_unlawful, 1000
+Act_ActTrig = setrep_unlawful
+Act_ActTrig = Li01_Unlawful_Jump_SetRep_Push
+[Trigger]
+nickname = Li01_Unlawful_Jump_SetRep_Push
+system = ANY
+Cnd_DistShip = outside, Player, Li07_to_Li01_hole_start_unlawful, 1100
+Act_ActTrig = Li01_Unlawful_Jump_SetRep
+
+[Trigger]
+nickname = Br01_Unlawful_Jump_SetRep
+system = ANY
+Cnd_DistShip = inside, Player, Li07_to_Br01_hole_start_unlawful, 1000
+Act_ActTrig = setrep_unlawful
+Act_ActTrig = Br01_Unlawful_Jump_SetRep_Push
+[Trigger]
+nickname = Br01_Unlawful_Jump_SetRep_Push
+system = ANY
+Cnd_DistShip = outside, Player, Li07_to_Br01_hole_start_unlawful, 1100
+Act_ActTrig = Br01_Unlawful_Jump_SetRep
+
+[Trigger]
+nickname = Ku01_Unlawful_Jump_SetRep
+system = ANY
+Cnd_DistShip = inside, Player, Li07_to_Ku01_hole_start_unlawful, 1000
+Act_ActTrig = setrep_unlawful
+Act_ActTrig = Ku01_Unlawful_Jump_SetRep_Push
+[Trigger]
+nickname = Ku01_Unlawful_Jump_SetRep_Push
+system = ANY
+Cnd_DistShip = outside, Player, Li07_to_Ku01_hole_start_unlawful, 1100
+Act_ActTrig = Ku01_Unlawful_Jump_SetRep
+
+[Trigger]
+nickname = Rh01_Unlawful_Jump_SetRep
+system = ANY
+Cnd_DistShip = inside, Player, Li07_to_Rh01_hole_start_unlawful, 1000
+Act_ActTrig = setrep_unlawful
+Act_ActTrig = Rh01_Unlawful_Jump_SetRep_Push
+[Trigger]
+nickname = Rh01_Unlawful_Jump_SetRep_Push
+system = ANY
+Cnd_DistShip = outside, Player, Li07_to_Rh01_hole_start_unlawful, 1100
+Act_ActTrig = Rh01_Unlawful_Jump_SetRep
+
+[Trigger]
+nickname = setrep_lawful
+system = ANY
+Cnd_True = no_params
+Act_SetRep = Player, li_n_grp, 0.2
+Act_SetRep = Player, li_p_grp, 0.4
+Act_SetRep = Player, br_n_grp, 0.2
+Act_SetRep = Player, br_p_grp, 0.4
+Act_SetRep = Player, ku_n_grp, 0.2
+Act_SetRep = Player, ku_p_grp, 0.4
+Act_SetRep = Player, rh_n_grp, 0.2
+Act_SetRep = Player, rh_p_grp, 0.4
+Act_SetRep = Player, co_alg_grp, 0
+Act_SetRep = Player, co_be_grp, 0
+Act_SetRep = Player, br_m_grp, 0
+Act_SetRep = Player, co_nws_grp, 0
+Act_SetRep = Player, co_hsp_grp, 0
+Act_SetRep = Player, co_ic_grp, 0
+Act_SetRep = Player, co_khc_grp, 0
+Act_SetRep = Player, co_kt_grp, 0
+Act_SetRep = Player, rh_m_grp, 0
+Act_SetRep = Player, co_me_grp, 0
+Act_SetRep = Player, co_ni_grp, 0
+Act_SetRep = Player, co_os_grp, 0
+Act_SetRep = Player, co_rs_grp, 0
+Act_SetRep = Player, co_shi_grp, 0
+Act_SetRep = Player, co_ss_grp, 0
+Act_SetRep = Player, co_ti_grp, 0
+Act_SetRep = Player, co_vr_grp, 0
+Act_SetRep = Player, fc_bd_grp, -0.8
+Act_SetRep = Player, fc_b_grp, -0.8
+Act_SetRep = Player, fc_c_grp, -0.8
+Act_SetRep = Player, fc_fa_grp, -0.4
+Act_SetRep = Player, fc_g_grp, -0.8
+Act_SetRep = Player, fc_gc_grp, -0.8
+Act_SetRep = Player, fc_h_grp, -0.2
+Act_SetRep = Player, fc_j_grp, -0.4
+Act_SetRep = Player, fc_lh_grp, -0.8
+Act_SetRep = Player, fc_lr_grp, -0.8
+Act_SetRep = Player, fc_lwb_grp, -0.8
+Act_SetRep = Player, fc_m_grp, -0.8
+Act_SetRep = Player, fc_ou_grp, -0.8
+Act_SetRep = Player, fc_rh_grp, -0.8
+Act_SetRep = Player, fc_u_grp, -0.8
+Act_SetRep = Player, fc_x_grp, -0.9
+Act_SetRep = Player, gd_gm_grp, 0
+Act_SetRep = Player, fc_n_grp, -0.9
+Act_SetRep = Player, gd_im_grp, 0
+Act_SetRep = Player, gd_z_grp, 0.1
+Act_SetRep = Player, gd_bh_grp, -0.2
+Act_SetRep = Player, gd_lfl_grp, 0.7
+Act_SetRep = Player, fc_pfl_grp, 0.4
+
+[Trigger]
+nickname = setrep_unlawful
+system = ANY
+Cnd_True = no_params
+Act_SetRep = Player, li_n_grp, -0.8
+Act_SetRep = Player, li_p_grp, -0.8
+Act_SetRep = Player, br_n_grp, -0.8
+Act_SetRep = Player, br_p_grp, -0.8
+Act_SetRep = Player, ku_n_grp, -0.8
+Act_SetRep = Player, ku_p_grp, -0.8
+Act_SetRep = Player, rh_n_grp, -0.8
+Act_SetRep = Player, rh_p_grp, -0.8
+Act_SetRep = Player, co_alg_grp, -0.9
+Act_SetRep = Player, co_be_grp, -0.9
+Act_SetRep = Player, br_m_grp, -0.9
+Act_SetRep = Player, co_nws_grp, -0.9
+Act_SetRep = Player, co_hsp_grp, -0.9
+Act_SetRep = Player, co_ic_grp, -0.9
+Act_SetRep = Player, co_khc_grp, -0.9
+Act_SetRep = Player, co_kt_grp, -0.9
+Act_SetRep = Player, rh_m_grp, -0.9
+Act_SetRep = Player, co_me_grp, -0.9
+Act_SetRep = Player, co_ni_grp, -0.9
+Act_SetRep = Player, co_os_grp, -0.9
+Act_SetRep = Player, co_rs_grp, -0.9
+Act_SetRep = Player, co_shi_grp, -0.9
+Act_SetRep = Player, co_ss_grp, -0.9
+Act_SetRep = Player, co_ti_grp, -0.9
+Act_SetRep = Player, co_vr_grp, -0.9
+Act_SetRep = Player, fc_bd_grp, 0
+Act_SetRep = Player, fc_b_grp, 0
+Act_SetRep = Player, fc_c_grp, 0
+Act_SetRep = Player, fc_fa_grp, 0
+Act_SetRep = Player, fc_g_grp, 0
+Act_SetRep = Player, fc_gc_grp, 0
+Act_SetRep = Player, fc_h_grp, 0
+Act_SetRep = Player, fc_j_grp, 0
+Act_SetRep = Player, fc_lh_grp, 0
+Act_SetRep = Player, fc_lr_grp, 0
+Act_SetRep = Player, fc_lwb_grp, 0
+Act_SetRep = Player, fc_m_grp, 0
+Act_SetRep = Player, fc_ou_grp, 0
+Act_SetRep = Player, fc_rh_grp, 0
+Act_SetRep = Player, fc_u_grp, 0
+Act_SetRep = Player, fc_x_grp, -0.2
+Act_SetRep = Player, gd_gm_grp, -0.2
+Act_SetRep = Player, fc_n_grp, -0.9
+Act_SetRep = Player, gd_im_grp, -0.2
+Act_SetRep = Player, gd_z_grp, -0.1
+Act_SetRep = Player, gd_bh_grp, -0.8
+Act_SetRep = Player, gd_lfl_grp, 0.4
+Act_SetRep = Player, fc_pfl_grp, 0.7
+
+[Trigger]
+nickname = setrep_neutral
+system = ANY
+Cnd_True = no_params
+Act_SetRep = Player, li_n_grp, 0
+Act_SetRep = Player, li_p_grp, 0
+Act_SetRep = Player, br_n_grp, 0
+Act_SetRep = Player, br_p_grp, 0
+Act_SetRep = Player, ku_n_grp, 0
+Act_SetRep = Player, ku_p_grp, 0
+Act_SetRep = Player, rh_n_grp, 0
+Act_SetRep = Player, rh_p_grp, 0
+Act_SetRep = Player, co_alg_grp, 0
+Act_SetRep = Player, co_be_grp, 0
+Act_SetRep = Player, br_m_grp, 0
+Act_SetRep = Player, co_nws_grp, 0
+Act_SetRep = Player, co_hsp_grp, 0
+Act_SetRep = Player, co_ic_grp, 0
+Act_SetRep = Player, co_khc_grp, 0
+Act_SetRep = Player, co_kt_grp, 0
+Act_SetRep = Player, rh_m_grp, 0
+Act_SetRep = Player, co_me_grp, 0
+Act_SetRep = Player, co_ni_grp, 0
+Act_SetRep = Player, co_os_grp, 0
+Act_SetRep = Player, co_rs_grp, 0
+Act_SetRep = Player, co_shi_grp, 0
+Act_SetRep = Player, co_ss_grp, 0
+Act_SetRep = Player, co_ti_grp, 0
+Act_SetRep = Player, co_vr_grp, 0
+Act_SetRep = Player, fc_bd_grp, 0
+Act_SetRep = Player, fc_b_grp, 0
+Act_SetRep = Player, fc_c_grp, 0
+Act_SetRep = Player, fc_fa_grp, 0
+Act_SetRep = Player, fc_g_grp, 0
+Act_SetRep = Player, fc_gc_grp, 0
+Act_SetRep = Player, fc_h_grp, 0
+Act_SetRep = Player, fc_j_grp, 0
+Act_SetRep = Player, fc_lh_grp, 0
+Act_SetRep = Player, fc_lr_grp, 0
+Act_SetRep = Player, fc_lwb_grp, 0
+Act_SetRep = Player, fc_m_grp, 0
+Act_SetRep = Player, fc_ou_grp, 0
+Act_SetRep = Player, fc_rh_grp, 0
+Act_SetRep = Player, fc_u_grp, 0
+Act_SetRep = Player, fc_x_grp, 0
+Act_SetRep = Player, gd_gm_grp, 0
+Act_SetRep = Player, fc_n_grp, 0
+Act_SetRep = Player, gd_im_grp, 0
+Act_SetRep = Player, gd_z_grp, 0
+Act_SetRep = Player, gd_bh_grp, 0
+Act_SetRep = Player, gd_lfl_grp, 0
+Act_SetRep = Player, fc_pfl_grp, 0

@@ -1,0 +1,8 @@
+;------ OpenSP Specifics ------
+[Trigger]
+nickname = OpenSP_setup
+system = any
+InitState = ACTIVE ;SP Only
+Cnd_Timer = 2
+Act_LockDock = Player, Li05_to_Li01_hole, lock
+

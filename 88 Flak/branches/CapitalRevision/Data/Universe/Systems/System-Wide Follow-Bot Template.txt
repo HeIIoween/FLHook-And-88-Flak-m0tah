@@ -1,0 +1,1199 @@
+[EncounterParameters]
+nickname = patrolp_follow_bot
+filename = missions\randomencounters\patrolp_follow_bot.ini
+;The above should already be in every Flak system by default anyways
+
+;Feel free to insert this, as-is, to the end of a system if you've made one for Flak.
+;Be sure to replace "(SYSTEM HERE)" with the FL name of the system (br01, li03, etc.)
+;DO NOT alter ANY values in here, however! Doing so will seriously mess with the rest of the system's NPC population!
+;I know it's temping to set the repop and relief times to 1 to get faster bot spawning, but trust me, it's not pretty. ;P
+
+;IMPORTANT NOTE: For player docking to function in your system, you MUST at least have the Mobile_Proxy_Base object somewhere in your system!
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_1
+pos = -200000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 1
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_2
+pos = -192000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 2
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_3
+pos = -184000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 3
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_4
+pos = -176000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 4
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_5
+pos = -168000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 5
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_6
+pos = -160000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 6
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_7
+pos = -152000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 7
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_8
+pos = -144000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 8
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_9
+pos = -136000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 9
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_10
+pos = -128000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 10
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_11
+pos = -120000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 11
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_12
+pos = -112000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 12
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_13
+pos = -104000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 13
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_14
+pos = -96000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 14
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_15
+pos = -88000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 15
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_16
+pos = -80000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 16
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_17
+pos = -72000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 17
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_18
+pos = -64000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 18
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_19
+pos = -56000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 19
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_20
+pos = -48000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 20
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_21
+pos = -40000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 21
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_22
+pos = -32000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 22
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_23
+pos = -24000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 23
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_24
+pos = -16000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 24
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_25
+pos = -8000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 25
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_26
+pos = 0, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 26
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_27
+pos = 8000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 27
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_28
+pos = 16000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 28
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_29
+pos = 24000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 29
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_30
+pos = 32000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 30
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_31
+pos = 40000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 31
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_32
+pos = 48000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 32
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_33
+pos = 56000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 33
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_34
+pos = 64000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 34
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_35
+pos = 72000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 35
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_36
+pos = 80000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 36
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_37
+pos = 88000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 37
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_38
+pos = 96000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 38
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_39
+pos = 104000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 39
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_40
+pos = 112000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 40
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_41
+pos = 120000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 41
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_42
+pos = 128000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 42
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_43
+pos = 136000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 43
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_44
+pos = 144000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 44
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_45
+pos = 152000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 45
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_46
+pos = 160000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 46
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_47
+pos = 168000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 47
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_48
+pos = 176000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 48
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_49
+pos = 184000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 49
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_50
+pos = 192000, 0, 0
+rotate = 90, 0, 180
+shape = CYLINDER
+size = 6750, 400000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 50
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[zone]
+nickname = Zone_(SYSTEM HERE)_path_bot_51
+pos = -4000, 0, -200000
+rotate = -90, 90, 0
+shape = CYLINDER
+size = 6750, 392000 ;Bot
+sort = 99
+toughness = 1
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+pop_type = background
+path_label = bot, 51
+usage = patrol
+visit = 128
+mission_eligible = false
+encounter = patrolp_follow_bot, 1, 1.000000
+faction = fc_uk_grp, 1.000000
+
+[Object]
+nickname = (SYSTEM HERE)_Mobile_Proxy_Base
+ids_name = 458854
+pos = 4000, 4000, -4000 ;Proxy
+rotate = 0, 0, 0
+archetype = jumphole_orange_base
+ids_info = 459854
+base = (SYSTEM HERE)_Mobile_Proxy_Base
+dock_with = (SYSTEM HERE)_Mobile_Proxy_Base
+reputation = fc_q_grp ;Proxy
+behavior = SOLAR
+pilot = pilot_solar_ac
+visit = 128
+difficulty_level = 19
+loadout = proxy_station_loadout
+
+[zone]
+nickname = Zone_Mobile_Proxy_Base_(SYSTEM HERE)
+pos = 4000, 5000, -4000 ;Proxy
+shape = SPHERE
+size = 100 ;Proxy
+visit = 128
+sort = 99
+toughness = 1
+pop_type = background
+density = 0
+max_battle_size = 9999
+repop_time = 32 ;Blank
+relief_time = 32 ;Blank
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+mission_eligible = false
+
+[Object]
+nickname = (SYSTEM HERE)_BotDock
+ids_name = 459023
+pos = -200000, 0, -200000 ;Bot
+rotate = 0, 0, 0
+archetype = jumphole_orange_base
+ids_info = 459854
+base = BotDock_Base
+dock_with = BotDock_Base
+reputation = fc_ouk_grp
+behavior = SOLAR
+pilot = pilot_solar_ac
+visit = 128
+difficulty_level = 19
+loadout = bot_station_loadout
+
+[zone]
+nickname = Zone_BotDock_(SYSTEM HERE)
+pos = -200000, 0, -200000 ;Bot
+shape = SPHERE
+size = 3000
+visit = 128
+sort = 99
+toughness = 1
+pop_type = background
+density = 8
+max_battle_size = 9999
+repop_time = 32 ;Bot
+relief_time = 32 ;Bot
+density_restriction = 1, class_patroller
+density_restriction = 1, class_bot_patroller
+mission_eligible = false

@@ -1,0 +1,11 @@
+The Basics (these will be elaborated / refined in the future):
+Each house will have a "point" range of 0-100 points, starting at 30.
+Each pirate faction will have a "point" range of 0-50 points, starting at 10.
+The Zoners have a "point" range of 0-50, starting at 10.
+
+House factions gain points by:
+Killing enemy bases/ships
+Doing successful trades
+
+House factions lose points by:
+Losing friendly bases/ships

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Serveur Freelancer&nbsp;: Lisezmoi</title>
+<style>
+<!--
+div.Section1
+	{page:Section1;}
+-->
+</style>
+</head>
+
+<body background="BackgroundPattern.bmp" style="color: #FFFFFF; font-family: Agency FB" bgcolor="#000000" link="#00FF00" vlink="#00FF00">
+
+<h1>Correctif du serveur <I>Freelancer</I>&nbsp;: Lisezmoi</h1>
+<h2>Résumé des modifications</h2>
+<h3>Modifications relatives au serveur</h3>
+<p>Des mesures de prévention contre les pannes du serveur ont été ajoutées (notamment les pannes dues aux modifications côté client et aux triches courantes).</p>
+<p>La sortie du journal a été nettoyée&nbsp;: les entrées inutiles du journal ont été supprimées et d'autres, concernant les actions des joueurs, ont été ajoutées.</p>
+<p>Des mesures de détection de triche ont été ajoutées, dont la déconnexion et la connexion automatique des joueurs soupçonnés d'avoir triché.</p>
+<p>Les données du joueur sont à présent enregistrées à l'atterrissage. Auparavant, elles étaient enregistrées uniquement lors du lancement et de la déconnexion.</p>
+<p>Le serveur ne tente plus de se connecter au serveur global lorsque l'option permettant de rendre le serveur accessible sur Internet est désactivée.</p>
+<h3>Modifications relatives aux clients</h3>
+<p>Le problème de génération des ID de comptes multijoueur, qui survenait lorsque aucun ID n'avait été généré, a été résolu.</p>
+<p>Les pannes entraînées par l'exécution du client et du serveur sur un même ordinateur ont été résolues.</p>
+<p>Le problème d'apparition erronée de l'indicateur de ralentissement lors de l'exécution du client et du serveur sur un même ordinateur a été résolu.</p>
+<h2>Modifications relatives à la connexion</h2>
+<p>La journalisation de la création de compte, de la suppression de compte, de la création de personnage, de la suppression de personnage et de la détection de triche a été ajoutée.</p>
+<p>Les entrées relatives aux entrées et aux sorties du système ont été supprimées.</p>
+<p>Les entrées du journal à caractère informatif (par opposition aux avertissements et aux entrées de suivi) sont précédées de la mention «&nbsp;LOG&nbsp;» afin qu'il soit plus facile de les repérer.</p>
+<h2>Détails relatifs à la détection de triche</h2>
+<p>Les joueurs surpris en train de tricher sont automatiquement déconnectés du serveur. Celui-ci envoie un message de discussion à tous les joueurs, indiquant le nom du tricheur. Une entrée est également générée dans le journal, indiquant le nom de compte de ce joueur. Le message de discussion envoyé à tous les joueurs est enregistré dans le fichier CHEATMESSAGE.TXT, situé dans le même répertoire que le programme FLSERVER.EXE. Il s'agit d'un fichier texte Unicode qui peut être modifié par l'administrateur du serveur si nécessaire. La taille maximale du message de triche est de 80 caractères.</p>
+<p>Les tricheurs détectés sont également consignés dans le fichier CHEATERS.LOG, situé dans le répertoire du compte multijoueur. Chaque entrée indique la date et l'heure de la détection, le nom du personnage et le nom de compte du joueur.</p>
+<p>Les tricheurs ne sont pas automatiquement exclus. Seul l'administrateur du serveur peut interdire l'accès d'un tricheur s'il le souhaite.</p>
+
+<p>
+&nbsp;</p>
+
+<p>
+<font face="Times New Roman">© 2003 Microsoft Corporation. Tous droits réservés. Microsoft, Digital Anvil, DirectX, <I>Freelancer</I>, le logo Microsoft, le logo Microsoft Games Studios, le logo .Net, Windows et Windows NT sont soit des marques de Microsoft Corporation, soit des marques déposées de Microsoft Corporation aux États-Unis d'Amérique et/ou dans d'autres pays.</font></p>
+
+</body>
+
+</html>

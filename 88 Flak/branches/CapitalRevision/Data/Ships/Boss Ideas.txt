@@ -1,0 +1,79 @@
+---
+System X (state)
+---
+Name: (challenge name)
+Required Kill Tokens: (required amount of Un-Assisted Kill Tokens to gain entry)
+Boss: (tough single or small group of enemies at end)
+System: (descrip)
+Hostiles: (normal enemies group must fight through)
+Reward: (reward for killing boss)
+Notes: (other notes)
+
+---
+System 1 (WIP)
+---
+Name: Trial of Courage
+Required Kill Tokens: 50
+Boss: 1x Nomad Juggernaut - Nomad Battleship with 60 turrets (2 sets of Primaries, a Flak A/B array, and a set of Missile Turrets). 3x health.
+System: The old Mine Mazathon, which group must traverse in its entirety to destroy Juggernaut at the end.
+Hostiles: Floods of Nomad Fighters - they do not have CDs, so as long as the group stays mobile and does not stop, they will be fine.
+Reward: Badge of Courage, 1.1x armor bonus
+Notes: There's a slim possibility the Juggernaut could fly into the mines, but I don't think it will happen since wandering AI don't leave their spawn area.
+
+---
+System 2 (concept)
+---
+Name: Trial of Fortitude
+Required Kill Tokens: 100
+Boss: 2x Deathflier - Starflier armed with Orbital Defense Turrets, with greatly increased armor and 2 Class 10 HF Shields of differing types.
+System: A long system swarming with n00b ship hostiles. The entire system will have a 2x drag modifier, so everything will move very slowly.
+Hostiles: Floods of n00b ships. No evasion possibility; group must fight them.
+Reward: TBD
+Notes: Capital Ships will be a must, since fighters are severely inhibited by the drag. However, fighter support is needed to draw fire away from the Capitals, as the Orbital Turrets will tear them to shreds otherwise.
+       Also, although everything is moving slow due to increased drag, the Deathfliers will move at normal speed.
+
+---
+System 3 (WIP)
+---
+Name: Trial of Patience
+Required Kill Tokens: 100
+Boss: 1x Nomad Hivemind - an invincible Nomad Fighter with lots of guns. Can only be destroyed by special WPs.
+System: The old Alaska mine maze, which players must traverse to meet Hivemind at the end. After meeting Hivemind, players must lure it back through the maze, where it will be destroyed by a super death ray WP.
+Hostiles: Floods of Nomad Fighters, same deal as Trial of Courage. Group will be fine as long as they don't stop moving.
+Reward: Patience Pendant, permanent NPC magnet similar to Admin Token - now you don't have to be patient waiting for wingmen any longer. ;)
+Notes: The Hivemind has a special state_graph, so it will always follow players if they're cruising.
+
+---
+System 4 (may be scrapped, crappy idea)
+---
+Name: Trial of Agility
+Required Kill Tokens: 150
+Boss: 8x Silver Bullet - run-of-the-mill Patriots with very, very fast engines and Sunslayer Torpedo Launchers. (wow, that's balanced)
+System: Nearly empty system, with an extremely low drag modifier. This will make everything go extremely fast (including the Silver Bullet ships), so the player(s) will have to put on some fancy moves and kill the ships one-at-a-time.
+Hostiles: Just the Silver Bullet boss ships.
+Reward: Stellar Converter, extremely high-efficiency thruster (and, since it's considered a rare drop, can not be blown off either)
+Notes: Since the ships are armed with Sunslayers, Capital Ships won't be much good here.
+       Personally, I don't like this challenge idea much. I might scrap it.
+
+---
+System 5 (concept)
+---
+Name: Trial of Perception
+Required Kill Tokens: 150
+Boss: 1x KittBot - it's a creative puzzle, so why not a bland boss? =3
+System: System with dozens of Weapons Platforms. One, however, will have an oddity (different color lights), and if hung around long enough will spawn the boss.
+Hostiles: Swarms of random House Navy ships, which will harass the group as they search for the unique WP.
+Reward: Camoflauge - an item that, while mounted, also mounts a 5-second duration, 120 second cooldown cloak to any ship (unless that ship already has a cloak). Not that great, but enough to pull off a slick move or two in PvP.
+Notes: The NavMap for this system will be completely disabled; players will be unable to determine their location in the sea of WPs.
+       In addition, players will jump into the system in random spots (accomplished via multiple entry jumpholes in one spot leading to differently placed exit jumpholes - user will be unable to tell which entry jumphole he/she has selected, thus being unable to tell which exit hole he/she will jump to).
+
+---
+System 6 (WIP)
+---
+Name: Trial of Memory
+Required Kill Tokens: 150
+Boss: 1x full Liberty fleet - 2 Battleships, 6 Cruisers, 8 Fighters
+System: An exact copy of New York (but players will be unable to dock with anything). However, a single station model will be changed - players will need to identify this oddity (by remembering how stock NY is layed out), and hang around it to trigger the boss spawn.
+Hostiles: Normal NY allies / hostiles.
+Reward: Pimp Capital Ship turrets that carry their respective Forward Gun effects and deal 1.1x more damage.
+Notes: Due to how factions are setup, nearby forces will engage the big evil Liberty fleet, but it shouldn't throw off the difficulty that much.

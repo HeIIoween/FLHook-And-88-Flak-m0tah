@@ -1,0 +1,1 @@
+freelancer.exe -slocalhost:2302 -sfreelancer.servegame.org:2303 -sbash.gumbert.ru:2360

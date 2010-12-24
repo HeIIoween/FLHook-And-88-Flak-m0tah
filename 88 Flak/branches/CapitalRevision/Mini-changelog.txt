@@ -1,0 +1,112 @@
+-- Cleaned up the mini-changelog, for what it's worth.
+-- Doubled Nanobot / Shield Battery count for better combat pacing.
+-- Raised chance of Nanobot / Shield Battery drops off un-assisted kills.
+-- Decreased the percentage variance in shield damage from +30%/-50% to +10%/-20%.
+
+What needs to be tested:
+-- test new mining values
+-- test new Hard Mode / Easy Mode AI classes
+--- test if rares can actually be blown off by snipers
+    - I doubt it, since they're 0 hit_pts items
+--- test new thruster hit_pts
+    - seem to be okay, test Adv. Thurster more
+--- test long range assist at 9.6k and solar long range at 24k
+    - seem to work, test with other players
+
+What's really todo:
+-- stronger shields?
+
+-- hivemind needs a better way of following
+-- split up Alaska and get best path working again
+-- better rare base system; that whole 100k thing doesn't cut it
+   -- simply Juneau Shipyard for Osiris?
+   -- random wreck minibases in each system for the rest
+-- better visibility for floaters (lights? visible platform?)
+-- undocking issues with player-carriers abound!
+-- slap Transport turrets on AT (make a new turret type)
+-- make a TRANSPORT state_graph or job that only leaves cruise on being disrupted
+-- some sort of F9 description buoy in the challenge hub (with a description for each challenge) so people know what they're doing
+
+What's sorta todo:
+-- PLF-specific CD like wasp/hornet combo but more extreme
+-- camera on shipyards, since ships wag like crazy? Maybe, cameras are weird
+-- real bays for Nomad lair?
+-- re-enable FLHook reps?
+-- revise thrusters to be DP-based instead of loss-based?
+-- new rare item types
+   -- convert TD into a rare?
+   -- mine version of TD?
+   -- rare armor regeneration (4 tiers, as defined)
+   -- rare radiation absorber (2 tiers, one that absorbs some, no power drain; and one that aborbs all, with power drain)
+      -- add a cool radiation effect to all ships under HpCustomEffect01 that only the rad absorber carries
+   -- rare thruster (2 tiers, custom effects with unlimited (rare) hitpoints but use more fuel)
+      -- use bretonia effect for one, rheinland for other
+   -- rare CM launcher (energy, uses lots of power and low diversion % but unlimited ammo)
+-- halve double-speed gun lifetimes?
+-- multi-wingmen system - use class_patroller_1-3 and allow 3 wingmen squads per base
+   -- police bases will be police/BH/navy patrols
+   -- navy bases will be navy/BH/police
+   -- pirate bases will be faction/two allies, etc. just make a list
+- FLHook:
+-- docking needs to be prevented if you're in death state (will dock with no items, but when you die after they will be mounted again on top of what you have, allowing two guns/thrusters/etc. per one mount)
+-- kbeam does not give back your items when RespawnDelay is active
+-- FLHook is causing NPCs to not drop phantomloot (tokens, rares, etc.; loot drops fine when unloaded)
+-- affilition tags are reset by FL on login, resulting in /tag needing to be set again every login
+-- everything is reported as "mines" due to MineDmgRedirect
+-- people can carry tokens out of challenge system by taking non-token gate - maybe make challenge-specific tokens?
+- Other:
+-- update clan rules to include PvP/PvE clans and be more reasonable throughout
+-- update server rules with new server police
+
+Hook wishlist:
+-- dockkill/apvptoken protection messages for when you shoot a player - "You can not damage this player because of (x reason)"
+-- additional combat-only logout delay so logging out in combat will take even longer
+-- possibly .kill torpedoes launched at a velocity > 600m/s?
+-- FREIGHTER is not automarked when /automark is enabled
+-- have player kills log a "follow_trigger_ship" archetype_killed in charfile if possible
+-- /automark max range set to max range of current scanner?
+-- I can haz NPC cloaking?
+
+What was done but didn't work and might be done again:
+-- Firing rate of missiles adjusted to 1/1000 of their damage to equalize DPS of missile classes. While low-class missiles had a lower payload, they had a refire rate that put their DPS considerably higher than high-class missiles. With the DPS equalized, spamming low-class missiles is still an effective strategy, but it's not as overpowered as it previously was (remember, small missiles overwhelm a CM launcher, whereas a single large one does not).
+-- As a result of the previous change, homing missiles may be refired quicker.
+-- Javelin-Cannonball (slow-turning damage missiles) type tweaked - their acceleration motor does not kick in until approximately 2s (when the effect itself kicks in), leaving a small point-blank range blindspot that limits these missiles' effectiveness. If you customarily shoot missiles at point-blank ranges, try rounding out your loadout with some homing missiles instead.
+-- PLF thruster fuel capacity has been decreased to regular LF levels. As a result, the 3rd thruster is a real fuel eater and PLF pilots will have to thrust in short bursts, compared to the more sustained thrusting of a LF.
+-- Implemented a "disable crosshair spin on target lock" option. With this option enabled, the crosshair will glow brighter when locked instead of spin.
+-- New, custom-fit hitbox for the Serafina by Lonestar, your local Serafina nut. ;)
+-- All remaining server crash issues related to FLHook have been fixed.
+-- Trade Lane Buoy WPs can now be flown through, which should make driving a station along a lane a little easier.
+-- Being friendly to one house, while hostile to another, will now cause some interesting diplomacy to occur between military forces. Liberty pirate seeking shelter in Kusari space? They might help you out with an off-the-record engagement or two; just try not to start a war over it.
+-- Fixed (hopefully) the issue where the Tutorial would sometimes not begin, or have issues midway through.
+
+Stuff I should do but can wait:
+-- wingmen scripts; to use, copy the contents of Wingmen - Script.txt in the m13 folder to the bottom your m13.ini / m12.ini and activate the commented out Act_ActTrig = Wingmen_Init line under INIT_SCRIPTS.
+-- remove 3rd thruster from PLF and give it "flash cloak" and "ping" abilities
+-- better equipment prices?
+-- Gunboat needs the new SUR
+-- investigate mission-killing thing - missions seem to be killed when a player logs out
+-- hardcore mode - token purchased at n00b base
+   -- disables trading with other players
+   -- higher chance of rare drops
+   -- character deleted on death? (like Diablo's hardcore mode)
+   -- jumphole for hardcore token
+      -- special base - 500 kill tokens without dieing
+         -- Survivor - token that hires a random AI Bot squad 5k below every system
+         -- Flame Eternal - fire effect engine for all classes
+         -- Frost Eternal - blue weapon effect engine for all classes
+         -- Shock Eternal - kusari weapon effect engine for all classes
+         -- Earth Eternal - rh FG weapon effect engine for all classes
+-- eventually do a bunch of other updates to the readme?
+-- remove duplicate sfx_ entries in station fuses?
+-- all AI small caps need FGs?
+-- redo wingmen formations?
+-- rebalance all weapons, because anything less than Class 4 (3 is pushing it) is garbage?
+-- further redo AI loadouts to have all CDs on LFs and all Torps on HFs? Nah
+-- interfaction relations - establish a base for each relation (look at ids_infos) and standardize the empathies
+-- better AI loadouts - looks like it's time to finally do a pool and churn out some loadouts (hey, maybe this will actually happen soon!)
+-- Create missiles for the Nomad Fighter.
+-- Create a "Nomad Repair Ship", essentially a copypasta of the current Repair Ship but with a Nomad Fighter model for RP purposes. In place of the RS's 360* Class 3 mounts and shield, the Nomad RS will simply have a single Nomad Laser mount, and no shield. The Repair Beam will function identically. In practice, the Nomad RS will be a more offensive version of the stock RS, but will be more easily killed.
+-- test out EMP ship - may be able to wedge it in as a VHF varient
+-- look into better solution for base drops
+-- pilot stuff
+-- fix up prisoners to pilot stuff standards (if implemented)
