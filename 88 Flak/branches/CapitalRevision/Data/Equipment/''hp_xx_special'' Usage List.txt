@@ -16,19 +16,24 @@
 001735 hp_turret_special_5 = Armored Freighter Turret    
 001736 hp_turret_special_6 = Nomad SC Turret             
 001737 hp_turret_special_7 = Nomad LC Turret             
-001738 hp_turret_special_8 = Armored SC Turret           
-001739 hp_turret_special_9 = Armored LC Turret           
-001740 hp_turret_special_10 = Armored SC Forward Gun
+001738 hp_turret_special_8 = Light Capital Turret           
+001739 hp_turret_special_9 = Light/Special Capital Turret          
+001740 hp_turret_special_10 = Heavy/Light Capital Turret
 
 001721 hp_freighter_shield_special_1 = Cargo Pod
 001722 hp_freighter_shield_special_2 = Rare Power Supply (not actually mounted, just placeholder)
-001723 hp_freighter_shield_special_3 =
-001724 hp_freighter_shield_special_4 =
-001725 hp_freighter_shield_special_5 =
-001726 hp_freighter_shield_special_6 =
-001727 hp_freighter_shield_special_7 =
+001723 hp_freighter_shield_special_3 = Capital Expansion Turret
+001724 hp_freighter_shield_special_4 = 
+001725 hp_freighter_shield_special_5 = 
+001726 hp_freighter_shield_special_6 = 
+001727 hp_freighter_shield_special_7 = Primary Fusion Generator
 001728 hp_freighter_shield_special_8 = Anti-PvP Token
-001729 hp_freighter_shield_special_9 = Small Station Attachment
-001730 hp_freighter_shield_special_10 = Large Station Attachment
+001729 hp_freighter_shield_special_9 = Primary Shield Projector
+001730 hp_freighter_shield_special_10 = Primary Shield Generator
+
+6 Heavy
+5 Special
+4 Light
+3 Expansion
 
 Yeah, there's a bunch of un-used mounts, but having this many extra rocks.
