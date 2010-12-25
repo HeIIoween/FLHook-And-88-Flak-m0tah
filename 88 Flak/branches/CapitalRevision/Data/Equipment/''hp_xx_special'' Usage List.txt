@@ -22,7 +22,7 @@
 
 001721 hp_freighter_shield_special_1 = Cargo Pod
 001722 hp_freighter_shield_special_2 = Rare Power Supply (not actually mounted, just placeholder)
-001723 hp_freighter_shield_special_3 = Capital Expansion Turret
+001723 hp_freighter_shield_special_3 = Capital Expansion Slot
 001724 hp_freighter_shield_special_4 = 
 001725 hp_freighter_shield_special_5 = 
 001726 hp_freighter_shield_special_6 = 
