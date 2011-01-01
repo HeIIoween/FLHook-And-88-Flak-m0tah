@@ -38,4 +38,12 @@ Meanings for hp_turret_special_X:
 8 Special
 7 Light
 
+Actual model hardpoints for hp_freighter_shield_special_X:
+Hardpoint in Code		Hardpoint Name			Hardpoint in Model
+hp_freighter_shield_special_3	Capital Expansion Slot		HpExpansionXX
+hp_freighter_shield_special_7	Primary Fusion Generator	HpFusGen
+hp_freighter_shield_special_9	Primary Shield Projector 	HpShieldProj
+hp_freighter_shield_special_10	Primary Shield Generator	HpShieldGen
+
+
 Yeah, there's a bunch of un-used mounts, but having this many extra rocks.
