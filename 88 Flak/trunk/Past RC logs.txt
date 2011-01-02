@@ -1,3 +1,11 @@
+RC133 (01/02/10):
+-- Undid cloak "fix". It ended up breaking cloak
+-- Reduced docking speed from 40 to 25 (Vanilla: 18). This should help solve some of the docking issues.
+-- Allowed arena tokens to be bought with Operative tokens
+-- Fixed a rare crash with dynamic lights
+-- Increased docking sphere range for Transports and Small Capitals from 20 up to 100
+-- Added auto-updater as a FLMM mod option
+
 RC132 (12/19/10):
 -- Nerfed AO run
 -- Replaced unlawful House starting jump holes with Omicron Alpha and Gamma
