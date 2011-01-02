@@ -1,9 +1,5 @@
 <script>
-<<<<<<< .mine
-<header name="88 Flak 1.27 RC132 12/18/10" savesafe="false" exclusive="false">
-=======
-<header name="88 Flak 1.27 RC132 12/18/10" savesafe="false" exclusive="false">
->>>>>>> .r101
+<header name="88 Flak Version 1.27 RC133 1/2/11" savesafe="false" exclusive="false">
 <scriptversion>
 1.3
 </scriptversion>
@@ -81,6 +77,13 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 <item name="16:10 (1280x800, 1440x900, 1600x1000, 1680x1050, 1920x1200)">
 </item>
 <item name="5:4 (1280x1024)">
+</item>
+</option>
+
+<option id="005" name="MP Client: Enable auto-updater?" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No">
 </item>
 </option>
 
@@ -423,6 +426,15 @@ steering_torque = 50000000000000, 50000000000000, 50000000000000
 </dest>
 <source>
 [HUDShift] ;5:4 - Activated by FLMM
+</source>
+</data>
+
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="005:1">
+<dest>
+dsupdate.dll ;FLMM Mod Option
+</dest>
+<source>
+;;;dsupdate.dll ;FLMM Mod Option
 </source>
 </data>
 
@@ -2525,7 +2537,6 @@ repair_id = repair_easy
 <source>
 cargo = easymodeoption_token, 1
 </source>
-</data>
 </data>
 <data file="Data\Missions\pilots_population.ini" method="filereplace" numtimes="-1" options="041:2">
 <dest>
