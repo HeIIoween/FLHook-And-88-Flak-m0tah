@@ -1,7 +1,7 @@
 [General]
 Signature=ConTEXT project file
 FilesCount=15
-ActiveFile=14
+ActiveFile=9
 Maximized=1
 RelativePath=1
 Root=
@@ -27,8 +27,8 @@ Top=110
 Width=870
 Height=323
 TopLine=0
-CursorX=21
-CursorY=13
+CursorX=32
+CursorY=3
 Highlighter=
 BookmarkCount=0
 
@@ -79,8 +79,8 @@ Top=0
 Width=932
 Height=474
 TopLine=0
-CursorX=21
-CursorY=13
+CursorX=32
+CursorY=3
 Highlighter=
 BookmarkCount=0
 
@@ -118,8 +118,8 @@ Top=92
 Width=932
 Height=493
 TopLine=0
-CursorX=21
-CursorY=13
+CursorX=36
+CursorY=3
 Highlighter=
 BookmarkCount=0
 
@@ -144,8 +144,8 @@ Top=230
 Width=673
 Height=493
 TopLine=0
-CursorX=21
-CursorY=13
+CursorX=32
+CursorY=3
 Highlighter=
 BookmarkCount=0
 
@@ -157,8 +157,8 @@ Top=0
 Width=673
 Height=493
 TopLine=0
-CursorX=21
-CursorY=13
+CursorX=32
+CursorY=3
 Highlighter=
 BookmarkCount=0
 
@@ -170,8 +170,8 @@ Top=138
 Width=932
 Height=493
 TopLine=0
-CursorX=21
-CursorY=13
+CursorX=32
+CursorY=3
 Highlighter=
 BookmarkCount=0
 
@@ -183,8 +183,8 @@ Top=23
 Width=673
 Height=493
 TopLine=0
-CursorX=21
-CursorY=13
+CursorX=32
+CursorY=3
 Highlighter=
 BookmarkCount=0
 
@@ -196,7 +196,7 @@ Top=46
 Width=673
 Height=493
 TopLine=0
-CursorX=21
-CursorY=13
+CursorX=32
+CursorY=3
 Highlighter=
 BookmarkCount=0
