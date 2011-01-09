@@ -14,29 +14,31 @@
 001733 hp_turret_special_3 = WTF Cannon!?
 001734 hp_turret_special_4 = Nomad Laser
 001735 hp_turret_special_5 = Armored Freighter Turret    
-001736 hp_turret_special_6 = Nomad SC Turret             
-001737 hp_turret_special_7 = Light Capital Turret            
-001738 hp_turret_special_8 = Special Capital Turret           
-001739 hp_turret_special_9 = Light/Special Capital Turret          
+001736 hp_turret_special_6 = Light Capital Turret            
+001737 hp_turret_special_7 = Special Capital Turret            
+001738 hp_turret_special_8 = Light/Special Capital Turret           
+001739 hp_turret_special_9 = Heavy Turret          
 001740 hp_turret_special_10 = Heavy/Light Capital Turret
 
 001721 hp_freighter_shield_special_1 = Cargo Pod
 001722 hp_freighter_shield_special_2 = Rare Power Supply (not actually mounted, just placeholder)
 001723 hp_freighter_shield_special_3 = Capital Expansion Slot
-001724 hp_freighter_shield_special_4 = 
-001725 hp_freighter_shield_special_5 = 
-001726 hp_freighter_shield_special_6 = 
-001727 hp_freighter_shield_special_7 = Primary Fusion Generator
+001724 hp_freighter_shield_special_4 = Large Shield Projector
+001725 hp_freighter_shield_special_5 = Large Shield Generator
+001726 hp_freighter_shield_special_6 = Large Fusion Generator
+001727 hp_freighter_shield_special_7 = Small Shield Projector
 001728 hp_freighter_shield_special_8 = Anti-PvP Token
-001729 hp_freighter_shield_special_9 = Primary Shield Projector
-001730 hp_freighter_shield_special_10 = Primary Shield Generator
+001729 hp_freighter_shield_special_9 = Small Shield Generator
+001730 hp_freighter_shield_special_10 = Small Fusion Generator
 
 Meanings for hp_turret_special_X:
-10 Heavy
-9 No actual guns assigned to it, but is used to signify that you can 
-  use both Special and Light on this point
-8 Special
-7 Light
+10 No actual guns assigned to it, but is used to signify that you can
+   use both Heavy and Light on this point
+9  Heavy
+8  No actual guns assigned to it, but is used to signify that you can 
+   use both Special and Light on this point
+7  Special
+6  Light
 
 Actual model hardpoints for hp_freighter_shield_special_X:
 Hardpoint in Code		Hardpoint Name			Hardpoint in Model
