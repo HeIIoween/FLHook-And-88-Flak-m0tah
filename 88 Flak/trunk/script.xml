@@ -186,6 +186,13 @@ And lastly, thank you for downloading the mod! Pay us a visit!
 </item>
 </option>
 
+<option id="034" name="MP Client: Enable numeric health display?" savesafe="true">
+<item id="0" name=" (Default) Yes">
+</item>
+<item id="1" name="No">
+</item>
+</option>
+
 <option id="100" name="    -- Server Options --" savesafe="true">
 <item id="0" name="">
 </item>
@@ -2519,6 +2526,15 @@ vis_effect = rtc_pistolbullet
 <source>
 effect_type = EFT_ENGINE_CONTRAIL
 ;vis_effect = rtc_pistolbullet
+</source>
+</data>
+
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="034:1">
+<dest>
+numeric.dll ;Numeric display of shield/health
+</dest>
+<source>
+;;;numeric.dll ;Numeric display of shield/health
 </source>
 </data>
 
