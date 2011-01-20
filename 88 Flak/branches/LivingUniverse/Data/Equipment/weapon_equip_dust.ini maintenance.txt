@@ -1,0 +1,5 @@
+First, copy the contents of weapon_equip.ini into weapon_equip_dust.ini
+Make the following replacements:
+explosion_arch = seft_                  ->        ;explosion_arch = seft_
+;explosion_arch = battledust_dummy      ->        explosion_arch = battledust_dummy
+;munition_hit_effect =                  ->        munition_hit_effect =

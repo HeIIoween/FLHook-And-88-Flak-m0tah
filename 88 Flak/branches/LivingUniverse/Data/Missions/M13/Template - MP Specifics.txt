@@ -1,0 +1,19 @@
+;------ MP Specifics ------
+[Trigger]
+nickname = MP_setup
+system = ANY
+Cnd_Timer = 2
+;Act_NNIds = 458894, HISTORY ;AI Wingmen
+;Act_NNIds = 458920, HISTORY ;Random CS Patrols (FL NPCs)
+;Act_NNIds = 458897, HISTORY ;Random CS Patrols (Nomads)
+;Act_NNIds = 458892, HISTORY ;Random CS Patrols (all factions)
+;Act_NNIds = 458891, HISTORY ;Random CS Fleets (all factions)
+;Act_NNIds = 459102, HISTORY
+;Act_NNIds = 458999, HISTORY ;Super-High NPC Count
+;Act_NNIds = 458895, HISTORY ;High NPC Count
+;Act_NNIds = 458896, HISTORY ;Low NPC Count
+;Act_NNIds = 458954, HISTORY ;Hard Mode
+;Act_NNIds = 458953, HISTORY ;Very Easy Mode
+;Act_NNIds = 458893, HISTORY ;Easy Mode
+;Act_NNIds = 459101, HISTORY
+

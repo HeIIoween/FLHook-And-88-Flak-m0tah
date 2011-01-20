@@ -1,0 +1,1326 @@
+
+;bh_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;bh_elite2
+hp_gun_special_9, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_8, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_7, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_6, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_5, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_4, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_3, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_2, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_1, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpThruster01
+hp_fighter_shield_special_9, HpThruster01
+hp_fighter_shield_special_8, HpThruster01
+hp_fighter_shield_special_7, HpThruster01
+hp_fighter_shield_special_6, HpThruster01
+hp_fighter_shield_special_5, HpThruster01
+hp_fighter_shield_special_4, HpThruster01
+hp_fighter_shield_special_3, HpThruster01
+hp_fighter_shield_special_2, HpThruster01
+hp_fighter_shield_special_1, HpThruster01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpTorpedo02, HpTorpedo03
+hp_torpedo_special_2, HpTorpedo02, HpTorpedo03
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;bh_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;bh_fighter_pursuit
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01, HpThruster01
+hp_torpedo_special_2, HpTurret01
+
+
+;br_battleship
+hp_turret_special_9, HpTurret_B1_01, HpTurret_B1_02, HpTurret_B1_03, HpTurret_B2_01, HpTurret_B2_02, HpTurret_B2_03, HpTurret_B2_04, HpTurret_B4_01, HpTurret_B4_02, HpTurret_B4_03, HpTurret_B4_04, HpTurret_B4_05, HpTurret_BM_01, HpTurret_BM_02, HpTurret_BM_03, HpTurret_BM_04
+
+
+;br_destroyer
+hp_turret_special_8, HpTurret_B1_01, HpTurret_B2_01, HpTurret_B2_02, HpTurret_B3_01, HpTurret_B3_02, HpTurret_B4_01, HpTurret_B4_02, HpTurret01
+hp_turret_special_10, HpTurret_B1_01
+
+
+;br_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;br_elite2
+hp_gun_special_9, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_8, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_7, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_6, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_5, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_4, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_3, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_2, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_gun_special_1, HpWeapon03, HpWeapon04, HpTorpedo01
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpThruster01
+hp_fighter_shield_special_9, HpThruster01
+hp_fighter_shield_special_8, HpThruster01
+hp_fighter_shield_special_7, HpThruster01
+hp_fighter_shield_special_6, HpThruster01
+hp_fighter_shield_special_5, HpThruster01
+hp_fighter_shield_special_4, HpThruster01
+hp_fighter_shield_special_3, HpThruster01
+hp_fighter_shield_special_2, HpThruster01
+hp_fighter_shield_special_1, HpThruster01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpWeapon01, HpWeapon02
+hp_torpedo_special_2, HpWeapon01, HpWeapon02
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;br_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;br_fighter_pursuit
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01, HpThruster01
+hp_torpedo_special_2, HpTorpedo02
+
+
+;br_freighter
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_gun_special_6, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_4, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_3, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_2, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_1, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;br_gunboat
+hp_turret_special_8, HpTurret_B3_01, HpTurret_B3_02, HpTurret_B3_03, HpTurret_B4_01, HpTurret_B4_02, HpTurret_B4_03, HpRunningLight14, HpRunningLight03
+hp_turret_special_10, HpTurret_B3_01
+
+
+;bw_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;bw_elite2
+hp_gun_special_9, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_8, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_7, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTurret01
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpThruster01
+hp_fighter_shield_special_9, HpThruster01
+hp_fighter_shield_special_8, HpThruster01
+hp_fighter_shield_special_7, HpThruster01
+hp_fighter_shield_special_6, HpThruster01
+hp_fighter_shield_special_5, HpThruster01
+hp_fighter_shield_special_4, HpThruster01
+hp_fighter_shield_special_3, HpThruster01
+hp_fighter_shield_special_2, HpThruster01
+hp_fighter_shield_special_1, HpThruster01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpWeapon07, HpWeapon08
+hp_torpedo_special_2, HpWeapon07, HpWeapon08
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;bw_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;bw_fighter_pursuit
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01, HpThruster01
+hp_torpedo_special_2, HpTurret01
+
+
+;bw_freighter
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_gun_special_6, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_4, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_3, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_2, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_1, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;co_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;co_elite2
+hp_gun_special_9, HpWeapon01, HpWeapon02, HpTurret02
+hp_gun_special_8, HpWeapon01, HpWeapon02, HpTurret02
+hp_gun_special_7, HpWeapon01, HpWeapon02, HpTurret02
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpTurret02
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTurret02
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTurret02
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTurret02
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTurret02
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTurret02
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpTurret01
+hp_fighter_shield_special_9, HpTurret01
+hp_fighter_shield_special_8, HpTurret01
+hp_fighter_shield_special_7, HpTurret01
+hp_fighter_shield_special_6, HpTurret01
+hp_fighter_shield_special_5, HpTurret01
+hp_fighter_shield_special_4, HpTurret01
+hp_fighter_shield_special_3, HpTurret01
+hp_fighter_shield_special_2, HpTurret01
+hp_fighter_shield_special_1, HpTurret01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpWeapon05, HpWeapon06
+hp_torpedo_special_2, HpWeapon05, HpWeapon06
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;co_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;co_fighter_pursuit
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01, HpThruster01
+hp_torpedo_special_2, HpTorpedo02
+
+
+;ge_armored
+hp_gun_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HpTurret07, HpTurret08, HpTurret09
+hp_gun_special_4, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HpTurret07, HpTurret08, HpTurret09
+hp_gun_special_3, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HpTurret07, HpTurret08, HpTurret09
+hp_gun_special_2, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HpTurret07, HpTurret08, HpTurret09
+hp_gun_special_1, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HpTurret07, HpTurret08, HpTurret09
+
+
+;ge_csv
+hp_gun_special_5, HpWeapon01, HpWeapon02
+hp_gun_special_4, HpWeapon01, HpWeapon02
+hp_gun_special_3, HpWeapon01, HpWeapon02
+hp_gun_special_2, HpWeapon01, HpWeapon02
+hp_gun_special_1, HpWeapon01, HpWeapon02
+hp_fighter_shield_special_4, HpTurret01
+hp_fighter_shield_special_3, HpTurret01
+hp_fighter_shield_special_2, HpTurret01
+hp_fighter_shield_special_1, HpTurret01
+hp_thruster, HpShield01, HpThruster01, HpCM01
+hp_torpedo_special_2, HpTorpedo01
+
+
+;ge_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_fighter_shield_generator, HpThruster01
+hp_freighter_shield_special_8, HpCloak01
+
+
+;ge_fighter2
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;ge_fighter3
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_fighter_shield_generator, HpCM01, HpMine01
+hp_freighter_shield_special_8, HpCloak01
+
+
+;ge_fighter4
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;ge_fighter5
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;ge_fighter6
+hp_gun_special_9, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_8, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_7, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTurret01
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpTorpedo01
+hp_fighter_shield_special_9, HpTorpedo01
+hp_fighter_shield_special_8, HpTorpedo01
+hp_fighter_shield_special_7, HpTorpedo01
+hp_fighter_shield_special_6, HpTorpedo01
+hp_fighter_shield_special_5, HpTorpedo01
+hp_fighter_shield_special_4, HpTorpedo01
+hp_fighter_shield_special_3, HpTorpedo01
+hp_fighter_shield_special_2, HpTorpedo01
+hp_fighter_shield_special_1, HpTorpedo01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpWeapon05, HpWeapon06
+hp_torpedo_special_2, HpWeapon05, HpWeapon06
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;ge_fighter7
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;ge_large_train
+hp_turret_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06
+hp_cargo_pod, HpCargo01, HpCargo02, HpCargo03, HpCargo04, HpCargo05, HpCargo06
+
+
+;ge_large_transport
+hp_turret_special_5, HpTurret_U1_01, HpTurret_U1_02, HpTurret_U1_03, HpTurret_U1_04, HpTurret_U3_01
+hp_cargo_pod, HpCargo01, HpCargo02, HpCargo03, HpCargo04
+
+
+;ge_lifter
+hp_turret_special_5, HpTurret_U1_01, HpTurret_U1_02, HpTurret_U1_03, HpTurret_U1_04, HpTurret_U1_05
+hp_cargo_pod, HpCargo01, HpCargo02
+
+
+;ge_liner
+hp_turret_special_5, HpTurret_Liner_01, HpTurret_Liner_02, HpTurret_Liner_03, HpTurret_Liner_04, HpTurret_Liner_05, HpTurret_Liner_06, HpTurret_Liner_07, HpTurret_Liner_08, HpTurret_Liner_09, HpTurret_Liner_10, HpTurret_Liner_11
+
+
+;ge_miner
+hp_turret_special_8, HpTurret_U2_01, HpTurret_U3_01, HpTurret_U1_04, HpTurret_U2_02, HpTurret_U3_02, HpTurret_U1_03, HpTurret_U1_01, HpTurret_U1_02
+hp_turret_special_10, HpTurret_U1_01
+
+
+;ge_prison
+hp_turret_special_5, HpTurret_Prison_01, HpTurret_Prison_02, HpTurret_Prison_03, HpTurret_Prison_04, HpTurret_Prison_05, HpTurret_Prison_06, HpTurret_Prison_07, HpTurret_Prison_08, HpTurret_Prison_09
+
+
+;ge_repair
+hp_elite_shield_special_1, HpTurret03
+hp_elite_shield_special_2, HpTurret03
+hp_elite_shield_special_3, HpTurret03
+hp_gun_special_1, HpTurret01, HpTurret02
+hp_gun_special_2, HpTurret01, HpTurret02
+hp_gun_special_3, HpTurret01, HpTurret02
+hp_turret_special_2, HpWeld
+
+
+;ge_train
+hp_turret_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06
+hp_cargo_pod, HpCargo01, HpCargo02, HpCargo03, HpCargo04
+
+
+;ge_transport
+hp_turret_special_5, HpTurret_U1_01, HpTurret_U1_02, HpTurret_U1_03, HpTurret_U1_04, HpTurret_U3_01
+hp_cargo_pod, HpCargo01, HpCargo02
+
+
+;ku_battleship
+hp_turret_special_9, HpTurret_K1_01, HpTurret_K1_02, HpTurret_K1_03, HpTurret_K1_04, HpTurret_K1_05, HpTurret_K1_06, HpTurret_K1_07, HpTurret_K1_08, HpTurret_K3_01, HpTurret_K3_02, HpTurret_K3_03, HpTurret_K3_04, HpTurret_K3_05, HpTurret_K3_06, HpTurret_K3_07, HpTurret_K3_08
+
+
+;ku_destroyer
+hp_turret_special_8, HpTurret_K2_02, HpTurret_K2_03, HpTurret_K2_04, HpTurret_K2_05, HpTurret_K1_01, HpTurret_K1_02, HpTurret_K3_01, HpTurret_K2_01
+hp_turret_special_10, HpTurret_K2_01
+
+
+;ku_dragon
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;ku_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;ku_elite2
+hp_gun_special_9, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_8, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_7, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTurret01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTurret01
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpTorpedo01
+hp_fighter_shield_special_9, HpTorpedo01
+hp_fighter_shield_special_8, HpTorpedo01
+hp_fighter_shield_special_7, HpTorpedo01
+hp_fighter_shield_special_6, HpTorpedo01
+hp_fighter_shield_special_5, HpTorpedo01
+hp_fighter_shield_special_4, HpTorpedo01
+hp_fighter_shield_special_3, HpTorpedo01
+hp_fighter_shield_special_2, HpTorpedo01
+hp_fighter_shield_special_1, HpTorpedo01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpWeapon05, HpWeapon06
+hp_torpedo_special_2, HpWeapon05, HpWeapon06
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;ku_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;ku_fighter_pursuit
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01, HpThruster01
+hp_torpedo_special_2, HpTorpedo02
+
+
+;ku_freighter
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_gun_special_6, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HPWeapon01, HpWeapon02
+hp_gun_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HPWeapon01, HpWeapon02
+hp_gun_special_4, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HPWeapon01, HpWeapon02
+hp_gun_special_3, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HPWeapon01, HpWeapon02
+hp_gun_special_2, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HPWeapon01, HpWeapon02
+hp_gun_special_1, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HPWeapon01, HpWeapon02
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;ku_gunboat
+hp_turret_special_8, HpTurret_K4_01, HpTurret_K4_02, HpTurret_K4_03, HpTurret_K5_01, HpTurret_K4_05, HpTurret_K6_01, HpTurret_K6_02, HpTurret_K4_04
+hp_turret_special_10, HpTurret_K5_01
+
+
+;li_cruiser
+hp_turret_special_8, HpTurret_L5_01, HpTurret_L5_02, HpTurret_L5_03, HpTurret_L5_04, HpTurret_L5_05, HpTurret_L5_06, HpTurret_L5_07, HpWeapon01
+hp_turret_special_10, HpWeapon01
+
+
+;li_dreadnought
+hp_turret_special_9, HpTurret_L1_01, HpTurret_L2_01, HpTurret_L3_01, HpTurret_L4_01, HpTurret_L4_02, HpTurret_L4_03, HpTurret_L4_04, HpTurret_L4_05, HpTurret_L4_06, HpTurret_L4_07, HpTurret_LM_01, HpTurret_LM_02, HpTurret_LT_01, HpTurret_LM_03, HpTurret_LM_04, HpTurret_LT_02
+
+
+;li_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;li_elite2
+hp_gun_special_9, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_8, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_7, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpThruster01
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpRadar01
+hp_fighter_shield_special_9, HpRadar01
+hp_fighter_shield_special_8, HpRadar01
+hp_fighter_shield_special_7, HpRadar01
+hp_fighter_shield_special_6, HpRadar01
+hp_fighter_shield_special_5, HpRadar01
+hp_fighter_shield_special_4, HpRadar01
+hp_fighter_shield_special_3, HpRadar01
+hp_fighter_shield_special_2, HpRadar01
+hp_fighter_shield_special_1, HpRadar01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpWeapon03, HpWeapon04
+hp_torpedo_special_2, HpWeapon03, HpWeapon04
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;li_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;li_fighter_pursuit
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01, HpThruster01
+hp_torpedo_special_2, HpTorpedo02
+
+
+;li_freighter
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_gun_special_6, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_4, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_3, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_2, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_1, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPWeapon01, HpWeapon02, HpWeapon03
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;no_battleship
+hp_turret_special_7, Hp_1_01, Hp_1_02, Hp_1_03, Hp_1_04, Hp_1_05, Hp_1_06, Hp_1_07, Hp_1_08, Hp_1_09, Hp_1_10, Hp_1_11, Hp_1_12, Hp_1_13, Hp_1_14, Hp_1_15
+
+
+;no_fighter
+hp_gun_special_10, HpWeapon01, HpWeapon02, HpWeapon03
+hp_turret_special_1, HpTorpedo01
+
+
+;no_gunboat
+hp_turret_special_6, Hp_1_01, Hp_1_02, Hp_1_03, Hp_1_04, Hp_1_05, Hp_1_06
+
+
+;npc_ku_diablo
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;npc_ku_heretic
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;npc_li_predator
+hp_gun_special_9, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_8, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_7, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpThruster01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpThruster01
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpRadar01
+hp_fighter_shield_special_9, HpRadar01
+hp_fighter_shield_special_8, HpRadar01
+hp_fighter_shield_special_7, HpRadar01
+hp_fighter_shield_special_6, HpRadar01
+hp_fighter_shield_special_5, HpRadar01
+hp_fighter_shield_special_4, HpRadar01
+hp_fighter_shield_special_3, HpRadar01
+hp_fighter_shield_special_2, HpRadar01
+hp_fighter_shield_special_1, HpRadar01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpWeapon03, HpWeapon04
+hp_torpedo_special_2, HpWeapon03, HpWeapon04
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;npc_re_serafina
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpCM01
+hp_countermeasure_dropper, HpCM02
+hp_gun_special_6, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HPWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HPWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HPWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HPWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HPWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HPWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_generator, HpCM01, HpCM02
+
+
+;npc_te_depot
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07
+
+
+;npc_te_dyson_platform
+hp_turret_special_7, HpTurret_D1_01, HpTurret_D1_02, HpTurret_D1_03, HpTurret_D1_04, HpTurret_D1_05, HpTurret_D1_06, HpTurret_D1_07, HpTurret_D1_08
+hp_turret_special_9, HpTurret_D1_01, HpTurret_D1_02, HpTurret_D1_03, HpTurret_D1_04, HpTurret_D1_05, HpTurret_D1_06, HpTurret_D1_07, HpTurret_D1_08
+
+
+;npc_te_gas_miner
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S1_08
+
+
+;npc_te_largestation1
+hp_turret_special_9, HpTurret_S2_01, HpTurret_S2_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S1_08, HpTurret_S1_09, HpTurret_S2_10, HpTurret_S1_11, HpTurret_S1_12, HpTurret_S1_13, HpTurret_S2_14, HpTurret_S1_15, HpTurret_S1_16, HpTurret_S1_17, HpTurret_S1_18
+
+
+;npc_te_largestation1_old
+hp_turret_special_9, HpTurret_S2_01, HpTurret_S2_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S1_08, HpTurret_S1_09, HpTurret_S1_10, HpTurret_S1_11, HpTurret_S1_12, HpTurret_S1_13, HpTurret_S1_14, HpTurret_S1_15, HpTurret_S1_16, HpTurret_S1_17, HpTurret_S1_18
+
+
+;npc_te_lifeboat
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;npc_te_mplatform
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07
+
+
+;npc_te_outpost
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S1_08, HpTurret_S2_01, HpTurret_S2_02, HpTurret_S2_03, HpTurret_S2_04, HpTurret_S2_05, HpTurret_S2_06
+
+
+;npc_te_prison
+hp_turret_special_9, HpTurret_S2_01, HpTurret_S2_02, HpTurret_S2_03, HpTurret_S2_04, HpTurret_S2_05, HpTurret_S2_06, HpTurret_S2_07, HpTurret_S2_08, HpTurret_S2_09, HpTurret_S2_10, HpTurret_S2_11, HpTurret_S2_12
+
+
+;npc_te_progenator
+hp_turret_special_8, HpWeapon01, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HpTurret07
+hp_turret_special_10, HpWeapon01
+
+
+;npc_te_sleepership
+hp_turret_special_9, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HpTurret06, HpTurret07, HpTurret08, HpTurret09, HpTurret10, HpTurret11, HpTurret12, HpTurret13, HpTurret14, HpTurret15, HpTurret16
+
+
+;npc_te_small_wplatform
+hp_turret_special_8, HpLaserLeft01, HpLaserLeft02, HpLaserLeft04, HpLaserRight01, HpLaserRight02, HpLaserRight03
+
+
+;npc_te_smallstation1
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S2_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S2_08, HpTurret_S2_01
+
+
+;npc_te_smallstation1_old
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S2_01
+
+
+;npc_te_space_factory01
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04
+
+
+;npc_te_space_factory02
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04
+
+
+;npc_te_space_freeport01
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06
+
+
+;npc_te_space_mining01
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06
+
+
+;npc_te_space_police01
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S1_08
+
+
+;npc_te_space_port_dmg
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S1_08
+
+
+;npc_te_space_shipping01
+hp_turret_special_9, HpTurret_S1_01, HpTurret_S1_02, HpTurret_S1_03, HpTurret_S1_04, HpTurret_S1_05, HpTurret_S1_06, HpTurret_S1_07, HpTurret_S1_08, HpTurret_S1_09, HpTurret_S1_10, HpTurret_S1_11, HpTurret_S1_12
+
+
+;npc_te_wplatform
+hp_turret_special_8, HpTurret01, HpTurret02, HpTurret03, HpTurret04
+
+
+;or_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;or_osiris
+hp_turret_special_9, HpTurret_O3_01, HpTurret_O3_02, HpTurret_O1_01, HpTurret_O2_01, HpTurret_O4_01, HpTurret_O4_02, HpTurret_O4_03, HpTurret_O4_04, HpTurret_OM_01, HpTurret_OM_02
+
+
+;pi_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;pi_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpTurret01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpTurret01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpTurret01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpTurret01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpTurret01
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;pi_fighter_pursuit
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+
+
+;pi_freighter
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_gun_special_6, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpWeapon04, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpWeapon04, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_4, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpWeapon04, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_3, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpWeapon04, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_2, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpWeapon04, HPWeapon01, HpWeapon02, HpWeapon03
+hp_gun_special_1, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpWeapon04, HPWeapon01, HpWeapon02, HpWeapon03
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;rh_battleship
+hp_turret_special_9, HpTurret_R1_01, HpTurret_R1_02, HpTurret_R1_03, HpTurret_R1_04, HpTurret_R2_01, HpTurret_R2_02, HpTurret_R2_03, HpTurret_R2_04, HpTurret_R3_01, HpTurret_R3_02, HpTurret_R3_03, HpTurret_R3_04, HpTurret_R3_05, HpTurret_R3_06, HpTurret_R4_01, HpTurret_R4_04
+
+
+;rh_cruiser
+hp_turret_special_8, HpTurret_R1_01, HpTurret_R2_01, HpTurret_R2_02, HpTurret_R2_03, HpTurret_R2_04, HpTurret_R2_05, HpTurret_R2_06, HpTurret_R3_02
+hp_turret_special_10, HpTurret_R2_05
+
+
+;rh_elite
+hp_gun_special_6, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpTurret01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_torpedo_special_1, HpTorpedo01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;rh_elite2
+hp_gun_special_9, HpWeapon03, HpWeapon04, HpTurret02
+hp_gun_special_8, HpWeapon03, HpWeapon04, HpTurret02
+hp_gun_special_7, HpWeapon03, HpWeapon04, HpTurret02
+hp_gun_special_6, HpWeapon03, HpWeapon04, HpTurret02
+hp_gun_special_5, HpWeapon03, HpWeapon04, HpTurret02
+hp_gun_special_4, HpWeapon03, HpWeapon04, HpTurret02
+hp_gun_special_3, HpWeapon03, HpWeapon04, HpTurret02
+hp_gun_special_2, HpWeapon03, HpWeapon04, HpTurret02
+hp_gun_special_1, HpWeapon03, HpWeapon04, HpTurret02
+hp_elite_shield_special_10, HpShield01
+hp_elite_shield_special_9, HpShield01
+hp_elite_shield_special_8, HpShield01
+hp_elite_shield_special_7, HpShield01
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_fighter_shield_special_10, HpTurret01
+hp_fighter_shield_special_9, HpTurret01
+hp_fighter_shield_special_8, HpTurret01
+hp_fighter_shield_special_7, HpTurret01
+hp_fighter_shield_special_6, HpTurret01
+hp_fighter_shield_special_5, HpTurret01
+hp_fighter_shield_special_4, HpTurret01
+hp_fighter_shield_special_3, HpTurret01
+hp_fighter_shield_special_2, HpTurret01
+hp_fighter_shield_special_1, HpTurret01
+hp_mine_dropper, HpMine01, HpCM01
+hp_torpedo_special_1, HpWeapon01, HpWeapon02
+hp_torpedo_special_2, HpWeapon01, HpWeapon02
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;rh_fighter
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04
+hp_fighter_shield_special_5, HpShield01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01
+hp_mine_dropper, HpThruster01
+hp_torpedo_special_2, HpTorpedo01
+hp_fighter_shield_generator, HpThruster01
+
+
+;rh_fighter_pursuit
+hp_gun_special_5, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_4, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_3, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_2, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_gun_special_1, HpWeapon01, HpWeapon02, HpTorpedo01
+hp_fighter_shield_special_4, HpShield01
+hp_fighter_shield_special_3, HpShield01
+hp_fighter_shield_special_2, HpShield01
+hp_fighter_shield_special_1, HpShield01
+hp_thruster, HpMine01, HpCM01, HpThruster01
+hp_torpedo_special_2, HpTorpedo02
+
+
+;rh_freighter
+hp_elite_shield_special_6, HpShield01
+hp_elite_shield_special_5, HpShield01
+hp_elite_shield_special_4, HpShield01
+hp_elite_shield_special_3, HpShield01
+hp_elite_shield_special_2, HpShield01
+hp_elite_shield_special_1, HpShield01
+hp_thruster, HpThruster01
+hp_mine_dropper, HpMine01
+hp_countermeasure_dropper, HpCM01
+hp_gun_special_6, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPTurret06, HpWeapon01, HpWeapon02
+hp_gun_special_5, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPTurret06, HpWeapon01, HpWeapon02
+hp_gun_special_4, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPTurret06, HpWeapon01, HpWeapon02
+hp_gun_special_3, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPTurret06, HpWeapon01, HpWeapon02
+hp_gun_special_2, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPTurret06, HpWeapon01, HpWeapon02
+hp_gun_special_1, HpTurret01, HpTurret02, HpTurret03, HpTurret04, HpTurret05, HPTurret06, HpWeapon01, HpWeapon02
+hp_fighter_shield_generator, HpCM01, HpMine01
+
+
+;rh_gunboat
+hp_turret_special_8, HpTurret_R3_01, HpTurret_R4_01, HpTurret_R4_02, HpTurret_R4_03, HpTurret_R4_04, HpTurret_R4_05, HpWeapon01, HpWeapon02
+hp_turret_special_10, HpWeapon01
+

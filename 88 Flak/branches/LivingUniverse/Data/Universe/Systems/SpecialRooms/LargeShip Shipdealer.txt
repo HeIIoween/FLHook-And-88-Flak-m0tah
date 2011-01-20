@@ -1,0 +1,14 @@
+This will only function on shipyard-type docks. Or, at least, docks that have a bar and central room.
+They must also have spacelaunch, commodity, and equipment all in 'deck' for the template to function.
+
+Base file:
+[Room]
+nickname = ShipDealer
+file = Universe\Systems\SpecialRooms\largeship_shipdealer.ini
+
+Base rooms, under hotspot_equipdealer:
+[Hotspot]
+name = IDS_HOTSPOT_SHIPDEALER_ROOM
+behavior = ExitDoor
+room_switch = ShipDealer
+
