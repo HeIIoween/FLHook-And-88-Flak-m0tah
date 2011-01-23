@@ -123,6 +123,10 @@ MP Client: Screen resolution ratio? - Many options
 Selecting this option will shift HUD elements around to best match your screen resolution ratio.
 Default: 4:3 (1024x768, 1280x960, etc.)
 
+MP Client: Enable auto-updater? - Yes / No
+If enabled, allows downloading of small updates for the main server. This will in no way affect gameplay, and just allows clans on the server to have a tag ingame.
+Default: Yes
+
 -- Player-Purchasable Base Ship Selection --
 (activated with packaged Ship Selector addon)
 MP Client: Ship (1/2) at Player-Purchasable Bases? - Many options
@@ -186,6 +190,10 @@ Default: No
 
 MP Client: Draw Contrails on ships? - Yes / No
 Enables contrails (trails given off wing tips) to be drawn, like in normal Freelancer. Engine Trails are always drawn, so if you don't like all the trails, toggle these off.
+Default: Yes
+
+MP Client: Enable numeric health? - Yes / No
+Draws the specific health value of hull and shield next to the bars.
 Default: Yes
 
 -- Server Options --

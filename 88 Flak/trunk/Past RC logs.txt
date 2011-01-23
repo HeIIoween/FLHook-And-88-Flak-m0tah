@@ -1,4 +1,36 @@
-RC133 (01/02/10):
+RC135 (01/23/11):
+-- Fixed Angelito Mk III being a universal gun.
+-- Added numeric health display as a mod option. Enabled by default.
+-- Current worth is now shown in the statistic page.
+-- Changed system display in chat window to display a player's region instead of a specific system.
+-- Changed CM/Mine/Rare to Support Equipment.
+-- Changed CD exclusive hardpoints to be capable of equipping a gun (not a missile) on it.
+-- Replaced the PLF class with the new Stealth Fighter class. The CSV has not been changed. 
+-- Clean up some IDs.
+-- Changed pulse weapon modifiers to the same as any other modifier (10% decrease against normal shields, 20% increase against rare shields).
+-- Increased ungrouped player detection range to 40k from 25k. This should help in finding players in regions.
+-- Removed guns being equippable on the VHF torpedo slots.
+-- Updated compatible drivers list.
+-- Redesigned Ship Infocards to be more readable in-game. (Fox)
+-- Fixed issue with PLFs (now SF) that caused people to be kicked when undocking.
+-- Re-hardpointed every freighter to make them less awkward.
+-- Replaced the former rear-facing turret with another support slot on all freighters.
+
+RC134 (01/15/11):
+-- Corrected discrepancies with weapon_equip_dust.ini (Fox)
+-- Fixed the Unlawful starting jumpholes not being properly invulnerable (players shouldn't be able to shut down holes leading out of Nexus) (Fox)
+-- Made non-rare shield busters deal more damage to rare equipment (shields, capacitors, etc.) and less damage to non-rare shields for a proper counter against shield rare stacking
+-- Removed class info in equipment screen
+-- Moved all guns into one class
+-- Moved all light fighter shields into one class
+-- Moved all heavy fighter shields into one class
+-- Fixed Lower Unknown mooring fixtures with incorrect reputation
+-- Reduced asteroids mass by 25%. This should make flying a battleship in an asteroid field less annoying, but still not recommended from the speed loss.
+-- Counter-measure, mines, and rares share the same slot
+-- Rare (equipment) can ONLY be placed on the aforementioned slot rather than stacked on shields anymore. This does not affect rare guns.
+-- Halved fighter weapon ranges
+
+RC133 (01/02/11):
 -- Undid cloak "fix". It ended up breaking cloak
 -- Reduced docking speed from 40 to 25 (Vanilla: 18). This should help solve some of the docking issues.
 -- Allowed arena tokens to be bought with Operative tokens
@@ -6,7 +38,7 @@ RC133 (01/02/10):
 -- Increased docking sphere range for Transports and Small Capitals from 20 up to 100
 -- Added auto-updater as a FLMM mod option
 
-RC132 (12/19/10):
+RC132 (12/19/11):
 -- Nerfed AO run
 -- Replaced unlawful House starting jump holes with Omicron Alpha and Gamma
 -- Added unlawful bribe in n00b base ship dealer
