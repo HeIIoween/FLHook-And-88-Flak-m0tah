@@ -1,12 +1,12 @@
-001525 hp_gun_special_1 = Gun/Missile-Class 1
-001526 hp_gun_special_2 = Gun/Missile-Class 2
-001527 hp_gun_special_3 = Gun/Missile-Class 3
-001528 hp_gun_special_4 = Gun/Missile-Class 4
-001529 hp_gun_special_5 = Gun/Missile/Rare Gun-Class 5
-001530 hp_gun_special_6 = Gun/Missile/Rare Gun-Class 6
-001531 hp_gun_special_7 = Gun/Missile/Rare Gun-Class 7
-001532 hp_gun_special_8 = Gun/Missile/Rare Gun-Class 8
-001533 hp_gun_special_9 = Gun/Missile/Rare Gun-Class 9
+001525 hp_gun_special_1 = Fighter Gun
+001526 hp_gun_special_2 = Fighter Gun / Missile
+001527 hp_gun_special_3 = (Unused)
+001528 hp_gun_special_4 = (Unused)
+001529 hp_gun_special_5 = (Unused)
+001530 hp_gun_special_6 = (Unused)
+001531 hp_gun_special_7 = (Unused)
+001532 hp_gun_special_8 = (Unused)
+001533 hp_gun_special_9 = (Unused)
 001534 hp_gun_special_10 = Armored SC Foward Gun (Lib Cruiser)
 
 001731 hp_turret_special_1 = Nomad Torpedo
