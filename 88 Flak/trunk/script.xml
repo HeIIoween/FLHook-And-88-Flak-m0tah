@@ -436,12 +436,12 @@ steering_torque = 50000000000000, 50000000000000, 50000000000000
 </source>
 </data>
 
-<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="005:1">
+<data file="Exe\dacom.ini" method="filereplace" numtimes="-1" options="005:0">
 <dest>
-dsupdate.dll ;FLMM Mod Option
+;;;dsupdate.dll ;FLMM Mod Option
 </dest>
 <source>
-;;;dsupdate.dll ;FLMM Mod Option
+dsupdate.dll ;FLMM Mod Option
 </source>
 </data>
 
